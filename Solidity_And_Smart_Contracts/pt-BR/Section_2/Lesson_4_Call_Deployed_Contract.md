@@ -96,7 +96,7 @@ import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import "./App.css";
 
-const App = () => {
+export default function App() {
   const [currentAccount, setCurrentAccount] = useState("");
   /**
    * Cria uma variável para guardar o endereço do contrato após o deploy!
