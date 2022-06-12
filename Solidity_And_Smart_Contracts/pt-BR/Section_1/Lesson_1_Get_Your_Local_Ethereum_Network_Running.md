@@ -38,7 +38,7 @@ Preparamos um [tutorial de como preparar o seu ambiente do windows](https://www.
 
 Em seguida, vamos para o terminal.
 
-🚨 **Atenção:** O Git Bash no Windows *não funciona*. Você deve usar algum outro programa de terminal. Sugerimos o uso do [terminal PoweShell](https://geekblog.com.br/windows-powershell-veja-o-que-e-e-para-o-que-serve/).
+🚨 **Atenção:** O Git Bash no Windows *não funciona*. Você deve usar algum outro programa de terminal. Sugerimos o uso do [terminal PowerShell](https://geekblog.com.br/windows-powershell-veja-o-que-e-e-para-o-que-serve/).
 
 Vá em frente e execute `cd` para o diretório em que você deseja trabalhar. Quando estiver lá, execute estes comandos:
 
