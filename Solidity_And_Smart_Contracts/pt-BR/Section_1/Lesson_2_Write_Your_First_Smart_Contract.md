@@ -25,7 +25,7 @@ contract WavePortal {
 }
 ```
 
-Observação: talvez você queira [fazer o download da extensão VS Code Solidity]((https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity)) para facilitar o _syntax highlighting_.
+Observação: talvez você queira [fazer o download da extensão VS Code Solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) para facilitar o _syntax highlighting_.
 
 
 Abra o arquivo `hardhat.config.js` e altere a versão do solidity para `0.8.0` na parte indicada abaixo:
