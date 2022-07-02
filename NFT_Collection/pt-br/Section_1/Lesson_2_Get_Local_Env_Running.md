@@ -2,9 +2,9 @@
 
 ## 📚 Uma pequena introdução sobre blockchain
 
-Antes de qualquer coisa, vamos precisar colocar nossa rede local de Ethereum para funcionar. É dessa maneira que vamos poder compilar e testar nosso código de contratos inteligentes! Você sabe como é necessário criar um ambiente local para trabalhar? Mesma coisa aqui!
+Antes de qualquer coisa, vamos precisar colocar nossa rede local de Ethereum para funcionar. É dessa maneira que vamos poder compilar e testar nosso código de contratos inteligentes! Você sabe como é necessário iniciar um ambiente local para trabalhar? Mesma coisa aqui!
 
-Por enquanto, tudo o que você precisa saber é que um contrato inteligente é um pedaço de código que vive na blockchain. A blockhain é um lugar público onde qualquer um pode seguramente ler e escrever dados por uma taxa. Pense nisso em algo como a AWS ou Heroku, com exceção de que ninguém a possui! Ela é mantida por milhares de pessoas aleatórias conhecidas como "mineradores".
+Por enquanto, tudo o que você precisa saber é que um contrato inteligente é um pedaço de código que vive na blockchain. A blockhain é um lugar público onde qualquer um pode seguramente ler e escrever dados por uma taxa. Pense nisso em algo como a AWS ou o Heroku, com exceção de que ninguém a possui! Ela é mantida por milhares de pessoas aleatórias conhecidas como "mineradores".
 
 O quadro maior aqui é:
 
@@ -18,9 +18,13 @@ Eu também recomendo ler [esses](https://ethereum.org/en/developers/docs/intro-t
 
 ## ⚙️ Ferramentas para o ambiente local.
 
+<<<<<<< HEAD
 Nós vamos usar muito uma ferramente chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html).
+=======
+Nós vamos usar muito uma ferramenta chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html). Se estiver usando Windows, pode também usar [essa página](https://www.web3dev.com.br/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3)
+>>>>>>> 92922b3 (Correct typos and suggest corrections)
 
-_Nota: eu estou no Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas do node, então se isso acontecer, pegue o Node 16!_
+_Nota: eu estou usando o Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas do Node, então se isso acontecer, use o Node 16!_
 
 Depois, vamos para o terminal. Vá em frente e `cd` (change directory) para o diretório que você quer trabalhar. Uma vez que você estiver lá, rode os seguintes comandos:
 
@@ -31,11 +35,11 @@ npm init -y
 npm install --save-dev hardhat
 ```
 
-Você pode ver uma mensagem sobre vulnerabilidades depois de rodar o último comando e instalar o Hardhat. Toda vez que você instalar algo do NPM, existe uma checagem de segurança que é feita para ver se algum dos pacotes da livraria que você está instalando tem alguma vulnerabilidade reportada. Isso é mais um aviso para que você esteja ciente! Pesquise um pouco mais sobre as vulnerabilidades no Google se quiser saber mais!
+Você pode ver uma mensagem sobre vulnerabilidades depois de rodar o último comando e instalar o Hardhat. Toda vez que você instala algo do NPM, existe uma checagem de segurança, que é feita para ver se algum dos pacotes da biblioteca que você está instalando tem alguma vulnerabilidade reportada. Isso é mais um aviso para que você esteja ciente! Pesquise um pouco mais sobre as vulnerabilidades no Google se quiser saber mais!
 
 ## 🔨 Coloque o projeto teste para funcionar
 
-Legal, agora devemos ter o hardhat. Vamos colocar um projeto teste funcionando.
+Legal, agora devemos ter o hardhat. Vamos fazer um projeto teste funcionar.
 
 ```
 npx hardhat
@@ -54,7 +58,7 @@ npm install --save-dev @nomiclabs/hardhat-waffle
 ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
 ```
 
-Você também vai querer instalar algo chamado **OpenZeppelin**, que é uma outra library muito usada para desenvolver contratos inteligentes seguros. Nós vamos aprender mais sobre isso depois. Por agora, só instale-o.
+Você também vai querer instalar algo chamado **OpenZeppelin**, que é uma outra biblioteca muito usada para desenvolver contratos inteligentes seguros. Nós vamos aprender mais sobre isso depois. Por agora, só instale-o.
 
 ```bash
 npm install @openzeppelin/contracts
@@ -70,7 +74,11 @@ Você deve ver algo parecido com isso:
 
 ![Untitled](https://i.imgur.com/LIYT9tf.png)
 
+<<<<<<< HEAD
 Boom! Se você ver isso, significa que seu ambiente local está configurado **e** você também rodou/implantou uma contrato inteligente para uma blockchain local.
+=======
+Boom! Se você estiver vendo isso, significa que seu ambiente local está configurado **e** você também rodou/implantou um contrato inteligente para uma blockchain local.
+>>>>>>> 92922b3 (Correct typos and suggest corrections)
 
 Isso é bastante épico. Vamos entrar em mais detalhes, mas basicamente o que está acontecendo aqui passo a passo é:
 
