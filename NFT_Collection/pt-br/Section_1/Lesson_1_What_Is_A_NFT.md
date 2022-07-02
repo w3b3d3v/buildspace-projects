@@ -1,8 +1,8 @@
-# O que é um NFT
+# O que é uma NFT
 
 Eu vi tantos tutoriais complicarem isso. Então, vou tentar manter a explicação simples :).
 
-Um NFT é um "token" que uma pessoa pode possuir que liga a algum "dado" (por exemplo, liga a uma arte digital, a um vídeo, imagem, etc). O truque com NFTs é que cada "token" tem um identificador único, que confere ao dono o poder de provar que o NFT é único. Vamos ver o código depois :).
+Uma NFT é um "token" que uma pessoa pode possuir que liga a algum "dado" (por exemplo, liga a uma arte digital, a um vídeo, imagem, etc). O truque com NFTs é que cada "token" tem um identificador único, que confere ao dono o poder de provar que o NFT é único. Vamos ver o código depois :).
 
 Vamos passar por um exemplo rapidamente.
 
@@ -28,15 +28,15 @@ Picasso iria criar sua coleção NFT construindo (programando) seu "smart contra
 
 Ele daria a cada arte um identificador único (ex. Esboço #1, Esboço #2, Esboço #3, etc). Então, quando Picasso estiver pronto para "lançar" sua coleção NFT, ele a lançaria usando sua própria carteira Ethereum para "assinar" a coleção NFT. Quando ele estivesse pronto, colocaria publicamente na blockchain  - onde todos podem ver publicamente a coleção NFT de Picasso.
 
-Então, quando Picasso quiser vender um dos NFTs, tudo o que ele precisa fazer é "transferir" o NFT para a pessoa que comprou usando o endereço público da carteira do comprador.
+Então, quando Picasso quiser vender uma das NFTs, tudo o que ele precisa fazer é "transferir" a NFT para a pessoa que comprou usando o endereço público da carteira do comprador.
 
-A pessoa que comprou o NFT ficará feliz, porque conseguiu a, **única e original, obra de Picasso! Do próprio Picasso!** E a melhor parte? Ela pode provar!
+A pessoa que comprou a NFT ficará feliz, porque conseguiu a, **única e original, obra de Picasso! Do próprio Picasso!** E a melhor parte? Ela pode provar!
 
 Como?
 
 1. O comprador pode provar que a coleção NFT foi originalmente assinada e criada por Picasso, porque a NFT mostraria que veio de um contrato inteligente assinado por Picasso. Lembre-se, Picasso assinou a coleção com seu endereço público! Geralmente, artistas anunciam publicamente o endereço de suas carteiras para que ninguém possa fingir ser eles.
 
-2. O comprador pode provar porque o NFT é um esboço único de Picasso de sua coleção pois cada NFT da coleção tem um identificador único (por exemplo, Esboço #1, Esboço #2, Esboço #3, etc) e isso vem da pessoa que originalmente criou a coleção.
+2. O comprador pode provar porque a NFT é um esboço único de Picasso de sua coleção pois cada NFT da coleção tem um identificador único (por exemplo, Esboço #1, Esboço #2, Esboço #3, etc) e isso vem da pessoa que originalmente criou a coleção.
 
 Ok, então, espero que isso faça **algum sentido**.
 
