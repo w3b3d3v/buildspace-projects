@@ -22,7 +22,7 @@ string[] thirdWords = ["YOUR_WORD", "YOUR_WORD", "YOUR_WORD", "YOUR_WORD", "YOUR
 
 Estas são nossas palavras aleatórias!! Por favor, divirta-se com isso. Certifique-se de que cada palavra seja única e sem espaços!
 
-Quanto mais engraçadas as palavras, melhor será rs. Eu gostei de fazer de cada array um determinado tema. Por exemplo, `firstWords` pode ser o primeiro nome de seus personagens favoritos de anime. Então, `secondWords` pode ser um alimento de que você goste. E `thirdWords` podem ser nomes de animais aleatórios. Divirta-se com isso!!! Deixe com a sua cara
+Quanto mais engraçadas as palavras, melhor será rs. Eu gostei de fazer de cada array um determinado tema. Por exemplo, `firstWords` pode ser o primeiro nome de seus personagens favoritos de anime. Então, `secondWords` pode ser um alimento de que você goste. E `thirdWords` podem ser nomes de animais aleatórios. Divirta-se com isso!!! Deixe com a sua cara.
 
 Aqui estão alguns dos meus. Eu gosto que a primeira linha tenha palavras que parecem "descrever" algo!
 
@@ -30,7 +30,7 @@ Aqui estão alguns dos meus. Eu gosto que a primeira linha tenha palavras que pa
 
 Talvez você queira gerar um nome de banda aleatório. Talvez você queira gerar nomes de personagens aleatórios para suas sessões de Dungeons and Dragons. Faça o que você quiser. Talvez você não dê a mínima para combinações de três palavras e só queira fazer SVGs de pinguins de pixel art. Vá em frente. Faça o que você quiser :).
 
-Observação: Eu comendo entre 15-20 palavras por array. Notei que cerca de 10 geralmente não é aleatório o suficiente.
+Observação: Eu recomendo entre 15-20 palavras por array. Notei que cerca de 10 geralmente não é aleatório o suficiente.
 
 🥴 Números aleatórios.
 ------------------
@@ -55,14 +55,14 @@ O que isso está fazendo é pegar duas coisas: a string atual `FIRST_WORD` e uma
 
 **Isso não é aleatoriedade verdadeira.** Mas é o melhor que temos por agora!
 
-Existem outras maneiras de gerar números aleatórios no blockchain (verifique o [Chainlink](https://docs.chain.link/docs/chainlink-vrf/)), mas o Solidity nativamente não nos dá nada confiável porque não pode! Todos as varaiveis que nosso contrato pode acessar são públicas e nunca verdadeiramente aleatórios.
+Existem outras maneiras de gerar números aleatórios no blockchain (verifique o [Chainlink](https://docs.chain.link/docs/chainlink-vrf/)), mas o Solidity nativamente não nos dá nada confiável porque não pode! Todos as variáveis que nosso contrato pode acessar são públicas e nunca verdadeiramente aleatórias.
 
 Isso pode ser um pouco irritante para alguns aplicativos como o nosso aqui! Em qualquer caso, ninguém vai atacar nosso pequeno aplicativo, mas quero que você saiba de tudo isso quando estiver construindo um dApp que tem milhões de usuários!
 
 ✨  Criando o SVG dinamicamente.
 ------------------
 
-Verifique a variável `string baseSvg` no contrato. Isso ta louco demais rs. Basicamente, a única parte do nosso SVG que muda é o combo de três palavras, certo? Então o que fazemos é criar uma variável `baseSvg` que podemos reutilizar continuamente conforme criamos novos NFTs.
+Verifique a variável `string baseSvg` no contrato. Isso tá louco demais rs. Basicamente, a única parte do nosso SVG que muda é o combo de três palavras, certo? Então o que fazemos é criar uma variável `baseSvg` que podemos reutilizar continuamente conforme criamos novos NFTs.
 
 
 Em seguida, reunimos tudo usando:
@@ -152,7 +152,7 @@ Tudo o que está acontecendo aqui é que estamos juntando tudo e adicionando o n
 🛠 Debugando o conteudo de `finalTokenUri`
 ------------------------
 
-Agora que você configurou o tokenURI, como sabemos se ele está realmente correto? Afinal, ele contém todos os nossos dados para nosso NFT! Você pode usar uma ferramenta legal como - [NFT Preview](https://nftpreview.0xdev.codes/) para ver uma visualização rápida da imagem e o conteúdo do json sem deplpoar de novo e e de novo na testnet do opensea.
+Agora que você configurou o tokenURI, como sabemos se ele está realmente correto? Afinal, ele contém todos os nossos dados para nosso NFT! Você pode usar uma ferramenta legal como - [NFT Preview](https://nftpreview.0xdev.codes/) para ver uma visualização rápida da imagem e o conteúdo do json sem deployar de novo e e de novo na testnet do opensea.
 
 Para facilitar, você pode passar o código `tokenURI` como um parâmetro de consulta como este,
 
