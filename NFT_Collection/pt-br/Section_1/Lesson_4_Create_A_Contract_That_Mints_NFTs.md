@@ -101,7 +101,7 @@ Agora, vamos pro nosso contrato inteligente e mudar uma linha. Ao invés de:
 _setTokenURI(newItemId, "blah")
 ```
 
-Nós vamos setar o URL para o link do nosso arquivo JSON.
+Nós vamos setar o URI para o link do nosso arquivo JSON.
 
 ```solidity
 _setTokenURI(newItemId, "INSERT_YOUR_JSON_URL_HERE");

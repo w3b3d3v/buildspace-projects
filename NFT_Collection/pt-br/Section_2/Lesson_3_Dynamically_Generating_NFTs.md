@@ -202,4 +202,4 @@ Então, vamos construir isso :)!
 🚨 Relatório de progresso.
 ------------------------
 
-Se você tiver um, envie uma captura de tela em #progress de seu novo NFT gerado dinamicamente no OpenSea/Rarible em #progress :). Além disso - se você ainda não tweetou uma imagem de sua coleção maravilhosa de NFT, agora é a hora de fazê-lo!! Lembre-se de marcar @_buildspace !!! Traremos o máximo de pessoas possível!
+Se você tiver um, envie uma captura de tela em #progresso de seu novo NFT gerado dinamicamente no OpenSea/Rarible :). Além disso - se você ainda não tweetou uma imagem de sua coleção maravilhosa de NFT, agora é a hora de fazê-lo!! Lembre-se de marcar @_buildspace !!! Traremos o máximo de pessoas possível!

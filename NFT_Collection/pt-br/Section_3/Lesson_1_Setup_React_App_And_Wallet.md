@@ -14,16 +14,16 @@ Você irá magicamente clonar meu repositório e a IDE inteira no seu navegador 
 
 **Nota: Ao longo desse projeto, você pode perceber que nós estamos referenciando arquivos `.js`. No Replit, se você estiver criando novos arquivos JavaScript, você vai precisar usar a extensão `.jsx`! Replit tem algumas performances chiques que pedem que você use `.jsx` na extensão de arquivo :).**
 
-## 🦊 Configurar o Metamask
+## 🦊 Configurar a Metamask
 
 Incrível, nós temos um projeto em React **já feito o deploy** que podemos trabalhar facilmente. Isso foi simples :).
 
-Após isso, precisamos de uma carteira Ethereum. Existem muitas, mas para esse projeto, vamos usar o Metamask. Baixe a extensão de navegador e configure sua carteira [aqui](https://metamask.io/download.html). Mesmo que você já usar outra carteira, só use o Metamask por agora.
+Após isso, precisamos de uma carteira Ethereum. Existem muitas, mas para esse projeto, vamos usar a Metamask. Baixe a extensão de navegador e configure sua carteira [aqui](https://metamask.io/download.html). Mesmo que você já usar outra carteira, só use a Metamask por agora.
 
-Por que precisamos do Metamask? Bom. Precisamos estar habilitados a chamar funções no nosso contrato inteligente que vive na blockchain. E, para fazer isso, precisamos ter uma carteira que tem o nosso endereço Ethereum e a chave privada.
+Por que precisamos da Metamask? Bom. Precisamos estar habilitados a chamar funções no nosso contrato inteligente que vive na blockchain. E, para fazer isso, precisamos ter uma carteira que tem o nosso endereço Ethereum e a chave privada.
 
 **Mas, precisamos de algo para conectar o nosso site com nossa carteira, para que possamos passar com segurança nossas credenciais para nosso site. O site pode então usar as credenciais para chamar o contrato inteligente. Assim, você precisará de credenciais válidas para acessar funções nos contratos inteligentes.**
 
 É quase como uma autenticação. Nós precisamos de algo para "logar" na blockchain e depois usar essas credenciais para fazer requests na API pelo nosso site.
 
-Então, vá em frente e configure tudo! O flow de configuração do Metamask é bem auto-explicativo :).
+Então, vá em frente e configure tudo! O flow de configuração da Metamask é bem auto-explicativo :).

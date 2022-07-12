@@ -31,11 +31,7 @@ contract MyEpicNFT {
 }
 ```
 
-<<<<<<< HEAD
-Nota: Algumas vezes o VSCode por si só mostrará erros que não são reais, por exemplo, pode sublinhar o import do hardhat e falar que ele não existe. Isso acontece porque o compilador global de Solidity não está configurado localmente. Se você não sabe como consertar isso, não se preocupe. Ignore esses avisos por enquanto. EU também recomendo que você não use o terminal do VSCode, use o seu terminal separado! As vezes o VSCode traz problemas se o compilador não estiver configurado.
-=======
 Nota 2: Algumas vezes o VSCode por si só mostrará erros que não são reais, por exemplo, pode sublinhar o import do hardhat e falar que ele não existe. Isso acontece porque o compilador global de Solidity não está configurado localmente. Se você não souber como consertar isso, não se preocupe. Ignore esses avisos por enquanto. Eu também recomendo que você não use o terminal do VSCode, use o seu terminal separado! Às vezes o VSCode traz problemas se o compilador não estiver configurado.
->>>>>>> 72f0a73 (Correct typos and suggest corrections)
 
 Vamos ver linha por linha aqui.
 
