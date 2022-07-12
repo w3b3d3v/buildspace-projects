@@ -2,7 +2,7 @@
 
 Incrível. Nós conseguimos. Fizemos deploy do nosso site. Fizemos deploy do nosso contrato. Conectamos nossa carteira. **Agora nós precisamos chamar o nosso contrato através do web app** usando as credenciais que temos acesso com o Metamask!
 
-Então, lembre-se, nosso contrato tem a função `makeAnEpicNFT` o qual vai mintar a NFT. Nós precisamos chamar essa função através do web app. Vá em frente e adicione a função a seguir dentro da função `connectWallet`.
+Então, lembre-se, nosso contrato tem a função `makeAnEpicNFT` o qual vai mintar o NFT. Nós precisamos chamar essa função através do web app. Vá em frente e adicione a função a seguir dentro da função `connectWallet`.
 
 ```javascript
 const askContractToMintNft = async () => {
@@ -113,15 +113,15 @@ Agora que você tem o seu arquivo com todo o conteúdo ABI pronto, é hora de im
 import myEpicNft from "./utils/MyEpicNFT.json";
 ```
 
-E estamos prontos. Não deverá ter mais erros. Você está pronto para mintar algumas NFTs!
+E estamos prontos. Não deverá ter mais erros. Você está pronto para mintar alguns NFTs!
 
-Tudo que você precisa fazer aqui é clicar em "Mint NFT", pagar a gas (usando seu fake ETH), esperar a transação ser minerada e bam! Seu NFT deve aparecer no OpenSea ou imediatamente ou dentro de 5 - 15 minutos no máximo.
+Tudo que você precisa fazer aqui é clicar em "Mint NFT", pagar o gas (usando seu fake ETH), esperar a transação ser minerada e bam! Seu NFT deve aparecer no OpenSea ou imediatamente ou dentro de 5 - 15 minutos no máximo.
 
 Você deve estar se perguntando o que é gas. Eu não vou responder isso aqui. Mas você pode começar a pesquisar [aqui](https://ethereum.org/en/developers/docs/gas/) ;).
 
 ## 🤩 Teste
 
-Você deve estar pronto para mintar uma NFT direto do seu site agora. **Isso é épico!!** Isso é basicamente como todos esses sites de mintar NFT funcionam, e você acabou de fazer você mesmo :).
+Você deve estar pronto para mintar um NFT direto do seu site agora. **Isso é épico!!** Isso é basicamente como todos esses sites de mintar NFT funcionam, e você acabou de fazer você mesmo :).
 
 Eu testei todo o código no vídeo ABI que linkei acima. Tenha certeza de assisti-lo. Eu passo por coisas super importantes sobre o que fazer quando você **muda** o contrato. Porque o seu contrato é permanente, mudanças requerem fazer outro deploy, atualizar o endereço no frontend, e finalmente atualizar o arquivo ABI no frontend
 
@@ -137,4 +137,4 @@ Digamos que você quer mudar seu contrato. Você precisa de 3 coisas:
 
 **As pessoas esquecem constantemente de fazer esses 3 passos quando mudam o contrato. Não esqueçam.**
 
-Por que precisamos fazer tudo isso? Bom, é porque contratos inteligentes são  **imutáveis**. Eles não podem mudar. São permanentes. Isso significa que mudar um contrato requer fazer o deploy inteiro de novo. Isso também vai **resetar** todas as variáveis visto que será tratado como um contrato novo. **Isso significa que perderíamos os dados das NFTs se quiséssemos atualizar o código do contrato.**
+Por que precisamos fazer tudo isso? Bom, é porque contratos inteligentes são  **imutáveis**. Eles não podem mudar. São permanentes. Isso significa que mudar um contrato requer fazer o deploy inteiro de novo. Isso também vai **resetar** todas as variáveis visto que será tratado como um contrato novo. **Isso significa que perderíamos os dados dos NFTs se quiséssemos atualizar o código do contrato.**

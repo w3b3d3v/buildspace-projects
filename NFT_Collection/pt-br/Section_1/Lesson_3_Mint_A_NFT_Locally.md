@@ -119,11 +119,7 @@ const nftContract = await nftContractFactory.deploy();
 
 Isso é bem chique :).
 
-<<<<<<< HEAD
-O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for completo, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
-=======
 O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for terminado, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez, de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
->>>>>>> 72f0a73 (Correct typos and suggest corrections)
 
 ```javascript
 await nftContract.deployed();

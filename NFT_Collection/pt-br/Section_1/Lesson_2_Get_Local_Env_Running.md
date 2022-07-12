@@ -8,7 +8,7 @@ Por enquanto, tudo o que você precisa saber é que um contrato inteligente é u
 
 O quadro maior aqui é:
 
-1 -- Nós vamos escrever um contrato inteligente. Esse contrato tem toda a lógica ao redor das nossas NFTs.
+1 -- Nós vamos escrever um contrato inteligente. Esse contrato tem toda a lógica ao redor dos nossos NFTs.
 
 2 -- Nosso contrato inteligente será implantado na blockchain. Dessa maneira, qualquer pessoa no mundo terá acesso e poderá usar nosso contrato inteligente - e vamos deixar eles "mintarem" NFTs!
 
@@ -18,11 +18,7 @@ Eu também recomendo ler [esses](https://ethereum.org/en/developers/docs/intro-t
 
 ## ⚙️ Ferramentas para o ambiente local.
 
-<<<<<<< HEAD
-Nós vamos usar muito uma ferramente chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html).
-=======
 Nós vamos usar muito uma ferramenta chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html). Se estiver usando Windows, pode também usar [essa página](https://www.web3dev.com.br/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3)
->>>>>>> 92922b3 (Correct typos and suggest corrections)
 
 _Nota: eu estou usando o Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas do Node, então se isso acontecer, use o Node 16!_
 
@@ -74,11 +70,7 @@ Você deve ver algo parecido com isso:
 
 ![Untitled](https://i.imgur.com/LIYT9tf.png)
 
-<<<<<<< HEAD
-Boom! Se você ver isso, significa que seu ambiente local está configurado **e** você também rodou/implantou uma contrato inteligente para uma blockchain local.
-=======
-Boom! Se você estiver vendo isso, significa que seu ambiente local está configurado **e** você também rodou/implantou um contrato inteligente para uma blockchain local.
->>>>>>> 92922b3 (Correct typos and suggest corrections)
+Boom! Se você ver isso, significa que seu ambiente local está configurado **e** você também rodou/implantou um contrato inteligente para uma blockchain local.
 
 Isso é bastante épico. Vamos entrar em mais detalhes, mas basicamente o que está acontecendo aqui passo a passo é:
 
