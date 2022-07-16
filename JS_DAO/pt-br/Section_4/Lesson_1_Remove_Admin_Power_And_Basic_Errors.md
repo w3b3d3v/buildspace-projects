@@ -1,6 +1,6 @@
 ### 😡 Revogue as funções.
 
-Se você se lembra, você na verdade ainda tem direitos de cunhagem no contrato ERC-20. Isso significa que você pode ir e criar mais tokens se você quiser, o que pode deixar os membros da sua DAO malucos rs. Você pode ir e cunhar tipo um bilhão de tokens para você lol.
+Se você se lembra, na verdade, você ainda tem direitos de cunhagem no contrato ERC-20. Isso significa que você pode ir e criar mais tokens se você quiser, o que pode deixar os membros da sua DAO malucos rs. Você pode ir e cunhar tipo um bilhão de tokens para você lol.
 
 É melhor você revogar sua função de cunhagem completamente.
 
@@ -15,7 +15,7 @@ const tokenModule = sdk.getTokenModule(
 
 (async () => {
   try {
-    // Mostre as funçÕes atuais.
+    // Mostre as funções atuais.
     console.log(
       "👀 Roles that exist right now:",
       await tokenModule.getAllRoleMembers()
@@ -89,9 +89,9 @@ Bem simples! Mas bem útil. Uma mensagem vai ser mostrada se o usuário não est
 
 ### 🤑 Veja o seu token na Uniswap.
 
-Você pode estar se perguntando como tokens como [ENS DAO](https://coinmarketcap.com/currencies/ethereum-name-service/) ou o mais recente [Constitution DAO](https://coinmarketcap.com/currencies/constitutiondao/) tem tokens de governança que valem dinheiro de verdade. Bem, Basicamente, é porque outras pessoas podem de fato comprar seus tokens de governança diretamente em exchanges decentralizadas como Uniswap.
+Você pode estar se perguntando como tokens [ENS DAO](https://coinmarketcap.com/currencies/ethereum-name-service/) ou o mais recente [Constitution DAO](https://coinmarketcap.com/currencies/constitutiondao/) tem tokens de governança que valem dinheiro de verdade. Bem, basicamente, é porque outras pessoas podem de fato comprar seus tokens de governança diretamente em exchanges decentralizadas como Uniswap.
 
-Por exemplo — talvez uma pessoa aleatória acorde e diga, “Ei, eu te dou $100 por 100 $HOKAGE por que eu quero me juntar à NarutoDAO e ter algum poder de governança”. Bem, isso significa que $HOKAGE tem valor real agora. Isso significa que 1 $HOKAGE = 1 Us Dollar. E uma vez que existem 1.000.000 $HOKAGE, isso significa que o valor de mercado totalmente diluído do meu token valeria $1.000.000.
+Por exemplo — talvez uma pessoa aleatória acorde e diga, “Ei, eu te dou $100 por 100 $HOKAGE porque eu quero me juntar à NarutoDAO e ter algum poder de governança”. Bem, isso significa que $HOKAGE tem valor real agora. Isso significa que 1 $HOKAGE = 1 Us Dollar. E uma vez que existem 1.000.000 $HOKAGE, isso significa que o valor de mercado totalmente diluído do meu token valeria $1.000.000.
 
 Bem louco, certo :)?
 
@@ -103,18 +103,18 @@ Aqui está um vídeo rápido para você fazer você mesmo:
 
 [REVIEW](https://www.loom.com/share/8c235f0c5d974c978e5dbd564bbca59d)
 
-Você pode ler mais sobre liquidity pools [aqui](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools). Você vai notar no vídeo que não existia uma para $HOKAGE. Mas, tecnicamente qualquer pessoa poderia vir e criar uma pool que permite pessoas trocarem $ETH por $HOKAGE. Essa pool poderia ter $100. Ou, poderia ter $1.000.000.000. Depende de quão popular meu token é!
+Você pode ler mais sobre liquidity pools [aqui](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools). Você vai notar no vídeo que não existia uma para $HOKAGE. Mas, tecnicamente, qualquer pessoa poderia vir e criar uma pool que permite pessoas trocarem $ETH por $HOKAGE. Essa pool poderia ter $100. Ou, poderia ter $1.000.000.000. Depende de quão popular meu token é!
 
 ### 🎨 Personalize um pouco seu web app!
 
-Tire algum tempo para personalizar seu web app um pouco. Mude algumas cores. Mude os textos. Adicione alguns emojis legais. Vá para `public/index.html` e mude coisas como o título e a descrição!
+Tire algum tempo para personalizar um pouco seu web app. Mude algumas cores. Mude os textos. Adicione alguns emojis legais. Vá para `public/index.html` e mude coisas como o título e a descrição!
 
 Ideia aleatória: quando as pessoas estão votando, toque o hino do país ou algo do tipo lolol.
 
-Tire algum tempo aqui antes de seguir em frente para fazer essas páginas suas. Mesmo que tudo que você faça seja mudar a cor do background está tudo bem. Se divirta com isso.
+Tire algum tempo aqui, antes de seguir em frente, para fazer essas páginas suas. Mesmo que tudo que você faça seja mudar a cor do background, está tudo bem. Se divirta com isso.
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou Yan vai ficar triste :(.*
+*Por favor, faça isso ou Yan vai ficar triste :(.*
 
 Vá em frente e poste uma captura de tela em `#progresso` do seu DAO dashboard depois de algumas customizações!

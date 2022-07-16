@@ -1,4 +1,4 @@
-Um token de governança é legal e tal, mas é meio inútil se as pessoas não puderem usar para goevrnar alguma coisa! O que nós vamos fazer aqui é configurar um contrato de governança que permite pessoas votarem em propostas usando seus tokens.
+Um token de governança é legal e tal, mas é meio inútil se as pessoas não puderem usar para governar alguma coisa! O que nós vamos fazer aqui é configurar um contrato de governança que permite pessoas votarem em propostas usando seus tokens.
 
 ### 📝 Faça deploy de um contrato de governança.
 
@@ -65,11 +65,11 @@ Perceba como nós damos um `votingTokenAddress`. Isso é o nosso contrato que s
 
 Nós temos `proposalStartWaitTimeInSeconds`, que pode ser útil se você quer dar para as pessoas algum tempo para entender a proposta antes deles poderem votar nela. Similarmente, nós temos `proposalVotingTimeInSeconds` que especifica quanto tempo alguém tem para votar uma vez que a proposta está online.
 
-`votingQuorumFraction` é realmente interessante. Vamos dizer que um membro cria uma proposta e os outros **199** membros da DAO estão de férias na Disney World e não estão online. Bem, nesse caso, se um membro da DAO cria a proposta e vota "SIM" na sua própria proposta — isso signifca que 100% dos votos foram "SIM" (dado que só foi feito um voto) e a proposta **seria aprovada quando** `proposalVotingTimeInSeconds` terminasse! Para evitar isso, nós usamos um quorum que diz “Para uma proposta passar, um x mínimo da porcentagem dos tokens deve ser usado nos votos”.
+`votingQuorumFraction` é realmente interessante. Vamos dizer que um membro cria uma proposta e os outros **199** membros da DAO estão de férias na Disney World e não estão online. Bem, nesse caso, se um membro da DAO cria a proposta e vota "SIM" na sua própria proposta — isso significa que 100% dos votos foram "SIM" (dado que só foi feito um voto) e a proposta **seria aprovada quando** `proposalVotingTimeInSeconds` terminasse! Para evitar isso, nós usamos um quorum que diz “Para uma proposta passar, um x mínimo da porcentagem dos tokens deve ser usado nos votos”.
 
-Por exemplo, vamos fazer `votingQuorumFraction: 0` o que significa que a proposta vai passar independentemente de qual % dos tokens foi usado nos votos. Isso significa que uma pessoa poderia tecnicamente passar uma proposta sozinho se todos os outros membros estivessem de férias lol. Por enquanto está tudo bem. O quorum que você configurar no mundo real depende do seu fornecimento e de quanto você fez de airdrop no início.
+Por exemplo, vamos fazer `votingQuorumFraction: 0` o que significa que a proposta vai passar independentemente de qual % dos tokens foi usado nos votos. Isso significa que uma pessoa poderia tecnicamente passar uma proposta sozinho se todos os outros membros estivessem de férias lol. Por enquanto, está tudo bem. O quorum que você configurar no mundo real depende do seu fornecimento e de quanto você fez de airdrop no início.
 
-Finalmente, nós temos `minimumNumberOfTokensNeededToPropose: "0"` que permite qualquer pessoa criar uma propsta mesmo se ela tiver zero tokens de governança. Depende de você se você quer deixar isso assim! Vamos deixar em zero por agora.
+Finalmente, nós temos `minimumNumberOfTokensNeededToPropose: "0"` que permite qualquer pessoa criar uma proposta mesmo se ela tiver zero tokens de governança. Depende de você se você quer deixar isso assim! Vamos deixar em zero por agora.
 
 Vá em frente e rode isso usando `node scripts/8-deploy-vote.js`. Aqui está o que eu recebo:
 
@@ -92,11 +92,11 @@ Agora nós temos o contrato de governança e podemos votar em coisas. Perfeito. 
 
 **O contrato de votação sozinho não tem a habilidade de mover tokens de um lugar pro outro.** Por exemplo, vamos dizer que você queira criar a seguinte proposta agora “Mandar 1000 $HOKAGE para NarutoLover67 por ser um membro impressionante”. Isso na verdade não iria funcionar. *O contrato de votação não tem acesso aos tokens agora.*
 
-Por que? **Porque você criou o fornecimento dos tokens. Sua carteira tem o acesso ao fornecimento inteiro. Então apenas você tem o poder de acesso aos fornecimento, mover tokens de um lado para o outro, fazer airdrops etc.** Basicamente, isso é uma ditadura haha. Aqui está o que vamos fazer — nós vamos transferir 90% de todos os nossos tokens para o contrato de votação. Uma vez que nosso token é movido para o contrato, ele tem acesso ao fornecimento de tokens.
+Por que? **Porque você criou o fornecimento dos tokens. Sua carteira tem o acesso ao fornecimento inteiro. Então apenas você tem o poder de acesso ao fornecimento, mover tokens de um lado para o outro, fazer airdrops etc.** Basicamente, isso é uma ditadura haha. Aqui está o que vamos fazer — nós vamos transferir 90% de todos os nossos tokens para o contrato de votação. Uma vez que nosso token é movido para o contrato, ele tem acesso ao fornecimento de tokens.
 
 **Isso vai essencialmente se tornar nossa “Tesouraria Comunitária”.**
 
-Aqui eu escolhi apenas 90% como um # aleatório. Na prática, depende. Por exemplo, aqui está como o ENS distruibiu seus tokens:
+Aqui eu escolhi apenas 90% como um # aleatório. Na prática, depende. Por exemplo, aqui está como o ENS distribuiu seus tokens:
 
 ![](https://i.imgur.com/9rhwrzV.png)
 
@@ -135,7 +135,7 @@ const tokenModule = sdk.getTokenModule(
   }
 
   try {
-    //Pegue o saldo de tokens da nossa carteira, lembre-se -- nós detemos basicamente o fornecimento inteiro agora!
+    //Pegue o saldo de tokens da nossa carteira, lembre-se — nós detemos basicamente o fornecimento inteiro agora!
     const ownedTokenBalance = await tokenModule.balanceOf(
       process.env.WALLET_ADDRESS
     );
@@ -161,7 +161,7 @@ const tokenModule = sdk.getTokenModule(
 Um contrato bem simples aqui! Nós fazemos duas coisas:
 
 1. Nós pegamos o # total de tokens que temos na nossa carteira usando `tokenModule.balanceOf`. Lembre-se, nesse momento nossa carteira tem basicamente o fornecimento inteiro além dos tokens que fizemos airdrop.
-2. Nós pegamos o fornecimento total que temos, pegamos 90% disso, e transferimos esses 90% para o módulo de votação usando `tokenModule.transfer`. Você pode transferir 100% se você quiser! Mas, talvez você queira manter alguns tokens para você como o criador!
+2. Nós pegamos o fornecimento total que temos, pegamos 90% disso, e transferimos esses 90% para o módulo de votação usando `tokenModule.transfer`. Você pode transferir 100% se você quiser! Mas, talvez, você queira manter alguns tokens para você como o criador!
 
 Uma vez que você terminar, nós podemos rodar isso usando `node scripts/9-setup-vote.js`. Aqui está o que eu recebo na minha saída:
 
@@ -183,6 +183,6 @@ Isso meio que explodiu minha mente quando eu vi pela primeira vez. *Nós literal
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(.*
+*Por favor, faça isso ou danicuki vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela do Etherscan em `#progresso` do seu fornecimento de tokens no seu contrato de votação. Vamos ver sua tesouraria épica!

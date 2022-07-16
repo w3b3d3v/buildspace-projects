@@ -31,7 +31,7 @@ const bundleDrop = sdk.getBundleDropModule(
 Bem direto!
 
 A primeira coisa que estamos fazendo é acessar nosso módulo `BundleDrop`, que é o nosso contrato ERC-1155. Em `INSIRA_O_ENDEREÇO_DO_DROP_MODULE` colocamos o endereço que foi impresso no passo anterior. É o endereço impresso logo depois de `Successfully deployed bundleDrop module, address`.
-Você também pode achar esse endereço no seu dashboard no thirdweb. O seu dashboard thirdweb vai mostrar o projeto que você está trabalhando no momento e também o endereço do módulo para que você copie e cole facilmente 
+Você também pode achar esse endereço no seu dashboard no thirdweb. O seu dashboard thirdweb vai mostrar o projeto que você está trabalhando no momento e também o endereço do módulo para que você copie e cole facilmente. 
 
 ![image](https://user-images.githubusercontent.com/73496577/147307704-386a1676-1caa-46d6-890a-78a4d146a6c1.png)
 
@@ -67,7 +67,7 @@ Aqui está o que eu recebo:
 
 ### 😼 Configurando a condição de reivindicação.
 
-Agora precisamos configurar nossas condições de reivindicação. Qual o # máximo de NFTs que podem ser cunhados? Quando os usuários podem começar a cunhar os NFTs? Novamente, normalmente isto é lógica que você teria que escrever no seu contrato mas nesse caso o thirdweb faz isso ficar fácil. Nós podemos simplesmente usar a função `newClaimPhase` deles e especificar alguns parâmetros.
+Agora precisamos configurar nossas condições de reivindicação. Qual o # máximo de NFTs que podem ser cunhados? Quando os usuários podem começar a cunhar os NFTs? Novamente, normalmente isto é lógica que você teria que escrever no seu contrato, mas nesse caso o thirdweb faz isso ficar fácil. Nós podemos simplesmente usar a função `newClaimPhase` deles e especificar alguns parâmetros.
 
 Vá para `scripts/4-set-claim-condition.js` e adicione:
 
@@ -101,7 +101,7 @@ A mesma coisa que antes aqui, certifique-se de substituir `INSIRA_O_ENDEREÇO_DO
 
 `startTime` é o momento em que os usuários vão poder começar a cunhar os NFTs e nesse caso nós configuramos essa data para a hora atual, o que significa que usuários podem começar a cunhar imediatamente.
 
-`maxQuantity` é o # máximo do nosso NFT de filiação que pode ser cunhado. `maxQuantityPerTransaction` especifica quantos tokens alguém pode reivindicar numa única transação, nós colocamos apenas um porque queremos que os usuários cunhem um NFT por vez! Em alguns casos você vai querer cunhar vários NFTs para o seu usuário de uma vez (ex. quando ele abrir uma caixa de recompensas com múltiplos NFTs) mas nesse caso só queremos um.
+`maxQuantity` é o # máximo do nosso NFT de filiação que pode ser cunhado. `maxQuantityPerTransaction` especifica quantos tokens alguém pode reivindicar numa única transação, nós colocamos apenas um porque queremos que os usuários cunhem um NFT por vez! Em alguns casos você vai querer cunhar vários NFTs para o seu usuário de uma vez (por exemplo, quando ele abrir uma caixa de recompensas com múltiplos NFTs), mas nesse caso só queremos um.
 
 Finalmente, nós fazemos `bundleDrop.setClaimCondition(0, claimConditionFactory)` e isso vai na verdade **interagir com o nosso contrato que está on-chain** e ajustar as condições, muito massa! Por que passamos um `0`? Bem, basicamente nosso NFT de filiação tem um `tokenId` de `0` visto que é o primeiro token no nosso contrato ERC-1155. Lembre-se — com o ERC-1155 nós podemos ter várias pessoas cunhando o mesmo NFT. Nesse caso, todo mundo cunha um NFT com o id `0`. Mas poderíamos ter um NFT diferente com o id `1`, talvez poderíamos dar esse NFT para os membros da DAO que estão se destacando! Tudo depende da gente.
 
@@ -118,6 +118,6 @@ Boom! Nós interagimos com o nosso smart contract com sucesso e demos ao nosso N
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou o danicuki vai ficar triste :(.*
+*Por favor, faça isso ou o danicuki vai ficar triste :(.*
 
-Ei! Vá em frente e compartilhe o NFT de filiação que você escolheu em `#progresso` e diga para nós por que você escolheu esse NFT épico para sua DAO
+Ei! Vá em frente e compartilhe o NFT de filiação que você escolheu em `#progresso` e diga para nós porque você escolheu esse NFT épico para sua DAO.

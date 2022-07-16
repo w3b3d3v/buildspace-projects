@@ -1,12 +1,12 @@
 ### 🍪 Se familiarizando com o thirdweb.
 
-Impressionante! Agora podemos nos conectar a carteria de um usuário, o que significa que podemos checar se ele está na nossa DAO! Para poder se juntar a nossa DAO, o usuário precisa de um NFT de filiação. Se ele não tiver um NFT de filiação, nós vamos incentivá-lo a cunhar um para se juntar à nossa DAO!
+Impressionante! Agora podemos nos conectar a carteira de um usuário, o que significa que podemos checar se ele está na nossa DAO! Para poder se juntar a nossa DAO, o usuário precisa de um NFT de filiação. Se ele não tiver um NFT de filiação, nós vamos incentivá-lo a cunhar um para se juntar à nossa DAO!
 
-Mas existe um problema. Para que possamos cunhar NFTs, precisamos escrever + dar deploy no nosso próprio smart contract. **É aqui em que Thirdweb brilha.**
+Mas existe um problema. Para que possamos cunhar NFTs, precisamos escrever + dar deploy no nosso próprio smart contract. **É aqui em que thirdweb brilha.**
 
-O que o Thirdweb nos dá, é um conjunto de ferramentas para criar todos os nossos smart contrats sem escrever nada de Solidity.
+O que o thirdweb nos dá, é um conjunto de ferramentas para criar todos os nossos smart contracts sem escrever nada de Solidity.
 
-Nós não escrevemos nada em Solidity. Tudo o que precisamos fazer é escrever um script usando apenas Javascript para criar + dar deploy nos nossos contratos. O thridweb vai usar um conjunto de contratos seguros que eles criaram [aqui](https://github.com/nftlabs/nftlabs-protocols). **A parte boa é que depois de você criar os contratos, você é o dono deles e os contratos ficam associados com a sua carteira.**
+Nós não escrevemos nada em Solidity. Tudo o que precisamos fazer é escrever um script usando apenas JavaScript para criar + dar deploy nos nossos contratos. O thirdweb vai usar um conjunto de contratos seguros que eles criaram [aqui](https://github.com/nftlabs/nftlabs-protocols). **A parte boa é que depois de você criar os contratos, você é o dono deles e os contratos ficam associados com a sua carteira.**
 
 Uma vez que você dá deploy no contrato, você pode interagir com ele diretamente do frontend facilmente usando o SDK para o cliente deles.
 
@@ -14,9 +14,9 @@ Eu não posso ser mais claro sobre como é fácil de criar um smart contract usa
 
 Vá para o dashboard do thirdweb [aqui](https://thirdweb.com/start?utm_source=web3dev). Clique em "**Let's get started**". Conecte sua carteira. Selecione sua rede (**Rinkeby**).
 
-Crie o seu primeiro projeto e dê um nome como "My DAO" ou algo do tipo. Quando você clicar em "Criar" você vai ver que um pop-up da Metamask é aberto e você tem que pagar uma taxa de transação na rede Rinkeby. Por que?
+Crie o seu primeiro projeto e dê um nome como "My DAO" ou algo do tipo. Quando você clicar em "Criar" você vai ver que um pop-up da MetaMask é aberto e você tem que pagar uma taxa de transação na rede Rinkeby. Por que?
 
-Essa ação cria o container para os contratos que vamos dar deploy, on-chain. **o thirdweb não tem uma base de dados, todos os seus dados são armazenados on-chain.** 
+Essa ação cria o container para os contratos que vamos dar deploy, on-chain. **O thirdweb não tem uma base de dados, todos os seus dados são armazenados on-chain.** 
 
 ### 📝 Crie um lugar para rodar os scripts do thirdweb.
 
@@ -28,13 +28,13 @@ WALLET_ADDRESS=ENDEREÇO_DA_SUA_CARTEIRA
 ALCHEMY_API_URL=SUA_URL_DE_API_ALCHEMY
 ```
 
-*Nota: está no Replit? Você vai precisar usar [isto](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables). Basicamente arquivos .env não funcionam no Replit. Você precisa usar esse método para adicionar suas variáveis uma por uma com os mesmos nomes. Quando você terminar você precisará reiniciar o Replit parando e rodando o repositóro de novo, para que ele possa ter acesso as novas variáveis de ambiente!*
+*Nota: está no Replit? Você vai precisar usar [isto](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables). Basicamente arquivos .env não funcionam no Replit. Você precisa usar esse método para adicionar suas variáveis uma por uma com os mesmos nomes. Quando você terminar você precisará reiniciar o Replit parando e rodando o repositório de novo, para que ele possa ter acesso as novas variáveis de ambiente!*
 
-O thirdweb precisa dessas variáveis para fazer o deploy desses contratos em nosso favor. Nada é guardado do lado delees, tudo fica localmente no seu arquivo `.env`. **Não faça commit do seu arquivo `env` para o Github. Você será roubado. Tenha cuidado.**
+O thirdweb precisa dessas variáveis para fazer o deploy desses contratos em nosso favor. Nada é guardado do lado deles, tudo fica localmente no seu arquivo `.env`. **Não faça commit do seu arquivo `.env` para o GitHub. Você será roubado. Tenha cuidado.**
 
-Para acessar sua chave privada na Metamask, veja [isto aqui](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
+Para acessar sua chave privada na MetaMask, veja [isto aqui](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
 
-Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zendesk.com/hc/en-us/articles/360015289512-How-to-copy-your-MetaMask-account-public-address-).
+Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zendesk.com/hc/en-us/articles/360015289512-How-to-copy-your-MetaMask-account-public-address).
 
 E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://www.web3dev.com.br/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
 
@@ -42,7 +42,7 @@ E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves p
 
 A última coisa que você precisa no seu arquivo `.env` é a `ALCHEMY_API_URL`.
 
-Alchemy essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos miners na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir dai, todo mundo atualiza a sua cópia da blockchain.
+Alchemy essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos mineradores na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir daí, todo mundo atualiza a sua cópia da blockchain.
 
 Então, [faça uma conta na Alchemy](https://alchemy.com/?r=jQ3MDMxMzUyMDU3N).
 
@@ -79,7 +79,7 @@ if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "") {
 
 const sdk = new ThirdwebSDK(
   new ethers.Wallet(
-    // A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
+    // A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o GitHub!
     process.env.PRIVATE_KEY,
     // RPC URL, nós usaremos nossa URL da API do Alchemy do nosso arquivo .env.
     ethers.getDefaultProvider(process.env.ALCHEMY_API_URL),
@@ -96,11 +96,11 @@ const sdk = new ThirdwebSDK(
   }
 })()
 
-// Nós estamos exportando o SDK thirdweb inicializado para que possamos usar em outros scprits do projeto
+// Nós estamos exportando o SDK thirdweb inicializado para que possamos usar em outros scripts do projeto
 export default sdk;
 ```
 
-Parece ser muita coisa, mas tudo o que estamos fazendo é inicializar o thirdweb e então adicionar um `export default sdk` dado que vamos reusar o sdk inicializado em outros scripts. É quase como inicializar uma conexão com uma base de dados a partir de um servidor. Nós damos coisas como nossa chave privada e o nosso provedor (Que no caso é o Alchemy).
+Parece ser muita coisa, mas tudo o que estamos fazendo é inicializar o thirdweb e então adicionar um `export default sdk` dado que vamos reusar o sdk inicializado em outros scripts. É quase como inicializar uma conexão com uma base de dados a partir de um servidor. Nós damos coisas como nossa chave privada e o nosso provedor (que no caso é o Alchemy).
 
 Nós também estamos rodando isto:
 
@@ -124,7 +124,7 @@ Antes de executar a função, certifique-se de que você tem o Node 12+ instalad
 node -v
 ```
 
-*Nota: se você está no Replit você pode rodar scprits pelo shell que é dado*
+*Nota: se você está no Replit, você pode rodar scripts pelo shell que é dado*
 
 Se você tem uma versão antiga do Node, você pode atualizá-lo [aqui](https://nodejs.org/en/). (Baixe a versão LTS) Vamos executar! Vá para o seu terminal e cole o seguinte comando;
 
@@ -147,7 +147,7 @@ Certifique-se de copiar o endereço do seu app! Você vai precisar dele em um se
 
 ### 🧨 Crie uma coleção ERC-1155.
 
-O que nós vamos fazer agora é criar + fazer deploy de um contrato ERC-1155 para a Rinkeby. Isso é basicamente o módulo base que nós vamos precisar para criar nossos NFTs. **Nós não estamos criando nossos NFT aqui ainda, nós estamos apenas configurado os metadados ao redor da coleção em si.** Coisas como o nome da coleção (ex. CryptoPunks) e uma imagem associada com a coleção que aparece no cabeçalho do OpenSea.
+O que nós vamos fazer agora é criar + fazer deploy de um contrato ERC-1155 para a Rinkeby. Isso é basicamente o módulo base que nós vamos precisar para criar nossos NFTs. **Nós não estamos criando nossos NFT aqui ainda, nós estamos apenas configurado os metadados ao redor da coleção em si.** Coisas como o nome da coleção (por exemplo, CryptoPunks) e uma imagem associada com a coleção que aparece no cabeçalho do OpenSea.
 
 *Nota: Você deve conhecer ERC-721 onde todo NFT é único, mesmo se eles tiverem a mesma imagem, nome e propriedades. Com um ERC-1155, múltiplas pessoas podem ser holders do mesmo NFT. Nesse caso, nosso NFT de filiação é o mesmo para todo mundo, então ao invés de fazer um novo NFT todas as vezes, nós podemos simplesmente atribuir o mesmo NFT para todos os nossos membros. Isso também é mais eficiente em relação a taxas! Essa é uma abordagem bem comum para casos em que o NFT é o mesmo para todos os holders.*
 
@@ -191,11 +191,11 @@ const app = sdk.getAppModule("INSIRA_SEU_ENDEREÇO_AQUI");
 
 *Nota: certifique-se de mudar `INSIRA_SEU_ENDEREÇO_AQUI` para o endereço impresso por `1-initialize-sdk.js`.*
 
-Um scprit bem simples!
+Um script bem simples!
 
-Nós damos para nossa coleção um `name`,  `description` e `primarySaleRecipientAddress`, e `image`. A `image` nós estamos carregando nosso arquivo local então certifique-se de incluir sua imagem dentro de `scripts/assets`. Certifique-se de que é um PNG, JPG, ou GIF e que seja um arquivo local por agora - isso não vai funcionar se você usar uma link da internet!
+Nós damos para nossa coleção um `name`,  `description` e `primarySaleRecipientAddress`, e `image`. A `image` nós estamos carregando nosso arquivo local, então certifique-se de incluir sua imagem dentro de `scripts/assets`. Certifique-se de que é um PNG, JPG, ou GIF e que seja um arquivo local por agora - isso não vai funcionar se você usar um link da internet!
 
-Quando eu rodo isso usando `node scripts/2-deploy-drop.js`, eu recebo.
+Quando eu rodo isso usando `node scripts/2-deploy-drop.js`, recebo:
 
 ```plaintext
 web3dev-dao-starter % node scripts/2-deploy-drop.js
@@ -222,11 +222,11 @@ Okay, o que acabou de acontecer é muito épico. Duas coisas aconteceram:
 
 ![Untitled](https://i.imgur.com/suqHbB4.png)
 
-Bem Épico. Um contrato customizado e lançado usando apenas javascript. Você pode ver o código do smart contract que o thridweb usa [aqui](https://github.com/nftlabs/nftlabs-protocols/blob/main/contracts/LazyNFT.sol).
+Bem épico! Um contrato customizado e lançado usando apenas JavaScript. Você pode ver o código do smart contract que o thirdweb usa [aqui](https://github.com/nftlabs/nftlabs-protocols/blob/main/contracts/LazyNFT.sol).
 
-**A outra coisa que nós fizemos aqui foi usar o thirdweb para automaticamento fazer o upload e fixar a imagem da nossa coleção no IPFS.** Você vai ver um link que inicia com `https://cloudflare-ipfs.com` impresso. Se você copiar esse link no navegador, você vai ver a imagem do seu NFT sendo recuperada do IFPS via CloudFare!
+**A outra coisa que nós fizemos aqui foi usar o thirdweb para automaticamente fazer o upload e fixar a imagem da nossa coleção no IPFS.** Você vai ver um link que inicia com `https://cloudflare-ipfs.com` impresso. Se você copiar esse link e colar no navegador, você vai ver a imagem do seu NFT sendo recuperada do IPFS via Cloudflare!
 
-Você pode até ir para o IFPS diretamente usando a URI `ipfs://` (nota - não vai funcionar no Chrome porque você precisa está rodando um nó IPFS, mas funciona no Brave que faz isso por você!)
+Você pode até ir para o IPFS diretamente usando a URI `ipfs://` (nota - não vai funcionar no Chrome porque você precisa está rodando um nó IPFS, mas funciona no Brave que faz isso por você!)
 
 *Nota: IPFS é basicamente um sistema de armazenamento descentralizado, leia mais [aqui](https://docs.ipfs.io/concepts/what-is-ipfs/)! (em inglês)*
 
@@ -234,6 +234,6 @@ Se você desenvolveu um smart contract personalizado em Solidity antes, isso é 
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou Yan vai ficar triste :(.*
+*Por favor, faça isso ou Yan vai ficar triste :(.*
 
 Vá lá e compartilhe uma screenshot do Etherscan em `#progresso` mostrando o seu contrato lançado.

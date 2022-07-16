@@ -92,11 +92,11 @@ Talvez a tesouraria está na baixa e queremos mais tokens para premiar membros. 
 
 **2) Nós estamos criando uma proposta para transferir 6.900 tokens para a nossa carteira a partir da tesouraria.** Você pode ver que nós fazemos uma `"transfer"` no código.
 
-Talvez tenhamos feito algo legal e queremos ser recompensados por isso! No mundo real você criaria propostas para mandar tokens pra outras pessoas. Por exemplo, talvez alguém ajudou a codar um novo website para a DAO e quer ser recompensado por isso. Nós podemos mandar tokens para ele!
+Talvez tenhamos feito algo legal e queremos ser recompensados por isso! No mundo real, você criaria propostas para mandar tokens pra outras pessoas. Por exemplo, talvez alguém ajudou a codar um novo website para a DAO e quer ser recompensado por isso. Nós podemos mandar tokens para ele!
 
 A propósito, eu quero fazer um comentário sobre `nativeTokenValue`. Digamos que queremos que nossa proposta faça algo como, "Nós queremos recompensar NarutoFangir127 por nos ajudar com marketing com 2500 tokens de governança e 0.1 ETH". Isso é bem legal! Quer dizer que você pode recompensar pessoas com ETH e tokens de governança — o melhor dos dois mundos. *Nota: Esses 0.1 ETH tem que estar na sua tesouraria se quisermos enviá-lo!*
 
-Quando eu rodo `node scripts/10-create-vote-proposals.js` eu recebo:
+Quando eu rodo `node scripts/10-create-vote-proposals.js`, recebo:
 
 ```plaintext
 web3dev-dao-starter % node scripts/10-create-vote-proposals.js
@@ -120,7 +120,7 @@ const voteModule = sdk.getVoteModule(
 
 Nosso web app precisa acessar nosso `voteModule` para que usuários possam interagir com nosso contrato.
 
-A partir daqui, vamos adicionar o código abaixo em algum lugar em baixo das nossas outras variáveis de estado:
+A partir daqui, vamos adicionar o código abaixo em algum lugar embaixo das nossas outras variáveis de estado:
 
 ```jsx
 const [proposals, setProposals] = useState([]);
@@ -213,9 +213,9 @@ votos "para" a proposta > votos "contra" a proposta
 
 Então qualquer membro deve ser apto a executar a proposta através do nosso contrato de governança. Propostas não podem ser executadas automaticamente. Mas, uma vez que uma proposta passa, **qualquer membro** da DAO pode acionar a proposta aceita.
 
-Por exemplo. Digamos que nós estamos lidando com a proposta em que estamos cunhando 420.000 tokens adicionais. se `votos "para" a propsta > votos "contra" a proposta` — então qualquer pessoa pode acionar a proposta e nosso contrato irá cunhar os tokens. Bem louco, certo? Nós não precisamos confiar em ninguém além da blockchain.
+Por exemplo, digamos que nós estamos lidando com a proposta em que estamos cunhando 420.000 tokens adicionais. Se `votos "para" a proposta > votos "contra" a proposta` — então qualquer pessoa pode acionar a proposta e nosso contrato irá cunhar os tokens. Bem louco, certo? Nós não precisamos confiar em ninguém além da blockchain.
 
-Imagine estar num país corrupto, votando por algo, e então o seu governo mente para você e diz “Ei na verdade nós não conseguimos tokens suficientes rs” quando na verdade conseguiram sim. Ou imagine que eles falamm, “Okay, nós temos votos suficientes e nós vamos fazer isso nós prometemos” e nunca fazem!
+Imagine estar num país corrupto, votando por algo, e então o seu governo mente para você e diz “Ei na verdade nós não conseguimos tokens suficientes rs” quando na verdade conseguiram sim. Ou imagine que eles falam, “Okay, nós temos votos suficientes e nós vamos fazer isso, nós prometemos” e nunca fazem!
 
 Nesse caso, tudo está codificado e código não mente.
 
@@ -223,6 +223,6 @@ De qualquer forma, agora não é a hora de discutir como DAOs podem potencialmen
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou Yan vai ficar triste :(.*
+*Por favor, faça isso ou Yan vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela do seu DAO dashboard mostrando sua lista de membros + sistema de votação em `#progresso`!

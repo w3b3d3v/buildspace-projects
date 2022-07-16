@@ -1,6 +1,6 @@
 ### 🥺 Recuperando os Detentores do Token no Web App.
 
-Seria legal para todos os membros da sua DAO conseguir facilmente ver todas as pessoas da DAO que detêm tokens juntamente com quantos tokens eles detêm. Para fazer isso, vamos precisar chamar nosso smart contract pelo nosso cliente e recuperar os dados.
+Seria legal para todos os membros da sua DAO conseguir facilmente ver todas as pessoas da DAO que detêm tokens juntamente com quantos tokens elas detêm. Para fazer isso, vamos precisar chamar nosso smart contract pelo nosso cliente e recuperar os dados.
 
 Vamos fazer isso! Vá para `App.jsx`. No topo, importe Ethers:
 
@@ -41,9 +41,9 @@ useEffect(() => {
   // com o tokenId 0.
   bundleDropModule
     .getAllClaimerAddresses("0")
-    .then((addresess) => {
-      console.log("🚀 Members addresses", addresess)
-      setMemberAddresses(addresess);
+    .then((addresses) => {
+      console.log("🚀 Members addresses", addresses)
+      setMemberAddresses(addresses);
     })
     .catch((err) => {
       console.error("failed to get member list", err);
@@ -92,7 +92,7 @@ Parece muita coisa à primeira vista! Mas saiba que estamos fazendo três coisas
 
 3) Estamos combinando os dados dentro de `memberList` que é um um array que combina os endereço dos membros e os saldos. Sinta-se livre para checar o que `useMemo` faz [aqui](https://reactjs.org/docs/hooks-reference.html#usememo). É um jeito chique que o React usa para guardar uma variável calculada.
 
-Agora, você deve estar se perguntando, “Nós não podemos simplesmente fazer `getAllHolderBalances` para pegar todo mundo que tem nosso token?”. Bem, basicamente, alguém pode estar na sua DAO e ter zero tokens! *E está tudo bem.* Então ainda queremos que eles aparecam na lista.
+Agora, você deve estar se perguntando, “Nós não podemos simplesmente fazer `getAllHolderBalances` para pegar todo mundo que tem nosso token?”. Bem, basicamente, alguém pode estar na sua DAO e ter zero tokens! *E está tudo bem.* Então ainda queremos que eles apareçam na lista.
 
 No meu console, eu recebo algo tipo isso agora que eu estou recebendo com sucesso os dados dos meus dois contratos — o ERC-20 e o ERC-1155. Aí sim!! Sinta-se à vontade para bagunçar aqui e entender todos os dados.
 
@@ -150,6 +150,6 @@ Bem direto! Nós estamos apenas renderizando uma linda tabela que vai mostrar os
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou Yan vai ficar triste :(.*
+*Por favor, faça isso ou Yan vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela em `#progresso` do seu dashboard interno da DAO mostrando seus membros atuais + suas quantidades de token!

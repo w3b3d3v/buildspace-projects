@@ -2,7 +2,7 @@ Agora nossos membros tem um NFT para comprovar que são membros da nossa DAO. Pe
 
 Talvez você se lembre do airdrop do token de governança da ENS DAO [aqui](https://decrypt.co/85894/ethereum-name-service-market-cap-hits-1-billion-just-days-after-ens-airdrop). O que isso tudo significa? Por que um token de governança tem uma capitalização de mercado tem quase um bilhão de dólares [nesse momento](https://coinmarketcap.com/currencies/ethereum-name-service/)?
 
-Basicamente, um token de goverança permite que usuários votem nas propostas. Por exemplo, uma proposta poderia dizer algo tipo "Eu quero que a Naturo DAO envie 100,000 $HOKAGE para o endereço `0xf79a3bb8d5b93686c4068e2a97eaec5fe4843e7d` por ser um membro extraordinário". Então os membros poderiam votar.
+Basicamente, um token de governança permite que usuários votem nas propostas. Por exemplo, uma proposta poderia dizer algo tipo "Eu quero que a Naturo DAO envie 100,000 $HOKAGE para o endereço `0xf79a3bb8d5b93686c4068e2a97eaec5fe4843e7d` por ser um membro extraordinário". Então os membros poderiam votar.
 
 Usuários com mais tokens de governança são mais poderosos. Geralmente, tokens são dados para membros da comunidade que mais trouxeram valor.
 
@@ -28,7 +28,7 @@ const app = sdk.getAppModule("INSERIR_O_ENDEREÇO_DO_SEU_APP");
 
 (async () => {
   try {
-    // Faça o Deploy de um contracto ERC-20 padrão.
+    // Faça o Deploy de um contrato ERC-20 padrão.
     const tokenModule = await app.deployTokenModule({
       // Qual o nome do seu token? Ex. "Ethereum"
       name: "NarutoDAO Governance Token",
@@ -45,11 +45,11 @@ const app = sdk.getAppModule("INSERIR_O_ENDEREÇO_DO_SEU_APP");
 })();
 ```
 
-Bem facinho!! A propósito, você vai precisar `INSERIR_O_ENDEREÇO_DO_SEU_APP`. se você perdeu, sinta-se a vontade para rodar `./1-initialize-sdk.js` de novo.
+Bem facinho!! A propósito, você vai precisar `INSERIR_O_ENDEREÇO_DO_SEU_APP`. se você perdeu, sinta-se à vontade para rodar `./1-initialize-sdk.js` de novo.
 
 Nós chamamos o `deployTokenModule` que vai fazer o deploy de um contrato [ERC-20](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20) padrão para você, que é o padrão que todas as grandes moedas na Ethereum adotam. Tudo o que você precisa dar é o `name` e `symbol` do seu token! Se divirta com essa parte, não me copie é claro. Eu espero que você esteja construindo algo que **você** ache legal!
 
-Aqui eu dou o símbolo HOKAGE para o meu token. Se você não sabe o que é isso — veja [aqui](https://naruto.fandom.com/wiki/Hokage) lol. TLDR: se você é um Hokage você é um dos melhores ninjas de todos os tempos.
+Aqui eu dou o símbolo HOKAGE para o meu token. Se você não sabe o que é isso — veja [aqui](https://naruto.fandom.com/wiki/Hokage) lol. TLDR: se você é um Hokage, você é um dos melhores ninjas de todos os tempos.
 
 A propósito — você pode ver o contrato exato que o thirdweb usa [aqui](https://github.com/nftlabs/nftlabs-protocols/blob/main/contracts/Coin.sol).
 
@@ -65,13 +65,13 @@ Boom! O deploy do contrato do token foi feito. Se você for para [`https://rinke
 
 ![Untitled](https://i.imgur.com/4tHQ20A.png)
 
-Você pode até adicionar o seu token à Metamask como um token personalizado.
+Você pode até adicionar o seu token à MetaMask como um token personalizado.
 
 Cliquem em "Import Token":
 
 ![Untitled](https://i.imgur.com/Bf56dyv.png)
 
-Então cole o endereço do seu contrato ERC-20 e você vai ver que a Metamask magicamente pega o símbolo do seu token:
+Então cole o endereço do seu contrato ERC-20 e você vai ver que a MetaMask magicamente pega o símbolo do seu token:
 
 ![Untitled](https://i.imgur.com/bbg9nEz.png)
 
@@ -127,7 +127,7 @@ Novamente, você pode ir no dashboard do thirdweb e procurar o endereço se voc�
 
 Então, aqui nós estamos de fato cunhando o fornecimento do token e configurando o `amount` que queremos cunhar e configuramos o fornecimento máximo do token. Nós então fazemos `amountWith18Decimals` o que é bem importante. Basicamente, ele vai converter o número do nosso fornecimento do token para uma string com 18 casas decimais. Então, `1000000` se transforma em `"1000000.000000000000000000"` — 18 decimais são adicionados e o número vira uma string. Fazemos isso por dois motivos:
 
-1) Números em código não são muito preciso em termos de casas decimais e matemática. Aqui nós decidimos trabalhar com números como strings, não como números de fato, o que faz com que a precisão seja boa mas a matemática difícil. A biblioteca Ethers tem várias funcionalidades para interagir com esses números strings.
+1) Números em código não são muito preciso em termos de casas decimais e matemáticos. Aqui nós decidimos trabalhar com números como strings, não como números de fato, o que faz com que a precisão seja boa, mas a matemática difícil. A biblioteca Ethers tem várias funcionalidades para interagir com esses números strings.
 
 2) Por que usamos 18 números decimais? Bom, isso permite que o nosso token seja enviado muito precisamente pelos usuários. Por exemplo, e se eu quisesse mandar `0.00000001` do meu token para um amigo? Nesse caso eu poderia! Eu tenho 18 casas decimais de precisão. Basicamente — podemos mandar quantias muito pequenas de token sem nenhum problema.
 
@@ -145,7 +145,7 @@ Agora para a parte épica. Volte para o seu contrato ERC-20 na Etherscan. Você 
 
 Vá em frente e clique no rastreador e você vai ver toda a informação de fornecimento juntamente com coisas tipo: quem tem o seu token, quem está transferindo tokens, quantos tokens estão sendo transferidos. Você também verá que temos um "Total máximo de fornecimento".
 
-Muito legal. Nós fizemos tudo isso usando apenas algumas linhas de javascript. Isso é insano. Você pode literalmente fazer a próxima moeda meme nesse ponto se você quiser lol.
+Muito legal. Nós fizemos tudo isso usando apenas algumas linhas de JavaScript. Isso é insano. Você pode literalmente fazer a próxima moeda meme nesse ponto se você quiser lol.
 
 ![Untitled](https://i.imgur.com/vmeoTfU.png)
 
@@ -220,7 +220,7 @@ A partir daí, fazemos um loop através de todos os `walletAddresses` e escolhem
 
 Finalmente, rodamos `transferBatch` em todos os `airdropTargets`. E é isto! `transferBatch` vai automaticamente fazer um loop por todos os alvos e lhes mandar os tokens!
 
-quando eu rodo o script eu recebo:
+Quando eu rodo o script, recebo:
 
 ```plaintext
 web3dev-dao-starter % node scripts/7-airdrop-token.js
@@ -235,11 +235,11 @@ web3dev-dao-starter % node scripts/7-airdrop-token.js
 ✅ Successfully airdropped tokens to all the holders of the NFT!
 ```
 
-YOOOO. Você acabou de fazer um aidrop, isso aí!! No meu caso, você pode ver que eu tenho 6 membros únicos na minha DAO e todos eles receberam o airdrop. No seu caso, provavelmente vai ser só você por enquanto! Sinta-se à vontade para rodar esse script novamente quando novos membros se juntarem.
+YOOOO. Você acabou de fazer um airdrop, isso aí!! No meu caso, você pode ver que eu tenho 6 membros únicos na minha DAO e todos eles receberam o airdrop. No seu caso, provavelmente vai ser só você por enquanto! Sinta-se à vontade para rodar esse script novamente quando novos membros se juntarem.
 
-**No mundo real**, um airdrop geralmente acontece apenas uma vez. Mas nós estamos apenas aprendendo então está tudo bem. Além do mais, não existem regras de verdade nesse mundo lol. Se você quiser fazer 4 airdrops no dia faça!
+**No mundo real**, um airdrop geralmente acontece apenas uma vez. Mas nós estamos apenas aprendendo, então está tudo bem. Além do mais, não existem regras de verdade nesse mundo lol. Se você quiser fazer 4 airdrops no dia faça!
 
-Você poderia criar a sua própria fórmula como o ENS fez por exemplo:
+Você poderia criar a sua própria fórmula como o ENS fez. Por exemplo:
 
 ![Untitled](https://i.imgur.com/IqboZsX.png)
 
@@ -253,8 +253,8 @@ Okay, então agora se eu for ver meu contrato ERC-20 na Etherscan, eu posso ver 
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(.*
+*Por favor, faça isso ou danicuki vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela em `#progresso` do contrato do seu token na Etherscan que mostre o nome do token, fornecimento, etc!
 
-**A propósito, se você chegou até aqui e está se divertindo -- talvez você queira tweetar que está construindo sua própria DAO e marcar [@Web3dev_](https://twitter.com/Web3dev_) :)?**
+**A propósito, se você chegou até aqui e está se divertindo — talvez você queira tweetar que está construindo sua própria DAO e marcar [@Web3dev_](https://twitter.com/Web3dev_) :)?**
