@@ -9,23 +9,21 @@ Dessa maneira, apenas o contrato de votação é capaz de cunhar novos tokens. N
 ```jsx
 import sdk from "./1-initialize-sdk.js";
 
-const tokenModule = sdk.getTokenModule(
-  "INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE",
-);
+const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE");
 
 (async () => {
   try {
     // Mostre as funçÕes atuais.
     console.log(
       "👀 Roles that exist right now:",
-      await tokenModule.getAllRoleMembers()
+      await token.roles.getAll()
     );
 
     // Remova todos os superpoderes que sua carteira tinha sobre o contrato ERC-20.
-    await tokenModule.revokeAllRolesFromAddress(process.env.WALLET_ADDRESS);
+    await token.roles.setAll({ admin: [], minter: [] });
     console.log(
       "🎉 Roles after revoking ourselves",
-      await tokenModule.getAllRoleMembers()
+      await token.roles.getAll()
     );
     console.log("✅ Successfully revoked our superpowers from the ERC-20 contract");
 
@@ -57,22 +55,29 @@ web3dev-dao-starter % node scripts/11-revoke-roles.js
 ✅ Successfully revoked our superpowers from the ERC-20 contract
 ```
 
-No começo você pode ver que meu endereço `0xF79A3bb8` tinha vários privilégios sobre o ERC-20. Então, depois de rodar `tokenModule.revokeAllRolesFromAddress` você vai ver que a única pessoa que tem a função de cunhagem é o contrato de votação!
+No começo você pode ver que meu endereço `0xF79A3bb8` tinha vários privilégios sobre o ERC-20. Então, depois de rodar `token.roles.setAll({ admin: [], minter: [] })` você vai ver que a única pessoa que tem a função de cunhagem é o contrato de votação!
 
 Agora nós estamos livre de um possível "roubo" vindo de admins :).
 
 ### 👍 Lide com erro de network não suportada.
 
-Primeiramente, você precisa importar o tipo `UnsupportedChainIdError` no topo de `App.jsx` para poder reconhecer uma conexão de fora da rede Rinkeby. Adicione a linha abaixo dos seus outros imports.
+Primeiramente, você precisa importar mais um hook `useNetwork` no topo de `App.jsx` para poder reconhecer uma conexão de fora da rede Rinkeby. Adicione a linha abaixo dos seus outros imports Também importaremos `ChainId` para pegarmos o ID da rede Rinkeby.
 
 ```jsx
-import { UnsupportedChainIdError } from "@web3-react/core";
+import { useAddress, useMetamask, useEditionDrop, useToken, useVote, useNetwork } from '@thirdweb-dev/react';
+import { ChainId } from '@thirdweb-dev/sdk'
 ```
 
-Depois, adicione o trecho a seguir no seu arquivo `App.jsx` logo abaixo do último `useEffect`.
+Então declare nosso hook `useNetwork` abaixo do outro hook: `useAddress`
 
 ```jsx
-if (error instanceof UnsupportedChainIdError ) {
+const network = useNetwork();
+```
+
+Depois, adicione o trecho a seguir no seu arquivo `App.jsx` logo abaixo da função `mintNft`.
+
+```jsx
+if (address && (network?.[0].data.chain.id !== ChainId.Rinkeby)) {
   return (
     <div className="unsupported-network">
       <h2>Please connect to Rinkeby</h2>

@@ -7,12 +7,12 @@ import { ethers } from "ethers";
 import sdk from "./1-initialize-sdk.js";
 
 // Nosso contrato de votação.
-const voteModule = sdk.getVoteModule(
+const voteModule = sdk.getVote(
   "INSIRA_O_ENDEREÇO_DO_VOTE_MODULE",
 );
 
 // Nosso contrato ERC-20.
-const tokenModule = sdk.getTokenModule(
+const tokenModule = sdk.getToken(
   "INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE",
 );
 
@@ -21,31 +21,31 @@ const tokenModule = sdk.getTokenModule(
     const amount = 420_000;
     // Crie uma proposta para cunhar 420.000 novos tokens para a tesouraria.
     await voteModule.propose(
-      "Should the DAO mint an additional " + amount + " tokens into the treasury?",
+      "A DAO deveria mintar " + amount + " tokens a mais na tesouraria?",
       [
         {
           // Nosso nativeToken é ETH. nativeTokenValue é a quantidade de ETH que nós queremos 
           // mandar nessa proposta. Nesse caso, estamos mandando 0 ETH.
           // Nós estamos apenas cunhando novos tokens para a tesouraria. Então, deixe 0.
           nativeTokenValue: 0,
-          transactionData: tokenModule.contract.interface.encodeFunctionData(
+          transactionData: tokenModule.encoder.encode(
             // Estamos fazendo uma cunhagem! E, estamos cunhando no voteModule, que está
             // agindo como nossa tesouraria.
-            "mint",
+            "mintTo",
             [
-              voteModule.address,
+              voteModule.getAddress(),
               ethers.utils.parseUnits(amount.toString(), 18),
             ]
           ),
           // Nosso token module que de fato executa a cunhagem.
-          toAddress: tokenModule.address,
+          toAddress: tokenModule.getAddress(),
         },
       ]
     );
 
-    console.log("✅ Successfully created proposal to mint tokens");
+    console.log("✅ Proposta criada com sucesso para mintar tokens");
   } catch (error) {
-    console.error("failed to create first proposal", error);
+    console.error("A criação da proposta falhou", error);
     process.exit(1);
   }
 
@@ -53,14 +53,14 @@ const tokenModule = sdk.getTokenModule(
     const amount = 6_900;
     // Crie uma proposta para transferir para nós mesmos 6,900 tokens por sermos irados.
     await voteModule.propose(
-      "Should the DAO transfer " +
-      amount + " tokens from the treasury to " +
-      process.env.WALLET_ADDRESS + " for being awesome?",
+      " A DAO deveria transferir  " +
+      amount + " tokens da tesouraria para " +
+      process.env.WALLET_ADDRESS + " por ser uma pessoa incrível?",
       [
         {
           // Novamente, estamos mandando para nós mesmos 0 ETH. Apenas mandando nosso próprio token.
           nativeTokenValue: 0,
-          transactionData: tokenModule.contract.interface.encodeFunctionData(
+          transactionData: tokenModule.encoder.encode(
             // Nós estamos fazendo uma transferência da tesouraria para a nossa carteira.
             "transfer",
             [
@@ -69,16 +69,16 @@ const tokenModule = sdk.getTokenModule(
             ]
           ),
 
-          toAddress: tokenModule.address,
+          toAddress: tokenModule.getAddress(),
         },
       ]
     );
 
     console.log(
-      "✅ Successfully created proposal to reward ourselves from the treasury, let's hope people vote for it!"
+      "✅ Proposta criada com sucesso para a tesouraria nos recompensar, vamos torcer para votem a favor!"
     );
   } catch (error) {
-    console.error("failed to create second proposal", error);
+    console.error("A criação da proposta falhou", error);
   }
 })();
 
@@ -110,15 +110,18 @@ BOOM. Aí estão nossas propostas. A última coisa que vamos fazer é de fato pe
 
 ### ✍️ Permita que usuários votem nas propostas no dashboard.
 
-Finalmente, vamos terminar tudo. Nesse momento, nossas propostas vivem no nosso smart contract. Mas nós queremos que os usuários as vejam facilmente e votem! Vamos fazer isso. Vá para `App.jsx`. Vá em frente e adicione isso abaixo de `tokenModule`.
+Finalmente, vamos juntar tudo agora. Neste momento, nossas propostas vivem apenas no smart-contract. Mas nós queremos que nossos usuários vejam e votem nelas! Vamos fazer isto! Vá para `App.jsx`. Adicione o hook `useVote` às importações:
 
 ```jsx
-const voteModule = sdk.getVoteModule(
-  "INSERT_YOUR_VOTE_MODULE_ADDRESS",
-);
+import { useAddress, useMetamask, useEditionDrop, useToken, useVote } from '@thirdweb-dev/react';
+```
+Siga em frente e coloque isto aqui abaixo de `token`.
+
+```jsx
+  const vote = useVote("INSIRA_O_CONTRATO_DE_VOTAÇÃO_AQUI");
 ```
 
-Nosso web app precisa acessar nosso `voteModule` para que usuários possam interagir com nosso contrato.
+Nosso web app precisa acessar nosso `vote` para que usuários possam interagir com nosso contrato.
 
 A partir daqui, vamos adicionar o código abaixo em algum lugar em baixo das nossas outras variáveis de estado:
 
@@ -132,18 +135,19 @@ useEffect(() => {
   if (!hasClaimedNFT) {
     return;
   }
-  // Uma chamada simples para voteModule.getAll() para pegar as propostas.
-  voteModule
-    .getAll()
-    .then((proposals) => {
-      // Configure o estado!
+
+  // A simple call to vote.getAll() to grab the proposals.
+  const getAllProposals = async () => {
+    try {
+      const proposals = await vote.getAll();
       setProposals(proposals);
-      console.log("🌈 Proposals:", proposals)
-    })
-    .catch((err) => {
-      console.error("failed to get proposals", err);
-    });
-}, [hasClaimedNFT]);
+      console.log("🌈 Propostas:", proposals);
+    } catch (error) {
+      console.log("Falhou em recuperar as propostas", error);
+    }
+  };
+  getAllProposals();
+}, [hasClaimedNFT, vote]);
 
 // Nós também precisamos checar se o usuário já votou.
 useEffect(() => {
@@ -158,27 +162,31 @@ useEffect(() => {
   }
 
   // Cheque se o usuário já votou na primeira proposta.
-  voteModule
-    .hasVoted(proposals[0].proposalId, address)
-    .then((hasVoted) => {
+  const checkIfUserHasVoted = async () => {
+    try {
+      const hasVoted = await vote.hasVoted(proposals[0].proposalId, address);
       setHasVoted(hasVoted);
       if (hasVoted) {
-        console.log("🥵 User has already voted")
+        console.log("🥵 Usuário já votou");
+      } else {
+        console.log("🙂 Usuário ainda não votou");
       }
-    })
-    .catch((err) => {
-      console.error("failed to check if wallet has voted", err);
-    });
-}, [hasClaimedNFT, proposals, address]);
+    } catch (error) {
+      console.error("Não foi possível verificar se o usuário já votou", error);
+    }
+  };
+  checkIfUserHasVoted();
+
+}, [hasClaimedNFT, proposals, address, vote]);
 ```
 
 Estamos fazendo duas coisas aqui!
 
-No primeiro `useEffect` estamos fazendo `voteModule.getAll()` para pegar todas as propostas que existem no nosso contrato de governança e então fazemos `setProposals` para que possamos renderizá-las depois.
+No primeiro `useEffect` estamos fazendo `vote.getAll()` para pegar todas as propostas que existem no nosso contrato de governança e então fazemos `setProposals` para que possamos renderizá-las depois.
 
-No segundo useEffect, nós estamos fazendo `voteModule.hasVoted(proposals[0].proposalId, address)` que checa se esse endereço já votou na primeira proposta. Se sim, então nós fazemos `setHasVoted` para que o usuário não possa votar novamente! Mesmo se nós não tivéssemos isso, nosso contrato rejeitaria a transação se um usuário tentasse votar duas vezes!
+No segundo useEffect, nós estamos fazendo `vote.hasVoted(proposals[0].proposalId, address)` que checa se esse endereço já votou na primeira proposta. Se sim, então nós fazemos `setHasVoted` para que o usuário não possa votar novamente! Mesmo se nós não tivéssemos isso, nosso contrato rejeitaria a transação se um usuário tentasse votar duas vezes!
 
-A magia do thirdweb é que não somente é fácil fazer deploy de smart contracts, também é fácil interagir com eles diretamente do nosso cliente com funções simples como `voteModule.getAll()`!
+A magia do thirdweb é que não somente é fácil fazer deploy de smart contracts, também é fácil interagir com eles diretamente do nosso cliente com funções simples como `vote.getAll()`!
 
 Vá em frente e atualize sua página, você deve ver suas propostas impressas perto do 🌈 e você pode explorar todos os dados!
 
@@ -198,7 +206,9 @@ O próximo pedaço de código é massivo lol. Ele lida com de fato renderizar as
 
 Se você tem familiaridade com React/JS, você pode facilmente dar uma olhada e entender como funciona sozinho. Se você não sabe React/JS muito bem, não se preocupe. Só copie e cole. Sem vergonha mesmo!
 
-Vá em frente e substitua o conteúdo de `if (hasClaimedNFT) { }` com este código [aqui](https://github.com/buildspace/buildspace-dao-final/blob/d94cadc73703c09561fda946a338237eee7f9bee/src/App.jsx#L194).
+Vá em frente e substitua o conteúdo de `if (hasClaimedNFT) { }` com este código [REVIEW](https://github.com/buildspace/buildspace-dao-final/blob/d94cadc73703c09561fda946a338237eee7f9bee/src/App.jsx#L194).
+
+Não se esqueça de verificar que usamos algumas variáveis novas, você precisa declará-las no começo do arquivo. 
 
 Quando você checar seu web app, você verá algo como:
 

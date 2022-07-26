@@ -19,7 +19,7 @@ const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
         image: readFileSync("scripts/assets/capacete.png"),
       },
     ]);
-    console.log("✅ Novo NFT criado com sucesso no !");
+    console.log("✅ Novo NFT criado com sucesso!");
   } catch (error) {
     console.error("falha ao criar o novo NFT", error);
   }
