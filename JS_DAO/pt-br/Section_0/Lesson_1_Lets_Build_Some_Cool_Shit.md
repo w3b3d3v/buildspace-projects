@@ -42,7 +42,7 @@ Vamos lá lhe dar o repositório open source!!!
 
 ### 👀 **Curioso para trabalhar com web3?**
 
-**As pessoas tendem a pensar que a web3 só precisa de pessoas que podem desenvolver smart contrats ou escrever codido que interage com a blockchain. Isso não é verdade.**
+**As pessoas tendem a pensar que a web3 só precisa de pessoas que podem desenvolver smart contrats ou escrever código que interage com a blockchain. Isso não é verdade.**
 
 Existe muito trabalho a fazer e a maior parte nem tem a ver com smart contracts lol. Ser um engenheiro na web3 só significa que você usa suas habilidades da web2 e as aplica na web3.
 
