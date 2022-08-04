@@ -87,6 +87,6 @@ Por fim, certifique-se de substituir `"INSIRA_SEU_ENDEREÇO_DE_CARTEIRA_AQUI"` p
 
 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Do que você está fazendo seus NFTs? Mostre pra gente em `#progresso`.
+Do que você está fazendo seus NFTs? Mostre pra gente em `#progress`.

@@ -3,7 +3,7 @@
 
 ### 👋 Bem vindo
 
-Você conseguiu - aí sim!! Bem-vindo :). Meu nome é [danicuki](https://twitter.com/danicuki), e eu sou o cara que vai conversar com vocês por aqui.
+Você conseguiu - aí sim!! Bem-vindo :). Meu nome é Farza, e eu sou o cara que vai conversar com vocês por aqui.
 
 Este projeto é para desenvolvedores que desejam entrar no mundo Solana, que agora é uma das maiores blockchains do mundo.
 
@@ -37,20 +37,18 @@ Veja como ele é:
 
 [Loom](https://www.loom.com/share/a538ff4207a544779807a1358606b441)
 
-Nota: cada turma recebe um nome diferente (ex. [PIONEIROS](https://opensea.io/assets/matic/0xa68580d4e41925c20af20dba9b4db17a79842f19/67), [EXPLORADORES](https://opensea.io/assets/matic/0xa68580d4e41925c20af20dba9b4db17a79842f19/88), etc!). Além disso, o # (número) na parte inferior será o # (número) do NFT cunhado que depende de quando você termina o bootcamp! Cada NFT é único.
+Nota: cada turma recebe um nome de uma estrela (ex. [Alkes](https://www.star-facts.com/alkes/), [Beid](https://www.universeguide.com/star/19587/beid), etc!). Além disso, o # (número) na parte inferior será o # (número) do NFT cunhado que depende de quando você termina o bootcamp! Cada NFT é único.
 
 
 ### 🤚 Como obter ajuda
 
 Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
-Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do buildspace. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
-
-Se precisar de ajuda com alguma coisa, sinta-se à vontade para marcar o time @Monitores Bootcamp diretamente no Discord.
+Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do buildspace. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#section-3-help` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo ;)
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/buildspace/buildspace-projects). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@danicuki` no Discord :).
+[Todo esse conteúdo é totalmente open-source](https://github.com/buildspace/buildspace-projects). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@alec` no Discord :).
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
@@ -64,9 +62,9 @@ Há muito trabalho a ser feito e a maior parte do trabalho nem precisa ser relac
 
 A web3 também precisa desesperadamente de designers, gerentes de produto, profissionais de marketing e muito mais.
 
-**Somos parceiros de várias empresas incríveis da web3 que desejam contratar pessoas da rede WEB3DEV.**
+**Somos parceiros de várias empresas incríveis da web3 que desejam contratar pessoas da rede Buildspace.**
 
-**Mesmo que você esteja apenas curioso**, clique em "Perfil" no menu, preencha bem rápido um formulário com seus dados, que iremos te ajudar com oportunidades. 
+Temos empresas como OpenSea, Edge & Node e Chainlink como parceiras. **Mesmo que você esteja apenas curioso**, clique em "Perfil" no menu, preencha bem rápido um formulário com seus dados, que iremos te ajudar com oportunidades. 
 
 Na pior das hipóteses, você irá conversar com algumas pessoas bem legais do mundo web3.
 
@@ -74,8 +72,8 @@ Basta fazer isso bem rapidinho agora. Vai lá! :).
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Ei! Vá em frente e diga gm em `#gm` no Discord. Isto é muito importante. Extremamente importante.
+Ei! Vá em frente e diga gm em `#gm-only` no Discord. Isto é muito importante. Extremamente importante.
 
 Se você não fizer isso, o universo irá implodir e todos nós pereceremos sob o calor de mil sóis.

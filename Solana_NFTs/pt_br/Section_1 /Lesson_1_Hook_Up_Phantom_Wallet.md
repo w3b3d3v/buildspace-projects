@@ -47,7 +47,7 @@ import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 
 // Constantes
-const TWITTER_HANDLE = 'web3dev_';
+const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -206,6 +206,6 @@ Por que isso? Bem, o método `connect` com o parâmetro `onlyIfTrusted` definido
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Poste uma captura de tela em `#progresso` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
+Poste uma captura de tela em `#progress` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
