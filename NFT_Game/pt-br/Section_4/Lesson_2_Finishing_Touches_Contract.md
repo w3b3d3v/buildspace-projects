@@ -15,7 +15,7 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.0",
   networks: {
-    rinkeby: {
+    goerli: {
       url: process.env.STAGING_ALCHEMY_KEY,
       accounts: [process.env.PRIVATE_KEY],
     },
@@ -31,9 +31,9 @@ module.exports = {
 E o seu arquivo .env vai se parecer com isso:
 
 ```javascript
-STAGING_ALCHEMY_KEY = BLAHBLAH;
-PROD_ALCHEMY_KEY = BLAHBLAH;
-PRIVATE_KEY = BLAHBLAH;
+STAGING_ALCHEMY_KEY=BLAHBLAH;
+PROD_ALCHEMY_KEY=BLAHBLAH;
+PRIVATE_KEY=BLAHBLAH;
 ```
 
 (não commite seu arquivo .env depois disso)
@@ -50,46 +50,46 @@ Eu não vou estar cobrindo como colocar suas coisas no IPFS + conectar seu React
 
 Primeiro, você vai precisar fazer upload das suas imagens para um serviço que se especializa em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" - que significa que o seu arquivo vai essencialmente ficar em cachê para que seja facilmente recuperado. Eu gosto de usar o [Pinata](https://www.pinata.cloud/) como o meu serviço de pinning - só crie uma conta, faça upload sua imagem do personagem a partir da UI deles, e é isso!
 
-![Untitled](https://i.imgur.com/FAkx9yj.png)
+![Untitled](https://i.imgur.com/LA0RExz.png)
 
 Vá em frente e copie os arquivos "CID". Esses são os endereços do conteúdo no IPFS! O que é legal é que agora temos que criar esse link:
 
 ```javascript
-https://cloudflare-ipfs.com/ipfs/INSERT_YOUR_CID_HERE
+https://cloudflare-ipfs.com/ipfs/INSIRA_SUA_CID_AQUI
 ```
 
 Se você estiver usando o **Brave Browser** (que tem IPFS construído nele) você pode só escrever esse paste no seu URL:
 
 ```javascript
-ipfs://INSERT_YOUR_CID_HERE
+ipfs://INSIRA_SUA_CID_AQUI
 ```
 
 E isso vai começar um node IPFS na sua máquina local e recuperar o arquivo! Mas de novo, eu só fiz isso no **Brave**. Se você tentar fazer isso em algo como o Chrome, só fará uma pesquisa no Google.
 
-![Untitled](https://i.imgur.com/vQ9Wsr0.png)
+![Untitled](https://i.imgur.com/NplQpes.png)
 
 Daqui, você pode mudar seu link imgur em `run.js` para `ipfs` hashes! Para o exemplo, eu usei o mesmo CID para todos os personagens mas no seu caso você deve ter três diferentes, um para cada personagem!
 
 ```javascript
 const gameContract = await gameContractFactory.deploy(
-  ["Leo", "Aang", "Pikachu"],
+  ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
   [
-    "bafybeibsifcmwkufr7zwh5s3ekvjkfj5nnadjhweniz4p7lxqelt7mbp74",
-    "bafybeibsifcmwkufr7zwh5s3ekvjkfj5nnadjhweniz4p7lxqelt7mbp74",
-    "bafybeibsifcmwkufr7zwh5s3ekvjkfj5nnadjhweniz4p7lxqelt7mbp74",
+    "bafybeihyuz2nvvi6srxnyp2g54p3xhwufhu4d2wvewnkak7lifq7lsjo5a",
+    "bafybeihyuz2nvvi6srxnyp2g54p3xhwufhu4d2wvewnkak7lifq7lsjo5a",
+    "bafybeihyuz2nvvi6srxnyp2g54p3xhwufhu4d2wvewnkak7lifq7lsjo5a",
   ],
   [100, 200, 300],
   [100, 50, 25],
-  "Elon Musk",
-  "https://i.imgur.com/AksR0tt.png",
+  "Capitão Nascimento",
+  "bafybeichyipy7k757abludnvidqqfukyy56cclsxlb63ppl2fm75olpzcm",
   10000,
   50
 );
 ```
 
-Daqui, nós precisamos atualizar nossa função `tokenURI` para preceder `ipfs://`. Basicamente, o OpenSea gosta quando nosso URI de imagem é estruturada como isso: `ipfs://INSERT_YOUR_CID_HERE`.
+Daqui, nós precisamos atualizar nossa função `tokenURI` para preceder `ipfs://`. Basicamente, o OpenSea gosta quando nosso URI de imagem é estruturada como isso: `ipfs://INSIRA_SUA_CID_AQUI`.
 
-Você deve estar se perguntando porque em `run.js` eu não apenas diretamente linkei para `ipfs://INSERT_YOUR_CID_HERE` ou `https://cloudflare-ipfs.com/ipfs/INSERT_YOUR_CID_HERE`. Basicamente - é mais segura só armazenar o hash no contrato, isso nos deixa ser mais flexível :).
+Você deve estar se perguntando porque em `run.js` eu não apenas diretamente linkei para `ipfs://INSIRA_SUA_CID_AQUI` ou `https://cloudflare-ipfs.com/ipfs/INSIRA_SUA_CID_AQUI`. Basicamente - é mais seguro só armazenar o hash no contrato, isso nos deixa ser mais flexível :).
 
 Então, eu mudei a variável `json` no `tokenURI` para parecer com isso:
 
@@ -116,9 +116,9 @@ Tudo que eu fiz foi preceder aquele pequeno `ipfs://` depois da tag `image` - e 
 
 ```javascript
 {
-	"name": "Pikachu -- NFT #: 1",
+	"name": "Zeca Pagodinho -- NFT #: 1",
 	"description": "An epic NFT",
-	"image": "ipfs://bafybeibsifcmwkufr7zwh5s3ekvjkfj5nnadjhweniz4p7lxqelt7mbp74",
+	"image": "ipfs://bafybeiaaghdi5oio5a5gt6gwgxcii4h54ua4kvpjqbwszcmxvxisjoawoy",
 	"attributes": [{
 		"trait_type": "Health Points",
 		"value": 300,
@@ -132,11 +132,11 @@ Tudo que eu fiz foi preceder aquele pequeno `ipfs://` depois da tag `image` - e 
 
 Épico, estamos fora do imgur.
 
-Plataformas como OpenSea suportam links `ipfs` para que isso funcione - eles vão saber como ler e renderizar isso! Nós agora temos um problema final - **renderizar a imagem no nosso app React**!! Se nós só dermos ao nosso app React como `ipfs://bafybeibsifcmwkufr7zwh5s3ekvjkfj5nnadjhweniz4p7lxqelt7mbp74` na tag `src` do `<img>` que não vai funcionar! Ao invés disso, no nosso app React, onde for que você renderizar a tag `src` da imagem, simplesmente faça isso:
+Plataformas como OpenSea suportam links `ipfs` para que isso funcione - eles vão saber como ler e renderizar isso! Nós agora temos um problema final - **renderizar a imagem no nosso app React**!! Se nós só dermos ao nosso app React como `ipfs://bafybeiaaghdi5oio5a5gt6gwgxcii4h54ua4kvpjqbwszcmxvxisjoawoy` na tag `src` do `<img>` que não vai funcionar! Ao invés disso, no nosso app React, onde for que você renderizar a tag `src` da imagem, simplesmente faça isso:
 
 ```javascript
 <img
-  src={`https://cloudflare-ipfs.com/ipfs/${INSERT_THE_CID_YOU_GET_FROM_YOUR_CONTRACT_HERE}`}
+  src={`https://cloudflare-ipfs.com/ipfs/${INSIRA_A_CID_QUE_VEIO_DO_CONTRATO}`}
 />
 ```
 
@@ -146,17 +146,17 @@ Agora, você deve estar se perguntando - o que o Cloudflare está fazendo aqui? 
 
 ## 🐸 Mostre todos os outros jogadores no jogo!
 
-Agora, tudo que você vê é você mesmo e o boss -- e se pudéssemos ver uma lista de todos os outros jogadores? Talvez você poderia mostrar o endereço de suas carteiras, a imagem dos seus personagens, e quando dano eles deram no boss!
+Agora, tudo que você vê é você mesmo e o boss -- e se pudéssemos ver uma lista de todos os outros jogadores? Talvez você poderia mostrar o endereço de suas carteiras, a imagem dos seus personagens, e quanto dano eles deram no boss!
 
-**Faria o jogo sentir mais "multiplayer" :).**
+**Faria o jogo se sentir mais "multiplayer" :).**
 
 Dê uma tentativa. Não vou tentar explicar aqui mas eu acho que você tem todas as informações necessárias para mudar esse contrato e o web app para fazer isso acontecer! Tudo que você precisa é criar uma função como `getAllPlayers` e depois chamá-la a partir do seu web app + renderizar os dados.
 
 ## ⚡️ Adicione a chance de hit crítico
 
-Muitos jogos tem um conceito legal de "hit crítico", como em Pokemon! Introduzir RNG para os jogos é muito legal, já que traz a chance para o jogo. Seria legal se você implementasse hits críticos -- por exemplo se tivesse 5% de chance que algum dos seus personagens desse o dobro de dano. Ou talvez 20% de chance que o ataque do boss erre e o player não perca vida!
+Muitos jogos tem um conceito legal de "hit crítico", como em Pokémon! Introduzir RNG para os jogos é muito legal, já que traz a chance para o jogo. Seria legal se você implementasse hits críticos -- por exemplo se tivesse 5% de chance que algum dos seus personagens desse o dobro de dano. Ou talvez 20% de chance que o ataque do boss erre e o player não perca vida!
 
-Seria legal se personagem específicos tivessem uma chance maiorde um ataque crítico!
+Seria legal se personagem específicos tivessem uma chance maior de um ataque crítico!
 
 ![](https://i.imgur.com/S0r7rfm.png)
 

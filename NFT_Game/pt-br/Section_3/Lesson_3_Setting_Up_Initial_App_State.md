@@ -28,7 +28,7 @@ import "./SelectCharacter.css";
 const SelectCharacter = ({ setCharacterNFT }) => {
   return (
     <div className="select-character-container">
-      <h2>Mint Your Hero. Choose wisely.</h2>
+      <h2>Mint seu Herói. Escolha com sabedoria.</h2>
     </div>
   );
 };
@@ -36,7 +36,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
 export default SelectCharacter;
 ```
 
-Muito bom! Viu como foi fácil? Você já tem um componente pornto! Vamos em frente e configurar nossa renderização condicional para que possamos ver essa coisa.
+Muito bom! Viu como foi fácil? Você já tem um componente pronto! Vamos em frente e configurar nossa renderização condicional para que possamos ver essa coisa.
 
 ### 👁 Mostrando o componente SelectCharacter.
 
@@ -82,7 +82,7 @@ const renderContent = () => {
           className="cta-button connect-wallet-button"
           onClick={connectWalletAction}
         >
-          Connect Wallet To Get Started
+          Conecte sua carteira para começar
         </button>
       </div>
     );
@@ -114,8 +114,8 @@ return (
   <div className="App">
     <div className="container">
       <div className="header-container">
-        <p className="header gradient-text">⚔️ Metaverse Slayer ⚔️</p>
-        <p className="sub-text">Team up to protect the Metaverse!</p>
+        <p className="header gradient-text">⚔️ Metaverso Slayer ⚔️</p>
+        <p className="sub-text">Junte os amigos e proteja o Metaverso!!</p>
         {/*
          * Aqui é onde nosso botão e código de imagem ficava! Lembre-se que movemos para o método de renderização.
          */}
@@ -147,9 +147,9 @@ Nós fizemos muita coisa! Nesse ponto, vamos ter certeza que os métodos estão 
 
 O primeirio cenário é que o usuário não tenha conectado a sua carteira ao nosso app - então mostre o botão de conectar carteira!
 
-Nota: tenha certeza que sua carteira não está conectado ao app por um projeto antigo. Para fazer isso, clique na extensão do Metamask e clique nos três pontos na direita. Você deve ver algo como "Sites Conectados". Vá em frente e clique nisso. Você deve ver `[localhost:3000](http://localhost:3000)` com um ícone de lata de lixo do lado. Clique no ícone para remover a conexão da sua carteira do seu app.
+Nota: tenha certeza que sua carteira não está conectado ao app por um projeto antigo. Para fazer isso, clique na extensão do Metamask e clique nos três pontos na direita. Você deve ver algo como "Sites Conectados". Vá em frente e clique nisso. Você deve ver `http://localhost:3000` com um ícone de lata de lixo do lado. Clique no ícone para remover a conexão da sua carteira do seu app.
 
-![Untitled](https://i.imgur.com/zPAVBYb.png)
+![Untitled](https://i.imgur.com/wWoKMRX.png)
 
 Vá em frente e recarregue a página e você deve ver um botão "Connect To Wallet" pronto! Vá em frente e conecte! Uma vez que fizer isso, seu console deve escrever a palavra `Connected` e o seu endereço público da carteira!
 
@@ -163,9 +163,13 @@ Vá em frente e conecte sua carteira! Uma vez que sua carteira estiver conectada
 
 ![Untitled](https://i.imgur.com/K3kvxeE.png)
 
-**BOOM.** Bom trbaalho! Você acabou de criar um componente em React, configurou uma condição de renderização, **_e_** configurou o seu Login de carteira, pronto e funcionando! Com os projetos da buildspace, é tudo sobre fazer o próprio projeto. Sinta-se livre para fazer o que quiser com essas páginas!
+**BOOM.** Bom trabalho! Você acabou de criar um componente em React, configurou uma condição de renderização, **_e_** configurou o seu Login de carteira, pronto e funcionando! Com os projetos da WEB3DEV, é tudo sobre fazer o próprio projeto. Sinta-se livre para fazer o que quiser com essas páginas!
 
 Na próxima seção vamos começar a interagir com o nosso contrato e ver se o endereço da carteira conectada já mintou um personagem NFT. Isso vai desbloquear que façamos o seguinte:
 
 1. Escreva a lógica para mintar o personagem NFT.
 2. Configure o componente `Arena` para que possamos derrubar o boss na nossa maneira 😈.
+
+## 🚨 Reporte seu Progresso!
+
+Em #progresso, poste um screenshot com a saída do seu console exibindo a mensagem que conectou na sua carteira. Incrível que você conseguiu! Conectar carteiras é o coração da magia da web3.

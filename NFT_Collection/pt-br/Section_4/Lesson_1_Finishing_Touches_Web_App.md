@@ -5,9 +5,9 @@ Uma coisa que seria incrível é que, após o NFT ser cunhado, forneceríamos um
 
 O link para um NFT no OpenSea se parece com este:
 
-`https://testnets.opensea.io/assets/0x88a3a1dd73f982e32764eadbf182c3126e69a5cb/9`
+`https://testnets.opensea.io/assets/goerli/0x30844f883622922830357135e192ac13a656f9c9/2`
 
-Basicamente, são duas variaveis.
+Basicamente, são duas variáveis.
 
 `https://testnets.opensea.io/assets/INSIRA_O_ENDEREÇO_DE_CONTRATO_AQUI/INSIRA_O_TOKEN_ID_AQUI`
 
@@ -16,11 +16,11 @@ Basicamente, são duas variaveis.
 
 O link para um NFT no Rarible se parece com este:
 
-`https://rinkeby.rarible.com/token/0xb6be7bd567e737c878be478ae1ab33fcf6f716e0:0`
+`https://testnet.rarible.com/token/0x30844f883622922830357135e192ac13a656f9c9:1`
 
 Basicamente, são duas variaveis.
 
-`https://rinkeby.rarible.com/token/INSIRA_O_ENDEREÇO_DE_CONTRATO_AQUI:INSIRA_O_TOKEN_ID_AQUI`
+`https://testnet.rarible.com/token/INSIRA_O_ENDEREÇO_DE_CONTRATO_AQUI:INSIRA_O_TOKEN_ID_AQUI`
 
 --------------------
 
@@ -36,13 +36,13 @@ Então, adicione esta linha no final da função `makeAnEpicNFT`, então, esta �
 
 `emit NewEpicNFTMinted(msg.sender, newItemId);`
 
-Em um nível básico, os `Events` são mensagens que nossos contratos emitem para que podemos capturar em nosso cliente em tempo real. No caso o nossa NFT, só porque nossa transação é minerada **não significa que a transação resultou na cunhagem de NFT**. Pode ter sido apenas um erro!! Mesmo se houvesse um erro, ainda teria sido extraído no processo.
+Em um nível básico, os `Events` são mensagens que nossos contratos emitem e que podemos capturar em nosso cliente em tempo real. No caso, o nosso NFT, só porque nossa transação é minerada **não significa que a transação resultou na cunhagem de NFT**. Pode ter sido apenas um erro!! Mesmo se houvesse um erro, ainda teria sido extraído no processo.
 
 É por isso que uso os `Events` aqui. Sou capaz de emitir `(emit)` um evento no contrato e, em seguida, capturar esse evento no front-end. Observe que no meu `event` envio o `newItemId` que precisamos no frontend, certo :)?
 
 Novamente, é como um web hook. Exceto que este vai ser o webhook mais fácil de configurar rs.
 
-Certifique-se de ler mais sobre eventos [aqui](https://docs.soliditylang.org/en/v0.4.21/contracts.html#events).
+Certifique-se de ler mais sobre eventos [aqui](https://solidity.web3dev.com.br/exemplos/linguagem-v0.8.3/eventos).
 
 Como sempre quando mudamos nosso contrato.
 
@@ -52,23 +52,23 @@ Como sempre quando mudamos nosso contrato.
 
 Se você bagunçar alguma dessas coisas, *obterá* erros :).
 
-Agora, em nosso frontend, adicionamos esta linha mágica (vou mostrar onde colocá-la um pouco).
+Agora, em nosso frontend, adicionamos esta linha mágica (vou mostrar onde colocá-la daqui a pouco).
 
 ```javascript
 connectedContract.on("NewEpicNFTMinted", (from, tokenId) => {
 	console.log(from, tokenId.toNumber())
-	alert(`Hey there! We've minted your NFT. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: <https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}>`)
+	alert(`Olá pessoal! Já cunhamos seu NFT. Pode ser que esteja branco agora. Demora no máximo 10 minutos para aparecer no OpenSea. Aqui está o link: <https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}>`)
 });
 ```
 
 Ok, isso é muito incrível. Em tempo real, capturaremos o evento de mintagem, obteremos o tokenId e forneceremos ao usuário seu link OpenSea para seu NFT recém-criado.
 
-O código para `App.js` e do contrato esta [aqui](https://gist.github.com/farzaa/5015532446dfdb267711592107a285a9). Não é nada sofisticado. Apenas configurando um event listener! Fiz questão de inserir comentários nas linhas que adicionei para facilitar a visualização do que alterei. Certifique-se de adicionar uma chamada para `setupEventListener()` em dois lugares como eu faço no código! Não se confunda :).
+O código para `App.js` e do contrato está [Aqui](https://gist.github.com/danicuki/d0e1e749ca9f8b6e79fcc0c466e60844). Não é nada sofisticado. Apenas configurando um event listener! Fiz questão de inserir comentários nas linhas que adicionei para facilitar a visualização do que alterei. Certifique-se de adicionar uma chamada para `setupEventListener()` em dois lugares como eu faço no código! Não se confunda :).
 
 🖼 Fundos coloridos!
 --------------
 
-Apenas por diversão, mudei o contrato para escolher aleatoriamente um fundo colorido. Não vou revisar o código aqui porque foi apenas para diversão, mas fique à vontade para ver os comentários [aqui](https://gist.github.com/farzaa/b3b8ec8aded7e5876b8a1ab786347cc9). Lembre-se de que, se alterar o contrato, você precisará redeployar, atualizar o arquivo ABI e atualizar o endereço do contrato.
+Apenas por diversão, mudei o contrato para escolher aleatoriamente um fundo colorido. Não vou revisar o código aqui porque foi apenas para diversão, mas fique à vontade para ver os comentários [Aqui está o código](https://gist.github.com/danicuki/14d4bceb338c0370ca4b43fe1c992598). Lembre-se de que, se alterar o contrato, você precisará redeployar, atualizar o arquivo ABI e atualizar o endereço do contrato.
 
 
 😎 Defina um limite para o número de NFTs cunhados
@@ -81,7 +81,7 @@ Dica, você precisará de algo que no solidity é chamado de `require`. E você 
 ❌ Alerte o usuário quando ele estiver na rede errada.
 --------------
 
-Seu site **apenas** funcionará no Rinkeby (já que é onde reside o seu contrato).
+Seu site **apenas** funcionará na Goerli (já que é onde reside o seu contrato).
 
 Vamos adicionar uma boa mensagem informando os usuários sobre isso!
 
@@ -91,11 +91,11 @@ Já endereçamos solicitações ao blockchain. Usamos `ethereum.request` com os 
 
 ```javascript
 let chainId = await ethereum.request({ method: 'eth_chainId' });
-console.log("Connected to chain " + chainId);
+console.log("Conectado à rede " + chainId);
 // String, hex code of the chainId of the Rinkebey test network
-const rinkebyChainId = "0x4"; 
-if (chainId !== rinkebyChainId) {
-	alert("You are not connected to the Rinkeby Test Network!");
+const goerliChainId = "0x5"; 
+if (chainId !== goerliChainId) {
+	alert("Você não está conectado a rede Goerli de teste!");
 }
 ```
 Pronto, agora o usuário saberá se está na rede errada!
@@ -117,12 +117,11 @@ Adicione seu Twitter na parte inferior :)! Já lhe dei um pequeno modelo para is
 
 Talvez a parte mais importante!
 
-Normalmente, quando as pessoas querem ver uma coleção NFT, elas olham para ela no OpenSea!! É uma maneira super fácil das pessoas admirarem a sua coleção. Portanto, se você vincular seu site ao seu amigo, eles saberão que é legítimo!!
+Normalmente, quando as pessoas querem ver uma coleção NFT, elas olham para ela no OpenSea!! É uma maneira super fácil das pessoas admirarem a sua coleção. Portanto, se você der o link do seu site ao seu amigo, eles saberão que é legítimo!!
 
-Adicione um pequeno botão que diz "🌊 Exibir coleção no OpenSea" e quando seus usuários clicarem nele, ele será vinculado à sua coleção! Lembre-se de que o link de suas coleções muda toda vez que você altera o contrato. Portanto, certifique-se de vincular sua coleção mais recente e final. Por exemplo, [essa](https://testnets.opensea.io/collection/squarenft-vu901lkj40) é a minha coleção.
+Adicione um pequeno botão que diz "🌊 Exibir coleção no OpenSea" e quando seus usuários clicarem nele, ele será vinculado à sua coleção! Lembre-se de que o link de suas coleções muda toda vez que você altera o contrato. Portanto, certifique-se de vincular sua coleção mais recente e final. Por exemplo, [essa](https://testnets.opensea.io/collection/chavesnft-s5himvlkq7) é a minha coleção.
 
-Nota: Este link você precisará codificar. Eu deixei uma variável no topo para você preencher. Ela não pode ser gerada dinamicamente a menos que você use a API OpenSea (que é um exagero por enquanto rs).
-
+Nota: Este link você precisará codificar. Eu deixei uma variável `OPENSEA_LINK` no topo para você preencher. Ela não pode ser gerada dinamicamente a menos que você use a API OpenSea (que é um exagero por enquanto rs).
 
 🚨 Relatório de progresso!
 -----------------

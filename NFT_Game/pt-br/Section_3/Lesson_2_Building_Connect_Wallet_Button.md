@@ -12,7 +12,7 @@ import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "Web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -27,10 +27,10 @@ const App = () => {
     const { ethereum } = window;
 
     if (!ethereum) {
-      console.log("Make sure you have MetaMask!");
+      console.log("Eu acho que você não tem a metamask!");
       return;
     } else {
-      console.log("We have the ethereum object", ethereum);
+      console.log("Nós temos o objeto ethereum", ethereum);
     }
   };
 
@@ -45,8 +45,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">⚔️ Metaverse Slayer ⚔️</p>
-          <p className="sub-text">Team up to protect the Metaverse!</p>
+          <p className="header gradient-text">⚔️ Metaverso Slayer ⚔️</p>
+          <p className="sub-text">Junte seus amigos para proteger o Metaverso!</p>
         </div>
         <div className="connect-wallet-container">
           <img
@@ -73,13 +73,13 @@ export default App;
 
 ### **🔒 Acessando a conta do usuário.**
 
-Então, quando você rodar isso, você deve ver aquela linha "_We have the Ethereum object_" escrita no console do website quando você inspecioná-lo.
+Então, quando você rodar isso, você deve ver aquela linha "_Nós temos o objeto ethereum_" escrita no console do website quando você inspecioná-lo.
 
 **Legal.**
 
 Depois, precisamos checar se estamos autorizados a acessar a carteira do usuário. Uma vez que tivermos acesso a isso, poderemos chamar o nosso contrato inteligente!
 
-Basicamente, o Metamask não dá as credenciais da carteira para todo o site que vamos. Só para os que autorizamos. De novo, parece com uma tela de login! Mas, o que estamos fazendo aqui é **checando se estamos logados**.
+Basicamente, a Metamask não dá as credenciais da carteira para todo o site que vamos. Só para os que autorizamos. De novo, parece com uma tela de login! Mas, o que estamos fazendo aqui é **checando se estamos logados**.
 
 Cheque o código abaixo:
 
@@ -92,7 +92,7 @@ import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "Web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -109,11 +109,11 @@ const App = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        console.log("Make sure you have MetaMask!");
+        console.log("Eu acho que você não tem a metamask!");
         return;
       } else {
-        console.log("We have the ethereum object", ethereum);
-
+        console.log("Nós temos o objeto ethereum", ethereum);
+      }
         /*
          * Checa se estamos autorizados a acessar a carteira do usuário.
          */
@@ -124,12 +124,11 @@ const App = () => {
          */
         if (accounts.length !== 0) {
           const account = accounts[0];
-          console.log("Found an authorized account:", account);
+          console.log("Carteira conectada::", account);
           setCurrentAccount(account);
         } else {
-          console.log("No authorized account found");
+          console.log("Não encontramos uma carteira conectada");
         }
-      }
     } catch (error) {
       console.log(error);
     }
@@ -143,8 +142,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">⚔️ Metaverse Slayer ⚔️</p>
-          <p className="sub-text">Team up to protect the Metaverse!</p>
+          <p className="header gradient-text">⚔️ Metaverso Slayer ⚔️</p>
+          <p className="sub-text">Junte os amigos e proteja o Metaverso!!</p>
           <div className="connect-wallet-container">
             <img
               src="https://64.media.tumblr.com/tumblr_mbia5vdmRd1r1mkubo1_500.gifv"
@@ -171,7 +170,7 @@ export default App;
 
 ### **🛍 Renderizar o botão de conectar a carteira.**
 
-Quando você roda o código acima, o `console.log` que escreve deve ser `No authorized account found`. Por quê? Bom porque nós não falamos explicitamente para o Metamask, *"Ei Metamask, por favor dê a esse website o acesso à minha carteira".*
+Quando você roda o código acima, o `console.log` que escreve deve ser `Não encontramos uma carteira conectada`. Por quê? Bom porque nós não falamos explicitamente para o Metamask, *"Ei Metamask, por favor dê a esse website o acesso à minha carteira".*
 
 Precisamos criar um botão `connectWallet` . No mundo da web3, conectar a sua carteira é literalmente fazer login como usuário.
 
@@ -186,7 +185,7 @@ import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "Web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -203,10 +202,10 @@ const App = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        console.log("Make sure you have MetaMask!");
+        console.log("Eu acho que você não tem a metamask!");
         return;
       } else {
-        console.log("We have the ethereum object", ethereum);
+        console.log("Nós temos o objeto ethereum", ethereum);
 
         /*
          * Checa se estamos autorizados a acessar a carteira do usuário.
@@ -218,10 +217,10 @@ const App = () => {
          */
         if (accounts.length !== 0) {
           const account = accounts[0];
-          console.log("Found an authorized account:", account);
+          console.log("Carteira conectada::", account);
           setCurrentAccount(account);
         } else {
-          console.log("No authorized account found");
+          console.log("Não encontramos uma carteira conectada");
         }
       }
     } catch (error) {
@@ -266,8 +265,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">⚔️ Metaverse Slayer ⚔️</p>
-          <p className="sub-text">Team up to protect the Metaverse!</p>
+          <p className="header gradient-text">⚔️ Metaverso Slayer ⚔️</p>
+          <p className="sub-text">Junte os amigos e proteja o Metaverso!!</p>
           <div className="connect-wallet-container">
             <img
               src="https://64.media.tumblr.com/tumblr_mbia5vdmRd1r1mkubo1_500.gifv"
@@ -304,3 +303,8 @@ export default App;
 Clique seu novo botão chique e você deve ver sua extensão Chrome do Metamask aparecer. Boa!
 
 ![Untitled](https://i.imgur.com/0HsWMpg.png)
+
+
+## 🚨 Reporte seu Progresso!
+
+Em #progresso, poste uma screenshot do seu site muito chique e não se esqueça de mudar seus GIFs e títulos para ficar algo mais a sua cara. Faça do SEU jeito!

@@ -4,19 +4,19 @@ Agora que temos todos os dados configurados para nossos personagens, a próxima 
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 // Contrato NFT para herdar.
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-// Funções de ajuda que o OpenZeppelin providencia.
+// Funcoes de ajuda que o OpenZeppelin providencia.
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 
 import "hardhat/console.sol";
 
-// Nosso contrato herda do ERC721, que é o contrato padrão de
+// Nosso contrato herda do ERC721, que eh o contrato padrao de
 // NFT!
 contract MyEpicGame is ERC721 {
 
@@ -29,19 +29,19 @@ contract MyEpicGame is ERC721 {
     uint attackDamage;
   }
 
-  // O tokenId é o identificador único das NFTs, é um número
-  // que vai, como 0, 1,2 ,3, etc.
+  // O tokenId eh o identificador unico das NFTs, eh um numero
+  // que vai incrementando, como 0, 1, 2, 3, etc.
 
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
   CharacterAttributes[] defaultCharacters;
 
-  // Nós criamos um mapping do tokenId => atributos das NFTs.
+  // Criamos um mapping do tokenId => atributos das NFTs.
   mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
 
-  // Um mapping de um endereço => tokenId das NFTs, nos dá um
-  // jeito fácil de armazenar o dono da NFT e referenciar ele
+  // Um mapping de um endereco => tokenId das NFTs, nos da um
+  // jeito facil de armazenar o dono da NFT e referenciar ele
   // depois.
   mapping(address => uint256) public nftHolders;
 
@@ -50,9 +50,9 @@ contract MyEpicGame is ERC721 {
     string[] memory characterImageURIs,
     uint[] memory characterHp,
     uint[] memory characterAttackDmg
-    // Embaixo, você também pode ver que adicionei um símbolo especial para identificar nossas NFTs
-    // Esse é o nome e o símbolo do nosso token, ex Ethereum ETH.
-    // Eu chamei o meu de Heroes e HERO. Lembre-se, um NFT é só um token!
+    // Embaixo, voce tambem pode ver que adicionei um simbolo especial para identificar nossas NFTs
+    // Esse eh o nome e o simbolo do nosso token, ex Ethereum ETH.
+    // Eu chamei o meu de Heroes e HERO. Lembre-se, um NFT eh soh um token!
   )
     ERC721("Heroes", "HERO")
   {
@@ -68,9 +68,9 @@ contract MyEpicGame is ERC721 {
 
       CharacterAttributes memory c = defaultCharacters[i];
 
-      // O uso do console.log() do hardhat nos permite 4 parâmetros em qualquer order dos seguintes tipos: uint, string, bool, address
+      // O uso do console.log() do hardhat nos permite 4 parametros em qualquer order dos seguintes tipos: uint, string, bool, address
 
-      console.log("Done initializing %s w/ HP %s, img %s", c.name, c.hp, c.imageURI);
+      console.log("Personagem inicializado: %s com %s de HP, img %s", c.name, c.hp, c.imageURI);
     }
 
     // Eu incrementei tokenIds aqui para que minha primeira NFT tenha o ID 1.
@@ -78,16 +78,16 @@ contract MyEpicGame is ERC721 {
     _tokenIds.increment();
   }
 
-  // Usuários vão poder usar essa função e pegar a NFT baseado no personagem que mandarem!
+  // Usuarios vao poder usar essa funcao e pegar a NFT baseado no personagem que mandarem!
   function mintCharacterNFT(uint _characterIndex) external {
     // Pega o tokenId atual (começa em 1 já que incrementamos no constructor).
     uint256 newItemId = _tokenIds.current();
 
-    // A função mágica! Atribui o tokenID para o endereço da carteira de quem chamou o contrato.
+    // A funcao magica! Atribui o tokenID para o endereço da carteira de quem chamou o contrato.
 
     _safeMint(msg.sender, newItemId);
 
-    // Nós mapeamos o tokenId => os atributos dos personagens. Mais disso abaixo
+    // Nos mapeamos o tokenId => os atributos dos personagens. Mais disso abaixo
 
     nftHolderAttributes[newItemId] = CharacterAttributes({
       characterIndex: _characterIndex,
@@ -98,12 +98,12 @@ contract MyEpicGame is ERC721 {
       attackDamage: defaultCharacters[_characterIndex].attackDamage
     });
 
-    console.log("Minted NFT w/ tokenId %s and characterIndex %s", newItemId, _characterIndex);
+    console.log("Mintou NFT c/ tokenId %s e characterIndex %s", newItemId, _characterIndex);
 
-    // Mantém um jeito fácil de ver quem possui a NFT
+    // Mantem um jeito facil de ver quem possui a NFT
     nftHolders[msg.sender] = newItemId;
 
-    // Incrementa o tokenId para a próxima pessoa que usar.
+    // Incrementa o tokenId para a proxima pessoa que usar.
     _tokenIds.increment();
   }
 }
@@ -118,9 +118,9 @@ mapping(address => uint256) public nftHolders;
 
 `nftHolderAttributes` vai ser onde nós armazenamos o estado das NFTs dos jogadores. Nós mapeamos o id da NFT para uma estrutura `CharacterAttributes`.
 
-Lembre-se, cada jogador tem o próprio personagem NFT. E, cada NFT tem o próprio estado como `HP`, `Dano de Ataque`, etc! Então se o player #172 tem uma NFT "Pikachu" e o Pikachu dele perder vida em uma batalha, **então só a NFT Pikachu do jogador #172 deve ser mudada**, e a NFT Pikachu de todo o resto das pessoas deve se manter a mesma! Então, nós armazenamos o nível dos dados do personagem desse player em um map.
+Lembre-se, cada jogador tem o próprio personagem NFT. E, cada NFT tem o próprio estado como `HP`, `Dano de Ataque`, etc! Então se o player #172 tem uma NFT "Zeca Pagodinho" e o Zeca Pagodinho dele perder vida em uma batalha, **então só a NFT Zeca Pagodinho do jogador #172 deve ser mudada**, e a NFT Zeca Pagodinho de todo o resto das pessoas deve se manter a mesma! Então, nós armazenamos o nível dos dados do personagem desse jogador em um map.
 
-Depois, eu tenho `nftHolders` que basicamente me deixa mapear facilmente o endereço de um usuário para o ID da NFT que eles possuem. Por exemplo, eu poderia fazer `nftHolders[INSERT_PUBLIC_ADDRESS_HERE]` e instantaneamente saber qual NFT que aquele endereço possui. Ajuda muito manter esses dados no contrato para que seja facilmente acessível.
+Depois, eu tenho `nftHolders` que basicamente me deixa mapear facilmente o endereço de um usuário para o ID da NFT que eles possuem. Por exemplo, eu poderia fazer `nftHolders[INSIRA_UM_ENDERECO_AQUI]` e instantaneamente saber qual NFT que aquele endereço possui. Ajuda muito manter esses dados no contrato para que seja facilmente acessível.
 
 ### ⚡️ ERC 721
 
@@ -128,7 +128,7 @@ Você também vai ver que eu "herdo" um contrato OpenZeppelin usando `is ERC721`
 
 O padrão NFT é conhecido como `ERC721` , o qual você pode ler um pouco mais sobre [aqui](https://eips.ethereum.org/EIPS/eip-721). OpenZeppelin essencialmente implementa o padrão NFT para nós e nos deixa escrever nossa própria lógica em cima disso para customizá-lo. Isso significa que não precisamos escrever código repetitivo e básico.
 
-Seria loucura escrever um servidor HTTP do zero sem usar uma library, certo? Claro, a menos que você quisesse explorar. De maneira semelhante - seria loucura apenas escrever um contrato NFT do zero! Você pode explorar o contrato `ERC721`  que estamos herdando  [daqui](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
+Seria loucura escrever um servidor HTTP do zero sem usar uma biblioteca, certo? Claro, a menos que você quisesse explorar. De maneira semelhante - seria loucura apenas escrever um contrato NFT do zero! Você pode explorar o contrato `ERC721`  que estamos herdando  [daqui](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
 
 ```solidity
 _tokenIds.increment();
@@ -190,8 +190,8 @@ Muitas coisas acontecendo aqui! Basicamente, **nossa NFT segura dados relacionad
 ```json
 {
   "characterIndex": 1,
-  "name": "Aang",
-  "imageURI": "https://i.imgur.com/xVu4vFL.png",
+  "name": "Ronaldinho Gaúcho",
+  "imageURI": "https://i.imgur.com/NplQpes.png",
   "hp": 200,
   "maxHp": 200,
   "attackDamage": 50
@@ -205,8 +205,8 @@ Digamos que o meu personagem seja atacado e perca 50 de HP, bom, então o HP iri
 ```json
 {
   "characterIndex": 1,
-  "name": "Aang",
-  "imageURI": "https://i.imgur.com/xVu4vFL.png",
+  "name": "Ronaldinho Gaúcho",
+  "imageURI": "https://i.imgur.com/NplQpes.png",
   "hp": 150,
   "maxHp": 200,
   "attackDamage": 50
@@ -219,7 +219,7 @@ As pessoas muitas vezes pensam que os metadados não permitem mudanças, mas iss
 
 Nesse caso, o nome e a imagem do personagem **nunca** mudam, mas o valor do HP definitivamente muda! **Nossas NFTs** precisam estar aptas a manter o estado do personagem específico do jogador.
 
-Esse é o porquê de nós precisarmos da variável `nftHolderAttributes`que mapeia o tokenId da NFT para uma estrutura de `CharacterAttributes`. Nos permite atualizar facilmente os valores das NFTs do jogador. Isso significa quando o jogador joga nosso jogo e o `hp` da NFT dele muda (pois o boss ataca ele), nós na verdade mudamos o valor do `hp` em `nftHolderAttributes`. E assim é como nós armazenamos os dados específicos da NFT de cada jogador no nosso contrato!
+Esse é o porquê de nós precisarmos da variável `nftHolderAttributes` que mapeia o tokenId da NFT para uma estrutura de `CharacterAttributes`. Nos permite atualizar facilmente os valores das NFTs do jogador. Isso significa quando o jogador joga nosso jogo e o `hp` da NFT dele muda (pois o boss ataca ele), nós na verdade mudamos o valor do `hp` em `nftHolderAttributes`. E assim é como nós armazenamos os dados específicos da NFT de cada jogador no nosso contrato!
 
 Depois, fazemos:
 
@@ -264,11 +264,11 @@ Plataformas como o OpenSea e Rarible sabem como pegar o `tokenURI` já que a for
 Meu output (saída) se parece com isso:
 
 ```plaintext
-Done initializing Leo w/ HP 100, img https://i.imgur.com/pKd5Sdk.png
-Done initializing Aang w/ HP 200, img https://i.imgur.com/xVu4vFL.png
-Done initializing Pikachu w/ HP 300, img https://i.imgur.com/u7T87A6.png
-Contract deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-Minted NFT w/ tokenId 1 and characterIndex 2
+Personagem inicializado: Anitta com 100 de HP, img https://i.imgur.com/gC5qXsl.png
+Personagem inicializado: Ronaldinho Gaúcho com 200 de HP, img https://i.imgur.com/NplQpes.png
+Personagem inicializado: Zeca Pagodinho com 300 de HP, img https://i.imgur.com/Pj8lHpM.png
+Contrato implantado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Mintou um NFT com tokenId 1 e characterIndex 2
 Token URI:
 ```
 
@@ -280,11 +280,11 @@ Token URI:
 
 O `tokenURI` tem um formato específico, na verdade! Na verdade, está esperando os dados NFT em **JSON**.
 
-Vamos passar por como fazer isso :).
+Vamos ver como fazer isso :).
 
-Crie uma pasta nova dentro de `contracts` chamada `libraries`. Crie um arquivo chamado `Base64.sol` e coloque ele dentro de libraries. Copie e cole o código [daqui](https://gist.github.com/farzaa/f13f5d9bda13af68cc96b54851345832) dentro de `Base64.sol`. Isso basicamente nos dá funções que nos ajudam a codificar qualquer tipo de dado em uma string Base64 - que é um padrão para codificar pedaços de dado em uma string. Não se preocupe, você vai ver como isso funciona logo!
+Crie uma pasta nova dentro de `contracts` chamada `libraries`. Crie um arquivo chamado `Base64.sol` e coloque ele dentro de libraries. Copie e cole [esse código](https://gist.github.com/danicuki/4157b854d6dc83021674c5b08bd5f2df) dentro de `Base64.sol`. Isso basicamente nos dá funções que nos ajudam a codificar qualquer tipo de dado em uma string Base64 - que é um padrão para codificar pedaços de dado em uma string. Não se preocupe, você vai ver como isso funciona logo!
 
-Vamos precisar importar essa library no nosso contrato. Para isso, adicione o snippet a seguir perto do topo do seu arquivo, junto com os outros imports.
+Vamos precisar importar essa biblioteca no nosso contrato. Para isso, adicione o snippet a seguir perto do topo do seu arquivo, junto com os outros imports.
 
 ```solidity
 // Helper que escrevemos para codificar em Base64
@@ -307,7 +307,7 @@ function tokenURI(uint256 _tokenId) public view override returns (string memory)
       charAttributes.name,
       ' -- NFT #: ',
       Strings.toString(_tokenId),
-      '", "description": "This is an NFT that lets people play in the game Metaverse Slayer!", "image": "',
+      '", "description": "Esta NFT da acesso ao meu jogo NFT!", "image": "',
       charAttributes.imageURI,
       '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
       strAttackDamage,'} ]}'
@@ -334,9 +334,9 @@ Então, pegamos todos esses dados e empacotamos ele em uma variável chamada `js
 
 ```json
 {
-  "name": "Aang",
-  "description": "This is a description",
-  "image": "https://i.imgur.com/xVu4vFL.png",
+  "name": "Ronaldinho Gaúcho",
+  "description": "Aqui é a descrição",
+  "image": "https://i.imgur.com/NplQpes.png",
   "attributes": [
     { "trait_type": "Health Points", "value": 200, "max_value": 200 },
     { "trait_type": "Attack Damage", "value": 50 }
@@ -355,7 +355,7 @@ string memory json = Base64.encode(
         charAttributes.name,
         ' -- NFT #: ',
         Strings.toString(_tokenId),
-        '", "description": "This is an NFT that lets people play in the game Metaverse Slayer!", "image": "',
+        '", "description": "Esta NFT da acesso ao meu jogo NFT!", "image": "',
         charAttributes.imageURI,
         '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
         strAttackDamage,'} ]}'
@@ -374,36 +374,40 @@ abi.encodePacked("data:application/json;base64,", json)
 Essa linha é na verdade difícil de explicar, é mais fácil apenas mostrar! Vá em frente e rode `run.js`. Aqui está meu output:
 
 ```plaintext
-Done initializing Leo w/ HP 100, img https://i.imgur.com/pKd5Sdk.png
-Done initializing Aang w/ HP 200, img https://i.imgur.com/xVu4vFL.png
-Done initializing Pikachu w/ HP 300, img https://i.imgur.com/u7T87A6.png
-Contract deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-Minted NFT w/ tokenId 1 and characterIndex 2
-Token URI: data:application/json;base64,eyJuYW1lIjogIlBpa2FjaHUgLS0gTkZUICM6IDEiLCAiZGVzY3JpcHRpb24iOiAiQ3JpdGljYWxIaXQgaXMgYSB0dXJuLWJhc2VkIE5GVCBnYW1lIHdoZXJlIHlvdSB0YWtlIHR1cm5zIHRvIGF0dGFjayB0aGUgYm9vcy4iLCAiaW1hZ2UiOiAiaHR0cHM6Ly9pLmltZ3VyLmNvbS91N1Q4N0E2LnBuZyIsICJhdHRyaWJ1dGVzIjogWyB7ICJ0cmFpdF90eXBlIjogIkhlYWx0aCBQb2ludHMiLCAidmFsdWUiOiAzMDAsICJtYXhfdmFsdWUiOjMwMH0sIHsgInRyYWl0X3R5cGUiOiAiQXR0YWNrIERhbWFnZSIsICJ2YWx1ZSI6IDI1fSBdfQ==
+Personagem inicializado: Anitta com 100 de HP, img https://i.imgur.com/gC5qXsl.png
+Personagem inicializado: Ronaldinho Gaúcho com 200 de HP, img https://i.imgur.com/NplQpes.png
+Personagem inicializado: Zeca Pagodinho com 300 de HP, img https://i.imgur.com/Pj8lHpM.png
+Contrato implantado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Mintou um NFT com tokenId 1 e characterIndex 2
+Token URI: data:application/json;base64,eyJuYW1lIjogIlplY2EgUGFnb2RpbmhvIC0tIE5GVCAjOiAxIiwgImRlc2NyaXB0aW9uIjogIkVzdGEgTkZUIGRhIGFjZXNzbyBhbyBtZXUgam9nbyBORlQhIiwgImltYWdlIjogImh0dHBzOi8vaS5pbWd1ci5jb20vUGo4bEhwTS5wbmciLCAiYXR0cmlidXRlcyI6IFsgeyAidHJhaXRfdHlwZSI6ICJIZWFsdGggUG9pbnRzIiwgInZhbHVlIjogMzAwLCAibWF4X3ZhbHVlIjozMDB9LCB7ICJ0cmFpdF90eXBlIjogIkF0dGFjayBEYW1hZ2UiLCAidmFsdWUiOiAyNX0gXX0=
 ```
 
 Você verá que Token URI agora escreve coisas! **Boa!!** Vá em frente e copie essa grande string depois de `Token URI:`. Por exemplo, a minha se parece com isso:
 
 ```plaintext
-data:application/json;base64,eyJuYW1lIjogIlBpa2FjaHUgLS0gTkZUICM6IDEiLCAiZGVzY3JpcHRpb24iOiAiQ3JpdGljYWxIaXQgaXMgYSB0dXJuLWJhc2VkIE5GVCBnYW1lIHdoZXJlIHlvdSB0YWtlIHR1cm5zIHRvIGF0dGFjayB0aGUgYm9vcy4iLCAiaW1hZ2UiOiAiaHR0cHM6Ly9pLmltZ3VyLmNvbS91N1Q4N0E2LnBuZyIsICJhdHRyaWJ1dGVzIjogWyB7ICJ0cmFpdF90eXBlIjogIkhlYWx0aCBQb2ludHMiLCAidmFsdWUiOiAzMDAsICJtYXhfdmFsdWUiOjMwMH0sIHsgInRyYWl0X3R5cGUiOiAiQXR0YWNrIERhbWFnZSIsICJ2YWx1ZSI6IDI1fSBdfQ==
+Token URI: data:application/json;base64,eyJuYW1lIjogIlplY2EgUGFnb2RpbmhvIC0tIE5GVCAjOiAxIiwgImRlc2NyaXB0aW9uIjogIkVzdGEgTkZUIGRhIGFjZXNzbyBhbyBtZXUgam9nbyBORlQhIiwgImltYWdlIjogImh0dHBzOi8vaS5pbWd1ci5jb20vUGo4bEhwTS5wbmciLCAiYXR0cmlidXRlcyI6IFsgeyAidHJhaXRfdHlwZSI6ICJIZWFsdGggUG9pbnRzIiwgInZhbHVlIjogMzAwLCAibWF4X3ZhbHVlIjozMDB9LCB7ICJ0cmFpdF90eXBlIjogIkF0dGFjayBEYW1hZ2UiLCAidmFsdWUiOiAyNX0gXX0=
 ```
 
 Cole essa string dentro da barra de URL no seu browser. Você vai ver algo como isso:
 
-![Untitled](https://i.imgur.com/C3QmD2G.png)
+![Imagem](https://i.imgur.com/5qVWxSQ.png)
 
 BOOOM!!!
 
-Basicamente o que fizemos foi que formatamos nosso arquivo JSON e **codificamos ele** em Base64. Então, acontece que o arquivo JSON se toorna nessa string codificada super longa, que é legível para o nosso browser quando usamos o prefixo `data:application/json;base64,`.
+Basicamente o que fizemos foi que formatamos nosso arquivo JSON e **codificamos ele** em Base64. Então, acontece que o arquivo JSON se torna essa string codificada super longa, que é legível para o nosso browser quando usamos o prefixo `data:application/json;base64,`.
 
 Adicionamos `data:application/json;base64,` porque o nosso browser precisa saber como ler a string codificada que estamos passando. Nesse caso, estamos dizendo,
 
-"Ei, estamos passando um arquivo JSON codificado com Base64, por favor renderize ele de maneira própria."
+"Ei, estamos passando um arquivo JSON codificado com Base64, por favor renderize ele de maneira adequada."
 
 De novo, isso é considerado um padrão para a maioria dos navegadores, o que é perfeito porque nós queremos que os dados das nossas NFT sejam compatíveis com o maior número de sistemas possível.
 
-Por quê estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares ocomo o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso conrtato.
+Por que estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares ocomo o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso conrtato.
 
 **Incrível**. Então, agora estamos no ponto em que mintamos oficialmente e localmente as NFTs e a NFT tem dados fixados nela em uma maneira que siga os padrões.
 
 **Estamos prontos para fazer o deploy da nossa NFT no OpenSea :).**
+
+### 🚨 Reporte seu Progresso !
+
+Poste uma screenshot do seu JSON quando você colou o `tokenURI` no endereço do seu navegador :)!

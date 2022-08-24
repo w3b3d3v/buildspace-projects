@@ -1,6 +1,6 @@
 Nós estamos muito bem agora. Nós configuramos dois cenários e vimos o básico de chamar o nosso contrato inteligente a partir de uma UI.
 
-Agora que estamos aptos a interagir com o nosso contrato inteligente a partir da UI e criamos nosso componente `SelectCharacter`, nós podemos facilmente pegar todos os personagens mintáveis do nosso contrato e mostrá=los na nossa UI. Vamos nessa.
+Agora que estamos aptos a interagir com o nosso contrato inteligente a partir da UI e criamos nosso componente `SelectCharacter`, nós podemos facilmente pegar todos os personagens mintáveis do nosso contrato e mostrá-los na nossa UI. Vamos nessa.
 
 ### 👀 Só mais uma coisa.
 
@@ -31,7 +31,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
 
   return (
     <div className="select-character-container">
-      <h2>Mint Your Hero. Choose wisely.</h2>
+      <h2>Minte seu Herói. Escolha com sabedoria.</h2>
     </div>
   );
 };
@@ -39,7 +39,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
 export default SelectCharacter;
 ```
 
-Quando o nosso componente for montado, nós vamos quere criar nosso `gameContract` para começar a usá-lo em seguida! Quero mostrar nossos personagens mintáveis o mais rápido possível. Isso significa que vamos chamar nosso contrato o mais cedo que pudermos. Nota: esse bloco de código vai embaixo da variável useState (embaixo de `const [gameContract, setGameContract] = useState(null);`.
+Quando o nosso componente for montado, nós vamos criar nosso `gameContract` para começar a usá-lo em seguida! Quero mostrar nossos personagens mintáveis o mais rápido possível. Isso significa que vamos chamar nosso contrato o mais cedo que pudermos. Nota: esse bloco de código vai embaixo da variável useState (embaixo de `const [gameContract, setGameContract] = useState(null);`.
 
 ```javascript
 // UseEffect
@@ -152,7 +152,7 @@ Tem algumas coisas que quero falar aqui antes de irmos em frente:
 ```javascript
 return (
   <div className="select-character-container">
-    <h2>Mint Your Hero. Choose wisely.</h2>
+    <h2>Minte seu Herói. Escolha com sabedoria.</h2>
     {/* Só mostra isso se tiver personagens no estado
      */}
     {characters.length > 0 && (
@@ -313,7 +313,7 @@ Aqui está como o meu se parece:
 
 ![Untitled](https://i.imgur.com/W3eca7t.png)
 
-Aí está meu Leo. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando o Rinkeby!
+Aí está meu NFT da Anitta. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [REVIEW - https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando a Goerli!
 
 Você conseguiu! Agora que temos nosso personagem NFT nós podemos finalmente sair e proteger o Metaverso de seres malignos!
 
@@ -324,3 +324,10 @@ alert(
   `Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${gameContract}/${tokenId.toNumber()}`
 );
 ```
+
+
+### 🚨 Reporte seu Progresso!
+
+Poste uma screenshot da sua seleção de personagens em #progresso -- é sempre muito divertido ver os personagens da galera!! É também ótima ideia fazer um tweet disso! Espalhe ao mundo que seu jogo NFT tem um personagem novo e fale do seu jogo para outras pessoas :).
+
+![Untitled](https://i.imgur.com/ycbOfNh.png)
