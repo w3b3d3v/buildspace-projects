@@ -90,7 +90,7 @@ Durante todo este projeto estaremos construindo diretamente na devnet da Solana.
 
 ### ☹️ Ahhhh me ajude… tem alguma coisa quebrada!
 
-Que droga! Pode ser meio difícil de fazer a Solana funcionar. Contudo, estamos dispostos a ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas do Buildspace possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
+Que droga! Pode ser um pouco difícil iniciar os trabalhos com a Solana. Contudo, estamos felizes em ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da web3dev possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
 
 ### 🤩 Começando com a CLI do Metaplex 
 
@@ -142,6 +142,10 @@ SUBCOMMANDS:
 
 ### 🚨 Relatório de progresso
 
+<<<<<<< HEAD:Solana_NFTs/pt-BR/Section_2 /Lesson_1_Get_Solana_Running.md
 *Por favor, faça isso, senão o Farza vai ficar triste :(*
+=======
+Por favor faça isso, senão o danicuki vai ficar triste :(
+>>>>>>> Tradução para o modelo web3dev:Solana_NFTs/pt_br/Section_2 /Lesson_1_Get_Solana_Running.md
 
-Em `#progress`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!
+Em `#progresso`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!
