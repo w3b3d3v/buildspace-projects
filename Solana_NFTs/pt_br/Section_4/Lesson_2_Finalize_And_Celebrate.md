@@ -51,7 +51,7 @@ E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você q
 
 ### 🚀 Lance para o mundo
 
-A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores da Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
+A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores da WEB3DEV não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
 
 Deixei um vídeo bem rápido abaixo sobre a implantação via Vercel. Se você não quiser usar o Vercel, tudo bem. Use o programa que quiser.
 
@@ -80,7 +80,7 @@ Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de
 
 ### 🥞 Carreiras na Web3
 
-Um grande número de pessoas também conseguiram empregos em tempo integral nas principais empresas da web3 através da Buildspace. Estou constantemente vendo as pessoas arrasarem em suas entrevistas depois de fazerem alguns projetos da Buildspace.
+Um grande número de pessoas também conseguiram empregos em tempo integral nas principais empresas da web3 através da WEB3DEV. Estou constantemente vendo as pessoas arrasarem em suas entrevistas depois de fazerem alguns projetos da WEB3DEV.
 
 ![https://camo.githubusercontent.com/99547045e82bba224e619aa968c873e0355f5482c63e428b2590948806fadb66/68747470733a2f2f692e696d6775722e636f6d2f434e7a4c6451632e706e67](https://camo.githubusercontent.com/99547045e82bba224e619aa968c873e0355f5482c63e428b2590948806fadb66/68747470733a2f2f692e696d6775722e636f6d2f434e7a4c6451632e706e67)
 
@@ -94,25 +94,25 @@ Por exemplo, digamos que você seja um ótimo engenheiro de front-end. Se você 
 
 Eu só quero inspirá-lo a trabalhar na web3 (risos). Essa área é incrível. E seria legal se você desse uma chance ;).
 
-Certifique-se de clicar em "Trabalhar na Web3" à esquerda e preencher seu perfil se ainda não o fez!!! **Somos parceiros de algumas das melhores empresas web3 do mundo (ex. ex. Uniswap, OpenSea, Chainlink, Edge & Node, e mais) e elas querem contratar desenvolvedores da rede Buildspace :).** Você já adquiriu uma habilidade que é extremamente valiosa e as empresas estão pagando caro por incríveis engenheiros da web3.
+Certifique-se de clicar em "Trabalhar na Web3" à esquerda e preencher seu perfil se ainda não o fez!!! **Somos parceiros de algumas das melhores empresas web3 do mundo (ex. NEAR, 1inch, Filecoin, entre outras) e elas querem contratar desenvolvedores da rede WEB3DEV :).** Você já adquiriu uma habilidade que é extremamente valiosa e as empresas estão pagando caro por incríveis engenheiros da web3.
 
 
 ### 🤟 Seu NFT!
 
-Enviaremos seu NFT por airdrop dentro de uma hora e enviaremos um e-mail assim que ele estiver em sua carteira. Está rodando em uma tarefa do cron! Se você não receber o e-mail dentro de 24 horas, por favor envie-nos uma mensagem em #feedback e marque o **@alec#8853.**
+Enviaremos seu NFT por airdrop dentro de uma hora e enviaremos um e-mail assim que ele estiver em sua carteira. Está rodando em uma tarefa do cron! Se você não receber o e-mail dentro de 24 horas, por favor envie-nos uma mensagem em #feedback e marque o **@danicuki.**
 
 **Certifique-se de clicar no botão na parte inferior desta página e de enviar o seu último link. Caso contrário, nosso sistema não o marcará como "concluído".**
 
 ### 🌈 Antes de sair
 
-Vá para #progress no Discord e envie-nos o link do seu produto final, pois queremos mexer nele :).
+Vá para #progresso no Discord e envie-nos o link do seu produto final, pois queremos mexer nele :).
 
 Além disso, você deve twittar seu projeto final e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
 
-E se você quiser, marque a @_buildspace :). **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
+E se você quiser, marque a @web3dev_ :). **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
 
 Nos dê essa dose de dopamina, por favor.
 
-Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no Buildspace? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
+Por fim, o que também seria incrível, é se você nos dissesse nas seções #sugestões ou #elogios do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou na WEB3DEV? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
 
 Vejo você por aí!!!

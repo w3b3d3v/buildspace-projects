@@ -99,7 +99,7 @@ Durante todo este projeto estaremos construindo diretamente na devnet da Solana.
 
 ### ☹️ Ahhhh me ajude… tá quebrado!
 
-Que droga! Pode ser um pouco difícil iniciar os trabalhos com a Solana. Contudo, estamos felizes em ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da Buildspace possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
+Que droga! Pode ser um pouco difícil iniciar os trabalhos com a Solana. Contudo, estamos felizes em ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da web3dev possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
 
 
 ### 🤩 Começando com a CLI do Metaplex 
@@ -149,6 +149,6 @@ O output disso deve exibir `0.0.2`. Neste ponto, estamos prontos para começar a
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o Farza vai ficar triste :(
+Por favor faça isso, senão o danicuki vai ficar triste :(
 
-Em `#progress`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!
+Em `#progresso`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!
