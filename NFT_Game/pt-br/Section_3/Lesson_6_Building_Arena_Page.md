@@ -35,7 +35,7 @@ const Arena = ({ characterNFT }) => {
 
       setGameContract(gameContract);
     } else {
-      console.log("Ethereum object not found");
+      console.log("Objeto Ethereum não encontrado");
     }
   }, []);
 
@@ -77,7 +77,7 @@ const renderContent = () => {
           className="cta-button connect-wallet-button"
           onClick={connectWalletAction}
         >
-          Connect Wallet To Get Started
+          Conecte sua carteira para começar
         </button>
       </div>
     );
@@ -93,7 +93,7 @@ const renderContent = () => {
 ```
 
 **Nós agora cobrimos esses três cenários!** Nesse ponto, se você recarregar seu app você deve ser diretamente levado para o componente `Arena`, que deve parecer algo com isso:
-![Untitled](https://i.imgur.com/ZvSFEpn.png)
+![Untitled](https://i.imgur.com/3d7cOZR.png)
 
 Então para recapitular, até agora você:
 
@@ -137,7 +137,7 @@ useEffect(() => {
 
 Boa! Pra ter certeza que tudo está funcionando, recarregue seu app rapidamente e cheque o seu console. Se tudo estiver configurado corretamente, você deve ver os dados do seu boss:
 
-![Untitled](https://i.imgur.com/0bQQgAR.png)
+![Untitled](https://i.imgur.com/6QFNJs9.png)
 
 Capitão Nascimento chegou. Vamos em frente e configurar nosso componente para mostrar o Capitão Nascimento com toda sua glória.
 
@@ -145,7 +145,7 @@ Capitão Nascimento chegou. Vamos em frente e configurar nosso componente para m
 
 Aqui é onde a diversão começa 🤘. De novo, construir nossa UI é algo que você pode ser bem criativo. Enquanto eu dei toda a estilização necessária para começar, explore o CSS e faça algo que você **_AMA_** e mostre para seus amigos.
 
-Muito bem, vamos começar adicionando algum HTML para nosso componente:
+Muito bem, vamos começar adicionando algum HTML para nosso componente Arena:
 
 ```javascript
 return (
@@ -165,7 +165,7 @@ return (
         </div>
         <div className="attack-container">
           <button className="cta-button" onClick={runAttackAction}>
-            {`💥 Attack ${boss.name}`}
+            {`💥 Atacar ${boss.name}`}
           </button>
         </div>
       </div>
@@ -177,7 +177,7 @@ return (
 );
 ```
 
-Você provavelmente vai ter um erro onde `runAttackAction` é undefined! Vamos adicionar um placeholder por isso embaixo do nosso estado para que possamos pelo menos ver como nossa UI vai se parecer. Vamos nos preocupar com essa lógica **#logo**:
+Você provavelmente vai ter um erro onde `runAttackAction` é undefined! Vamos adicionar um placeholder por isso embaixo do nosso estado para que possamos pelo menos ver como nossa UI vai se parecer. Vamos nos preocupar com essa lógica **logo**:
 
 ```javascript
 // Actions
@@ -187,7 +187,7 @@ const runAttackAction = async () => {};
 Vá em frente e recarregue o app e você deve ver Capitão Nascimento, sua saúde e um botão para atacá-lo!
 
 Essa é uma UI simples com uma estilização sólida. A parte boa é pegar todos os dados do nosso contrato inteligente:
-![Untitled](https://i.imgur.com/gbmw11d.png)
+![Untitled](https://i.imgur.com/jWJT68P.png)
 
 ### 🛡 Renderizando o personagem NFT.
 
@@ -211,7 +211,7 @@ return (
         </div>
         <div className="attack-container">
           <button className="cta-button" onClick={runAttackAction}>
-            {`💥 Attack ${boss.name}`}
+            {`💥 Atacar ${boss.name}`}
           </button>
         </div>
       </div>
@@ -221,7 +221,7 @@ return (
     {characterNFT && (
       <div className="players-container">
         <div className="player-container">
-          <h2>Your Character</h2>
+          <h2>Seu Personagem</h2>
           <div className="player">
             <div className="image-content">
               <h2>{characterNFT.name}</h2>
@@ -235,7 +235,7 @@ return (
               </div>
             </div>
             <div className="stats">
-              <h4>{`⚔️ Attack Damage: ${characterNFT.attackDamage}`}</h4>
+              <h4>{`⚔️ Dano de Ataque: ${characterNFT.attackDamage}`}</h4>
             </div>
           </div>
         </div>
@@ -249,15 +249,15 @@ Você pode ver basicamente o mesmo tipo de layout que temos para nosso personage
 
 Seu app deve se parecer com isso:
 
-![REVIEW - Untitled](https://i.imgur.com/xgC5Kzd.png)
+![Untitled](https://i.imgur.com/MakV2Yx.png)
 
 Capitão Nascimento e Anitta estão prontos para uma batalha épica 🔥. Agora que temos nosso boss e o herói prontos, chegou a hora:
 
-![Untitled](https://media.giphy.com/media/26wkP6n7c8fQJbhVS/giphy.gif)
+![Untitled](https://64.media.tumblr.com/79a84e0c1c80962b99578eca0d5bbd15/c844d69a678024f4-e8/s540x810/94f7fabdec543af4f6fd0f1978aee6bd21fa34c9.gifv)
 
 ### 💥 Atacando o Boss.
 
-O grande objetivo do nosso jogo é derrotar o Boss no metaverso! Nós levamos em conta todo o dano de ataque que seu personagem NFT tem e a vida para cada jogador. O objetivo dessa seção é desferir um ataque em Capitão Nascimento e ver se ele desfere um em nós.
+O grande objetivo do nosso jogo é derrotar o Boss no metaverso! Nós levamos em conta todo o dano de ataque que seu personagem NFT tem e a vida para cada jogador. O objetivo dessa seção é desferir um ataque no Capitão Nascimento e ver se ele desfere um em nós.
 
 Se você lembra quando estávamos configurando a lógica de ataque no nosso contrato, nós testamos tudo. É hora de adicionar a lógica para a função `runAttackAction` que adicionamos mais cedo e outra variável de estado chamada `attackState`:
 
@@ -274,14 +274,14 @@ const runAttackAction = async () => {
   try {
     if (gameContract) {
       setAttackState("attacking");
-      console.log("Attacking boss...");
+      console.log("Atacando o boss...");
       const attackTxn = await gameContract.attackBoss();
       await attackTxn.wait();
       console.log("attackTxn:", attackTxn);
       setAttackState("hit");
     }
   } catch (error) {
-    console.error("Error attacking boss:", error);
+    console.error("Erro atacando o boss:", error);
     setAttackState("");
   }
 };
@@ -324,7 +324,7 @@ return (
         </div>
         <div className="attack-container">
           <button className="cta-button" onClick={runAttackAction}>
-            {`💥 Attack ${boss.name}`}
+            {`💥 Atacar ${boss.name}`}
           </button>
         </div>
       </div>
@@ -339,11 +339,11 @@ Nós vamos adicionar dinamicamente esse nome de classe para a nossa `div` que va
 **Boa.** Devemos estar prontos para testar e desferir um ataque em Capitão Nascimento. Vá em frente e clique no botão de Ataque e veja o que acontece! Você deve ver algumas coisas:
 
 1. O Metamask aparece para ter certeza que você quer confirmar a ação de ataque.
-2. Você deve ver logs no seu console começando com "Attacking boss..."
+2. Você deve ver logs no seu console começando com "Atacando boss..."
 3. Depois você deve ver o hash da transação uma vez que o ataque for completo
 4. Durante esse tempo você deve ver algumas animações
 
-![Untitled](https://i.imgur.com/WuT9ytY.png)
+![Untitled](https://i.imgur.com/jl7MRx6.png)
 
 **Você acabou de desferir seu primeiro ataque no Capitão Nascimento 😲.** Mas espere um minuto, a vida do Capitão Nascimento e do Anitta não mudaram? Como nossos jogadores vão saber o que aconteceu? Você deve estar pensando no evento que fizemos antes no nosso contrato inteligente - você está certo! Isso é fácil, nós já fizemos isso! Vamos configurar um listener para ouvir ao evento de ataque:
 
@@ -404,7 +404,7 @@ const Arena = ({ characterNFT, setCharacterNFT }) => {
 Não se esqueça de voltar ao `App.js` e passar a propriedade `setCharacterNFT` para seu componente Arena:
 
 ```javascript
-<Arena characterNFT={characterNFT} setCharacterNFT={setCharacterNFT} />
+return <Arena characterNFT={characterNFT} setCharacterNFT={setCharacterNFT} />
 ```
 
 Isso deve parecer familiar para você! Nosso contrato vai retornar `newBossHp` e `newPlayerHp` o que vai então atualizar o estado do nosso boss e do personagem NFT. Vamos ver mais agora:
@@ -425,6 +425,6 @@ Finalmente, nós precisamos só adicionar a propriedade `hp` e os novos valores.
 
 Vamos tentar atacar o Capitão Nascimento novamente. Passe pelo seu mesmo setup e você deve ver agora as barras de vida do personagem atualizarem. Olhe seu console e você também verá seus dados escritos como isso:
 
-![Untitled](https://i.imgur.com/3rPMyK6.png)
+![Untitled](https://i.imgur.com/0JUrAJs.png)
 
-Você tem um jogo bem legítimo agora. Animações, vida e atualizações em tempo real. Capitão Nascimento é muito forte agora, pois ele matou o Anitta :(.
+Você tem um jogo bem legítimo agora. Animações, vida e atualizações em tempo real. Capitão Nascimento é muito forte agora, pois ele matou o Zeca Pagodinho :(.

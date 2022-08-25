@@ -145,7 +145,7 @@ useEffect(() => {
    * A função que vamos chamar que interage com nosso contrato inteligente
    */
   const fetchNFTMetadata = async () => {
-    console.log("Checking for Character NFT on address:", currentAccount);
+    console.log("Verificando pelo personagem NFT no endereço:", currentAccount);
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -157,10 +157,10 @@ useEffect(() => {
 
     const txn = await gameContract.checkIfUserHasNFT();
     if (txn.name) {
-      console.log("User has character NFT");
+      console.log("Usuário tem um personagem NFT");
       setCharacterNFT(transformCharacterData(txn));
     } else {
-      console.log("No character NFT found");
+      console.log("Nenhum personagem NFT foi encontrado");
     }
   };
 
@@ -168,7 +168,7 @@ useEffect(() => {
    * Nós so queremos rodar isso se tivermos uma wallet conectada
    */
   if (currentAccount) {
-    console.log("CurrentAccount:", currentAccount);
+    console.log("Conta Atual:", currentAccount);
     fetchNFTMetadata();
   }
 }, [currentAccount]);
@@ -178,7 +178,7 @@ Isso é um pouco do React chique que eu estava falando antes. Você provavelment
 
 ```javascript
 const fetchNFTMetadata = async () => {
-  console.log("Checking for Character NFT on address:", currentAccount);
+  console.log("Verificando pelo personagem NFT no endereço:", currentAccount);
 
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
@@ -190,10 +190,10 @@ const fetchNFTMetadata = async () => {
 
   const txn = await gameContract.checkIfUserHasNFT();
   if (txn.name) {
-    console.log("User has character NFT");
+    console.log("Usuário tem um personagem NFT");
     setCharacterNFT(transformCharacterData(txn));
   } else {
-    console.log("No character NFT found");
+    console.log("Nenhum personagem NFT foi encontrado");
   }
 };
 ```
@@ -220,10 +220,10 @@ Sinta-se livre para fazer `console.log(txn)` e vejo o que está nele!
 
 ```javascript
 if (txn.name) {
-  console.log("User has character NFT");
+  console.log("Usuário tem um personagem NFT");
   setCharacterNFT(transformCharacterData(txn));
 } else {
-  console.log("No character NFT found!");
+  console.log("Nenhum personagem NFT foi encontrado");
 }
 ```
 
@@ -254,11 +254,16 @@ const transformCharacterData = (characterData) => {
 export { CONTRACT_ADDRESS, transformCharacterData };
 ```
 
+E no `App.js`:
+```javascript
+import { CONTRACT_ADDRESS, transformCharacterData } from "./constants"
+```
+
 Agora, para o final desse pequeno código do snippet abaixo:
 
 ```javascript
 if (currentAccount) {
-  console.log("CurrentAccount:", currentAccount);
+  console.log("Conta Atual:", currentAccount)
   fetchNFTMetadata();
 }
 ```
@@ -281,4 +286,4 @@ Todas as coisas estão no lugar. Você está se sentindo bem e é um engenheiro 
 
 Recarregue o seu app e tenha certeza que você não tenha uma carteira conectada ainda. Aí, vá em frente e conecte sua carteira. Tenha certeza de que você abra o console para que possa ver os logs entrando!
 
-Recarregue a página. Nesse ponto, você deve ver seu console devolver: `No character NFT found` . Boa! Isso significa que seu código está rodando corretamente e que você está pronto para mintar personagens NFT 🤘!
+Recarregue a página. Nesse ponto, você deve ver seu console devolver: `Nenhum personagem NFT foi encontrado` . Boa! Isso significa que seu código está rodando corretamente e que você está pronto para mintar personagens NFT 🤘!

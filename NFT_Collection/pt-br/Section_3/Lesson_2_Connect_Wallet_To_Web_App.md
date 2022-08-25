@@ -31,7 +31,7 @@ const App = () => {
   // Métodos para Renderizar
   const renderNotConnectedContainer = () => (
     <button className="cta-button connect-wallet-button">
-      Connect to Wallet
+      Conecte a sua Carteira
     </button>
   );
   /*
