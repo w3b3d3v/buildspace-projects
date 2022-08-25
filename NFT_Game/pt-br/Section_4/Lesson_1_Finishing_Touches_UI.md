@@ -40,7 +40,7 @@ useEffect(() => {
 
 useEffect(() => {
   const fetchNFTMetadata = async () => {
-    console.log("Procurando personagens NFT na carteira:", currentAccount);
+    console.log("Verificando pelo personagem NFT no endereço:", currentAccount)
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -51,9 +51,11 @@ useEffect(() => {
     );
 
     const characterNFT = await gameContract.checkIfUserHasNFT();
-    if (characterNFT.name) {
-      console.log("User has character NFT");
-      setCharacterNFT(transformCharacterData(characterNFT));
+    if (txn.name) {
+      console.log("Usuário tem um personagem NFT")
+      setCharacterNFT(transformCharacterData(txn))
+    } else {
+      console.log("Nenhum personagem NFT foi encontrado")
     }
 
     /*
@@ -63,7 +65,7 @@ useEffect(() => {
   };
 
   if (currentAccount) {
-    console.log("Carteira conectada:", currentAccount);
+    console.log("Conta Atual:", currentAccount)
     fetchNFTMetadata();
   }
 }, [currentAccount]);
@@ -213,8 +215,8 @@ return (
           <p>Mintando personagem...</p>
         </div>
         <img
-          src="https://media2.giphy.com/media/61tYloUgq1eOk/giphy.gif?cid=ecf05e47dg95zbpabxhmhaksvoy8h526f96k4em0ndvx078s&rid=giphy.gif&ct=g"
-          alt="Minting loading indicator"
+          src="http://pa1.narvii.com/6623/1d810c548fc9695d096d54372b625d207373130a_00.gif"
+          alt="Indicador de Mintagem"
         />
       </div>
     )}
@@ -250,7 +252,7 @@ Não esqueça de adicionar algum CSS para o seu `SelectedCharacter.css` também:
 
 Com esse HTML e CSS, você deve ver algo como isso:
 
-![Untitled](https://i.imgur.com/TqcL5cP.png)
+![Untitled](https://i.imgur.com/uqEkuTd.png)
 
 Gandalf está agora preparando você para a batalha enquanto você fica pronto para derrotar o boss na Arena 🧙‍♂️.
 
@@ -312,7 +314,7 @@ Tenha certeza de adicionar esse CSS ao seu arquivo `Arena.css`:
 
 Com esse código você deve ter algo que se pareça com isso:
 
-![Untitled](https://i.imgur.com/xuuhAQy.png)
+![Untitled](https://i.imgur.com/igISJMl.png)
 
 Nada mau, certo? Todos esses indicadores de carregamento funcionam da mesma maneira e vivem nos nossos próprios componentes. Na próxima seção nós vamos adicionar mais uma peça que vai deixar nosso componente `Arena` melhor ainda quando um ataque é desferido!
 
@@ -486,7 +488,7 @@ return (
         </div>
         <div className="attack-container">
           <button className="cta-button" onClick={runAttackAction}>
-            {`💥 Attack ${boss.name}`}
+            {`💥 Atacar ${boss.name}`}
           </button>
         </div>
         {attackState === "attacking" && (
@@ -516,7 +518,7 @@ return (
               </div>
             </div>
             <div className="stats">
-              <h4>{`⚔️ Poder de Ataque: ${characterNFT.attackDamage}`}</h4>
+              <h4>{`⚔️ Dano de Ataque: ${characterNFT.attackDamage}`}</h4>
             </div>
           </div>
         </div>
@@ -576,4 +578,4 @@ Boa! A maior coisa de se apontar é o `setTimeout`. Tudo que isso está fazendo 
 
 Se você fizer tudo certo, você vai ver um pequeno e legal toast embaixo do seu app depois de atacar seu boss.
 
-![Untitled](https://i.imgur.com/nDuZnKy.png)
+![Untitled](https://i.imgur.com/Vq11V4Y.png)
