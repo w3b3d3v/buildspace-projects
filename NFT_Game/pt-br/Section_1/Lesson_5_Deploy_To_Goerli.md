@@ -178,21 +178,21 @@ Se funcionou - **INCRÍVEL VOCÊ ACABOU DE FAZER DEPLOY DE UM CONTRATO E MINTOU 
 
 Acredite ou não. As NFTs que você acabou de mintar vão estar no site do OpenSea Tesnet.
 
-Vá para [REVIEW - testnets.opensea.io](https://testnets.opensea.io/). Ali, procure pelo endereço do seu contrato que é o endereço que você vai encontrar no seu terminal. **Não clique enter na barra de pesquia**. OpenSea é estranho então você vai ter que clicar na coleção quando aparecer.
+Vá para [testnets.opensea.io](https://testnets.opensea.io/). Ali, procure pelo endereço do seu contrato que é o endereço que você vai encontrar no seu terminal. **Não clique enter na barra de pesquia**. OpenSea é estranho então você vai ter que clicar na coleção quando aparecer.
 
 Então aqui, você clicaria "Heroes -" dentro de "Collections", e boom, você veria as NFTs que mintou!!
 
-![REVIEW - Untitled](https://i.imgur.com/9ULR2OW.png)
+![Untitled](https://i.imgur.com/9ULR2OW.png)
 
-![REVIEW - Untitled](https://i.imgur.com/F9xQHFE.png)
+![Untitled](https://i.imgur.com/MOcuH1i.png)
 
 **BOOM! AÍ ESTÃO MEUS PERSONAGENS!!** Se você clicar em um dos seus personagens, vai poder clicar em "**Levels**" na esquerda e até ver os atributos específicos! **Nós até temos uma barrinha de vida!! ÉPICO!!! Cada barra de vida é diferente dependendo da NFT**, por exemplo o Zeca Pagodinho tem 300 de HP e o Anitta tem apenas 100!
 
 Por exemplo:
 
-![REVIEW - Untitled](https://i.imgur.com/8lry1nA.png)
+![Untitled](https://i.imgur.com/uhjjrJP.png)
 
-![REVIEW - Untitled](https://i.imgur.com/mbMf8CI.png)
+![Untitled](https://i.imgur.com/GmZr4uW.png)
 
 Nesse caso, o OpenSea renderizou todos os atributos dos personagens eficientemente!
 

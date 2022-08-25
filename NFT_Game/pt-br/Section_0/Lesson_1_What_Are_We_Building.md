@@ -6,7 +6,7 @@ Você conseguiu - é isso aí! Bem vindo :). Meu nome é danicuki e serei seu in
 
 Então, o que vamos construir aqui :)? Aqui está um pequeno vídeo:
 
-[REVIEW](https://www.loom.com/share/aeea29580aaa4dd88d8c7bc27f938d63)
+[Loom](https://www.loom.com/share/bfea6f9e52444d189952ade6ab89605d)
 
 ### **🤘  Vê um problema? Quer melhorar algo? Conserte você mesmo ;). 🤘**
 
