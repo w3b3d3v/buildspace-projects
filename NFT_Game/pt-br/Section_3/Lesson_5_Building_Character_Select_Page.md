@@ -60,7 +60,7 @@ useEffect(() => {
      */
     setGameContract(gameContract);
   } else {
-    console.log("Ethereum object not found");
+    console.log("Objeto Ethereum não encontrado");
   }
 }, []);
 ```
@@ -73,7 +73,7 @@ Não tem muita diferença aqui com configurar nosso `gameContract` no estado. N�
 useEffect(() => {
   const getCharacters = async () => {
     try {
-      console.log("Getting contract characters to mint");
+      console.log("Buscando contrato de personagens para mintar");
 
       /*
        * Chama o contrato para buscar todos os personagens mintáveis
@@ -93,7 +93,7 @@ useEffect(() => {
        */
       setCharacters(characters);
     } catch (error) {
-      console.error("Something went wrong fetching characters:", error);
+      console.error("Algo deu errado ao buscar personagens:", error);
     }
   };
 
@@ -115,7 +115,7 @@ Depois, nós podemos configurar esses dados no nosso estado para começar a usá
 Finalmente, toda vez que `gameContract` muda nós queremos ter certeza que não é `null`, então envolvemos a nossa chamada de função em um teste rápido.
 
 Antes de ir em frente, vamos tentar um teste rápido! Nós devemos poder ver alguns log statements no nosso console. Tenha certeza que seu console está aberto e recarregue a página do site. Se tudo ocorreu com sucesso, você deve ver algo como isso:
-![Untitled](https://i.imgur.com/XHEeMZ5.png)
+![Untitled](https://i.imgur.com/FC53Ksp.png)
 
 **🦄 OLHE ISSO! Você conseguiu pegar dados do seu contrato inteligente 🦄**
 
@@ -137,8 +137,9 @@ const renderCharacters = () =>
       <button
         type="button"
         className="character-mint-button"
-        onClick={mintCharacterNFTAction(index)}
-      >{`Mint ${character.name}`}</button>
+        // onClick={mintCharacterNFTAction(index)} 
+        // você deve descomentar essa linha depois que criar a função mintCharacterNFTAction
+      >{`Mintar ${character.name}`}</button>
     </div>
   ));
 ```
@@ -164,7 +165,7 @@ return (
 
 É fácil assim! Vá em frente e recarregue a página e você deve ver algo como isso:
 
-![Untitled](https://i.imgur.com/ycbOfNh.png)
+![Untitled](https://i.imgur.com/XkYGb4C.png)
 
 **VAMOS NESSA! CONSEGUIMOS ALGUNS PERSONAGENS :).**
 
@@ -179,7 +180,7 @@ Isso é incrível, mas nós podemos levar isso um passo mais longe - **um botão
 const mintCharacterNFTAction = (characterId) => async () => {
   try {
     if (gameContract) {
-      console.log("Minting character in progress...");
+      console.log("Mintando personagem...");
       const mintTxn = await gameContract.mintCharacterNFT(characterId);
       await mintTxn.wait();
       console.log("mintTxn:", mintTxn);
@@ -206,7 +207,7 @@ Vamos ir para o primeiro `useEffect` onde esperamos pelo nosso `gameContract` se
 useEffect(() => {
   const getCharacters = async () => {
     try {
-      console.log("Getting contract characters to mint");
+      console.log("Trazendo personagens do contrato para mintar");
 
       const charactersTxn = await gameContract.getAllDefaultCharacters();
       console.log("charactersTxn:", charactersTxn);
@@ -217,7 +218,7 @@ useEffect(() => {
 
       setCharacters(characters);
     } catch (error) {
-      console.error("Something went wrong fetching characters:", error);
+      console.error("Algo deu errado ao trazer personagens:", error);
     }
   };
 
@@ -301,7 +302,7 @@ Finalmente, nós queremos ter certeza de parar de ouvir esse evento quando o com
 
 Nesse ponto podemos fazer um teste sólido - vamos mintar uma NFT! Como sempre, tenha seu console aberto para que possamos ver os log statements! Minte seu personagem favorito e espere o seu trabalho funcionar na sua frente:
 
-![Untitled](https://i.imgur.com/PQHzJzq.png)
+![Untitled](https://i.imgur.com/gxL57uZ.png)
 
 Você acabou de mintar um personagem NFT do seu contrato inteligente. Antes de ir em frente, vá para o OpenSea e veja se seu personagem foi mintado de verdade. Para pegar o link direto para sua NFT você pode só fazer:
 
@@ -311,9 +312,9 @@ https://testnets.opensea.io/assets/CONTRACT_ADDRES/TOKEN_ID
 
 Aqui está como o meu se parece:
 
-![Untitled](https://i.imgur.com/W3eca7t.png)
+![Untitled](https://i.imgur.com/7nSpif2.png)
 
-Aí está meu NFT da Anitta. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [REVIEW - https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando a Goerli!
+Aí está meu NFT do Zeca Pagodinho. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando a Goerli!
 
 Você conseguiu! Agora que temos nosso personagem NFT nós podemos finalmente sair e proteger o Metaverso de seres malignos!
 
@@ -321,7 +322,7 @@ Sinta-se livre para configurar um `alert` que dá automaticamente o link do Open
 
 ```javascript
 alert(
-  `Your NFT is all done -- see it here: https://testnets.opensea.io/assets/${gameContract}/${tokenId.toNumber()}`
+  `Seu NFT está pronto -- veja aqui: https://testnets.opensea.io/assets/${gameContract}/${tokenId.toNumber()}`
 );
 ```
 
@@ -330,4 +331,4 @@ alert(
 
 Poste uma screenshot da sua seleção de personagens em #progresso -- é sempre muito divertido ver os personagens da galera!! É também ótima ideia fazer um tweet disso! Espalhe ao mundo que seu jogo NFT tem um personagem novo e fale do seu jogo para outras pessoas :).
 
-![Untitled](https://i.imgur.com/ycbOfNh.png)
+![Untitled](https://i.imgur.com/W3hRfFp.png)
