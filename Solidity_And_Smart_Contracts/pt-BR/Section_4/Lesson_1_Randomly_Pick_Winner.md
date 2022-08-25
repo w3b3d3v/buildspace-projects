@@ -1,7 +1,7 @@
 😈 Escolha um vencedor aleatoriamente
 -----------------------
 
-Então, agora, nosso código está configurado para dar 0.0001 ETH a todo aceno! Nosso contrato ficará sem dinheiro muito rápido, e então a diversão acaba e precisaríamos adicionar mais fundos ao nosso contrato. Nesta lição, mostrarei como:
+Então, agora, nosso código está configurado para dar 0.0001 ETH a todo tchauzinho! Nosso contrato ficará sem dinheiro muito rápido, e então a diversão acaba e precisaríamos adicionar mais fundos ao nosso contrato. Nesta lição, mostrarei como:
 
 1\. Escolher **aleatoriamente** um vencedor.
 
@@ -43,7 +43,7 @@ contract WavePortal {
     Wave[] waves;
 
     constructor() payable {
-        console.log("Contrato construído!");
+        console.log("Contrato no ar!");
         /*
          * Define a semente inicial
          */
@@ -52,16 +52,16 @@ contract WavePortal {
 
     function wave(string memory _message) public {
         totalWaves += 1;
-        console.log("%s acenou!", msg.sender);
+        console.log("%s tchauzinhou!", msg.sender);
 
         waves.push(Wave(msg.sender, _message, block.timestamp));
 
         /*
-         * Gera uma nova semente para o próximo que acenar
+         * Gera uma nova semente para o próximo que mandar um tchauzinho
          */
         seed = (block.difficulty + block.timestamp + seed) % 100;
 
-        console.log("# randômico gerado: %d", seed);
+        console.log("# randomico gerado: %d", seed);
 
         /*
          * Dá 50%  de chance do usuário ganhar o prêmio.
@@ -98,9 +98,9 @@ Aqui, eu pego dois números dados a mim pelo Solidity, `block.difficulty` e `blo
 
 Esses #s são *bastante* aleatórios. Mas, tecnicamente, tanto o `block.difficulty` quanto o `block.timestamp` podem ser controlados por um invasor sofisticado.
 
-Para tornar isso mais difícil, crio uma variável `seed` que mudará essencialmente toda vez que um usuário enviar uma nova onda. Então, combino todas essas três variáveis para gerar uma nova semente aleatória. Então eu apenas faço `% 100`, o que garantirá que o número seja reduzido para um intervalo entre 0 e 100.
+Para tornar isso mais difícil, crio uma variável `seed` que mudará essencialmente toda vez que um usuário enviar um novo tchauzinho. Então, combino todas essas três variáveis para gerar uma nova semente aleatória. Então eu apenas faço `% 100`, o que garantirá que o número seja reduzido para um intervalo entre 0 e 100.
 
-É isso! Então eu apenas escrevo uma simples declaração IF para ver se a semente é menor ou igual a 50, se for -- então o "acenador" ganha o prêmio! Então, isso significa que o "acenador" tem 50% de chance de ganhar desde que escrevemos `seed <= 50`. Você pode mudar isso para o que quiser :). Acabei de fazer 50% porque é mais fácil testar assim!!
+É isso! Então eu apenas escrevo uma simples declaração IF para ver se a semente é menor ou igual a 50, se for -- então a pessoa que "mandou o tchau" ganha o prêmio! Então, isso significa que o "mandador de tchau" tem 50% de chance de ganhar desde que escrevemos `seed <= 50`. Você pode mudar isso para o que quiser :). Acabei de fazer 50% porque é mais fácil testar assim!!
 
 É importante ver que um ataque poderia tecnicamente enganar seu sistema se eles realmente quisessem. Seria muito difícil. Existem outras maneiras de gerar números aleatórios no blockchain, mas o Solidity não nos fornece nada confiável porque não pode! Todos os #s que nosso contrato pode acessar são públicos e *nunca* verdadeiramente aleatórios.
 
@@ -111,7 +111,7 @@ De qualquer forma, ninguém vai atacar nosso pequeno aplicativo, mas quero que v
 Teste!
 -------
 
-Vamos garantir que funcione! Aqui está meu `run.js` atualizado. Neste caso, eu só quero ter certeza de que o saldo do contrato muda no caso em que a pessoa que acenou ganhou!
+Vamos garantir que funcione! Aqui está meu `run.js` atualizado. Neste caso, eu só quero ter certeza de que o saldo do contrato muda no caso em que a pessoa que deu tchauzinhou ganhou!
 
 ```javascript
 const main = async () => {
@@ -131,12 +131,12 @@ const main = async () => {
   );
 
   /*
-   * Vamos tentar acenar 2 vezes agora
+   * Vamos tentar mandar um tchauzinho 2 vezes agora
    */
-  const waveTxn = await waveContract.wave("Aceno #1");
+  const waveTxn = await waveContract.wave("tchauzinho #1");
   await waveTxn.wait();
 
-  const waveTxn2 = await waveContract.wave("Aceno #2");
+  const waveTxn2 = await waveContract.wave("tchauzinho #2");
   await waveTxn2.wait();
 
   contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
@@ -166,14 +166,14 @@ Você nem sempre terá bons tutoriais como este para orientá-lo sobre como test
 
 Então, quando executo o código acima, aqui está o que recebo:
 
-![](https://i.imgur.com/ArXRCsp.png)
+![](https://i.imgur.com/V3k35Dg.png)
 
-Legal! Funciona. Quando "79" foi gerado, o usuário não ganhou o prêmio. Mas, quando 23 foi gerado, o aceno venceu! E o saldo do contrato caiu exatamente 0.0001. Ótimo :).
+Legal! Funciona. Quando "65" foi gerado, o usuário não ganhou o prêmio. Mas, quando 45 foi gerado, o tchauzinho venceu! E o saldo do contrato caiu exatamente 0.0001. Ótimo :).
 
 Cooldowns para evitar spammers
 -----------------------------
 
-Impressionante. Você tem uma maneira de enviar ETH aleatoriamente para as pessoas! Agora, pode ser útil adicionar uma função de cooldown ao seu site para que as pessoas não possam simplesmente enviar spam para você. Por quê? Bem, talvez você simplesmente não queira que eles continuem tentando ganhar o prêmio repetidamente acenando para você. Ou talvez você não queira *apenas* *as* mensagens deles preenchendo seu mural de mensagens.
+Impressionante. Você tem uma maneira de enviar ETH aleatoriamente para as pessoas! Agora, pode ser útil adicionar uma função de cooldown ao seu site para que as pessoas não possam simplesmente enviar spam para você. Por quê? Bem, talvez você simplesmente não queira que eles continuem tentando ganhar o prêmio repetidamente mandando um tchauzinho para você. Ou talvez você não queira *apenas* *as* mensagens deles preenchendo seu mural de mensagens.
 
 Confira o código. Eu adicionei comentários onde adicionei novas linhas.
 
@@ -202,12 +202,12 @@ contract WavePortal {
 
     /*
      * Este é um endereço => uint mapping, o que significa que eu posso associar o endereço com um número!
-     * Neste caso, armazenarei o endereço com o últimoo horário que o usuário acenou.
+     * Neste caso, armazenarei o endereço com o últimoo horário que o usuário tchauzinhou.
      */
     mapping(address => uint256) public lastWavedAt;
 
     constructor() payable {
-        console.log("Contrato construído!");
+        console.log("Contrato construido!");
         /*
          * Define a semente inicial
          */
@@ -229,12 +229,12 @@ contract WavePortal {
         lastWavedAt[msg.sender] = block.timestamp;
 
         totalWaves += 1;
-        console.log("%s acenou!", msg.sender);
+        console.log("%s tchauzinhou!", msg.sender);
 
         waves.push(Wave(msg.sender, _message, block.timestamp));
 
         /*
-         * Gera uma nova semente para o próximo usuário que acenar
+         * Gera uma nova semente para o próximo usuário que mandar um tchauzinho
          */
         seed = (block.difficulty + block.timestamp + seed) % 100;
 
@@ -262,6 +262,6 @@ contract WavePortal {
     }
 }
 ```
-Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar acenar duas vezes seguidas sem esperar 15 minutos :).
+Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar mandar um tchauzinho duas vezes seguidas sem esperar 15 minutos :).
 
 Bam! E é assim que você constrói cooldowns!

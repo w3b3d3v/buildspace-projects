@@ -1,20 +1,20 @@
-💸 Envie ETH para pessoas que acenaram para você
+💸 Envie ETH para pessoas que mandaram um tchauzinho para você
 ----------------------------------------
 
-Agora o que queremos fazer é enviar um pouco de ETH para as pessoas que acenaram para nós! Por exemplo, talvez você queira fazer isso onde há 1% de chance de alguém ganhar $5 acenando para você. Ou talvez você queira fazer com que todos que acenem para você recebam $0,01 em ETH LOL.
+Agora o que queremos fazer é enviar um pouco de ETH para as pessoas que mandaram um tchauzinho para nós! Por exemplo, talvez você queira fazer isso onde há 1% de chance de alguém ganhar $5 mandando um tchauzinho para você. Ou talvez você queira fazer com que todos que acenem para você recebam $0,01 em ETH LOL.
 
 Você pode até mesmo enviar ETH manualmente para as pessoas cujas mensagens você mais gostou. Talvez eles te enviaram uma música incrível!!
 
 **Enviar ETH facilmente aos usuários é uma parte essencial dos contratos inteligentes e uma das partes mais legais deles**, então vamos fazer isso!
 
-Para começar, vamos dar a todos que acenarem para nós `0.0001 ETH`. Que era $ 0,31 no momento que escrevemos este artigo :). E tudo isso está acontecendo na testnet, então, é $ falso!
+Para começar, vamos dar a todos que mandarem um tchauzinho para nós `0.0001 ETH`. Que era $ 0,28 no momento que escrevemos este artigo :). E tudo isso está acontecendo na testnet, então, é $ falso!
 
 Confira minha função `wave` atualizada em `WavePortal.sol`.
 
 ```solidity
 function wave(string memory _message) public {
     totalWaves += 1;
-    console.log("%s acenou!", msg.sender);
+    console.log("%s tchauzinhou!", msg.sender);
 
     waves.push(Wave(msg.sender, _message, block.timestamp));
 
@@ -86,7 +86,7 @@ const main = async () => {
   );
 
   /*
-   * Enviar Aceno
+   * Enviar tchauzinho
    */
   let waveTxn = await waveContract.wave("Uma mensagem!");
   await waveTxn.wait();
@@ -141,7 +141,7 @@ O que isso está dizendo é que nosso contrato não pode pagar as pessoas agora!
 
 ```solidity
 constructor() payable {
-  console.log("Fomos construídos!");
+  console.log("Contrato no ar!");
 }
 ```
 
@@ -155,7 +155,7 @@ npx hardhat run scripts/run.js
 
 Isto é o que eu recebo:
 
-![](https://i.imgur.com/8jZHL6b.png)
+![](https://i.imgur.com/JQyLSe4.png)
 
 **Maravilhoso**.
 
@@ -208,16 +208,16 @@ Fácil!
 Vamos implantar nosso contrato usando a mesma linha antiga
 
 ```bash
-npx hardhat run scripts/deploy.js --network rinkeby
+npx hardhat run scripts/deploy.js --network goerli
 ```
 
-Agora, quando você entrar em [Etherscan](https://rinkeby.etherscan.io/) e colar o endereço do seu contrato, verá que seu contrato agora tem um valor de 0.001 ETH! Sucesso!
+Agora, quando você entrar em [Etherscan](https://goerli.etherscan.io/) e colar o endereço do seu contrato, verá que seu contrato agora tem um valor de 0.001 ETH! Sucesso!
 
 **Lembre-se de atualizar seu frontend com o novo endereço do contrato *e* o novo arquivo ABI. Caso contrário, ele irá** **quebrar**.
 
-Teste sua função de aceno e verifique se ela ainda funciona!
+Teste sua função de tchauzinho e verifique se ela ainda funciona!
 
 🎁 Encerramento
 ----------
 
-Há algo sobre o uso de ETH real para alimentar seus contratos, certo? Dê uma olhada em [este link](https://gist.github.com/adilanchian/236fe9f3a56b73751060800cae3a780d) para ver todo o código escrito nesta seção!
+Há algo sobre o uso de ETH real para alimentar seus contratos, certo? Dê uma olhada em [este link](https://gist.github.com/danicuki/4fce48bc881766115370dbe2913b44fc) para ver todo o código escrito nesta seção!

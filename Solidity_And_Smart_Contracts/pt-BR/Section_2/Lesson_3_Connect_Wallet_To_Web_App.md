@@ -10,9 +10,11 @@ Se estivermos logados na Metamask, ela injetará automaticamente um objeto espec
 
 ```javascript
 import React, { useEffect } from "react";
-import "./App.css";
+import { ethers } from "ethers";
+import './App.css';
 
-const App = () => {
+export default function App() {
+
   const checkIfWalletIsConnected = () => {
     /*
     * Primeiro checamos se temos acesso ao objeto window.ethereum
@@ -27,39 +29,41 @@ const App = () => {
     }
   }
 
-  /*
-  * Este trecho executa nossa função quando carrega a página
-  */
   useEffect(() => {
     checkIfWalletIsConnected();
   }, [])
 
+  const wave = () => {
+    
+  }
+
   return (
     <div className="mainContainer">
+
       <div className="dataContainer">
         <div className="header">
-        👋 Olá!
+        👋 Olá Pessoal!
         </div>
 
         <div className="bio">
-          Eu sou o farza e trabalhei em carros autônomos, bem legal, né? Conecte a sua carteira Ethereum e acene para mim!
+        Eu sou o danicuki e já trabalhei com música, sabia? Legal, né? Conecte sua carteira Ethereum wallet e me manda um tchauzinho!
         </div>
 
-        <button className="waveButton" onClick={null}>
-          Acene para mim
+        <button className="waveButton" onClick={wave}>
+          Mandar Tchauzinho 🌟
         </button>
       </div>
     </div>
   );
 }
-
-export default App
 ```
 
 🔒 Veja se podemos acessar a conta do usuário
 -----------------------------------------
 
-Então quando você executar o projeto, deverá ver a linha "Temos o objeto ethereum" impressa no console do site quando for inspecioná-lo. Se você estiver usando o Replit, verifique se está olhando para o console do site do seu projeto, não para o espaço de trabalho do Replit! Você pode acessar o console do seu site abrindo-o em sua própria janela/guia e iniciando as ferramentas do desenvolvedor. A URL deve ser algo como - `https://waveportal-starter-project.seuUsuario.repl.co/`
+Então quando você executar o projeto, deverá ver a linha "Temos o objeto ethereum" impressa no console do site quando for inspecioná-lo. Se você estiver usando o Replit, verifique se está olhando para o console do site do seu projeto, não para o espaço de trabalho do Replit! Você pode acessar o console do seu site abrindo-o em sua própria janela/guia e iniciando as ferramentas do desenvolvedor. 
+
+O endereço da nova janela no navegador deve ser algo como - `https://projeto-tchauzinho.seuusuario.repl.co/`. É nesta janela que você pode clicar com o botão direito do mouse e selecionar a opção Inspecionar para conseguir ver o `Console` e as mensagens de log.
 
 **LEGAL.**
 
@@ -71,9 +75,11 @@ Confira o código abaixo.
 
 ```javascript
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import { ethers } from "ethers";
+import './App.css';
 
-const App = () => {
+export default function App() {
+
   /*
   * Apenas uma variável de estado que utilizamos para armazenar a carteira pública do usuário.
   */
@@ -111,42 +117,49 @@ const App = () => {
     checkIfWalletIsConnected();
   }, [])
 
+  const wave = () => {
+    
+  }
+
   return (
     <div className="mainContainer">
+
       <div className="dataContainer">
         <div className="header">
-        👋 Olá!
+        👋 Olá Pessoal!
         </div>
 
         <div className="bio">
-          Eu sou o farza e trabalhei em carros autônomos, bem legal, né? Conecte a sua carteira Ethereum e acene para mim!
+        Eu sou o danicuki e já trabalhei com música, sabia? Legal, né? Conecte sua carteira  Ethereum wallet e me manda um tchauzinho!
         </div>
 
-        <button className="waveButton" onClick={null}>
-          Acene para mim
+        <button className="waveButton" onClick={wave}>
+          Mandar Tchauzinho 🌟
         </button>
       </div>
     </div>
-    );
-  }
-export default App
+  );
+}
 ```
 
-Então, usamos esse método especial `eth_accounts` para ver se estamos autorizados a acessar alguma das contas na carteira do usuário. Uma coisa a ter em mente é que o usuário pode ter várias contas em sua carteira. Neste caso, pegamos apenas a primeir.
+Então, usamos esse método especial `eth_accounts` para ver se estamos autorizados a acessar alguma das contas na carteira do usuário. Uma coisa a ter em mente é que o usuário pode ter várias contas em sua carteira. Neste caso, pegamos apenas a primeira.
 
 💰 Crie um botão para conectar a carteira
 --------------------------------
 
 Quando você executar o código acima, o console.log deve imprimir `Nenhuma conta autorizada foi encontrada`. Por quê? Bem, porque nunca dissemos explicitamente à Metamask, "Olá Metamask, dê a este site acesso à minha carteira, por favor".
 
-Precisamos criar um botão `connectWallet`. No mundo da Web3, conectar sua carteira é literalmente um botão "Login" para seu usuário :). Confira:
+Precisamos criar um botão `connectWallet`. No mundo da Web3, conectar sua carteira é literalmente um botão "Login" para seu usuário 😀
 
+Substitua o código do arquivo `src/App.jsx` no Replit com o conteúdo abaixo:
 
 ```javascript
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import { ethers } from "ethers";
+import './App.css';
 
-const App = () => {
+export default function App() {
+
   const [currentAccount, setCurrentAccount] = useState("");
 
   const checkIfWalletIsConnected = async () => {
@@ -199,22 +212,25 @@ const App = () => {
     checkIfWalletIsConnected();
   }, [])
 
+  const wave = () => {
+    
+  }
+
   return (
     <div className="mainContainer">
+
       <div className="dataContainer">
         <div className="header">
-        👋 Olá!
+        👋 Olá Pessoal!
         </div>
 
         <div className="bio">
-          Eu sou o farza e trabalhei em carros autônomos, bem legal, né? Conecte a sua carteira Ethereum e acene para mim!
+        Eu sou o danicuki e já trabalhei com música, sabia? Legal, né? Conecte sua carteira  Ethereum wallet e me manda um tchauzinho!
         </div>
 
-        <button className="waveButton" onClick={null}>
-          Acene para mim
+        <button className="waveButton" onClick={wave}>
+          Mandar Tchauzinho 🌟
         </button>
-      </div>
-
         {/*
         * Se não existir currentAccount, apresente este botão
         */}
@@ -224,22 +240,24 @@ const App = () => {
           </button>
         )}
       </div>
+      
     </div>
   );
 }
-
-export default App
 ```
 
 Nosso código está ficando um pouco longo, mas você pode ver como nossa função `connectWallet` é curta. Neste caso, eu uso a função `eth_requestAccounts` porque estou literalmente pedindo à Metamask para me dar acesso à carteira do usuário.
 
-Também adicionei um botão para que possamos chamar nossa função `connectWallet`. Você notará que só mostro este botão se não tivermos `currentAccount`. Se já temos currentAccount, isso significa que já temos acesso a uma conta autorizada na carteira do usuário.
+Também adicionei um botão para que possamos chamar nossa função `connectWallet`. Você notará que só mostro este botão se não tivermos `currentAccount`. Se já temos `currentAccount`, isso significa que já temos acesso a uma conta autorizada na carteira do usuário.
+
+**Dica:** Para o seu aprendizado é importante você ler o código e identificar o que está mudando entre uma versão e outra e entender o que faz cada nova linha adicionada. Se você somente copiar e colar, terá dificuldades nas etapas seguintes.
 
 🌐 Conecte-se!
 -----------
 
-Agora, é hora da mágica! Confira o vídeo abaixo:
-[Tear](https://www.loom.com/share/1d30b147047141ce8fde590c7673128d?t=0)
+Agora, é hora da mágica! 🪄
+
+Confira [esse vídeo que preparei pra você](https://www.loom.com/share/2a5794fca9064a059dca1989cdfa2c37?t=0).
 
 🚨 Obrigatório: Antes de clicar em "Próxima lição"
 --------------------------------------------

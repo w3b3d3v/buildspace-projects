@@ -20,9 +20,9 @@ O plano aqui é retornar `CharacterAttributes` preenchido com o estado da NFT do
 
 ```solidity
 function checkIfUserHasNFT() public view returns (CharacterAttributes memory) {
- // Pega o tokenId do personagem NFT do usuário
+ // Pega o tokenId do personagem NFT do usuario
  uint256 userNftTokenId = nftHolders[msg.sender];
- // Se o usuário tiver um tokenId no map, retorne seu personagem
+ // Se o usuario tiver um tokenId no map, retorne seu personagem
  if (userNftTokenId > 0) {
     return nftHolderAttributes[userNftTokenId];
   }
@@ -34,7 +34,7 @@ function checkIfUserHasNFT() public view returns (CharacterAttributes memory) {
 }
 ```
 
-Porquê fazemos `userNftTokenId > 0`? Bom, basicamente [não tem outro jeito](https://ethereum.stackexchange.com/a/13029) de checar se uma chave existe em um map. Nós configuramos nosso map desse jeito: `mapping(address => uint256) public nftHolders`. Não importa qual a chave que estamos procurando, vai ter um valor padrão de 0.
+Por que fazemos `userNftTokenId > 0`? Bom, basicamente [não tem outro jeito](https://ethereum.stackexchange.com/a/13029) de checar se uma chave existe em um map. Nós configuramos nosso map desse jeito: `mapping(address => uint256) public nftHolders`. Não importa qual a chave que estamos procurando, vai ter um valor padrão de 0.
 
 Esse é um problema para o usuário que tem a NFT com o tokenId `0`. Aí está o motivo do porque eu fiz `_tokenIds.increment()` antes no constructor! Dessa maneira, **ninguém está permitido a ter o tokenID 0.** Esse é um dos casos em que precisamos ser espertos para configurar nosso código por causa de algumas especificidades do Solidity :).
 
@@ -94,7 +94,7 @@ event CharacterNFTMinted(address sender, uint256 tokenId, uint256 characterIndex
 event AttackComplete(uint newBossHp, uint newPlayerHp);
 ```
 
-O primeiro evento, `CharacterNFTMinted` nós iremos disparar quando acabarmos de mintar uma NFT para o usuário! Isso vai nos permitir notificar eles quando acabarmos de mintar a NFT! Então, nós podemos disparar esse evento adicionando essa linha bem no final da nossa função `mintCharacterNFT` (logo depois da parte `_tokenIds.increment()`):
+O primeiro evento, `CharacterNFTMinted` nós iremos disparar quando acabarmos de mintar um NFT para o usuário! Isso vai nos permitir notificar eles quando acabarmos de mintar a NFT! Então, nós podemos disparar esse evento adicionando essa linha bem no final da nossa função `mintCharacterNFT` (logo depois da parte `_tokenIds.increment()`):
 
 ```solidity
 emit CharacterNFTMinted(msg.sender, newItemId, _characterIndex);
@@ -125,22 +125,22 @@ const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
 
   const gameContract = await gameContractFactory.deploy(
-    ["Leo", "Aang", "Pikachu"],
-    [
-      "https://i.imgur.com/pKd5Sdk.png",
-      "https://i.imgur.com/xVu4vFL.png",
-      "https://i.imgur.com/u7T87A6.png",
-    ],
-    [100, 200, 300],
-    [100, 50, 25],
-    "Elon Musk",
-    "https://i.imgur.com/AksR0tt.png",
-    10000,
-    50
-  );
+    ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
+		[
+			"https://i.imgur.com/gC5qXsl.png",
+			"https://i.imgur.com/0PvxtwP.png",
+			"https://i.imgur.com/Pj8lHpM.png",
+		],
+		[100, 200, 300],
+		[100, 50, 25],
+		"Capitão Nascimento",
+		"https://i.imgur.com/yWpKMDt.png",
+		10000,
+		50
+	);
 
   await gameContract.deployed();
-  console.log("Contract deployed to:", gameContract.address);
+  console.log("Contrato deployado no endereço:", gameContract.address);
 };
 
 const runMain = async () => {
@@ -156,6 +156,6 @@ const runMain = async () => {
 runMain();
 ```
 
-Tudo o que sobrou é fazer o deploy usando `npx hardhat run scripts/deploy.js --network rinkeby`. Lembre-se de salvar o endereço do seu contrato para a próxima seção.
+Tudo o que sobrou é fazer o deploy usando `npx hardhat run scripts/deploy.js --network goerli`. Lembre-se de salvar o endereço do seu contrato para a próxima seção.
 
 É isso :). Vamos para o nosso web app!

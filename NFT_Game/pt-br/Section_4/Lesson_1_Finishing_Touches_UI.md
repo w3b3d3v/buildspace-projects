@@ -12,7 +12,7 @@ Lembra daquele componente `LoadingIndicator` que foi dado para você? Nós final
 
 ### 🔁 Adicionando indicadores de carregamento para App.js.
 
-Nós queremos ter certeza que o usuário possa ver que algo está acontecendo já que estamos esperando que o nosso app descubra em qual cenário estamos. Para isso, é bem simples - mostre um indicadore de carregamento até que os nossos dados voltem.
+Nós queremos ter certeza que o usuário possa ver que algo está acontecendo já que estamos esperando que o nosso app descubra em qual cenário estamos. Para isso, é bem simples - mostre um indicador de carregamento até que os nossos dados voltem.
 
 Precisamos saber quando algo está carregando. É o cenário perfeito para uma propriedade de estado. Comece adicionando o estado `isLoading` bem abaixo do estado `characterNFT` como:
 
@@ -40,7 +40,7 @@ useEffect(() => {
 
 useEffect(() => {
   const fetchNFTMetadata = async () => {
-    console.log("Checking for Character NFT on address:", currentAccount);
+    console.log("Procurando personagens NFT na carteira:", currentAccount);
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -63,7 +63,7 @@ useEffect(() => {
   };
 
   if (currentAccount) {
-    console.log("CurrentAccount:", currentAccount);
+    console.log("Carteira conectada:", currentAccount);
     fetchNFTMetadata();
   }
 }, [currentAccount]);
@@ -97,7 +97,7 @@ const renderContent = () => {
           className="cta-button connect-wallet-button"
           onClick={connectWalletAction}
         >
-          Connect Wallet To Get Started
+          Conecte sua carteira
         </button>
       </div>
     );
@@ -120,23 +120,23 @@ const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
 
     if (!ethereum) {
-      console.log("Make sure you have MetaMask!");
+      console.log("Parece que você não tem a metamask instalada!");
       /*
        * Nós configuramos o isLoading aqui porque usamos o return na proxima linha
        */
       setIsLoading(false);
       return;
     } else {
-      console.log("We have the ethereum object", ethereum);
+      console.log("Objeto ethereum encontrado:", ethereum);
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
       if (accounts.length !== 0) {
         const account = accounts[0];
-        console.log("Found an authorized account:", account);
+        console.log("Carteira conectada:", account);
         setCurrentAccount(account);
       } else {
-        console.log("No authorized account found");
+        console.log("Não foi encontrada uma carteira conectada");
       }
     }
   } catch (error) {
@@ -165,7 +165,7 @@ const [gameContract, setGameContract] = useState(null);
 const [mintingCharacter, setMintingCharacter] = useState(false);
 ```
 
-Then let's go ahead and head over to the `mintCharacterNFTAction` , since this is the function that is doing the minting for us. Just like before, we could tweak this to include our new state updates:
+Então vamos em frente, vá para a `mintCharacterNFTAction`, já que esta é uma função que estava fazendo o mint para nós. Assim como antes, nós poderíamos mudar isso para incluir nossos novos estados atualizados:
 
 ```javascript
 const mintCharacterNFTAction = (characterId) => async () => {
@@ -175,7 +175,7 @@ const mintCharacterNFTAction = (characterId) => async () => {
        * Mostre nosso indicador de carregamento
        */
       setMintingCharacter(true);
-      console.log("Minting character in progress...");
+      console.log("Mintando personagem...");
       const mintTxn = await gameContract.mintCharacterNFT(characterId);
       await mintTxn.wait();
       console.log(mintTxn);
@@ -185,7 +185,7 @@ const mintCharacterNFTAction = (characterId) => async () => {
       setMintingCharacter(false);
     }
   } catch (error) {
-    console.warn("MintCharacterAction Error:", error);
+    console.warn("Ação de mintar com erro: ", error);
     /*
      * Se tiver um problema, esconda o indicador de carregamento também
      */
@@ -201,7 +201,7 @@ Finalmente, vamos configurar alguma UI que vai mostrar quando estivermos no esta
 ```javascript
 return (
   <div className="select-character-container">
-    <h2>Mint Your Hero. Choose wisely.</h2>
+    <h2>Minte seu herói. Escolha com sabedoria</h2>
     {characters.length > 0 && (
       <div className="character-grid">{renderCharacters()}</div>
     )}
@@ -210,7 +210,7 @@ return (
       <div className="loading">
         <div className="indicator">
           <LoadingIndicator />
-          <p>Minting In Progress...</p>
+          <p>Mintando personagem...</p>
         </div>
         <img
           src="https://media2.giphy.com/media/61tYloUgq1eOk/giphy.gif?cid=ecf05e47dg95zbpabxhmhaksvoy8h526f96k4em0ndvx078s&rid=giphy.gif&ct=g"
@@ -250,7 +250,7 @@ Não esqueça de adicionar algum CSS para o seu `SelectedCharacter.css` também:
 
 Com esse HTML e CSS, você deve ver algo como isso:
 
-![Untitled](https://i.imgur.com/0w2VNro.png)
+![Untitled](https://i.imgur.com/TqcL5cP.png)
 
 Gandalf está agora preparando você para a batalha enquanto você fica pronto para derrotar o boss na Arena 🧙‍♂️.
 
@@ -260,7 +260,7 @@ O último ponto que queremos adicionar um indicador de carregamento está no nos
 
 A coisa legal sobre esse componente é que nós já temos algum estado configurado para isso - `attackState`! Nós sabemos quando um ataque está acontecendo quando nosso `attackState` == `attacking` então porque não usamos ele?
 
-Para isso tudo que precisamos fazer é adicionar mais um rendering condicional no nosso HTML. Vá em frente e adicione isso:
+Para isso tudo que precisamos fazer é adicionar mais uma renderização condicional no nosso HTML. Vá em frente e adicione isso:
 
 ```javascript
 <div className="arena-container">
@@ -278,14 +278,14 @@ Para isso tudo que precisamos fazer é adicionar mais um rendering condicional n
       </div>
       <div className="attack-container">
         <button className="cta-button" onClick={runAttackAction}>
-          {`💥 Attack ${boss.name}`}
+          {`💥 Atacar ${boss.name}`}
         </button>
       </div>
       {/* Adicione isso embaixo do seu botão de ataque */}
       {attackState === "attacking" && (
         <div className="loading-indicator">
           <LoadingIndicator />
-          <p>Attacking ⚔️</p>
+          <p>Atacando ⚔️</p>
         </div>
       )}
     </div>
@@ -312,13 +312,13 @@ Tenha certeza de adicionar esse CSS ao seu arquivo `Arena.css`:
 
 Com esse código você deve ter algo que se pareça com isso:
 
-![Untitled](https://i.imgur.com/ggEvT7l.png)
+![Untitled](https://i.imgur.com/xuuhAQy.png)
 
 Nada mau, certo? Todos esses indicadores de carregamento funcionam da mesma maneira e vivem nos nossos próprios componentes. Na próxima seção nós vamos adicionar mais uma peça que vai deixar nosso componente `Arena` melhor ainda quando um ataque é desferido!
 
 ### 🚨 Adicione os alertas de ataque na página da Arena.
 
-Outra coisa legal que você pode adicionar para o projeto é uma mensagem mostrando quando dano você deu no boss! Isso faz o seu jogo ser mais interativo ainda. Nós vamos usar um codepen muito legal para configurar nossa UI para isso. [Vá para esse codepen](https://codepen.io/jrsmiffy/pen/eYYwrap) para o código! Se você quer ser ainda mais chique com isso, você pode criar seu próprio componente React para que possa usar isso em qualquer lugar. Por agora, só vamos adicionar o código no nosso componente `Arena`!
+Outra coisa legal que você pode adicionar para o projeto é uma mensagem mostrando quanto dano você deu no boss! Isso faz o seu jogo ser mais interativo ainda. Nós vamos usar um codepen muito legal para configurar nossa UI para isso. [Vá para esse codepen](https://codepen.io/jrsmiffy/pen/eYYwrap) para o código! Se você quer ser ainda mais chique com isso, você pode criar seu próprio componente React para que possa usar isso em qualquer lugar. Por agora, só vamos adicionar o código no nosso componente `Arena`!
 
 Comece adicionando algum CSS para seu arquivo `Arena.css`:
 
@@ -467,7 +467,7 @@ return (
     {/* Add your toast HTML right here */}
     {boss && characterNFT && (
       <div id="toast" className={showToast ? "show" : ""}>
-        <div id="desc">{`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}</div>
+        <div id="desc">{`💥 ${boss.name} tomou ${characterNFT.attackDamage} de dano!`}</div>
       </div>
     )}
 
@@ -492,7 +492,7 @@ return (
         {attackState === "attacking" && (
           <div className="loading-indicator">
             <LoadingIndicator />
-            <p>Attacking ⚔️</p>
+            <p>Atacando ⚔️</p>
           </div>
         )}
       </div>
@@ -508,7 +508,7 @@ return (
               <h2>{characterNFT.name}</h2>
               <img
                 src={characterNFT.imageURI}
-                alt={`Character ${characterNFT.name}`}
+                alt={`Personagem ${characterNFT.name}`}
               />
               <div className="health-bar">
                 <progress value={characterNFT.hp} max={characterNFT.maxHp} />
@@ -516,7 +516,7 @@ return (
               </div>
             </div>
             <div className="stats">
-              <h4>{`⚔️ Attack Damage: ${characterNFT.attackDamage}`}</h4>
+              <h4>{`⚔️ Poder de Ataque: ${characterNFT.attackDamage}`}</h4>
             </div>
           </div>
         </div>
@@ -530,9 +530,9 @@ return (
 );
 ```
 
-Já que sabemos que o nosso Elon sempre vai sofrer o mesmo dano de nós, você pode só adicionar aquilo ali. Se você mudar o contrato para ter algum RNG, você vai precisar fazer isso de maneira um pouco diferente usando algo como React References!
+Já que sabemos que o nosso Capitão Nascimento sempre vai sofrer o mesmo dano de nós, você pode só adicionar aquilo ali. Se você mudar o contrato para ter algum RNG, você vai precisar fazer isso de maneira um pouco diferente usando algo como React Ref!
 
-Agora que temos tudo isso configurado, como mostramos ou escondemos nosso toast? Se você olhar ao CSS, tem uma classe chamada `show` qye vai mostrar nosso toast, e se removermos a classe, vai esconder o toast! Nós precisamos mudar um pouco isso para dinâmicamente mudar o nome da classe. Nós vamos criar mais uma propriedade de estado e adicionar alguma lógica para adicionar e remover a classe `show`:
+Agora que temos tudo isso configurado, como mostramos ou escondemos nosso toast? Se você olhar ao CSS, tem uma classe chamada `show` que vai mostrar nosso toast, e se removermos a classe, vai esconder o toast! Nós precisamos mudar um pouco isso para dinâmicamente mudar o nome da classe. Nós vamos criar mais uma propriedade de estado e adicionar alguma lógica para adicionar e remover a classe `show`:
 
 ```javascript
 // State
@@ -551,7 +551,7 @@ const runAttackAction = async () => {
   try {
     if (gameContract) {
       setAttackState('attacking');
-      console.log('Attacking boss...');
+      console.log('Atacando o Boss...');
       const txn = await gameContract.attackBoss();
       await txn.wait();
       console.log(txn);
@@ -566,7 +566,7 @@ const runAttackAction = async () => {
       }, 5000);
     }
   } catch (error) {
-    console.error('Error attacking boss:', error);
+    console.error('Erro ao atacar o boss:', error);
     setAttackState('');
   }
 };
@@ -576,4 +576,4 @@ Boa! A maior coisa de se apontar é o `setTimeout`. Tudo que isso está fazendo 
 
 Se você fizer tudo certo, você vai ver um pequeno e legal toast embaixo do seu app depois de atacar seu boss.
 
-![Untitled](https://i.imgur.com/l64M22i.png)
+![Untitled](https://i.imgur.com/nDuZnKy.png)

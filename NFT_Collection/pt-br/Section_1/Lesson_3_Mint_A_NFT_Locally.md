@@ -1,22 +1,20 @@
-# Lesson_3_Mint_A_NFT_Locally
-
 📝 Escrever nosso contrato inicial.
 
 ---
 
-_Nota: Se você já sabe como fazer muitas coisas dessa sessão pelo projeto "WavePortal" que fizemos no passado, incrível! Você vai passar por isso rápido :). Muito disso é repetido. _
+_Nota: Se você já sabe como fazer muitas coisas dessa seção pelo projeto "Portal Tchauzinho" que fizemos no nosso outro bootcamp, incrível! Você vai passar por isso rápido :). Muito disso é repetido._
 
 Vamos fazer uma pequena faxina.
 
 Nós queremos deletar todo o código inicial que foi gerado para nós. Vamos começar a escrever coisas nós mesmos! Vá em frente e delete o arquivo  `sample-test.js` dentro de `test`.  Também delete `sample-script.js` dentro de  `scripts`. Então, delete `Greeter.sol` dentro de  `contracts`.
-**Don't delete the actual folders!**
+**Não delete as pastas, somente os arquivos!**
 
 Agora, abra o projeto no VSCode e vamos começar a escrever nosso contrato NFT. Se você nunca escreveu um contrato inteligente, não se preocupe.
 **Só siga o que faremos. Procure no Google coisas que você não entender, ou pergunte no Discord.**
 
-CRie um arquivo com o nome `MyEpicNFT.sol` dentro do diretório `contracts`. A estrutura de arquivos é super importante quando usamos Hardhat, então tenha cuidado com isso!
+Crie um arquivo com o nome `MyEpicNFT.sol` dentro do diretório `contracts`. A estrutura de arquivos é super importante quando usamos Hardhat, então tenha cuidado com isso!
 
-Nota: eu recomendo fazer o download da [extensão Solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) para VSCode, que providencia marcador de sintaxe.
+Nota: eu recomendo fazer o download da [extensão Solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) para VSCode, que fornece realce de sintaxe.
 
 Eu sempre gosto de começar com um contrato muito básico, só para fazer as coisas andarem.
 
@@ -26,12 +24,13 @@ pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 contract MyEpicNFT {
    constructor() {
-       console.log("This is my NFT contract. Whoa!");
+      console.log("Esse eh meu contrato de NFT! Tchu-hu");
    }
 }
 ```
+Nota 1: Não use acentos no código do seu contrato, pois o Solidity não aceita esses caracteres; 
 
-Nota: Algumas vezes o VSCode por si só mostrará erros que não são reais, por exemplo, pode sublinhar o import do hardhat e falar que ele não existe. Isso acontece porque o compilador global de Solidity não está configurado localmente. Se você não sabe como consertar isso, não se preocupe. Ignore esses avisos por enquanto. EU também recomendo que você não use o terminal do VSCode, use o seu terminal separado! As vezes o VSCode traz problemas se o compilador não estiver configurado.
+Nota 2: Algumas vezes o VSCode por si só mostrará erros que não são reais, por exemplo, pode sublinhar o import do hardhat e falar que ele não existe. Isso acontece porque o compilador global de Solidity não está configurado localmente. Se você não souber como consertar isso, não se preocupe. Ignore esses avisos por enquanto. Eu também recomendo que você não use o terminal do VSCode, use o seu terminal separado! Às vezes, o VSCode traz problemas se o compilador não estiver configurado.
 
 Vamos ver linha por linha aqui.
 
@@ -56,12 +55,12 @@ Uma mágica é dada para nós pelo Hardhat para poder fazer alguns logs no conso
 ```solidity
 contract MyEpicNFT {
     constructor() {
-        console.log("This is my NFT contract. Whoa!");
+        console.log("Esse eh meu contrato de NFT! Tchu-hu");
     }
 }
 ```
 
-Então, contratos inteligente se parecem com uma `class` em outras linguagens, se você alguma vez já viu elas! Uma vez que inicializarmos esse contrato pela primeira vez, aquela construtor vai rodar e escrever aquela linha. Faça daquela linha o que você quiser. Se divirta!
+Então, contratos inteligente se parecem com uma `class` em outras linguagens, se você alguma vez já viu elas! Uma vez que inicializarmos esse contrato pela primeira vez, aquele construtor vai rodar e escrever aquela linha. Faça daquela linha o que você quiser. Se divirta!
 
 ## 😲 Como a gente roda o código?
 
@@ -71,7 +70,7 @@ Incrível - temos nosso contrato inteligente! Mas não sabemos se ele funciona. 
 
 2. Implantá-lo (deploy) na nossa blockchain local.
 
-3. UMa vez que estiver lá, o console.log vai rodar.
+3. Uma vez que estiver lá, o console.log vai rodar.
 
 Nós vamos escrever um script customizado que cuide desses 3 passos para nós.
 
@@ -83,7 +82,7 @@ const main = async () => {
   const nftContractFactory = await hre.ethers.getContractFactory("MyEpicNFT");
   const nftContract = await nftContractFactory.deploy();
   await nftContract.deployed();
-  console.log("Contract deployed to:", nftContract.address);
+  console.log("Contrato implantado em:", nftContract.address);
 };
 const runMain = async () => {
   try {
@@ -115,21 +114,21 @@ const nftContract = await nftContractFactory.deploy();
 
 Isso é bem chique :).
 
-O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for completo, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
+O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for terminado, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez, de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
 
 ```javascript
 await nftContract.deployed();
 ```
 
-Nós vamos esperar até que o nosso contrato esteja oficialmente minerado e implementado na nossa blockchain local! Exatamente, hardhat cria "mineradores" falsos na nossa máquina para tentar imitar da melhor forma a blockchain.
+Nós vamos esperar até que o nosso contrato esteja oficialmente minerado e implantado na nossa blockchain local! Exatamente, hardhat cria "mineradores" falsos na nossa máquina para tentar imitar da melhor forma a blockchain.
 
 Nosso `constructor` roda quando nós estamos completamente implantados (deployed)!
 
 ```javascript
-console.log("Contract deployed to:", nftContract.address);
+console.log("Contrato implantado em:", nftContract.address)
 ```
 
-Finalmente, uma vez que estiver implantado,  `nftContract.address`  vai basicamente nos dar o endereço do contrato implementado. Esse endereço é como nós vamos achar o nosso contrato na blockchain. Nesse momento nossa blockchain local só tem nós. Então, isso não é tão legal.
+Finalmente, uma vez que estiver implantado,  `nftContract.address`  vai basicamente nos dar o endereço do contrato implantado. Esse endereço é como nós vamos achar o nosso contrato na blockchain. Nesse momento nossa blockchain local só tem nós. Então, isso não é tão legal.
 
 Mas, tem milhões de contratos na blockchain de verdade. Então, esse endereço nos dá fácil acesso ao contrato que estamos interessados em trabalhar! Isso vai ser muito útil quando implantarmos nosso contrato na blockchain de verdade algumas aulas para frente.
 
@@ -143,9 +142,9 @@ Vamos rodar o código! Abra o seu terminal e rode:
 npx hardhat run scripts/run.js
 ```
 
-Você deve ver o seu  `console.log`  rodar dentro do contrato e depois você deve ver o endereço do contrato escrito!!! Aqui está o que eu consegui:
+Você deve ver o seu  `console.log` rodar dentro do contrato e depois você deve ver o endereço do contrato escrito!!! Aqui está o que eu consegui:
 
-![Untitled](https://i.imgur.com/CSBimfv.png)
+![Untitled](https://i.imgur.com/AzJXG7c.png)
 
 ## 🎩 Hardhat & HRE
 
@@ -154,8 +153,12 @@ Nesses blocos de código você vai notar constantemente que usamos `hre.ethers`,
 Diretamente das documentações do Hardhat (traduzidas), vocês notarão isso:
 
 > O Ambiente de Execução Hardhat (Hardhat Runtime Environment), ou HRE, é um objeto que contém toda a funcionalidade que o hardhat expõe quando roda uma tarefa, um teste ou um script. Na realidade, Hardhat é o HRE.
-Mas o que isso significa? Então, toda vez que você roda um comando de terminal que começa com `npx hardhat` você está pegando esse objeto `hre` construído usando `hardhat.config.js` especificado no seu código! Isso significa que você nunca vai ter que importar isso nos seus códigos, como:
+Mas o que isso significa? Então, toda vez que você roda um comando de terminal que começa com `npx hardhat`, você está pegando esse objeto `hre` construído usando `hardhat.config.js` especificado no seu código! Isso significa que você nunca vai ter que importar isso nos seus códigos, como:
 
 `const hardhat = require("hardhat")`
 
 **Você vai ver `hre` várias vezes no seu código, mas nunca importado em lugar nenhum! Dê uma olhada na [documentação Hardhat](https://hardhat.org/advanced/hardhat-runtime-environment.html) para aprender mais sobre!**
+
+🚨 Relatório de progresso.
+-------------------
+Poste um print no canal #progress do Discord com a saída do comando `npx hardhat run scripts/run.js`  :).
