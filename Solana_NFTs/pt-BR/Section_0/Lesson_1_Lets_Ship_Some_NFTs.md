@@ -36,9 +36,9 @@ Nota: cada turma recebe um nome diferente (ex. [PIONEIROS](https://opensea.io/as
 
 ### 🤚 Como obter ajuda
 
-Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
+Quando você tiver uma pergunta, acesse o canal apropriado para o projeto no Discord.
 
-Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do buildspace. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
+Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do bootcamp. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
 Se precisar de ajuda com alguma coisa, sinta-se à vontade para marcar o time @Monitores Bootcamp diretamente no Discord.
 
