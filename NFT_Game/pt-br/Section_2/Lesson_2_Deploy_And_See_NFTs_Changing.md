@@ -76,7 +76,7 @@ Está tudo funcionando como deveria!! Oba!! Zeca Pagodinho perdeu vida!!
 
 Sinta-se livre para ver no Rarible também. Só saiba que o Rarible é um pouco mais lento para mostrar metadados atualizados! `https://goerli.rarible.com/token/INSERT_DEPLOY_CONTRACT_ADDRESS_HERE:INSERT_TOKEN_ID_HERE`.
 
-![REVIEW](https://i.imgur.com/Pwx4IOM.png)
+![Zeca](https://i.imgur.com/LX0knuU.png)
 
 **Nota 1:** Não vê suas estatísticas atualizadas no OpenSea ou no Rarible? **Clique no botão de recarregar que eu destaquei em cima na direita e espere alguns minutos.** Se estiver usando o Rarible, eu notei que pode levar de 10-20 min para atualizar as estatísticas. _OpenSea é mais rápido nesse quesito_.
 
