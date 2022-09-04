@@ -1,4 +1,4 @@
-Vale a pena falar brevemente porque a combinação jogos + crpyto é tão interessante. Eu sinto que quando as pessoas falam desse tópico, eles jogam números muito altos, como "Ah, esse jogo fez $1.2 bilhões de receita nesse trimestre" ou coisas como essa. Mas, é mais do que isso! Ajuda a explicar o porque isso é legal.
+Vale a pena falar brevemente porque a combinação jogos + crpyto é tão interessante. Eu sinto que quando as pessoas falam desse tópico, eles jogam números muito altos, como "Ah, esse jogo fez $1.2 bilhão de receita nesse trimestre" ou coisas como essa. Mas, é mais do que isso! Ajuda a explicar o porque isso é legal.
 
 Por exemplo, Axie Infinity é um jogo baseado em NFT que fez **[$2.6 bilhões de dólares](https://dappradar.com/ethereum/games/axie-infinity)** em trades de NFT até agora. Mas o que isso significa??
 
@@ -28,7 +28,7 @@ Nesse caso, a Nintendo poderia falar: "toda vez que essa NFT for vendida, nós p
 
 Isso significa que ao passo que Mario cresce em popularidade, a NFT necessária para jogar os jogos do Mario também crescerão em valor. A Nintendo pode vender mais NFTs do Mario uma vez que as 1,000,000 originais tenham acabado. Aí é com eles!
 
-A parte mais legal? **Jogadors retém uma boa parte do valor.** Jogadores sempre podem segurar/vender as NFTs originais que aumentariam de valor quando o jogo/personagens ficassem mais populares. Isso incentiva os jogadores a fazer o jogo maior também. Todo mundo ganha :).
+A parte mais legal? **Jogadores retém uma boa parte do valor.** Jogadores sempre podem segurar/vender as NFTs originais que aumentariam de valor quando o jogo/personagens ficassem mais populares. Isso incentiva os jogadores a fazer o jogo maior também. Todo mundo ganha :).
 
 **Isso pode parecer louco, mas isso é basicamente como o Axie Infinity funciona. Está fazendo bilhões de dólares de receita todo ano.** Você pode comprar algumas NFTs Axie [aqui](https://marketplace.axieinfinity.com/?__cf_chl_jschl_tk__=pmd_ybIeMQm0TAMzOvPj1DcoPlIZeWIcL5r4nwefM60mDTM-1634675045-0-gqNtZGzNAjujcnBszQoR) e começar a jogar. Enquanto o universo Axie cresce e fica mais popular, as NFTs aumentam o valor também!
 
@@ -44,7 +44,7 @@ Isso é causado basicamente pela inflação do mercado. Só uma quantidade de Ax
 
 Eu quero passar por um outro benefício. Fazer jogos e universos que qualquer um pode construir em cima via NFTs facilmente.
 
-Imagine tentar um negócio com a Nintendo para fazer um jogo com o Mario nele. Seria quase impossível a não ser que você fosse uma empresa massiva de jogos!! Nintendo iria querer muitos detalhes e papéis detalhando como os royalties funcionariam.
+Imagine tentar um negócio com a Nintendo para fazer um jogo com o Mario nele. Seria quase impossível, a não ser que você fosse uma empresa massiva de jogos!! Nintendo iria querer muitos detalhes e papéis detalhando como os royalties funcionariam.
 
 **Mas, um aspecto legal de jogos NFT é que qualquer um estaria apto a construir em cima das NFTs do Mario e os criadores podem reter valor.**
 
