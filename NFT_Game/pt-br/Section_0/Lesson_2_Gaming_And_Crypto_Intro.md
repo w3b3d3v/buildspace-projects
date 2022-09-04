@@ -28,7 +28,7 @@ Nesse caso, a Nintendo poderia falar: "toda vez que essa NFT for vendida, nós p
 
 Isso significa que ao passo que Mario cresce em popularidade, a NFT necessária para jogar os jogos do Mario também crescerão em valor. A Nintendo pode vender mais NFTs do Mario uma vez que as 1,000,000 originais tenham acabado. Aí é com eles!
 
-A parte mais legal? **Jogadores retém uma boa parte do valor.** Jogadores sempre podem segurar/vender as NFTs originais que aumentariam de valor quando o jogo/personagens ficassem mais populares. Isso incentiva os jogadores a fazer o jogo maior também. Todo mundo ganha :).
+A parte mais legal? **Jogadores retêm uma boa parte do valor.** Jogadores sempre podem segurar/vender as NFTs originais que aumentariam de valor quando o jogo/personagens ficassem mais populares. Isso incentiva os jogadores a fazer o jogo maior também. Todo mundo ganha :).
 
 **Isso pode parecer louco, mas isso é basicamente como o Axie Infinity funciona. Está fazendo bilhões de dólares de receita todo ano.** Você pode comprar algumas NFTs Axie [aqui](https://marketplace.axieinfinity.com/?__cf_chl_jschl_tk__=pmd_ybIeMQm0TAMzOvPj1DcoPlIZeWIcL5r4nwefM60mDTM-1634675045-0-gqNtZGzNAjujcnBszQoR) e começar a jogar. Enquanto o universo Axie cresce e fica mais popular, as NFTs aumentam o valor também!
 
