@@ -26,7 +26,7 @@ Então, quando um jogador for jogar o jogo:
 
 Hora da parte divertida, configurar os personagens NFTs. Cada personagem vai ter alguns atributos: uma imagem, um nome, valor de HP (vida) e valor do dano de ataque. **Esses atributos vão viver diretamente na NFT.** Nós podemos adicionar mais atributos mais tarde.
 
-O jeito que nosso personagem NFT vai funcionar é: vai haver um número X de personagens (ex: 3). **Mas, um número ilimitado X de NFTs de cada personagens podem ser mintados.** De novo, você pode mudar isso se você quiser - por exemplo se você quiser só uma pequena quantidade X de um certo personagem para ser mintado.
+O jeito que nosso personagem NFT vai funcionar é: vai haver um número X de personagens (ex: 3). **Mas, um número ilimitado de NFTs de cada personagem podem ser mintados.** De novo, você pode mudar isso se você quiser - por exemplo se você quiser só uma pequena quantidade X de um certo personagem para ser mintado.
 
 Então isso significa que se 5 pessoas quisessem mintar o personagem #1, 5 pessoas teriam o exato mesmo personagem mas cada pessoa teria uma NFT única e **cada NFT possui seu próprio estado.** Por exemplo, se a NFT do Player #245 levar um ataque e perder vida, só a NFT do Player #245 vai perder vida!
 
