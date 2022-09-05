@@ -95,7 +95,7 @@ runMain();
 
 ### **🤔 Como isso funciona?**
 
-**Nota: VSCode pode auto-importar o ethers. Nós não precisamos importar o ethers ou qualquer coias. Então, esteja certo de não importar nada.**
+**Nota: VSCode pode auto-importar o ethers. Nós não precisamos importar o ethers ou qualquer coisa. Então, esteja certo de não importar nada.**
 
 Vamos linha por linha aqui.
 
@@ -103,7 +103,7 @@ Vamos linha por linha aqui.
 const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
 ```
 
-Isso vai compilar nosso contrato e gerar os arquivos necessários que precisamos para trabalhar com o contrato dentro de  `artifacts` . Vá olhar depois que rodarmos isso :).
+Isso vai compilar nosso contrato e gerar os arquivos necessários que precisamos para trabalhar com o contrato dentro de  `artifacts`. Vá olhar depois que rodarmos isso :).
 
 ```javascript
 const gameContract = await gameContractFactory.deploy();
@@ -111,7 +111,7 @@ const gameContract = await gameContractFactory.deploy();
 
 Isso é bem chique :).
 
-O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for completo, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
+O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for finalizado, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
 
 ```javascript
 await gameContract.deployed();
