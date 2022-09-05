@@ -158,7 +158,7 @@ Daqui nós temos um número chamado `newItemId`. Esse é o id da NFT. Lembre-se,
 
 Nós estamos usando `_tokenIds` para manter a contagem dos identificadores únicos das NFTs, e é só um número! Então, quando chamamos primeiro `mintCharacterNFT`, `newItemId` é 1. Quando rodamos de novo, `newItemId` será 2 e assim por diante.
 
-`_tokenIds` é uma **variável de estado** o que significa que se mudarmos, o valor é armazenado diretamente no contrato como uma variável global que fica permanentemente na memória.
+`_tokenIds` é uma **variável de estado**, o que significa que se mudarmos, o valor é armazenado diretamente no contrato como uma variável global que fica permanentemente na memória.
 
 ```solidity
 _safeMint(msg.sender, newItemId).
