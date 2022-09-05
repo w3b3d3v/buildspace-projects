@@ -185,7 +185,7 @@ nftHolderAttributes[newItemId] = CharacterAttributes({
 });
 ```
 
-Muitas coisas acontecendo aqui! Basicamente, **nossa NFT segura dados relacionados à NFT do nosso jogador. Mas, esses dados são dinâmicos. Por exemplo**, digamos que eu criasse uma NFT. Por padrão minha NFT começa com estatísticas padrões como:
+Muitas coisas acontecendo aqui! Basicamente, **nossa NFT segura dados relacionados à NFT do nosso jogador. Mas, esses dados são dinâmicos. Por exemplo**, digamos que eu criasse uma NFT. Por padrão minha NFT começa com estatísticas padrão como:
 
 ```json
 {
@@ -213,13 +213,13 @@ Digamos que o meu personagem seja atacado e perca 50 de HP, bom, então o HP iri
 }
 ```
 
-Ou talvez nós queremos que nosso jogo tenham personagens **atualizáveis, que possam subir de nível e ter itens**, onde você poderia dar ao seu personagem uma espada que adicionaria +10 de dano de ataque, de 50 -> 60. Então, `attackDamage` precisaria mudar na NFT!
+Ou talvez nós queremos que nosso jogo tenha personagens **atualizáveis, que possam subir de nível e ter itens**, onde você poderia dar ao seu personagem uma espada que adicionaria +10 de dano de ataque, de 50 -> 60. Então, `attackDamage` precisaria mudar na NFT!
 
 As pessoas muitas vezes pensam que os metadados não permitem mudanças, mas isso não é verdade. É o criador quem decide!!!
 
 Nesse caso, o nome e a imagem do personagem **nunca** mudam, mas o valor do HP definitivamente muda! **Nossas NFTs** precisam estar aptas a manter o estado do personagem específico do jogador.
 
-Esse é o porquê de nós precisarmos da variável `nftHolderAttributes`que mapeia o tokenId da NFT para uma estrutura de `CharacterAttributes`. Nos permite atualizar facilmente os valores das NFTs do jogador. Isso significa quando o jogador joga nosso jogo e o `hp` da NFT dele muda (pois o boss ataca ele), nós na verdade mudamos o valor do `hp` em `nftHolderAttributes`. E assim é como nós armazenamos os dados específicos da NFT de cada jogador no nosso contrato!
+Esse é o porquê de nós precisarmos da variável `nftHolderAttributes`que mapeia o tokenId da NFT para uma estrutura de `CharacterAttributes`. Nos permite atualizar facilmente os valores das NFTs dos jogadores. Isso significa que quando o jogador joga nosso jogo e o `hp` da NFT dele muda (pois o boss ataca ele), nós na verdade mudamos o valor do `hp` em `nftHolderAttributes`. E assim é como nós armazenamos os dados específicos da NFT de cada jogador no nosso contrato!
 
 Depois, fazemos:
 
@@ -257,7 +257,7 @@ Quando fazemos `mintCharacterNFT(2)` o Hardhat vai chamar essa função com uma 
 
 A função `tokenURI` é algo que pegamos de graça do `ERC721` já que herdamos dele.
 
-Basicamente, `tokenUri` é uma função em **cada NFT** que retorna os **dados atuais** que estão ligados à NFT. Então quando eu chamo `gameContract.tokenURI(1)` está basicamente dizendo, _"vá pegar para mims os dados dentro da NFT com tokenId 1"_, que seria a primeira NFT mintada. E, deveria me devolver todas as coisas, como o nome do personagem, o hp atual e etc.
+Basicamente, `tokenUri` é uma função em **cada NFT** que retorna os **dados atuais** que estão ligados à NFT. Então quando eu chamo `gameContract.tokenURI(1)` está basicamente dizendo, _"vá pegar para mim os dados dentro da NFT com tokenId 1"_, que seria a primeira NFT mintada. E, deveria me devolver todas as coisas, como o nome do personagem, o hp atual e etc.
 
 Plataformas como o OpenSea e Rarible sabem como pegar o `tokenURI` já que a forma padrão de pegar os metadados da NFT. Vamos tentar rodar o nosso contrato de novo (lembre-se que o comando é `npx hardhat run scripts/run.js`)
 
@@ -363,9 +363,9 @@ string memory json = Base64.encode(
 );
 ```
 
-Nós configuramos coisas como o nome da NFT, o HP, o Dano de ataque e etc **dinâmicamente**. _Nota: abi.encodePacked só combina strings._ Isso é realmente legal porque nós podemos mudar coisas como o HP da NFT e a imagem dela se quiséssemos, e atualizar na NFT! **É dinâmico!**
+Nós configuramos coisas como o nome da NFT, o HP, o Dano de ataque e etc **dinamicamente**. _Nota: abi.encodePacked só combina strings._ Isso é realmente legal porque nós podemos mudar coisas como o HP da NFT e a imagem dela se quiséssemos, e atualizar na NFT! **É dinâmico!**
 
-Também esse padrão de metadados é seguido por muitos sites populares de NFT como o OpenSea. Então, tudo que estamos fazendo na função é formatando a nossa variável `json` para seguir os padrões. Note: `max_value` não é necessário, mas eu quis adicioná-lo por diversão.
+Esse padrão de metadados também é seguido por muitos sites populares de NFT como o OpenSea. Então, tudo que estamos fazendo na função é formatando a nossa variável `json` para seguir os padrões. Note: `max_value` não é necessário, mas eu quis adicioná-lo por diversão.
 
 ```solidity
 abi.encodePacked("data:application/json;base64,", json)
@@ -402,8 +402,8 @@ Adicionamos `data:application/json;base64,` porque o nosso browser precisa saber
 
 De novo, isso é considerado um padrão para a maioria dos navegadores, o que é perfeito porque nós queremos que os dados das nossas NFT sejam compatíveis com o maior número de sistemas possível.
 
-Por quê estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares ocomo o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso conrtato.
+Por quê estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares ocomo o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso contrato.
 
-**Incrível**. Então, agora estamos no ponto em que mintamos oficialmente e localmente as NFTs e a NFT tem dados fixados nela em uma maneira que siga os padrões.
+**Incrível**. Então, agora estamos no ponto em que mintamos oficialmente e localmente as NFTs e elas têm dados fixados dentro delas em um formato que siga os padrões.
 
 **Estamos prontos para fazer o deploy da nossa NFT no OpenSea :).**
