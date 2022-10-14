@@ -20,7 +20,7 @@ Uma coisa que realmente amamos na web3 é a criatividade insana que as pessoas c
 
 O código base do aplicativo da Web que forneço é apenas para você começar. Mude as coisas. Talvez você odeie as cores que usei. Mude. Talvez você queira tornar o site mais temático de anime. Faça isso.
 
-Se você acabar mudando as coisas, me marque em `#progress` e diga - "Hey Farza, eu fiz seu código melhor" e mande uma captura de tela.
+Se você acabar mudando as coisas, me marque em `#progresso` e diga - "Hey danicuki, eu fiz seu código melhor" e mande uma captura de tela.
 
 Tudo bem - vamos fazer isso.
 
@@ -32,7 +32,7 @@ Não desista, porém! Quanto mais você luta, mais aprende 🧠.
 
 Se você não tem experiência com React - [confira esta série de introdução](https://scrimba.com/learn/learnreact) antes de começar com esta seção ou talvez confira os documentos de introdução [aqui](https:// reactjs.org/docs/getting-started.html). Ou não faça nada de especial, apenas continue. **O que funcionar melhor para você :).**
 
-Você será um Mago do React após este projeto, se ainda não for 🧙‍♂!
+Você será Mestre do React após este projeto, se ainda não for 🧙‍♂!
 
 ### ⬇️ Obtendo o código
 
@@ -40,25 +40,25 @@ Usaremos essa coisa chamada [Replit](https://replit.com/~)!
 
 É um IDE baseado em navegador que nos permite facilmente criar aplicativos web e fazer o deploy deles a partir do navegador. E é totalmente legal. Em vez de ter que configurar um ambiente local completo e escrever comandos para fazer o deploy, tudo é dado para a gente.
 
-Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal. [Aqui está o link](https://github.com/buildspace/gif-portal-starter) para o repositório base que você pode clonar e trabalhar localmente.**
+Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal. [Aqui está o link](https://github.com/w3b3dev/portal-gif) para o repositório base que você pode clonar e trabalhar localmente.**
 
 Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
 
 Já criei um projeto básico de React que você pode fazer um **fork** no Replit.
 
-[Basta clicar aqui](https://replit.com/@adilanchian/gif-portal-starter-project?v=1) **e, à direita, você verá o botão "Fork".** Certifique-se você está logado, então clique no botão.
+[Basta clicar aqui](https://replit.com/@DanielCukier/gif-portal?v=1) **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
 
 Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
 
 **Observação: à medida que avança neste projeto, você pode notar que estamos fazendo referência a arquivos `.js`. No Replit, se você estiver criando novos arquivos JavaScript, precisará usar a extensão `.jsx`! Replit tem algumas frescuras de desempenho que obrigam que você use a extensão de arquivo `.jsx` :).**
 
-[Aqui está um vídeo rápido](https://www.loom.com/share/8e8f47eacf6d448eb5d25b6908021035) que fiz para outro projeto, abordando alguns conceitos básicos da Replit.
+[Aqui está um vídeo rápido](https://www.loom.com/share/4578eb9fba1243499a6913d214b21dc3) que fiz para outro projeto, abordando alguns conceitos básicos da Replit.
 
 Pronto, agora você tem um setup de frontend para seu aplicativo web3 😎.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão Farza vai ficar triste :(*
+*Faça isso senão a Anna Bida vai ficar triste :(*
 
-Poste uma captura de tela do seu aplicativo web inicial em `#progress` :).
+Poste uma captura de tela do seu aplicativo web inicial em `#progresso` :).
 **
