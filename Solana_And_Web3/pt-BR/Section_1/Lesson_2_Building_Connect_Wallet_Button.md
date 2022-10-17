@@ -208,9 +208,9 @@ Tudo bem, já estamos verificando se um usuário já está conectado ao nosso ap
 
 Precisamos criar um botão `connectWallet` . No mundo da web3, conectar sua carteira é literalmente um botão "Cadastre-se/Login" embutido para o seu usuário.
 
-Pronto para a experiência "Cadastre-se" mais fácil da sua vida 😊.
+Pronto para a experiência "Cadastre-se" mais fácil da sua vida ? 😊 Confira:
 
-Substitua o código abaixo so seu `App.js` (Mantemos o código e adicionamos códigos novos).
+**OBS:**Todos as variáveis e funções que tem um comentário em cima tem modificações.
 
 ```jsx
 import React, { useEffect } from "react";
