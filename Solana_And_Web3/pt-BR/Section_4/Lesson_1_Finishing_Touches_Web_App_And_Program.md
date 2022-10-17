@@ -43,19 +43,17 @@ Uma coisa que não abordamos aqui é como enviar dinheiro para outros usuários!
 
 Seria super legal se você amasse tanto um determinado GIF enviado por outro usuário que pudesse enviar uma gorjeta a esse usuário. Talvez como 50 centavos ou como um dólar de SOL. Talvez você clique em "gorjeta", insira quanto SOL você deseja dar de gorjeta e clique em enviar para enviá-lo diretamente para a carteira desse usuário!
 
-**A taxa de gás super baixa da Solana significa que enviar pequenas quantias de dinheiro como essa realmente faz sentido.** Se você fizer isso, poderá até criar uma versão do Patreon ou BuyMeACoffee em Solana. Não tão louco. Você tem todas as habilidades básicas agora.
+**A taxa de gás super baixa da Solana significa que enviar pequenas quantias de dinheiro como essa realmente faz sentido.** Se você fizer isso, poderá até criar uma versão do Patreon ou BuyMeACoffee em Solana. Não é tão louco. Você tem todas as habilidades básicas agora.
 
 Quem precisa do Stripe e do PayPal quando você tem uma blockchain de taxa super baixa que permite fazer pagamentos instantâneos?!?
 
-Esta é outra coisa que eu quero que você descubra se quiser sair no [Anchor Discord](https://discord.gg/8HwmBtt2ss) ou perguntar aos seus colegas buildspacers. **Por que não estou lhe contando as respostas?** Haha, porque eu quero que você seja ativo na comunidade Solana, descubra e aprenda lutando um pouco.
+Esta é outra coisa que eu quero que você descubra se quiser ir no [Anchor Discord](https://discord.gg/8HwmBtt2ss) ou perguntar aos seus colegas buildspacers. 
 
-Por exemplo, aqui estou eu fazendo a mesma pergunta lol:
+Não se esqueça que temos um canal no discord dedicado a Solana, poste updates, registre suas modifiações no seu webapp, tire suas dúvidas, compartilhe seus conhecimento, fique a vontade e explore as vantagens de nossa comunidade web3.
 
-![Sem título](https://i.imgur.com/b94aOcG.png)
+ **Por que não estou lhe contando as respostas?** Haha, porque eu quero que você seja ativo na comunidade Solana, descubra e aprenda lutando um pouco.
 
-Salve para cqfd#6977 aliás, lenda absoluta!! Ele até ligou para mim para compartilhar um bug que eu estava recebendo. Seja legal no Anchor Discord e não faça perguntas aleatórias. Tente pesquisar no Discord para ver se mais alguém teve a mesma dúvida que você e sempre diga 'obrigado' quando alguém ajudar ;).
-
-Ser legal vai longe.
+Uma dica: ser legal vai longe.
 
 ### 👍 Um monte de programas de exemplo
 

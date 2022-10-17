@@ -37,13 +37,13 @@ Você pode estar se perguntando: "Por que ele foi re-implantado? Por que não es
 
 **Então — os programas Solana são [atualizáveis](https://docs.solana.com/cli/deploy-a-program#redeploy-a-program).** Isso significa que, quando reimplantarmos, estamos atualizando o mesmo ID de programa para apontar para a versão mais recente do programa que implantamos. E, o que é legal aqui é que as *contas* com as quais os programas se comunicam ficarão juntas – lembre-se, essas contas mantêm dados relacionados ao programa.
 
-**Isso significa que podemos atualizar programas enquanto mantemos os dados separados**. Muito legal né :)?
+**Isso significa que podemos atualizar programas enquanto mantemos os dados separados**. Muito legal né 😊?
 
 *Observação: isso é **muito** diferente do Ethereum, onde você nunca pode alterar um contrato inteligente depois de implantado!*
 
 ### 🤟 Conectando nosso arquivo IDL ao aplicativo da web
 
-Então, agora temos um programa Solana implantado. Vamos conectá-lo ao nosso aplicativo da web :).
+Então, agora temos um programa Solana implantado. Vamos conectá-lo ao nosso aplicativo da web 😊.
 
 A primeira coisa que precisamos é o arquivo `idl` que foi magicamente gerado pelo `anchor build` antes sem você saber. Você deve vê-lo em `target/idl/myepicproject.json`.
 
@@ -51,9 +51,9 @@ O arquivo `idl` é na verdade apenas um arquivo JSON que contém algumas informa
 
 Você também verá na parte inferior que tem o nosso ID do programa! É assim que nosso aplicativo da web saberá a qual programa realmente se conectar. Existem *milhões* de programas implantados no Solana e este endereço é como nosso aplicativo da web pode obter acesso rápido ao nosso programa especificamente.
 
-![Untitled](https://i.imgur.com/bnorlgJ.png)
+![Untitled](https://i.imgur.com/hNHW0fc.png)
 
-*Observação: se você não vir o arquivo idl ou não vir um parâmetro "endereço" próximo à parte inferior, algo deu errado! Comece novamente na seção "Implantar programa no devnet" do projeto.*
+*Observação: se você não vir o arquivo idl ou não vir um parâmetro "adress" próximo à parte inferior, algo deu errado! Comece novamente na seção "Implantar programa no devnet" do projeto.*
 
 Vá em frente e copie todo o conteúdo em `target/idl/myepicproject.json`.
 
@@ -69,11 +69,19 @@ import idl from './idl.json';
 
 Ótimo!! 
 
-### 🌐 Altere a rede que o Phantom se conecta
+### 🌐 Alterando a rede que o Phantom se conecta
 
-Neste momento, o Phantom provavelmente está conectado à Solana Mainnet. Precisamos que se conecte à Solana Devnet. Você pode alterar isso acessando as configurações (clique na pequena engrenagem no canto inferior direito), clique em "Alterar rede" e clique em "Devnet". É isso!
+Neste momento, o Phantom provavelmente está conectado à Solana Mainnet. Precisamos que se conecte à Solana Devnet.
 
-![Untitled](https://i.imgur.com/JWHwPJX.png)
+<ol>
+<li>Abra sua carteira, e clique no circulo do lado de `Wallet`.</li>
+<li>Clique em <code>Developer Settings</code>.</li>
+<li>Clique em <code>Alterar rede</code>.</li>
+<li>Escolha a <code>devnet</code>.</li>
+<ol>
+<br>
+
+![Untitled](https://i.imgur.com/3yYvleC.png)
 
 ### 👻 Adicionar fundos à carteira Phantom
 
@@ -81,7 +89,9 @@ Também precisamos adicionar fundos à nossa carteira Phantom com algum SOL fals
 
 Você precisará do endereço público associado à sua carteira Phantom, que você pode pegar na parte superior clicando em seu endereço:
 
-![Screen Shot 2021-11-03 at 12.31.15 PM.png](https://i.imgur.com/3I2Wjv3.png)
+Você deve estar com a carteira aberta, clicar em `Wallet`, e clicar em :
+
+![Sem titulo](https://i.imgur.com/8hI4WqD.png)
 
 Agora, vá em frente e execute isso no seu terminal.
 
@@ -89,11 +99,11 @@ Agora, vá em frente e execute isso no seu terminal.
 solana airdrop 2 INSIRA_SEU_ENDERECO_PHANTOM_AQUI  --url devnet
 ```
 
-Agora, quando você voltar para sua carteira Phantom, deverá ter 2 SOL associados à sua carteira devnet. Legal :).
+Agora, quando você voltar para sua carteira Phantom, deverá ter 2 SOL associados à sua carteira devnet. Legal 😊.
 
 ### 🍔 Configure um `provedor` Solana em nosso aplicativo da web
 
-Em seu aplicativo Web, precisaremos instalar dois pacotes. Você deve se lembrar de ter instalado eles para o seu projeto Anchor, também os usaremos em nosso aplicativo da web :).
+Em seu aplicativo Web, precisaremos instalar dois pacotes. Você deve se lembrar de ter instalado eles para o seu projeto Anchor, também os usaremos em nosso aplicativo da web 😊.
 
 ```bash
 npm install @project-serum/anchor @solana/web3.js
@@ -152,11 +162,11 @@ const getProvider = () => {
 }
 ```
 
-Isso, é claro, lançará um monte de erros, já que não temos nenhuma das variáveis lol. Mas, basicamente, somos nós criando um `provedor` que é uma **conexão autenticada com Solana**. Observe como `window.solana` é necessário aqui!
+Isso, é claro, lançará um monte de erros, já que não temos nenhuma das variáveis. Mas, basicamente, somos nós criando um `provedor` que é uma **conexão autenticada com Solana**. Observe como `window.solana` é necessário aqui!
 
 Por quê? Porque para fazer um `provedor` precisamos de uma carteira conectada. **Você já fez isso antes** ao clicar em "Conectar" no Phantom, o que deu permissão para dar acesso ao nosso aplicativo da web à nossa carteira.
 
-![https://i.imgur.com/vOUldRN.png](https://i.imgur.com/vOUldRN.png)
+![https://i.imgur.com/vOUldRN.png](https://i.imgur.com/ufC7kXs.png)
 
 **Você não pode se comunicar com Solana a menos que tenha uma carteira conectada. Não podemos nem mesmo recuperar dados de Solana a menos que tenhamos uma carteira conectada!**
 
@@ -207,9 +217,9 @@ Tudo bem direto e as coisas farão mais sentido quando começarmos a usar essas 
 
 Então, usamos `idl.metadata.address` para obter o id do nosso programa e então especificamos que queremos ter certeza de nos conectar ao devnet fazendo `clusterApiUrl('devnet')`.
 
-Essa coisa de `preflightCommitment: "processado"` é interessante. Você pode ler um pouco [aqui](https://solana-labs.github.io/solana-web3.js/modules.html#Commitment). Basicamente, podemos escolher *quando* receber uma confirmação de quando nossa transação foi bem-sucedida. Como o blockchain é totalmente descentralizado, podemos escolher quanto tempo queremos esperar por uma transação. Queremos esperar que apenas um nó reconheça nossa transação? Queremos esperar que toda a cadeia Solana reconheça nossa transação?
+Essa coisa de `preflightCommitment: "processed"` é interessante. Você pode ler um pouco [aqui](https://solana-labs.github.io/solana-web3.js/modules.html#Commitment). Basicamente, podemos escolher *quando* receber uma confirmação de quando nossa transação foi bem-sucedida. Como o blockchain é totalmente descentralizado, podemos escolher quanto tempo queremos esperar por uma transação. Queremos esperar que apenas um nó reconheça nossa transação? Queremos esperar que toda a cadeia Solana reconheça nossa transação?
 
-Nesse caso, simplesmente esperamos que nossa transação seja confirmada pelo *nó ao qual estamos conectados*. Isso geralmente é bom - mas se você quiser ter certeza absoluta, pode usar algo como `"finalized"`. Por enquanto, vamos continuar com `"processado"`.
+Nesse caso, simplesmente esperamos que nossa transação seja confirmada pelo *nó ao qual estamos conectados*. Isso geralmente é bom - mas se você quiser ter certeza absoluta, pode usar algo como `"finalized"`. Por enquanto, vamos continuar com `"processed"`.
 
 ### 🏈 Recupere GIFs da conta do nosso programa
 
@@ -220,9 +230,9 @@ useEffect(() => {
   if (walletAddress) {
     console.log('Fetching GIF list...');
 
-    // Call Solana Program
+    // Chama o programa da Solana aqui.
 
-    // Set state
+    // Define o estado
     setGifList(TEST_GIFS);
   }
 }, [walletAddress]);
@@ -230,7 +240,7 @@ useEffect(() => {
 
 Ainda estamos usando `TEST_GIFS`! Muito ruim. Vamos chamar nosso programa. Deve nos devolver uma lista vazia de GIFs, certo? Já que nunca adicionamos nenhum GIF ainda.
 
-Vamos mudar isso para o seguinte:
+Vamos criar uma função `getGifList` e atualizar o `useEffect`:
 
 ```javascript
 const getGifList = async() => {
@@ -239,18 +249,18 @@ const getGifList = async() => {
     const program = new Program(idl, programID, provider);
     const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
     
-    console.log("Got the account", account)
+    console.log("Conta obtida", account)
     setGifList(account.gifList)
 
   } catch (error) {
-    console.log("Error in getGifList: ", error)
+    console.log("Erro em getGifList: ", error)
     setGifList(null);
   }
 }
 
 useEffect(() => {
   if (walletAddress) {
-    console.log('Fetching GIF list...');
+    console.log('Fetching em lista de Gifs...');
     getGifList()
   }
 }, [walletAddress]);
@@ -260,7 +270,7 @@ useEffect(() => {
 
 Ao atualizar sua página, você receberá um erro semelhante a este:
 
-![Sem título](https://i.imgur.com/wUArqKJ.png)
+![Sem título](https://i.imgur.com/yKtq1f8.png)
 
 Hmmmm — "A conta não existe".
 
@@ -290,11 +300,11 @@ const createGifAccount = async () => {
       },
       signers: [baseAccount]
     });
-    console.log("Created a new BaseAccount w/ address:", baseAccount.publicKey.toString())
+    console.log("BaseAccount criado com sucesso com o endereço :", baseAccount.publicKey.toString())
     await getGifList();
-
+  
   } catch(error) {
-    console.log("Error creating BaseAccount account:", error)
+    console.log("Erro em criar BaseAccount", error)
   }
 }
 ```
@@ -350,7 +360,7 @@ const renderConnectedContainer = () => {
 }
 ```
 
-Bem direto! Fiz algumas mudanças no `gifList.map`. Cuidado com elas!
+Muito bom! Fiz algumas mudanças no `gifList.map`. Cuidado com elas!
 
 ### 🥳 Vamos testar!
 
@@ -358,18 +368,18 @@ Vamos em frente e testar! Se você atualizar a página e tiver sua carteira cone
 
 Se tudo correu bem, você verá isso no console:
 
-![Sem título](https://i.imgur.com/0CdFajf.png)
+![Sem título](https://i.imgur.com/NwgruGy.png)
 
 Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList` está vazio, pois ainda não adicionamos nenhum GIF a esta conta!!! **NELEEEEE.**
 
-**Então, agora você notará que toda vez que atualizamos a página - ela nos pede para criar uma conta novamente. Vamos corrigir isso mais tarde, mas por que isso acontece? Fiz um pequeno vídeo sobre isso abaixo**
+**Então, agora você notará que toda vez que atualizamos a página - ela nos pede para criar uma conta novamente. Vamos corrigir isso mais tarde, mas por que isso acontece? Fiz um pequeno vídeo sobre isso abaixo:**
 
 [Tear](https://www.loom.com/share/fc1cf249073e45d6bf31d985b4b11580)
 
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o Dani vai ficar triste :(*
+*Faça isso senão o Melk vai ficar triste 😊*
 
-Poste uma captura de tela em `#progress` com o material "Peguei a conta" no seu console :).
+Poste uma captura de tela em `#progresso` com o material "Peguei a conta" no seu console 😊.
 

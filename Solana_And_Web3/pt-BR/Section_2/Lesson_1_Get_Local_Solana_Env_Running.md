@@ -1,6 +1,11 @@
 ### 🦾 O que vamos fazer?
 
-Temos quase todas as nossas coisas do web app prontas. Mas, estamos usando dados falsos! Vamos construir um programa Solana que permite aos usuários 1) enviar gifs para o quadro 2) salvá-los no blockchain Solana 3) recuperar todos os GIFs que foram enviados.
+Temos quase todas as nossas coisas do web app prontas. Mas, estamos usando dados falsos! Vamos construir um programa Solana que permite aos usuários :
+<ul>
+    <li>Enviar gifs para o quadro</li> 
+    <li>Salvá-los no blockchain Solana</li> 
+    <li>Recuperar todos os GIFs que foram enviados.</li>                      
+</ul>
 
 Assim que fizermos isso, vamos implantar nosso programa Solana e conectá-lo ao nosso aplicativo da web - como se você implantasse uma API e depois o conectasse ao seu aplicativo da web!!
 
@@ -14,22 +19,22 @@ Acho que Solana é uma tecnologia realmente **nova** e, como é tão recente, es
 
 Em 2015, eu gostava muito de aprendizado de máquina e tudo isso ainda era muito novo. Em 2015, os documentos de aprendizado de máquina eram péssimos e era difícil apenas procurar uma resposta para uma pergunta, porque na maioria das vezes eu era a primeira pessoa a fazer essa pergunta lol. *Cabia a mim descobrir uma resposta e, em seguida, atualizar os documentos por conta própria.*
 
-Esse é o preço de brincar com uma tecnologia emergente :).
+Esse é o preço de brincar com uma tecnologia emergente 😊.
 
-Acho que Solana está em uma situação semelhante e realmente quero deixar claro - **não espere uma experiência de desenvolvedor super limpa. Você provavelmente encontrará obstáculos aleatórios e cabe a você descobrir uma resposta + ajudar os outros.**
+Acho que Solana está em uma situação semelhante e realmente quero deixar claro - **não espere uma experiência de desenvolvedor super limpa. Você provavelmente encontrará obstáculos aleatórios e cabe a você descobrir uma resposta e ajudar os outros, você pode compartilhar artigos no nosso site [web3dev](https://www.web3dev.com.br/),além de ler alguns do site específicos de [Solana](https://www.web3dev.com.br/search?q=#solana) isso pode te ajudar muito e poupar muito tempo, também indico dentro do nosso discord o canal `#Solana`.**
 
 Eu gosto deste [tweet](https://twitter.com/armaniferrante/status/1434554725093949452) também, que meio que apresenta uma ideia semelhante.
 
-**Tudo isso dito, acho que Solana é insanamente divertido quando você o configura e entende como ele funciona. É tão rápido. As baixas taxas de gás são mágicas. É muito divertido fazer parte de uma comunidade trabalhando em uma tecnologia inovadora. Parece que você faz parte da equipe que está construindo Solana :).**
+**Tudo isso dito, acho que Solana é insanamente divertido quando você o configura e entende como ele funciona. É tão rápido. As baixas taxas de gás são mágicas. É muito divertido fazer parte de uma comunidade trabalhando em uma tecnologia inovadora. Parece que você faz parte da equipe que está construindo Solana 😊.**
 
 ### 🚦 Escolha o seu caminho
-A configuração do Solana começa com sua máquina. Há um monte de "gotchas" em diferentes sistemas operacionais. Se você estiver executando uma **máquina Intel macOS ou uma máquina Linux**, sinta-se à vontade para prosseguir aqui. Se você estiver executando uma **máquina Windows ou uma máquina M1 macOS**, siga um dos links abaixo:
+A configuração do Solana começa com sua máquina. Há um monte de "truques" em diferentes sistemas operacionais. Se você estiver executando uma **máquina Intel macOS ou uma máquina Linux**, sinta-se à vontade para prosseguir aqui. Se você estiver executando uma **máquina Windows ou uma máquina M1 macOS**, siga um dos links abaixo:
 
 - [Setup Solana on Windows Machine](https://github.com/w3b3d3v/buildspace-projects/tree/main/Solana_And_Web3/en/Section_2/Resources/windows_setup.md)
 
 - [Setup Solana on a M1 macOS Machine](https://github.com/w3b3d3v/buildspace-projects/tree/main/Solana_And_Web3/en/Section_2/Resources/m1_setup.md)
 
-Good luck - you got this!
+Boa sorte - you got this!
 
 ### 🦀 Instale o Rust
 
@@ -100,7 +105,7 @@ A última coisa a testar é que queremos ter certeza de que podemos ter um **nó
 solana-test-validator
 ```
 
-### Notes for Windows users
+### Notas para usuários Windows
 
 Se você é um usuário do Windows e o comando acima não funciona, ou você recebe o seguinte erro `Unable to connect to validator: Client error: test-ledger/admin.rpc does not exist`, certifique-se de fazer o seguinte.
 
@@ -112,7 +117,7 @@ Isso pode demorar um pouco para começar, mas quando estiver funcionando, você 
 
 ![Untitled](https://i.imgur.com/F2YwcAB.png)
 
-Boom!! Agora você está rodando um validador local. Muito legal :).
+Boom!! Agora você está rodando um validador local. Muito legal 😊.
 
 Se você estiver executando um Intel Mac e vir o erro abaixo, precisará instalar a biblioteca `OpenSSL`. A maneira mais fácil de fazer isso seria através do brew assim: `brew install openssl@1.1`
 
@@ -129,6 +134,7 @@ Agora, vá em frente e CONTROL + C para parar o validador. **Nós nunca usaremos
 
 Grandes chances de você já ter Node e NPM. Quando eu faço `node --version` recebo `v16.0.0`. A versão mínima é `v11.0.0`. Se você não tiver o Node e o NPM, instale-o usando o NVM [aqui](https://github.com/nvm-sh/nvm#installing-and-updating).
 
+
 Depois disso, certifique-se de instalar essa coisa chamada Mocha. É uma pequena estrutura de teste para nos ajudar a testar nossos programas Solana.
 
 
@@ -140,13 +146,17 @@ npm install -g mocha
 
 Vamos usar muito essa ferramenta chamada "Anchor". Se você já conhece o Hardhat do mundo do Ethereum, é algo parecido! Exceto - é construído para Solana. **Basicamente, torna-se muito fácil para nós executarmos os programas Solana localmente e implantá-los na cadeia Solana real quando estivermos prontos!**
 
-O Anchor é um *projeto realmente novo* executado por alguns desenvolvedores principais. Há grandes chances de se deparar com alguns problemas. Certifique-se de participar do [Anchor Discord](https://discord.gg/8HwmBtt2ss) e sinta-se à vontade para fazer perguntas ou [criar uma issue](https://github.com/project-serum/anchor/issues) em seu Github à medida que você encontrar problemas. Os desenvolvedores são incríveis. Talvez até diga que você é do buildspace em #general no Discord deles :).
+O Anchor é um *projeto realmente novo* executado por alguns desenvolvedores principais. Há grandes chances de se deparar com alguns problemas. Certifique-se de participar do [Anchor Discord](https://discord.gg/8HwmBtt2ss) e sinta-se à vontade para fazer perguntas ou [criar uma issue](https://github.com/project-serum/anchor/issues) em seu Github à medida que você encontrar problemas. Os desenvolvedores são incríveis. Talvez até diga que você é da web3dev em `#general` no Discord deles 😊.
 
-**BTW - não apenas entre no Discord e faça perguntas aleatórias esperando que as pessoas ajudem. Tente pesquisar no Discord deles para ver se mais alguém teve a mesma dúvida que você. Dê o máximo de informações possível sobre suas dúvidas. Faça as pessoas quererem te ajudar lol.**
+**BTW - não apenas entre no Discord e faça perguntas aleatórias esperando que as pessoas ajudem. Tente pesquisar no Discord deles para ver se mais alguém teve a mesma dúvida que você. Dê o máximo de informações possível sobre suas dúvidas. Faça as pessoas quererem te ajudar ✨.**
 
 _Sério — junte-se ao Discord, os desenvolvedores são muito prestativos._
 
-Instalar isso foi um pouco problemático para mim, mas consegui funcionar através das etapas abaixo! Vamos construí-lo a partir da fonte. *Observação: se você estiver no Linux, há algumas instruções especiais que você pode seguir [aqui](https://www.anchor-lang.com/docs/installation). Mac e Windows abaixo. Além disso, se você estiver usando Linux para Windows, siga os comandos do Linux!*
+Instalar isso foi um pouco problemático para mim, mas consegui funcionar através das etapas abaixo! Vamos construí-lo a partir da fonte.
+
+Este é o momento onde a seção `#seção-2-ajuda` em nosso discord vai ser muito importante,pois, a instalação pode gerar muitos erros. 
+
+ *Observação: se você estiver no Linux, há algumas instruções especiais que você pode seguir [aqui](https://book.anchor-lang.com/getting_started/installation.html). Mac e Windows abaixo. Além disso, se você estiver usando Linux para Windows, siga os comandos do Linux!*
 
 Para instalar o Anchor, vá em frente e execute:
 
@@ -202,7 +212,7 @@ A próxima coisa que precisamos fazer é gerar uma carteira Solana local para tr
 solana-keygen new
 ```
 
-O que isso fará é criar um par de chaves Solana local — que é mais ou menos como nossa carteira local que usaremos para conversar com nossos programas por meio da linha de comando. Se você executar `solana config get` você verá algo chamado `Keypair Path`. Foi aí que a carteira foi criada, fique à vontade para conferir :).
+O que isso fará é criar um par de chaves Solana local — que é mais ou menos como nossa carteira local que usaremos para conversar com nossos programas por meio da linha de comando. Se você executar `solana config get` você verá algo chamado `Keypair Path`. Foi aí que a carteira foi criada, fique à vontade para conferir 😊.
 
 Se você executar:
 
@@ -216,7 +226,7 @@ Você verá o endereço público de sua carteira local que acabamos de criar.
 
 Quando fizemos `anchor init`, ele criou um programa Solana básico para nós. O que queremos fazer agora é:
 
-1. Compile nosso programa.
+1. Compilar nosso programa.
 2. Rode o `solana-test-validator` e implante o programa em nossa rede Solana **local** com nossa carteira. Isso é como implantar nosso servidor local com novo código.
 3. Chame funções em nosso programa implantado. Isso é como atingir uma rota específica em nosso servidor para testar se está funcionando.
 
@@ -228,20 +238,18 @@ Anchor é incrível. Ele nos permite fazer tudo isso em uma única etapa, execut
 anchor test
 ```
 
-Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que você obtenha as palavras verdes na parte inferior que dizem "1 passing", você está pronto para ir !! Mantenha-nos informados no Discord se você tiver problemas aqui.
+Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que você obtenha as palavras verdes na parte inferior que dizem <span style="color:green">1 passing</span>, você está pronto para ir !! Mantenha-nos informados no Discord se você tiver problemas aqui.
 
-![Untitled](https://i.imgur.com/V35KchA.png)
+![Untitled](https://i.imgur.com/74Zfb0F.png)
 
-**Nota: Se você receber a mensagem `node: --dns-result-order= is not allowed in NODE_OPTIONS` isso significa que você está em uma versão mais antiga do Node e, tecnicamente, isso não foi aprovado! Como testei tudo isso com o Node v16.13.0, sugiro fortemente que você apenas atualize para esta versão.**
+**Nota: Se você receber a mensagem `node: --dns-result-order= is not allowed in NODE_OPTIONS` isso significa que você está em uma versão mais antiga do Node e, tecnicamente, isso não foi aprovado! Como testei tudo isso com o Node v16.17.1, sugiro fortemente que você apenas atualize para esta versão.**
 
-**Parabéns, você configurou com sucesso seu ambiente Solana :).** Tem sido uma jornada e tanto, mas nós o tornamos famoso.
+**Parabéns, você configurou com sucesso seu ambiente Solana 😊 .** Tem sido uma jornada e tanto, mas nós o tornamos famoso.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão Dani vai ficar triste :(*
+*Faça isso senão vitordev vai ficar triste :(*
 
 Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
-Poste uma captura de tela do seu teste funcionando em `#progress` para que as pessoas saibam que você fez isso :).
-
-Agora vá em frente e volte ao seu [buildspace Dashboard](https://app.buildspace.so/courses/CObd6d35ce-3394-4bd8-977e-cbee82ae07a3) para continuar!
+Poste uma captura de tela do seu teste funcionando em `#progress` para que as pessoas saibam que você fez isso 😊.
