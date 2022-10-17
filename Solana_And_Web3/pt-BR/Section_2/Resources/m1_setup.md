@@ -197,7 +197,7 @@ npm install -g yarn
 
 Vamos usar muito essa ferramenta chamada "Anchor". Se você já conhece o Hardhat do mundo do Ethereum, é algo parecido! Exceto - é construído para Solana. **Basicamente, torna-se muito fácil para nós executarmos os programas Solana localmente e implantá-los na cadeia Solana real quando estivermos prontos!**
 
-O Anchor é um *projeto realmente novo* executado por alguns desenvolvedores principais. Há grandes chances de se deparar com alguns problemas. Certifique-se de participar do [Anchor Discord](https://discord.gg/8HwmBtt2ss) e sinta-se à vontade para fazer perguntas ou [criar uma issue](https://github.com/project-serum/anchor/issues) em seu Github à medida que você encontrar problemas. Os desenvolvedores são incríveis. Talvez até diga que você é do buildspace em #general no Discord deles :).
+O Anchor é um *projeto realmente novo* executado por alguns desenvolvedores principais. Há grandes chances de se deparar com alguns problemas. Certifique-se de participar do [Anchor Discord](https://discord.gg/wgM4KATaex) e sinta-se à vontade para fazer perguntas ou [criar uma issue](https://github.com/project-serum/anchor/issues) em seu Github à medida que você encontrar problemas. Os desenvolvedores são incríveis. Talvez até diga que você é do buildspace em #general no Discord deles :).
 
 **BTW - não apenas entre no Discord e faça perguntas aleatórias esperando que as pessoas ajudem. Tente pesquisar no Discord deles para ver se mais alguém teve a mesma dúvida que você. Dê o máximo de informações possível sobre suas dúvidas. Faça as pessoas quererem te ajudar lol.**
 

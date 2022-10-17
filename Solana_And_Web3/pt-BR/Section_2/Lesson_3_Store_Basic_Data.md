@@ -12,7 +12,7 @@ Lembre-se anteriormente que eu disse que os programas Solana são **sem estado**
 
 Mas, os programas Solana podem interagir com "contas".
 
-Novamente, as contas são basicamente arquivos que os programas podem ler e gravar. A palavra "contas" é confusa. Por exemplo, quando você cria uma carteira no Solana — você cria uma "conta". Mas, seu programa também pode criar uma "conta" na qual possa gravar dados. Os próprios programas são considerados "contas".
+Novamente, as contas são basicamente arquivos que os programas podem ler e gravar. A palavra "contas" é confusa\. Por exemplo, quando você cria uma carteira no Solana — você cria uma "conta". Mas, seu programa também pode criar uma "conta" na qual possa gravar dados. Os próprios programas são considerados "contas".
 
 **Tudo é conta 😂**. Lembre-se de que uma conta não é apenas como sua carteira real - **é uma maneira geral de os programas passarem dados entre si**. Leia mais sobre eles [aqui](https://docs.solana.com/developing/programming-model/accounts).
 
@@ -99,7 +99,7 @@ Por que estamos pagando por uma conta? Bem - armazenar dados não é grátis! Co
 
 Temos então `pub user: Signer<'info>` que são dados passados para o programa que provam ao programa que o usuário que está chamando este programa realmente possui sua conta de carteira.
 
-Finalmente, temos `pub system_program: Program` que é realmente muito legal. É basicamente uma referência ao [SystemProgram](https://docs.solana.com/developing/runtime-facilities/programs#system-program). O SystemProgram é o programa que basicamente roda Solana. É responsável por muitas coisas, mas uma das principais coisas que faz é criar contas no Solana. O SystemProgram é um programa que os criadores de Solana implantaram para que outros programas como o nosso chamem 😂 — tem um id de `11111111111111111111111111111111`.
+Finalmente, temos `pub system_program: Program` que é realmente muito legal. É basicamente uma referência ao [SystemProgram](https://docs.solana.com/developing/runtime-facilities/programs#system-program). O SystemProgram é o programa que basicamente roda Solana. É responsável por muitas coisas, mas uma das principais coisas que faz é criar contas no Solana. O SystemProgram é um programa que os criadores de Solana implantaram que outros programas como o nosso falam 😂 — tem um id de `11111111111111111111111111111111`.
 
 Por último, fazemos isso em nossa função onde apenas pegamos `base_account` do contexto `StartStuffOff` fazendo `Context<StartStuffOff>`.
 
