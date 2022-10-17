@@ -7,7 +7,7 @@ Dentro dessas pastas, vá para a pasta `home` e depois para a pasta `username`. 
 
 Você verá todas as coisas mágicas que a Anchor gerou para nós aqui.
 
-**Exclua** o conteúdo de `programs/myepicproject/src/lib.rs` e `tests/myepicproject.js`. Na verdade, não exclua os arquivos, apenas o que há neles.
+**Exclua** apenas o conteúdo de `programs/myepicproject/src/lib.rs` e `tests/myepicproject.js`.**Não exclua os arquivos, apenas o que há neles.**
 
 *Nota: eu realmente **não** instalei a extensão Rust para VSCode. Ele já tem _syntax highlighting_ para Rust nativamente.*
 
@@ -34,13 +34,13 @@ pub mod myepicproject {
 pub struct StartStuffOff {}
 ```
 
-Muita coisa acontecendo aqui, então vamos apenas passo a passo. Novamente, se você não conhece Rust - não se preocupe muito. Eu acho que você pode pegar essas coisas muito rapidamente. Você não vai se tornar um Rust Master assim, mas pode se preocupar com isso depois :).
+Muita coisa acontecendo aqui, então vamos apenas passo a passo. Novamente, se você não conhece Rust - não se preocupe muito. Eu acho que você pode pegar essas coisas muito rapidamente. Você não vai se tornar um Rust Master assim, mas pode se preocupar com isso depois 😊.
 
 ```rust
 use anchor_lang::prelude::*;
 ```
 
-Uma simples declaração `use` no topo. Tipo como uma declaração de importação. Queremos importar muitas das ferramentas que o Anchor fornece para facilitar a escrita de programas Solana.
+Uma simples declaração `use` no topo. É como uma declaração de importação. Queremos importar muitas das ferramentas que o Anchor fornece para facilitar a escrita de programas Solana.
 
 ```rust
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
@@ -67,7 +67,7 @@ pub mod myepicproject {
 
 `pub mod` nos diz que este é um "[módulo](https://stevedonovan.github.io/rust-gentle-intro/4-modules.html)" Rust, que é uma maneira fácil de definir uma coleção de funções e variáveis — como uma classe, se você sabe o que é. E chamamos este módulo de `myepicproject`. Aqui nós escrevemos uma função `start_stuff_off` que pega algo chamado `Context` e gera um `Result <()>`. Você pode ver que esta função não faz nada exceto chamar `Ok(())` que é apenas um tipo `Result` sobre o qual você pode ler [aqui](https://doc.rust-lang.org/std/result/).
 
-Então, realmente, essa coisa `start_stuff_off` é apenas uma função que outra pessoa pode chamar agora. Não faz nada agora, mas vamos mudar isso :).
+Então, realmente, essa coisa `start_stuff_off` é apenas uma função que outra pessoa pode chamar agora. Não faz nada agora, mas vamos mudar isso 😊.
 
 ```rust
 #[derive(Accounts)]
@@ -80,7 +80,7 @@ Vamos apenas colocar as coisas em funcionamento e ver o que acontece.
 
 ### 💎 Escreva um script para vê-lo funcionando localmente
 
-Precisamos basicamente dizer ao Anchor como queremos que nosso programa seja executado e quais funções queremos chamar. Vá até `tests/myepicproject.js`. Na verdade, isso está escrito em Javascript :).
+Precisamos basicamente dizer ao Anchor como queremos que nosso programa seja executado e quais funções queremos chamar. Vá até `tests/myepicproject.js`. Na verdade, isso está escrito em Javascript 😊.
 
 Vá em frente e codifique isso:
 
@@ -130,7 +130,7 @@ Finalmente, nós chamamos nossa função que criamos fazendo `program.rpc.startS
 
 Antes de executá-lo, precisamos fazer uma mudança rápida.
 
-Em `Anchor.toml` queremos mudar um pouco as tags `[scripts]`:
+Em `Anchor.toml` na raiz do projeto queremos mudar um pouco as tags `[scripts]`:
 
 ```
 [scripts]
@@ -163,14 +163,15 @@ Contanto que você veja uma "assinatura de transação", você está bem! Isso s
 Bem épico. Você escreveu um programa Solana, **implementou-o em seu nó Solana local** e agora está realmente falando com seu programa implantado em sua rede Solana local.
 
 **NICEEEEEEE.** Eu sei que pode não parecer muito, mas agora você tem um fluxo básico para fazer as coisas.
+<ul>
+<li>Escrever o código em <code>lib.rs</code>.</li>
+<li>Test specific functions using <code>tests/myepicproject.js</code>.</li>
+</ul>
 
-1. Write code in `lib.rs`
-2. Test specific functions using `tests/myepicproject.js`.
-
-Acostume-se com este ciclo! É a maneira mais rápida de iterar em seus programas Solana :).
+Acostume-se com este ciclo! É a maneira mais rápida de iterar em seus programas Solana 😊.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o Dani vai ficar triste :(*
+*Faça isso senão a Sabrina vai ficar triste 😊*
 
 Poste uma captura de tela do seu teste básico funcionando em `#progress`! É sempre motivador para os outros ver as pessoas descobrindo as coisas.

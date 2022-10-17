@@ -8,7 +8,7 @@ A última coisa que eu quero que você faça é descer à toca do coelho da bloc
 
 Eu prometo que toda a sua pesquisa fará muito mais sentido quando você realmente enviar este projeto.
 
-Eu acho que é valioso ter uma compreensão básica de alguns dos conceitos e obter uma imagem de alto nível de como as coisas estão funcionando na Solana! Então, vamos fazer isso :).
+Eu acho que é valioso ter uma compreensão básica de alguns dos conceitos e obter uma imagem de alto nível de como as coisas estão funcionando na Solana! Então, vamos fazer isso 😊.
 
 ### 👩‍💻 Programas
 

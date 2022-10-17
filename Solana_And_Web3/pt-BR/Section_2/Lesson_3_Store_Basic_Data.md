@@ -12,11 +12,11 @@ Lembre-se anteriormente que eu disse que os programas Solana são **sem estado**
 
 Mas, os programas Solana podem interagir com "contas".
 
-Novamente, as contas são basicamente arquivos que os programas podem ler e gravar. A palavra "contas" é confusa e super merda. Por exemplo, quando você cria uma carteira no Solana — você cria uma "conta". Mas, seu programa também pode criar uma "conta" na qual possa gravar dados. Os próprios programas são considerados "contas".
+Novamente, as contas são basicamente arquivos que os programas podem ler e gravar. A palavra "contas" é confusa\. Por exemplo, quando você cria uma carteira no Solana — você cria uma "conta". Mas, seu programa também pode criar uma "conta" na qual possa gravar dados. Os próprios programas são considerados "contas".
 
-**Tudo é conta lol**. Lembre-se de que uma conta não é apenas como sua carteira real - **é uma maneira geral de os programas passarem dados entre si**. Leia mais sobre eles [aqui](https://docs.solana.com/developing/programming-model/accounts).
+**Tudo é conta 😂**. Lembre-se de que uma conta não é apenas como sua carteira real - **é uma maneira geral de os programas passarem dados entre si**. Leia mais sobre eles [aqui](https://docs.solana.com/developing/programming-model/accounts).
 
-Confira o código abaixo, eu adicionei alguns comentários também.
+Confira o código abaixo, eu adicionei alguns comentários também, substitua ou adiocione manualmente as alterações no seu arquivo `lib.rs`.
 
 ```rust
 use anchor_lang::prelude::*;
@@ -80,7 +80,7 @@ pub struct StartStuffOff<'info> {
 }
 ```
 
-Parece complicado rs.
+Parece complicado 😂.
 
 Primeiro temos `[account(init, payer = user, space = 9000)]`. **Tudo o que estamos fazendo aqui é dizer a Solana como queremos inicializar `BaseAccount`.**
 
@@ -88,9 +88,9 @@ Observe que, se após executar o teste abaixo você receber o erro `Transaction 
 
 1. `init` dirá a Solana para criar uma nova conta pertencente ao nosso programa atual.
 2. `payer = user` informa ao nosso programa quem está pagando pela criação da conta. Neste caso, é o `user` chamando a função.
-3. Dizemos então `space = 9000` que alocará 9000 bytes de espaço para nossa conta. Você pode alterar este # se quiser, mas 9000 bytes são suficientes para o programa que vamos construir aqui!
+3. Dizemos então `space = 9000` que alocará 9000 bytes de espaço para nossa conta. Você pode alterar este o valor de `space` se quiser, mas 9000 bytes são suficientes para o programa que vamos construir aqui!
 
-Por que estamos pagando por uma conta? Bem - armazenar dados não é grátis! Como Solana funciona é que os usuários pagarão "aluguel" em suas contas. Você pode ler mais sobre isso [aqui](https://docs.solana.com/developing/programming-model/accounts#rent) e como o aluguel é calculado. Bem selvagem, certo? Se você não pagar aluguel, os validadores vão limpar a conta!
+Por que estamos pagando por uma conta? Bem - armazenar dados não é grátis! Como Solana funciona é que os usuários pagarão "aluguel" em suas contas. Você pode ler mais sobre isso [aqui](https://docs.solana.com/developing/programming-model/accounts#rent) e como o aluguel é calculado. Bem agressivo, certo? Se você não pagar aluguel, os validadores vão limpar a conta!
 
 [Aqui está](https://docs.solana.com/storage_rent_economics) outro artigo dos docs sobre aluguel que eu também gostei!
 
@@ -99,7 +99,7 @@ Por que estamos pagando por uma conta? Bem - armazenar dados não é grátis! Co
 
 Temos então `pub user: Signer<'info>` que são dados passados para o programa que provam ao programa que o usuário que está chamando este programa realmente possui sua conta de carteira.
 
-Finalmente, temos `pub system_program: Program` que é realmente muito legal. É basicamente uma referência ao [SystemProgram](https://docs.solana.com/developing/runtime-facilities/programs#system-program). O SystemProgram é o programa que basicamente roda Solana. É responsável por muitas coisas, mas uma das principais coisas que faz é criar contas no Solana. O SystemProgram é um programa que os criadores de Solana implantaram que outros programas como o nosso falam haha — tem um id de `11111111111111111111111111111111`.
+Finalmente, temos `pub system_program: Program` que é realmente muito legal. É basicamente uma referência ao [SystemProgram](https://docs.solana.com/developing/runtime-facilities/programs#system-program). O SystemProgram é o programa que basicamente roda Solana. É responsável por muitas coisas, mas uma das principais coisas que faz é criar contas no Solana. O SystemProgram é um programa que os criadores de Solana implantaram que outros programas como o nosso falam 😂 — tem um id de `11111111111111111111111111111111`.
 
 Por último, fazemos isso em nossa função onde apenas pegamos `base_account` do contexto `StartStuffOff` fazendo `Context<StartStuffOff>`.
 
@@ -121,7 +121,7 @@ Boom! Novamente - muitas dessas coisas podem parecer confusas, especialmente se 
 
 Vamos juntar tudo.
 
-Então, podemos realmente recuperar os dados da conta agora também em javascript. Vá em frente e atualize o `myepicproject.js`. Adicionei alguns comentários nas linhas que alterei.
+Então, podemos realmente recuperar os dados da conta agora também em javascript. Vá em frente e atualize o `test/myepicproject.js`. Adicionei alguns comentários nas linhas que alterei.
 
 ```javascript
 const anchor = require('@project-serum/anchor');
@@ -193,9 +193,9 @@ Aqui nós realmente recuperamos a conta que criamos e então acessamos `totalGif
 👀 GIF Count 0
 ```
 
-Yay! Está '0'! Isso é muito épico. Agora estamos chamando um programa *e* armazenando dados de uma maneira sem permissão na cadeia Solana. LEGAL.
+OMG! Está '0'! Isso é muito épico. Agora estamos chamando um programa *e* armazenando dados de uma maneira sem permissão na cadeia Solana. LEGAL.
 
-### 👷‍♀️ Crie uma função para atualizar o contador GIF
+### 👷‍♀️ Criando uma função para atualizar o contador GIF
 
 Vamos criar uma nova função chamada `add_gif` que nos permite incrementar o contador GIF. Confira abaixo algumas das minhas mudanças.
 
@@ -245,7 +245,7 @@ pub struct BaseAccount {
 }
 ```
 
-Bem simples! Perto da parte inferior eu adicionei:
+Bem simples! Na parte inferior eu adicionei:
 
 ```rust
 #[derive(Accounts)]
@@ -347,4 +347,4 @@ LEGAL. Agora estamos armazenando *e* alterando dados em nosso programa Solana. �
 
 Poste uma captura de tela do seu terminal mostrando sua contagem de GIFs incrementando em `#progress`!
 
-Trabalho épico até agora :).
+Trabalho épico até agora 😊.

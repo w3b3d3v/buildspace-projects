@@ -2,11 +2,14 @@
 
 Então, um contador é legal. Mas, queremos armazenar dados mais complexos!
 
-Vamos agora configurá-lo onde podemos armazenar um array de structs com mais dados que nos interessam, como: *um link para o gif e o endereço público da pessoa que o enviou.* Então, poderemos recuperar esses dados em nosso cliente!
+Vamos agora configurá-lo onde podemos armazenar um array de structs com mais dados que nos interessam, como: _um link para o gif e o endereço público da pessoa que o enviou._ Então, poderemos recuperar esses dados em nosso cliente!
 
 ### 💎 Configure o Vec<ItemStruct>
 
+
 Confira abaixo algumas das atualizações:
+
+**Atualize seu código !.**
 
 ```rust
 use anchor_lang::prelude::*;
@@ -32,8 +35,8 @@ pub mod myepicproject {
       gif_link: gif_link.to_string(),
       user_address: *user.to_account_info().key,
     };
-		
-	// Adiciona ele ao vetor gif_list.
+
+	// Adiciona ele ao array gif_list.
     base_account.gif_list.push(item);
     base_account.total_gifs += 1;
     Ok(())
@@ -102,11 +105,11 @@ Como eu descobri essas coisas? Bem - na verdade, eu mesmo vasculho os [docs](htt
 Como sempre, precisamos retornar ao nosso script de teste! Aqui estão as atualizações:
 
 ```javascript
-const anchor = require('@project-serum/anchor');
+const anchor = require("@project-serum/anchor");
 const { SystemProgram } = anchor.web3;
 
-const main = async() => {
-  console.log("🚀 Iniciando testes...")
+const main = async () => {
+  console.log("🚀 Iniciando testes...");
 
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
@@ -124,7 +127,7 @@ const main = async() => {
   console.log("📝 Sua assinatura de transação", tx);
 
   let account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-  console.log('👀 GIF Count', account.totalGifs.toString())
+  console.log("👀 GIF Count", account.totalGifs.toString());
 
   // Você precisará agora passar um link do GIF para a função! Você também precisará passar o usuário que está enviando o GIF!
   await program.rpc.addGif("insert_a_giphy_link_here", {
@@ -133,14 +136,14 @@ const main = async() => {
       user: provider.wallet.publicKey,
     },
   });
-  
+
   // Chama a conta
   account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-  console.log('👀 GIF Count', account.totalGifs.toString())
+  console.log("👀 GIF Count", account.totalGifs.toString());
 
   // Acessa o gif_list na conta
-  console.log('👀 GIF List', account.gifList)
-}
+  console.log("👀 GIF List", account.gifList);
+};
 
 const runMain = async () => {
   try {
@@ -155,7 +158,7 @@ const runMain = async () => {
 runMain();
 ```
 
-*Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insert_a_giphy_link_here` senão você receberá um erro confuso como: `baseAccount não fornecido`.*
+_Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insert_a_giphy_link_here` senão você receberá um erro confuso como: `baseAccount não fornecido`._
 
 Nada de novo aqui realmente! Um dos momentos mágicos para mim foi quando vi a saída de `console.log('👀 GIF List', account.gifList)`. É tão legal poder apenas anexar dados a uma conta e acessar dados por meio da conta.
 
@@ -178,12 +181,12 @@ Aqui está a aparência da minha saída ao fazer o `anchor test`.
 ]
 ```
 
-Chegamos bem longe. Agora não estamos apenas escrevendo e executando programas Solana, mas descobrimos como armazenar alguns dados complexos agora também! Yay :).
+Chegamos bem longe. Agora não estamos apenas escrevendo e executando programas Solana, mas descobrimos como armazenar alguns dados complexos agora também! Wow 😊.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão Dani vai ficar triste :(*
+_Faça isso senão o Yan vai ficar triste :(_
 
 Poste uma captura de tela do seu terminal mostrando suas estruturas de itens em `#progress`!
 
-Muito difícil fazer tudo isso funcionar. Você está indo bem :).
+Muito difícil fazer tudo isso funcionar. Você está indo bem 😊.
