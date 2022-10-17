@@ -158,7 +158,7 @@ const runMain = async () => {
 runMain();
 ```
 
-_Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insira_o_link_do_seu__gif_aqui` senão você receberá um erro confuso como: `baseAccount não fornecido`._
+_Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insira_o_link_do_seu_gif_aqui` senão você receberá um erro confuso como: `baseAccount não fornecido`._
 
 Nada de novo aqui realmente! Um dos momentos mágicos para mim foi quando vi a saída de `console.log('👀 GIF List', account.gifList)`. É tão legal poder apenas anexar dados a uma conta e acessar dados por meio da conta.
 

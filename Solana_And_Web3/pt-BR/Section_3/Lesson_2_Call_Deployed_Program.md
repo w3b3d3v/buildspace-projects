@@ -249,7 +249,6 @@ const getGifList = async() => {
     const program = new Program(idl, programID, provider);
     const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
     
-
     console.log("Conta obtida", account)
     setGifList(account.gifList)
 
