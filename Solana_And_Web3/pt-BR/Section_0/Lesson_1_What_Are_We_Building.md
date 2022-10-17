@@ -1,6 +1,6 @@
 ### 👋 Bem-vind@
 
-Você conseguiu - sim, conseguiu! Bem-vind@ :). Meu nome é danicuki e eu sou apenas o cara que vai conversar com você aqui.
+Você conseguiu - sim, conseguiu! Bem-vind@ 😊. Meu nome é danicuki e eu sou apenas o cara que vai conversar com você aqui.
 
 Este projeto é para desenvolvedores que desejam entrar em Solana, que agora é uma das maiores blockchains do mundo.
 
@@ -9,12 +9,12 @@ Tudo o que você precisa saber para começar é: **ter alguma habilidade com ter
 Alguns pontos importantes para você executar antes de seguir em frente:
 
 1. **Conecte seu Discord no dashboard do projeto.** Todas as coisas boas estarão acontecendo em uma categoria secreta no Discord a qual você só terá acesso se conectar o seu Discord.
-2. **Conecte sua carteira Ethereum no dashboard do projeto.** Nós enviaremos uma NFT para você quando você terminar isso, e se você não tiver uma carteira conectada, não poderemos enviar para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos as NFTs :).
+2. **Conecte sua carteira Ethereum no dashboard do projeto.** Nós enviaremos uma NFT para você quando você terminar isso, e se você não tiver uma carteira conectada, não poderemos enviar para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos as NFTs 😊.
 3. **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/c/web3dev).
 
 ### 🛠 O projeto
 
-Então, o que vamos construir aqui :)? Segue um pequeno vídeo:
+Então, o que vamos construir aqui 😊? Segue um pequeno vídeo:
 
 [Loom-Review](https://www.loom.com/share/545522add8514005a91ececac5abdab2)
 
@@ -62,4 +62,4 @@ Na pior das hipóteses, você consegue conversar com algumas pessoas muito legai
 
 _Por favor, faça isso senão o Yan ficará triste :(_
 
-Ei! Esse projeto tem tudo a ver com GIFs, vá em frente e poste um GIF qualquer que você goste em `#progresso` no Discord. Eu gosto de usar o [Giphy](https://giphy.com) para todas minhas necessidades com GIFs! :)
+Ei! Esse projeto tem tudo a ver com GIFs, vá em frente e poste um GIF qualquer que você goste em `#progresso` no Discord. Eu gosto de usar o [Giphy](https://giphy.com) para todas minhas necessidades com GIFs!😊 

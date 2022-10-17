@@ -27,9 +27,9 @@ const sendGif = async () => {
 };
 ```
 
-Agora, você poderá enviar um link, aprovar a transação via Phantom e seu aplicativo da web deverá mostrar o GIF que você acabou de enviar :).
+Agora, você poderá enviar um link, aprovar a transação via Phantom e seu aplicativo da web deverá mostrar o GIF que você acabou de enviar 😊.
 
-### 🙈 Resolva o problema da conta não persistir
+### 🙈 Resolvendo o problema da conta não persistir
 
 Então, já passamos por esse problema em que nossa conta está sendo redefinida toda vez que atualizamos a página. Vamos corrigi-lo.
 
@@ -57,7 +57,7 @@ fs.writeFileSync('./keypair.json', JSON.stringify(account))
 
 Tudo o que esse script faz é gravar um par de chaves diretamente em nosso sistema de arquivos, dessa forma, sempre que as pessoas acessarem nosso aplicativo da Web, todas carregarão o mesmo par de chaves.
 
-Quando estiver pronto para executar isso, vá em frente e faça:
+Depois de criar e salvar o arquivo, vá em frente e faça:
 
 ```bash
 cd src
@@ -66,7 +66,7 @@ node createKeyPair.js
 
 Certifique-se de rodar um `cd` no diretório que `createKeyPair.js` esteja localizado.
 
-Isso gerará um arquivo chamado `keypair.json` com nosso par de chaves sofisticado :).
+Isso gerará um arquivo chamado `keypair.json` com nosso par de chaves sofisticado 😊.
 
 **Observação para usuários do Replit**: você pode executar comandos shell diretamente no Replit. Clique na palavra "Shell", depois faça `cd src` e depois `node createKeyPair.js` e funcionará como se você estivesse usando um terminal local!
 
@@ -84,12 +84,12 @@ const secret = new Uint8Array(arr)
 const baseAccount = web3.Keypair.fromSecretKey(secret)
 ```
 
-É isso. Agora, temos um par de chaves permanente! Se você atualizar a página, verá que depois de inicializar a conta - ela permanece mesmo após a atualização :)!!! Sinta-se à vontade para enviar alguns GIFs daqui.
+É isso. Agora, temos um par de chaves permanente! Se você atualizar a página, verá que depois de inicializar a conta - ela permanece mesmo após a atualização 😊!!! Sinta-se à vontade para enviar alguns GIFs daqui.
 
 Você também pode executar `createKeyPair.js` quantas vezes quiser e isso permitirá que você crie uma nova `BaseAccount`. No entanto, isso também significa que a nova conta estará completamente vazia e sem dados. É importante entender que você **não está excluindo contas se executar** `createKeyPair.js` novamente. Você está simplesmente criando uma nova conta para o seu programa apontar.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o Dani vai ficar triste :(*
+*Faça isso senão o Dani vai ficar triste 😊*
 
-Você tem envios de GIFs funcionando !! Poste uma captura de tela em `#progress` com seus GIFs sendo recuperados do seu programa Solana :).
+Você tem envios de GIFs funcionando !! Poste uma captura de tela em `#progresso` com seus GIFs sendo recuperados do seu programa Solana 😊.

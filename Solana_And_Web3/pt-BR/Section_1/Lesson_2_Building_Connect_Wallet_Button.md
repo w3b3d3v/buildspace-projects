@@ -14,9 +14,31 @@ Assim que conectarmos nossa carteira ao nosso site, nosso site terá permissão 
 
 **Lembre-se, é como se autenticar em um site.** Se você não estiver "conectado" ao G-Mail, não poderá usar o produto de e-mail deles!
 
-Vá para seu código e abra o `App.js` em `src`. É aqui que estará o principal ponto de entrada do nosso aplicativo.
+Certifique-se de ter feito o fork corretamente independente se foi pelo replit ou pelo github.
+
+Abra o terminal na pasta do nosso portal-gif.
+
+E execute o seguinte comandos:
+
+ ```npm i```
+
+ O seguinte comando ira baixar as bibliotecas necessárias para o nosso app.
+
+  **Obs:** Você pode receber ```npm WARN``` no terminal, não se preocupe isto não é um ```error```.
+
+  Após instalar as dependências execute o camando:
+
+  ```npm run start```
+
+ Este comando ira executar o nosso app que estara disponível no navegador.
+
+ Você pode acessar o seu app em http://localhost:3000, não se esqueça de verificar se ele está sendo executado no terminal.
+
+Agora vá para seu código e abra o `App.js` na pasta `src`. É aqui que estará o principal ponto de entrada do nosso aplicativo.
 
 Se você tiver a extensão Phantom Wallet instalada, ela injetará automaticamente um objeto especial chamado `solana` em seu objeto `window` que possui algumas funções mágicas. Isso significa que antes de fazermos qualquer coisa, precisamos verificar se isso existe. Se não existir, vamos dizer ao nosso usuário para fazer o download:
+
+Substitua tudo que tem no `App.js` pelo código abaixo:
 
 ```jsx
 /*
@@ -27,7 +49,7 @@ import twitterLogo from "./assets/twitter-logo.svg";
 import "./App.css";
 
 // Mude isso para seu Twitter se quiser.
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -67,7 +89,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🖼 GIF Portal</p>
+          <p className="header">🖼Meu Portal de GIF🖼</p>
           <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
         </div>
         <div className="footer-container">
@@ -132,7 +154,7 @@ Atualmente, a equipe da Phantom Wallet sugere esperar que a janela termine de ca
 
 Então, quando você executar isso, você deverá ver a linha _"Phantom wallet encontrada!"_ impressa no console do site quando for inspecioná-lo.
 
-![Untitled](https://i.imgur.com/MZQlPl5.png)
+![Untitled](https://i.imgur.com/IjwoU81.png)
 
 **ÓTIMO.**
 
@@ -176,7 +198,7 @@ Se um usuário já conectou sua carteira ao seu aplicativo, esse sinalizador pux
 
 Caramba, é isso. _Neste ponto, você ainda deve estar vendo apenas a declaração de log "Phantom wallet encontrada!"_!
 
-Por que? Bem, o método `connect` só será executado **se** o usuário já tiver autorizado uma conexão com seu aplicativo. **O que eles nunca fizeram até agora.**
+Por que? Bem, o método `connect` só será executado **se** o usuário já tiver autorizado uma conexão com seu aplicativo. **Até este momento o usuario(que é você) não se conectou.**
 
 Então, vamos inicializar essa conexão!
 
@@ -186,7 +208,9 @@ Tudo bem, já estamos verificando se um usuário já está conectado ao nosso ap
 
 Precisamos criar um botão `connectWallet` . No mundo da web3, conectar sua carteira é literalmente um botão "Cadastre-se/Login" embutido para o seu usuário.
 
-Pronto para a experiência "Cadastre-se" mais fácil da sua vida :)? Confira:
+Pronto para a experiência "Cadastre-se" mais fácil da sua vida 😊.
+
+Substitua o código abaixo so seu `App.js` (Mantemos o código e adicionamos códigos novos).
 
 ```jsx
 import React, { useEffect } from "react";
@@ -194,11 +218,11 @@ import twitterLogo from "./assets/twitter-logo.svg";
 import "./App.css";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
-  // Acoes
+  // Ações
   const checkIfWalletIsConnected = async () => {
     try {
       const { solana } = window;
@@ -252,7 +276,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🖼 GIF Portal</p>
+          <p className="header">🖼Meu Portal de GIF</p>
           <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
           {/* Renderizar seu botão 'conecte sua carteira' aqui */}
           {renderNotConnectedContainer()}
@@ -276,7 +300,7 @@ export default App;
 
 Ótimo! Agora você deve ter um botão de gradiente legal que diz "Conecte sua carteira" renderizado em sua página.
 
-![Untitled](https://i.imgur.com/TmZWnqn.png)
+![Untitled](https://i.imgur.com/ATok25f.png)
 
 A maior coisa a entender aqui são os **métodos de renderização**.
 
@@ -301,7 +325,7 @@ Então, logo acima da sua função `checkIfWalletIsConnected` vá em frente e ad
 const [walletAddress, setWalletAddress] = useState(null);
 ```
 
-Muito bom. Então, agora que estamos prontos para manter algum estado, vamos atualizar algumas coisas em nosso código aqui:
+Muito bom. Então, agora que estamos prontos para monitorar o estado, vamos atualizar algumas coisas em nosso código aqui:
 
 ```jsx
 import React, { useEffect, useState } from "react";
@@ -309,14 +333,14 @@ import twitterLogo from "./assets/twitter-logo.svg";
 import "./App.css";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
   // State
   const [walletAddress, setWalletAddress] = useState(null);
 
-  // Acoes
+  // Ações
   const checkIfWalletIsConnected = async () => {
     try {
       const { solana } = window;
@@ -368,7 +392,7 @@ const App = () => {
       {/* Isso só foi adicionar para um estilozinho */}
       <div className={walletAddress ? "authed-container" : "container"}>
         <div className="header-container">
-          <p className="header">🖼 GIF Portal</p>
+          <p className="header">🖼Meu Portal de GIF</p>
           <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
           {/* Adiciona a condição para mostrar isso apenas se não tivermos um endereço de carteira */}
           {!walletAddress && renderNotConnectedContainer()}
@@ -422,13 +446,13 @@ const checkIfWalletIsConnected = async () => {
 
 Acho que isso é bem autoexplicativo. Acabamos de conectar nossa Phantom Wallet e agora recebemos os dados da carteira do usuário. Agora que temos isso, vamos em frente e vamos salvá-lo em nosso estado para usar mais tarde.
 
+
 ```jsx
-{
+
   /* Adiciona a condição para mostrar isso apenas se não tivermos um endereço de carteira */
-}
-{
+
   !walletAddress && renderNotConnectedContainer();
-}
+
 ```
 
 Isso é um belo pedaço de código. Nós estamos dizendo ao React para apenas chamar esse método de renderização se não existir um `walletAddress` definido no nosso estado. Isso é chamado [**renderização condicional**](https://reactjs.org/docs/conditional-rendering.html) e vai nos ajudar a manter o rastreamento de diferentes estados para mostrar no nosso app!
@@ -465,7 +489,7 @@ Simples assim! Chame a função `connect` no objeto `solana` para lidar com todo
 
 Vá em frente e atualize sua página e pressione o botão 'Conecte sua carteira'! Se tudo funcionar, você finalmente verá a extensão Phantom Wallet aparecer assim:
 
-![https://i.imgur.com/XhaYIuk.png](https://i.imgur.com/XhaYIuk.png)
+![https://i.imgur.com/XhaYIuk.png](https://i.imgur.com/I0UrxUw.png)
 
 Depois de pressionar conectar, seu botão deve desaparecer! VAMOS. LÁ. VAI.
 
@@ -473,7 +497,7 @@ Depois de pressionar conectar, seu botão deve desaparecer! VAMOS. LÁ. VAI.
 
 Agora, se você atualizar a página, sua função `checkIfWalletIsConnected` será chamada e seu botão deve desaparecer quase imediatamente 🤘.
 
-Movimentos bem grandes aqui!
+Um grande avanço até aqui, não acha ?
 
 Você tem sua configuração básica de interface do usuário e pode facilmente "autenticar" um usuário com sua carteira Solana. Mole-mole.
 
@@ -483,6 +507,6 @@ _Observação: nas configurações da Phantom (que você pode acessar clicando n
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão Farza vai ficar triste :(_
+_Faça isso senão o Dani vai ficar triste :(_
 
-Poste uma captura de tela do seu console em `#progress` mostrando sua chave pública com sua carteira conectada. Não se preocupe, você pode compartilhar sua chave pública. Por isso é "público" ;).
+Poste uma captura de tela do seu console em `#progresso` mostrando sua chave pública com sua carteira conectada. Não se preocupe, você pode compartilhar sua chave pública. Por isso é "público" ;).
