@@ -1,8 +1,8 @@
-Estamos avançando por aqui! Neste ponto, temos: configuramos nosso aplicativo React, criamos um botão conecte sua carteira, configuramos alguma renderização condicional com base no estado da carteira Solana do usuário.
+Estamos avançando por aqui! Neste ponto, temos: configuramos nosso aplicativo React, criamos um botão conecte sua carteira, configuramos uma renderização condicional com base no estado da carteira Solana do usuário.
 
 Em nosso Portal de GIFs, queremos mostrar os GIFs que as pessoas enviam ao nosso aplicativo!
 
-Só precisamos construir a interface do usuário para lidar com isso. Como ainda não escrevemos nosso programa Solana, usaremos dados de teste para garantir que as coisas funcionem conforme o esperado. Então tudo o que precisamos fazer é chamar o programa mais tarde pelo nosso aplicativo (mais sobre isso em breve).
+Só precisamos construir a interface do usuário para lidar com isso. Como ainda não escrevemos nosso programa Solana, usaremos dados de teste para garantir que as coisas funcionem conforme o esperado. Então tudo o que precisamos fazer é chamar o programa Solana mais tarde pelo nosso aplicativo (mais sobre isso em breve).
 
 ### 🧪 Exibindo dados de teste
 
@@ -12,16 +12,16 @@ Isso é bem direto! Então vamos começar fazendo alguns dados de teste para eli
 
 Fique comigo aqui!
 
-No topo do seu arquivo em `App.js` vá em frente e crie uma propriedade chamada `TEST_GIFS` . Nesta propriedade, você a preencherá com alguns de seus GIFs favoritos!
+No topo do seu arquivo em `App.js` vá em frente e crie uma variável chamada `TEST_GIFS` . Nesta propriedade, você a preencherá com alguns de seus GIFs favoritos!
 
-Vou criar um tema em torno do meu: **[Squid Game](https://en.wikipedia.org/wiki/Squid_Game) 🦑.**
+Vou criar um tema em torno do : **[Chaves](https://pt.wikipedia.org/wiki/El_Chavo_del_Ocho)**
 
 ```javascript
 const TEST_GIFS = [
-  "https://i.giphy.com/media/eIG0HfouRQJQr1wBzz/giphy.webp",
-  "https://media3.giphy.com/media/L71a8LW2UrKwPaWNYM/giphy.gif?cid=ecf05e47rr9qizx2msjucl1xyvuu47d7kf25tqt2lvo024uo&rid=giphy.gif&ct=g",
-  "https://media4.giphy.com/media/AeFmQjHMtEySooOc8K/giphy.gif?cid=ecf05e47qdzhdma2y3ugn32lkgi972z9mpfzocjj6z1ro4ec&rid=giphy.gif&ct=g",
-  "https://i.giphy.com/media/PAqjdPkJLDsmBRSYUp/giphy.webp",
+  "https://i.giphy.com/media/xUOxffMyVjqAnuJpJu/giphy.webp",
+  "https://media3.giphy.com/media/26n7aJwq73ubRevoQ/giphy.gif?cid=ecf05e47gpuxzul6z0774k47hcjp5p74uwfbfaq4xfjjco0c&rid=giphy.gif&ct=g",
+  "https://media3.giphy.com/media/3o7aD5euYKz5Ly7Wq4/giphy.gif?cid=ecf05e47gx235xsfy7tqmzvhwz06ztzaxr63av1f446mlluz&rid=giphy.gif&ct=g",
+  "https://media2.giphy.com/media/XKwfxBDG32ayrLHfAY/giphy.gif?cid=ecf05e47he0xf0mwnfx51x1f6m0wi4hzi52ql2dh0lnfe0tk&rid=giphy.gif&ct=g",
 ];
 ```
 
@@ -34,7 +34,7 @@ Talvez você queira que seu site seja apenas GIFs com temas de anime. Talvez voc
 ```jsx
 // Mude isso. Faça isso com o tema que você se interessar.
 // Ex. memes, musica, games, animais fofinhos, qualquer coisa!
-<p className="header">🖼 GIF Portal</p>
+<p className="header">🖼Meu Portal de GIF</p>
 <p className="sub-text">
   Veja sua coleção de GIF no metaverso ✨
 </p>
@@ -64,14 +64,14 @@ Estamos quase lá! Você provavelmente salvou seu arquivo e ainda não viu nada 
 
 Se quisermos que isso seja exibido apenas quando o usuário estiver conectado ao nosso aplicativo, qual propriedade podemos usar para decidir isso? Provavelmente o `walletAddress` certo? Se tivermos um `walletAddress`, isso deve significar que temos uma carteira conectada! Ótimo.
 
-Então, logo abaixo de onde você chamou o `renderNotConnectedContainer`, vamos em frente e adicione isso:
+Então, no `return`da função `App` substitua pelo seguinte código:
 
 ```javascript
 return (
   <div className="App">
     <div className="container">
       <div className="header-container">
-        <p className="header">🖼 GIF Portal</p>
+        <p className="header">🖼Meu Portal de GIF</p>
         <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
         {!walletAddress && renderNotConnectedContainer()}
         {/* Precisamos apenas adicionar o inverso aqui! */}
@@ -99,7 +99,7 @@ Você pode ver que tudo parece "funcionar". Eu forneci alguns estilos para este 
 
 Neste ponto, você deve fazer algumas alterações neste arquivo! É aqui que todo o seu estilo vai viver. Achei que esse tipo de formato ficaria legal, mas você pode ter outra configuração ainda melhor!
 
-![https://i.imgur.com/PtpFGIa.png](https://i.imgur.com/PtpFGIa.png)
+![https://i.imgur.com/PtpFGIa.png](https://i.imgur.com/U7T6nkb.png)
 
 Por exemplo, se o seu aplicativo da web é um lugar onde as pessoas enviam GIFs de animais fofos, talvez a sensação do modo escuro do site agora não orne! Você decide. Altere-o como quiser.
 
@@ -126,7 +126,7 @@ const renderConnectedContainer = () => (
     >
       <input type="text" placeholder="Entre com o link do gif!" />
       <button type="submit" className="cta-button submit-gif-button">
-        Submit
+        Enviar
       </button>
     </form>
     <div className="gif-grid">
@@ -140,7 +140,7 @@ const renderConnectedContainer = () => (
 );
 ```
 
-As principais coisas que adicionamos aqui são uma caixa `input` e um `button` de envio .
+As principais coisas que adicionamos aqui são uma caixa `input` e um `button` de envio.
 
 Você pode escrever nesta caixa de texto e clicar no botão ou pressionar enter, mas você notará que nada acontece! Ainda precisamos escrever a lógica e conectá-la ao envio do formulário.
 
@@ -156,7 +156,7 @@ Logo abaixo de `const [walletAddress, setWalletAddress] = useState(null);` adici
 const [inputValue, setInputValue] = useState("");
 ```
 
-Psh - FÁCIL. Agora só precisamos conectar isso ao nosso elemento de 'input'! Vá até o seu elemento `input` e altere-o para ficar assim:
+**FÁCIL**. Agora só precisamos conectar isso ao nosso elemento de 'input'! Vá até o seu elemento `input` e altere-o para ficar assim:
 
 ```jsx
 <input
@@ -167,7 +167,7 @@ Psh - FÁCIL. Agora só precisamos conectar isso ao nosso elemento de 'input'! V
 />
 ```
 
-Você provavelmente terá um erro aqui que diz `onInputChange is not defined.` e `inputValue is not defined.` Bem, isso é uma correção fácil, vamos apenas defini-los!
+Você provavelmente terá um erro aqui que diz `onInputChange is not defined.` Bem, isso é uma correção fácil, vamos apenas defini-los!
 
 Logo abaixo da sua função `connectWallet` adicione isto:
 
@@ -229,7 +229,7 @@ Como temos essa configuração de dados de teste, podemos simular facilmente ess
 
 Legal vamos fazer isso. Vamos manter nossa lista de GIFs em uma propriedade de estado em nosso componente.
 
-Então, vamos começar criando esta propriedade de estado logo abaixo de nossa declaração `walletAddress`:
+Então, vamos começar criando esta propriedade de estado logo abaixo de nossa declaração `inputValue`:
 
 ```javascript
 // State
@@ -243,6 +243,7 @@ Então precisamos ir em frente e configurar outro `useEffect` que será chamado 
 Logo abaixo do seu `useEffect` atual **crie outro** `useEffect`.
 
 ```jsx
+// Este aqui é o useEffect que já temos 
 useEffect(() => {
   const onLoad = async () => {
     await checkIfWalletIsConnected();
@@ -320,6 +321,6 @@ Agora é hora de começarmos a construir coisas em nosso programa Solana. Voltar
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão Farza vai ficar triste :(_
+_Faça isso senão Dani vai ficar triste :(_
 
-Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progress` :).
+Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progresso` :).

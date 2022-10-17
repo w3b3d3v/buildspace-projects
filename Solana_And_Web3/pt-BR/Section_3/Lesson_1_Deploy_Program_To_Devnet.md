@@ -1,10 +1,10 @@
-Nós praticamente temos uma API básica agora - certo :)?
+Nós praticamente temos uma API básica agora - certo 😊?
 
 Podemos fazer um **POST** dos dados e um **GET** dos dados.
 
 Vamos conectar nosso aplicativo web com nosso programa! O que precisamos fazer é implantar no devnet. Esta é uma rede administrada pela Solana que roda com SOL falsos.
 
-Tecnicamente, nós *poderíamos* implantar nosso programa localmente com `solana-test-validator` e construir nosso aplicativo da web usando o programa local — mas aqui na web3dev estamos muito interessados em produzir o mais rápido possível :). Por que mexer localmente quando podemos implantar diretamente na blockchain de verdade!?! hehe
+Tecnicamente, nós *poderíamos* implantar nosso programa localmente com `solana-test-validator` e construir nosso aplicativo da web usando o programa local — mas aqui na web3dev estamos muito interessados em produzir o mais rápido possível 😊. Por que mexer localmente quando podemos implantar diretamente na blockchain de verdade!?! 😂
 
 Além disso, acho que é mais fácil construir o aplicativo da web quando implantamos nosso programa Solana no devnet! Vamos fazer isso.
 
@@ -12,7 +12,7 @@ Além disso, acho que é mais fácil construir o aplicativo da web quando implan
 
 ### 🌳 Configure seu ambiente para devnet
 
-Na verdade, é muito complicado implantar no devnet. Fique comigo aqui e certifique-se de não perder nenhuma etapa :).
+Na verdade, é muito complicado implantar no devnet. Fique comigo aqui e certifique-se de não perder nenhuma etapa 😊.
 
 Primeiro, mude para devnet:
 
@@ -28,7 +28,7 @@ solana config get
 
 E você verá que agora está apontando para [`https://api.devnet.solana.com`](https://api.devnet.solana.com/). É assim que a Anchor saberá para onde implantar!
 
-A partir daqui, precisaremos lançar um pouco de SOL no devnet. Na verdade, é muito fácil, apenas executamos duas vezes:
+A partir daqui, precisaremos adicionar um pouco de SOL no devnet. Na verdade, é muito fácil, apenas executamos **duas** vezes:
 
 ```bash
 solana airdrop 2
@@ -124,17 +124,21 @@ E, finalmente, você está pronto para implantar :)! Vá em frente e execute:
 anchor deploy
 ```
 
-Você deve ver a palavra "Deploy success" :).
+Você deve ver a palavra "Deploy success" 😊.
+
+Eu recebo isso no meu terminal :
+
+![Sem titulo](https://i.imgur.com/su2MmTb.png)
 
 Depois de fazer isso, vá para o [Solana Explorer](https://explorer.solana.com/?cluster=devnet) para ver se tudo funcionou! *Observação: certifique-se de ir para o canto superior direito, clicar em "Mainnet" e depois em "Devnet", já que implantamos no Devnet.*
 
-No explorer, cole o id do seu programa (o mesmo que tínhamos de `solana address -k target/deploy/myepicproject-keypair.json`) e procure por ele.
+No explorer, cole o id do seu programa, o `Program Id` é listado em cima do `deploy sucess`*(no último comando que você executou).*
 
-![Sem título](https://i.imgur.com/U2wgQpj.png)
+![Sem título](https://i.imgur.com/ISk6D55.png)
 
 Você verá seu programa implantado!! Role para baixo e veja o histórico de transações e você verá a implantação ali mesmo.
 
-![Sem título](https://i.imgur.com/KeTHI7p.png)
+![Sem título](https://i.imgur.com/bt1Mcgv.png)
 
 **YO - VOCÊ ACABOU DE IMPLANTAR NA VERDADEIRA BLOCKCHAIN DA SOLANA. LEGAL.**
 
@@ -142,20 +146,18 @@ Obviamente, isso não é "Mainnet", mas o "Devnet" é executado por mineradores 
 
 **Não há muitos "desenvolvedores Solana". Então neste ponto você provavelmente está entre os 10% melhores desenvolvedores de Solana lol. Parabéns!**
 
-*Nota: A partir deste ponto, por favor, não faça alterações em lib.rs até que eu diga. Basicamente, sempre que você alterar seu programa, precisará reimplantar e seguir as etapas acima novamente. Eu sempre perco passos facilmente e recebo bugs estranhos lol. Vamos nos concentrar no aplicativo da Web agora, e depois mostrarei um bom fluxo de trabalho para alterar seu programa + reimplantar depois!*
+*Nota: A partir deste ponto, por favor, não faça alterações em lib.rs até que eu diga. Basicamente, sempre que você alterar seu programa, precisará reimplantar e seguir as etapas acima novamente. Eu sempre perco passos facilmente e recebo bugs estranhos. Vamos nos concentrar no aplicativo da Web agora, e depois mostrarei um bom fluxo de trabalho para alterar seu programa + reimplantar depois!*
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o Dani vai ficar triste :(*
+*Faça isso senão a Anna Bida vai ficar triste :(*
 
 Você implantou um programa Solana!!! Que demais! -- isso é maravilhoso!!
 
 Vimos que os melhores construtores criaram o hábito de "construir em público". Tudo isso significa compartilhar alguns aprendizados sobre o marco que eles acabaram de atingir!
 
-Faça uma atualização rápida na web3dev agora mesmo pressionando "Post update" no canto superior direito 🤘
-[Tear](https://www.loom.com/share/19f0af7b490144948d1b31ec96318c0b)
-
+Faça uma atualização rápida na web3dev em `#progresso` em nosso discord.
 
 Este também é um bom momento para twittar que você está aprendendo sobre Solana e acabou de implantar seu primeiro programa no Solana Devnet. Inspire outros a se juntarem à web3!
 
-Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@Web3dev_` se estiver se sentindo bem ;).
+Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@Web3dev_` se estiver se sentindo bem 😊.
