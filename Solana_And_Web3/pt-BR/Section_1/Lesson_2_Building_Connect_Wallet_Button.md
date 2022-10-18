@@ -89,7 +89,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🖼Meu Portal de GIF🖼</p>
+          <p className="header">🖼 Meu Portal de GIF 🖼</p>
           <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
         </div>
         <div className="footer-container">
@@ -99,7 +99,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`feito por @${TWITTER_HANDLE}`}</a>
+          >{`feito com ❤️ por @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
@@ -288,7 +288,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`feito por @${TWITTER_HANDLE}`}</a>
+          >{`feito com ❤️ por @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
