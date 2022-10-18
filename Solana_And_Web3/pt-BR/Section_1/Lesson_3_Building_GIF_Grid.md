@@ -27,20 +27,20 @@ const TEST_GIFS = [
 
 Este é o seu momento de se divertir. Adicione quantos GIFs à sua lista de teste e faça com o tema que você quiser.
 
-Talvez você queira que seu site seja apenas GIFs com temas de anime. Talvez você queira que sejam apenas GIFs com temas de filmes. Talvez você queira apenas GIFs com temas de videogame.
+Talvez você queira que seu site seja apenas GIFs com temas de pratos típicos do nordeste. Talvez você queira que sejam apenas GIFs com temas de filmes. Talvez você queira apenas GIFs com temas de video-game ou praias do litoral.
 
 **Altere o título e a descrição do seu site para corresponder ao tipo de GIFs que você deseja que as pessoas enviem.**
 
 ```jsx
 // Mude isso. Faça isso com o tema que você se interessar.
 // Ex. memes, musica, games, animais fofinhos, qualquer coisa!
-<p className="header">🖼Meu Portal de GIF</p>
+<p className="header">🖼 Meu Portal de GIF 🖼</p>
 <p className="sub-text">
   Veja sua coleção de GIF no metaverso ✨
 </p>
 ```
 
-Eu sei que parece bobo, mas essas pequenas mudanças realmente tornarão seu site um pouco mais divertido. E isso pode motivá-lo a terminá-lo até o fim.
+Eu sei que parece bobo, mas essas pequenas mudanças realmente tornarão seu site um pouco mais divertido. E isso pode motivar você a terminá-lo até o fim.
 
 ÓTIMO. Temos alguns GIFs legais para testar nosso aplicativo agora. Então, como vamos realmente exibir esses dados? Lembra quando escrevemos aquela função `renderNotConnectedContainer`? Vamos usar a mesma abordagem desta vez, mas renderizar nossa grade de GIFs!
 
@@ -71,7 +71,7 @@ return (
   <div className="App">
     <div className="container">
       <div className="header-container">
-        <p className="header">🖼Meu Portal de GIF</p>
+        <p className="header">🖼 Meu Portal de GIF 🖼</p>
         <p className="sub-text">Veja sua coleção de GIF no metaverso ✨</p>
         {!walletAddress && renderNotConnectedContainer()}
         {/* Precisamos apenas adicionar o inverso aqui! */}
@@ -196,7 +196,7 @@ Em primeiro lugar, estamos tornando esta função `async` para mais tarde quando
 
 Então, simplesmente, verificamos se há algum valor de entrada em nossa caixa de entrada. Se houver imprima o link GIF, senão imprima que está vazio. Novamente, iremos revisitar esta função mais tarde para a implementação completa :).
 
-**_ EITA _**. Então vá em frente e adicione um link GIF à sua caixa de texto e abra seu console! Depois de pressionar o botão enviar, você deverá ver o `Link GIF: YOUR_GIF_LINK`.
+**_ ISSO ISSO ISSO _**. Então vá em frente e adicione um link GIF à sua caixa de texto e abra seu console! Depois de pressionar o botão enviar, você deverá ver o `Link GIF: YOUR_GIF_LINK`.
 
 Espere um segundo, nada aconteceu?
 
@@ -284,7 +284,7 @@ const renderConnectedContainer = () => (
         onChange={onInputChange}
       />
       <button type="submit" className="cta-button submit-gif-button">
-        Submit
+        Enviar
       </button>
     </form>
     <div className="gif-grid">
@@ -321,6 +321,6 @@ Agora é hora de começarmos a construir coisas em nosso programa Solana. Voltar
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão Dani vai ficar triste :(_
+_Faça isso senão o danicuki vai ficar triste :(_
 
 Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progresso` :).
