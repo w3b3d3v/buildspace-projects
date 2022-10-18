@@ -16,7 +16,7 @@ Alguns pontos importantes para você executar antes de seguir em frente:
 
 Então, o que vamos construir aqui 😊? Segue um pequeno vídeo:
 
-[Loom-Review](https://www.loom.com/share/545522add8514005a91ececac5abdab2)
+[Loom](https://www.loom.com/share/fe0eee2ddad74b608a1eb27ee3527423)
 
 ### 💎 Ganhando um NFT
 
