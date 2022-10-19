@@ -252,4 +252,4 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
-Poste uma captura de tela do seu teste funcionando em `#progress` para que as pessoas saibam que você fez isso 😊.
+Poste uma captura de tela do seu teste funcionando em `#progresso` para que as pessoas saibam que você fez isso 😊.

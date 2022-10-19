@@ -98,7 +98,7 @@ Ele apenas contém uma `String` com um `gif_link` e uma `PubKey` com o `user_add
 
 Essa linha cuida disso para garantir que nossos dados sejam serializados/desserializados corretamente, pois estamos criando uma estrutura personalizada aqui.
 
-Como eu descobri essas coisas? Bem - na verdade, eu mesmo vasculho os [docs](https://docs.rs/anchor-lang/0.4.0/anchor_lang/trait.AnchorSerialize.html) e apenas leio o código-fonte! Também faço perguntas no [Anchor Discord](https://discord.gg/8HwmBtt2ss)! Lembre-se, essas coisas são novas e cabe a você descobrir as respostas quando os documentos não as fornecem.
+Como eu descobri essas coisas? Bem - na verdade, eu mesmo vasculho os [docs](https://docs.rs/anchor-lang/0.4.0/anchor_lang/trait.AnchorSerialize.html) e apenas leio o código-fonte! Também faço perguntas no [Anchor Discord](https://discord.gg/wgM4KATaex)! Lembre-se, essas coisas são novas e cabe a você descobrir as respostas quando os documentos não as fornecem.
 
 ### 🤯 Atualize o script de teste e bum!
 
@@ -130,7 +130,7 @@ const main = async () => {
   console.log("👀 GIF Count", account.totalGifs.toString());
 
   // Você precisará agora passar um link do GIF para a função! Você também precisará passar o usuário que está enviando o GIF!
-  await program.rpc.addGif("insert_a_giphy_link_here", {
+  await program.rpc.addGif("insira_o_link_do_seu__gif_aqui", {
     accounts: {
       baseAccount: baseAccount.publicKey,
       user: provider.wallet.publicKey,
@@ -158,7 +158,7 @@ const runMain = async () => {
 runMain();
 ```
 
-_Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insert_a_giphy_link_here` senão você receberá um erro confuso como: `baseAccount não fornecido`._
+_Nota: não se esqueça de passar para `addGif` um link do GIF onde diz `insira_o_link_do_seu__gif_aqui` senão você receberá um erro confuso como: `baseAccount não fornecido`._
 
 Nada de novo aqui realmente! Um dos momentos mágicos para mim foi quando vi a saída de `console.log('👀 GIF List', account.gifList)`. É tão legal poder apenas anexar dados a uma conta e acessar dados por meio da conta.
 
@@ -173,7 +173,7 @@ Aqui está a aparência da minha saída ao fazer o `anchor test`.
 👀 GIF Count 1
 👀 GIF List [
   {
-    gifLink: 'insert_a_giphy_link_here',
+    gifLink: 'insira_o_link_do_seu__gif_aqui',
     userAddress: PublicKey {
       _bn: <BN: 69f90845012df1b26922a9e895b073309e647c36e9052f7c9ec29793b8be9e99>
     }
