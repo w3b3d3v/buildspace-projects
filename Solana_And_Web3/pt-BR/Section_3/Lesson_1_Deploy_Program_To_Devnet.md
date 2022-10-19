@@ -4,7 +4,7 @@ Podemos fazer um **POST** dos dados e um **GET** dos dados.
 
 Vamos conectar nosso aplicativo web com nosso programa! O que precisamos fazer é implantar no devnet. Esta é uma rede administrada pela Solana que roda com SOL falsos.
 
-Tecnicamente, nós *poderíamos* implantar nosso programa localmente com `solana-test-validator` e construir nosso aplicativo da web usando o programa local — mas aqui na web3dev estamos muito interessados em produzir o mais rápido possível 😊. Por que mexer localmente quando podemos implantar diretamente na blockchain de verdade!?! 😂
+Tecnicamente, nós *poderíamos* implantar nosso programa localmente com `solana-test-validator` e construir nosso aplicativo da web usando o programa local — mas aqui na WEB3DEV estamos muito interessados em produzir o mais rápido possível 😊. Por que mexer localmente quando podemos implantar diretamente na blockchain de verdade!?! 😂
 
 Além disso, acho que é mais fácil construir o aplicativo da web quando implantamos nosso programa Solana no devnet! Vamos fazer isso.
 
@@ -156,8 +156,8 @@ Você implantou um programa Solana!!! Que demais! -- isso é maravilhoso!!
 
 Vimos que os melhores construtores criaram o hábito de "construir em público". Tudo isso significa compartilhar alguns aprendizados sobre o marco que eles acabaram de atingir!
 
-Faça uma atualização rápida na web3dev em `#progresso` em nosso discord.
+Faça uma atualização rápida na WEB3DEV em `#progresso` em nosso discord.
 
 Este também é um bom momento para twittar que você está aprendendo sobre Solana e acabou de implantar seu primeiro programa no Solana Devnet. Inspire outros a se juntarem à web3!
 
-Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@Web3dev_` se estiver se sentindo bem 😊.
+Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@web3dev_` se estiver se sentindo bem 😊.
