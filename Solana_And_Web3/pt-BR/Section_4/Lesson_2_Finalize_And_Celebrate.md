@@ -6,8 +6,7 @@ Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de
 
 ### 🥞 Carreiras na Web3
 
-Várias pessoas também conseguiram empregos em tempo integral nas principais empresas da web3 via buildspace, web3dev... Estou constantemente vendo as pessoas arrasarem nas suas entrevistas depois de fazerem alguns projetos de nossos bootcamps.
-
+Várias pessoas também conseguiram empregos em tempo integral nas principais empresas da web3 pela WEB3DEV... Estou constantemente vendo as pessoas arrasarem nas suas entrevistas depois de fazerem alguns projetos de nossos bootcamps.
 
 **As pessoas parecem pensar que a web3 só precisa de pessoas que possam codificar contratos inteligentes ou escrever código que faça interface com a blockchain. Não é verdade.**
 
@@ -17,7 +16,7 @@ Eu quero passar rapidamente por "que diabos significa trabalhar na web3 como eng
 
 Por exemplo, digamos que você seja um ótimo engenheiro de front-end. Se você terminou este projeto, **você tem quase tudo o que precisa para ser um ótimo engenheiro de front-end em uma empresa web3**. Por exemplo, a empresa pode dizer "Ei - por favor, vá e construa nosso recurso de conexão à carteira" - e você já terá uma ideia sólida de como fazer isso 😊.
 
-Eu só quero inspirá-lo a trabalhar na web3. Essa coisa é incrível. E seria legal se você desse uma chance 😉.
+Eu só quero inspirar você a trabalhar na web3. Essa coisa é incrível. E seria legal se você desse uma chance 😉.
 
 🤟 Seu NFT!
 ---------
@@ -33,7 +32,7 @@ Além disso, você deve, com certeza, twittar seu projeto final e mostrar ao mun
 
 Pode parecer estranho, mas você estar animado com sua NFT e Solana no Twitter provavelmente inspirará muitos outros desenvolvedores a entrarem nessas coisas também!
 
-Não deixe de marcar @Web3dev_ 🔥. Vamos dar RT em você!
+Não deixe de marcar @web3dev_ 🔥. Vamos dar RT em você!
 
 Dê-nos esse shot de dopamina por favor hehe.
 

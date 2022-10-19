@@ -47,7 +47,7 @@ Seria super legal se você amasse tanto um determinado GIF enviado por outro usu
 
 Quem precisa do Stripe e do PayPal quando você tem uma blockchain de taxa super baixa que permite fazer pagamentos instantâneos?!?
 
-Esta é outra coisa que eu quero que você descubra se quiser ir no [Anchor Discord](https://discord.gg/8HwmBtt2ss) ou perguntar aos seus colegas buildspacers. 
+Esta é outra coisa que eu quero que você descubra se quiser ir no [Anchor Discord](https://discord.gg/wgM4KATaex) ou perguntar aos seus colegas da WEB3DEV. 
 
 Não se esqueça que temos um canal no discord dedicado a Solana, poste updates, registre suas modifiações no seu webapp, tire suas dúvidas, compartilhe seus conhecimento, fique a vontade e explore as vantagens de nossa comunidade web3.
 
