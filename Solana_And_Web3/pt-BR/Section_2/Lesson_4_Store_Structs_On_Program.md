@@ -1,3 +1,4 @@
+<h1>💾 Armazenando structs em seu programa</h1>
 Épico. Estamos armazenando dados em nosso programa Solana. Poucas pessoas sabem como fazer essas coisas, então você definitivamente deve se sentir como um mago. Este ecossistema é muito novo e você está no centro da magia agora.
 
 Então, um contador é legal. Mas, queremos armazenar dados mais complexos!

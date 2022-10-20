@@ -1,3 +1,4 @@
+<h1>🎨Enviando GIFs para o programa Solana</h1>
 Ok - estamos finalmente no ponto em que podemos salvar alguns GIFs. É tão fácil de fazer. Vamos apenas mudar um pouco nossa função `sendGif`, então agora chamamos `addGif` e, em seguida, chamamos `getGifList` para que nosso aplicativo da Web seja atualizado para mostrar nosso último GIF enviado!
 
 ```javascript
