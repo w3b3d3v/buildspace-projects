@@ -90,6 +90,6 @@ Você também pode executar `createKeyPair.js` quantas vezes quiser e isso permi
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o danicuki vai ficar triste 😊*
+*Faça isso senão o danicuki vai ficar triste 😔*
 
 Você tem envios de GIFs funcionando !! Poste uma captura de tela em `#progresso` com seus GIFs sendo recuperados do seu programa Solana 😊.
