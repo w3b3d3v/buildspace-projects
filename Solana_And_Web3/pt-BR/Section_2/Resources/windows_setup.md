@@ -274,6 +274,6 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
-Poste uma captura de tela do seu teste funcionando em `#progress` para que as pessoas saibam que você fez isso :).
+Poste uma captura de tela do seu teste funcionando em `#progresso` para que as pessoas saibam que você fez isso :).
 
 Agora vá em frente e volte ao seu [buildspace Dashboard](https://app.buildspace.so/courses/CObd6d35ce-3394-4bd8-977e-cbee82ae07a3) para continuar!
