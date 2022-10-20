@@ -347,4 +347,4 @@ LEGAL. Agora estamos armazenando *e* alterando dados em nosso programa Solana. �
 
 Poste uma captura de tela do seu terminal mostrando sua contagem de GIFs incrementando em `#progress`!
 
-Trabalho épico até agora 😊.
+Seu trabalho está sendo épico até agora 😊.
