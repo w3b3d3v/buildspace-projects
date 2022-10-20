@@ -36,7 +36,7 @@ Quando você tiver uma pergunta, procure o canal adequado para o projeto.
 
 Este projeto é dividido em 4 seções. Você pode ver em que seção está verificando a barra de progresso no topo da página. Assim, por exemplo, se você estiver preso em alguma parte da seção 3, você teria que acessar `#seção-3-ajuda' no Discord. Se você faz parte de vários projetos, não deixe de fazer suas perguntas na categoria certa de projeto!
 
-🤘 Veja um problema? Deseja melhorar alguma coisa? Conserte-o você ;).
+🤘 Viu algum problema? Deseja melhorar alguma coisa? Conserte-o você 😉.
 ---------------------------------------
 
 **[Todo este conteúdo é completamente de código aberto](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Nós pegamos o conteúdo original em inglês do Buildspace e traduzimos para português. Se você vir um problema, erro de digitação etc. - você mesmo poderá resolver facilmente e fazer um PR (_pull request_)! Se você precisar de ajuda para fazer isso, mande mensagem pra gente no Discord. 
