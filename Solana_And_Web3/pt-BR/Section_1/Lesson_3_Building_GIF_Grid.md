@@ -1,3 +1,4 @@
+<h1>🧱Construindo visualização de GIFs</h1>
 Estamos avançando por aqui! Neste ponto, temos: configuramos nosso aplicativo React, criamos um botão conecte sua carteira, configuramos uma renderização condicional com base no estado da carteira Solana do usuário.
 
 Em nosso Portal de GIFs, queremos mostrar os GIFs que as pessoas enviam ao nosso aplicativo!
