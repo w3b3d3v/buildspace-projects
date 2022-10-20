@@ -152,7 +152,7 @@ Aqui está o que recebi na parte de baixo:
 📝 Sua assinatura de transação 4EPghDAKXjtseY1dB4DT3xwpt18L1QrL8qbAJ3a3mRaTTZURkgBuUhN3sNhppDbwJNRL75fE53ucTBytoPWNEMAx
 ```
 
-*Nota: Se você estiver usando o VSCode, não se esqueça de **salvar** todos os arquivos que você está alterando antes de executar o `anchor test`! Pessoalmente, tive muitos problemas porque pensei que salvei o arquivo, mas na realidade não salvei :(.*
+*Nota: Se você estiver usando o VSCode, não se esqueça de **salvar** todos os arquivos que você está alterando antes de executar o `anchor test`! Pessoalmente, tive muitos problemas porque pensei que salvei o arquivo, mas na realidade não salvei 😔.*
 
 *Nota: Se você vir este erro `Attempt to load a program that does not exist`, você pode fazer `solana address -k target/deploy/myepicproject-keypair.json` e substituir por este endereço cada ocorrência em `lib.rs `, `Anchor.toml` e `myepicproject.js`.*
 

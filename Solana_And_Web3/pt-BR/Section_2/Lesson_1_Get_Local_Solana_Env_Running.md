@@ -248,7 +248,7 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão vitordev vai ficar triste :(*
+*Faça isso senão vitordev vai ficar triste 😔*
 
 Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
