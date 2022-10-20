@@ -300,7 +300,7 @@ export default App;
 
 Ótimo! Agora você deve ter um botão de gradiente legal que diz "Conecte sua carteira" renderizado em sua página.
 
-![Untitled](https://i.imgur.com/ATok25f.png)
+![Untitled](https://i.imgur.com/eGnmd7P.png)
 
 A maior coisa a entender aqui são os **métodos de renderização**.
 
