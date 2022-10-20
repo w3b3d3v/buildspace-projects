@@ -276,4 +276,4 @@ Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
 Poste uma captura de tela do seu teste funcionando em `#progresso` para que as pessoas saibam que você fez isso 😊.
 
-Agora vá em frente e volte ao seu [buildspace Dashboard](https://app.buildspace.so/courses/CObd6d35ce-3394-4bd8-977e-cbee82ae07a3) para continuar!
+Agora vá em frente e volte ao site do bootcamp [WEB3DEV](https://bootcamp.web3dev.com.br/courses/Solana_And_Web3) para continuar!
