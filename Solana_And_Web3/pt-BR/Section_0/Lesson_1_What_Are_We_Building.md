@@ -60,6 +60,8 @@ Na pior das hipóteses, você consegue conversar com algumas pessoas muito legai
 
 ### 🚨 Relatório de Progresso
 
+No final de cada aula você deve clicar no botão e enviar uma resposta para avançar para a próxima aula.
+
 _Por favor, faça isso senão o Yan ficará triste :(_
 
 Ei! Esse projeto tem tudo a ver com GIFs, vá em frente e poste um GIF qualquer que você goste em `#progresso` no Discord. Eu gosto de usar o [Giphy](https://giphy.com) para todas minhas necessidades com GIFs!😊 
