@@ -176,7 +176,7 @@ Isso pode demorar um pouco para começar, mas quando estiver funcionando, você 
 
 ![Untitled](https://i.imgur.com/FUjRage.jpg)
 
-Boom!! Agora você está rodando um validador local. Muito legal :).
+Boom!! Agora você está rodando um validador local. Muito legal 😊.
 
 ### ☕️ Instale Node, NPM, Mocha e Yarn
 
@@ -299,7 +299,7 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 <details>
 <summary>Tendo problemas com <code>Error: failed to send transaction: Transaction simulation failed: Attempt to load a program that does not exist</code>?</summary>
-Se você tiver esse erro, isso provavelmente significa que você esqueceu de adicionar seu Program Id em ambos os seus arquivos <code>.toml</code> e <code>.rs</code>! Vá em frente e pege seu ID de novo e verifique se está atualizado nos lugares devidos :).
+Se você tiver esse erro, isso provavelmente significa que você esqueceu de adicionar seu Program Id em ambos os seus arquivos <code>.toml</code> e <code>.rs</code>! Vá em frente e pege seu ID de novo e verifique se está atualizado nos lugares devidos 😊.
 </details>
 
 <details>

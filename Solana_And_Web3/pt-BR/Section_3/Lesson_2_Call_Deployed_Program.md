@@ -170,7 +170,7 @@ Por quê? Porque para fazer um `provedor` precisamos de uma carteira conectada. 
 
 **Você não pode se comunicar com Solana a menos que tenha uma carteira conectada. Não podemos nem mesmo recuperar dados de Solana a menos que tenhamos uma carteira conectada!**
 
-Esta é uma grande razão pela qual o Phantom é útil. Ele oferece aos nossos usuários uma maneira simples e segura de conectar suas carteiras ao nosso site para que possamos criar um `provedor` que nos permita conversar com programas em Solana :).
+Esta é uma grande razão pela qual o Phantom é útil. Ele oferece aos nossos usuários uma maneira simples e segura de conectar suas carteiras ao nosso site para que possamos criar um `provedor` que nos permita conversar com programas em Solana 😊.
 
 Vamos criar algumas variáveis que estão faltando. Também precisaremos importar algumas coisas.
 

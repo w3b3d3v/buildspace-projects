@@ -154,7 +154,7 @@ Isso pode demorar um pouco para começar, mas quando estiver funcionando, você 
 
 ![Untitled](https://i.imgur.com/F2YwcAB.png)
 
-Boom!! Agora você está rodando um validador local. Muito legal :).
+Boom!! Agora você está rodando um validador local. Muito legal 😊.
 
 Agora, vá em frente e CONTROL + C para parar o validador. **Nós nunca usaremos o `solana-test-validator` manualmente novamente.** O fluxo de trabalho que seguiremos executará automaticamente o validador em segundo plano para nós. Eu só queria mostrar a você como funciona para que você possa começar a ter uma ideia de como as coisas funcionam magicamente à medida que avançamos ;).
 
@@ -166,7 +166,7 @@ Mocha é um pequeno framework de testes para nos ajudar a testar nossos programa
 npm install -g mocha
 ```
 
-É isso! Nós vamos usar isso mais tarde :).
+É isso! Nós vamos usar isso mais tarde 😊.
 
 Também precisaremos do Yarn para algum gerenciamento de pacotes. Você pode instalá-lo usando
 ```bash
@@ -234,7 +234,7 @@ A próxima coisa que precisamos fazer é gerar uma carteira Solana local para tr
 solana-keygen new
 ```
 
-O que isso fará é criar um par de chaves Solana local — que é mais ou menos como nossa carteira local que usaremos para conversar com nossos programas por meio da linha de comando. Se você executar `solana config get` você verá algo chamado `Keypair Path`. Foi aí que a carteira foi criada, fique à vontade para conferir :).
+O que isso fará é criar um par de chaves Solana local — que é mais ou menos como nossa carteira local que usaremos para conversar com nossos programas por meio da linha de comando. Se você executar `solana config get` você verá algo chamado `Keypair Path`. Foi aí que a carteira foi criada, fique à vontade para conferir 😊.
 
 Se você executar:
 
@@ -266,7 +266,7 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 **Nota: Se você receber a mensagem `node: --dns-result-order= is not allowed in NODE_OPTIONS` isso significa que você está em uma versão mais antiga do Node e, tecnicamente, isso não foi aprovado! Como testei tudo isso com o Node v16.13.0, sugiro fortemente que você apenas atualize para esta versão.**
 
-**Parabéns, você configurou com sucesso seu ambiente Solana :).** Tem sido uma jornada e tanto, mas nós o tornamos famoso.
+**Parabéns, você configurou com sucesso seu ambiente Solana 😊.** Tem sido uma jornada e tanto, mas nós o tornamos famoso.
 
 ### 🚨 Relatório de progresso
 
@@ -274,6 +274,6 @@ Isso pode demorar um pouco na primeira vez que você executá-lo! Contanto que v
 
 Foi tudo muito difícil!!! Definitivamente uma das instalações mais difíceis.
 
-Poste uma captura de tela do seu teste funcionando em `#progresso` para que as pessoas saibam que você fez isso :).
+Poste uma captura de tela do seu teste funcionando em `#progresso` para que as pessoas saibam que você fez isso 😊.
 
 Agora vá em frente e volte ao seu [buildspace Dashboard](https://app.buildspace.so/courses/CObd6d35ce-3394-4bd8-977e-cbee82ae07a3) para continuar!
