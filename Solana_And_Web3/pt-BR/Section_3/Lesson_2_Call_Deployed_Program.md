@@ -90,7 +90,7 @@ Também precisamos adicionar fundos à nossa carteira Phantom com algum SOL fals
 
 Você precisará do endereço público associado à sua carteira Phantom, que você pode pegar na parte superior clicando em seu endereço:
 
-Você deve estar com a carteira aberta, clicar em `Wallet`, e clicar em :
+Você deve estar com a carteira aberta, clicar em `Wallet`, e clicar em `copy`:
 
 ![Sem titulo](https://i.imgur.com/8hI4WqD.png)
 
@@ -380,5 +380,5 @@ Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList
 
 *Faça isso senão o Melk vai ficar triste 😔*
 
-Poste uma captura de tela em `#progresso` com o material "Conta obtida" no seu console 😊.
+Poste uma captura de tela em `#progresso` com o dado de "Conta obtida" no seu console 😊.
 
