@@ -107,7 +107,7 @@ Por exemplo, se o seu aplicativo da web é um lugar onde as pessoas enviam GIFs 
 
 **Nosso aplicativo está tomando forma - e estamos a cerca de 10 minutos de começar a escrever nosso primeiro programa Solana que alimentará nosso aplicativo da web aqui com dados reais em vez de dados de teste forçados.**
 
-Tome um momento para olhar para a magia que você criou :).
+Tome um momento para olhar para a magia que você criou 😊.
 
 São coisas que **MILHÕES** de pessoas no mundo gostariam de saber como fazer. A maioria das pessoas está apenas falando sobre essas coisas no Twitter. Mas, você está realmente tomando as medidas para fazê-lo. Loucos adereços para você meu amigo.
 
@@ -194,7 +194,7 @@ const sendGif = async () => {
 
 Em primeiro lugar, estamos tornando esta função `async` para mais tarde quando terminarmos de adicionar nossa interação com nosso programa Solana.
 
-Então, simplesmente, verificamos se há algum valor de entrada em nossa caixa de entrada. Se houver imprima o link GIF, senão imprima que está vazio. Novamente, iremos revisitar esta função mais tarde para a implementação completa :).
+Então, simplesmente, verificamos se há algum valor de entrada em nossa caixa de entrada. Se houver imprima o link GIF, senão imprima que está vazio. Novamente, iremos revisitar esta função mais tarde para a implementação completa 😊.
 
 **_ ISSO ISSO ISSO _**. Então vá em frente e adicione um link GIF à sua caixa de texto e abra seu console! Depois de pressionar o botão enviar, você deverá ver o `Link GIF: YOUR_GIF_LINK`.
 

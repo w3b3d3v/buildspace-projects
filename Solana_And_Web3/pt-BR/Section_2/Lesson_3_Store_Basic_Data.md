@@ -232,7 +232,7 @@ pub struct StartStuffOff<'info> {
 }
 
 // Especifica que dados queremos no Contexto AddGif
-// Obtendo um controle sobre o fluxo das coisas :)?
+// Obtendo um controle sobre o fluxo das coisas 😊?
 #[derive(Accounts)]
 pub struct AddGif<'info> {
   #[account(mut)]

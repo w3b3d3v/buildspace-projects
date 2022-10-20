@@ -118,7 +118,7 @@ anchor build
 
 ### 🚀 Implante na devnet!
 
-E, finalmente, você está pronto para implantar :)! Vá em frente e execute:
+E, finalmente, você está pronto para implantar 😊! Vá em frente e execute:
 
 ```bash
 anchor deploy
