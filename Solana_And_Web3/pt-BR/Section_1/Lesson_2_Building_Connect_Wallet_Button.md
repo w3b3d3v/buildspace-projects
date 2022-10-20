@@ -507,6 +507,6 @@ _Observação: nas configurações da Phantom (que você pode acessar clicando n
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão o Dani vai ficar triste :(_
+_Faça isso senão o Dani vai ficar triste 😔_
 
 Poste uma captura de tela do seu console em `#progresso` mostrando sua chave pública com sua carteira conectada. Não se preocupe, você pode compartilhar sua chave pública. Por isso é "público" ;).

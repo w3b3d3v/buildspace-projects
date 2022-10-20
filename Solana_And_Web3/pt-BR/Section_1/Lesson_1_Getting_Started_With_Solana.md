@@ -58,6 +58,6 @@ Pronto, agora você tem um setup de frontend para seu aplicativo web3 😎.
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão a Anna Bida vai ficar triste :(*
+*Faça isso senão a Anna Bida vai ficar triste 😔*
 
 Poste uma captura de tela do seu aplicativo web inicial em `#progresso` 😊.
