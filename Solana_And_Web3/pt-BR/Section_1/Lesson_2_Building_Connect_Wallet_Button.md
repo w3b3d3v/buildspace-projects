@@ -501,7 +501,7 @@ Um grande avanço até aqui, não acha ?
 
 Você tem sua configuração básica de interface do usuário e pode facilmente "autenticar" um usuário com sua carteira Solana. Mole-mole.
 
-Em seguida, vamos obter todas as configurações com as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso web app é meio chato/vazio rn! Vamos mudar isso :).
+Em seguida, vamos obter todas as configurações com as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso web app é meio chato/vazio rn! Vamos mudar isso 😊.
 
 _Observação: nas configurações da Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Aplicativos confiáveis". Aqui, você verá seu URL Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para revogar isso se quiser simular como se fosse alguém que acessa seu site e nunca se conectou antes. Ele basicamente redefinirá o acesso de suas carteiras a este site._
 
