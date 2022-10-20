@@ -33,9 +33,9 @@ Além disso, você deve, com certeza, twittar seu projeto final e mostrar ao mun
 
 Pode parecer estranho, mas você estar animado com sua NFT e Solana no Twitter provavelmente inspirará muitos outros desenvolvedores a entrarem nessas coisas também!
 
-Não deixe de marcar @web3dev_ 🔥. Vamos dar RT em você!
+Não deixe de marcar @Web3dev_ 🔥. Vamos dar RT em você!
 
-Dê-nos esse shot de dopamina por favor hehe.
+Dê-nos esse shot de dopamina por favor 🙃.
 
 Por fim, o que também seria incrível é se você nos dissesse em `#pod-bootcamp` como gostou deste projeto e da estrutura do projeto. O que você mais gostou no bootcamp? O que não gostou? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
 

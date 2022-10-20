@@ -34,7 +34,7 @@ Pode ser legal mostrar o endereço público do usuário no GIF que eles enviaram
 
 Seria legal se cada GIF começasse com 0 votos e as pessoas pudessem dar um "upvote" em seus GIFs favoritos em seu aplicativo da web.
 
-Não vou dizer-lhe como fazê-lo. ;). Descubra se quiser! Dica: você precisará criar uma função `update_item` em seu programa Solana. Lá, você precisa descobrir como entrar em `gif_list`, encontrar o GIF que está sendo votado, e então fazer algo como `votes += 1` nele.
+Não vou dizer-lhe como fazê-lo. 😉. Descubra se quiser! Dica: você precisará criar uma função `update_item` em seu programa Solana. Lá, você precisa descobrir como entrar em `gif_list`, encontrar o GIF que está sendo votado, e então fazer algo como `votes += 1` nele.
 
 Veja se você consegue resolver!!
 

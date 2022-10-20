@@ -129,7 +129,7 @@ dyld: Library not loaded: /usr/local/opt/openssl@1.1/lib/libssl.1.1.dylib
   Reason: image not found
 ```
 
-Agora, vá em frente e CONTROL + C para parar o validador. **Nós nunca usaremos o `solana-test-validator` manualmente novamente.** O fluxo de trabalho que seguiremos executará automaticamente o validador em segundo plano para nós. Eu só queria mostrar a você como funciona para que você possa começar a ter uma ideia de como as coisas funcionam magicamente à medida que avançamos ;).
+Agora, vá em frente e CONTROL + C para parar o validador. **Nós nunca usaremos o `solana-test-validator` manualmente novamente.** O fluxo de trabalho que seguiremos executará automaticamente o validador em segundo plano para nós. Eu só queria mostrar a você como funciona para que você possa começar a ter uma ideia de como as coisas funcionam magicamente à medida que avançamos 😉.
 
 ### ☕️ Install Node, NPM, Mocha e Yarn
 
