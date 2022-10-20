@@ -370,7 +370,7 @@ Se tudo correu bem, você verá isso no console:
 
 ![Sem título](https://i.imgur.com/NwgruGy.png)
 
-Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList` está vazio, pois ainda não adicionamos nenhum GIF a esta conta!!! **NELEEEEE.**
+Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList` está vazio, pois ainda não adicionamos nenhum GIF a esta conta!!! **YEAH.**
 
 **Então, agora você notará que toda vez que atualizamos a página - ela nos pede para criar uma conta novamente. Vamos corrigir isso mais tarde, mas por que isso acontece? Fiz um pequeno vídeo sobre isso abaixo:**
 
