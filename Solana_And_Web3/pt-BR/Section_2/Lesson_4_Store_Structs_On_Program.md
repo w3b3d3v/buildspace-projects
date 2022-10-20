@@ -173,7 +173,7 @@ Aqui está a aparência da minha saída ao fazer o `anchor test`.
 👀 GIF Count 1
 👀 GIF List [
   {
-    gifLink: 'insira_o_link_do_seu__gif_aqui',
+    gifLink: 'o_link_do_gif_que_você_inseriu',
     userAddress: PublicKey {
       _bn: <BN: 69f90845012df1b26922a9e895b073309e647c36e9052f7c9ec29793b8be9e99>
     }
