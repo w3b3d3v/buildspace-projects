@@ -321,6 +321,6 @@ Agora é hora de começarmos a construir coisas em nosso programa Solana. Voltar
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão o danicuki vai ficar triste :(_
+_Faça isso senão o danicuki vai ficar triste 😞_
 
 Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progresso` :).
