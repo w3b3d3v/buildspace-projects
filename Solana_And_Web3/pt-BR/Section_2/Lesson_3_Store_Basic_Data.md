@@ -343,7 +343,7 @@ LEGAL. Agora estamos armazenando *e* alterando dados em nosso programa Solana. �
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o danicuki vai ficar triste :(*
+*Faça isso senão o danicuki vai ficar triste 😔*
 
 Poste uma captura de tela do seu terminal mostrando sua contagem de GIFs incrementando em `#progresso`!
 
