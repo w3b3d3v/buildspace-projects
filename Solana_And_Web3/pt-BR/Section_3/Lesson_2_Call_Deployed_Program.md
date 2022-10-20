@@ -379,7 +379,7 @@ Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão o Melk vai ficar triste 😊*
+*Faça isso senão o Melk vai ficar triste 😔*
 
 Poste uma captura de tela em `#progresso` com o material "Peguei a conta" no seu console 😊.
 
