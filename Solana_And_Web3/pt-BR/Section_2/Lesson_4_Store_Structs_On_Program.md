@@ -185,7 +185,7 @@ Chegamos bem longe. Agora não estamos apenas escrevendo e executando programas 
 
 ### 🚨 Relatório de progresso
 
-_Faça isso senão o Yan vai ficar triste :(_
+_Faça isso senão o Yan vai ficar triste 😔_
 
 Poste uma captura de tela do seu terminal mostrando suas estruturas de itens em `#progress`!
 
