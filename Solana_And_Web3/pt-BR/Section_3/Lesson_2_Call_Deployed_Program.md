@@ -71,10 +71,7 @@ import idl from './idl.json';
 Ótimo!! 
 
 ### 🌐 Alterando a rede que o Phantom se conecta
-
-Neste momento, o Phantom provavelmente está conectado à Solana Mainnet. Precisamos que se conecte à Solana Devnet.
-
-<ol>
+vir
 <li>Abra sua carteira, e clique no circulo do lado de `Wallet`.</li>
 <li>Clique em <code>Developer Settings</code>.</li>
 <li>Clique em <code>Alterar rede</code>.</li>
@@ -382,5 +379,5 @@ Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList
 
 *Faça isso senão o Melk vai ficar triste 😔*
 
-Poste uma captura de tela em `#progresso` com o dado de "Conta obtida" no seu console 😊.
+Poste uma captura de tela em `#progresso` com os dados de "Conta obtida" no seu console 😊.
 

@@ -175,4 +175,4 @@ Acostume-se com este ciclo! É a maneira mais rápida de iterar em seus programa
 
 *Faça isso senão a Sabrina vai ficar triste 😊*
 
-Poste uma captura de tela do seu teste básico funcionando em `#progresso`! É sempre motivador para os outros ver as pessoas descobrindo as coisas.
+Poste uma captura de tela do seu teste básico funcionando em `#progresso`! Será muito motivador para seus colegas e nosso time, ver que você conseguiu finalizar mais uma etapa. 

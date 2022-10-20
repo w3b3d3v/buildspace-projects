@@ -346,6 +346,6 @@ LEGAL. Agora estamos armazenando *e* alterando dados em nosso programa Solana. �
 
 *Faça isso senão o danicuki vai ficar triste 😔*
 
-Poste uma captura de tela do seu terminal mostrando sua contagem de GIFs incrementando em `#progresso`!
+Poste uma captura de tela do seu terminal mostrando seu ```GIF Count``` incrementando em `#progresso`!
 
 Seu trabalho está sendo épico até agora 😊.

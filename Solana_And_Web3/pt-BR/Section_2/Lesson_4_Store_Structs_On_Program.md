@@ -188,6 +188,6 @@ Chegamos bem longe. Agora não estamos apenas escrevendo e executando programas 
 
 _Faça isso senão o Yan vai ficar triste 😔_
 
-Poste uma captura de tela do seu terminal mostrando suas estruturas de itens em `#progresso`!
+Poste uma captura de tela do seu terminal mostrando os dados de seu ```GIF List``` em `#progresso`!
 
 Muito difícil fazer tudo isso funcionar. Você está indo bem 😊.

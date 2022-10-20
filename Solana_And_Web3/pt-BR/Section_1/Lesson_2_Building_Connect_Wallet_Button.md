@@ -21,7 +21,9 @@ Abra o terminal na pasta do nosso portal-gif.
 
 E execute o seguinte comandos:
 
- ```npm i```
+ ```bash 
+ npm i
+ ```
 
  O seguinte comando ira baixar as bibliotecas necessárias para o nosso app.
 
@@ -29,7 +31,9 @@ E execute o seguinte comandos:
 
   Após instalar as dependências execute o camando:
 
-  ```npm run start```
+  ``` bash
+  npm run start
+  ```
 
  Este comando ira executar o nosso app que estara disponível no navegador.
 
@@ -510,4 +514,4 @@ _Observação: nas configurações da Phantom (que você pode acessar clicando n
 
 _Faça isso senão o Dani vai ficar triste 😔_
 
-Poste uma captura de tela do seu console em `#progresso` mostrando sua chave pública com sua carteira conectada. Não se preocupe, você pode compartilhar sua chave pública. Por isso é "público" ;).
+Poste uma captura de tela do seu console em `#progresso` mostrando sua chave pública com sua carteira conectada. Não se preocupe, você pode compartilhar sua chave pública. Por isso é "público" 😉.

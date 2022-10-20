@@ -155,10 +155,10 @@ Obviamente, isso não é "Mainnet", mas o "Devnet" é executado por mineradores 
 
 Você implantou um programa Solana!!! Que demais! -- isso é maravilhoso!!
 
-Vimos que os melhores construtores criaram o hábito de "construir em público". Tudo isso significa compartilhar alguns aprendizados sobre o marco que eles acabaram de atingir!
+Vimos que os melhores builders criaram o hábito de "construir em público". Tudo isso significa compartilhar alguns aprendizados sobre o marco que eles acabaram de atingir!
 
 Faça uma atualização rápida na WEB3DEV em `#progresso` em nosso discord.
 
 Este também é um bom momento para twittar que você está aprendendo sobre Solana e acabou de implantar seu primeiro programa no Solana Devnet. Inspire outros a se juntarem à web3!
 
-Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@web3dev_` se estiver se sentindo bem 😊.
+Certifique-se de incluir seu link do Solana Explorer e anexar uma captura de tela do seu programa implantado, talvez. Ou adicione uma captura de tela no Solana Explorer!! Marque `@web3dev_`, caso sintir-se confortável.
