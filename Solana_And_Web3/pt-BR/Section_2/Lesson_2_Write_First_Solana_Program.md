@@ -165,7 +165,7 @@ Bem épico. Você escreveu um programa Solana, **implementou-o em seu nó Solana
 **NICEEEEEEE.** Eu sei que pode não parecer muito, mas agora você tem um fluxo básico para fazer as coisas.
 <ul>
 <li>Escrever o código em <code>lib.rs</code>.</li>
-<li>Test specific functions using <code>tests/myepicproject.js</code>.</li>
+<li>Testar funções específicas com o código: <code>tests/myepicproject.js</code>.</li>
 </ul>
 
 Acostume-se com este ciclo! É a maneira mais rápida de iterar em seus programas Solana 😊.
