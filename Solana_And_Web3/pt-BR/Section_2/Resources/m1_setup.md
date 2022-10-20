@@ -2,11 +2,11 @@
 
 ** Em primeiro lugar - eu quero dar um ENORME salve para o nosso camarada, Nick! Sem o Nick, este guia não teria sido possível. Depois de terminar esta seção, certifique-se de dar um pouco de amor ao Nick no Discord (Nick_G#4818)**
 
-Nós vamos **a Solana não funciona no M1 macOS??** para
+**A Solana não funciona no M1 macOS??** para:
 
 ![Anakin está funcionando Gif](https://media.giphy.com/media/CuMiNoTRz2bYc/giphy.gif)
 
-**realmente rápido.**
+**está funcionando realmente rápido.**
 
 Este guia o colocará em funcionamento com o ambiente Solana em sua máquina local (salve para o colega construtor, **@billyjacoby#7369** ele montou o primeiro guia sobre como configurar sem o Rosetta!) Fizemos algumas modificações que farão você se tornar um Mestre Solana mais rápido e com menos dores de cabeça 🙂.
 
