@@ -323,4 +323,4 @@ Agora é hora de começarmos a construir coisas em nosso programa Solana. Voltar
 
 _Faça isso senão o danicuki vai ficar triste 😞_
 
-Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progresso` :).
+Poste uma captura de tela do seu épico GIF Grid para que todos vejam em `#progresso` 😀.
