@@ -132,7 +132,7 @@ Eu recebo isso no meu terminal :
 
 Depois de fazer isso, vá para o [Solana Explorer](https://explorer.solana.com/?cluster=devnet) para ver se tudo funcionou! *Observação: certifique-se de ir para o canto superior direito, clicar em "Mainnet" e depois em "Devnet", já que implantamos no Devnet.*
 
-No explorer, cole o id do seu programa, o `Program Id` é listado em cima do `deploy sucess`*(no último comando que você executou).*
+No explorer, cole o id do seu programa, o `Program Id` é listado em cima do `deploy sucess` *(no último comando que você executou).*
 
 ![Sem título](https://i.imgur.com/ISk6D55.png)
 
@@ -150,7 +150,7 @@ Obviamente, isso não é "Mainnet", mas o "Devnet" é executado por mineradores 
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão a Anna Bida vai ficar triste :(*
+*Faça isso senão a Anna Bida vai ficar triste 😔*
 
 Você implantou um programa Solana!!! Que demais! -- isso é maravilhoso!!
 
