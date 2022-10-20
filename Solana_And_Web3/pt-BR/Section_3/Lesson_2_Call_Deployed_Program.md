@@ -71,7 +71,9 @@ import idl from './idl.json';
 Ótimo!! 
 
 ### 🌐 Alterando a rede que o Phantom se conecta
-vir
+
+Neste momento, o Phantom provavelmente está conectado à Solana Mainnet. Precisamos que se conecte à Solana Devnet.
+<ol>
 <li>Abra sua carteira, e clique no circulo do lado de `Wallet`.</li>
 <li>Clique em <code>Developer Settings</code>.</li>
 <li>Clique em <code>Alterar rede</code>.</li>
