@@ -375,7 +375,7 @@ Então, aqui nós criamos uma conta *e então* recuperamos a conta!! E, `gifList
 
 **Então, agora você notará que toda vez que atualizamos a página - ela nos pede para criar uma conta novamente. Vamos corrigir isso mais tarde, mas por que isso acontece? Fiz um pequeno vídeo sobre isso abaixo:**
 
-[REVIEW](https://www.loom.com/share/fc1cf249073e45d6bf31d985b4b11580)
+[Loom](https://www.loom.com/share/1c1f2cc724b2438ab403d630cba0e552)
 
 
 ### 🚨 Relatório de progresso
