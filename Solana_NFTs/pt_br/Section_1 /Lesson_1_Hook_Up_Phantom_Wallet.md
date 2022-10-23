@@ -193,7 +193,7 @@ const checkIfWalletIsConnected = async () => {
 
 É tão simples quanto chamar `connect`, que informa à Phantom Wallet que nosso site NFT está autorizado a acessar informações sobre essa carteira! Alguns de vocês podem estar se perguntando o que é essa propriedade `onlyIfTrusted`.
 
-Se um usuário já conectou a carteira ao seu aplicativo, essa propriedade puxará imediatamente seus dados sem avisá-lo com outro pop-up de conexão! Bem bacana, né? Curioso para saber mais - [dê uma olhada neste documento](https://docs.phantom.app/integrating/establishing-a-connection#eagerly-connecting) da Phantom!
+Se um usuário já conectou a carteira ao seu aplicativo, essa propriedade puxará imediatamente seus dados sem avisá-lo com outro pop-up de conexão! Bem bacana, né? Curioso para saber mais - [dê uma olhada nesta documentação](https://docs.phantom.app/integrating/establishing-a-connection#eagerly-connecting) da Phantom!
 
 E é isso!
 
