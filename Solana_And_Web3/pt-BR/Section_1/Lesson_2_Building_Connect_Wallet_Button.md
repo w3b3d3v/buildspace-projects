@@ -33,7 +33,7 @@ E execute o seguinte comandos:
 
   ``` bash
   npm run start
-  # Usuarios replit 
+  # Usuários replit usem o comando abaixo:
   npm run dev
   ```
 
