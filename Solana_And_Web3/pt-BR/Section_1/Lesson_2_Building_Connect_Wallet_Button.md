@@ -33,6 +33,8 @@ E execute o seguinte comandos:
 
   ``` bash
   npm run start
+  # Usuarios replit 
+  npm run dev
   ```
 
  Este comando ira executar o nosso app que estara disponível no navegador.
