@@ -4,14 +4,14 @@ Temos uma configuração incrível para fazer o drop de alguns NFTs bem legais e
 
 Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `update_candy_machine`.
 
-```
+```plaintext
 ​​ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet  -k ~/.config/solana/devnet.json -cp config.json
 ```
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
 
-```
+```plaintext
 /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
       return fs.readdirSync(`${val}`).map(file => path.join(val, file));
                       ^
@@ -57,7 +57,7 @@ export default CountdownTimer;
 
 Estamos configurando um componente React bem simples que manterá algum estado e receberá uma `dropDate` (data do drop).
 
-Massa! Antes de prosseguirmos, vamos importar o componente `app/src/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
+Massa! Antes de prosseguirmos, vamos importar o componente `app/components/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
 
 
 ```jsx
@@ -69,7 +69,7 @@ A partir daqui, podemos configurar nossa lógica para lidar com quando mostrar e
 
 No nosso caso, só queremos mostrar esse componente se a data atual for **anterior** à data do drop. **Caso contrário**, iremos em frente e mostraremos a data e hora do drop.
 
-Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/src/CandyMachine/index.js`.
+Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/components/CandyMachine/index.js`.
 
 
 ```jsx
@@ -161,7 +161,7 @@ Então é isso!!
 
 Você tem um cronômetro de contagem regressiva bem simples, para que seus fãs saibam quando voltar para cunhar um de seus NFTs.
 
-![https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67](https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67)
+![Untitled](https://i.imgur.com/OINimrr.png)
 
 📭 Construindo seu estado "Esgotado"
 
@@ -197,7 +197,7 @@ return (
 ```
 
 
-![https://camo.githubusercontent.com/99aaadeed4fc792387c035d5a20ccea8de27e9707553ea227803f092003b4527/68747470733a2f2f692e696d6775722e636f6d2f6659457a6f65672e706e67](https://camo.githubusercontent.com/99aaadeed4fc792387c035d5a20ccea8de27e9707553ea227803f092003b4527/68747470733a2f2f692e696d6775722e636f6d2f6659457a6f65672e706e67)
+![Untitled](https://i.imgur.com/fYEzoeg.png)
 
 Está ficando bem Legal!!
 
@@ -209,6 +209,6 @@ Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Farza vai ficar triste :(
 
 Em `#progress`, poste uma captura de tela do seu aplicativo da web!
