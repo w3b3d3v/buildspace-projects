@@ -70,7 +70,7 @@ Basta fazer isso bem rapidinho agora. Vai lá! :).
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Farza vai ficar triste :(
 
 Ei! Vá em frente e diga gm em `#gm-only` no Discord. Isto é muito importante. Extremamente importante.
 

@@ -24,8 +24,6 @@ Falaremos muito sobre essa coisa chamada "Candy Machine" ao longo do projeto. Um
 
 Uma coisa que é muito especial sobre a Candy Machine é que ela não aceitará os fundos de um usuário se não houver mais NFTs para vender. Bem, isso pode parecer algo bem trivial, mas no mundo da computação paralela é realmente difícil. Por exemplo, vejamos este caso:
 
-
-
 1. Sobrou um NFT.
 2. A pessoa A e a pessoa B clicam em cunhar ao mesmo tempo.
 3. Em paralelo, o contrato inteligente verifica se a Pessoa A e a Pessoa B têm fundos para pagar o NFT. Ambos têm. Ele verifica se existem NFTs restantes, existem.

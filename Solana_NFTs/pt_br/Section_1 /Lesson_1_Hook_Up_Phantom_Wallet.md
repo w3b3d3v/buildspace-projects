@@ -167,63 +167,30 @@ Como testamos este projeto totalmente com as Phantom Wallets, recomendamos mante
 
 ### 🔒 Acessando a conta do usuário
 
-Então, quando você executar isso, você deverá ver a linha "_Phantom wallet encontrada!_" impressa no console do site quando for inspecioná-lo.
+Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso
 
-![https://camo.githubusercontent.com/140bada2787e267afe24c054f7a8100d07c8143ddc9f2beac616ba9df8f746e9/68747470733a2f2f692e696d6775722e636f6d2f75794763534a342e706e67](https://camo.githubusercontent.com/140bada2787e267afe24c054f7a8100d07c8143ddc9f2beac616ba9df8f746e9/68747470733a2f2f692e696d6775722e636f6d2f75794763534a342e706e67)
-
+<img src="https://i.imgur.com/Rsg01DA.png" />
 
 _Para obter instruções adicionais sobre como executar seu aplicativo, consulte o `README.md` na raiz do seu projeto._
 
-**LEGAL**.
+**LEGAL!**
 
 Em seguida, precisamos realmente verificar se estamos **autorizados** a acessar a carteira do usuário. Assim que tivermos acesso a isso, podemos começar a ter acesso às funções do nosso programa Solana 🤘.
 
 Basicamente, a **Phantom Wallet não simplesmente fornece as informações da nossa carteira para todos os sites que visitamos**. Ela só as fornece a sites que autorizamos. Até agora, **não** demos acesso explícito à Phantom para compartilhar as informações de nossa carteira.
 
-A primeira coisa que precisamos fazer é verificar se um usuário nos deu permissão para usar sua carteira em nosso site - isso é como verificar se nosso usuário está "conectado". Tudo o que precisamos fazer é adicionar mais uma linha à nossa função `checkIfWalletIsConnected`. Confira o código abaixo:
+A primeira coisa que precisamos fazer é verificar se um usuário nos deu permissão para usar sua carteira em nosso site - isso é como verificar se nosso usuário está "conectado". 
 
 
-```javascript
-const checkIfWalletIsConnected = async () => {
-  try {
-    const { solana } = window;
-
-    if (solana && solana.isPhantom) {
-        console.log('Phantom wallet encontrada!');
-
-        /* O objeto solana nos dá uma função que nos permitirá 
-        conectar diretamente com a carteira do usuário! */
-
-        const response = await solana.connect({ onlyIfTrusted: true });
-        console.log(
-          'Conectado com a Chave Pública:',
-          response.publicKey.toString()
-        );
-    } else {
-      alert('Objeto Solana não encontrado! Consiga uma Phantom Wallet 👻');
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
+```jsx
+const wallet = useWallet();
 ```
-
-
-É tão simples quanto chamar `connect`, que informa à Phantom Wallet que nosso site NFT está autorizado a acessar informações sobre essa carteira! Alguns de vocês podem estar se perguntando o que é essa propriedade `onlyIfTrusted`.
-
-Se um usuário já conectou a carteira ao seu aplicativo, essa propriedade puxará imediatamente seus dados sem avisá-lo com outro pop-up de conexão! Bem bacana, né? Curioso para saber mais - [dê uma olhada neste documento](https://docs.phantom.app/integrating/establishing-a-connection#eagerly-connecting) da Phantom!
+`useWallet()` é um gancho personalizado que verifica se a carteira está conectada. Se estiver, retornará todas as informações necessárias sobre essa carteira.
 
 E é isso!
 
-_Neste ponto, você ainda deve estar vendo apenas o log "Phantom Wallet encontrada!"_ em seu console!
-
-Não se preocupe se você estiver vendo o erro "User Rejected Request" (solicitação do usuário rejeitada) no console. É totalmente esperado neste ponto do projeto ;), Está lá porque adicionamos esse parâmetro `onlyIfTrusted: true` dentro do método `connect`. Isso fará com que a carteira Phantom rejeite a solicitação de conexão do usuário por enquanto (como o nome do erro sugere 😁).
-
-Por que isso? Bem, o método `connect` com o parâmetro `onlyIfTrusted` definido como `true` só será executado se o usuário já tiver autorizado uma conexão entre sua carteira e o aplicativo da web. **O que nunca fizeram até agora.** Vamos fazer isso em seguida :).
-
-
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o Farza vai ficar triste :(
+_Por favor, faça isso, senão o Farza vai ficar triste :(_
 
 Poste uma captura de tela em `#progress` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
