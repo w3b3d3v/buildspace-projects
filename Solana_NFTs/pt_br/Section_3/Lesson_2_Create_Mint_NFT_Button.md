@@ -179,7 +179,7 @@ Antes de clicar em "Cunhar NFT", você precisa ter certeza que tem algum SOL da 
 
 Primeiro pegue o endereço público da carteira Phantom:
 
-![https://camo.githubusercontent.com/a6735886b0458b58fffa2cb8e8a98773affd5fff3cd1ee9af77508889bd3873a/68747470733a2f2f692e696d6775722e636f6d2f576662495073622e706e67](https://camo.githubusercontent.com/a6735886b0458b58fffa2cb8e8a98773affd5fff3cd1ee9af77508889bd3873a/68747470733a2f2f692e696d6775722e636f6d2f576662495073622e706e67)
+![Untitled](https://i.imgur.com/WfbIPsb.png)
 
 Então, no seu terminal, execute:
 
@@ -193,7 +193,7 @@ E é isso. Parabéns por todo o dinheiro grátis que você recebeu hehe.
 
 Legal, então agora quando você clicar em "Cunhar NFT", verá um pop-up como este abaixo:	
 
-![https://camo.githubusercontent.com/5b9da3373c5c5b97ac733039c5c37e7a33b6c60b76abbd3ee7e244582e2d73dc/68747470733a2f2f692e696d6775722e636f6d2f465334526250532e706e67](https://camo.githubusercontent.com/5b9da3373c5c5b97ac733039c5c37e7a33b6c60b76abbd3ee7e244582e2d73dc/68747470733a2f2f692e696d6775722e636f6d2f465334526250532e706e67)
+![Untitled](https://i.imgur.com/FS4RbPS.png)
 
 Depois de clicar em "Aprovar" e pagar a taxa de transação, sua carteira dirá à sua Candy Machine para cunhar o NFT.
 
@@ -201,13 +201,13 @@ Depois de clicar em "Aprovar" e pagar a taxa de transação, sua carteira dirá 
 
 Uma vez que seu NFT for cunhado com sucesso, você verá algo assim em seu console:
 
-![https://camo.githubusercontent.com/12d7c4d6f0edcf40d14d089e3676b3c7d104def5b52e35f1543e6bc1c5e83533/68747470733a2f2f692e696d6775722e636f6d2f45737a786841482e706e67](https://camo.githubusercontent.com/12d7c4d6f0edcf40d14d089e3676b3c7d104def5b52e35f1543e6bc1c5e83533/68747470733a2f2f692e696d6775722e636f6d2f45737a786841482e706e67)
+![Untitled](https://i.imgur.com/EszxhAH.png)
 
 Você cunhou com **SUCESSO** seu primeiro NFT na Solana. **Isso aí! Então onde está o NFT?**
 
 Para verificar se isso tudo realmente funcionou, abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" da seguinte forma:
 
-![https://camo.githubusercontent.com/2b0405e6e9db9cb328422703f8e50a0ac2f4da42de1d260aa9b9fe328cb6f61f/68747470733a2f2f692e696d6775722e636f6d2f364473714c594d2e706e67](https://camo.githubusercontent.com/2b0405e6e9db9cb328422703f8e50a0ac2f4da42de1d260aa9b9fe328cb6f61f/68747470733a2f2f692e696d6775722e636f6d2f364473714c594d2e706e67)
+![Untitled](https://i.imgur.com/6DsqLYM.png)
 
 Na verdade, criei dois NFTs separadamente, então, vejo dois! Você verá que "Itens Cunhados" também muda no seu aplicativo web.
 
@@ -220,6 +220,6 @@ Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Alt
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Farza vai ficar triste :(
 
 Em `#progress`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar a `@_buildspace`!
