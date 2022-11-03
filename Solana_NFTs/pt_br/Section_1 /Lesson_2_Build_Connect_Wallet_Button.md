@@ -13,7 +13,7 @@ import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 
 // Constants
-const TWITTER_HANDLE = 'web3dev_';
+const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -124,7 +124,7 @@ import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 
 // Constantes
-const TWITTER_HANDLE = 'web3dev_';
+const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -292,6 +292,6 @@ _Observação: nas configurações da Phantom (que você pode acessar clicando n
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Publique em `#progresso` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública :).
+Publique em `#progress` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública :).

@@ -208,6 +208,6 @@ Isso significa que o comando não pode acessar a pasta `.cache` com os dados imp
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Poste um dos links Arweave dos seus NFTs em `#progresso`!
+Poste um dos links Arweave dos seus NFTs em `#progress`!

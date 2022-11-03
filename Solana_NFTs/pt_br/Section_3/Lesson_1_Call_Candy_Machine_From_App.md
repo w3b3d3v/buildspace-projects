@@ -397,6 +397,6 @@ Não se preocupe! Na próxima seção vamos construir a lógica para este botão
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Em `#progresso`, deixe uma captura de tela do seu aplicativo web mostrando como ele renderiza os dados que recupera de sua Candy Machine!
+Em `#progress`, deixe uma captura de tela do seu aplicativo web mostrando como ele renderiza os dados que recupera de sua Candy Machine!

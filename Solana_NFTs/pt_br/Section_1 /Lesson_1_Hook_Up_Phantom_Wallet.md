@@ -2,18 +2,18 @@
 
 Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" no canto superior direito da página.
 
-![https://camo.githubusercontent.com/9d6a1aa7765bed6299de46f335c6d289c2675623b4613b4487bc5fbbbeb9b97d/68747470733a2f2f692e696d6775722e636f6d2f7032465479414d2e706e67](https://camo.githubusercontent.com/9d6a1aa7765bed6299de46f335c6d289c2675623b4613b4487bc5fbbbeb9b97d/68747470733a2f2f692e696d6775722e636f6d2f7032465479414d2e706e67)
+![image](https://i.imgur.com/p2FTyAM.png)
 
 Massa! Quando você faz o fork deste repositório, na verdade você está criando uma cópia idêntica dele que fica no seu perfil do Github. Então agora você tem sua própria versão deste código que você pode editar para o conteúdo de sua escolha :). Isso também será útil quando estivermos prontos para implantar nosso aplicativo no Vercel 🤘.
 
 O passo final aqui é transferir o repositório do fork que você acabou de fazer para a sua máquina local. Clique no botão "Code" (Código) e copie esse link!
 
-![https://camo.githubusercontent.com/d7f456460c7a6526e7908c0664b8694f0945fb07523573cfbe307dbf5ffad55a/68747470733a2f2f692e696d6775722e636f6d2f3451744138774f2e706e67](https://camo.githubusercontent.com/d7f456460c7a6526e7908c0664b8694f0945fb07523573cfbe307dbf5ffad55a/68747470733a2f2f692e696d6775722e636f6d2f3451744138774f2e706e67)
+![image](https://i.imgur.com/4QtA8wO.png)
 
 Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que seu projeto ficará e execute o comando:
 
 
-```
+```plaintext
 git clone SEU_LINK_DO_FORK
 ```
 
@@ -41,111 +41,129 @@ Vá até seu código e acesse `App.js` em `src`. É aqui que estará o principal
 Se você tiver a extensão Phantom Wallet instalada, ela injetará automaticamente um objeto especial chamado `solana` em seu objeto `window` que possui algumas funções mágicas. Isso significa que antes de fazermos qualquer coisa, precisamos verificar se isso existe. Se não existir, vamos dizer ao nosso usuário para fazer o download:
 
 
-```javascript
-import React, { useEffect } from 'react';
-import './App.css';
-import twitterLogo from './assets/twitter-logo.svg';
+```jsx
+import React from "react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 // Constantes
-const TWITTER_HANDLE = 'web3dev_';
+const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const App = () => {
-  // Ações
+const Home = () => {
+    // Ações
+    const renderNotConnectedContainer = () => (
+        <div>
+            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
 
-  /* Declare sua função */
-  const checkIfWalletIsConnected = async () => {
-    try {
-      const { solana } = window;
-
-      if (solana && solana.isPhantom) {
-          console.log('Phantom wallet encontrada!');
-      } else {
-        alert('Objeto Solana não encontrado! Consiga uma Phantom Wallet 👻');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  /* Quando nosso componente for montado pela primeira vez, 
-  vamos verificar se temos uma Phantom Wallet  */
-
-  useEffect(() => {
-    const onLoad = async () => {
-      await checkIfWalletIsConnected();
-    };
-    window.addEventListener('load', onLoad);
-    return () => window.removeEventListener('load', onLoad);
-  }, []);
-
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="header-container">
-          <p className="header">🍭 Candy Drop</p>
-          <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+            <div className="button-container">
+                <WalletMultiButton className="cta-button connect-wallet-button" />
+            </div>
         </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`Criado na @${TWITTER_HANDLE}`}</a>
+    );
+
+    return (
+        <div className="App">
+            <div className="container">
+                <div className="header-container">
+                    <p className="header">🍭 Candy Drop</p>
+                    <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+                    {/* Renderize seu botão conectar à carteira aqui */}
+                    {renderNotConnectedContainer()}
+                </div>
+
+                <div className="footer-container">
+                    <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built on @${TWITTER_HANDLE}`}</a>
+                </div>
+            </div>
         </div>
-      </div>
+    );
+};
+
+export default Home;
+```
+
+Excelente! Não é tão difícil, certo? Vamos detalhar isso um pouco mais:
+
+```jsx
+const renderNotConnectedContainer = () => (
+    <div>
+        <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+        <div className="button-container">
+            <WalletMultiButton className="cta-button connect-wallet-button" />
+        </div>
     </div>
-  );
+);
+```
+
+
+O `WalletMultiButton` detectará automaticamente qualquer extensão de carteira Solana que você instalou em seu navegador, como `Phantom`, `Sollet`, `Ledger`, `Solflare` etc. Isso depende de suas configurações em `_app.js`. É assim que seu `_app.js` deve ficar.
+
+```javascript
+import { useMemo } from "react";
+import { clusterApiUrl } from "@solana/web3.js";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+
+import "../styles/App.css";
+import "../styles/index.css";
+import "../styles/globals.css";
+import "../styles/CandyMachine.css";
+import "@solana/wallet-adapter-react-ui/styles.css";
+
+const App = ({ Component, pageProps }) => {
+    const network = WalletAdapterNetwork.Devnet;
+    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const wallets = useMemo(() => [new PhantomWalletAdapter()], [network]);
+
+    return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                    <Component {...pageProps} />
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
+    );
 };
 
 export default App;
 ```
 
+### Adicionando suporte para mais adaptadores de carteira (opcional)
 
-Excelente! Não é tão difícil, certo? Vamos detalhar isso um pouco mais:
-
+Se você deseja adicionar suporte para mais extensões, pode fazê-lo importando mais adaptadores dessa forma:
 
 ```javascript
-const checkIfWalletIsConnected = async () => {
-  try {
-    const { solana } = window;
+// ... Resto do seu código
+import { PhantomWalletAdapter, SolflareWalletAdapter, TorusWalletAdapter } from "@solana/wallet-adapter-wallets";
 
-    if (solana && solana.isPhantom) {
-        console.log('Phantom wallet encontrada!');
-    } else {
-      alert('Objeto Solana não encontrado! Consiga uma Phantom Wallet 👻');
-    }
-  } catch (error) {
-    console.error(error);
-  }
+// ... Resto do seu código
+
+const App = ({ Component, pageProps }) => {
+    // ... Resto do seu código
+    const wallets = useMemo(() => [new PhantomWalletAdapter(), new SolflareWalletAdapter(), new TorusWalletAdapter()], [network]);
+
+    return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                    <Component {...pageProps} />
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
+    );
 };
+
+export default App;
 ```
+E agora execute `npm run dev` e clique no botão `Select Wallet`. Ele deve listar algumas carteiras para você escolher, dependendo de como você configura seus adaptadores.
 
+<img src="https://i.imgur.com/0BZZTsD.png" />
 
-Nossa função aqui está verificando o objeto `window` em nosso DOM para ver se a extensão Phantom Wallet injetou o objeto `solana`. Se tivermos mesmo um objeto `solana`, também podemos verificar se é uma Phantom Wallet.
-
-Como testamos este projeto inteiramente com as Phantom Wallets, recomendamos manter essa configuração. No entanto, nada o impede de explorar ou apoiar outras carteiras 👀.
-
-
-```javascript
-useEffect(() => {
-  const onLoad = async () => {
-    await checkIfWalletIsConnected();
-  };
-  window.addEventListener('load', onLoad);
-  return () => window.removeEventListener('load', onLoad);
-}, []);
-```
-
-
-Finalmente, só precisamos executar isso aqui!
-
-No React, o hook `useEffect` é chamado uma vez na montagem do componente quando esse segundo parâmetro (o `[]`) está vazio! Então, isso é perfeito para nós. Assim que alguém acessa nosso aplicativo, podemos verificar se ele possui a Phantom Wallet instalada ou não. Isso será **muito importante** em breve.
-
-Atualmente, a equipe da Phantom Wallet sugere esperar que a janela termine completamente o carregamento antes de verificar o objeto `solana`. Uma vez que este evento é chamado, podemos garantir que este objeto esteja disponível se o usuário tiver a extensão Phantom Wallet instalada.
-
+Como testamos este projeto totalmente com as Phantom Wallets, recomendamos manter isso. No entanto, nada o impede de explorar ou apoiar outras carteiras 👀.
 
 ### 🔒 Acessando a conta do usuário
 
@@ -206,6 +224,6 @@ Por que isso? Bem, o método `connect` com o parâmetro `onlyIfTrusted` definido
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor faça isso, senão o Farza vai ficar triste :(
 
-Poste uma captura de tela em `#progresso` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
+Poste uma captura de tela em `#progress` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
