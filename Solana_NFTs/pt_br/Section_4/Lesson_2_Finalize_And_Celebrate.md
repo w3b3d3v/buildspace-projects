@@ -14,7 +14,6 @@ Crie uma nova chave e certifique-se de que o acesso à `pinFileToIPFS` esteja at
 
 Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o token JWT e mantenha-o à mão. Agora apenas atualizaremos nosso arquivo `config.json` com 2 novas propriedades:
 
-
 ```json
 {
   "price": 0.01,
@@ -45,20 +44,17 @@ Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o to
 }
 ```
 
-
-Eu adicionei `nft_storage`. Eu também defino `uploadMethod` para ` nft_storage`. Cole sua chave de API do [nft.storage](https://nft.storage/) na propriedade `nftStorageAuthToken` e você está pronto! Exclua o arquivo `cache.json` e execute o comando de upload novamente:
-
+Aqui adiciono o `nft_storage`. Eu também defino `uploadMethod` para o `nft_storage`. Cole sua chave de API do [nft.storage](https://nft.storage/) na propriedade `nftStorageAuthToken` e você está pronto! Exclua o arquivo `cache.json` e execute o comando de upload novamente:
 
 ```
 sugar upload
 ```
 
-
 E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você quiser saber mais sobre o IPFS, [confira isso aqui](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3).
 
 ### 🚀 Lance para o mundo
 
-A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores da Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
+A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores do Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
 
 Deixei um vídeo bem rápido abaixo sobre a implantação via Vercel. Se você não quiser usar o Vercel, tudo bem. Use o programa que quiser.
 
@@ -95,11 +91,11 @@ Nota: No Vercel, você precisará adicionar a 6ª variável de ambiente como `CI
 
 Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de você saber como isso funciona e como codificar tudo isso é um superpoder. Use seu poder com sabedoria ;).
 
-### 🌈 Antes de sair
+### 🌈 Antes de você ir embora
 
 Vá para **#showcase** no Discord e envie-nos o link do seu produto final, pois queremos mexer nele :).
 
-Além disso, você deve twittar seu projeto final e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
+Além disso, você deve postar seu projeto final no Twitter e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
 
 E se você quiser, marque o @_buildspace :). **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
 

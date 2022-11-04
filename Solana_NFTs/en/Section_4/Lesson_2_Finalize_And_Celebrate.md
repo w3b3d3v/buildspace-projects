@@ -43,7 +43,7 @@ Once you create the key, you'll see a popup with all the secrets. Copy the JWT t
 }
 ```
 
-I added `nft_storage`. I also set `uploadMethod` to `nft_storage`. Paste your [nft.storage](https://nft.storage/) API key in the `nftStorageAuthToken` property and you're good to go! Delete your `cache.json` folder and run the upload command again:
+I added `nft_storage`. I also set `uploadMethod` to `nft_storage`. Paste your [nft.storage](https://nft.storage/) API key in the `nftStorageAuthToken` property and you're good to go! Delete your `cache.json` file and run the upload command again:
 
 ```
 sugar upload

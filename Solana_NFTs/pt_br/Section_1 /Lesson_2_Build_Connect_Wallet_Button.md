@@ -11,7 +11,6 @@ import { useWallet } from "@solana/wallet-adapter-react";
 ```
 Muito bem. Agora que estamos prontos para buscar as informações da carteira, vamos atualizar algumas coisas em nosso código aqui:
 
-
 ```jsx
 import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -46,7 +45,7 @@ const Home = () => {
 
                 <div className="footer-container">
                     <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built on @${TWITTER_HANDLE}`}</a>
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Construído no @${TWITTER_HANDLE}`}</a>
                 </div>
             </div>
         </div>
@@ -82,7 +81,7 @@ Demos passos bem grandes aqui! Você tem sua configuração básica de interface
 
 Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso :).
 
-*Nota: nas configurações da Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Aplicativos confiáveis". Aqui, você verá seu URL do Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para **revogar** isso se quiser testar o caso de alguém que nunca esteve conectado antes acessar seu site. Ele basicamente redefinirá o acesso de suas carteiras ao site e mostrará o botão "Conectar à carteira" novamente.*
+*Nota: Nas configurações da carteira Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Aplicativos confiáveis". Aqui, você verá seu URL do Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para **revogar** isso se quiser testar o caso de alguém que nunca esteve conectado antes acessar seu site. Ele basicamente redefinirá o acesso de suas carteiras ao site e mostrará o botão "Conectar à carteira" novamente.*
 
 ### 🚨 Relatório de progresso
 

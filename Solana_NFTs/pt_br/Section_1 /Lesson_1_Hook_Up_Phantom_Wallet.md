@@ -1,6 +1,6 @@
 ### 🤖 Vamos pegar o código inicial
 
-Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" no canto superior direito da página.
+Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" (bifurcação) no canto superior direito da página.
 
 ![image](https://i.imgur.com/p2FTyAM.png)
 
@@ -17,16 +17,13 @@ Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que
 git clone SEU_LINK_DO_FORK
 ```
 
-
 Aí está :). Hora de codificar!
-
 
 ### 🔌 Criando um botão de conexão de carteira com a Phantom Wallet
 
 Para este projeto, usaremos uma carteira chamada [Phantom](https://phantom.app/). Esta é uma das principais extensões de carteira para Solana.
 
 Antes de mergulharmos em qualquer código - certifique-se de ter baixado a extensão e configurado uma carteira Solana! Atualmente, a Phantom Wallet suporta **Chrome**, **Brave**, **Firefox** e **Edge**. Mas, como nota: só testamos este código no Brave e no Chrome.
-
 
 ### 👻 Usando o objeto Solana
 
@@ -39,7 +36,6 @@ Assim que conectarmos nossa carteira ao nosso site, este terá permissão para e
 Vá até seu código e acesse `App.js` em `src`. É aqui que estará o principal ponto de entrada do nosso aplicativo.
 
 Se você tiver a extensão Phantom Wallet instalada, ela injetará automaticamente um objeto especial chamado `solana` em seu objeto `window` que possui algumas funções mágicas. Isso significa que antes de fazermos qualquer coisa, precisamos verificar se isso existe. Se não existir, vamos dizer ao nosso usuário para fazer o download:
-
 
 ```jsx
 import React from "react";
@@ -67,7 +63,7 @@ const Home = () => {
                 <div className="header-container">
                     <p className="header">🍭 Candy Drop</p>
                     <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
-                    {/* Renderize seu botão conectar à carteira aqui */}
+                    {/* Renderize seu botão "Conectar à carteira" aqui */}
                     {renderNotConnectedContainer()}
                 </div>
 
@@ -95,7 +91,6 @@ const renderNotConnectedContainer = () => (
     </div>
 );
 ```
-
 
 O `WalletMultiButton` detectará automaticamente qualquer extensão de carteira Solana que você instalou em seu navegador, como `Phantom`, `Sollet`, `Ledger`, `Solflare` etc. Isso depende de suas configurações em `_app.js`. É assim que seu `_app.js` deve ficar.
 
@@ -180,7 +175,6 @@ Em seguida, precisamos realmente verificar se estamos **autorizados** a acessar 
 Basicamente, a **Phantom Wallet não simplesmente fornece as informações da nossa carteira para todos os sites que visitamos**. Ela só as fornece a sites que autorizamos. Até agora, **não** demos acesso explícito à Phantom para compartilhar as informações de nossa carteira.
 
 A primeira coisa que precisamos fazer é verificar se um usuário nos deu permissão para usar sua carteira em nosso site - isso é como verificar se nosso usuário está "conectado". 
-
 
 ```jsx
 const wallet = useWallet();

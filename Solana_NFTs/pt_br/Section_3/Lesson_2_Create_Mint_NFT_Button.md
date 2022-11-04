@@ -4,7 +4,6 @@ Neste ponto, vamos chamar nossa Candy Machine para cunhar um único NFT quando a
 
 Bora lá fazer isso!
 
-
 ### 🎩 Passando pela função `mintToken`
 
 Em seu componente `CandyMachine`, você verá uma função chamada `mintToken`. Ela faz parte da biblioteca de front-end do Metaplex.
@@ -22,9 +21,7 @@ const userTokenAccountAddress = (
 )[0];
 ```
 
-
 Aqui estamos criando uma conta para o nosso NFT. Na Solana, os programas **não mantém o estado**, o que é muito diferente da Ethereum, onde os contratos mantêm o estado. Confira mais sobre contas [aqui](https://docs.solana.com/developing/programming-model/accounts).
-
 
 ```jsx
 const userPayingAccountAddress = candyMachine.state.tokenMint
@@ -36,9 +33,7 @@ const remainingAccounts = [];
 const signers = [mint];
 ```
 
-
 Aqui estão todos os parâmetros que a Candy Machine precisa para cunhar o NFT. Ela precisa de tudo, desde `userPayingAccountAddress`, que é a pessoa que paga e recebe o NFT, até o `mint`, que é o endereço da conta do NFT que iremos cunhar.
-
 
 ```jsx
 const instructions = [
@@ -76,9 +71,7 @@ const instructions = [
 ];
 ```
 
-
 Em Solana, uma transação é um amontoado de instruções. Então, aqui reunimos algumas instruções que são basicamente funções que vivem em nossa Candy Machine. O Metaplex nos deu essas funções. Acabamos de chegar nelas.
-
 
 ```jsx
    if (candyMachine.state.gatekeeper) {
@@ -91,9 +84,7 @@ Em Solana, uma transação é um amontoado de instruções. Então, aqui reunimo
     }
 ```
 
-
 Aqui, estamos verificando se a Candy Machine está usando um captcha para evitar bots (`gatekeeper`), se há uma configuração de lista segura (whitelist) ou se a cunhagem é compatível com token gating (restrição por token, ou seja, quando um certo acesso é restrito e somente liberado ao detentor de certo token, como por exemplo, o acesso a um clube, no qual somente entra quem possui certo NFT ou token). Cada um destes itens tem um conjunto diferente de verificações que a conta do usuário precisa passar. Uma vez aprovadas, instruções adicionais são inseridas na transação.
-
 
 ```jsx
 const metadataAddress = await getMetadata(mint.publicKey);
@@ -129,9 +120,7 @@ instructions.push(
 );
 ```
 
-
 Finalmente, depois que todas as verificações forem aprovadas, criamos as instruções para realmente cunhar o NFT.
-
 
 ```jsx
 try {
@@ -148,16 +137,13 @@ try {
   }
 ```
 
-
 Isso você já sabe! Usamos um provedor, nossa carteira, todas as nossas instruções e, em seguida, chamamos `sendTransactions`, que é uma função que se comunica com a blockchain. **Este é o momento mágico onde realmente chegamos para a nossa Candy Machine e dizemos para ela cunhar nosso NFT**.
 
-Eu passei por todas essas etapas, então, certifique-se de passar por tudo isso também! Além disso, seria incrível se alguém fizesse um módulo de NPM bem legal (risos).
-
+Eu passei por todas essas etapas, então, certifique-se de passar por tudo isso também! Além disso, seria incrível se alguém fizesse disso tudo um módulo NPM bem legal (risos).
 
 ### ✨ Cunhe o seu NFT
 
 Em seu componente `CandyMachine`, faça com que seu botão "Cunhar NFT" chame a função `mintToken`:
-
 
 ```jsx
 return (
@@ -177,17 +163,16 @@ return (
 
 Antes de clicar em "Cunhar NFT", você precisa ter certeza que tem algum SOL da devnet em sua carteira Phantom. Esse processo é muito fácil.
 
-Primeiro pegue o endereço público da carteira Phantom:
+Primeiro pegue o endereço público da sua carteira Phantom:
 
 ![Untitled](https://i.imgur.com/WfbIPsb.png)
 
 Então, no seu terminal, execute:
 
 
-```shell
+```plaintext
 solana airdrop 2 INSIRA_O_ENDEREÇO_DA_SUA_CARTEIRA_PHANTOM
 ```
-
 
 E é isso. Parabéns por todo o dinheiro grátis que você recebeu hehe.
 
@@ -203,7 +188,7 @@ Uma vez que seu NFT for cunhado com sucesso, você verá algo assim em seu conso
 
 ![Untitled](https://i.imgur.com/EszxhAH.png)
 
-Você cunhou com **SUCESSO** seu primeiro NFT na Solana. **Isso aí! Então onde está o NFT?**
+Você cunhou com **SUCESSO** seu primeiro NFT na Solana. **Isso aí! Então, onde está o NFT?**
 
 Para verificar se isso tudo realmente funcionou, abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" da seguinte forma:
 
@@ -215,11 +200,10 @@ Na verdade, criei dois NFTs separadamente, então, vejo dois! Você verá que "I
 
 Você trabalhou muito para isso acontecer. Agora é hora de se divertir e deixar o seu NFT ainda melhor. Na próxima seção, adicionaremos uma interface de usuário que exibirá todas os NFTs já cunhados em seu aplicativo da web.
 
-Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Altere o CSS. Respire :).
-
+Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Altere o CSS. Dê uma respirada... :)
 
 ### 🚨 Relatório de progresso
 
 Por favor, faça isso, senão o Farza vai ficar triste :(
 
-Em `#progress`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar a `@_buildspace`!
+Em `#progress`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar o `@_buildspace`!

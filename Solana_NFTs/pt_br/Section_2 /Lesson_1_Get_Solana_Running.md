@@ -8,7 +8,6 @@ A CLI da Solana nos permitirá implantar na devnet uma blockchain real que é ex
 
 A CLI do Metaplex nos permitirá interagir com os contratos NFT implantados do Metaplex. Usando seus contratos-inteligentes-como-um-serviço, podemos 1) criar nossa própria Candy Machine 2) enviar nossos NFTs para nossa Candy Machine 3) permitir que os usuários realmente acessem nossa Candy Machine para cunhar um NFT.
 
-
 ### 📝 Uma observação sobre a Solana antes de entrarmos
 
 Ok, então, para ser honesto, colocar a Solana funcionando e em atividade **não é fácil nesse momento**.
@@ -56,7 +55,6 @@ Certifique-se de instalar o `ts-node` globalmente. Eu usei este comando: `npm in
 
 > Se você encontrar erros de permissões do EACCES durante a instalação, confira este [link](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-
 ### 🔥 Instale Solana
 
 As etapas de instalação são bem simples. Confira [aqui](https://docs.solana.com/cli/install-solana-cli-tools#use-solanas-install-tool)! Existem etapas claras para instalar a CLI da Solana em Windows, Linux e Mac.
@@ -67,25 +65,20 @@ As etapas de instalação são bem simples. Confira [aqui](https://docs.solana.c
 
 Quando terminar de instalar, execute isso para garantir que as coisas estejam funcionando:
 
-
 ```plaintext
 solana --version
 ```
 
-
 Se isso gerar um número de versão, você está pronto para ir adiante! A próxima coisa que você vai querer fazer é executar esses dois comandos separadamente:
 
-
-```
+```plaintext
 solana config set --url devnet
 solana config get
 ```
 
-
 Isso dará um output assim:
 
-
-```
+```plaintext
 Config File: /Users/flynn/.config/solana/cli/config.yml
 RPC URL: https://api.devnet.solana.com
 WebSocket URL: wss://api.devnet.solana.com/ (computed)
@@ -93,14 +86,11 @@ Keypair Path: /Users/flynn/.config/solana/id.json
 Commitment: confirmed
 ```
 
-
 Durante todo este projeto estaremos construindo diretamente na devnet da Solana. Isso é muito louco! É como se fosse uma versão da Solana em um ambiente de "encenação". É uma blockchain real executada por validadores reais e gratuita para desenvolvedores.
-
 
 ### ☹️ Ahhhh me ajude… tem alguma coisa quebrada!
 
 Que droga! Pode ser meio difícil de fazer a Solana funcionar. Contudo, estamos dispostos a ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas do Buildspace possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
-
 
 ### 🤩 Começando com a CLI do Metaplex 
 

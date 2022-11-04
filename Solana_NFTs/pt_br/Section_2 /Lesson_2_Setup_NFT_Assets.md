@@ -19,8 +19,7 @@ Para acompanhar qual ativo vai com cada arquivo de metadados `json`, queremos da
 1. Você precisa começar em 0.
 2. Não pode haver lacunas na nomenclatura.
 
-Em nossa pasta de ativos, as coisas ficarão assim:
-
+Em nossa pasta `assets`, as coisas ficarão assim:
 
 ```plaintext
 // NFT #1
@@ -35,7 +34,6 @@ Em nossa pasta de ativos, as coisas ficarão assim:
 2.png
 2.json
 ```
-
 
 ![Untitled](https://i.imgur.com/3warkmp.png)
 
@@ -66,7 +64,6 @@ Vamos copiar e colar o seguinte em `0.json`:
   }
 }
 ```
-
 
 Esta é a informação básica que você precisará para começar a trabalhar com cada NFT. O Metaplex pegará esses dados e os armazenará **dentro da blockchain** para você. Bem legal. Existem certos atributos que mudam para cada arquivo `json`, como: `name`, `image` e `uri`. 
 

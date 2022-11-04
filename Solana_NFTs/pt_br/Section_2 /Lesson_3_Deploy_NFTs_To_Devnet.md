@@ -2,12 +2,9 @@ Esta será uma das partes mais épicas deste projeto - trazer sua Candy Machine 
 
 A Candy Machine Sugar tornou esse processo muito mais simples. Com apenas um comando, você fará o seguinte:
 
-
-
 1. Faça o upload dos seus NFTs no [NFT Storage](https://nft.storage/) (que é um armazenamento de arquivos descentralizado) - ou use qualquer opção de armazenamento configurada em seu `config.json` - e inicialize a configuração da sua Candy Machine.
 2. Crie sua Candy Machine no contrato do Metaplex.
 3. Configure sua Candy Machine com o preço, número, data de lançamento e várias outras coisas.
-
 
 ### 🔑 Configurando um par de chaves Solana.
 
@@ -17,22 +14,17 @@ Para fazermos o upload dos NFTs para a Solana, precisamos trabalhar com uma "car
 
 Isso pode ser feito executando o comando abaixo. _Nota: Quando for solicitado, não há necessidade de fornecer uma senha. Basta deixar vazio e pressionar enter._
 
-
 ```plaintext
 solana-keygen new --outfile ~/.config/solana/devnet.json
 ```
 
-
 A partir daqui, podemos definir este par de chaves como nosso par de chaves padrão.
-
 
 ```plaintext
 solana config set --keypair ~/.config/solana/devnet.json
 ```
 
-
 Agora, quando executarmos `solana config get`, você deverá ver o arquivo `devnet.json` sendo declarado como `Keypair Path` (caminho do par de chaves). Veja abaixo:
-
 
 ```plaintext
 Config File: /Users/flynn/.config/solana/cli/config.yml
@@ -42,17 +34,13 @@ Keypair Path: /Users/flynn/.config/solana/devnet.json
 Commitment: confirmed
 ```
 
-
 A partir daqui você pode executar:
 
-
-```
+```plaintext
 solana balance
 ```
 
-
 Aqui deve exibir `0 SOL`. Não podemos implantar coisas na Solana sem SOL, pois gravar dados na blockchain custa dinheiro. Nesse caso, estamos na rede de desenvolvimento, então podemos nos dar um pouco de SOL falso. Vá em frente e execute:
-
 
 ```plaintext
 solana airdrop 2
@@ -60,11 +48,9 @@ solana airdrop 2
 
 Depois disso, você pode executar `solana balance` novamente e pronto, você terá um pouco de SOL. _Nota: se você ficar sem SOL falso, você pode simplesmente executar este comando novamente._
 
-
 ### ⚙ Configure sua Candy Machine
 
 Para dizer à sua Candy Machine como ela deve se comportar, você precisa configurá-la. A versão Sugar torna isso bem fácil! Execute o `sugar create-config` na pasta raiz do seu projeto (o mesmo local da pasta assets) e preencha tudo o que for requisitado. Caso contrário, você pode simplesmente criar um `config.json` na pasta raiz do seu projeto. É assim que sua configuração deve ficar:
-
 
 ```json
 {
@@ -113,7 +99,7 @@ A única coisa que você precisará alterar aqui é o endereço da sua carteira.
 
 ### Armazenamento Alternativo
 
-Se você acha que o nft.storage não é bom e está procurando um armazenamento de imagem alternativo, considere usar o Bundlr. É assim que seu `config.js` deve ficar.
+Se você acha que o nft.storage não é bom e está procurando um armazenamento de imagens alternativo, considere usar o Bundlr. É assim que seu `config.js` deve ficar.
 
 ```json
 {
@@ -151,11 +137,9 @@ Agora vamos usar o comando `upload` do Sugar para fazer o upload de nossos NFTs 
 
 Observe como colocamos `./assets` no comando abaixo. Isso significa que precisamos executar este comando de apenas um nível fora da pasta `assets`.
 
-
 ```plaintext
 sugar upload
 ```
-
 
 _Nota: se você receber um erro como "no such file or directory, scandir './assets'" significa que você executou o comando no lugar errado. Certifique-se de executá-lo no mesmo diretório onde está a sua pasta `assets`._
 
@@ -250,16 +234,13 @@ Sending config line(s) in 1 transaction(s): (Ctrl+C to abort)
 
 Antes de prosseguir, verifique se seus NFTs foram realmente carregados executando o comando `verify`:
 
-
 ```plaintext
 sugar verify
 ```
 
-
-_Nota: Você notará aqui que não informamos nada a este comando sobre nossos NFTs. Como então ele sabe o que verificar? Bem, o arquivo `cache.json` tem todos os dados._
+**Nota: Você notará aqui que não informamos nada a este comando sobre nossos NFTs. Como então ele sabe o que verificar? Bem, o arquivo `cache.json` tem todos os dados.**
 
 Se tudo correu bem, seu output deve se parecer um pouco com isso:
-
 
 ```bash
 sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar verify
@@ -286,17 +267,13 @@ Se você olhar no arquivo `cache.json`, encontrará um atributo `image_link` ane
 
 O Arweave funciona assim: pague uma vez, armazene **para sempre**. Eles fazem isso usando um [algoritmo](https://arwiki.wiki/#/en/storage-endowment#toc_Transaction_Pricing) criado por eles que basicamente estima o custo necessário para armazenar algo para sempre com base no tamanho. Você pode brincar com a calculadora [aqui](https://arweavefees.com/). Por exemplo, para armazenar 1 MB para sempre, custa `~US$0,0083649802618`. Nada mal!
 
-
 ### 🔨 Atualize a configuração da Candy Machine.
 
 Para atualizar a configuração da sua Candy Machine, tudo o que você precisa fazer é atualizar o arquivo `config.json` e executar este comando:
 
-
 ```plaintext
 sugar update
 ```
-
-
 
 ### 😡 Esteja ciente deste erro.
 
@@ -315,7 +292,7 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
 ```
 
 
-Isso significa que o comando não pode acessar o arquivo `cache.json` com os dados importantes em torno de sua Candy Machine e NFTs. Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos do Sugar no mesmo diretório onde estão o arquivo `cache.json` e a pasta `assets`. Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine; verifique sempre o seu diretório!!
+Isso significa que o comando não pode acessar o arquivo `cache.json` com os dados importantes da sua Candy Machine e dos seus NFTs. Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos do Sugar no mesmo diretório onde estão o arquivo `cache.json` e a pasta `assets`. Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine; verifique sempre o seu diretório!!
 
 
 ### 🚨 Relatório de progresso

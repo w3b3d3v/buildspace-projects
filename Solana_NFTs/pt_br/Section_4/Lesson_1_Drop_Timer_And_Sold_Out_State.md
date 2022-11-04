@@ -10,7 +10,6 @@ Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento 
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
-
 ```plaintext
 /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
       return fs.readdirSync(`${val}`).map(file => path.join(val, file));
@@ -32,7 +31,6 @@ Este temporizador precisa fazer algumas coisas:
 
 Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer` com um arquivo `CountdownTimer.css` dentro dela. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
 
-
 ```jsx
 import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
@@ -52,25 +50,19 @@ const CountdownTimer = ({ dropDate }) => {
 export default CountdownTimer;
 ```
 
-
-​
-
 Estamos configurando um componente React bem simples que manterá algum estado e receberá uma `dropDate` (data do drop).
 
 Massa! Antes de prosseguirmos, vamos importar o componente `app/components/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
 
-
 ```jsx
 import CountdownTimer from '../CountdownTimer';
 ```
-
 
 A partir daqui, podemos configurar nossa lógica para lidar com quando mostrar esse cronômetro de contagem regressiva.
 
 No nosso caso, só queremos mostrar esse componente se a data atual for **anterior** à data do drop. **Caso contrário**, iremos em frente e mostraremos a data e hora do drop.
 
 Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/components/CandyMachine/index.js`.
-
 
 ```jsx
 // Crie a função de renderização
@@ -108,7 +100,6 @@ return (
   )
 );
 ```
-
 
 Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
 
@@ -173,7 +164,6 @@ Podemos descobrir isso verificando duas propriedades - `itemsRedeemed` e `itemsA
 
 Esse processo vai ser bem fácil de fazer! Vamos para o nosso componente `CandyMachine` e então seguimos para a função de renderização dos componentes. Adicione o seguinte:
 
-
 ```jsx
 return (
   candyMachine && candyMachine.state && (
@@ -200,7 +190,6 @@ return (
 ![Untitled](https://i.imgur.com/fYEzoeg.png)
 
 Está ficando bem Legal!!
-
 
 ### 🎨 A Magia do CSS
 
