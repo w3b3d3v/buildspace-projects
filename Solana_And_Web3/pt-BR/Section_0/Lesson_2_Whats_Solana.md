@@ -1,7 +1,7 @@
 <h1>🤔O que é Solana ?</h1>
-Vamos gastar muito tempo mergulhando em Solana neste projeto e você terá muito tempo para aprender sobre o que diabos Solana é **realmente construindo** sobre ela.
+Vamos gastar muito tempo mergulhando em Solana neste projeto e você terá muito tempo para aprender sobre o que diabos Solana é **realmente construindo**.
 
-Não se preocupe - vamos chegar em um monte de coisas como Solana tem baixas taxas de gás, como é muito rápido, etc.
+Não se preocupe - vamos chegar em um monte de coisas como: Solana tem baixas taxas de gás, é muito rápido, etc.
 
 Eu **não** quero que gastemos muito tempo em teoria aqui.
 
@@ -37,13 +37,13 @@ Por exemplo - hoje, não discutimos sobre qual _linguagem de servidor backend_ �
 
 Nós apenas escolhemos aquela com a qual nos sentimos mais confortáveis ​​ou aquela que faz mais sentido para nosso caso de uso. Por exemplo, se a velocidade é seu objetivo, escrever seu back-end em Go pode fazer sentido. Se você quer apenas tirar algo do chão, algo como Node ou Ruby pode ser melhor.
 
-É basicamente assim que devemos olhar para diferentes blockchains. Cada uma tem suas próprias prós e contras e você deve escolher aquela que se adapta ao seu caso de uso ou nível de conforto. Solana é conhecida como a blockchain super rápida e de baixo custo de gás - e neste projeto vamos mexer com ele para que você possa ter uma ideia de como é! **Crie sua própria opinião!!**
+É basicamente assim que devemos olhar para diferentes blockchains. Cada uma tem seus próprios prós e contras e você deve escolher aquela que se adapta ao seu caso de uso ou nível de conforto. Solana é conhecida como a blockchain super rápida e de baixo custo de gás - e neste projeto vamos mexer com ele para que você possa ter uma ideia de como é! **Crie sua própria opinião!!**
 
 ### ⛓ Futuro da cross chain
 
-Cada blockchain tem seus próprios prós e contras. Eu não acho que nenhuma das grandes blockchains seja "a melhor". E nós **não** **precisamos** ter apenas uma para ser a melhor. A concorrência é boa. Um mundo onde _apenas_ a Apple fabrica smartphones seria uma droga. Um mundo onde apenas todo mundo torce pro Corinthians seria uma droga. Precisamos de muitas pessoas impulsionando a indústria à sua maneira.
+Cada blockchain tem seus próprios prós e contras. Eu não acho que nenhuma das grandes blockchains seja "a melhor". E nós **não** **precisamos** ter apenas uma para ser a melhor. A concorrência é boa. Um mundo onde _apenas_ a Apple fabricasse smartphones seria uma droga. Um mundo onde apenas todo mundo torce pro Corinthians seria uma droga. Precisamos de muitas pessoas impulsionando a indústria à sua maneira.
 
-_Esta é apenas uma opinião pessoal_, mas acho que estamos nos movendo rapidamente para um mundo onde teremos muitas blockchains diferentes (já acontecendo agora). Isso é realmente uma coisa boa. Em vez de uma blockchain ser uma vencedora clara, temos muitas chains diferentes, cada uma com suas próprias especialidades. Se você quiser depois explorar outras blockchains, saiba que existem vários canais no Discord da WEB3DEV exclusivos para cada tecnologia. Também encontra muitos vídeos no YouTube da comunidade sobre várias blockchains diferentes. Todos os vídeos são criados pelas próprias pessoas da comunidade como você!
+_Esta é apenas uma opinião pessoal_, mas acho que estamos nos movendo rapidamente para um mundo onde teremos muitas blockchains diferentes (já acontecendo agora). Isso é realmente uma coisa boa. Em vez de uma blockchain ser uma vencedora clara, temos muitas chains diferentes, cada uma com suas próprias especialidades. Se você quiser depois explorar outras blockchains, saiba que existem vários canais no Discord da WEB3DEV exclusivos para cada tecnologia. Também encontra muitos vídeos no YouTube da comunidade sobre várias blockchains diferentes. Todos os vídeos são criados pelas próprias pessoas da comunidade, como você!
 
 **Mas teremos [pontes](https://www.web3dev.com.br/fatimalima/o-que-sao-bridges-pontes-nocoes-basicas-fatos-e-estatisticas-do-brigde-9gm) que permitem que diferentes redes conversem entre si.**
 
