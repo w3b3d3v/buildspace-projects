@@ -92,4 +92,4 @@ Em seguida, vamos configurar as funções que precisamos para chamar nosso progr
 
 Por favor, faça isso, senão o Farza vai ficar triste :(
 
-Publique em `#progress` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública 😊.
+Publique em `#progresso` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública 😊.

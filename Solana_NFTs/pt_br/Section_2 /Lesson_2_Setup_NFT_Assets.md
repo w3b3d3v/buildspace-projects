@@ -84,4 +84,4 @@ Você pode até dar um nome específico à sua coleção se quiser, adicionando 
 
 Por favor, faça isso, senão o Farza vai ficar triste :(
 
-Do que você está fazendo seus NFTs? Mostre pra gente em `#progress`.
+Do que você está fazendo seus NFTs? Mostre pra gente em `#progresso`.
