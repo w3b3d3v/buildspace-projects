@@ -193,7 +193,7 @@ Está ficando bem Legal!!
 
 ### 🎨 A Magia do CSS
 
-Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine :)!
+Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine 😊!
 
 
 ### 🚨 Relatório de progresso

@@ -33,7 +33,7 @@ Uma coisa que é muito especial sobre a Candy Machine é que ela não aceitará 
 
 Este é um problema clássico na computação paralela. A correção é usar algo chamado [mutex](https://doc.rust-lang.org/std/sync/struct.Mutex.html) junto com uma [transação atômica](https://en.wikipedia.org/wiki/Atomicity_(database_systems)), que são decentemente complexos de implementar.
 
-**A Candy Machine do Metaplex implementa isso para nós :).**
+**A Candy Machine do Metaplex implementa isso para nós 😊.**
 
 A Candy Machine também tem algumas outras coisas interessantes que vamos cobrir depois, mas espero que esta visão geral te ajude mais tarde! Sinta-se à vontade para voltar a ela assim que se aprofundar mais nas coisas da Candy Machine.
 

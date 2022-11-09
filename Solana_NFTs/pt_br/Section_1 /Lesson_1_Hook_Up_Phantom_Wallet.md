@@ -4,7 +4,7 @@ Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-st
 
 ![image](https://i.imgur.com/p2FTyAM.png)
 
-Massa! Quando você faz o fork deste repositório, na verdade você está criando uma cópia idêntica dele que fica no seu perfil do Github. Então agora você tem sua própria versão deste código que você pode editar para o conteúdo de sua escolha :). Isso também será útil quando estivermos prontos para implantar nosso aplicativo no Vercel 🤘.
+Massa! Quando você faz o fork deste repositório, na verdade você está criando uma cópia idêntica dele que fica no seu perfil do Github. Então agora você tem sua própria versão deste código que você pode editar para o conteúdo de sua escolha 😊. Isso também será útil quando estivermos prontos para implantar nosso aplicativo no Vercel 🤘.
 
 O passo final aqui é transferir o repositório do fork que você acabou de fazer para a sua máquina local. Clique no botão "Code" (Código) e copie esse link!
 
@@ -17,7 +17,7 @@ Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que
 git clone SEU_LINK_DO_FORK
 ```
 
-Aí está :). Hora de codificar!
+Aí está 😊. Hora de codificar!
 
 ### 🔌 Criando um botão de conexão de carteira com a Phantom Wallet
 

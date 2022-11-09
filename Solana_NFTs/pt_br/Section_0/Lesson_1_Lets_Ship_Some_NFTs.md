@@ -2,7 +2,7 @@
 
 ### 👋 Bem vindo
 
-Você conseguiu - aí sim!! Bem-vindo :). Meu nome é Farza, e eu sou o cara que vai conversar com você por aqui.
+Você conseguiu - aí sim!! Bem-vindo 😊. Meu nome é Farza, e eu sou o cara que vai conversar com você por aqui.
 
 Este projeto é para desenvolvedores que desejam entrar no mundo Solana, que agora é uma das maiores blockchains do mundo.
 
@@ -11,12 +11,12 @@ Tudo o que você realmente precisa saber para fazer isso são **algumas habilida
 Algumas ações a serem feitas antes de seguir em frente:
 
 * **Conecte o seu Discord no painel do projeto**. Todas as coisas legais acontecerão em uma categoria secreta do Discord, à qual você só terá acesso quando conectar o seu Discord.
-* **Conecte a sua carteira Ethereum no painel do projeto.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs :).
+* **Conecte a sua carteira Ethereum no painel do projeto.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
 * **Certifique-se de participar da live de lançamento do Bootcamp**. Se você não puder participar, não se preocupe. Não é obrigatório comparecer! A gravação será publicada no Discord em **#info-board**.
 
 ### 🛠 O projeto
 
-Então, o que vamos construir aqui :)? Segue um pequeno vídeo:
+Então, o que vamos construir aqui 😊? Segue um pequeno vídeo:
 
 [Loom](https://www.loom.com/share/837446b7f9f44e519e383a39df620c98)
 
@@ -42,7 +42,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo ;)
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/buildspace/buildspace-projects). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@alec` no Discord :).
+[Todo esse conteúdo é totalmente open-source](https://github.com/buildspace/buildspace-projects). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@alec` no Discord 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 

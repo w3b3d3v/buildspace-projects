@@ -84,7 +84,7 @@ Depois de pressionar em conectar, seu botão deve desaparecer! ISSO É EXCELENTE
 
 Demos passos bem grandes aqui! Você tem sua configuração básica de interface do usuário e pode facilmente "autenticar" um usuário com sua carteira Solana. Fácil.
 
-Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso :).
+Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso 😊.
 
 *Nota: Nas configurações da carteira Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Aplicativos confiáveis". Aqui, você verá seu URL do Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para **revogar** isso se quiser testar o caso de alguém que nunca esteve conectado antes acessar seu site. Ele basicamente redefinirá o acesso de suas carteiras ao site e mostrará o botão "Conectar à carteira" novamente.*
 
@@ -92,4 +92,4 @@ Em seguida, vamos configurar as funções que precisamos para chamar nosso progr
 
 Por favor, faça isso, senão o Farza vai ficar triste :(
 
-Publique em `#progress` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública :).
+Publique em `#progress` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública 😊.

@@ -67,7 +67,7 @@ Se você errar, mesmo que seja em um pequeno detalhe, tudo vai dar errado. Entã
 
 A primeira coisa que vamos fazer é pegar os metadados da nossa Candy Machine. Esses metadados nos fornecem algumas informações interessantes, como a data do drop, quantos itens foram cunhados e quantos itens estão disponíveis para cunhar.
 
-Também é bom começar com esse processo, porque se pudermos pegar os metadados, isso significa que configuramos nossa Candy Machine corretamente :).
+Também é bom começar com esse processo, porque se pudermos pegar os metadados, isso significa que configuramos nossa Candy Machine corretamente 😊.
 
 Vá para `app/components/CandyMachine/index.js`.
 
@@ -234,7 +234,7 @@ return (
 );
 ```
 
-Observe como declaramos `wallet` para `CandyMachine` :).
+Observe como declaramos `wallet` para `CandyMachine` 😊.
 
 ### 🍪 Renderize os dados recuperados
 
@@ -258,7 +258,7 @@ const goLiveDateTimeString = `${new Date(
 
 _Você escolhe se quer fazer isso ou não._
 
-Se você acessar seu site, verá que algumas coisas já estão renderizadas, mas não estamos renderizando nenhum dos dados reais. Vamos fazer isso então. _A propósito, o design não está muito legal agora, mas você terá a oportunidade de consertar isso :)_.
+Se você acessar seu site, verá que algumas coisas já estão renderizadas, mas não estamos renderizando nenhum dos dados reais. Vamos fazer isso então. _A propósito, o design não está muito legal agora, mas você terá a oportunidade de consertar isso 😊_.
 
 Então, para mostrar os dados, vamos manter as estatísticas da nossa Candy Machine em uma variável de estado. Siga adiante e importe `useState` em seu componente `CandyMachine` em `app/components/CandyMachine/index.js`, então vá em frente e adicione o seguinte código:
 

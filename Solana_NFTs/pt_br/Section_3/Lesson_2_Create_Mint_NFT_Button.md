@@ -200,7 +200,7 @@ Na verdade, criei dois NFTs separadamente, então, vejo dois! Você verá que "I
 
 Você trabalhou muito para isso acontecer. Agora é hora de se divertir e deixar o seu NFT ainda melhor. Na próxima seção, adicionaremos uma interface de usuário que exibirá todas os NFTs já cunhados em seu aplicativo da web.
 
-Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Altere o CSS. Dê uma respirada... :)
+Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Altere o CSS. Dê uma respirada... 😊
 
 ### 🚨 Relatório de progresso
 
