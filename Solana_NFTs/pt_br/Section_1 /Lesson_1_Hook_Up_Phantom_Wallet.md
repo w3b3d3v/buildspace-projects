@@ -42,7 +42,7 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
@@ -54,7 +54,7 @@ const WalletMultiButtonDynamic = dynamic(
     // Ações
     const renderNotConnectedContainer = () => (
         <div>
-            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji"/>
 
             <div className="button-container">
                 <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />

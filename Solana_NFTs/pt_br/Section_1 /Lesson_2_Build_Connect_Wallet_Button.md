@@ -50,7 +50,7 @@ const WalletMultiButtonDynamic = dynamic(
 
                 <div className="footer-container">
                     <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Construído no @${TWITTER_HANDLE}`}</a>
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Construído na @${TWITTER_HANDLE}`}</a>
                 </div>
             </div>
         </div>

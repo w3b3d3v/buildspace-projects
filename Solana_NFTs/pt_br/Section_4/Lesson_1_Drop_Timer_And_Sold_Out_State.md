@@ -22,7 +22,7 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 ```
 
-Então significa que o comando não pode acessar a pasta .cache, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão as pastas .cache e assets.
+Então significa que o comando não pode acessar a pasta assets e o arquivo cache.json, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
 
 Este temporizador precisa fazer algumas coisas:
 
