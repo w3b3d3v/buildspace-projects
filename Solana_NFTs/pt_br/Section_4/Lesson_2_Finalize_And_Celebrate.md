@@ -89,7 +89,7 @@ Nota: No Vercel, você precisará adicionar a 6ª variável de ambiente como `CI
 
 É super emocionante que você conseguiu chegar ao fim. Isso é algo grandioso!! A Solana ainda está **super no início** e já é muito poderosa! E agora você teve a chance de mexer com a tecnologia principal. Aí sim!! Agora você tem todas as habilidades que precisa para construir seus próprios drops de NFT na Solana.
 
-Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de você saber como isso funciona e como codificar tudo isso é um superpoder. Use seu poder com sabedoria ;).
+Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de você saber como isso funciona e como codificar tudo isso é um superpoder. Use seu poder com sabedoria 😉.
 
 ### 🌈 Antes de você ir embora
 

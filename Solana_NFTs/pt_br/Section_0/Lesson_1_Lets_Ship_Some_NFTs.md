@@ -40,7 +40,7 @@ Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
 Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do buildspace. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#section-3-help` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
-### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo ;)
+### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
 [Todo esse conteúdo é totalmente open-source](https://github.com/buildspace/buildspace-projects). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@alec` no Discord 😊.
 
