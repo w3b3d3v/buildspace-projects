@@ -16,7 +16,7 @@ Então isso significa que a Solana não presta? Beeem... Não, eu não penso ass
 
 Eu acho que como a Solana é uma tecnologia muito **nova**, está mudando com frequência, então é difícil apenas pesquisar no Google sobre uma questão ou obter uma resposta clara e concisa do Solana Docs.
 
-Em 2015, eu estava bem interessado em machine learning, que era bem novo na época. Em 2015, os documentos sobre machine learning eram péssimos e era difícil apenas procurar uma resposta para uma pergunta, porque na maioria das vezes eu era a primeira pessoa a fazer essa pergunta (risos). _Cabia a mim descobrir uma resposta e, em seguida, atualizar os documentos por conta própria._
+Em 2015, eu estava bem interessado em machine learning, que era bem novo na época. Em 2015, os documentos sobre machine learning eram péssimos e era difícil apenas procurar uma resposta para uma pergunta, porque na maioria das vezes eu era a primeira pessoa a fazer essa pergunta 😂 . _Cabia a mim descobrir uma resposta e, em seguida, atualizar os documentos por conta própria._
 
 Esse é o preço de brincar com uma tecnologia emergente 😊.
 

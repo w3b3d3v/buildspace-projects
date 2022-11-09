@@ -1,6 +1,6 @@
 ### 🌍 Aprimore seus NFTs com IPFS
 
-Ao implantar na devnet, você não precisa se preocupar em armazenar seus NFTs, pois o Metaplex permite que você carregue até 10 ativos gratuitamente. Isso é super útil, mas você não pode depender disso quando for para a rede principal (risos).
+Ao implantar na devnet, você não precisa se preocupar em armazenar seus NFTs, pois o Metaplex permite que você carregue até 10 ativos gratuitamente. Isso é super útil, mas você não pode depender disso quando for para a rede principal 😂 .
 
 O que acontece quando você quiser ir para a rede principal? Você pode seguir a rota padrão e enviá-los para o Arweave, mas isso custará algum dinheiro. Em vez disso, podemos usar algo chamado [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System). Em poucas palavras, é um sistema de armazenamento de arquivos descentralizado, semelhante ao Arweave, mas **muito** mais barato (às vezes até gratuito). Achei mais fácil usar o [Pinata](https://www.pinata.cloud/?utm_source=buildspace) para fazer o upload para o IPFS. Além disso, eles oferecem 1 GB de armazenamento gratuito, o que é suficiente para milhares de ativos. Eu ainda não implantei nada na rede principal, mas de qualquer maneira usei o Pinata, porque ele permite fazer o upload de arquivos muito maiores.
 
@@ -54,7 +54,7 @@ E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você q
 
 ### 🚀 Lance para o mundo
 
-A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores do Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
+A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento 😂 . Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores do Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
 
 Deixei um vídeo bem rápido abaixo sobre a implantação via Vercel. Se você não quiser usar o Vercel, tudo bem. Use o programa que quiser.
 

@@ -16,7 +16,7 @@ Antes de começarmos, você notará em `components/CandyMachine/index.js` que ex
 
 Algumas coisas neste arquivo são bastante avançadas, mas explore-as e mexa com elas da forma que quiser. A melhor maneira de aprender essas coisas é apenas lendo o código e brincando com ele.
 
-Mas, não se preocupe muito em explorar ainda. Vamos fazer as coisas funcionarem primeiro (risos)!
+Mas, não se preocupe muito em explorar ainda. Vamos fazer as coisas funcionarem primeiro 😂 !
 
 ### 🌲 Configurar as propriedades `.env`
 
@@ -171,7 +171,7 @@ OK - muita coisa está acontecendo aqui. Vamos conferir.
 
 Para podermos conversar com nossa Candy Machine, precisaremos de duas coisas - **a `IDL`** (Interface Definition Language, ou Linguagem de Definição de Interface) **e um objeto `Program`**. A `IDL` tem informações que nosso aplicativo da web precisa, sobre como interagir com a Candy Machine. O `Program` é um objeto que podemos usar para **interagir diretamente** com a Candy Machine.
 
-Você sabe como criar uma conexão com uma `Database` na web2? Bem - aqui estamos fazendo algo semelhante (risos). Mas estamos criando uma conexão com a Solana.
+Você sabe como criar uma conexão com uma `Database` na web2? Bem - aqui estamos fazendo algo semelhante 😂 . Mas estamos criando uma conexão com a Solana.
 
 No final das contas, nossa Candy Machine é apenas um programa da Solana que mora no Metaplex! Isso significa que podemos interagir com ela exatamente como faríamos com qualquer programa que resida na Solana.
 
@@ -362,7 +362,7 @@ return (
 
 É simples assim! Você deve ver todos os dados bem renderizados em seu aplicativo da web agora.
 
-Forneci um arquivo `CandyMachine.css` que inclui alguns estilos básicos para você. Quando estiver pronto para fazer algumas alterações, vá até lá e adicione o CSS que quiser para torná-lo seu. Mesmo se você for preguiçoso, basta mudar algumas cores por ali. Crie um estilo só seu. Não faça igual ao meu (risos).
+Forneci um arquivo `CandyMachine.css` que inclui alguns estilos básicos para você. Quando estiver pronto para fazer algumas alterações, vá até lá e adicione o CSS que quiser para torná-lo seu. Mesmo se você for preguiçoso, basta mudar algumas cores por ali. Crie um estilo só seu. Não faça igual ao meu 😂 .
 
 Você notará que tem um botão "Cunhar NFT" bem bacana, mas quando você clica nele, nada acontece 😔.
 

@@ -139,7 +139,7 @@ try {
 
 Isso você já sabe! Usamos um provedor, nossa carteira, todas as nossas instruções e, em seguida, chamamos `sendTransactions`, que é uma função que se comunica com a blockchain. **Este é o momento mágico onde realmente chegamos para a nossa Candy Machine e dizemos para ela cunhar nosso NFT**.
 
-Eu passei por todas essas etapas, então, certifique-se de passar por tudo isso também! Além disso, seria incrível se alguém fizesse disso tudo um módulo NPM bem legal (risos).
+Eu passei por todas essas etapas, então, certifique-se de passar por tudo isso também! Além disso, seria incrível se alguém fizesse disso tudo um módulo NPM bem legal 😂 .
 
 ### ✨ Cunhe o seu NFT
 
@@ -182,7 +182,7 @@ Legal, então agora quando você clicar em "Cunhar NFT", verá um pop-up como es
 
 Depois de clicar em "Aprovar" e pagar a taxa de transação, sua carteira dirá à sua Candy Machine para cunhar o NFT.
 
-**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo (risos). No seu navegador, sugiro manter o console aberto para a conferência dos logs. Deve demorar uns 3-10 segundos.
+**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo 😂 . No seu navegador, sugiro manter o console aberto para a conferência dos logs. Deve demorar uns 3-10 segundos.
 
 Uma vez que seu NFT for cunhado com sucesso, você verá algo assim em seu console:
 

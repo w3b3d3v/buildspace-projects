@@ -146,7 +146,7 @@ useEffect(() => {
 ```
 
 
-Sinta-se à vontade para copiar e colar todas essas coisas de tempo (risos). Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
+Sinta-se à vontade para copiar e colar todas essas coisas de tempo 😂 . Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
 
 Então é isso!!
 

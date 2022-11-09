@@ -12,7 +12,7 @@ Bem, vamos comparar! Na Ethereum, para criar um NFT, o que faríamos é criar no
 
 Utilizar o Metaplex é **bem** diferente. Com o Metaplex **não** precisamos redigir nosso próprio contrato. O Metaplex já implantou seus próprios contratos NFT padrão com os quais **qualquer desenvolvedor** pode interagir e construir suas próprias coleções de NFTs.
 
-Isso é meio louco. É como se fosse um contrato-inteligente-como-um-serviço (risos).
+Isso é meio louco. É como se fosse um contrato-inteligente-como-um-serviço 😂 .
 
 Alguns de vocês podem dizer algo como "Que chato isso! Quero eu mesmo criar um programa personalizado". Você pode totalmente fazer isso. [Aqui está](https://github.com/metaplex-foundation/metaplex-program-library/blob/master/candy-machine/program/src/lib.rs) o código. Mas, é bem complexo. Por quê? Principalmente porque a Solana permite transações paralelas. Portanto, seu código precisa levar em conta casos como "se 5 pessoas forem cunhar um NFT ao mesmo tempo e apenas restarem 2 NFTs, quem levará?".
 
