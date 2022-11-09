@@ -17,7 +17,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import dynamic from 'next/dynamic';
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {

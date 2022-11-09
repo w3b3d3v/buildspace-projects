@@ -206,4 +206,4 @@ Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Alt
 
 Por favor, faça isso, senão o Farza vai ficar triste :(
 
-Em `#progress`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar o `@_buildspace`!
+Em `#progress`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar a `@web3dev_`!

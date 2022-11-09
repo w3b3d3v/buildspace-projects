@@ -90,7 +90,7 @@ Durante todo este projeto estaremos construindo diretamente na devnet da Solana.
 
 ### ☹️ Ahhhh me ajude… tem alguma coisa quebrada!
 
-Que droga! Pode ser meio difícil de fazer a Solana funcionar. Contudo, estamos dispostos a ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas do Buildspace possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
+Que droga! Pode ser meio difícil de fazer a Solana funcionar. Contudo, estamos dispostos a ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da web3dev possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
 
 ### 🤩 Começando com a CLI do Metaplex 
 

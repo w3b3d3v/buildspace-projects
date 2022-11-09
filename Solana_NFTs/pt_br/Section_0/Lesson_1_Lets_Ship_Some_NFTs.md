@@ -38,7 +38,7 @@ Veja como ele é:
 
 Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
-Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel do buildspace. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#section-3-help` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
+Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página, no seu painel da web3dev. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#section-3-help` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
