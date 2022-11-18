@@ -19,6 +19,8 @@ git clone SEU_LINK_DO_FORK
 
 Aí está 😊. Hora de codificar!
 
+Leia o arquivo `README.md` com as instruções para instalar as depências do necessárias e também rodar localmente o App. 
+
 ### 🔌 Criando um botão de conexão de carteira com a Phantom Wallet
 
 Para este projeto, usaremos uma carteira chamada [Phantom](https://phantom.app/). Esta é uma das principais extensões de carteira para Solana.
@@ -33,9 +35,11 @@ Assim que conectarmos nossa carteira ao nosso site, este terá permissão para e
 
 **Lembre-se, é como se autenticar em um site.** Se você não estiver "conectado" ao GMail, não poderá usar o produto de e-mail deles!
 
-Vá até seu código e acesse `index.js` em `pages`. É aqui que estará o principal ponto de entrada do nosso aplicativo.
+Vá até seu código e acesse `index.js` em `app/pages`. É aqui que estará o principal ponto de entrada do nosso aplicativo.
 
 Se você tiver a extensão Phantom Wallet instalada, ela injetará automaticamente um objeto especial chamado `solana` em seu objeto `window` que possui algumas funções mágicas. Isso significa que antes de fazermos qualquer coisa, precisamos verificar se isso existe. Se não existir, vamos dizer ao nosso usuário para fazer o download:
+
+Veja aqui as mudanças que eu fiz no `index.js`, atulize no seu código substituindo ou apenas adiconando as modicações.
 
 ```jsx
 import React from "react";
@@ -74,7 +78,7 @@ const WalletMultiButtonDynamic = dynamic(
 
                 <div className="footer-container">
                     <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`built on @${TWITTER_HANDLE}`}</a>
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`construido na @${TWITTER_HANDLE}`}</a>
                 </div>
             </div>
         </div>
@@ -158,9 +162,11 @@ const App = ({ Component, pageProps }) => {
 
 export default App;
 ```
-E agora execute `npm run dev` e clique no botão `Select Wallet`. Ele deve listar algumas carteiras para você escolher, dependendo de como você configura seus adaptadores.
 
-<img src="https://i.imgur.com/0BZZTsD.png" />
+
+Certifique-se de ter instalado as depências e estar na pasta `app` e agora execute `npm run dev` e clique no botão `Select Wallet`. Ele deve listar algumas carteiras para você escolher, dependendo de como você configura seus adaptadores.
+
+<img src="https://i.imgur.com/TSV1xWk.png" />
 
 Como testamos este projeto totalmente com as Phantom Wallets, recomendamos manter isso. No entanto, nada o impede de explorar ou apoiar outras carteiras 👀.
 
@@ -168,9 +174,9 @@ Como testamos este projeto totalmente com as Phantom Wallets, recomendamos mante
 
 Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso
 
-<img src="https://i.imgur.com/Rsg01DA.png" />
+<img src="https://i.imgur.com/jbMvgpr.png" />
 
-_Para obter instruções adicionais sobre como executar seu aplicativo, consulte o `README.md` na raiz do seu projeto._
+_Lembrando que para obter instruções adicionais sobre como executar seu aplicativo, consulte o `README.md` na raiz do seu projeto._
 
 **LEGAL!**
 
@@ -178,17 +184,8 @@ Em seguida, precisamos realmente verificar se estamos **autorizados** a acessar 
 
 Basicamente, a **Phantom Wallet não simplesmente fornece as informações da nossa carteira para todos os sites que visitamos**. Ela só as fornece a sites que autorizamos. Até agora, **não** demos acesso explícito à Phantom para compartilhar as informações de nossa carteira.
 
-A primeira coisa que precisamos fazer é verificar se um usuário nos deu permissão para usar sua carteira em nosso site - isso é como verificar se nosso usuário está "conectado". 
-
-```jsx
-const wallet = useWallet();
-```
-`useWallet()` é um gancho personalizado que verifica se a carteira está conectada. Se estiver, retornará todas as informações necessárias sobre essa carteira.
-
-E é isso!
-
 ### 🚨 Relatório de progresso
 
-_Por favor, faça isso, senão o Farza vai ficar triste :(_
+_Por favor, faça isso, senão o Yan vai ficar triste 😔_
 
-Poste uma captura de tela em `#progresso` mostrando a mensagem "Phantom wallet encontrada!" no seu console. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
+Poste uma captura de tela em `#progresso` com o seu App inicial contendo a abreviação da sua carteira. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.

@@ -6,7 +6,7 @@ Bora lá fazer isso!
 
 ### 🎩 Passando pela função `mintToken`
 
-Em seu componente `CandyMachine`, você verá uma função chamada `mintToken`. Ela faz parte da biblioteca de front-end do Metaplex.
+Dentra da função `CandyMachine`, no diretório `app/components/CandyMachine/index.js` você verá uma função chamada `mintToken`. Ela faz parte da biblioteca de front-end do Metaplex.
 
 Esta função é bastante complexa. Eu não vou passar por ela linha por linha. Vá e descubra como funciona você mesmo! Uma coisa que eu recomendo fazer é usar CMD (MacOS) ou CTRL (Windows) + clique nas funções para ver como elas funcionam em um nível inferior. Observar o código geralmente é a melhor maneira de aprender como ele funciona.
 
@@ -163,9 +163,9 @@ return (
 
 Antes de clicar em "Cunhar NFT", você precisa ter certeza que tem algum SOL da devnet em sua carteira Phantom. Esse processo é muito fácil.
 
-Primeiro pegue o endereço público da sua carteira Phantom:
+Primeiro pegue o endereço público da sua carteira clicando em `Wallet`:
 
-![Untitled](https://i.imgur.com/WfbIPsb.png)
+![Untitled](https://i.imgur.com/VZrnzNw.png)
 
 Então, no seu terminal, execute:
 
@@ -174,27 +174,31 @@ Então, no seu terminal, execute:
 solana airdrop 2 INSIRA_O_ENDEREÇO_DA_SUA_CARTEIRA_PHANTOM
 ```
 
-E é isso. Parabéns por todo o dinheiro grátis que você recebeu hehe.
+E é isso. Parabéns por todo o dinheiro grátis que você recebeu 😂.
 
 Legal, então agora quando você clicar em "Cunhar NFT", verá um pop-up como este abaixo:	
 
-![Untitled](https://i.imgur.com/FS4RbPS.png)
+![Untitled](https://i.imgur.com/F12wMOq.png)
 
 Depois de clicar em "Aprovar" e pagar a taxa de transação, sua carteira dirá à sua Candy Machine para cunhar o NFT.
 
-**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo 😂 . No seu navegador, sugiro manter o console aberto para a conferência dos logs. Deve demorar uns 3-10 segundos.
+**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo 😂.
 
-Uma vez que seu NFT for cunhado com sucesso, você verá algo assim em seu console:
+A primeira coisa a se fazer é abrir a última aba da carteira Phaton e verificar as transações :
 
-![Untitled](https://i.imgur.com/EszxhAH.png)
+![Untitled](https://i.imgur.com/5PCi1Vi.png)
 
-Você cunhou com **SUCESSO** seu primeiro NFT na Solana. **Isso aí! Então, onde está o NFT?**
+Clicando na transação você pode abrir o site do explorer Solana.
 
-Para verificar se isso tudo realmente funcionou, abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" da seguinte forma:
+Caso não aparecer nenhuma trasanção abra o console e verifique o problema.
 
-![Untitled](https://i.imgur.com/6DsqLYM.png)
+Finalmente abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" da seguinte forma:
 
-Na verdade, criei dois NFTs separadamente, então, vejo dois! Você verá que "Itens Cunhados" também muda no seu aplicativo web.
+**Pode demorar um pouco para atualizar !**
+
+![Untitled](https://i.imgur.com/viQ40iK.png)
+
+Na verdade, criei dois NFTs separadamente, então, vejo três! Você verá que "Itens Cunhados" também muda no seu aplicativo web.
 
 É incrível ver tudo isso se completando.
 
@@ -204,6 +208,6 @@ Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Alt
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Anfoso vai ficar triste 😭.
 
 Em `#progresso`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar a `@web3dev_`!

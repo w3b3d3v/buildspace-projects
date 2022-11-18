@@ -2,11 +2,7 @@
 
 Temos uma configuração incrível para fazer o drop de alguns NFTs bem legais em uma determinada data. A única coisa que está faltando agora é uma maneira legal de mostrar às pessoas que um drop vai acontecer em breve! Então vamos em frente, adicionando um cronômetro de contagem regressiva
 
-Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `update_candy_machine`.
-
-```plaintext
-​​ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet  -k ~/.config/solana/devnet.json -cp config.json
-```
+Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `sugar update`.
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
@@ -29,7 +25,7 @@ Este temporizador precisa fazer algumas coisas:
 1. Ele só será mostrado se a data atual for anterior à data do drop que configuramos;
 2. Deve ter um temporizador de estilo "contagem regressiva" que faça uma contagem regressiva por segundo.
 
-Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer` com um arquivo `CountdownTimer.css` dentro dela. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
+Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer`. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
 
 ```jsx
 import React, { useEffect, useState } from 'react';
@@ -94,8 +90,6 @@ return (
       >
         Cunhar NFT
       </button>
-      {mints.length > 0 && renderMintedItems()}
-      {isLoadingMints && <p>CARREGANDO CUNHAGENS...</p>}
     </div>
   )
 );
@@ -103,7 +97,7 @@ return (
 
 Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
 
-*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `update_candy_machine` para mudar isso para o que você quiser!*
+*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `sugar update` para mudar isso para o que você quiser!*
 
 Ótimo. Agora podemos voltar ao componente `CountdownTimer` para fazer o restante da configuração lógica. Queremos ver a contagem regressiva do temporizador em tempo real. Vamos usar um pouco de JavaScript para conseguir isso, mas não se preocupe, a lógica é super direta.
 
@@ -187,7 +181,7 @@ return (
 ```
 
 
-![Untitled](https://i.imgur.com/fYEzoeg.png)
+![Untitled](https://i.imgur.com/0U3sY16.png)
 
 Está ficando bem Legal!!
 
@@ -198,6 +192,6 @@ Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma 
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o vitordev vai ficar triste 😔
 
-Em `#progresso`, poste uma captura de tela do seu aplicativo da web!
+Em `#progresso`, poste uma captura de tela do seu aplicativo web.

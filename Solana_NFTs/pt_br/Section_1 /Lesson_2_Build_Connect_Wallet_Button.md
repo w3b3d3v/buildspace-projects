@@ -66,7 +66,7 @@ Vamos dar uma olhada nas mudanças bem rapidamente:
 const wallet = useWallet();
 ```
 
-Acho que isso é bem autoexplicativo. `useWallet` é um gancho personalizado fornecido por `@solana/wallet-adapter-react`. Acabamos de conectar nossa Phantom Wallet e agora recebemos os dados da carteira do usuário. Agora que temos isso, podemos usar um operador ternário para fazer renderização condicional. Você pode aprender mais sobre o operador ternário [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Acho que isso é bem autoexplicativo. `useWallet` é um gancho personalizado fornecido por `@solana/wallet-adapter-react`. Acabamos de conectar nossa Phantom Wallet e agora recebemos os dados da carteira do usuário. Agora que temos isso, podemos usar um operador ternário para fazer renderização condicional. Você pode aprender mais sobre o operador ternário [aqui](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
 ```jsx
 {/* Adicione a condição para mostrar isso apenas se não tivermos um endereço de carteira */}
@@ -76,7 +76,7 @@ Aqui, estamos dizendo ao React para renderizar o `Hello World` apenas se tivermo
 
 Vá em frente, atualize sua página e pressione o botão Selecionar carteira! Se tudo funcionar, você finalmente verá a extensão Phantom Wallet aparecer assim:
 
-![Untitled](https://i.imgur.com/wXQyWEe.png)
+![Untitled](https://i.imgur.com/4kBSvuk.png)
 
 Depois de pressionar em conectar, seu botão deve desaparecer! ISSO É EXCELENTE!!
 
@@ -84,12 +84,12 @@ Depois de pressionar em conectar, seu botão deve desaparecer! ISSO É EXCELENTE
 
 Demos passos bem grandes aqui! Você tem sua configuração básica de interface do usuário e pode facilmente "autenticar" um usuário com sua carteira Solana. Fácil.
 
-Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso 😊.
+Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso. 😊
 
 *Nota: Nas configurações da carteira Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Aplicativos confiáveis". Aqui, você verá seu URL do Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para **revogar** isso se quiser testar o caso de alguém que nunca esteve conectado antes acessar seu site. Ele basicamente redefinirá o acesso de suas carteiras ao site e mostrará o botão "Conectar à carteira" novamente.*
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o vitordev vai ficar triste 😔.
 
-Publique em `#progresso` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública 😊.
+Publique em `#progresso` uma captura de tela do seu App com o texto Hello World, isso mostra que sua carteira está conectada ao site.🔥

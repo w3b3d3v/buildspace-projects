@@ -6,7 +6,11 @@ Precisaremos instalar as CLIs (Command-Line Interfaces, Interfaces de linha de c
 
 A CLI da Solana nos permitirá implantar na devnet uma blockchain real que é executada por [validadores](https://solana.com/validators) reais.
 
-A CLI do Metaplex nos permitirá interagir com os contratos NFT implantados do Metaplex. Usando seus contratos-inteligentes-como-um-serviço, podemos 1) criar nossa própria Candy Machine 2) enviar nossos NFTs para nossa Candy Machine 3) permitir que os usuários realmente acessem nossa Candy Machine para cunhar um NFT.
+A CLI do Metaplex nos permitirá interagir com os contratos NFT implantados do Metaplex. Usando seus contratos-inteligentes-como-um-serviço, podemos:
+        
+ 1. Criar nossa própria Candy Machine, 
+ 2. Enviar nossos NFTs para nossa Candy Machine,
+ 3. Permitir que os usuários realmente acessem nossa Candy Machine para cunhar um NFT.
 
 ### 📝 Uma observação sobre a Solana antes de entrarmos
 
@@ -142,6 +146,6 @@ SUBCOMMANDS:
 
 ### 🚨 Relatório de progresso
 
-*Por favor, faça isso, senão o Farza vai ficar triste :(*
+*Por favor, faça isso, senão a Sabrina vai ficar triste 😔*
 
 Em `#progresso`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!
