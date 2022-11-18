@@ -29,7 +29,6 @@ Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mai
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import './CountdownTimer.css';
 
 const CountdownTimer = ({ dropDate }) => {
   // Estado

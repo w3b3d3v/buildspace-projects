@@ -2,11 +2,11 @@
 
 ### 👋 Bem vindo
 
-Você conseguiu - aí sim!! Bem-vindo 😊. Meu nome é danicuki, e eu sou o cara que vai conversar com você por aqui.
+Você conseguiu - aí sim!! Bem-vind@ 😊. Meu nome é danicuki, e eu sou o cara que vai conversar com você por aqui.
 
 Este projeto é para desenvolvedores que desejam entrar no mundo Solana, que agora é uma das maiores blockchains do mundo.
 
-Tudo o que você realmente precisa saber para fazer isso são **algumas habilidades de terminal, javascript e Next.js**. Você vai pegar o resto ao longo do caminho. **Nenhum conhecimento de Rust é necessário**. 
+Tudo o que você realmente precisa saber para fazer isso são **algumas habilidades de terminal, javascript e next.js**. Você vai pegar o resto ao longo do caminho. **Nenhum conhecimento de Rust é necessário**. 
 
 Algumas ações a serem feitas antes de seguir em frente:
 
@@ -16,7 +16,7 @@ Algumas ações a serem feitas antes de seguir em frente:
 
 ### 🛠 O projeto
 
-Então, o que vamos construir aqui 😊? Segue um pequeno vídeo:
+Então, o que vamos construir aqui ? Segue um pequeno vídeo:
 
 [Loom](https://www.loom.com/share/837446b7f9f44e519e383a39df620c98)
 

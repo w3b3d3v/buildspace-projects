@@ -84,4 +84,4 @@ Você pode até dar um nome específico à sua coleção se quiser, adicionando 
 
 Por favor, faça isso, senão o Melk vai ficar triste 😢.
 
-Do que você está fazendo seus NFTs? Mostre pra gente em `#progresso`.
+Fique a vontade para mostrar o tema da sua coleção de NFTs no discord em `#progresso`.

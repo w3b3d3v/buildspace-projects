@@ -1,8 +1,8 @@
 ### 🤖 Vamos pegar o código inicial
 
-Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" (bifurcação) no canto superior direito da página.
+Comece indo para este [link do GitHub](https://github.com/w3b3d3v/Solana_NFTs), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" (bifurcação) no canto superior direito da página.
 
-![image](https://i.imgur.com/p2FTyAM.png)
+![image](https://i.imgur.com/gMLU93Y.png)
 
 Massa! Quando você faz o fork deste repositório, na verdade você está criando uma cópia idêntica dele que fica no seu perfil do Github. Então agora você tem sua própria versão deste código que você pode editar para o conteúdo de sua escolha 😊. Isso também será útil quando estivermos prontos para implantar nosso aplicativo no Vercel 🤘.
 

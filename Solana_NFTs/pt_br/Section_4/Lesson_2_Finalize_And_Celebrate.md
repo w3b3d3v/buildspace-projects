@@ -82,6 +82,7 @@ Basicamente:
 node_modules
 cache.json
 config.json
+sugar.log
 ```
 
 [Loom](https://www.loom.com/share/ce89a285b90a4b34ac358fce9ae7f92d)
