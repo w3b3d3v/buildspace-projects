@@ -77,8 +77,6 @@ Basicamente:
 ```javascript
 .DS_Store
 .env
-.env.local
-node_modules
 cache.json
 config.json
 sugar.log
