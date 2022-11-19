@@ -6,7 +6,7 @@ Você conseguiu - aí sim!! Bem-vind@ 😊. Meu nome é danicuki, e eu sou o car
 
 Este projeto é para desenvolvedores que desejam entrar no mundo Solana, que agora é uma das maiores blockchains do mundo.
 
-Tudo o que você realmente precisa saber para fazer isso são **algumas habilidades de terminal, javascript e next.js**. Você vai pegar o resto ao longo do caminho. **Nenhum conhecimento de Rust é necessário**. 
+Tudo o que você realmente precisa saber para fazer isso são **algumas habilidades de terminal, javascript e Next.js**. Você vai pegar o resto ao longo do caminho. **Nenhum conhecimento de Rust é necessário**. 
 
 Algumas ações a serem feitas antes de seguir em frente:
 
@@ -18,7 +18,7 @@ Algumas ações a serem feitas antes de seguir em frente:
 
 Então, o que vamos construir aqui ? Segue um pequeno vídeo:
 
-[Loom](https://www.loom.com/share/837446b7f9f44e519e383a39df620c98)
+[Loom](https://www.loom.com/share/7ae7ea528e6e4050a7518b1ecea28792)
 
 ### 💎 Ganhando um NFT
 
@@ -38,7 +38,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o `@vitordev` no Discord 😊.
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-bootcamp` 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
