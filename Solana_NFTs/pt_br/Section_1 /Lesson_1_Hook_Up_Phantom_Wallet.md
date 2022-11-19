@@ -8,7 +8,7 @@ Massa! Quando você faz o fork deste repositório, na verdade você está criand
 
 O passo final aqui é transferir o repositório do fork que você acabou de fazer para a sua máquina local. Clique no botão "Code" (Código) e copie esse link!
 
-![image](https://i.imgur.com/4QtA8wO.png)
+![image](https://i.imgur.com/dlsiQg8.png)
 
 Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que seu projeto ficará e execute o comando:
 
