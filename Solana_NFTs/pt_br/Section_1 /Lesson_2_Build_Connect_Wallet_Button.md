@@ -8,12 +8,12 @@ Você está pronto para a experiência de cadastro mais fácil da sua vida :)? C
 
 
 ```jsx
-import React, { useEffect } from 'react';
-import './App.css';
-import twitterLogo from './assets/twitter-logo.svg';
+import React from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
+import dynamic from 'next/dynamic';
 
-// Constants
-const TWITTER_HANDLE = 'web3dev_';
+// Constantes
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -72,14 +72,23 @@ const App = () => {
           {/* Renderize seu botão para conectar à carteira aqui */}
           {renderNotConnectedContainer()}
         </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`Criado na @${TWITTER_HANDLE}`}</a>
+    );
+
+    return (
+        <div className="App">
+            <div className="container">
+                <div className="header-container">
+                    <p className="header">🍭 Candy Drop</p>
+                    <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+                    {/* Renderize seu botão conectar à carteira aqui */}
+                    {wallet.publicKey ? "Hello World" : renderNotConnectedContainer()}
+                </div>
+
+                <div className="footer-container">
+                    <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Construído na @${TWITTER_HANDLE}`}</a>
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -105,9 +114,7 @@ Primeiro você precisará importar `useState` para seu componente dessa forma:
 import React, { useEffect, useState } from 'react';
 ```
 
-
-Então, logo acima da sua função `checkIfWalletIsConnected`, vá em frente e adicione a seguinte declaração de estado:
-
+Acho que isso é bem autoexplicativo. `useWallet` é um gancho personalizado fornecido por `@solana/wallet-adapter-react`. Acabamos de conectar nossa Phantom Wallet e agora recebemos os dados da carteira do usuário. Agora que temos isso, podemos usar um operador ternário para fazer renderização condicional. Você pode aprender mais sobre o operador ternário [aqui](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
 ```jsx
 // Estado
@@ -115,7 +122,7 @@ const [walletAddress, setWalletAddress] = useState(null);
 ```
 
 
-Excelente. Então, agora que estamos prontos para armazenar dados no estado, vamos atualizar algumas coisas em nosso código aqui:
+![Untitled](https://i.imgur.com/4kBSvuk.png)
 
 
 ```jsx
@@ -127,171 +134,11 @@ import twitterLogo from './assets/twitter-logo.svg';
 const TWITTER_HANDLE = 'web3dev_';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const App = () => {
-  // Estado
-  const [walletAddress, setWalletAddress] = useState(null);
-
-  // Ações
-  const checkIfWalletIsConnected = async () => {
-    try {
-      const { solana } = window;
-
-      if (solana) {
-        if (solana.isPhantom) {
-          console.log('Phantom wallet encontrada!');
-          const response = await solana.connect({ onlyIfTrusted: true });
-          console.log(
-            'Conectado com chave pública:',
-            response.publicKey.toString()
-          );
-
-          /* Definir a chave pública do usuário no estado
-           para ser usada posteriormente! */
-
-          setWalletAddress(response.publicKey.toString());
-        }
-      } else {
-        alert('Objeto Solana não encontrado. Consiga uma Phantom Wallet 👻');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const connectWallet = async () => {};
-
-  const renderNotConnectedContainer = () => (
-    <button
-      className="cta-button connect-wallet-button"
-      onClick={connectWallet}
-    >
-      Conectar à carteira
-    </button>
-  );
-
-  useEffect(() => {
-    const onLoad = async () => {
-      await checkIfWalletIsConnected();
-    };
-    window.addEventListener('load', onLoad);
-    return () => window.removeEventListener('load', onLoad);
-  }, []);
-
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="header-container">
-          <p className="header">🍭 Candy Drop</p>
-          <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
-          {/*Adicione a condição para mostrar isso apenas se 
-          não tivermos um endereço de carteira*/}
-          {!walletAddress && renderNotConnectedContainer()}
-        </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`Criado na @${TWITTER_HANDLE}`}</a>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default App;
-```
-
-
-Vamos revisar as mudanças bem rapidamente à seguir:
-
-
-```jsx
-const checkIfWalletIsConnected = async () => {
-  try {
-    const { solana } = window;
-
-    if (solana) {
-      if (solana.isPhantom) {
-        console.log('Phantom wallet encontrada!');
-        const response = await solana.connect({ onlyIfTrusted: true });
-        console.log(
-          'Conectado com Chave Pública:',
-          response.publicKey.toString()
-        );
-
-        /* Definir a chave pública do usuário no estado para
-         ser usada posteriormente! */
-
-        setWalletAddress(response.publicKey.toString());
-      }
-    } else {
-      alert('Objeto Solana não encontrado. Consiga uma Phantom Wallet 👻');
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
-```
-
-
-Acho que isso é bem autoexplicativo. Acabamos de conectar nossa Phantom Wallet e agora recebemos os dados da carteira do usuário. Agora que temos esses dados, vamos salvá-los em nosso estado para usar mais tarde:
-
-
-```jsx
-{/* Adicione a condição para mostrar isso apenas se não tivermos um endereço de carteira*/}
-{!walletAddress && renderNotConnectedContainer()}
-```
-
-
-Aqui, estamos dizendo ao React para chamar este método de renderização apenas se não houver nenhum `walletAddress` definido em nosso estado. Portanto, se não houver um endereço de carteira, isso significa que um usuário ainda não conectou sua carteira e devemos mostrar a ele o botão para conectá-la.
-
-
-### 😅 Ok - agora realmente conecte-se à carteira (risos).
-
-Estamos quase lá! Se você clicar no seu novo botão estiloso, perceberá que ele ainda não faz nada! Mas que droga - isso é bem chato 👎.
-
-Lembra daquela função que configuramos, mas à qual ainda não adicionamos nenhuma lógica? É hora de adicionar a lógica de conexão à `connectWallet` :
-
-
-```jsx
-const connectWallet = async () => {
-  const { solana } = window;
-
-  if (solana) {
-    const response = await solana.connect();
-    console.log('Conectado com Chave Pública:', response.publicKey.toString());
-    setWalletAddress(response.publicKey.toString());
-  }
-};
-```
-
-
-Simples demais! Quando o usuário quiser conectar sua carteira - chame a função `connect` no objeto `solana` para lidar com todo o processo de autorizar nosso aplicativo da web com a carteira do usuário. Assim que fizermos isso, teremos acesso às informações da carteira do usuário - por exemplo, o endereço da carteira!
-
-Em seguida, vamos definir a propriedade `walletAddress` para que nossa página atualize e **remova** o botão “Conectar à Carteira” assim que nos conectarmos.
-
-Vá em frente, atualize sua página e pressione o botão “Conectar à Carteira”! Se tudo funcionar, você finalmente verá a extensão Phantom Wallet ser exibida assim:
-
-![https://camo.githubusercontent.com/2d9ea26baf7724388e56a01ad7c7f20bed247d1e7326f89cc3e7844dc833c6d0/68747470733a2f2f692e696d6775722e636f6d2f775851795745652e706e67](https://camo.githubusercontent.com/2d9ea26baf7724388e56a01ad7c7f20bed247d1e7326f89cc3e7844dc833c6d0/68747470733a2f2f692e696d6775722e636f6d2f775851795745652e706e67)
-
-Assim que pressionar “Conectar”, seu botão deve desaparecer! VAMOS. NESSA. LOUCURA.
-
-**Você acabou de conectar uma carteira Solana ao seu aplicativo. Isso é bem louco.**
-
-Agora, se você atualizar a página, sua função `checkIfWalletIsConnected` será chamada e seu botão deve desaparecer quase imediatamente 🤘. Em seu console, você também verá sua chave pública na tela.
-
-Grandes evoluções aqui! Você tem a sua configuração básica da interface do usuário e pode facilmente "autenticar" um usuário com sua carteira Solana. Bem fácil.
-
-Em seguida, vamos nos preparar para configurar as funções que precisamos para chamar nosso programa Solana + mexer com alguns dados. Nosso aplicativo web ainda é meio entediante/vago! Vamos mudar isso :).
-
-_Observação: nas configurações da Phantom (que você pode acessar clicando na engrenagem no canto inferior direito), você verá uma seção "Trusted Apps" (Aplicativos confiáveis). Nesta seção, você verá sua URL Replit, ou `localhost:3000` se estiver executando seu aplicativo localmente. Sinta-se à vontade para **revogar** isso se quiser testar o caso de alguém que acessa o seu site, mas que nunca tinha se conectado antes. Isso basicamente redefinirá o acesso de suas carteiras ao site e mostrará o botão "Conectar à carteira" novamente._
+Em seguida, vamos configurar as funções que precisamos para chamar nosso programa Solana + obter alguns dados. Nosso app para a web por enquanto está meio chato/vazio! Vamos mudar isso. 😊
 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor, faça isso, senão o vitordev vai ficar triste 😔.
 
-Publique em `#progresso` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública :).
+Publique em `#progresso` uma captura de tela do seu App com o texto Hello World, isso mostra que sua carteira está conectada ao site.🔥

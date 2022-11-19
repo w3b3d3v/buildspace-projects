@@ -6,7 +6,11 @@ Precisaremos instalar as CLIs (Command-Line Interfaces, Interfaces de linha de c
 
 A CLI da Solana nos permitirá implantar na devnet uma blockchain real que é executada por [validadores](https://solana.com/validators) reais.
 
-A CLI do Metaplex nos permitirá interagir com os contratos NFT implantados do Metaplex. Usando seus contratos-inteligentes-como-um-serviço, podemos 1) criar nossa própria Candy Machine 2) enviar nossos NFTs para nossa Candy Machine 3) permitir que os usuários realmente acessem nossa Candy Machine para cunhar um NFT.
+A CLI do Metaplex nos permitirá interagir com os contratos NFT implantados do Metaplex. Usando seus contratos-inteligentes-como-um-serviço, podemos:
+        
+ 1. Criar nossa própria Candy Machine, 
+ 2. Enviar nossos NFTs para nossa Candy Machine,
+ 3. Permitir que os usuários realmente acessem nossa Candy Machine para cunhar um NFT.
 
 
 ### 📝 Uma observação sobre a Solana antes de entrarmos
@@ -17,15 +21,15 @@ Então isso significa que a Solana não presta? Beeem... Não, eu não penso ass
 
 Eu acho que como a Solana é uma tecnologia muito **nova**, está mudando com frequência, então é difícil apenas pesquisar no Google sobre uma questão ou obter uma resposta clara e concisa do Solana Docs.
 
-Em 2015, eu estava bem interessado em machine learning, que era bem novo na época. Em 2015, os documentos sobre machine learning eram péssimos e era difícil apenas procurar uma resposta para uma pergunta, porque na maioria das vezes eu era a primeira pessoa a fazer essa pergunta (risos). _Cabia a mim descobrir uma resposta e, em seguida, atualizar os documentos por conta própria._
+Em 2015, eu estava bem interessado em machine learning, que era bem novo na época. Em 2015, os documentos sobre machine learning eram péssimos e era difícil apenas procurar uma resposta para uma pergunta, porque na maioria das vezes eu era a primeira pessoa a fazer essa pergunta 😂 . _Cabia a mim descobrir uma resposta e, em seguida, atualizar os documentos por conta própria._
 
-Esse é o preço de brincar com uma tecnologia emergente :).
+Esse é o preço de brincar com uma tecnologia emergente 😊.
 
 Acho que a Solana está em uma situação semelhante, e quero deixar claro - **não espere uma experiência de desenvolvimento super limpa. Você provavelmente encontrará obstáculos aleatórios e cabe a você descobrir uma resposta + ajudar os outros.**
 
 Eu gosto deste [tweet](https://twitter.com/armaniferrante/status/1434554725093949452) também, que meio que apresenta uma ideia semelhante.
 
-**Dito tudo isso, eu acho que a Solana é insanamente divertida quando você a configura e entende como ela funciona. É tão rápida! As baixas taxas de gas são mágicas. É muito divertido fazer parte de uma comunidade que trabalha em uma tecnologia inovadora. Parece que você faz parte da equipe que está construindo a Solana :).**
+**Dito tudo isso, eu acho que a Solana é insanamente divertida quando você a configura e entende como ela funciona. É tão rápida! As baixas taxas de gas são mágicas. É muito divertido fazer parte de uma comunidade que trabalha em uma tecnologia inovadora. Parece que você faz parte da equipe que está construindo a Solana 😊.**
 
 ### 🤖 Instale os pré-requisitos
 
@@ -97,10 +101,7 @@ Commitment: confirmed
 Durante todo este projeto estaremos construindo diretamente na devnet da Solana. Isso é muito louco! É como se fosse uma versão da Solana em um ambiente de "encenação". É uma blockchain real executada por validadores reais e gratuita para desenvolvedores.
 
 
-### ☹️ Ahhhh me ajude… tá quebrado!
-
-Que droga! Pode ser um pouco difícil iniciar os trabalhos com a Solana. Contudo, estamos felizes em ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da web3dev possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
-
+Que droga! Pode ser meio difícil de fazer a Solana funcionar. Contudo, estamos dispostos a ajudar!! Poste uma mensagem na `#seção-2-ajuda` para que seus colegas da web3dev possam ajudá-lo! Certifique-se de nos fornecer o máximo possível de informações, como: seu sistema operacional, capturas de tela do erro etc.
 
 ### 🤩 Começando com a CLI do Metaplex 
 
@@ -149,6 +150,6 @@ O output disso deve exibir `0.0.2`. Neste ponto, estamos prontos para começar a
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+*Por favor, faça isso, senão a Sabrina vai ficar triste 😔*
 
 Em `#progresso`, publique uma captura de tela do seu terminal mostrando o output do comando `solana config get`!

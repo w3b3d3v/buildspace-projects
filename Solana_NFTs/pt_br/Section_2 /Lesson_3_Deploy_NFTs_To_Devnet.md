@@ -1,17 +1,19 @@
 Esta será uma das partes mais épicas deste projeto - trazer sua Candy Machine e NFTs para a devnet.
 
-A Candy Machine v2 tornou esse processo muito mais simples. Com apenas um comando, você fará o seguinte:
+A Candy Machine Sugar tornou esse processo muito mais simples. Com apenas um comando, ela fará o seguinte:
+
+**Estes são os passos que a Candy Machine Sugar irá fazer, não é necessário implementar isso, é apenas uma descrição, logo abaixo iremos fazer tudo isso com poucos comandos.**
+
+1. O upload dos seus NFTs no [NFT Storage](https://nft.storage/) (que é um armazenamento de arquivos descentralizado) - se prefirir use qualquer opção de armazenamento configurada em seu `config.json` - Caso opte pelo NFT Storage não é fazer upload pelo site, faremos via linha de código em breve.
+2. Criar sua Candy Machine no contrato do Metaplex.
+3. Configurar sua Candy Machine com o preço, número, data de lançamento e várias outras coisas.
 
 
-
-1. Faça o upload dos seus NFTs no [Arweave](https://www.arweave.org) (que é um armazenamento de arquivos descentralizado) e inicialize a configuração da sua Candy Machine.
-2. Crie sua Candy Machine no contrato do Metaplex.
-3. Configure sua Candy Machine com o preço, número, data de lançamento e várias outras coisas.
 
 
 ### 🔑 Configurando um par de chaves Solana.
 
-Para iniciar o upload, precisamos configurar um par de chaves Solana localmente. _Observação: se você já fez isso anteriormente, siga as instruções abaixo._
+Para iniciar o upload, precisamos configurar um par de chaves Solana localmente.
 
 Para fazermos o upload dos NFTs para a Solana, precisamos trabalhar com uma "carteira local" na linha de comando. Lembre-se: você não pode se comunicar com a Solana a menos que tenha uma carteira. E uma carteira é basicamente um "par de chaves", ou seja, uma chave pública e uma chave privada.
 
@@ -64,7 +66,15 @@ Depois disso, você pode executar `solana balance` novamente e pronto, você ter
 
 ### ⚙ Configure sua Candy Machine
 
-Para dizer à sua Candy Machine como ela deve se comportar, você precisa configurá-la. A Versão 2 torna isso fácil! Crie um arquivo chamado `config.json` na pasta raiz do seu projeto (o mesmo local da pasta assets) e adicione o seguinte a ele:
+Para obter o endereço de sua carteira execute o comando:
+
+```bash
+solana adress
+```
+
+O endereço de sua carteira será usado logo abaixo.
+
+Para dizer à sua Candy Machine como ela deve se comportar, você precisa configurá-la. A versão Sugar torna isso bem fácil! Execute o `sugar create-config` na pasta raiz do seu projeto (o mesmo local da pasta `assets`) e preencha tudo o que for requisitado. Caso contrário, você pode simplesmente criar um `config.json` na pasta raiz do seu projeto. É assim que sua configuração deve ficar:
 
 
 ```json
@@ -91,21 +101,25 @@ Para dizer à sua Candy Machine como ela deve se comportar, você precisa config
 
 Isso pode parecer um pouco desafiador no começo, mas não se preocupe! Você só precisa saber sobre 5 destes itens! O resto adiciona funcionalidades extras que você pode ignorar por enquanto. Vamos aos que você precisa saber:
 
-`price`: O preço de cada NFT. `number`: Quantos NFTs você deseja implantar. Isso precisa corresponder ao número de pares imagem + json ou as coisas darão errado mais tarde. `solTreasuryAccount`: Este é o endereço da sua carteira, é para onde irão os fundos dos pagamentos em SOL. `goLiveDate`: Quando você quer que a cunhagem comece. `storage`: Onde seus NFTs serão armazenados.
+`price`: O preço de cada NFT. Duh!</br>
+`number`: Quantos NFTs você deseja implantar. Isso precisa corresponder ao número de pares imagem + json ou as coisas darão errado mais tarde.</br> 
+`solTreasuryAccount`: Este é o endereço da sua carteira, é para onde irão os fundos dos pagamentos em SOL.</br>
+`goLiveDate`: Quando você quer que a cunhagem comece.</br>
+`symbol`: É o simbolo da NFT, certifique-se que é o mesmo registrado nos arquivos `0/1/2.json`.
+
 
 A única coisa que você precisará alterar aqui é o endereço da sua carteira. Se você estiver implantando mais de 3 NFTs, atualize o número! Você pode implantar até 10 NFTs na devnet.
 
 ### 🚀 Faça o upload dos NFTs e crie a sua Candy Machine
 
-Agora vamos usar o comando `upload` do Metaplex para fazer o upload de nossos NFTs que residem na pasta `assets` e criar a Candy Machine. Lembre-se, isso acontecerá de uma só vez.
-
-Observe como colocamos `./assets` no comando abaixo. Isso significa que precisamos executar este comando de apenas um nível fora da pasta `assets`.
+Agora vamos usar o comando `upload` do Sugar para fazer o upload de nossos NFTs que residem na pasta `assets` e criar a Candy Machine, execute o comando abaixo na pasta raiz do projeto. Lembre-se, isso acontecerá de uma só vez.
 
 
 ```
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts upload -e devnet -k ~/.config/solana/devnet.json -cp config.json ./assets
 ```
 
+_Nota: se você receber um erro como Missing configuration file 'config.json' significa que você executou o comando no lugar errado. Certifique-se de executá-lo no mesmo diretório onde está a sua pasta `assets`._
 
 _Observação: se você receber um erro como "no such file or directory, scandir './assets'" significa que você executou o comando no lugar errado. Certifique-se de executá-lo no mesmo diretório onde está a sua pasta `assets`</code>`._
 
@@ -139,8 +153,13 @@ Mantenha este endereço à mão, você precisará dele no futuro.
 
 Você notará aqui que se você alterar seus NFTs e fizer o `upload` novamente, ele não enviará nada de novo! A razão para isso é que existe uma pasta `.cache` criada que armazena esses dados.
 
-Na verdade, você precisará excluir a pasta `.cache` e fazer o `upload` novamente. Isso forçará a inicialização de uma nova configuração da Candy Machine. Certifique-se de fazer isso se quiser fazer alterações em sua coleção antes de lançá-la oficialmente!
+[2/2] 📝 Writing config lines
+Sending config line(s) in 1 transaction(s): (Ctrl+C to abort)
+[00:00:02] Write config lines successful ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 1/1
 
+✅ Command successful.
+```
+**Importante:**Salve o seu Candy machine ID pois iremos usar posteriormente.
 
 ### ✅ Verifique os NFTs
 
@@ -165,24 +184,11 @@ ready to deploy!
 ```
 
 
-Boom! Você está pronto para avançar!
+<img src="https://i.imgur.com/vAY3yDa.png"/>
 
 Se você olhar dentro do arquivo `devnet-temp.json` na pasta `.cache`, você encontrará 3 links do Arweave. Copie e cole um desses links do Arweave no seu navegador e confira os metadados do seu NFT! O Arweave é muito massa! Ele armazena dados **permanentemente**. Isso é bem diferente do mundo do IPFS/Filecoin — onde os dados são armazenados ponto a ponto com base em nós que decidem manter o arquivo disponível.
 
 O Arweave funciona assim: pague uma vez, armazene **para sempre**. Eles fazem isso usando um [algoritmo](https://arwiki.wiki/#/en/storage-endowment#toc_Transaction_Pricing) criado por eles que basicamente estima o custo necessário para armazenar algo para sempre com base no tamanho. Você pode brincar com a calculadora [aqui](https://arweavefees.com/). Por exemplo, para armazenar 1 MB para sempre, custa `~US$0,0083649802618`. Nada mal!
-
-Você pode estar se perguntando - "Quem está pagando para hospedar minhas coisas então!?". Bem, se você olhar o código-fonte do script [aqui](https://github.com/metaplex-foundation/metaplex/blob/59ab126e41e6d85b53c79ad7358964dadd12b5f4/js/packages/cli/src/helpers/upload/arweave.ts#L93), verá que por enquanto o próprio Metaplex paga por isso, o que ajuda bastante!
-
-
-### 🔨 Atualize a configuração da Candy Machine.
-
-Para atualizar a configuração da sua Candy Machine, tudo o que você precisa fazer é atualizar o arquivo `config.json` e executar este comando:
-
-
-```
-ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet -k ~/.config/solana/devnet.json -cp config.json
-```
-
 
 
 ### 😡 Esteja ciente deste erro.
@@ -203,11 +209,13 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
 ```
 
 
-Isso significa que o comando não pode acessar a pasta `.cache` com os dados importantes da sua Candy Machine e dos seus NFTs. Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão as pastas `.cache` e `assets`. Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine; verifique sempre o seu diretório!!
+Isso significa que o comando não pode acessar o arquivo `cache.json` com os dados importantes da sua Candy Machine e dos seus NFTs. Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos do Sugar no mesmo diretório onde estão o arquivo `cache.json` e a pasta `assets` ou seja na pasta raiz do projeto. Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine;
+
+Verifique sempre o seu diretório!!
 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor, faça isso, senão o danicuki vai ficar triste 😔
 
-Poste um dos links Arweave dos seus NFTs em `#progresso`!
+Poste um dos links de upload de seus NFTs em `#progresso`!
