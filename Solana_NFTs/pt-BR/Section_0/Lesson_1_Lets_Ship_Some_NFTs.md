@@ -31,7 +31,7 @@ A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nom
 **Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @vitordev no Discord!**
 ### 🤚 Como obter ajuda
 
-Quando você tiver uma pergunta, acesse o canal apropriado para o projeto no Discord.
+Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
 Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
@@ -42,22 +42,6 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
 Vamos te dar alguma representação em código aberto!!!
-
-### 👀 Curioso para trabalhar em web3?
-
-**As pessoas parecem pensar que a web3 só precisa de colaboradores hábeis em codificar contratos inteligentes ou escrever código que faça interface com a blockchain. Isso não é verdade.**
-
-Há muito trabalho a ser feito e a maior parte do trabalho nem precisa ser relacionado com contratos inteligentes (risos). Ser um engenheiro em web3 significa apenas pegar suas habilidades de web2 e aplicá-las à web3.
-
-A web3 também precisa desesperadamente de designers, gerentes de produto, profissionais de marketing e muito mais.
-
-**Somos parceiros de várias empresas incríveis da web3 que desejam contratar pessoas da rede WEB3DEV.**
-
-**Mesmo que você esteja apenas curioso**, clique em "Perfil" no menu, preencha bem rápido um formulário com seus dados, que iremos te ajudar com oportunidades. 
-
-Na pior das hipóteses, você irá conversar com algumas pessoas bem legais do mundo web3.
-
-Basta fazer isso bem rapidinho agora. Vai lá! :).
 
 ### 🚨 Relatório de progresso
 

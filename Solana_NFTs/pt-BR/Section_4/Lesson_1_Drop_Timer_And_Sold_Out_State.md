@@ -8,8 +8,6 @@ Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento 
 ​​ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet  -k ~/.config/solana/devnet.json -cp config.json
 ```
 
-Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
-
 ```plaintext
 /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
       return fs.readdirSync(`${val}`).map(file => path.join(val, file));
