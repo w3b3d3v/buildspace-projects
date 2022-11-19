@@ -163,9 +163,12 @@ return (
 
 Antes de clicar em "Cunhar NFT", você precisa ter certeza que tem algum SOL da devnet em sua carteira Phantom. Esse processo é muito fácil.
 
-Primeiro pegue o endereço público da sua carteira clicando em `Wallet`:
+Primeiro pegue o endereço público da sua carteira clicando ao lado de `Wallet`:
 
-![Untitled](https://i.imgur.com/VZrnzNw.png)
+![Untitled](https://i.imgur.com/aIrhjCr.png)
+
+![Untitled](https://i.imgur.com/hP51VhD.png)
+
 
 Então, no seu terminal, execute:
 
@@ -192,15 +195,13 @@ Clicando na transação você pode abrir o site do explorer Solana.
 
 Caso não aparecer nenhuma trasanção abra o console e verifique o problema.
 
-Finalmente abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" da seguinte forma:
-
-**Pode demorar um pouco para atualizar !**
+Finalmente abra a sua carteira Phantom e verifique se seu NFT aparece na seção "Colecionáveis" na seguinte aba:
 
 ![Untitled](https://i.imgur.com/viQ40iK.png)
 
-Na verdade, criei dois NFTs separadamente, então, vejo três! Você verá que "Itens Cunhados" também muda no seu aplicativo web.
+**Pode demorar alguns segundos para atualizar !**
 
-É incrível ver tudo isso se completando.
+É incrível ver tudo isso se completando 🥳.
 
 Você trabalhou muito para isso acontecer. Agora é hora de se divertir e deixar o seu NFT ainda melhor. Na próxima seção, adicionaremos uma interface de usuário que exibirá todas os NFTs já cunhados em seu aplicativo da web.
 
