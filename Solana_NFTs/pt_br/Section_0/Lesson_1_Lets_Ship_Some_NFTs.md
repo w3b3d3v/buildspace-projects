@@ -1,5 +1,4 @@
-## 💎 Vamos criar alguns NFTs bem loucos em Solana
-
+## 💎 Vamos criar alguns NFTs bem irados em Solana
 
 ### 👋 Bem vindo
 
@@ -15,13 +14,11 @@ Algumas ações a serem feitas antes de seguir em frente:
 * **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
 * **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/c/web3dev).
 
-
 ### 🛠 O projeto
 
 Então, o que vamos construir aqui ? Segue um pequeno vídeo:
 
 [Loom](https://www.loom.com/share/837446b7f9f44e519e383a39df620c98)
-
 
 ### 💎 Ganhando um NFT
 
@@ -35,7 +32,7 @@ A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nom
 
 ### 🤚 Como obter ajuda
 
-Quando você tiver uma pergunta, acesse o canal apropriado para o projeto no Discord.
+Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
 Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
@@ -46,22 +43,6 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
 Vamos te dar alguma representação em código aberto!!!
-
-### 👀 Curioso para trabalhar em web3?
-
-**As pessoas parecem pensar que a web3 só precisa de colaboradores hábeis em codificar contratos inteligentes ou escrever código que faça interface com a blockchain. Isso não é verdade.**
-
-Há muito trabalho a ser feito e a maior parte do trabalho nem precisa ser relacionado com contratos inteligentes (risos). Ser um engenheiro em web3 significa apenas pegar suas habilidades de web2 e aplicá-las à web3.
-
-A web3 também precisa desesperadamente de designers, gerentes de produto, profissionais de marketing e muito mais.
-
-**Somos parceiros de várias empresas incríveis da web3 que desejam contratar pessoas da rede WEB3DEV.**
-
-**Mesmo que você esteja apenas curioso**, clique em "Perfil" no menu, preencha bem rápido um formulário com seus dados, que iremos te ajudar com oportunidades. 
-
-Na pior das hipóteses, você irá conversar com algumas pessoas bem legais do mundo web3.
-
-Basta fazer isso bem rapidinho agora. Vai lá! :).
 
 ### 🚨 Relatório de progresso
 

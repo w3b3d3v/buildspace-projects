@@ -1,115 +1,196 @@
-### 🌍 Aprimore seus NFTs com IPFS
+### ⏳ Construindo o temporizador do drop
 
-Ao implantar na devnet, você não precisa se preocupar em armazenar seus NFTs, pois o Metaplex permite que você carregue até 10 ativos gratuitamente. Isso é super útil, mas você não pode depender disso quando for para a rede principal 😂 .
+Temos uma configuração incrível para fazer o drop de alguns NFTs bem legais em uma determinada data. A única coisa que está faltando agora é uma maneira legal de mostrar às pessoas que um drop vai acontecer em breve! Então vamos em frente, adicionando um cronômetro de contagem regressiva.
 
-O que acontece quando você quiser ir para a rede principal? Você pode seguir a rota padrão e enviá-los para o Arweave, mas isso custará algum dinheiro. Em vez disso, podemos usar algo chamado <a href="https://www.web3dev.com.br/fatimalima/como-salvar-um-artigo-em-ipfs-um-guia-de-7-passos-je6">IPFS.</a> Em poucas palavras, é um sistema de armazenamento de arquivos descentralizado, semelhante ao Arweave, mas **muito** mais barato (às vezes até gratuito). Achei mais fácil usar o [Pinata](https://www.pinata.cloud/) para fazer o upload para o IPFS. Além disso, eles oferecem 1 GB de armazenamento gratuito, o que é suficiente para milhares de ativos. Eu ainda não implantei nada na rede principal, mas de qualquer maneira usei o Pinata, porque ele permite fazer o upload de arquivos muito maiores.
+Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `sugar update`.
 
-Usá-lo é bastante simples. Depois de se inscrever em uma conta, selecione "API Keys" (chaves de API) no menu suspenso do canto superior direito.
+Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
-![API KEY](https://i.imgur.com/W1SziZt.png)
+```plaintext
+/Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
+      return fs.readdirSync(`${val}`).map(file => path.join(val, file));
+                      ^
+TypeError: Cannot read property 'candyMachineAddress' of undefined
+    at /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:649:53
+    at step (/Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53:23)
+    at Object.next (/Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:34:53)
+    at fulfilled (/Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:25:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+```
 
-Crie uma nova chave e certifique-se de que o acesso à `pinFileToIPFS` esteja ativado.
+Então significa que o comando não pode acessar a pasta assets e o arquivo cache.json, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
 
-![Pinata config](https://i.imgur.com/lJFWI54.png)
+Este temporizador precisa fazer algumas coisas:
 
-Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o token JWT e mantenha-o à mão. Agora apenas atualizaremos nosso arquivo `config.json` com um novo objeto com quatro novos objetos, o único que precisamos alterar é o objeto `JWT`:
+1. Ele só será mostrado se a data atual for anterior à data do drop que configuramos;
+2. Deve ter um temporizador de estilo "contagem regressiva" que faça uma contagem regressiva por segundo.
+
+Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer`. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
+
+```jsx
+import React, { useEffect, useState } from 'react';
+
+const CountdownTimer = ({ dropDate }) => {
+  // Estado
+  const [timerString, setTimerString] = useState('');
+
+  return (
+    <div className="timer-container">
+      <p className="timer-header">Candy Drop Iniciando Em</p>
+      {timerString && <p className="timer-value">{`⏰ ${timerString}`}</p>}
+    </div>
+  );
+};
+
+export default CountdownTimer;
+```
+
+Estamos configurando um componente React bem simples que manterá algum estado e receberá uma `dropDate` (data do drop).
+
+Massa! Antes de prosseguirmos, vamos importar o componente `app/components/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
+
+```jsx
+import CountdownTimer from '../CountdownTimer';
+```
+
+A partir daqui, podemos configurar nossa lógica para lidar com quando mostrar esse cronômetro de contagem regressiva.
+
+No nosso caso, só queremos mostrar esse componente se a data atual for **anterior** à data do drop. **Caso contrário**, iremos em frente e mostraremos a data e hora do drop.
+
+Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/components/CandyMachine/index.js`.
+
+```jsx
+// Crie a função de renderização
+const renderDropTimer = () => {
+  // Obtenha a data atual e dropDate em um objeto JavaScript Date
+  const currentDate = new Date();
+  const dropDate = new Date(candyMachine.state.goLiveData * 1000);
+
+  // Se currentDate for anterior à dropDate, renderize nosso componente Countdown
+  if (currentDate < dropDate) {
+    console.log('Anterior à data do drop!!');
+    // Não se esqueça de retornar o seu dropDate!
+    return <CountdownTimer dropDate={dropDate} />;
+  }
+
+  // Caso contrário, vamos apenas retornar a data do drop atual
+  return <p>{`Data do Drop: ${candyMachine.state.goLiveDateTimeString}`}</p>;
+};
+
+return (
+  candyMachine.state && (
+    <div className="machine-container">
+      {/* Adicione isso no início do nosso componente */}
+      {renderDropTimer()}
+      <p>{`Itens Cunhados: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
+      <button
+        className="cta-button mint-button"
+        onClick={mintToken}
+      >
+        Cunhar NFT
+      </button>
+    </div>
+  )
+);
+```
+
+Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
+
+*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `sugar update` para mudar isso para o que você quiser!*
+
+Ótimo. Agora podemos voltar ao componente `CountdownTimer` para fazer o restante da configuração lógica. Queremos ver a contagem regressiva do temporizador em tempo real. Vamos usar um pouco de JavaScript para conseguir isso, mas não se preocupe, a lógica é super direta.
 
 
-```json
-{
-  "price": 0.01,
-  "number": 3,
-  "gatekeeper": null,
-  "creators": [
-    {
-      "address": "ENDEREÇO_DA_SUA_CARTEIRA",
-      "share": 100      // Certifique -se de que a participação total entre todos os criadores se resume até exatamente 100
+```jsx
+// Nosso useEffect será executado no carregamento do componente
+useEffect(() => {
+  console.log('Configurando o intervalo...');
+
+  // Use setInterval para executar este pedaço de código a cada segundo
+  const interval = setInterval(() => {
+    const currentDate = new Date().getTime();
+    const distance = dropDate - currentDate;
+
+    // Aqui é tão fácil quanto fazer algumas contas de tempo para obter as diferentes propriedades
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Temos nosso output desejado, defina-o no estado!
+    setTimerString(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+    // Se a nossa distância passar de zero isso significa que é hora do drop!
+    if (distance < 0) {
+      console.log('Limpando o intervalo...');
+      clearInterval(interval);
     }
-  ],
-  "solTreasuryAccount": "ENDEREÇO_DA_SUA_CARTEIRA",
-  "splTokenAccount": null,
-  "splToken": null,
-  "goLiveDate": "2022-05-02T18:00:00+00:00",
-  "endSettings": null,
-  "whitelistMintSettings": null,
-  "hiddenSettings": null,
-  "freezeTime": null,
-  "retainAuthority": true,
-  "isMutable": true,
-  "symbol": "NB",
-  "sellerFeeBasisPoints": 1,
-  "awsConfig": null,
-  "uploadMethod": "pinata",
-   "pinataConfig":
-  {
-    "jwt": "<JWT>",
-    "apiGateway": "https://api.pinata.cloud",
-    "contentGateway":"https://gateway.pinata.cloud",
-    "parallelLimit":3
-  },
-  "shdwStorageAccount": null
-}
+  }, 1000);
+
+  // Sempre que nosso componente for desmontado, vamos limpar nosso intervalo
+  return () => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  };
+}, []);
 ```
 
-Exclua o arquivo `cache.json` e execute o comando de upload novamente com o comando:
 
+Sinta-se à vontade para copiar e colar todas essas coisas de tempo 😂 . Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
+
+Então é isso!!
+
+Você tem um cronômetro de contagem regressiva bem simples, para que seus fãs saibam quando voltar para cunhar um de seus NFTs.
+
+![Untitled](https://i.imgur.com/OINimrr.png)
+
+📭 Construindo seu estado "Esgotado"
+
+Uma última coisa que poderia ser uma adição bem legal (e que também é fácil de fazer) é mostrar um estado "Esgotado" quando sua máquina ficar sem NFTs para cunhar!
+
+Lembre-se - seu drop tem apenas um número definido de NFTs disponíveis.
+
+Podemos descobrir isso verificando duas propriedades - `itemsRedeemed` e `itemsAvailable` em nossa propriedade `candyMachine.state`! Além disso, vamos adicionar um recurso que mostrará nosso botão de cunhagem apenas quando tivermos itens para cunhar e a data do drop do NFT for atingida!
+
+Esse processo vai ser bem fácil de fazer! Vamos para o nosso componente `CandyMachine` e então seguimos para a função de renderização dos componentes. Adicione o seguinte:
+
+```jsx
+return (
+  candyMachine && candyMachine.state && (
+    <div className="machine-container">
+      {renderDropTimer()}
+      <p>{`Itens Cunhados: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
+        {/* Verifique se essas propriedades são iguais! */}
+        {candyMachine.state.itemsRedeemed === candyMachine.state.itemsAvailable ? (
+          <p className="sub-text">Esgotado!🙊</p>
+        ) : (
+          <button
+            className="cta-button mint-button"
+            onClick={mintToken}
+          >
+            Cunhar NFT
+          </button>
+        )}
+    </div>
+  )
+);
 ```
-sugar update
-```
-**Não** se esqueça de atualizar o valor de `NEXT_PUBLIC_CANDY_MACHINE_ID` em `.env.local` com o novo `Candy machine ID`.
-
-E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você quiser saber mais sobre o IPFS, [confira isso aqui](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o).
-
-### 🚀 Lance para o mundo
-
-A implatação pode ser feita facilmente pela Vercel, criadora do Next.js, e ainda é **grátis**.
-
-Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores da web3dev não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras 😂.
-
-Basicamente:
-
-* Envie seu código mais recente para o Github. Não faça o commit do `.cache`;
-* Conecte o Vercel ao seu repositório;
-* Certifique-se de definir sua raiz para `app`;
-* Faça a implantação;
-* Concluído!
-
-🚧 Para dar mais segurança, verifique o arquivo `.gitignore` na pasta `root`, para que ele ignore automaticamente todos os arquivos e não seja enviado ao Github. É assim que meu `gitignore` se parece:
-
-```javascript
-.DS_Store
-.env
-.env.local
-node_modules
-cache.json
-config.json
-sugar.log
-```
-
-[Loom](https://www.loom.com/share/ce89a285b90a4b34ac358fce9ae7f92d)
-
-Nota: No Vercel, você precisará adicionar a 6ª variável de ambiente como `CI=false`. Isso garantirá que nossa compilação não falhe devido a avisos.
-
-![https://camo.githubusercontent.com/daa43421b435444beec8a23878d1138c1929e48b97c1a571745bbab0ca3056b0/68747470733a2f2f692e696d6775722e636f6d2f776e3255686a342e706e67](https://camo.githubusercontent.com/daa43421b435444beec8a23878d1138c1929e48b97c1a571745bbab0ca3056b0/68747470733a2f2f692e696d6775722e636f6d2f776e3255686a342e706e67)
 
 
-### 😍 Olá, Mestre da Solana
+![Untitled](https://i.imgur.com/0U3sY16.png)
 
-É super emocionante que você conseguiu chegar ao fim. Isso é algo grandioso!! A Solana ainda está **super no início** e já é muito poderosa! E agora você teve a chance de mexer com a tecnologia principal. Aí sim!! Agora você tem todas as habilidades que precisa para construir seus próprios drops de NFT na Solana.
+Está ficando bem Legal!!
 
-Obrigado por contribuir para o futuro da web3 aprendendo essas coisas. O fato de você saber como isso funciona e como codificar tudo isso é um superpoder. Use seu poder com sabedoria 😉.
+### 🎨 A Magia do CSS
+
+Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine 😊!
 
 
-Vá para **#progresso** no Discord e envie-nos o link do seu aplicativo final, pois queremos cunhar sua nft 😊.
+### 🚨 Relatório de progresso
 
-Além disso, você deve postar seu projeto final no Twitter ou Likedin e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
+Por favor, faça isso, senão o vitordev vai ficar triste 😔
 
-E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
-
-Nos dê essa dose de dopamina, por favor.
-
-Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no bootcamp? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
-
-Não deixe de mandar seu feeback na sala `#pod-bootcamp` no nosso discord.
-
-Vejo você por aí!!!
+Em `#progresso`, poste uma captura de tela do seu aplicativo web.

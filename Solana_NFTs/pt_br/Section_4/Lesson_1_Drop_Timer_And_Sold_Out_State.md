@@ -6,8 +6,7 @@ Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento 
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
-
-```
+```plaintext
 /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
       return fs.readdirSync(`${val}`).map(file => path.join(val, file));
                       ^
@@ -28,7 +27,6 @@ Este temporizador precisa fazer algumas coisas:
 
 Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer`. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
 
-
 ```jsx
 import React, { useEffect, useState } from 'react';
 
@@ -47,25 +45,19 @@ const CountdownTimer = ({ dropDate }) => {
 export default CountdownTimer;
 ```
 
-
-​
-
 Estamos configurando um componente React bem simples que manterá algum estado e receberá uma `dropDate` (data do drop).
 
-Massa! Antes de prosseguirmos, vamos importar o componente `app/src/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
-
+Massa! Antes de prosseguirmos, vamos importar o componente `app/components/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
 
 ```jsx
 import CountdownTimer from '../CountdownTimer';
 ```
 
-
 A partir daqui, podemos configurar nossa lógica para lidar com quando mostrar esse cronômetro de contagem regressiva.
 
 No nosso caso, só queremos mostrar esse componente se a data atual for **anterior** à data do drop. **Caso contrário**, iremos em frente e mostraremos a data e hora do drop.
 
-Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/src/CandyMachine/index.js`.
-
+Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/components/CandyMachine/index.js`.
 
 ```jsx
 // Crie a função de renderização
@@ -101,7 +93,6 @@ return (
   )
 );
 ```
-
 
 Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
 
@@ -154,7 +145,7 @@ Então é isso!!
 
 Você tem um cronômetro de contagem regressiva bem simples, para que seus fãs saibam quando voltar para cunhar um de seus NFTs.
 
-![https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67](https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67)
+![Untitled](https://i.imgur.com/OINimrr.png)
 
 📭 Construindo seu estado "Esgotado"
 
@@ -165,7 +156,6 @@ Lembre-se - seu drop tem apenas um número definido de NFTs disponíveis.
 Podemos descobrir isso verificando duas propriedades - `itemsRedeemed` e `itemsAvailable` em nossa propriedade `candyMachine.state`! Além disso, vamos adicionar um recurso que mostrará nosso botão de cunhagem apenas quando tivermos itens para cunhar e a data do drop do NFT for atingida!
 
 Esse processo vai ser bem fácil de fazer! Vamos para o nosso componente `CandyMachine` e então seguimos para a função de renderização dos componentes. Adicione o seguinte:
-
 
 ```jsx
 return (
@@ -193,7 +183,6 @@ return (
 ![Untitled](https://i.imgur.com/0U3sY16.png)
 
 Está ficando bem Legal!!
-
 
 ### 🎨 A Magia do CSS
 

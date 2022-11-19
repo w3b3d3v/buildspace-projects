@@ -13,7 +13,7 @@ O passo final aqui é transferir o repositório do fork que você acabou de faze
 Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que seu projeto ficará e execute o comando:
 
 
-```
+```plaintext
 git clone SEU_LINK_DO_FORK
 ```
 
@@ -21,13 +21,11 @@ Aí está 😊. Hora de codificar!
 
 Leia o arquivo `README.md` com as instruções para instalar as depências do necessárias e também rodar localmente o App. 
 
-
 ### 🔌 Criando um botão de conexão de carteira com a Phantom Wallet
 
 Para este projeto, usaremos uma carteira chamada [Phantom](https://phantom.app/). Esta é uma das principais extensões de carteira para Solana.
 
 Antes de mergulharmos em qualquer código - certifique-se de ter baixado a extensão e configurado uma carteira Solana! Atualmente, a Phantom Wallet suporta **Chrome**, **Brave**, **Firefox** e **Edge**. Mas, como nota: só testamos este código no Brave e no Chrome.
-
 
 ### 👻 Usando o objeto Solana
 
@@ -62,38 +60,9 @@ const WalletMultiButtonDynamic = dynamic(
         <div>
             <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji"/>
 
-  /* Declare sua função */
-  const checkIfWalletIsConnected = async () => {
-    try {
-      const { solana } = window;
-
-      if (solana && solana.isPhantom) {
-          console.log('Phantom wallet encontrada!');
-      } else {
-        alert('Objeto Solana não encontrado! Consiga uma Phantom Wallet 👻');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  /* Quando nosso componente for montado pela primeira vez, 
-  vamos verificar se temos uma Phantom Wallet  */
-
-  useEffect(() => {
-    const onLoad = async () => {
-      await checkIfWalletIsConnected();
-    };
-    window.addEventListener('load', onLoad);
-    return () => window.removeEventListener('load', onLoad);
-  }, []);
-
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="header-container">
-          <p className="header">🍭 Candy Drop</p>
-          <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+            <div className="button-container">
+                <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
+            </div>
         </div>
     );
 
@@ -113,48 +82,85 @@ const WalletMultiButtonDynamic = dynamic(
                 </div>
             </div>
         </div>
-      </div>
+    );
+};
+
+export default Home;
+```
+
+Excelente! Não é tão difícil, certo? Vamos detalhar isso um pouco mais:
+
+```jsx
+const renderNotConnectedContainer = () => (
+    <div>
+        <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+        <div className="button-container">
+            <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
+        </div>
     </div>
-  );
+);
+```
+
+O `WalletMultiButtonDynamic` detectará dinamicamente qualquer extensão de carteira Solana que você instalou em seu navegador, como `Phantom`, `Sollet`, `Ledger`, `Solflare` etc. Isso depende de suas configurações em `_app.js`. É assim que seu `_app.js` deve ficar.
+
+```javascript
+import { useMemo } from "react";
+import { clusterApiUrl } from "@solana/web3.js";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+
+import "../styles/App.css";
+import "../styles/globals.css";
+import "../styles/CandyMachine.css";
+import "@solana/wallet-adapter-react-ui/styles.css";
+
+const App = ({ Component, pageProps }) => {
+    const network = WalletAdapterNetwork.Devnet;
+    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+    const wallets = useMemo(() => [new PhantomWalletAdapter()], [network]);
+
+    return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                    <Component {...pageProps} />
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
+    );
 };
 
 export default App;
 ```
 
+### Adicionando suporte para mais adaptadores de carteira (opcional)
 
-Excelente! Não é tão difícil, certo? Vamos detalhar isso um pouco mais:
-
+Se você deseja adicionar suporte para mais extensões, pode fazê-lo importando mais adaptadores dessa forma:
 
 ```javascript
-const checkIfWalletIsConnected = async () => {
-  try {
-    const { solana } = window;
+// ... Resto do seu código
+import { PhantomWalletAdapter, SolflareWalletAdapter, TorusWalletAdapter } from "@solana/wallet-adapter-wallets";
 
-    if (solana && solana.isPhantom) {
-        console.log('Phantom wallet encontrada!');
-    } else {
-      alert('Objeto Solana não encontrado! Consiga uma Phantom Wallet 👻');
-    }
-  } catch (error) {
-    console.error(error);
-  }
+// ... Resto do seu código
+
+const App = ({ Component, pageProps }) => {
+    // ... Resto do seu código
+    const wallets = useMemo(() => [new PhantomWalletAdapter(), new SolflareWalletAdapter(), new TorusWalletAdapter()], [network]);
+
+    return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                    <Component {...pageProps} />
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
+    );
 };
-```
 
-
-Nossa função aqui está verificando o objeto `window` em nosso DOM para ver se a extensão Phantom Wallet injetou o objeto `solana`. Se tivermos mesmo um objeto `solana`, também podemos verificar se é uma Phantom Wallet.
-
-Como testamos este projeto inteiramente com as Phantom Wallets, recomendamos manter essa configuração. No entanto, nada o impede de explorar ou apoiar outras carteiras 👀.
-
-
-```javascript
-useEffect(() => {
-  const onLoad = async () => {
-    await checkIfWalletIsConnected();
-  };
-  window.addEventListener('load', onLoad);
-  return () => window.removeEventListener('load', onLoad);
-}, []);
+export default App;
 ```
 
 
@@ -162,22 +168,17 @@ Certifique-se de ter instalado as depências e estar na pasta `app` e agora exec
 
 <img src="https://i.imgur.com/TSV1xWk.png" />
 
-Finalmente, só precisamos executar isso aqui!
-
-No React, o hook `useEffect` é chamado uma vez na montagem do componente quando esse segundo parâmetro (o `[]`) está vazio! Então, isso é perfeito para nós. Assim que alguém acessa nosso aplicativo, podemos verificar se ele possui a Phantom Wallet instalada ou não. Isso será **muito importante** em breve.
-
-Atualmente, a equipe da Phantom Wallet sugere esperar que a janela termine completamente o carregamento antes de verificar o objeto `solana`. Uma vez que este evento é chamado, podemos garantir que este objeto esteja disponível se o usuário tiver a extensão Phantom Wallet instalada.
-
+Como testamos este projeto totalmente com as Phantom Wallets, recomendamos manter isso. No entanto, nada o impede de explorar ou apoiar outras carteiras 👀.
 
 ### 🔒 Acessando a conta do usuário
 
-Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso: 
+Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso
 
 <img src="https://i.imgur.com/jbMvgpr.png" />
 
 _Lembrando que para obter instruções adicionais sobre como executar seu aplicativo, consulte o `README.md` na raiz do seu projeto._
 
-**LEGAL**.
+**LEGAL!**
 
 Em seguida, precisamos realmente verificar se estamos **autorizados** a acessar a carteira do usuário. Assim que tivermos acesso a isso, podemos começar a ter acesso às funções do nosso programa Solana 🤘.
 
