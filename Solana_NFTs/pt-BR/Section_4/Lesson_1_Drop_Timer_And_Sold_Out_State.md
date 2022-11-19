@@ -50,11 +50,8 @@ Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o to
 }
 ```
 
-Exclua o arquivo `cache.json` e execute o comando de upload novamente com o comando:
+Então siga os passos citadados anteriormente para atulizar os dados da coleção de NFTs.
 
-```
-sugar update
-```
 **Não** se esqueça de atualizar o valor de `NEXT_PUBLIC_CANDY_MACHINE_ID` em `.env.local` com o novo `Candy machine ID`.
 
 E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você quiser saber mais sobre o IPFS, [confira isso aqui](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o).

@@ -57,7 +57,7 @@ Mais uma coisa aleatória para fazer antes de seguir em frente. Na Phantom Walle
 Digamos que você não gostou da coleção NFT que usou para testar e teve uma ideia melhor. Você precisa ter cuidado aqui! Sempre que você alterar sua coleção, precisará seguir as mesmas etapas anteriores para implantar os NFTs.
 
 1. Exclua o arquivo `cache.json` que foi gerado pelos comandos da Candy Machine na CLI do Metaplex.
-2. Altere seus arquivos NFT para o que você quiser!
+2. Altere seus arquivos NFT como quiser!
 3. Execute o comando `sugar upload` do Metaplex via CLI para fazer o upload dos NFTs e criar uma nova Candy Machine.
 4. Execute o comando `sugar deploy` do Metaplex via CLI.
 5. Execute o comando `sugar verify` do Metaplex via CLI para certificar-se de que os NFTs foram carregados e a Candy Machine foi configurada corretamente.
