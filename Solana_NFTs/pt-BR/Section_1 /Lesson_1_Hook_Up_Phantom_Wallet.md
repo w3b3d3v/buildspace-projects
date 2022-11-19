@@ -17,6 +17,24 @@ Finalmente, vá para o seu terminal e execute o comando :
 git clone SEU_LINK_DO_FORK
 ```
 
+Você também opção de usar o [Replit](https://replit.com/~) se preferir!
+
+Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal.**
+
+É um IDE baseado em navegador que nos permite facilmente criar aplicativos web e fazer o deploy deles a partir do navegador. E é totalmente legal. Em vez de ter que configurar um ambiente local completo e escrever comandos para fazer o deploy, tudo é dado para a gente.
+
+Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
+
+Já criei um projeto básico de Next que você pode fazer um **fork** no Replit.
+
+[Basta clicar aqui]() **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
+
+Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
+
+**Observação: à medida que avança neste projeto, você pode notar que estamos fazendo referência a arquivos `.js`. No Replit, se você estiver criando novos arquivos JavaScript, precisará usar a extensão `.jsx`! Replit tem algumas frescuras de desempenho que obrigam que você use a extensão de arquivo `.jsx` 😊.**
+
+[Aqui está um vídeo rápido](https://www.loom.com/share/4578eb9fba1243499a6913d214b21dc3) que fiz para outro projeto, abordando alguns conceitos básicos da Replit.
+
 Aí está 😊. Hora de codificar!
 
 Abra o arquivo `README.md` ele contém as instruções para instalar as depências do necessárias e também rodar localmente o App. 
@@ -168,7 +186,7 @@ Como testamos este projeto totalmente com as Phantom Wallets, recomendamos mante
 
 ### 🔒 Acessando a conta do usuário
 
-Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso
+Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso.
 
 <img src="https://i.imgur.com/Rsg01DA.png" />
 

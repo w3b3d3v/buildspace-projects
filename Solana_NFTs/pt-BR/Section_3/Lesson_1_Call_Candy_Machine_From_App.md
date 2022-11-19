@@ -1,6 +1,6 @@
 ### ☎️ Se comunique com a Candy Machine do seu aplicativo web
 
-**Aviso:** Caso você clique em `Cunhar Nft` durante esta lição, pode gerar um erro, não se desespere, na próxima lição iremos implementar a função.
+**Aviso:** Caso você clique no botão `Cunhar Nft` durante esta lição, pode gerar um erro, não se desespere, na próxima lição iremos implementar a função, o importante é receber os dados no console.
 
 Nós finalmente conseguimos. Vamos fazer uma pequena recapitulação do que fizemos até agora. Nós: 
 

@@ -294,9 +294,13 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
 ```
 
 
-Isso significa que o comando não pode acessar o arquivo `cache.json` com os dados importantes da sua Candy Machine e dos seus NFTs. Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos do Sugar no mesmo diretório onde estão o arquivo `cache.json` e a pasta `assets` ou seja na pasta raiz do projeto. Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine;
+Isso significa que o comando não pode acessar o arquivo `cache.json` com os dados importantes da sua Candy Machine e dos seus NFTs. 
 
-Verifique sempre o seu diretório!!
+Portanto, se você receber este erro, tenha 100% de certeza de que está executando os comandos do Sugar no mesmo diretório onde estão o arquivo `cache.json` ou seja na pasta raiz do projeto.
+
+Isso é muito fácil de dar errado, pois no futuro você pode estar no diretório `app` editando seu aplicativo web e atualizando a Candy Machine;
+
+Verifique sempre o seu diretório para evitar **erros**.
 
 ### 🚨 Relatório de progresso
 

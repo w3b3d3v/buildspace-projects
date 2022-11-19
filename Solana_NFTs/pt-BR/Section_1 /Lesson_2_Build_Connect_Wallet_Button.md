@@ -74,7 +74,7 @@ Acho que isso é bem autoexplicativo. `useWallet` é um gancho personalizado for
 ```
 Aqui, estamos dizendo ao React para renderizar o `Hello World` apenas se tivermos uma `publicKey` disponível. Portanto, se não houver `publicKey`, isso significa que um usuário não conectou sua carteira e devemos mostrar a ele o botão para conectar sua carteira.
 
-Vá em frente, atualize sua página e pressione o botão Selecionar carteira! Se tudo funcionar, você finalmente verá a extensão Phantom Wallet aparecer assim:
+Vá em frente, atualize sua página e pressione o botão "Selecionar carteira". Se tudo funcionar, você finalmente verá a extensão Phantom Wallet que ira abrir um balão como esse:
 
 ![Untitled](https://i.imgur.com/wXQyWEe.png)
 
