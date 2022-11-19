@@ -10,7 +10,7 @@ O passo final aqui é transferir o repositório do fork que você acabou de faze
 
 ![image](https://i.imgur.com/dlsiQg8.png)
 
-Finalmente, vá para o seu terminal, dê um `cd` para qualquer diretório em que seu projeto ficará e execute o comando:
+Finalmente, vá para o seu terminal e execute o comando :
 
 
 ```plaintext
@@ -19,7 +19,7 @@ git clone SEU_LINK_DO_FORK
 
 Aí está 😊. Hora de codificar!
 
-Leia o arquivo `README.md` com as instruções para instalar as depências do necessárias e também rodar localmente o App. 
+Abra o arquivo `README.md` ele contém as instruções para instalar as depências do necessárias e também rodar localmente o App. 
 
 ### 🔌 Criando um botão de conexão de carteira com a Phantom Wallet
 
