@@ -1,9 +1,11 @@
 ### ☎️ Se comunique com a Candy Machine do seu aplicativo web
 
+**Aviso:** Caso você clique em `Cunhar Nft` durante esta lição, pode gerar um erro, não se desespere, na próxima lição iremos implementar a função.
+
 Nós finalmente conseguimos. Vamos fazer uma pequena recapitulação do que fizemos até agora. Nós: 
 
 1. Configuramos nosso aplicativo da web.
-2. Construímos um recurso de conexão à carteira
+2. Construímos um recurso de conexão à carteira.
 3. Configuramos nossa Candy Machine, fizemos o upload de nossos NFTs e implementamos tudo na devnet.
 
 Tire um momento para se aplaudir 👏! Você agora faz parte de uma equipe de elite de indivíduos que sabem como fazer isso. Existem menos de 20.000 desenvolvedores em Solana neste momento. Use seu poder com sabedoria, jovem gafanhoto.
@@ -16,7 +18,7 @@ Antes de começarmos, você notará em `components/CandyMachine/index.js` que ex
 
 Algumas coisas neste arquivo são bastante avançadas, mas explore-as e mexa com elas da forma que quiser. A melhor maneira de aprender essas coisas é apenas lendo o código e brincando com ele.
 
-Mas, não se preocupe muito em explorar ainda. Vamos fazer as coisas funcionarem primeiro (risos)!
+Mas, não se preocupe muito em explorar ainda. Vamos fazer as coisas funcionarem primeiro 😂 !
 
 ### 🌲 Configurar as propriedades `.env`
 
@@ -32,7 +34,7 @@ NEXT_PUBLIC_SOLANA_RPC_HOST=https://metaplex.devnet.rpcpool.com/
 ```
 
 
-Vamos um por um (nota: as aspas **não** são necessárias aqui).
+As aspas **não** são necessárias aqui.
 
 **Nota**: `cache.json` pode ser encontrado na raiz da sua pasta após a execução do comando Metaplex nas etapas anteriores. Para saber mais sobre o uso de variáveis de ambiente no Next.js, você pode ler [aqui](https://nextjs.org/docs/basic-features/environment-variables)
 
@@ -56,9 +58,10 @@ Digamos que você não gostou da coleção NFT que usou para testar e teve uma i
 
 1. Exclua o arquivo `cache.json` que foi gerado pelos comandos da Candy Machine na CLI do Metaplex.
 2. Altere seus arquivos NFT para o que você quiser!
-3. Execute o comando `upload` do Metaplex via CLI para fazer o upload dos NFTs e criar uma nova Candy Machine.
-4. Execute o comando `verify` do Metaplex via CLI para certificar-se de que os NFTs foram carregados e a Candy Machine foi configurada corretamente.
-5. Atualize seu arquivo `.env.local` com o novo endereço.
+3. Execute o comando `sugar upload` do Metaplex via CLI para fazer o upload dos NFTs e criar uma nova Candy Machine.
+4. Execute o comando `sugar deploy` do Metaplex via CLI.
+5. Execute o comando `sugar verify` do Metaplex via CLI para certificar-se de que os NFTs foram carregados e a Candy Machine foi configurada corretamente.
+6. Atualize seu arquivo com o novo `Candy Machine ID` em `.env.local` com o novo endereço.
 
 Se você errar, mesmo que seja em um pequeno detalhe, tudo vai dar errado. Então tenha cuidado.
 
@@ -67,7 +70,7 @@ Se você errar, mesmo que seja em um pequeno detalhe, tudo vai dar errado. Entã
 
 A primeira coisa que vamos fazer é pegar os metadados da nossa Candy Machine. Esses metadados nos fornecem algumas informações interessantes, como a data do drop, quantos itens foram cunhados e quantos itens estão disponíveis para cunhar.
 
-Também é bom começar com esse processo, porque se pudermos pegar os metadados, isso significa que configuramos nossa Candy Machine corretamente :).
+Também é bom começar com esse processo, porque se pudermos pegar os metadados, isso significa que configuramos nossa Candy Machine corretamente 😊.
 
 Vá para `app/components/CandyMachine/index.js`.
 
@@ -97,7 +100,7 @@ Vá em frente e adicione o `getProvider` abaixo de onde você colocar o seu `use
 
 ```jsx
 const getProvider = () => {
-  const rpcHost = process.env.NEXT_APP_SOLANA_RPC_HOST;
+  const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST;
   // Crie um novo objeto de conexão
   const connection = new Connection(rpcHost);
   
@@ -129,7 +132,7 @@ const getCandyMachineState = async () => {
 
   // Busque os metadados da sua Candy Machine com o comando fetch
   const candyMachine = await program.account.candyMachine.fetch(
-    process.env.NEXT_APP_CANDY_MACHINE_ID
+    process.env.NEXT_PUBLIC_CANDY_MACHINE_ID
   );
   
   // Analise todos os nossos metadados e crie um log
@@ -171,18 +174,18 @@ OK - muita coisa está acontecendo aqui. Vamos conferir.
 
 Para podermos conversar com nossa Candy Machine, precisaremos de duas coisas - **a `IDL`** (Interface Definition Language, ou Linguagem de Definição de Interface) **e um objeto `Program`**. A `IDL` tem informações que nosso aplicativo da web precisa, sobre como interagir com a Candy Machine. O `Program` é um objeto que podemos usar para **interagir diretamente** com a Candy Machine.
 
-Você sabe como criar uma conexão com uma `Database` na web2? Bem - aqui estamos fazendo algo semelhante (risos). Mas estamos criando uma conexão com a Solana.
+Você sabe como criar uma conexão com uma `Database` na web2? Bem - aqui estamos fazendo algo semelhante 😂. Mas estamos criando uma conexão com a Solana.
 
 No final das contas, nossa Candy Machine é apenas um programa da Solana que mora no Metaplex! Isso significa que podemos interagir com ela exatamente como faríamos com qualquer programa que resida na Solana.
 
 Uma vez que criamos nosso objeto `Program`, buscamos seus metadados com base no ID da nossa Candy Machine.
 
-Essa linha chama o método fetch no programa da nossa Candy Machine e retorna `itemsAvailable` , `itemsRedeemed` , `itemsRemaining` e `goLiveDate`.
+Essa linha abaixo chama o método fetch no programa da nossa Candy Machine e retorna `itemsAvailable` , `itemsRedeemed` , `itemsRemaining` e `goLiveDate`.
 
 ```jsx
 // Busque os metadados da sua Candy Machine com o comando fetch
   const candyMachine = await program.account.candyMachine.fetch(
-    process.env.NEXT_APP_CANDY_MACHINE_ID
+    process.env.NEXT_PUBLIC_CANDY_MACHINE_ID
   );
   
   // Analise todos os nossos metadados e crie um log
@@ -206,10 +209,9 @@ Vamos então renderizar nosso componente `CandyMachine`. Se você rolar até o f
 Vá para `app/pages/index.js` e importe `CandyMachine`.
 
 ```jsx
-import React from "react";
+...
 import CandyMachine from "../components/CandyMachine";
-import { useWallet } from "@solana/wallet-adapter-react";
-import dynamic from 'next/dynamic';
+...
 ```
 
 A partir daí, queremos apenas renderizar `CandyMachine` se tivermos o endereço de carteira de um usuário no estado.
@@ -227,22 +229,23 @@ return (
             </div>
             <div className="footer-container">
                 <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`Construído no @${TWITTER_HANDLE}`}</a>
+                <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`contruido na @${TWITTER_HANDLE}`}</a>
             </div>
         </div>
     </div>
 );
 ```
 
-Observe como declaramos `wallet` para `CandyMachine` :).
+Observe como declaramos `wallet` para `CandyMachine` 😊.
 
-### 🍪 Renderize os dados recuperados
+### 🍪 Renderizando os dados recuperados
 
 Ok! Agora, não devemos ter mais erros e nosso `useEffect` na `CandyMachine` deve ser acionado assim que atualizarmos nossa página.
 
 Vá em frente, atualize sua página e você deverá ver algo assim em seu console:
 
 ![Untitled](https://i.imgur.com/Z6ogT3P.png)
+
 
 Você literalmente acabou de buscar dados na devnet da Solana. Se você não comemorou, nossa! Por favor, faça isso agora! Isso é GRANDIOSO! Você está no caminho certo para se tornar uma lenda da web3 🤘.
 
@@ -258,7 +261,7 @@ const goLiveDateTimeString = `${new Date(
 
 _Você escolhe se quer fazer isso ou não._
 
-Se você acessar seu site, verá que algumas coisas já estão renderizadas, mas não estamos renderizando nenhum dos dados reais. Vamos fazer isso então. _A propósito, o design não está muito legal agora, mas você terá a oportunidade de consertar isso :)_.
+Se você acessar seu site, verá que algumas coisas já estão renderizadas, mas não estamos renderizando nenhum dos dados reais. Vamos fazer isso então. _A propósito, o design não está muito legal agora, mas você terá a oportunidade de consertar isso 😊_.
 
 Então, para mostrar os dados, vamos manter as estatísticas da nossa Candy Machine em uma variável de estado. Siga adiante e importe `useState` em seu componente `CandyMachine` em `app/components/CandyMachine/index.js`, então vá em frente e adicione o seguinte código:
 
@@ -280,7 +283,7 @@ const CandyMachine({walletAddress}) => {
     const idl = await Program.fetchIdl(candyMachineProgram, provider);
     const program = new Program(idl, candyMachineProgram, provider);
     const candyMachine = await program.account.candyMachine.fetch(
-      process.env.NEXT_APP_CANDY_MACHINE_ID
+      process.env.NEXT_PUBLIC_CANDY_MACHINE_ID
     );
     
     const itemsAvailable = candyMachine.data.itemsAvailable.toNumber();
@@ -299,7 +302,7 @@ const CandyMachine({walletAddress}) => {
   
     // Adicione esses dados ao seu estado para renderizar
     setCandyMachine({
-      id: process.env.NEXT_APP_CANDY_MACHINE_ID,
+      id: process.env.NEXT_PUBLIC_CANDY_MACHINE_ID,
       program,
       state: {
         itemsAvailable,
@@ -349,7 +352,9 @@ return (
   // Mostrar isso apenas se machineStats estiver disponível
   candyMachine && (
     <div className="machine-container">
-      <p>{`Data do Drop: ${candyMachine.state.goLiveDateTimeString}`}</p>
+      <p>
+        {`Data do Drop: ${candyMachine.state.goLiveDateTimeString}`}
+      </p>
       <p>{`Itens Cunhados: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
       <button className="cta-button mint-button" onClick={null}>
           Cunhar NFT
@@ -362,14 +367,14 @@ return (
 
 É simples assim! Você deve ver todos os dados bem renderizados em seu aplicativo da web agora.
 
-Forneci um arquivo `CandyMachine.css` que inclui alguns estilos básicos para você. Quando estiver pronto para fazer algumas alterações, vá até lá e adicione o CSS que quiser para torná-lo seu. Mesmo se você for preguiçoso, basta mudar algumas cores por ali. Crie um estilo só seu. Não faça igual ao meu (risos).
+Forneci um arquivo `CandyMachine.css` que inclui alguns estilos básicos para você. Quando estiver pronto para fazer algumas alterações, vá até lá e adicione o CSS que quiser para torná-lo seu. Mesmo se você for preguiçoso, basta mudar algumas cores por ali. Crie um estilo só seu. Não faça igual ao meu 😂 .
 
-Você notará que tem um botão "Cunhar NFT" bem bacana, mas quando você clica nele, nada acontece 😔.
+Você notará que tem um botão "Cunhar NFT" bem bacana, mas quando você clica nele, inclusive pode gerar alguns erros,não se preocupe, na próxima aula iremos deixar tudo funcionando.
 
 Não se preocupe! Na próxima seção vamos construir a lógica para este botão e configurá-lo para cunhar nosso primeiro NFT.
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+_Por favor, faça isso, senão o vitordev vai ficar triste 😔_
 
-Em `#progresso`, deixe uma captura de tela do seu aplicativo web mostrando como ele renderiza os dados que recupera de sua Candy Machine!
+Em `#progresso`, envie uma captura de tela do seu aplicativo web mostrando como ele renderiza os dados que recupera de sua Candy Machine no seu web app.

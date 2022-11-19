@@ -69,19 +69,19 @@ Esta é a informação básica que você precisará para começar a trabalhar co
 
 **Agora, este é o momento para você ficar insanamente criativo. Crie três NFTs aleatórios para sua coleção.**
 
-Para começar, recomendo escolher três PNGs com os quais você se identifica. Talvez sejam três de sua capa de álbum favorita, três de seus personagens de anime favoritos, três de seus pôsteres de filmes favoritos. Não importa!!
+Para começar, recomendo escolher três PNGs com os quais você se identifica. Talvez sejam três de sua capa de álbum favorita, três de seus personagens de anime favoritos, três de seus pôsteres de filmes favoritos. Você escolhe !
 
 **Escolha três de seus favoritos.**
 
-Vou escolher Naruto, Sasuke e Sakura – meu trio de anime favorito :).
+Pessoalmente escolhi algumas imagens do halloween 🎃.
 
-Observação: Agora, apenas PNGs são suportados por meio da CLI. Para outros tipos de arquivos como MP4, MP3, HTML, etc, você precisa criar um script personalizado. Veja a conversa do github [aqui](https://github.com/metaplex-foundation/metaplex/pull/1601).
+Observação: Agora, apenas PNGs são suportados por meio da CLI. Para outros tipos de arquivos como MP4, MP3, HTML, etc, você precisa criar um script personalizado. Veja [esta](https://github.com/metaplex-foundation/metaplex/pull/1601) página no Github.
 
 Você pode até dar um nome específico à sua coleção se quiser, adicionando seu próprio objeto `collection`. Confira um exemplo [aqui](https://docs.metaplex.com/developer-tools/sugar/guides/preparing-assets).
 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor, faça isso, senão o Melk vai ficar triste 😢.
 
-Do que você está fazendo seus NFTs? Mostre pra gente em `#progresso`.
+Fique a vontade para mostrar o tema da sua coleção de NFTs no discord em `#progresso`.

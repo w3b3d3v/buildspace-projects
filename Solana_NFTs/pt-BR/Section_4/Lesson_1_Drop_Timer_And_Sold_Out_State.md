@@ -22,18 +22,17 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 ```
 
-Então significa que o comando não pode acessar a pasta .cache, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão as pastas .cache e assets.
+Então significa que o comando não pode acessar a pasta assets e o arquivo cache.json, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
 
 Este temporizador precisa fazer algumas coisas:
 
 1. Ele só será mostrado se a data atual for anterior à data do drop que configuramos;
 2. Deve ter um temporizador de estilo "contagem regressiva" que faça uma contagem regressiva por segundo.
 
-Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer` com um arquivo `CountdownTimer.css` dentro dela. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
+Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer`. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import './CountdownTimer.css';
 
 const CountdownTimer = ({ dropDate }) => {
   // Estado
@@ -94,8 +93,6 @@ return (
       >
         Cunhar NFT
       </button>
-      {mints.length > 0 && renderMintedItems()}
-      {isLoadingMints && <p>CARREGANDO CUNHAGENS...</p>}
     </div>
   )
 );
@@ -103,7 +100,7 @@ return (
 
 Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
 
-*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `update_candy_machine` para mudar isso para o que você quiser!*
+*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `sugar update` para mudar isso para o que você quiser!*
 
 Ótimo. Agora podemos voltar ao componente `CountdownTimer` para fazer o restante da configuração lógica. Queremos ver a contagem regressiva do temporizador em tempo real. Vamos usar um pouco de JavaScript para conseguir isso, mas não se preocupe, a lógica é super direta.
 
@@ -146,7 +143,7 @@ useEffect(() => {
 ```
 
 
-Sinta-se à vontade para copiar e colar todas essas coisas de tempo (risos). Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
+Sinta-se à vontade para copiar e colar todas essas coisas de tempo 😂 . Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
 
 Então é isso!!
 
@@ -187,17 +184,17 @@ return (
 ```
 
 
-![Untitled](https://i.imgur.com/fYEzoeg.png)
+![Untitled](https://i.imgur.com/0U3sY16.png)
 
 Está ficando bem Legal!!
 
 ### 🎨 A Magia do CSS
 
-Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine :)!
+Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine 😊!
 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor, faça isso, senão o vitordev vai ficar triste 😔
 
-Em `#progresso`, poste uma captura de tela do seu aplicativo da web!
+Em `#progresso`, poste uma captura de tela do seu aplicativo web.
