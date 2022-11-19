@@ -64,13 +64,15 @@ Você chegou até aqui, a implantação é a etapa final. Além disso, seus cole
 
 Basicamente:
 
-* Envie seu código mais recente para o Github. Não faça o commit do `cache.json`;
+* Envie seu código mais recente para o **Github**. Não faça o commit do `cache.json`;
 * Conecte o Vercel ao seu repositório;
 * Certifique-se de definir sua raiz para `app`;
+* Escolha o framework como Next.js;
+* Defina as variáveis de ambiente;
 * Faça a implantação;
 * Concluído!
 
-🚧 Para dar mais segurança, verifique o arquivo `.gitignore` na pasta `root`, para que ele ignore automaticamente todos os arquivos e não seja enviado ao Github. É assim que meu `gitignore` se parece:
+🚧 Para dar mais segurança, verifique o arquivo `.gitignore` na pasta `root` antes de enviar o seu código para o **Github**, para que ele ignore automaticamente todos os arquivos e não seja enviado ao Github. É assim que meu `gitignore` se parece:
 
 ```javascript
 .DS_Store
@@ -81,13 +83,6 @@ cache.json
 config.json
 sugar.log
 ```
-
-[Loom](https://www.loom.com/share/ce89a285b90a4b34ac358fce9ae7f92d)
-
-Nota: No Vercel, você precisará adicionar a 6ª variável de ambiente como `CI=false`. Isso garantirá que nossa compilação não falhe devido a avisos.
-
-![Untitled](https://i.imgur.com/wn2Uhj4.png)
-
 
 ### 😍 Olá, Mestre da Solana
 
