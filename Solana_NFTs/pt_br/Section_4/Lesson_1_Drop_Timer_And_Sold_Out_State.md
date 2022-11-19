@@ -2,7 +2,20 @@
 
 Temos uma configuração incrível para fazer o drop de alguns NFTs bem legais em uma determinada data. A única coisa que está faltando agora é uma maneira legal de mostrar às pessoas que um drop vai acontecer em breve! Então vamos em frente, adicionando um cronômetro de contagem regressiva
 
-Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `sugar update`.
+Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro.
+
+Lembrando que para alterarmos algum dado da coleção de NFTs:
+
+1. Exclua o arquivo `cache.json` que foi gerado pelos comandos da Candy Machine na CLI do Metaplex.
+2. Altere seus arquivos NFT para como quiser!
+3. Execute o comando `sugar upload` do Metaplex via CLI para fazer o upload dos NFTs e criar uma nova Candy Machine.
+4. Execute o comando `sugar deploy` do Metaplex via CLI.
+5. Execute o comando `sugar verify` do Metaplex via CLI para certificar-se de que os NFTs foram carregados e a Candy Machine foi configurada corretamente.
+6. Atualize seu arquivo com o novo `Candy Machine ID` em `.env.local` com o novo endereço.
+
+Se você errar, mesmo que seja em um pequeno detalhe, tudo vai dar errado. Então tenha cuidado.
+
+
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
@@ -18,7 +31,7 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 ```
 
-Então significa que o comando não pode acessar a pasta assets e o arquivo cache.json, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
+Então significa que o comando não pode acessar a pasta assets e o arquivo `cache.json`, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
 
 Este temporizador precisa fazer algumas coisas:
 
@@ -145,7 +158,7 @@ Então é isso!!
 
 Você tem um cronômetro de contagem regressiva bem simples, para que seus fãs saibam quando voltar para cunhar um de seus NFTs.
 
-![Untitled](https://i.imgur.com/OINimrr.png)
+![Untitled](https://i.imgur.com/GLF2AQD.png)
 
 📭 Construindo seu estado "Esgotado"
 
