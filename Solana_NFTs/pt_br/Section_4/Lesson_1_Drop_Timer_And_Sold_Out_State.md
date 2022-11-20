@@ -2,16 +2,24 @@
 
 Temos uma configuração incrível para fazer o drop de alguns NFTs bem legais em uma determinada data. A única coisa que está faltando agora é uma maneira legal de mostrar às pessoas que um drop vai acontecer em breve! Então vamos em frente, adicionando um cronômetro de contagem regressiva
 
-Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro no arquivo config.json e para aplicá-la usando o comando `update_candy_machine`.
+Neste momento, nosso "drop" já aconteceu, pois marcamos a data para um momento no passado. Sinta-se à vontade para alterar a data para algum momento no futuro.
 
-```
-​​ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts update_candy_machine -e devnet  -k ~/.config/solana/devnet.json -cp config.json
-```
+Lembrando que para alterarmos algum dado da coleção de NFTs:
+
+1. Exclua o arquivo `cache.json` que foi gerado pelos comandos da Candy Machine na CLI do Metaplex.
+2. Altere seus arquivos NFT para como quiser!
+3. Execute o comando `sugar upload` do Metaplex via CLI para fazer o upload dos NFTs e criar uma nova Candy Machine.
+4. Execute o comando `sugar deploy` do Metaplex via CLI.
+5. Execute o comando `sugar verify` do Metaplex via CLI para certificar-se de que os NFTs foram carregados e a Candy Machine foi configurada corretamente.
+6. Atualize seu arquivo com o novo `Candy Machine ID` em `.env.local` com o novo endereço.
+
+Se você errar, mesmo que seja em um pequeno detalhe, tudo vai dar errado. Então tenha cuidado.
+
+
 
 Lembre-se de uma lição anterior: se em algum momento você encontrar um erro parecido com este:
 
-
-```
+```plaintext
 /Users/flynn/metaplex/js/packages/cli/src/candy-machine-cli.ts:53
       return fs.readdirSync(`${val}`).map(file => path.join(val, file));
                       ^
@@ -23,19 +31,17 @@ TypeError: Cannot read property 'candyMachineAddress' of undefined
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 ```
 
-Então significa que o comando não pode acessar a pasta .cache, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão as pastas .cache e assets.
+Então significa que o comando não pode acessar a pasta assets e o arquivo `cache.json`, onde estão os dados importantes da sua Candy Machine e NFTs. Portanto, se você receber esse erro, tenha 100% de certeza de que está executando os comandos da Candy Machine no mesmo diretório onde estão os arquivos cache.json e assets.
 
 Este temporizador precisa fazer algumas coisas:
 
 1. Ele só será mostrado se a data atual for anterior à data do drop que configuramos;
 2. Deve ter um temporizador de estilo "contagem regressiva" que faça uma contagem regressiva por segundo.
 
-Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer` com um arquivo `CountdownTimer.css` dentro dela. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
-
+Há muitas maneiras de fazer isso, mas para manter nosso aplicativo um pouco mais limpo, criaremos um componente diferente que lidará com o estado e a lógica do nosso temporizador. Você já deve ver uma pasta `CountdownTimer`. Para começar, crie um arquivo `index.js` dentro dessa pasta e adicione o seguinte código:
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import './CountdownTimer.css';
 
 const CountdownTimer = ({ dropDate }) => {
   // Estado
@@ -52,25 +58,19 @@ const CountdownTimer = ({ dropDate }) => {
 export default CountdownTimer;
 ```
 
-
-​
-
 Estamos configurando um componente React bem simples que manterá algum estado e receberá uma `dropDate` (data do drop).
 
-Massa! Antes de prosseguirmos, vamos importar o componente `app/src/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
-
+Massa! Antes de prosseguirmos, vamos importar o componente `app/components/CandyMachine/index.js`. Sinta-se à vontade para colocá-lo em qualquer lugar no topo do arquivo:
 
 ```jsx
 import CountdownTimer from '../CountdownTimer';
 ```
 
-
 A partir daqui, podemos configurar nossa lógica para lidar com quando mostrar esse cronômetro de contagem regressiva.
 
 No nosso caso, só queremos mostrar esse componente se a data atual for **anterior** à data do drop. **Caso contrário**, iremos em frente e mostraremos a data e hora do drop.
 
-Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/src/CandyMachine/index.js`.
-
+Agora que descobrimos isso, vamos escrever um pouco de código na parte inferior do arquivo `app/components/CandyMachine/index.js`.
 
 ```jsx
 // Crie a função de renderização
@@ -102,17 +102,14 @@ return (
       >
         Cunhar NFT
       </button>
-      {mints.length > 0 && renderMintedItems()}
-      {isLoadingMints && <p>CARREGANDO CUNHAGENS...</p>}
     </div>
   )
 );
 ```
 
-
 Estamos apenas usando uma renderização condicional básica e chamando-a em nossa função de renderização dos componentes. Atualize rapidamente sua página e veja o que aparece!
 
-*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `update_candy_machine` para mudar isso para o que você quiser!*
+*Observação: se você precisar mexer com datas diferentes, não esqueça que você pode usar o comando da CLI `sugar update` para mudar isso para o que você quiser!*
 
 Ótimo. Agora podemos voltar ao componente `CountdownTimer` para fazer o restante da configuração lógica. Queremos ver a contagem regressiva do temporizador em tempo real. Vamos usar um pouco de JavaScript para conseguir isso, mas não se preocupe, a lógica é super direta.
 
@@ -155,13 +152,13 @@ useEffect(() => {
 ```
 
 
-Sinta-se à vontade para copiar e colar todas essas coisas de tempo (risos). Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
+Sinta-se à vontade para copiar e colar todas essas coisas de tempo 😂 . Eu raramente entendo, pois quase sempre copio e colo do StackOverflow hehe.
 
 Então é isso!!
 
 Você tem um cronômetro de contagem regressiva bem simples, para que seus fãs saibam quando voltar para cunhar um de seus NFTs.
 
-![https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67](https://camo.githubusercontent.com/97aa642ab69ccd0b9eeb7ce92b443159d8327a0bfa6e6fa591913db635a9db98/68747470733a2f2f692e696d6775722e636f6d2f4f494e696d72722e706e67)
+![Untitled](https://i.imgur.com/GLF2AQD.png)
 
 📭 Construindo seu estado "Esgotado"
 
@@ -172,7 +169,6 @@ Lembre-se - seu drop tem apenas um número definido de NFTs disponíveis.
 Podemos descobrir isso verificando duas propriedades - `itemsRedeemed` e `itemsAvailable` em nossa propriedade `candyMachine.state`! Além disso, vamos adicionar um recurso que mostrará nosso botão de cunhagem apenas quando tivermos itens para cunhar e a data do drop do NFT for atingida!
 
 Esse processo vai ser bem fácil de fazer! Vamos para o nosso componente `CandyMachine` e então seguimos para a função de renderização dos componentes. Adicione o seguinte:
-
 
 ```jsx
 return (
@@ -197,18 +193,17 @@ return (
 ```
 
 
-![https://camo.githubusercontent.com/99aaadeed4fc792387c035d5a20ccea8de27e9707553ea227803f092003b4527/68747470733a2f2f692e696d6775722e636f6d2f6659457a6f65672e706e67](https://camo.githubusercontent.com/99aaadeed4fc792387c035d5a20ccea8de27e9707553ea227803f092003b4527/68747470733a2f2f692e696d6775722e636f6d2f6659457a6f65672e706e67)
+![Untitled](https://i.imgur.com/0U3sY16.png)
 
 Está ficando bem Legal!!
 
-
 ### 🎨 A Magia do CSS
 
-Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine :)!
+Gaste um tempo apenas limpando o CSS e fazendo com que as coisas fiquem com uma aparência melhor. Adicione sua própria arte. Não use a arte que deixei no código. E agora finalizamos com toda a lógica da nossa Candy Machine 😊!
 
 
 ### 🚨 Relatório de progresso
 
-Por favor faça isso, senão o danicuki vai ficar triste :(
+Por favor, faça isso, senão o vitordev vai ficar triste 😔
 
-Em `#progresso`, poste uma captura de tela do seu aplicativo da web!
+Em `#progresso`, poste uma captura de tela do seu aplicativo web.
