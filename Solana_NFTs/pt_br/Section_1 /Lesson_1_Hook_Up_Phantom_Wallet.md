@@ -27,7 +27,7 @@ Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
 
 Já criei um projeto básico de Next que você pode fazer um **fork** no Replit.
 
-[Basta clicar aqui]() **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
+[Basta clicar aqui](https://replit.com/@vitormancio/SolanaNFTsWEB3DEV) **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
 
 Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
 
