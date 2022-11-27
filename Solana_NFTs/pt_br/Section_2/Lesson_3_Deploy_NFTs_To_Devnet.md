@@ -57,7 +57,7 @@ Depois disso, você pode executar `solana balance` novamente e pronto, você ter
 Para obter o endereço de sua carteira execute o comando:
 
 ```bash
-solana adress
+solana address
 ```
 
 O endereço de sua carteira será usado logo abaixo.
