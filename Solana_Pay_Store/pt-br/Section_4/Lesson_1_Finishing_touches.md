@@ -54,11 +54,11 @@ Há muito trabalho a fazer e a maior parte do trabalho nem precisa ser feito com
 
 Eu gostaria de passar rapidamente pelo significado de "trabalhar na web3" como engenheiro. Você precisa ser um profissional de Solana? Você precisa saber como funciona cada pequena coisa sobre a blockchain?
 
-Por exemplo, digamos que você seja um ótimo engenheiro de frontend. Se você terminou este projeto, você tem quase tudo o que precisa para ser um ótimo engenheiro de frontend em uma empresa web3. Por exemplo, a empresa pode dizer "Ei - por favor, vá e construa nosso recurso de conexão à carteira" - e você já terá uma ideia sólida de como fazer isso :).
+Por exemplo, digamos que você seja um ótimo engenheiro de frontend. Se você terminou este projeto, você tem quase tudo o que precisa para ser um ótimo engenheiro de frontend em uma empresa web3. Por exemplo, a empresa pode dizer "Ei - por favor, vá e construa nosso recurso de conexão à carteira" - e você já terá uma ideia sólida de como fazer isso 😊 .
 
 Eu só quero inspirá-lo a trabalhar na web3 rsrs. Essa área é incrível. E seria legal se você desse uma chance ;).
 
-Certifique-se de clicar em "Work" no topo da página e preencher seu perfil, se ainda não o fez!!! Somos parceiros de algumas das melhores empresas web3 do mundo (ex. Uniswap, OpenSea, Chainlink, Edge e Node, entre outras) e elas querem contratar desenvolvedores da rede buildspace :). Você já adquiriu uma habilidade que é extremamente valiosa e as empresas estão pagando caro por incríveis engenheiros da web3.
+Certifique-se de clicar em "Work" no topo da página e preencher seu perfil, se ainda não o fez!!! Somos parceiros de algumas das melhores empresas web3 do mundo (ex. Uniswap, OpenSea, Chainlink, Edge e Node, entre outras) e elas querem contratar desenvolvedores da rede buildspace 😊 . Você já adquiriu uma habilidade que é extremamente valiosa e as empresas estão pagando caro por incríveis engenheiros da web3.
 
 ### 🤟 Seu NFT!
 
@@ -68,11 +68,11 @@ Certifique-se de clicar no botão na parte inferior desta página e enviar seu l
 
 ### 🌈 Antes de sair
 
-Vá para #showcase no Discord e envie-nos um link para o seu produto final com o qual podemos mexer :).
+Vá para #showcase no Discord e envie-nos um link para o seu produto final com o qual podemos mexer 😊 .
 
 Além disso, você deveria postar no Twitter seu projeto final e mostrar ao mundo sua criação épica! O que você fez não foi nada fácil. Talvez até faça um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre-o para todos!!
 
-E se você quiser, marque @_buildspace :). Isso nos dá muita motivação sempre que vemos as pessoas enviarem seus projetos. Além disso, você pode inspirar outra pessoa a entrar em Solana.
+E se você quiser, marque @_buildspace 😊 . Isso nos dá muita motivação sempre que vemos as pessoas enviarem seus projetos. Além disso, você pode inspirar outra pessoa a entrar em Solana.
 
 Dê-nos essa dose de dopamina, por favor.
 

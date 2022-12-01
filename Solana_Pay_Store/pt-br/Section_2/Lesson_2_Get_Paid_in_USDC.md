@@ -70,7 +70,7 @@ const createTransaction = async (req, res) => {
       usdcMint.decimals // O token pode ter qualquer número de decimais
     );
 
-    // O resto permanece o mesmo :)
+    // O resto permanece o mesmo 😊 
     transferInstruction.keys.push({
       pubkey: new PublicKey(orderID),
       isSigner: false,
@@ -124,7 +124,7 @@ Veja como funcionam as contas de token na Solana.
 
 Todos os tokens fungíveis na Solana são feitos usando o [programa token](https://spl.solana.com/token). Isto significa que cada token tem a sua **própria conta**, que tem um endereço. Para poder enviar tokens dessa conta, você precisa do seu endereço.
 
-Você pode pensar em sua conta Solana como um hotel infinito e em todas as contas token como quartos de hotel. Como proprietário do hotel, você é proprietário dos quartos do hotel. Para poder olhar dentro de um quarto, você precisa saber o seu número :)
+Você pode pensar em sua conta Solana como um hotel infinito e em todas as contas token como quartos de hotel. Como proprietário do hotel, você é proprietário dos quartos do hotel. Para poder olhar dentro de um quarto, você precisa saber o seu número 😊 
 
 **Nota**: Por causa do modelo de conta, **você precisa ter USDC em AMBAS AS contas de usuário**. Se uma conta de usuário não tiver USDC, ela também não terá um endereço de token USDC, e esta função vai falhar.
 
@@ -152,10 +152,10 @@ Agora se você clicar no botão "Comprar agora", você deve ver um pedido da Pha
 
 É isso aí, você está aceitando pagamentos em USDC!
 
-A parte mais legal disso para mim é a experiência de "checkout". Sem cadastros. Sem endereços. Sem e-mails. Há empresas de bilhões de dólares por aí que estão tentando tornar popular o checkout com um clique. Você acabou de implementá-lo em 15 minutos, **gratuitamente** :)
+A parte mais legal disso para mim é a experiência de "checkout". Sem cadastros. Sem endereços. Sem e-mails. Há empresas de bilhões de dólares por aí que estão tentando tornar popular o checkout com um clique. Você acabou de implementá-lo em 15 minutos, **gratuitamente** 😊 
 
 ### 🚨 Relatório de Progresso
 
-Por favor, faça isso, senão o Raza ficará triste :(
+Por favor, faça isso, senão o danicuki ficará triste 😟
 
 Publique uma captura de tela de seu navegador em #progress mostrando seu pedido de transação USDC!

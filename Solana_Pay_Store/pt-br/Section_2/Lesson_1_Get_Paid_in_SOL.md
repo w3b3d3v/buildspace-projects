@@ -273,7 +273,7 @@ A seguir, vamos usar USDC ao invés de SOL
 
 ### 🚨 Relatório de Progresso
 
-Por favor, faça isso, senão o Raza vai ficar triste :(
+Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 Publique uma captura de tela de seu navegador em #progress mostrando seu pedido de transação SOL!
 
