@@ -1,4 +1,4 @@
-O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://pt.wikipedia.org/wiki/Sistema_de_Arquivos_Interplanet%C3%A1rio), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
+O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
 
 Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústria para armazenamento de ativos. É imutável, permanente e descentralizado.
 
@@ -6,7 +6,7 @@ Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústr
 
 A sua utilização é bastante simples. Tudo que você precisa fazer é carregar seus arquivos no IPFS e depois usar o hash de identificação de conteúdo único que ele lhe retorna em seu aplicativo web quando quiser baixar alguma coisa.
 
-Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud/?utm_source=buildspace) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para 100s de ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
+Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud/?utm_source=buildspace) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
 
 ![](https://hackmd.io/_uploads/ry9MWF8P9.png)
 
@@ -27,14 +27,14 @@ ipfs://ADICIONE_SEU_CID_AQUI
 
 E isso vai realmente iniciar um nó IPFS em sua máquina local e recuperar o arquivo! Se você tentar fazer isso em algo como o Chrome, ele apenas faz uma busca no Google rsrs. Ao invés disso, você terá que usar o link `cloudflare-ipfs`.
 
-E agora você sabe como usar o IPFS! Mas há um senão em nosso cenário - já que os itens no IPFS são públicos, **qualquer pessoa** pode acessá-los se tiver o hash de identificação de conteúdo único. Exploraremos métodos para proteger nossas lojas disso mais tarde ;)
+E agora você sabe como usar o IPFS! Mas há um senão em nosso cenário - já que os itens no IPFS são públicos, **qualquer pessoa** pode acessá-los se tiver o hash de identificação de conteúdo único. Exploraremos métodos para proteger nossas lojas disso mais tarde 😉.
 
 
 ### 🎈Baixando Arquivos do IPFS
 
 Tudo o que sobe, deve descer. A menos que seja um foguete para a lua. Ou os 21 balões de hélio que comprei no meu quarto aniversário sem contar aos meus pais. Pergunto-me onde eles estão hoje.
 
-Baixar os arquivos do IPFS é quase mais fácil do que carregá-los rsrs. Eu deixei um arquivo chamado `useIPFS` na pasta _hooks _(ganchos). Dê uma olhada - tudo que ele faz é adicionar o hash e o nome do arquivo a um URL de acesso ao IPFS.
+Baixar os arquivos do IPFS é quase mais fácil do que carregá-los 😂. Eu deixei um arquivo chamado `useIPFS` na pasta _hooks_(ganchos). Dê uma olhada - tudo que ele faz é adicionar o hash e o nome do arquivo a um URL de acesso ao IPFS.
 
 Você pode encontrar outros portais públicos do IPFS [aqui.](https://luke.lol/ipfs.php)
 
