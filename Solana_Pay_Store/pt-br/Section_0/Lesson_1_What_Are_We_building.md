@@ -1,4 +1,4 @@
-Você conseguiu - aí sim! Bem-vindo 😊. Meu nome é danicuki e eu vou ser seu vendedor de emoji!
+Você conseguiu - aí sim! Bem-vindo 😊. Meu nome é danicuki e eu vou ser seu vendedor de emoji, não se preocupe se não entendeu essa piada ainda com certeza você vai entender 🤣!
 
 Você vai se juntar ao clube exclusivo de hackers que são pagos por seus produtos usando Solana Pay!
 
