@@ -239,7 +239,7 @@ export default async function handler(req, res) {
 }
 ```
 
-Isso tudo é apenas JavaScript simples, sinta-se à vontade para revisar :)
+Isso tudo é apenas JavaScript simples, sinta-se à vontade para revisar 😊 
 
 Na verdade, tudo o que é feito é a leitura dos dados e a gravação no arquivo orders.json.
 

@@ -1,4 +1,4 @@
-Você conseguiu - aí sim! Bem-vindo :). Meu nome é Raza e eu vou ser seu vendedor de emoji!
+Você conseguiu - aí sim! Bem-vindo 😊. Meu nome é danicuki e eu vou ser seu vendedor de emoji!
 
 Você vai se juntar ao clube exclusivo de hackers que são pagos por seus produtos usando Solana Pay!
 
@@ -15,7 +15,7 @@ Conecte o seu Discord ao painel do projeto. Todas as coisas boas vão acontecer 
 
 ### 🛠O projeto
 
-Então, o que vamos construir aqui :)? Aqui está um pequeno vídeo:
+Então, o que vamos construir aqui 😊 ? Aqui está um pequeno vídeo:
 
 [Loom](https://www.loom.com/share/634b5d504d6e4624b253bc33e8f6c47f)
 
@@ -24,14 +24,9 @@ Então, o que vamos construir aqui :)? Aqui está um pequeno vídeo:
 
 Ao chegar ao final deste projeto, você ganhará um NFT.
 
-Você só estará habilitado para ganhar o NFT se o concluir dentro de 60 dias após a sua inscrição! Portanto, certifique-se de marcar um horário para terminar, você consegue!
+Você só estará habilitado para ganhar o NFT se o concluir dentro de 10 dias após a sua inscrição! Portanto, certifique-se de marcar um horário para terminar, você consegue!
 
 **Uma vez terminado o projeto, você receberá o airdrop do NFT dentro de 7 dias**.
-
-Veja aqui como ele é:
-
-[Loom](https://www.loom.com/share/0160b290494a4279887e232317cd6322)
-
 
 ### 🤚Como Obter Ajuda
 
@@ -41,7 +36,7 @@ Este projeto é dividido em 4 seções. Você pode ver em que seção você est�
 
 ### 🤘 Vê algum problema? Deseja melhorar alguma coisa? Conserte-o você mesmo ;)
 
-Todo este conteúdo é totalmente de código aberto. Se você vê um problema, erro de digitação, etc. - você mesmo pode consertá-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o @alec no Discord :). No mínimo, deixe um ⭐ no repositório, se você estiver se sentindo sofisticado! Vamos lhe dar  um pouco de representação em código aberto!!!
+Todo este conteúdo é totalmente de código aberto. Se você vê um problema, erro de digitação, etc. - você mesmo pode consertá-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem para o @alec no Discord 😊 . No mínimo, deixe um ⭐ no repositório, se você estiver se sentindo sofisticado! Vamos lhe dar  um pouco de representação em código aberto!!!
 
 ## 👀 Curioso sobre trabalhar na web3?
 
@@ -59,7 +54,7 @@ Na pior das hipóteses, você vai poder conversar com algumas pessoas muito lega
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Raza ficará triste :(
+Por favor, faça isso, senão o danicuki ficará triste 😟
 
 Ei! vá em frente e diga gm em #gm-only no Discord. Isto é muito importante. Extremamente importante. Se você não fizer isso, então toda a humanidade saltará coletivamente e romperá a órbita da Terra causando a colisão com Vênus.
 

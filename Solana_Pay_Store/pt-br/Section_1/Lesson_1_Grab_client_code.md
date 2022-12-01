@@ -19,7 +19,7 @@ Uma coisa que realmente amamos no buildspace é a criatividade insana que as pes
 
 O código base do aplicativo da Web que forneço é apenas para você começar. Mude as coisas. Talvez você odeie as cores que usei. Mude. Talvez você queira o site com um tema em modo mais claro. Faça isso.
 
-Se você acabar mudando as coisas, me marque em #progress e diga - "Yo Raza I made your code better" e poste uma captura de tela.
+Se você acabar mudando as coisas, me marque em #progress e diga - "Yo danicuki I made your code better" e poste uma captura de tela.
 
 Então pronto - mão na massa!
 
@@ -29,7 +29,7 @@ Vamos usar o **Next.js** para construir nosso aplicativo da web. É um framework
 
 Porém não desista! Quanto mais dificuldades você passa, mais você aprende 🧠.
 
-Se você não tem experiência com React ou Next - confira [este tutorial de introdução](https://www.freecodecamp.org/news/nextjs-tutorial/) antes de começar, ou talvez confira os documentos de introdução [aqui](https://nextjs.org/learn/foundations/about-nextjs). Ou não faça nada de especial, apenas comece. O que for melhor para você :).
+Se você não tem experiência com React ou Next - confira [este tutorial de introdução](https://www.freecodecamp.org/news/nextjs-tutorial/) antes de começar, ou talvez confira os documentos de introdução [aqui](https://nextjs.org/learn/foundations/about-nextjs). Ou não faça nada de especial, apenas comece. O que for melhor para você 😊 .
 
 Você será um Feiticeiro em Next após este projeto… isso se você já não for um 🧙‍♂!
 
@@ -71,7 +71,7 @@ Isso deve abrir o aplicativo em seu navegador em localhost:3000. Seu aplicativo 
 
 Para quem quer começar do zero: atenção! As bibliotecas Solana Pay são novinhas em folha. Isso significa que, se você configurar do zero usando o Create-React-App, terá [vários problemas](https://github.com/solana-labs/wallet-adapter/issues/241).. Eu passei por esses problemas de antemão e deixei tudo pronto para você!
 
-Você pode estar se perguntando "Hmm, como o Raza faz isso? Que segredos ele está escondendo de mim?". Bem, caro leitor, uma das primeiras coisas que todo projeto lança são **os modelos**, para que pioneiros como *você* possam trabalhar em vez de desperdiçar tempo nas configurações. Dei uma olhada nos documentos e [encontrei esses modelos iniciais](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter). Tudo o que fiz foi converter o modelo inicial do Next.js do TypeScript para JavaScript e adicionei várias estilizações.
+Você pode estar se perguntando "Hmm, como o danicuki faz isso? Que segredos ele está escondendo de mim?". Bem, caro leitor, uma das primeiras coisas que todo projeto lança são **os modelos**, para que pioneiros como *você* possam trabalhar em vez de desperdiçar tempo nas configurações. Dei uma olhada nos documentos e [encontrei esses modelos iniciais](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter). Tudo o que fiz foi converter o modelo inicial do Next.js do TypeScript para JavaScript e adicionei várias estilizações.
 
 E simples assim, você tem uma configuração de frontend para sua loja 😎. Veja como ficou a minha:
 
@@ -79,8 +79,8 @@ E simples assim, você tem uma configuração de frontend para sua loja 😎. Ve
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Raza vai ficar triste :(
+Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 Brinque com a sua página inicial! Talvez dar outro nome? Que tipo de coisa você quer vender? Esta é a sua chance de ser criativo!
 
-**Poste uma captura de tela do seu aplicativo da Web inicial em #progress :).**
+**Poste uma captura de tela do seu aplicativo da Web inicial em #progress 😊 .**

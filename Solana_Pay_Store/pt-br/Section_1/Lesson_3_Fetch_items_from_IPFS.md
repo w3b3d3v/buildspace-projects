@@ -1,4 +1,4 @@
-O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://pt.wikipedia.org/wiki/Sistema_de_Arquivos_Interplanet%C3%A1rio), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) quando puder! Abrange muitos bons conhecimentos básicos :).
+O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://pt.wikipedia.org/wiki/Sistema_de_Arquivos_Interplanet%C3%A1rio), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
 
 Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústria para armazenamento de ativos. É imutável, permanente e descentralizado.
 
@@ -234,6 +234,6 @@ Se seu arquivo não for baixado, você terá que mudar para um portal IPFS difer
 
 ### 🚨 Relatório de Progresso
 
-Por favor, faça isso, senão o Raza vai ficar triste :(
+Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 **Publique uma captura de tela de seu arquivo carregado no Pinata :D**
