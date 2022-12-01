@@ -1,4 +1,4 @@
-Agora que temos nosso código base configurado, podemos começar com um botão de conexão de carteira. Estou usando a carteira Phantom [carteira Phantom](https://phantom.app/), mas você pode usar qualquer uma! Apenas tenha em mente que eu não testei isso com outras carteiras.
+Agora que temos nosso código base configurado, podemos começar com um botão de conexão de carteira. Estou usando a carteira Phantom [carteira Phantom](https://phantom.app/), mas você pode usar qualquer uma da rede Solana! Recomendamos fortemente a Phantom mas, apenas tenha em mente que eu não testei isso com outras carteiras.
 
 A beleza de usar um modelo inicial é que ele já tem um monte de coisas que vamos precisar. Eu removi a maior parte 🙈 para podermos colocar nós mesmos e aprender como tudo funciona.
 
@@ -66,7 +66,7 @@ A primeira coisa que tenho são apenas algumas importações do React. [`useMemo
 
 A primeira importação da Solana que temos é `wallet-adapter-network` de [`@solana/wallet-adapter-base`](https://github.com/solana-labs/wallet-adapter/tree/master/packages/core/base). Este é apenas um objeto enumerável para as redes disponíveis.
 
-O `WalletModalProvider` é exatamente isso rsrs - é um componente sofisticado do React que solicitará ao usuário que selecione sua carteira. Bem fácil!
+O `WalletModalProvider` é exatamente isso 😂 - é um componente sofisticado do React que solicitará ao usuário que selecione sua carteira. Bem fácil!
 
 `ConnectionProvider` e `WalletProvider` são provavelmente os mais importantes.
 
@@ -150,4 +150,4 @@ Por favor, faça isso, senão um gatinho vai miar muito triste hoje 😟
 
 Agora temos um aplicativo *web3* bem adequado!
 
-**Faça upload da captura de tela do seu modal de conexão de carteira >:D**
+**Faça upload da captura de tela do seu modal de conexão de carteira 👛**

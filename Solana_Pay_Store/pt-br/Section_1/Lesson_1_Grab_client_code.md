@@ -1,25 +1,27 @@
+### 🤖 Obtendo o código inicial
+
 Isso vai ser BOM DEMAIS. Eu me diverti muito fazendo a loja, colocando todo tipo de bobagem que não pertence a uma loja. Imagine uma loja que vende itens imaginários.
 
 Vamos começar com uma das coisas mais mágicas da web3, conectar-se a um aplicativo com sua carteira.
 
 Permitiremos que nosso usuário essencialmente "faça login" com sua carteira Solana. A construção da autenticação geralmente é bem difícil. Você precisa ter um banco de dados de nomes de usuário, senha, etc. Eu odeio como as lojas sempre pedem seu endereço de e-mail, nome de solteira da mãe, tamanho da meia esquerda e pontuação ELO do Lichess. Apenas deixe-me comprar minha única cópia do JavaScript para Leigos e sair daqui.
 
-Neste caso é muito mais fácil do que você imagina! Aqui está o plano:
+Neste caso é muito mais fácil do que você imagina! Aqui está o plano passo a passo:
 
-1. Obtenha o código base do aplicativo da Web para este projeto (forneci alguns HTML/CSS iniciais para que você possa se concentrar nas coisas que realmente importam rsrs).
+1. Obtenha o código base do aplicativo da Web para este projeto (forneci alguns HTML/CSS iniciais para que você possa se concentrar nas coisas que realmente importam 😂.
 2. Escreva o código que permitirá que os usuários conectem sua carteira Solana e se conectem ao seu aplicativo para configurar um estado de "autenticação" básico.
-3. Configure um item que você deseja vender no IPFS.
+3. Configure um item que você deseja vender no [IPFS](https://www.web3dev.com.br/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm).
 4. Comece a escrever o código Solana Pay para receber pagamentos.
 
 Vai ser **MUITO MASSA**!
 
-Uma coisa que realmente amamos no buildspace é a criatividade insana que as pessoas colocam em seus projetos. Torne este projeto seu e faça as coisas da maneira que achar melhor.
+Uma coisa que realmente amamos na web3dev é a criatividade insana que as pessoas colocam em seus projetos. Torne este projeto seu e faça as coisas da maneira que achar melhor.
 
 **Se tudo o que você está fazendo é copiar/colar código, isso não será tão divertido.**
 
 O código base do aplicativo da Web que forneço é apenas para você começar. Mude as coisas. Talvez você odeie as cores que usei. Mude. Talvez você queira o site com um tema em modo mais claro. Faça isso.
 
-Se você acabar mudando as coisas, me marque em #progress e diga - "Yo danicuki I made your code better" e poste uma captura de tela.
+Se você acabar mudando as coisas, me marque em `#progresso` no chat do bootcamp no discord e diga - "Fala @danicuki olha que íncrivel o que eu implementei no código" e poste uma captura de tela, isso vai ser imensamente gratificante e motivador para seus colégas e nosso time do `#pod-bootcamp`.
 
 Então pronto - mão na massa!
 
@@ -29,7 +31,7 @@ Vamos usar o **Next.js** para construir nosso aplicativo da web. É um framework
 
 Porém não desista! Quanto mais dificuldades você passa, mais você aprende 🧠.
 
-Se você não tem experiência com React ou Next - confira [este tutorial de introdução](https://www.freecodecamp.org/news/nextjs-tutorial/) antes de começar, ou talvez confira os documentos de introdução [aqui](https://nextjs.org/learn/foundations/about-nextjs). Ou não faça nada de especial, apenas comece. O que for melhor para você 😊 .
+Se você não tem experiência com React ou Next você pode confirerir os documentos de introdução [aqui](https://nextjs.org/learn/foundations/about-nextjs). Ou não faça nada de especial, apenas comece. O que for melhor para você 😊.
 
 Você será um Feiticeiro em Next após este projeto… isso se você já não for um 🧙‍♂!
 
@@ -39,7 +41,7 @@ Na verdade, eu escrevi este projeto primeiro no React, mas o migrei para o Next 
 
 Vá até [este link](https://github.com/buildspace/solana-pay-starter) e clique em "Fork" no canto superior direito.
 
-![](https://i.imgur.com/OnOIO2A.png)
+![](https://i.imgur.com/gMLU93Y.png)
 
 Ótimo! Quando você bifurca esse repositório, na verdade você está criando uma cópia idêntica dele que reside no seu perfil do GitHub. Então agora você tem sua própria versão deste código que você pode editar para o conteúdo que desejar.
 
@@ -83,4 +85,4 @@ Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 Brinque com a sua página inicial! Talvez dar outro nome? Que tipo de coisa você quer vender? Esta é a sua chance de ser criativo!
 
-**Poste uma captura de tela do seu aplicativo da Web inicial em #progress 😊 .**
+**Poste uma captura de tela do seu aplicativo da Web inicial em #progresso na sala exclusiva do bootcamp no nosso discord 😊.**
