@@ -285,7 +285,7 @@ Já pensou como seria legal se você tivesse uma loja focada em tipos específic
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Raza vai ficar triste :(
+Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 VOCÊ JÁ CONSEGUIU! ESTOU TÃO ORGULHOSO DE VOCÊ.
 

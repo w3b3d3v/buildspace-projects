@@ -389,8 +389,8 @@ Muito bem feito! Sua loja agora está completa!
 
 ### 🚨 Relatório de Progresso 
 
-Por favor, faça isso, senão o Raza ficará triste :(
+Por favor, faça isso, senão o danicuki ficará triste 😟
 
 Você percorreu um longo caminho. Tenho certeza de que você aprendeu muito.
 
-Diga-me em #general-chill-chat qual tem sido sua parte favorita deste projeto :)
+Diga-me em #general-chill-chat qual tem sido sua parte favorita deste projeto 😊 
