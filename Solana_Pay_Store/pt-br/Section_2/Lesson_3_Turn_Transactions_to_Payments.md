@@ -394,4 +394,4 @@ export default function Buy({ itemID }) {
 
 Você agora tem um aplicativo Full Stack! Frontend, backend, servidor, blockchain, woohoo!
 
-Poste uma captura de tela do seu editor em #progress mostrando a instrução do console "Adicionando pedido".
+Poste uma captura de tela do seu editor em `#progresso` mostrando a instrução do console "Adicionando pedido".

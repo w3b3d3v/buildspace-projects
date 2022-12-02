@@ -150,4 +150,4 @@ Por favor, faça isso, senão um gatinho vai miar muito triste hoje 😟
 
 Agora temos um aplicativo *web3* bem adequado!
 
-**Faça upload da captura de tela do seu modal de conexão de carteira 👛**
+**Faça upload da captura de tela do seu modal de conexão de carteira em `#progresso` no discord**
