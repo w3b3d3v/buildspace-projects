@@ -14,6 +14,12 @@ Algumas ações a serem feitas antes de seguir em frente:
 * **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
 * **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/c/web3dev).
 
+### Entendendo relatório de progresso
+
+Ao final de cada lição é necessário que clique no botão verde com a descrição do que precisa ser feito para ir para próxima lição.
+
+Sugerimos que poste ao final de cada lição em `#progresso` na canal exclusivo do bootcamp.
+
 
 ### 🛠O projeto
 

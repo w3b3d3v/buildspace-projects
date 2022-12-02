@@ -154,8 +154,8 @@ Agora se você clicar no botão "Comprar agora", você deve ver um pedido da Pha
 
 A parte mais legal disso para mim é a experiência de "checkout". Sem cadastros. Sem endereços. Sem e-mails. Há empresas de bilhões de dólares por aí que estão tentando tornar popular o checkout com um clique. Você acabou de implementá-lo em 15 minutos, **gratuitamente** 😊 
 
-### 🚨 Relatório de Progresso
+### 🚨 Relatório de progresso
 
 Por favor, faça isso, senão o danicuki ficará triste 😟
 
-Publique uma captura de tela de seu navegador em #progress mostrando seu pedido de transação USDC!
+Publique uma captura de tela de seu navegador em `#progresso` mostrando seu pedido de transação USDC!
