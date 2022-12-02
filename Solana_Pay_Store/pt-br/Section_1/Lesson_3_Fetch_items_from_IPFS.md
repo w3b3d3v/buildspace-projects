@@ -232,8 +232,8 @@ Tenha em mente que os arquivos no IPFS são armazenados em cache através de vá
 Se seu arquivo não for baixado, você terá que mudar para um portal IPFS diferente. Confira [este ótimo artigo ](https://github.com/maxim-saplin/ipfs_gateway_research/blob/main/README.md) comparando as opções mais conhecidas.
 
 
-### 🚨 Relatório de Progresso
+### 🚨 Relatório de progresso
 
 Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
-**Publique uma captura de tela de seu arquivo carregado no Pinata :D**
+**Publique uma captura de tela de seu arquivo carregado no Pinata 🤗**

@@ -85,4 +85,4 @@ Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 Brinque com a sua página inicial! Talvez dar outro nome? Que tipo de coisa você quer vender? Esta é a sua chance de ser criativo!
 
-**Poste uma captura de tela do seu aplicativo da Web inicial em #progresso na sala exclusiva do bootcamp no nosso discord 😊.**
+**Poste uma captura de tela do seu aplicativo da Web inicial em `#progresso` na sala exclusiva do bootcamp no nosso discord 😊.**

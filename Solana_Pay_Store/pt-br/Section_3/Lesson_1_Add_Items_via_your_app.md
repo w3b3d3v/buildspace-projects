@@ -289,4 +289,4 @@ Por favor, faça isso, senão o danicuki vai ficar triste 😟
 
 VOCÊ JÁ CONSEGUIU! ESTOU TÃO ORGULHOSO DE VOCÊ.
 
-Adicione um item à sua loja e faça upload de uma captura de tela!
+Adicione um item à sua loja e faça upload de uma captura de tela no canal `#progresso` no discord !
