@@ -23,9 +23,9 @@ Sugerimos que poste ao final de cada lição em `#progresso` na canal exclusivo 
 
 ### 🛠O projeto
 
-Então, o que vamos construir aqui 😊 ? Aqui está um pequeno vídeo:
+Então, o que vamos construir aqui 😊? Aqui está um pequeno vídeo:
 
-[Loom]()
+[Loom](https://www.loom.com/share/1c1efb1b569f4b4895e8acfebd12776d)
 
 
 ### 💎Ganhar um NFT
@@ -71,6 +71,6 @@ Ei! vá em frente e diga gm em `#gm` no Discord. Isto é muito importante. Extre
 Por falar nisso se você quiser fazer um tweet dizendo ao mundo que você está construindo um aplicativo com Solana Pay hoje e marcar a [@_webdev](https://twitter.com/web3dev_), vá em frente!
 
 Nós sempre dizemos isso, mas 
-1) Esse tweet poderia inspirar outra pessoa a se juntar à web3  
+1) Esse tweet poderia inspirar outra pessoa a se juntar à web3.  
 2) Ele nos apoia!
 
