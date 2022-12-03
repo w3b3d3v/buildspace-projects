@@ -31,15 +31,15 @@ Vamos usar o **Next.js** para construir nosso aplicativo da web. É um framework
 
 Porém não desista! Quanto mais dificuldades você passa, mais você aprende 🧠.
 
-Se você não tem experiência com React ou Next você pode confirerir os documentos de introdução [aqui](https://nextjs.org/learn/foundations/about-nextjs). Ou não faça nada de especial, apenas comece. O que for melhor para você 😊.
+Se você não tem experiência com React ou Next você pode confirerir os documentos de introdução [aqui](https://nextjs.org/docs). Ou não faça nada de especial, apenas comece. O que for melhor para você 😊.
 
-Você será um Feiticeiro em Next após este projeto… isso se você já não for um 🧙‍♂!
+Você será um feiticeiro em Next após este projeto… isso se você já não for um 🧙‍♂!
 
 Na verdade, eu escrevi este projeto primeiro no React, mas o migrei para o Next por causa do servidor embutido. Isso torna as coisas muuuuito fáceis e você não precisa lidar com o Express.js.
 
 ### ⬇️ Obtendo o código
 
-Vá até [este link](https://github.com/buildspace/solana-pay-starter) e clique em "Fork" no canto superior direito.
+Vá até [este link](https://github.com/w3b3d3v/solana-pay-starter) e clique em "Fork" no canto superior direito.
 
 ![](https://i.imgur.com/gMLU93Y.png)
 
@@ -47,11 +47,15 @@ Vá até [este link](https://github.com/buildspace/solana-pay-starter) e clique 
 
 A etapa final aqui é realmente obter o repositório recém-bifurcado em sua máquina local. Clique no botão "Code" e copie o link!
 
-Vá para o seu terminal e faça cd para o diretório em que seu projeto ficará. Eu recomendo colocá-lo em uma pasta conhecida onde você tem outros projetos. Estou colocando o meu na área de trabalho.
+Vá para o seu terminal e de o camando `cd` para o diretório em que seu projeto ficará. Eu recomendo colocá-lo em uma pasta conhecida onde você tem outros projetos.
+
+Copie o link para baixar o repositório em sua máquina.
+
+![](https://i.imgur.com/o4sl2gM.png)
 
 ```
-# Estou executando isso no meu diretório "Desktop/"
-git clone LINK_DA_BIFURCAÇÃO
+# Estou executando isso no meu diretório "raiz"
+git clone LINK_DO_FORK
 cd solana-pay-starter
 ```
 
@@ -69,19 +73,19 @@ Agora você pode executar o aplicativo Web localmente com:
 npm run dev
 ```
 
-Isso deve abrir o aplicativo em seu navegador em localhost:3000. Seu aplicativo está vazio agora, exatamente como queremos. Esta vai ser a nossa tela em branco, que daremos vida de acordo com o nosso gosto. Por enquanto, basta atualizar o texto para o que quiser!
+Isso deve abrir o aplicativo em seu navegador em localhost:3000.
+
+É assim que o meu `localhost:3000` renderiza o código inicial :
+
+![](https://i.imgur.com/2xa6feD.png)
 
 Para quem quer começar do zero: atenção! As bibliotecas Solana Pay são novinhas em folha. Isso significa que, se você configurar do zero usando o Create-React-App, terá [vários problemas](https://github.com/solana-labs/wallet-adapter/issues/241).. Eu passei por esses problemas de antemão e deixei tudo pronto para você!
 
 Você pode estar se perguntando "Hmm, como o danicuki faz isso? Que segredos ele está escondendo de mim?". Bem, caro leitor, uma das primeiras coisas que todo projeto lança são **os modelos**, para que pioneiros como *você* possam trabalhar em vez de desperdiçar tempo nas configurações. Dei uma olhada nos documentos e [encontrei esses modelos iniciais](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter). Tudo o que fiz foi converter o modelo inicial do Next.js do TypeScript para JavaScript e adicionei várias estilizações.
 
-E simples assim, você tem uma configuração de frontend para sua loja 😎. Veja como ficou a minha:
-
-![](https://hackmd.io/_uploads/Hy9JJK8Pq.png)
-
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o danicuki vai ficar triste 😟
+Por favor, faça isso, senão o vitordev vai ficar triste 😟
 
 Brinque com a sua página inicial! Talvez dar outro nome? Que tipo de coisa você quer vender? Esta é a sua chance de ser criativo!
 

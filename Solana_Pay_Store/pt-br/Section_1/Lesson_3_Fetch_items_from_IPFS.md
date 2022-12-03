@@ -1,4 +1,4 @@
-O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
+O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://www.web3dev.com.br/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
 
 Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústria para armazenamento de ativos. É imutável, permanente e descentralizado.
 
@@ -6,9 +6,9 @@ Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústr
 
 A sua utilização é bastante simples. Tudo que você precisa fazer é carregar seus arquivos no IPFS e depois usar o hash de identificação de conteúdo único que ele lhe retorna em seu aplicativo web quando quiser baixar alguma coisa.
 
-Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud/?utm_source=buildspace) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
+Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
 
-![](https://hackmd.io/_uploads/ry9MWF8P9.png)
+![](https://i.imgur.com/CUQ3XEy.png)
 
 Vá em frente e copie o"CID" do arquivo. Este é o endereço do conteúdo do arquivo no IPFS! O que é legal agora é que podemos criar este link para acessar o arquivo:
 
@@ -25,7 +25,7 @@ ipfs://ADICIONE_SEU_CID_AQUI
 ```
 
 
-E isso vai realmente iniciar um nó IPFS em sua máquina local e recuperar o arquivo! Se você tentar fazer isso em algo como o Chrome, ele apenas faz uma busca no Google rsrs. Ao invés disso, você terá que usar o link `cloudflare-ipfs`.
+E isso vai realmente iniciar um nó IPFS em sua máquina local e recuperar o arquivo! Se você tentar fazer isso em algo como o Chrome, ele apenas faz uma busca no Google 😂. Ao invés disso, você terá que usar o link `cloudflare-ipfs`.
 
 E agora você sabe como usar o IPFS! Mas há um senão em nosso cenário - já que os itens no IPFS são públicos, **qualquer pessoa** pode acessá-los se tiver o hash de identificação de conteúdo único. Exploraremos métodos para proteger nossas lojas disso mais tarde 😉.
 
@@ -38,7 +38,7 @@ Baixar os arquivos do IPFS é quase mais fácil do que carregá-los 😂. Eu dei
 
 Você pode encontrar outros portais públicos do IPFS [aqui.](https://luke.lol/ipfs.php)
 
-Este é um arquivo bem pequeno para que pudéssemos mantê-lo no componente em que o usaremos, mas é uma boa prática separar os ganchos. Em seguida, vamos criar um componente para usar este gancho.
+Este é um arquivo bem pequeno para que pudéssemos mantê-lo no componente em que o usaremos, mas é uma boa prática separar os hooks. Em seguida, vamos criar um componente para usar este hook.
 
 Adicione um arquivo chamado `IpfsDownload.js` na pasta `components` e acrescente isto a ele:
 
@@ -74,7 +74,7 @@ Eu menti: nós não estamos fazendo uma loja. Na verdade, estamos construindo um
 
 Uma vez que ainda não temos transações estabelecidas, vamos apenas deixar as pessoas baixarem os itens em nossa loja gratuitamente agora mesmo. Isto nos permitirá tirar todas as pequenas coisas do caminho e concentrar nas transações.
 
-Crie uma pasta `api` no diretório `pages` e acrescente um arquivo `products.json` nela. Este vai ser nosso "banco de dados" falso. Quero que você faça um produto que você possa usar no mundo real, então quando você estiver na trajetória para ser maior que a Gumroad, tudo o que você precisará fazer é trocar o ponto de extremidade de `/products.json` para um banco de dados real, como  Supabase ou CockroachDB.
+Crie uma pasta `api` no diretório `pages` e acrescente um arquivo `products.json` nela. Este vai ser nosso "banco de dados" falso. Quero que você faça um produto que você possa usar no mundo real, então quando você estiver na trajetória para ser maior que a Gumroad, tudo o que você precisará fazer é trocar o ponto de extremidade de `/products.json` para um banco de dados real, como Supabase ou CockroachDB.
 
 Aqui está a aparência do meu arquivo, você pode adicionar ou remover campos com base em seu produto:
 
@@ -163,7 +163,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 // Constantes
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = '_web3dev';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -200,7 +200,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <header className="header-container">
-          <p className="header"> 😳 Loja de emojis do Buildspace 😈</p>
+          <p className="header"> 😳 Loja de emojis 😈</p>
           <p className="sub-text">A única loja de emojis que aceita shitcoins</p>
         </header>
 
@@ -215,7 +215,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`contruido na @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
@@ -225,7 +225,7 @@ const App = () => {
 export default App;
 ```
 
-Agora você deve ver um botão "Download" em seu aplicativo depois de conectar sua carteira! Uma vez que você clique em download, nosso gancho será chamado e o arquivo será obtido e baixado do IPFS. Isto pode levar um pouco de tempo na primeira vez, portanto, por favor, seja paciente!
+Agora você deve ver um botão "Download" em seu aplicativo depois de conectar sua carteira! Uma vez que você clique em download, nosso hook será chamado e o arquivo será obtido e baixado do IPFS. Isto pode levar um pouco de tempo na primeira vez, portanto, por favor, seja paciente!
 
 Tenha em mente que os arquivos no IPFS são armazenados em cache através de vários nós, portanto, se você _acabou_ de carregar algo, ele só existirá em alguns nós e levará um pouco de tempo para ser baixado. Quanto mais seus arquivos forem acessados, mais nós serão colocados em cache e mais rápido eles serão baixados!
 
@@ -234,6 +234,6 @@ Se seu arquivo não for baixado, você terá que mudar para um portal IPFS difer
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o danicuki vai ficar triste 😟
+Por favor, faça isso, senão a Thaíssa vai ficar triste 😟
 
 **Publique uma captura de tela de seu arquivo carregado no Pinata 🤗**

@@ -10,7 +10,7 @@ Primeiro, crie um arquivo `.env` na pasta raiz do seu projeto e adicione seu end
 NEXT_PUBLIC_OWNER_PUBLIC_KEY=B1aLAAe4vW8nSQCetXnYqJfRxzTjnbooczwkUJAr7yMS
 ```
 
-**Nota:** NextJs tem o dotenv embutido, mas você **precisa** iniciar variáveis de ambiente publicamente disponíveis com `NEXT_PUBLIC`. Observe também que você precisará reiniciar o Next para pegar a alteração em `.env`.
+**Nota:** NextJs tem o dotenv embutido, mas você **precisa** iniciar variáveis de ambiente publicamente disponíveis com `NEXT_PUBLIC_OWNER_PUBLIC_KEY`. Observe também que você precisará reiniciar o Next para pegar a alteração em `.env`.
 
 É hora de mais um componente! Adicione `CreateProduct.js` na pasta de componentes.
 
@@ -143,7 +143,7 @@ const CreateProduct = () => {
 export default CreateProduct;
 ```
 
-Em seguida, adicionaremos isso ao index.js, juntamente com uma verificação se somos o proprietário.
+Em seguida, adicionaremos isso ao `index.js`, juntamente com uma verificação se somos o proprietário.
 
 ```jsx
 import React, { useState, useEffect} from "react";
@@ -155,7 +155,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "_web3dev";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -166,7 +166,7 @@ const App = () => {
  
   const renderNotConnectedContainer = () => (
     <div>
-      <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+      <img src="https://media.tenor.com/1mJ-tJSzvwsAAAAd/solana-sol.gif" alt="emoji" />
 
       <div className="button-container">
         <WalletMultiButton className="cta-button connect-wallet-button" />
@@ -198,7 +198,7 @@ const App = () => {
       <HeadComponent/>
       <div className="container">
         <header className="header-container">
-          <p className="header"> 😳 Loja de emojis do Buildspace 😈</p>
+          <p className="header"> 😳 Loja de emojis 😈</p>
           <p className="sub-text">A única loja de emojis que aceita shitcoins</p>
 
           {isOwner && (
@@ -220,14 +220,14 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`contruido na @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
   );
 };
 
-export default App;
+export default App;  
 ```
 
 Agora, quando você se conectar com a mesma carteira que o proprietário, deverá ver um botão "Criar produto" no canto superior direito. Aaaah isso é tão lindo.
@@ -281,11 +281,11 @@ Agora realmente temos tudo o que precisamos para permitir que outras pessoas adi
 2. Armazenar endereços de "vendedor" em products.json
 3. Atualizar o ponto de extremidade da API `createTransaction` para ler também o endereço do "vendedor" de products.json
 
-Já pensou como seria legal se você tivesse uma loja focada em tipos específicos de itens?? Você pode adicionar vários recursos extras para atrair vendedores e talvez pegar uma pequena porcentagem (1%) e *ainda* ser 1,9% mais barato que o Stripe e outros processadores de pagamento!
+Já pensou como seria legal se você tivesse uma loja focada em tipos específicos de itens? Você pode adicionar vários recursos extras para atrair vendedores e talvez pegar uma pequena porcentagem (1%) e *ainda* ser 1,9% mais barato que o Stripe e outros processadores de pagamento!
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o danicuki vai ficar triste 😟
+Por favor, faça isso, senão o Dione vai ficar triste 😟
 
 VOCÊ JÁ CONSEGUIU! ESTOU TÃO ORGULHOSO DE VOCÊ.
 

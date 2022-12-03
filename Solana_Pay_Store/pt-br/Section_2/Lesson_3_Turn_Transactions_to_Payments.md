@@ -107,7 +107,7 @@ export default function Buy({ itemID }) {
         <IPFSDownload filename="emojis.zip" hash="QmWWH69mTL66r3H8P4wUn24t1L5pvdTJGUTKBqT11KCHS5" cta="Download emojis"/>
       ) : (
         <button disabled={loading} className="buy-button" onClick={processTransaction}>
-          Compre Agora 🠚
+          Compre Agora 🛒
         </button>
       )}
     </div>
@@ -166,9 +166,9 @@ A função [`findReference`](https://docs.solanapay.com/api/core/function/findRe
 
 Esta função dará erro se a transação não for encontrada e isso pode acontecer logo após a transação ser enviada. Então verificamos se o erro foi da classe [`FindReferenceError`](https://docs.solanapay.com/api/core/class/FindReferenceError) e o ignoramos.
 
-Se tudo correr conforme o planejado, nosso código começará a procurar a transação assim que o usuário clicar em "Aprovar". A primeira pesquisa provavelmente falhará porque as transações demoram cerca de 0,5s. É por isso que estamos usando `setInterval` >:D. Na segunda vez que verificar, encontrará a transação e a confirmará, atualizando nosso aplicativo para indicar o pagamento.
+Se tudo correr conforme o planejado, nosso código começará a procurar a transação assim que o usuário clicar em "Aprovar". A primeira pesquisa provavelmente falhará porque as transações demoram cerca de 0,5s. É por isso que estamos usando `setInterval` 😊. Na segunda vez que verificar, encontrará a transação e a confirmará, atualizando nosso aplicativo para indicar o pagamento.
 
-ISSO É ALGO GRANDIOSO! A razão pela qual usamos blockchains é para que não tenhamos que nos preocupar com transações inválidas. Quando a Solana Pay informa que uma transação foi confirmada, você **sabe** que uma transação foi confirmada e que o dinheiro está em sua carteira. Sem estornos :P
+ISSO É ALGO GRANDIOSO! A razão pela qual usamos blockchains é para que não tenhamos que nos preocupar com transações inválidas. Quando a Solana Pay informa que uma transação foi confirmada, você **sabe** que uma transação foi confirmada e que o dinheiro está em sua carteira. Sem estornos 😜
 
 ### 🧠 Adicionar ao livro de pedidos
 
@@ -186,7 +186,7 @@ Primeiro, precisaremos criar um arquivo `orders.json` no diretório `pages/api`.
 
 Em seguida, criaremos um ponto de extremidade de API para gravar e ler a partir dele. Vamos usar o `orders.json` como outro banco de dados rsrs.
 
-Aqui está meu arquivo de ponto de extremidade da API `orders.js` (dentro do diretório `pages/api`):
+Crie um arquivo de ponto de extremidade da API `orders.js` (dentro do diretório `pages/api`):
 
 ```jsx
 // Este ponto de extremidade da API permitirá que os usuários usem POST e publiquem dados para adicionar registros e GET para recuperar registros
@@ -382,7 +382,7 @@ export default function Buy({ itemID }) {
           className="buy-button"
           onClick={processTransaction}
         >
-          Compre Agora 🠚
+          Compre Agora 🛒
         </button>
       )}
     </div>

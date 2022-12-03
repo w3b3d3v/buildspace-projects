@@ -10,7 +10,7 @@ Este é o nosso momento de brilhar - eles não sabem como os impostos funcionam 
 
 Algumas ações a serem feitas antes de seguir em frente:
 
-* **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta do Discord, à qual você só terá acesso quando conectar o seu Discord.
+* **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta e exclusíva no Discord, à qual você só terá acesso quando conectar o seu Discord.
 * **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
 * **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/c/web3dev).
 
@@ -46,7 +46,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-bootcamp` 😊.
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/web3dev-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-bootcamp` 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
