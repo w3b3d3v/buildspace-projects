@@ -148,7 +148,7 @@ Você pode substituir isto por *qualquer* token SPL, que vai funcionar!
 
 Agora se você clicar no botão "Comprar agora", você deve ver um pedido da Phantom de um token "Gh9Zw". Este é o endereço do falso token USDC. Na rede principal, isto indicará USDC real rsrs
 
-![](https://hackmd.io/_uploads/ryaoth9P9.png)
+![](https://i.imgur.com/RcTwgjo.png)
 
 É isso aí, você está aceitando pagamentos em USDC!
 
@@ -156,6 +156,6 @@ A parte mais legal disso para mim é a experiência de "checkout". Sem cadastros
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o danicuki ficará triste 😟
+Por favor, faça isso, senão o Melk ficará triste 😟
 
 Publique uma captura de tela de seu navegador em `#progresso` mostrando seu pedido de transação USDC!
