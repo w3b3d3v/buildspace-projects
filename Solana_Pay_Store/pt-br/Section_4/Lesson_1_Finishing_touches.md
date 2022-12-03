@@ -1,6 +1,6 @@
 ### 🧹Toques finais
 
-Parabéns. Você está no caminho certo para se tornar um magnata do comércio eletrônico. Jeff Bezos quem?
+Parabéns. Você está no caminho certo para se tornar um magnata do comércio eletrônico. Jeff Bezos ?
 
 ### 🚢 Movendo-se para a rede principal
 
@@ -18,11 +18,11 @@ const usdcAddress = new PublicKey("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 const network = WalletAdapterNetwork.Mainnet;
 ```
 
-Ta-da! Seu aplicativo agora está recebendo dinheiro real na rede principal. Isso é mágico.
+Seu aplicativo agora está recebendo dinheiro real na rede principal. Isso é mágico.
 
 ### 🚀 Implante para o mundo (GTFOL)
 
-A implantação de um aplicativo React ficou tão fácil que não há razão para não fazê-lo neste momento rsrs. Além disso, é grátis. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores do buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
+A implantação de um aplicativo Next.js ficou tão fácil que não há razão para não fazê-lo neste momento 🤣. Além disso, é grátis. Você chegou até aqui, a implantação é a etapa final.
 
 **Nota:** Como o Vercel é um sistema de arquivos somente leitura, adicionar pedidos ou produtos do aplicativo da web **não funcionará**! Isso é porque seus arquivos json do "banco de dados" não serão salvos. Se você não quiser usar o Vercel, tudo bem. Use o que quiser.
 

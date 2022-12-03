@@ -86,7 +86,7 @@ Copiei tudo isso do modelo Next.js, então não se sinta mal por copiar/colar (d
 
 ### 🧞‍♂️ Usando os provedores para se conectar a carteiras
 
-Ufa, isso foi um monte de configuração! Agora você pode ver como é fácil interagir com carteiras. Tudo o que temos que fazer é configurar alguns ganchos do React. Aqui está meu `index.js`:
+Ufa, isso foi um monte de configuração! Agora você pode ver como é fácil interagir com carteiras. Tudo o que temos que fazer é configurar alguns Hooks(ganchos) do React. Aqui está meu `index.js`, contém algumas alterações em relação ao seu código inicial:
 ```jsx
 import React from 'react';
 import { PublicKey } from '@solana/web3.js';
@@ -94,7 +94,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 // Constantes
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = '_web3dev';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
@@ -103,7 +103,7 @@ const App = () => {
 
   const renderNotConnectedContainer = () => (
     <div>
-      <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+      <img src="https://media.tenor.com/1mJ-tJSzvwsAAAAd/solana-sol.gif" alt="emoji" />
 
       <div className="button-container">
         <WalletMultiButton className="cta-button connect-wallet-button" />
@@ -115,7 +115,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <header className="header-container">
-          <p className="header"> 😳 Loja de emojis do Buildspace 😈</p>
+          <p className="header"> 😳 Loja de emojis 😈</p>
           <p className="sub-text">A única loja de emojis que aceita shitcoins</p>
         </header>
 
@@ -132,7 +132,7 @@ const App = () => {
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`contruido na @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@ const App = () => {
 export default App;
 ```
 
-Bem fácil, né? O gancho `useWallet()` nos dará o endereço dos usuários conectados em qualquer lugar do aplicativo. Ele se inscreve nos provedores que configuramos em `app.js`.
+Bem fácil, né? O Hook `useWallet()` nos dará o endereço dos usuários conectados em qualquer lugar do aplicativo. Ele se inscreve nos provedores que configuramos em `app.js`.
 
 ### 🚨 Relatório de progresso
 

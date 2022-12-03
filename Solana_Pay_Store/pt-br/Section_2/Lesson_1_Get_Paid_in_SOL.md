@@ -1,4 +1,4 @@
-Isso não foi fácil? Eu amo React. Agora que temos uma vitrine, precisamos contratar um caixa e dizer-lhes para cobrar dinheiro das pessoas rsrs.
+Isso não foi fácil? Eu amo Next. Agora que temos uma vitrine, precisamos contratar um caixa e dizer-lhes para cobrar dinheiro das pessoas 🤣.
 
 Muito bem, estamos prestes a sermos pagos! Vamos acrescentar algumas funções para que possamos:
 
@@ -124,7 +124,7 @@ export default function handler(req, res) {
 }
 ```
 
-Não fique assustado! Na verdade, isto é muito mais simples do que parece. Tudo o que você precisa saber aqui é que estamos criando um objeto de transação Solana que transfere uma certa quantidade de tokens SOL de um endereço para outro. Deixei comentários no código explicando as novas coisas :D
+Não fique assustado! Na verdade, isto é muito mais simples do que parece. Tudo o que você precisa saber aqui é que estamos criando um objeto de transação Solana que transfere uma certa quantidade de tokens SOL de um endereço para outro. Deixei comentários no código explicando as novas coisas 😁
 
 Para chamar este ponto de extremidade, vamos criar um novo componente - um botão de compra! Vá até a pasta de componentes e crie um novo arquivo chamado "Buy.js". Aqui está o que ele terá:
 
@@ -206,7 +206,7 @@ export default function Buy({ itemID }) {
         <IPFSDownload filename="emojis.zip" hash="QmWWH69mTL66r3H8P4wUn24t1L5pvdTJGUTKBqT11KCHS5" cta="Download emojis"/>
       ) : (
         <button disabled={loading} className="buy-button" onClick={processTransaction}>
-          Compre agora 🠚
+          Compre agora 
         </button>
       )}
     </div>
@@ -255,17 +255,17 @@ Tudo o que fizemos aqui foi substituir o componente IPFS pelo componente Buy rsr
 
 Um último passo antes de ser pago! Você precisa ter certeza de que sua rede na Phantom está configurada para a Devnet. Para fazer isso, abra sua carteira Phantom e vá para as configurações:
 
-![](https://i.imgur.com/U5moHfW.png)
+![](https://i.imgur.com/nmGqyyz.png)
 
-Em seguida, selecione **Change Network** (Troque a Rede) e configure-a para Devnet. Agora você está pronto, todas as transações estarão na Devnet!
+Em seguida, selecione **`Definições do programador`** e clique em `Alterar a rede` e configure-a para Devnet. Agora você está pronto, todas as transações estarão na Devnet!
 
-![](https://i.imgur.com/WkPUkcu.png)
+![](https://i.imgur.com/AKiVQU0.png)
 
 Se você estiver quebrado e não tiver SOL em sua carteira, você pode usar uma faucet para obter algum. Acesse [Sol Faucet](https://solfaucet.com/) para algum dinheiro falso.
 
 E agora, se você clicar no novo botão brilhoso de compra, você deve ver um pedido de transação: 
 
-![](https://hackmd.io/_uploads/ByAeaFIPc.png)
+![](https://i.imgur.com/AfsRp8v.png)
 
 O que está ocorrendo aqui é que nosso botão de compra acessa o backend para ir pegar o objeto da transação para este item. Uma vez feito isso, apenas definimos uma variável `Paid` (Paga) para verdadeira e ativamos o botão de download. Muito legal, não é?
 
@@ -273,7 +273,7 @@ A seguir, vamos usar USDC ao invés de SOL
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o danicuki vai ficar triste 😟
+Por favor, faça isso, senão a Anna Bida vai ficar triste 😟
 
 Publique uma captura de tela de seu navegador em `#progresso` mostrando seu pedido de transação SOL!
 

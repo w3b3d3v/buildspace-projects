@@ -1,4 +1,4 @@
-Agora que estamos adicionando itens ao nosso "banco de dados" de pedidos, seria bom se o usássemos rsrs.
+Agora que estamos adicionando itens ao nosso "banco de dados" de pedidos, seria bom se o usássemos 😂.
 
 ### 👀 Verificar no carregamento se eles já compraram anteriormente
 
@@ -165,7 +165,7 @@ export default function Buy({ itemID }) {
           className="buy-button"
           onClick={processTransaction}
         >
-          Compre Agora 🠚
+          Compre Agora 🛒
         </button>
       )}
     </div>
@@ -377,7 +377,7 @@ export default function Buy({ itemID }) {
         <IPFSDownload hash={item.hash} filename={item.filename} />
       ) : (
         <button disabled={loading} className="buy-button" onClick={processTransaction}>
-          Compre agora 🠚
+          Compre agora 🛒
         </button>
       )}
     </div>
@@ -389,8 +389,12 @@ Muito bem feito! Sua loja agora está completa!
 
 ### 🚨 Relatório de progresso 
 
-Por favor, faça isso, senão o danicuki ficará triste 😟
+Por favor, faça isso, senão o Yan ficará triste 😟
 
 Você percorreu um longo caminho. Tenho certeza de que você aprendeu muito.
 
-Diga-me em `#pod-bootcamp` qual tem sido sua parte favorita deste projeto 😊 
+Não deixe de analisar o código eu pessoalmente aprendi muita coisa te dando esse passo a passo.
+
+Ainda não acabou! Vamos implementar implementar algumas coisas ainda.
+
+Compartilhe em `#pod-bootcamp` qual tem sido sua parte favorita deste projeto 😊 
