@@ -93,8 +93,6 @@ Já criei um projeto básico de Next que você pode fazer um **fork** no Repli
 
 Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
 
-**Observação: à medida que avança neste projeto, você pode notar que estamos fazendo referência a arquivos `.js`. No Replit, se você estiver criando novos arquivos JavaScript, precisará usar a extensão `.jsx`! Replit tem algumas frescuras de desempenho que obrigam que você use a extensão de arquivo `.jsx` 😊.**
-
 [Aqui está um vídeo rápido](https://www.loom.com/share/4578eb9fba1243499a6913d214b21dc3) que fiz para outro projeto, abordando alguns conceitos básicos da Replit.
 
 Aí está 😊. Hora de codificar!
