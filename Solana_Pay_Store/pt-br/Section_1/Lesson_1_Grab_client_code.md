@@ -79,6 +79,26 @@ Isso deve abrir o aplicativo em seu navegador em localhost:3000.
 
 ![](https://i.imgur.com/2xa6feD.png)
 
+Você também opção de usar o [Replit](https://replit.com/~) se preferir!
+
+Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal.**
+
+É um IDE baseado em navegador que nos permite facilmente criar aplicativos web e fazer o deploy deles a partir do navegador. E é totalmente legal. Em vez de ter que configurar um ambiente local completo e escrever comandos para fazer o deploy, tudo é dado para a gente.
+
+Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
+
+Já criei um projeto básico de Next que você pode fazer um **fork** no Replit.
+
+[Basta clicar aqui](https://replit.com/@vitormancio/solana-pay-starter?v=1) **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
+
+Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
+
+**Observação: à medida que avança neste projeto, você pode notar que estamos fazendo referência a arquivos `.js`. No Replit, se você estiver criando novos arquivos JavaScript, precisará usar a extensão `.jsx`! Replit tem algumas frescuras de desempenho que obrigam que você use a extensão de arquivo `.jsx` 😊.**
+
+[Aqui está um vídeo rápido](https://www.loom.com/share/4578eb9fba1243499a6913d214b21dc3) que fiz para outro projeto, abordando alguns conceitos básicos da Replit.
+
+Aí está 😊. Hora de codificar!
+
 Para quem quer começar do zero: atenção! As bibliotecas Solana Pay são novinhas em folha. Isso significa que, se você configurar do zero usando o Create-React-App, terá [vários problemas](https://github.com/solana-labs/wallet-adapter/issues/241).. Eu passei por esses problemas de antemão e deixei tudo pronto para você!
 
 Você pode estar se perguntando "Hmm, como o danicuki faz isso? Que segredos ele está escondendo de mim?". Bem, caro leitor, uma das primeiras coisas que todo projeto lança são **os modelos**, para que pioneiros como *você* possam trabalhar em vez de desperdiçar tempo nas configurações. Dei uma olhada nos documentos e [encontrei esses modelos iniciais](https://github.com/solana-labs/wallet-adapter/tree/master/packages/starter). Tudo o que fiz foi converter o modelo inicial do Next.js do TypeScript para JavaScript e adicionei várias estilizações.
