@@ -6,7 +6,7 @@ Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústr
 
 A sua utilização é bastante simples. Tudo que você precisa fazer é carregar seus arquivos no IPFS e depois usar o hash de identificação de conteúdo único que ele lhe retorna em seu aplicativo web quando quiser baixar alguma coisa.
 
-Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://docs.ipfs.io/how-to/pin-files/)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
+Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://www.web3dev.com.br/paulogio/fixando-arquivos-usando-o-ipfs-1bj5)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
 
 ![](https://i.imgur.com/CUQ3XEy.png)
 
