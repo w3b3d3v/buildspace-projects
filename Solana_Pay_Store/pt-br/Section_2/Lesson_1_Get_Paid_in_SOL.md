@@ -1,3 +1,5 @@
+## 🥺 Receba pagamentos em tokens SOL
+
 Isso não foi fácil? Eu amo Next. Agora que temos uma vitrine, precisamos contratar um caixa e dizer-lhes para cobrar dinheiro das pessoas 🤣.
 
 Muito bem, estamos prestes a sermos pagos! Vamos acrescentar algumas funções para que possamos:

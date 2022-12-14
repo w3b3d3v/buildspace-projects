@@ -1,3 +1,5 @@
+## 👝 Criando o botão "Conectar Carteira" à sua loja
+
 Agora que temos nosso código base configurado, podemos começar com um botão de conexão de carteira. Estou usando a carteira Phantom [carteira Phantom](https://phantom.app/), mas você pode usar qualquer uma da rede Solana! Recomendamos fortemente a Phantom mas, apenas tenha em mente que eu não testei isso com outras carteiras.
 
 A beleza de usar um modelo inicial é que ele já tem um monte de coisas que vamos precisar. Eu removi a maior parte 🙈 para podermos colocar nós mesmos e aprender como tudo funciona.
