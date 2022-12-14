@@ -1,4 +1,6 @@
-Você conseguiu! EXCELENTE TRABALHO!
+## 🛒 Adicionando itens pelo seu aplicativo
+
+Você conseguiu! EXCELENTE TRABALHO! 💼
 
 Você tem uma loja totalmente funcional que pode vender o que quiser! Vamos finalizar transformando tudo isso em um portal para o IPFS.
 

@@ -1,3 +1,5 @@
+## 💳 Transformando transações em pagamentos
+
 Nossas transações estão sendo enviadas, mas não estamos fazendo nada para verificar se elas estão realmente sendo confirmadas. Talvez elas tenham falhado por algum motivo? Aqui está o que você precisa fazer para confirmar!
 
 ### 🤔 Confirme transações

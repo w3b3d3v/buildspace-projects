@@ -1,4 +1,4 @@
-### 🤖 Obtendo o código inicial
+## 🤖 Obtenha o código do cliente + faça a configuração
 
 Isso vai ser BOM DEMAIS. Eu me diverti muito fazendo a loja, colocando todo tipo de bobagem que não pertence a uma loja. Imagine uma loja que vende itens imaginários.
 
