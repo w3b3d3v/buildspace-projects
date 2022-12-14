@@ -1,3 +1,5 @@
+## 😳 Receba pagamentos em USDC
+
 As transações em USDC são muito semelhantes às transações em SOL. A parte mais importante que muda é que em nossa função de transação chamamos um tipo diferente de instrução de transferência.
 
 Em primeiro lugar, vamos a este [faucet](https://spl-token-faucet.com/?token-name=USDC) para solicitar alguns tokens USDC. Estes não são realmente USDC, mas não importa. O método de envio de tokens SPL é o mesmo para todos eles.
