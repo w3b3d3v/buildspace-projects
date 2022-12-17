@@ -14,7 +14,7 @@ Algumas ações a serem feitas antes de seguir em frente:
 
 * **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta e exclusíva no Discord, à qual você só terá acesso quando conectar o seu Discord.
 * **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
-* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/c/web3dev).
+* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/streams).
 
 ### Entendendo relatório de progresso
 
