@@ -3,7 +3,7 @@
 
 Então, para que nosso site converse com a blockchain, precisamos de alguma forma conectar nossa carteira a ele. Assim que conectarmos nossa carteira ao nosso site, nosso site terá permissões para chamar contratos inteligentes em nosso nome. Lembre-se, é como se autenticar em um site.
 
-Vá ao Replit e depois abra o arquivo `App.jsx` em `src`, é aqui que faremos todo o nosso trabalho.
+Abra o arquivo `App.jsx` em `src`, é aqui que faremos todo o nosso trabalho.
 
 Se estivermos logados na Metamask, ela injetará automaticamente um objeto especial chamado `ethereum` em nossa janela. Vamos verificar primeiro se temos isso.
 

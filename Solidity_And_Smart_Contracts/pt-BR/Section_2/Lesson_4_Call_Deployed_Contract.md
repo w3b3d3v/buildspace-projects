@@ -18,7 +18,7 @@ Então, nosso contrato inteligente tem essa função que recupera o número tota
   }
 ```
 
-Vamos chamar esta função do nosso site :).
+Vamos chamar esta função do nosso site 😊
 
 A partir de agora não vou mais colocar o código inteiro para você copiar e colar, isso vai exigir que você tenha atenção e entenda onde o pedaço de código deve entrar. Caso você coloque o código no lugar errado, vai receber erro de sintaxe ou erro de execução. Se isso acontecer lembre-se de usar os canais de ajuda no nosso servidor do Discord.
 

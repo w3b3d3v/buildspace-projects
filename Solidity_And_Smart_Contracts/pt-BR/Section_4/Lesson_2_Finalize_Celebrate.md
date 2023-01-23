@@ -1,9 +1,9 @@
 🎨 Finalize sua interface de usuário e a personalize.
 ---------------------------------------
 
-Você tem todas as funcionalidades principais! Agora, é hora de realmente tornar isso seu, se ainda não o fez. Altere o CSS, o texto, adicione alguns vídeos engraçados do YouTube, adicione sua própria biografia, seja o que for. Faça as coisas parecerem legais :).
+Você tem todas as funcionalidades principais! Agora, é hora de realmente tornar isso seu, se ainda não o fez. Altere o CSS, o texto, adicione alguns vídeos engraçados do YouTube, adicione sua própria biografia, seja o que for. Faça as coisas parecerem legais 😊 
 
-** Gaste uns 30 minutos nisso se quiser!! Eu recomendo!**
+**Gaste uns 30 minutos nisso se quiser!! Eu recomendo!**
 
 Aliás, enquanto estamos testando -- você pode querer mudar o tempo de espera do seu contrato para 30 segundos em vez de 15 minutos assim:
 
@@ -34,7 +34,7 @@ wavePortalContract.wave(message, { gasLimit: 300000 })
 
 O que isso faz delimitar uma quantidade definida de gas de 300.000. E, se eles não usarem tudo na transação, serão reembolsados automaticamente.
 
-Portanto, se uma transação custar 250.000 gas, então *depois* que a transação for finalizada, os 50.000 gas restantes que o usuário não usou serão reembolsados :).
+Portanto, se uma transação custar 250.000 gas, então *depois* que a transação for finalizada, os 50.000 gas restantes que o usuário não usou serão reembolsados 😊
 
 🔍 Validando a transação
 ---------------------------
@@ -124,13 +124,13 @@ useEffect(() => {
 }, []);
 ```
 
-Na parte inferior, você verá a parte mágica do código que adicionei :). Aqui, posso realmente "ouvir" quando meu contrato lança o evento `NewWave`. Como um webhook :). Muito massa, certo?
+Na parte inferior, você verá a parte mágica do código que adicionei 😁. Aqui, posso realmente "ouvir" quando meu contrato lança o evento `NewWave`. Como um webhook 😀. Muito massa, certo?
 
 Eu também posso acessar esses dados nesse evento como `message` e `from`. Aqui, eu faço um `setAllWaves` quando recebo este evento, o que significa que a mensagem do usuário será automaticamente anexada ao meu array `allWaves` quando recebermos o evento e nossa interface do usuário será atualizada!
 
-Isso é superpoderoso. Ele nos permite criar aplicativos web que são atualizados em tempo real :). Pense se você estivesse fazendo algo como um Uber ou Twitter na blockchain, aplicativos web que atualizam em tempo real se tornam mega importantes.
+Isso é superpoderoso. Ele nos permite criar aplicativos web que são atualizados em tempo real 😁 Pense se você estivesse fazendo algo como um Uber ou Twitter na blockchain, aplicativos web que atualizam em tempo real se tornam mega importantes.
 
-Eu quero que você brinque com isso e construa o que quiser :).
+Eu quero que você brinque com isso e construa o que quiser 😀
 
 
 🙉 Uma nota no github
@@ -183,29 +183,32 @@ Você já fez isso. Você implantou um contrato inteligente e escreveu um aplica
 
 Esperamos que esta tenha sido uma introdução divertida à web3 e esperamos que você continue sua jornada.
 
-Manteremos todos informados sobre novos projetos no Discord :).
+Manteremos todos informados sobre novos projetos no Discord 😊 
 
 🤟 Sua NFT!
 -----------
 
-Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem em #feedback e marque @ **danicuki#5520**.
+Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@vitordev`.
 
 
-🚨 Antes de sair...
--------------------------
-Acesse o canal #sites na aba divulgaão no Discord e nos mostre seu produto final com o qual podemos mexer :).
+### 🌈 Antes de você ir embora
 
-Além disso, twitte seu projeto final e mostre ao mundo sua criação épica! O que você fez não foi nada fácil. Talvez até faça um pequeno vídeo mostrando seu projeto e o adicione ao tweet. Faça seu tweet ficar bonito e mostre :).
+Vá para **#progresso** no Discord e envie-nos o link do seu aplicativo final 😊.
 
-E se você quiser, marque @web3dev_ :). Vamos dar RT. Além disso, nos dá muita motivação sempre que vemos as pessoas enviarem seus projetos.
+Além disso, você deve postar seu projeto final no Twitter ou Likedin e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
 
-Por fim, o que também seria incrível é se você nos desse uma #sugestão. Diga se gostou deste projeto e da estrutura do bootcamp. O que você mais gostou na web3dev? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!!
+E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
 
+Nos dê essa dose de dopamina, por favor.
 
-Nos vemos você por aí!!!
+Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no bootcamp? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
+
+Não deixe de mandar seu feeback na sala `#pod-educação` no nosso discord.
+
+Vejo você por aí!!!
 
 
 🎁 Encerramento
 ----------
 
-*VOCÊ CONSEGUIU.* Aplausos para todos 👏! Quer ver todo o código que escrevemos para esta seção? Clique [neste link](https://gist.github.com/danicuki/4fce48bc881766115370dbe2913b44fc) para ver tudo!
+*VOCÊ CONSEGUIU.* Aplausos para todos 👏 Quer ver todo o código que escrevemos para esta seção? Clique [neste link](https://gist.github.com/danicuki/4fce48bc881766115370dbe2913b44fc) para ver tudo!

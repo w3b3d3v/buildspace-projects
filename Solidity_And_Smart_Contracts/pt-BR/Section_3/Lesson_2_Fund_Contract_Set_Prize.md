@@ -32,7 +32,7 @@ function wave(string memory _message) public {
 
 Isso é incrível.
 
-Com `prizeAmount` eu apenas inicio o valor do prêmio. O Solidity na verdade nos permite usar a palavra-chave `ether` para que possamos representar facilmente valores monetários. Conveniente :)!
+Com `prizeAmount` eu apenas inicio o valor do prêmio. O Solidity na verdade nos permite usar a palavra-chave `ether` para que possamos representar facilmente valores monetários. Conveniente 😃
 
 Também temos algumas palavras-chave novas. Você verá `require` que basicamente verifica se alguma condição é verdadeira. Se não for verdade, ele sairá da função e cancelará a transação. É como se fosse um "IF" chique!
 
@@ -145,7 +145,7 @@ constructor() payable {
 }
 ```
 
-É isso :).
+É isso 😃.
 
 Agora, quando eu faço
 
