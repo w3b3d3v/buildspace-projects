@@ -15,7 +15,7 @@ Por quê? Bem, pense em como um número aleatório é gerado normalmente. Quando
 
 Na blockchain, não há **quase nenhuma fonte de aleatoriedade**. Tudo o que o contrato vê, o público vê. Por causa disso, alguém poderia manipular o sistema apenas olhando para o contrato inteligente, vendo em que #s ele depende para aleatoriedade e, em seguida, a pessoa poderia fornecer os números exatos de que precisa para vencer.
 
-Vamos conferir o código abaixo :).
+Vamos conferir o código abaixo 😊
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -100,7 +100,7 @@ Esses #s são *bastante* aleatórios. Mas, tecnicamente, tanto o `block.difficul
 
 Para tornar isso mais difícil, crio uma variável `seed` que mudará essencialmente toda vez que um usuário enviar um novo tchauzinho. Então, combino todas essas três variáveis para gerar uma nova semente aleatória. Então eu apenas faço `% 100`, o que garantirá que o número seja reduzido para um intervalo entre 0 e 100.
 
-É isso! Então eu apenas escrevo uma simples declaração IF para ver se a semente é menor ou igual a 50, se for -- então a pessoa que "mandou o tchau" ganha o prêmio! Então, isso significa que o "mandador de tchau" tem 50% de chance de ganhar desde que escrevemos `seed <= 50`. Você pode mudar isso para o que quiser :). Acabei de fazer 50% porque é mais fácil testar assim!!
+É isso! Então eu apenas escrevo uma simples declaração IF para ver se a semente é menor ou igual a 50, se for -- então a pessoa que "mandou o tchau" ganha o prêmio! Então, isso significa que o "mandador de tchau" tem 50% de chance de ganhar desde que escrevemos `seed <= 50`. Você pode mudar isso para o que quiser 😊 Acabei de fazer 50% porque é mais fácil testar assim!!
 
 É importante ver que um ataque poderia tecnicamente enganar seu sistema se eles realmente quisessem. Seria muito difícil. Existem outras maneiras de gerar números aleatórios no blockchain, mas o Solidity não nos fornece nada confiável porque não pode! Todos os #s que nosso contrato pode acessar são públicos e *nunca* verdadeiramente aleatórios.
 
@@ -162,7 +162,10 @@ const runMain = async () => {
 runMain();
 ```
 
-Você nem sempre terá bons tutoriais como este para orientá-lo sobre como testar seu código. Cabe a você descobrir 1) o que você quer testar 2) como testá-lo. Nesse caso, eu sabia que queria garantir que o saldo do contrato fosse reduzido em 0.0001 apenas no caso de um # aleatório menor que 50 ser gerado!
+Você nem sempre terá bons tutoriais como este para orientá-lo sobre como testar seu código. Cabe a você descobrir :
+
+ 1) O que você quer testar 
+ 2) Como testá-lo. Nesse caso, eu sabia que queria garantir que o saldo do contrato fosse reduzido em 0.0001 apenas no caso de um # aleatório menor que 50 ser gerado!
 
 Então, quando executo o código acima, aqui está o que recebo:
 
@@ -262,6 +265,6 @@ contract WavePortal {
     }
 }
 ```
-Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar mandar um tchauzinho duas vezes seguidas sem esperar 15 minutos :).
+Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar mandar um tchauzinho duas vezes seguidas sem esperar 15 minutos 😊 
 
-Bam! E é assim que você constrói cooldowns!
+💥 E é assim que você constrói cooldowns!

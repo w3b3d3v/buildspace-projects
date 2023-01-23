@@ -1,7 +1,7 @@
 📤 Configurando para o deploy na blockchain
 -----------------------------------------
 
-Vá em frente e feche o terminal com sua rede local da blockchain em execução, onde você executou o `npx hardhat node`. Não precisaremos mais ;). Eu só queria mostrar como o deploy funciona localmente.
+Vá em frente e feche o terminal com sua rede local da blockchain em execução, onde você executou o `npx hardhat node`. Não precisaremos mais 😉 Eu só queria mostrar como o deploy funciona localmente.
 
 Agora vamos fazer o negócio real, implantando na blockchain real.
 
@@ -70,7 +70,7 @@ Para o MyCrypto, você precisará conectar sua carteira, criar uma conta e clica
 🙃 Está com problemas para obter ETH na Testnet?
 -----------------------------------
 
-Se os links acima não funcionarem, entre no [Discord da web3dev](https://discord.web3dev.com.br/) e use o comando `/faucet` no canal #faucet-request e que o bot enviará alguns para você! Se você quiser mais, envie seu endereço de carteira pública e solte um gif engraçado. Ou eu ou alguém do projeto enviará ETH falso assim que puder. Quanto mais engraçado o gif, mais rápido você receberá uma ETH falso LOL.
+Se os links acima não funcionarem, entre no [Discord da web3dev](https://discord.web3dev.com.br/), procure a categoria exclusiva, e manda um S.O.S na sala `#seção-2-ajuda`
 
 📈 Faça o deploy na rede de teste Goerli.
 ----------------------------------
@@ -120,7 +120,7 @@ Account balance:  377126289290356720
 WavePortal address:  0xdC6b92Dd42a2f9C497186d11210893cD597432B2
 ```
 
-Copie esse endereço do contrato implantado na última linha e salve-o em algum lugar. Não o perca! Você precisará dele para o frontend mais tarde :). O seu será diferente do meu.
+Copie esse endereço do contrato implantado na última linha e salve-o em algum lugar. Não o perca! Você precisará dele para o frontend mais tarde 😊 O seu será diferente do meu.
 
 **Você acabou de fazer o deploy do seu contrato. UAAAAAAAAU!** 🤩
 
@@ -141,7 +141,7 @@ Você agora é alguém que está realmente "fazendo" o que quase todo mundo est�
 
 Você está um passo mais perto de dominar as artes da web3.
 
-CONTINUE :)
+CONTINUE ✅
 
 --
 
