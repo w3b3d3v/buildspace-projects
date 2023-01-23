@@ -9,7 +9,7 @@ Então, neste caso, queremos que as pessoas façam 👋 para nós. De forma gera
 
 1\. **Vamos escrever um Contrato Inteligente (ou Smart Contract).** Esse contrato tem toda a lógica de como os 👋 s são tratados. Isso é como o código do seu servidor.
 
-2\. **Nosso contrato inteligente será implantado na blockchain.** Dessa forma, qualquer pessoa no mundo poderá acessar e executar nosso contrato inteligente (se dermos permissão para isso). Então, praticamente como um servidor :).
+2\. **Nosso contrato inteligente será implantado na blockchain.** Dessa forma, qualquer pessoa no mundo poderá acessar e executar nosso contrato inteligente (se dermos permissão para isso). Então, praticamente como um servidor 😃.
 
 3\. **Vamos construir um site cliente** que permitirá que as pessoas interajam facilmente com nosso contrato inteligente na blockchain.
 
@@ -52,6 +52,8 @@ npm install --save-dev hardhat@2.9.9
 👏 Comece o projeto de exemplo
 ---------------------------
 
+**Obs:** Recomendo usar a versão `16` do `Node.js`.
+
 Legal, agora devemos ter o Hardhat. Vamos começar um projeto de exemplo.
 
 Execute:
@@ -62,9 +64,15 @@ npx hardhat
 
 *Observação: se você tiver o yarn instalado junto com o npm, poderá receber erros como `npm ERR! não foi possível determinar o executável a ser executado`. Neste caso, você pode fazer `yarn add hardhat`.*
 
-Escolha a opção para criar um projeto de exemplo. Diga sim (y) a tudo.
+Após executar você vai ter uma opção de seleção como esta :
 
-O projeto de exemplo solicitará que você instale o hardhat-waffle e o hardhat-ethers. Essas são outras "guloseimas" que usaremos mais tarde :).
+![](https://i.imgur.com/3GnYFoD.png)
+
+Selecione a primeira : `Create a basic sample project`
+
+Após você pode selecionar (y) a todas opções.
+
+O projeto de exemplo solicitará que você instale o hardhat-waffle e o hardhat-ethers. Essas são outras "guloseimas" que usaremos mais tarde 😀.
 
 Vá em frente e instale essas outras dependências caso não tenha feito isso automaticamente.
 
@@ -106,8 +114,8 @@ Vá em frente e exclua o arquivo `sample-test.js` em `test`. Além disso, exclua
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, o Yan vai ficar muito triste :(.*
+*Nota: se você não fizer isso, o Yan vai ficar muito triste 😢.*
 
-Vá no canal #progresso no Discord e poste uma captura de tela do **seu** terminal mostrando a saída do teste! Você acabou de executar um contrato inteligente, isso é um grande negócio! Mostre-o :).
+Vá no canal #progresso no Discord e poste uma captura de tela do **seu** terminal mostrando a saída do teste! Você acabou de executar um contrato inteligente, isso é um grande negócio! Mostre-o 😊.
 
-PS: Se você **não** tiver acesso ao canal #progresso, certifique-se de vincular seu Discord, junte-se ao Discord [aqui](https://discord.web3dev.com.br), nos chame em #ajuda que te ajudaremos a ter acesso aos canais certos!
+PS: Se você **não** tiver acesso ao canal #progresso, certifique-se de vincular seu Discord, junte-se ao Discord [aqui](https://discord.web3dev.com.br), nos chame na seção específica que te ajudaremos a ter acesso aos canais certos!

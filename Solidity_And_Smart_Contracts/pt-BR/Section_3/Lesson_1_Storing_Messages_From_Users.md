@@ -3,9 +3,9 @@
 
 Então, agora temos um aplicativo web completo que pode conversar com a blockchain!
 
-Agora, se você se lembra, queremos que nosso aplicativo final seja um lugar onde as pessoas possam vir mandar um tchauzinho para nós e nos enviar uma mensagem. Também queremos mostrar todas os tchauzinhos/mensagens anteriores que recebemos. É isso que faremos nesta aula!
+Agora, se você se lembra, queremos que nosso aplicativo final seja um lugar onde as pessoas possam vir mandar um tchauzinho para nós e nos enviar uma mensagem. Também queremos mostrar todas os tchauzinhos/mensagens anteriores que recebemos. É isso que faremos !
 
-Então, no final das aulas, queremos:
+Então, queremos:
 
 1\. Permitir que os usuários enviem uma mensagem junto com o tchauzinho.
 
@@ -13,7 +13,7 @@ Então, no final das aulas, queremos:
 
 3\. Mostrar esses dados em nosso site para que qualquer pessoa possa ver todas as pessoas que mandaram tchau para nós e suas mensagens.
 
-Confira meu código de contrato inteligente atualizado. Eu adicionei muitos comentários aqui para ajudá-lo a ver o que mudou :).
+Confira meu código de contrato inteligente atualizado. Eu adicionei muitos comentários aqui para ajudá-lo a ver o que mudou 😃.
 
 
 ```solidity
@@ -136,10 +136,9 @@ Aqui está o que eu recebo no meu terminal quando eu executo `npx hardhat run sc
 
 ![](https://i.imgur.com/VfA0vuK.png)
 
-Muito legal né :)?
+Muito legal né 😃 ?
 
-O array parece um pouco assustador, mas podemos ver os dados ao lado das palavras `waver`, `message` e `timestamp`!! Ele armazena corretamente nossas mensagens `"Uma mensagem"` e `"Outra mensagem"` :).
-
+O array parece um pouco assustador, mas podemos ver os dados ao lado das palavras `waver`, `message` e `timestamp`!! Ele armazena corretamente nossas mensagens `"Uma mensagem"` e `"Outra mensagem"` 🤩
 Nota: "timestamp" é devolvido para nós como tipo "BigNumber". Vamos aprender a trabalhar com isso mais tarde, mas saiba que não há nada de errado aqui!
 
 Parece que as coisas estão funcionando, vamos para o nosso **frontend** para que possamos ver todos os nossos tchauzinhos em nosso site!
@@ -155,7 +154,7 @@ Então, agora que atualizamos nosso contrato, precisamos fazer algumas coisas:
 
 3\. Precisamos atualizar o arquivo ABI em nosso frontend.
 
-**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça rs.**
+**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça **
 
 Por que precisamos fazer tudo isso? Bem, é porque os contratos inteligentes são **imutáveis.** Eles não podem mudar. Eles são permanentes. Isso significa que a alteração de um contrato requer um deploy completo. Isso também **redefinirá** todas as variáveis, pois seria tratado como um novo contrato. **Isso significa que perderíamos todos os nossos dados de tchauzinhos se quiséssemos atualizar o código do contrato.**
 
@@ -281,11 +280,11 @@ Então, em `App.js`, nossa função `wave()` não funciona mais! Se tentarmos ma
 const waveTxn = await wavePortalContract.wave("esta é uma mensagem")
 ```
 
-Vou deixar isso para você: descubra como adicionar uma caixa de texto que permite aos usuários adicionar sua própria mensagem personalizada que eles podem enviar para a função wave :).
+Vou deixar isso para você: descubra como adicionar uma caixa de texto que permite aos usuários adicionar sua própria mensagem personalizada que eles podem enviar para a função wave 😊
 
 O objetivo? Você quer dar aos seus usuários a capacidade de enviar uma mensagem personalizada usando uma caixa de texto que eles podem digitar! Ou talvez você queira que eles enviem um link para um meme? Ou um link do Spotify? Você decide!
 
 👷‍♀️ Vá construir uma interface para o usuário!
 --------------------
 
-Vá fazer essa coisa parecer como você quer que fique! Eu não vou te ensinar muito disso aqui. Sinta-se à vontade para fazer perguntas na #seção-3-ajuda!
+Vá fazer essa coisa parecer como você quer que fique! Eu não vou te ensinar muito disso aqui. Sinta-se à vontade para fazer perguntas no canal `#seção-3-ajuda`!

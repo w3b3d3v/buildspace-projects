@@ -28,7 +28,7 @@ Fiz um vídeo rápido explicando como editar código no Replit, fazer deploy, e 
 🦊 Metamask
 -----------
 
-Incrível, temos um projeto React **implantado** com o qual podemos trabalhar facilmente. Isso foi simples :).
+Incrível, temos um projeto React **implantado** com o qual podemos trabalhar facilmente. Isso foi simples 😊
 
 Em seguida, precisamos de uma carteira Ethereum. Existem várias delas, mas, para este projeto, vamos usar a Metamask. Baixe a extensão do navegador e configure sua carteira [aqui](https://metamask.io/download.html). Mesmo se você já tiver outra carteira, basta usar a Metamask por enquanto.
 
@@ -40,10 +40,10 @@ Por que precisamos da Metamask? Bem. Precisamos ser capazes de chamar funções 
 
 Você pode fazer usar o Experimento Melk de Learn and Earn (Aprenda e Ganhe) que ensina na missão 1 o passo a passo para instalar a Metamask. Se você ainda não conhece o Melk, acesse o canal 🎓 | Aprenda e Ganhe (Learn-to-Earn) dentro do nosso servidor do Discord.
 
-Então, vá em frente e configure tudo! O fluxo de configuração deles é bastante autoexplicativo :).
+Então, vá em frente e configure tudo! O fluxo de configuração deles é bastante autoexplicativo 😊
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, Yan ficará muito triste :(.*
+*Nota: se você não fizer isso, a Thaissa ficará muito triste 😔*
 
-Compartilhe um link para seu site e poste-o no canal #progresso. Altere o CSS e o texto para o que você quiser. Talvez você queira que seja mais colorido? Talvez você não se importe com tchauzinhos e queira fazer um clone descentralizado do Twitter? Faça o que quiser, este é o seu aplicativo :).
+Compartilhe um link para seu site e poste-o no canal `#progresso`. Altere o CSS e o texto para o que você quiser. Talvez você queira que seja mais colorido? Talvez você não se importe com tchauzinhos e queira fazer um clone descentralizado do Twitter? Faça o que quiser, este é o seu aplicativo 😊

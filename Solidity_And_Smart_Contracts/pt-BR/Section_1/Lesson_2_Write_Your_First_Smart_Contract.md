@@ -5,7 +5,7 @@
 
 Vamos pular direto para o nosso projeto.
 
-Vamos construir um contrato inteligente que nos permita enviar um 👋 ao nosso contrato e acompanhar o número total de tchauzinhos. Isso será útil porque em seu site você pode querer acompanhar este #! Sinta-se à vontade para alterar isso para se adequar ao seu caso de uso.
+Vamos construir um contrato inteligente que nos permita enviar um 👋 ao nosso contrato e acompanhar o número total de tchauzinhos. Isso será útil porque em seu site você pode querer acompanhar este 👋 Sinta-se à vontade para alterar isso para se adequar ao seu caso de uso.
 
 Crie um arquivo chamado **`WavePortal.sol`** no diretório **`contracts`**. A estrutura de arquivos é super importante ao usar o Hardhat, então, tenha cuidado!
 
@@ -48,7 +48,7 @@ Vamos começar com a estrutura com a qual cada contrato começa.
 // SPDX-License-Identifier: UNLICENSED
 ```
 
-Apenas uma linha de comentário chique. É chamado de SPDX-License-Identifier, sinta-se à vontade para [pesquisar no Google](https://www.google.com.br/search?q=SPDX-License-Identifier+solidity) o que é :).
+Apenas uma linha de comentário chique. É chamado de SPDX-License-Identifier, sinta-se à vontade para [pesquisar no Google](https://www.google.com.br/search?q=SPDX-License-Identifier+solidity) o que é 😊
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -71,15 +71,15 @@ contract WavePortal {
     }
 }
 ```
-Então, contratos inteligentes parecem uma 'classe' em outras linguagens, caso já tenha visto isso antes! Assim que inicializarmos esse contrato pela primeira vez, esse construtor será executado e imprimirá essa linha. Por favor, altere essa linha para a frase que quiser, use a imaginação! :)
+Então, contratos inteligentes parecem uma 'classe' em outras linguagens, caso já tenha visto isso antes! Assim que inicializarmos esse contrato pela primeira vez, esse construtor será executado e imprimirá essa linha. Por favor, altere essa linha para a frase que quiser, use a imaginação! 😊 
 
 Na próxima lição, executaremos o contrato e veremos o que conseguimos!
 
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, o Daniel ficará muito triste :(.*
+*Nota: se você não fizer isso, o Danicuki ficará muito triste 😔.*
 
-Vá para o canal #progresso no nosso servidor do Discord e poste uma captura de tela do seu contrato no arquivo WavePortal.sol :)
+Vá para o canal #progresso no nosso servidor do Discord e poste uma captura de tela do seu contrato no arquivo WavePortal.sol 😊 
 
 Esta atividade é importante para você subir de nível no Discord, temos um bot que fica de olho nisso 👀

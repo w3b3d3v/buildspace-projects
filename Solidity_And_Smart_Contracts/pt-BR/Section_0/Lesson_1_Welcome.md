@@ -1,13 +1,13 @@
 👋 Bem-vindo
 ----------------------------------
 
-Você conseguiu - sim, conseguiu! Seja bem-vindo :). Nós somos Daniel e Yan e seremos seus instrutores. Este projeto é para os desenvolvedores que querem mergulhar mais na tecnologia por trás de Cripto. Tudo o que você precisa saber para começar é: ter alguma habilidade com terminais de comando (ex. bash), saber um pouco de javascript e um pouco de react.js. O resto você pega ao longo do caminho.
+Você conseguiu - sim, conseguiu! Seja bem-vindo 😃. Nós somos Daniel e Yan e seremos seus instrutores. Este projeto é para os desenvolvedores que querem mergulhar mais na tecnologia por trás de Cripto. Tudo o que você precisa saber para começar é: ter alguma habilidade com terminais de comando (ex. bash), saber um pouco de javascript e um pouco de react.js. O resto você pega ao longo do caminho.
 
 Alguns pontos importantes para você executar antes de seguir em frente:
 
-1. **Conecte seu Discord no dashboard do projeto.** Todas as coisas boas estarão acontecendo em uma categoria secreta no Discord a qual você só terá acesso se conectar o seu Discord.
-2. **Conecte sua carteira Ethereum no dashboard do projeto.** Se você não tiver uma carteira que possa interagir com os dApps, você pode instalar a Metamask gratuitamente. Sem uma carteira, você não poderá fazer o projeto!
-3. **Não deixe de assistir ao kick-off (pontapé) do projeto**. Se você faltar, não se preocupe, não é necessário! Ficará gravado e você poderá assistir pelo nosso canal no Twitch ou YouTube. O link do vídeo ficará no Discord também.
+* **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta e exclusíva no Discord, à qual você só terá acesso quando conectar o seu Discord.
+* **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada, não poderemos fazer o airdrop para você!! **Planejamos fazer NFTs em Solana**, mas, por enquanto, todo o nosso sistema é construído em Ethereum/Polygon, então é para lá que enviaremos os NFTs 😊.
+* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/streams).
 
 🚀 Isto vai ser fantástico.
 ----------------------------------
@@ -28,9 +28,11 @@ Confira abaixo um pequeno vídeo de introdução que fizemos sobre este projeto!
 
 Quando você chegar ao final deste projeto, poderá ganhar um NFT.
 
-**Realizaremos o airdrop de um NFT surpresa para a sua carteira conectada se você terminar o projeto dentro de 7 dias após o kick-off.**
+Você só será elegível para o NFT se terminar dentro de 9 dias após a inscrição! Então certifique-se de agendar tempo para terminar, você tem isso!
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
+
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @vitordev no Discord!**
 
 🛠 O que você construirá?
 -----------------------------
@@ -39,45 +41,38 @@ Você construirá um site que chamaremos de WavePortal --- será um lugar onde q
 
 Você escreverá e implantará o contrato inteligente e também construirá o website que permitirá que as pessoas realmente conectem suas carteiras e interajam com seu contrato inteligente.
 
-Vamos tornar isto um pouco mais picante: basicamente, quando alguém manda um tchauzinho para você, há uma chance aleatória dessa pessoa ganhar uma pequena quantidade de ETH do seu site :).
+Vamos tornar isto um pouco mais picante: basicamente, quando alguém manda um tchauzinho para você, há uma chance aleatória dessa pessoa ganhar uma pequena quantidade de ETH do seu site 😃.
 
 Você será capaz de personalizar o site tanto quanto quiser. Por exemplo:
 - Talvez, em vez de um 👋, você queira que as pessoas lhe enviem um 💩.
 - Talvez em vez de uma simples mensagem antiga, você queira que elas lhe enviem um link Spotify e criem um lugar onde qualquer pessoa possa enviar uma música fantástica e tê-la guardada.
 - Você pode mudar o contrato inteligente para reconhecer quando um de seus amigos está mandando um tchauzinho para você (baseado no endereço da carteira Ethereum deles) e depois levá-los a uma página onde eles receberão algo especial.
 
-Você pode fazer o que quiser :).
+Você pode fazer o que quiser 😃.
 
 No final, você terá um site que você pode exibir e que as pessoas podem realmente usar. Seus colegas na turma da web3dev serão seus primeiros usuários!
 
+### 🤚 Como obter ajuda
 
-📺 Onde acontecerá o kick-off ao vivo?
----------------------------------------
+Quando você tiver uma pergunta, acesse o canal apropriado para o projeto.
 
-Os kick-offs estarão acontecendo em <https://www.twitch.tv/web3dev>. Certifique-se de fazer uma conta no Twitch antes para que você possa conversar durante o fluxo!
-
-
-🤚 Como obter ajuda.
----------------------------------------
-
-Quando você tiver uma pergunta, procure o canal adequado para o projeto.
-
-Este projeto é dividido em 4 seções. Você pode ver em que seção está verificando a barra de progresso no topo da página. Assim, por exemplo, se você estiver preso em alguma parte da seção 3, você teria que acessar `#seção-3-ajuda' no Discord. Se você faz parte de vários projetos, não deixe de fazer suas perguntas na categoria certa de projeto!
+Este projeto está dividido em 4 seções. Você pode ver em qual seção você está verificando a barra de progresso na parte superior da página. Então, por exemplo, se você estiver preso em alguma parte da Seção 3, acesse `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, certifique-se de fazer suas perguntas na categoria de projeto correta! 
 
 
-🤘 Veja um problema? Deseja melhorar alguma coisa? Conserte-o você ;).
----------------------------------------
+### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-**[Todo este conteúdo é completamente de código aberto](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Nós pegamos o conteúdo original em inglês do Buildspace e traduzimos para português. Se você vir um problema, erro de digitação etc. - você mesmo poderá resolver facilmente e fazer um PR (_pull request_)! Se você precisar de ajuda para fazer isso, mande mensagem pra gente no Discord. 
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/web3dev-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-educação` 😊.
 
-Vamos arranjar um representante open source para você!!!
+Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
-No mínimo, deixe uma ⭐ no repositório se você estiver se sentindo extravagante!
+Vamos te dar alguma representação em código aberto!!!
 
+## 👀 Curioso sobre trabalhar na web3?
 
-🚨 Curioso sobre como é trabalhar na web3?
--------------------
+As pessoas parecem pensar que a web3 só precisa de pessoas que possam codificar contratos inteligentes ou escrever códigos que façam interface com a blockchain. Não é verdade.
 
-Estamos em parceria com um grupo incrível de empresas web3 que querem contratar pessoas. **Se você estiver apenas curiosidade**, clique em "Perfil" no menu, preencha o formulário com seus dados que vamos te ajudar com oportunidades!!
+Há tanto trabalho a fazer e a maior parte do trabalho nem tem a ver com contratos inteligentes 🤣. Ser um engenheiro na web3 significa apenas pegar suas habilidades da web2 e aplicá-las à web3.
 
-Na pior das hipóteses, você poderá falar com algumas pessoas muito legais na Web3 :).
+A Web3 também precisa desesperadamente de designers, gerentes de produto, especialistas em marketing e muito mais.
+
+Temos parceria com várias empresas web3 fantásticas que querem contratar pessoas da web3dev.

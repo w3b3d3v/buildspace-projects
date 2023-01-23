@@ -6,7 +6,7 @@ Você conseguiu. Você escreveu um contrato inteligente. Você é top top!
 Agora precisamos realmente\
 1\. Compilá-lo.\
 2\. Implantá-lo na nossa blockchain local.\
-3\. Quando implantado, aquele console.log vai rodar :)
+3\. Quando implantado, aquele console.log vai rodar 😊
 
 Precisamos fazer isso porque no mundo real, os contratos inteligentes vivem na blockchain. E queremos que nosso site e contrato inteligente sejam usados por pessoas reais para que elas possam 👋 conosco ou fazer o que você quiser que elas façam!
 
@@ -23,7 +23,7 @@ Vá para o diretório **`scripts`** e crie um arquivo chamado **`run.js`.**
 
 Então, para testar um contrato inteligente, temos que fazer um monte de coisas da forma correta. Como: compilar, implantar e executar.
 
-Nosso script tornará muito fácil iterar em nosso contrato de forma rápida :)
+Nosso script tornará muito fácil iterar em nosso contrato de forma rápida 😄
 
 Copie e cole o conteúdo abaixo e salve no arquivo **`run.js`**:
 
@@ -59,13 +59,13 @@ Novamente indo linha por linha.
 const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
 ```
 
-Esse trecho compilará nosso contrato e gerará os arquivos necessários que precisamos para trabalhar com nosso contrato no diretório `artifacts`. Vá dar uma olhada depois que colocar para executar :)
+Esse trecho compilará nosso contrato e gerará os arquivos necessários que precisamos para trabalhar com nosso contrato no diretório `artifacts`. Vá dar uma olhada depois que colocar para executar 😊
 
 ```javascript
 const waveContract = await waveContractFactory.deployed();
 ```
 
-Isso é bem loko :).
+Isso é bem loko 😊
 
 O que está acontecendo aqui é que a Hardhat criará uma rede Ethereum local, mas apenas para este contrato. Então, depois que o script for concluído, ele destruirá essa rede local. Então, toda vez que você executar o contrato, será uma nova blockchain. Qual é o ponto? É como atualizar seu servidor local todas as vezes para que você sempre comece de um papel em branco, o que facilita a depuração dos erros.
 
@@ -110,7 +110,7 @@ Então o que isso quer dizer? Bem, toda vez que você executa um comando no term
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, Yan ficará muito triste :(.*
+*Nota: se você não fizer isso, vitordev ficará muito triste 😔*
 
 Vá para o canal #progresso no nosso servidor do Discord e poste uma uma captura de tela do seu terminal com a saída.
 

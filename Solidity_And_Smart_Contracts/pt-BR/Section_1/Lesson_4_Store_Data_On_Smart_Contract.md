@@ -60,7 +60,7 @@ Bem, precisamos chamar manualmente as funções que criamos.
 
 Basicamente, quando implantamos nosso contrato na blockchain (o que fazemos quando executamos `waveContractFactory.deploy()`), nossas funções ficam disponíveis para serem chamadas na blockchain porque usamos essa palavra-chave especial **public** em nossa função.
 
-Pense nisso como um endpoint de API pública :).
+Pense nisso como um endpoint de API pública 😊
 
 Então agora queremos testar essas funções especificamente!
 
@@ -140,7 +140,7 @@ Aqui está minha saída:
 
 ![](https://i.imgur.com/HDjtCN9.png)
 
-Muito legal, hein :)?
+Muito legal, hein ? 😊 
 
 Você também pode ver o endereço da carteira que tchauzinhou igual ao endereço que implantou o contrato. Eu acenei para mim mesmo!
 
@@ -151,7 +151,7 @@ Então nós:\
 
 Esta é praticamente a base da maioria dos contratos inteligentes. Funções de leitura. Funções de escrita. E alterando uma variável de estado. Temos os blocos necessários para nos manter trabalhando no nosso WavePortal épico.
 
-Muito em breve, poderemos chamar estas funções a partir de nosso aplicativo de front em React no qual estaremos trabalhando :).
+Muito em breve, poderemos chamar estas funções a partir de nosso aplicativo de front em React no qual estaremos trabalhando 😄 
 
 
 🤝 Testar outros usuários
@@ -212,8 +212,8 @@ waveCount = await waveContract.getTotalWaves();
 🚨 Antes de clicar em "Próxima Lição"
 -------------------------------------------
 
-*Note: se você não fizer isso, Daniel ficará muito triste :(.*
+*Note: se você não fizer isso, a Anna Bida ficará muito triste 😔*
 
 Personalize um pouco seu código!! Talvez você queira armazenar algo mais? Queremos que você faça bagunça. Talvez você queira armazenar o endereço do remetente em uma matriz? Talvez você queira armazenar um mapa de endereços e contagens de tchauzinhos para que você mantenha um registro de quem está mandando um tchauzinho a mais para você? Mesmo que você apenas mude os nomes das variáveis e funções para ser algo que você ache interessante, isso é um grande negócio. Tente não copiar nosso código exatamente! Pense em seu site final e no tipo de funcionalidade que você deseja. Construa a funcionalidade **que você quer***.
 
-Uma vez que tudo tenha terminado aqui, não deixe de publicar uma captura de tela do seu terminal lá no Discord no canal #progresso.
+Uma vez que tudo tenha terminado aqui, não deixe de publicar uma captura de tela do seu terminal lá no Discord no canal `#progresso`.
