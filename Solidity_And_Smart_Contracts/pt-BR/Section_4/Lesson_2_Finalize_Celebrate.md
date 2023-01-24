@@ -197,8 +197,7 @@ Vá para **#progresso** no Discord e envie-nos o link do seu aplicativo final �
 
 Além disso, você deve postar seu projeto final no Twitter ou Likedin e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
 
-E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** Além disso, você pode inspirar outra pessoa a entrar no mundo da Solana.
-
+E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** 
 Nos dê essa dose de dopamina, por favor.
 
 Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no bootcamp? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
