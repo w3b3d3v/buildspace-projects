@@ -61,7 +61,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/web3dev-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-educação` 😊.
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-educação` 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
