@@ -160,7 +160,7 @@ Tudo o que está acontecendo aqui é que estamos juntando tudo e adicionando o n
 🛠 Debugando o conteudo de `finalTokenUri`
 ------------------------
 
-Agora que você configurou o tokenURI, como sabemos se ele está realmente correto? Afinal, ele contém todos os nossos dados para nosso NFT! Você pode usar uma ferramenta legal como - [NFT Preview](https://nftpreview.0xdev.codes/) para ver uma visualização rápida da imagem e o conteúdo do json sem deployar de novo e e de novo na testnet do opensea.
+Agora que você configurou o tokenURI, como sabemos se ele está realmente correto? Afinal, ele contém todos os nossos dados para nosso NFT! Você pode usar uma ferramenta legal como - [NFT Preview](https://nft-preview.w3d.community/) para ver uma visualização rápida da imagem e o conteúdo do json sem deployar de novo e e de novo na testnet do opensea.
 
 Para facilitar, você pode passar o código `tokenURI` como um parâmetro de consulta como este,
 
