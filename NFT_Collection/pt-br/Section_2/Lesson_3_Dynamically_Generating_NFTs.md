@@ -172,7 +172,7 @@ console.log("\n--------------------");
 console.log(
     string(
         abi.encodePacked(
-            "https://nftpreview.0xdev.codes/?code=",
+            "https://nft-preview.w3d.community/",
             finalTokenUri
         )
     )
