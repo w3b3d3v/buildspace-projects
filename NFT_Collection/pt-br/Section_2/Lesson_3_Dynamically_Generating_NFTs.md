@@ -179,7 +179,6 @@ console.log(
 );
 console.log("--------------------\n");
 ```
-![image](https://i.imgur.com/rDuu89V.png)
 
 🚀 Deployando na Goerli
 ------------------
