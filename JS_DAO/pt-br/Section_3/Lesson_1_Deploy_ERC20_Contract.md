@@ -76,7 +76,7 @@ Então, volte para a sua carteira, role para baixo e boom!
 
 ![Untitled](https://i.imgur.com/f2ffsjm.png)
 
-Você oficialmente tem o seu próprio token :).
+Você oficialmente tem o seu próprio token 😃.
 
 ### 💸 Crie o Fornecimento do Seu Token.
 
@@ -88,14 +88,14 @@ Vá para `6-print-money.js` e adicione:
 import sdk from "./1-initialize-sdk.js";
 
 // Esse é o endereço do nosso contrato ERC-20 impresso no passo anterior.
-const token = sdk.getToken("INSERT_TOKEN_ADDRESS");
+const token = sdk.getContract("INSERT_TOKEN_ADDRESS", "token");
 
 (async () => {
   try {
     // Qual o fornecimento máximo que você quer? 1,000,000 é um número legal!
     const amount = 1_000_000;
     // Interaja com o seu contrato ERC-20 e cunhe os tokens!
-    await token.mintToSelf(amount);
+    await token.mint(amount);
     const totalSupply = await token.totalSupply();
     
     // Mostre quantos dos seus tokens existem agora!
@@ -141,14 +141,12 @@ Abra `7-airdrop-token.js` e adicione o código abaixo:
 ```jsx
 import sdk from "./1-initialize-sdk.js";
 
-// Esse é o endereço do nosso contrato ERC-1155 do NFT de filiação.
-const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
-
-// Esse é o endereço do nosso contrato ERC-20 do nosso token.
-const token = sdk.getToken("INSERT_TOKEN_ADDRESS");
-
 (async () => {
   try {
+    // Esse é o endereço do nosso contrato ERC-1155 do NFT de filiação.
+    const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
+    // Esse é o endereço do nosso contrato ERC-20 do nosso token.
+    const token = sdk.getToken("INSERT_TOKEN_ADDRESS","token");
     // Pegue o endereço de todas as pessoas que possuem o nosso NFT de filiação, que tem
     // o tokenId 0.
     const walletAddresses = await editionDrop.history.getAllClaimerAddresses(0);
@@ -231,4 +229,4 @@ Okay, então agora se eu for ver meu contrato ERC-20 na Etherscan, eu posso ver 
 
 Vá em frente e compartilhe uma captura de tela em `#progresso` do contrato do seu token na Etherscan que mostre o nome do token, fornecimento, etc!
 
-**A propósito, se você chegou até aqui e está se divertindo -- talvez você queira tweetar que está construindo sua própria DAO e marcar [@Web3dev_](https://twitter.com/Web3dev_) :)?**
+**A propósito, se você chegou até aqui e está se divertindo -- talvez você queira tweetar que está construindo sua própria DAO e marcar [@Web3dev_](https://twitter.com/Web3dev_) 😃?**

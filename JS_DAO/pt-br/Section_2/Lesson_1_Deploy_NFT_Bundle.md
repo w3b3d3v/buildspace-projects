@@ -12,7 +12,7 @@ Uma vez que você dá deploy no contrato, você pode interagir com ele diretamen
 
 Eu não posso ser mais claro sobre como é fácil de criar um smart contract usando o thirdweb comparado com escrever seu próprio código em Solidity, vai ser como interagir com uma biblioteca backend normal. Vamos lá:
 
-Vá para o dashboard do thirdweb [aqui](https://thirdweb.com/start?utm_source=web3dev). Clique em "**Let's get started**". Conecte sua carteira. Selecione sua rede (**Goerli**).
+Vá para o dashboard do thirdweb [aqui](https://thirdweb.com/dashboard?utm_source=web3dev). Clique em "**Let's get started**". Conecte sua carteira. Selecione sua rede (**Goerli**).
 
 Crie o seu primeiro projeto e dê um nome como "My DAO" ou algo do tipo. Quando você clicar em "Criar" você vai ver que um pop-up da Metamask é aberto e você tem que pagar uma taxa de transação na rede Goerli. Por que?
 
@@ -58,7 +58,6 @@ Vá para `scripts/1-initialize-sdk.js`.
 
 ```jsx
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
-import ethers from "ethers";
 
 //Importando e configurando nosso arquivo .env para que possamos usar nossas variáveis de ambiente de maneira segura
 import dotenv from "dotenv";
@@ -77,12 +76,13 @@ if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "") {
   console.log("🛑 Endereço de carteira não encontrado.")
 }
 
-// RPC URL, nós usaremos nossa URL da API do Alchemy do nosso arquivo .env.
-const provider = new ethers.providers.JsonRpcProvider(process.env.ALCHEMY_API_URL);
 
-// A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
-const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-const sdk = new ThirdwebSDK(wallet);
+const sdk = ThirdwebSDK.fromPrivateKey(
+  // A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
+  process.env.PRIVATE_KEY,
+  // RPC URL
+  process.env.QUICKNODE_API_URL
+);
 
 (async () => {
   try {

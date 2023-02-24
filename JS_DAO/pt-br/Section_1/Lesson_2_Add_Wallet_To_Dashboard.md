@@ -13,20 +13,22 @@ import './index.css';
 import App from './App';
 
 // Importe o ThirdWeb
-import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
+import { ThirdwebProvider } from '@thirdweb-dev/react';
+import { ChainId } from '@thirdweb-dev/sdk';
 
 // Inclua que redes você quer dar suporte.
 // 5 = Goerli.
 const activeChainId = ChainId.Goerli;
 
 // Por último, envolva o App com o thirdweb provider.
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <ThirdwebProvider desiredChainId={activeChainId}>
       <App />
     </ThirdwebProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 ```
 
@@ -43,7 +45,7 @@ Se você for para o seu webapp, você verá uma página roxa em branco. Vamos ad
 Vá para `App.jsx`. Adicione o código abaixo.
 
 ```jsx
-import { useAddress, useMetamask } from '@thirdweb-dev/react';
+import { useAddress, ConnectWallet } from '@thirdweb-dev/react';
 
 const App = () => {
   // Use o hook connectWallet que o thirdweb nos dá.
@@ -57,9 +59,9 @@ const App = () => {
     return (
       <div className="landing">
         <h1>Bem-vind@s à MTBDAO - a DAO dos pedaleiros de montanha</h1>
-        <button onClick={connectWithMetamask} className="btn-hero">
-          Conecte sua carteira
-        </button>
+        <div className="btn-hero">
+          <ConnectWallet />
+        </div>
       </div>
     );
   }

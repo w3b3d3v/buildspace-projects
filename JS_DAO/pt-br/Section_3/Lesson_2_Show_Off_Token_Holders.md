@@ -2,17 +2,10 @@
 
 Seria legal para todos os membros da sua DAO conseguir facilmente ver todas as pessoas da DAO que detêm tokens juntamente com quantos tokens eles detêm. Para fazer isso, vamos precisar chamar nosso smart contract pelo nosso cliente e recuperar os dados.
 
-Vamos fazer isso! Vá para `App.jsx`. No topo, adicione `useToken`. Também importe o `useMemo`:
+Vamos fazer isso! Vá para `App.jsx` Depois, abaixo de `editionDrop`, adicione o seu `token`.
 
 ```jsx
-import { useAddress, useMetamask, useEditionDrop, useToken } from '@thirdweb-dev/react';
-import { useState, useEffect, useMemo } from 'react';
-```
-
-Depois, abaixo de `editionDrop`, adicione o seu `token`.
-
-```jsx
-const token = useToken("INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE");
+const { contract: token } = useContract('INSERT_TOKEN_ADDRESS', 'token');
 ```
 
 Nós precisamos disso para interagir tanto com o nosso contrato ERC-1155 quanto o ERC-20. Do ERC-1155, nós vamos pegar todos os endereços dos membros. Do ERC-20, vamos pegar o # de tokens que cada membro tem.
@@ -148,7 +141,7 @@ Bem direto! Nós estamos apenas renderizando uma linda tabela que vai mostrar os
 
 ![Untitled](https://i.imgur.com/PoJrqay.png)
 
-Épico. Agora nós temos um lugar para todos os nossos membros verem outros membros num dashboard interno e restrito via token. Perfeito :).
+Épico. Agora nós temos um lugar para todos os nossos membros verem outros membros num dashboard interno e restrito via token. Perfeito 😃.
 
 ### 🚨 Relatório de Progresso
 

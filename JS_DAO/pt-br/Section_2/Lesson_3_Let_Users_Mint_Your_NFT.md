@@ -11,54 +11,30 @@ Vamos fazer isso! Vamos atacar o caso #1 primeiro, precisamos detectar se o usu�
 Vá para `App.jsx` e atualize seus imports:
 
 ```jsx
-import { useAddress, useMetamask, useEditionDrop } from '@thirdweb-dev/react';
-import { useState, useEffect } from 'react';
+import { useAddress, ConnectWallet, useContract, useNFTBalance } from '@thirdweb-dev/react';
+import { useState, useEffect, useMemo } from 'react';
 ```
 
 A partir daí, abaixo do `console.log("👋 Address:", address);`, vamos adicionar:
 
 ```jsx
   // inicializar o contrato editionDrop
-  const editionDrop = useEditionDrop("INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP");
+  const editionDropAddress = "INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP"
+  const { contract: editionDrop } = useContract(editionDropAddress, "edition-drop");
 
-  // Variável de estado para sabermos se o usuário tem nosso NFT.
-  const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
+  // Hook para verificar se o úsuario tem a NFT
+  const { data: nftBalance } = useNFTBalance(editionDrop, address, "0")
 
-  useEffect(() => {
-    // Se ele não tiver uma carteira conectada, saia!
-    if (!address) {
-      return;
-    }
+    const hasClaimedNFT = useMemo(() => {
+    return nftBalance && nftBalance.gt(0)
+    }, [nftBalance])
     
-    const checkBalance = async () => {
-    try {
-      const balance = await editionDrop.balanceOf(address, 0);
-      // Se o saldo for maior do que 0, ele tem nosso NFT!
-      if (balance.gt(0)) {
-        setHasClaimedNFT(true);
-        console.log("🌟 esse usuário tem o NFT de membro!");
-      } else {
-        setHasClaimedNFT(false);
-        console.log("😭 esse usuário NÃO tem o NFT de membro.");
-      }
-    } catch (error) {
-      setHasClaimedNFT(false);
-      console.error("Falha ao ler saldo", error);
-    }
-  };
-  checkBalance();
-  }, [address, editionDrop]);
-
   // ... inclua todo o seu outro código que já estava abaixo.
 ```
 
 Primeiro nós inicializados mo contrato editionDrop.
 
 A partir daí, nós usamos `bundleDropModule.balanceOf(address, "0")` para checar se o usuário tem o nosso NFT. Isso vai na verdade requisitar os dados ao nosso contrato que está na blockchain. Por que nós usamos `0`? Bem, se você se lembra o `0` é o tokenId do nosso NFT de filiação. Então aqui estamos perguntando ao nosso contrato, "Ei, esse usuário é dono de um token com o id 0?".
-
-Quando você atualizar a página, verá algo como isso aqui:
-
-![Untitled](https://i.imgur.com/QiWJs3H.png)
 
 Perfeito! Nós recebemos "esse usuário NÃO tem o NFT de membro". Vamos criar um botão que permite o usuário cunhar um NFT.
 
@@ -67,60 +43,38 @@ Perfeito! Nós recebemos "esse usuário NÃO tem o NFT de membro". Vamos criar u
 Vamos fazer isso! Volte para `App.jsx`. Eu coloquei alguns comentários nas linhas que eu adicionei:
 
 ```javascript
-import { useAddress, useMetamask, useEditionDrop } from '@thirdweb-dev/react';
-import { useState, useEffect } from 'react';
+import { useAddress, ConnectWallet, Web3Button, useContract, useNFTBalance } from '@thirdweb-dev/react';
+import { useState, useEffect, useMemo } from 'react';
 
 const App = () => {
   // Usando os hooks que o thirdweb nos dá.
   const address = useAddress();
-  const connectWithMetamask = useMetamask();
   console.log("👋 Address:", address);
 
+  const connectWithMetamask = useMetamask();
+
   // inicializar o contrato editionDrop
-  const editionDrop = useEditionDrop("INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP");
-  // Variável de estado para sabermos se o usuário tem nosso NFT.
-  const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
-  // isClaiming nos ajuda a saber se está no estado de carregando enquanto o NFT é cunhado.
-  const [isClaiming, setIsClaiming] = useState(false);
+  const editionDrop = "INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP"
+  const { contract: editionDrop } = useContract(editionDropAddress, "edition-drop");
+  // Hook para sabermos se o usuário tem nosso NFT.
+  const { data: nftBalance } = useNFTBalance(editionDrop, address, "0")
+
+  const hasClaimedNFT = useMemo(() => {
+    return nftBalance && nftBalance.gt(0)
+  }, [nftBalance])
 
   useEffect(() => {
-    // Se ele não tiver uma carteira conectada, saia!
+    // Se ele não tiver uma carteira conectada vamos chamar Connect Wallet
     if (!address) {
-      return
-    }
-
-    const checkBalance = async () => {
-      try {
-        const balance = await editionDrop.balanceOf(address, 0)
-        // Se o saldo for maior do que 0, ele tem nosso NFT!
-        if (balance.gt(0)) {
-          setHasClaimedNFT(true)
-          console.log("🌟 esse usuário tem o NFT de membro!")
-        } else {
-          setHasClaimedNFT(false)
-          console.log("😭 esse usuário NÃO tem o NFT de membro.")
-        }
-      } catch (error) {
-        setHasClaimedNFT(false)
-        console.error("Falha ao ler saldo", error)
-      }
-    }
-    checkBalance()
-  }, [address, editionDrop])
-
-  const mintNft = async () => {
-    try {
-      setIsClaiming(true);
-      await editionDrop.claim("0", 1);
-      console.log(`🌊 Cunhado com sucesso! Olhe na OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`);
-      setHasClaimedNFT(true);
-    } catch (error) {
-      setHasClaimedNFT(false);
-      console.error("Falha ao cunhar NFT", error);
-    } finally {
-      setIsClaiming(false);
-    }
-  };
+    return (
+      <div className="landing">
+        <h1>Welcome to NarutoDAO</h1>
+        <div className="btn-hero">
+          <ConnectWallet />
+        </div>
+      </div>
+    );
+  }
 
   if (!address) {
     return (
@@ -136,13 +90,23 @@ const App = () => {
   // Renderiza a tela de cunhagem do NFT.
   return (
     <div className="mint-nft">
-      <h1>Cunhe gratuitamente seu NFT de membro 🚴 da MTBDAO</h1>
-      <button
-        disabled={isClaiming}
-        onClick={mintNft}
-      >
-        {isClaiming ? "Cunhando..." : "Cunhe seu NFT (GRATIS)"}
-      </button>
+      <h1>Mint your free 🍪DAO Membership NFT</h1>
+      <div className="btn-hero">
+        <Web3Button 
+          contractAddress={editionDropAddress}
+          action={contract => {
+            contract.erc1155.claim(0, 1)
+          }}
+          onSuccess={() => {
+            console.log(`🌊 Successfully Minted! Check it out on OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`);
+          }}
+          onError={error => {
+            console.error("Failed to mint NFT", error);
+          }}
+        >
+          Mint your NFT (FREE)
+        </Web3Button>
+      </div>
     </div>
   );
 };
