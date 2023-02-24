@@ -24,7 +24,7 @@ Você só será elegível para o NFT se terminar dentro de 9 dias após a inscri
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
 
-**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @vitordev no Discord!**
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o `vitordev#1838` no Discord!**
 
 ### **🤚 Como conseguir ajuda.**
 
@@ -36,7 +36,7 @@ Esse projeto é dividido em 4 sessões. Você pode ver em que seção você est�
 
 ### **🤘 Viu algum problema? Quer melhorar algo? Resolva você mesmo ;).**
 
-**[Todo esse conteúdo é completamente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Se você ver um problema, erro de digitação, etc - você pode ajustar você mesmo facilmente e fazer um PR! Se você precisa de ajuda para fazer isso, mande uma DM para `@danicuki` no Discord 😃.
+**[Todo esse conteúdo é completamente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Se você ver um problema, erro de digitação, etc - você pode ajustar você mesmo facilmente e fazer um PR! Se você precisa de ajuda para fazer isso, mande uma DM para `vitordev#1838` no Discord 😃.
 
 Por último mas não menos importante, deixe uma ⭐ no repositório se sentir que deve!
 
