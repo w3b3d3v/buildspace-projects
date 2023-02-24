@@ -41,7 +41,7 @@ Você definitivamente deveria ler esse exemplo algumas vezes! Eu quis fazer um e
 
 **Lembre-se, no fim do dia uma DAO é só um grupo de estranhos com uma conta bancária compartilhada que votam em como usar essa conta.**
 
-Se você ainda não entendeu, não se preocupe. **Vamos começar a codar e criar uma nós mesmos :).**
+Se você ainda não entendeu, não se preocupe. **Vamos começar a codar e criar uma nós mesmos 😃.**
 
 ### 🚨 Relatório de Progresso
 

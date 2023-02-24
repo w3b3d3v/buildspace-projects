@@ -6,14 +6,13 @@ Legal. Tudo está configurado agora, nós precisamos só criar nossa primeira pr
 import sdk from "./1-initialize-sdk.js";
 import { ethers } from "ethers";
 
-// Nosso contrato de votação.
-const vote = sdk.getVote("INSIRA_O_ENDEREÇO_DO_VOTE");
-
-// Nosso contrato ERC-20.
-const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN");
-
 (async () => {
   try {
+    // Nosso contrato de votação.
+    const vote = sdk.getVote("INSIRA_O_ENDEREÇO_DO_VOTE", "vote");
+
+    // Nosso contrato ERC-20.
+    const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN", "token");
     const amount = 420_000;
     // Crie uma proposta para cunhar 420.000 novos tokens para o tesouro.
     const description = "Cunhar para a DAO uma quantidade adicional de " + amount + " tokens no tesouro?";
@@ -49,9 +48,12 @@ const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN");
   }
 
   try {
+    // Nosso contrato de votação.
+    const vote = sdk.getVote("INSIRA_O_ENDEREÇO_DO_VOTE", "vote");
+    // Nosso contrato ERC-20.
+    const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN", "token");
     // Crie uma proposta para transferir para nós mesmos 6,900 tokens por sermos irados.
     const amount = 6_900;
-
     const description = "A DAO deveria transferir " + amount + " tokens do tesouro para " +
       process.env.WALLET_ADDRESS + " por ser uma pessoa incrível?";
 
@@ -111,14 +113,10 @@ BOOM. Aí estão nossas propostas. A última coisa que vamos fazer é de fato pe
 
 Finalmente, vamos juntar tudo agora. Nesse momento, nossas propostas vivem no nosso smart contract. Mas nós queremos que os usuários as vejam facilmente e votem nelas! Vamos fazer isso. Vá para `App.jsx`. Adicione o hook `useVote` às importações:
 
-```jsx
-import { useAddress, useMetamask, useEditionDrop, useToken, useVote } from '@thirdweb-dev/react';
-```
-
 Vá em frente e adicione isso abaixo de `token`.
 
 ```jsx
-const vote = useVote("INSIRA_O_ENDEREÇO_DO_VOTE");
+const { contract: vote } = useContract("INSIRA_O_ENDEREÇO_DO_VOTE", "vote");
 ```
 
 Nosso web app precisa acessar nosso `vote` para que usuários possam interagir com nosso contrato.

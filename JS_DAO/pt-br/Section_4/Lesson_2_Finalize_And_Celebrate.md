@@ -30,7 +30,7 @@ Vá para **#progresso** no Discord e nos mande o link do seu produto final par
 
 E também, você deveria fazer um tweet sobre o seu projeto final e mostrar para o mundo sua criação épica! O que você fez não foi fácil de jeito nenhum. Talvez até fazer um pequeno vídeo mostrando seu projeto e anexá-lo ao tweet. Faça o seu tweet ficar bonito e se amostre!!
 
-E se você quiser, mencione o [@Web3dev_](https://twitter.com/Web3dev_) :). **Isso nos dá muita motivação quando vemos pessoas terminando seus projetos.** E também você pode inspirar alguém a entrar na web3.
+E se você quiser, mencione o [@Web3dev_](https://twitter.com/Web3dev_) 😃. **Isso nos dá muita motivação quando vemos pessoas terminando seus projetos.** E também você pode inspirar alguém a entrar na web3.
 
 Nos dê essa injeção de dopamina pf.
 

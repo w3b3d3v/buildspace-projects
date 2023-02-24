@@ -88,6 +88,6 @@ Quando sua transação for minerada, você terá alguns ETH fake na sua carteira
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou Yan ficará triste :)*
+*Por favor faça isso ou Yan ficará triste 😃*
 
 Em `#progresso` envie uma captura de tela da sua Metamask mostrando o balanço total na rede Goerli como na imagem acima.

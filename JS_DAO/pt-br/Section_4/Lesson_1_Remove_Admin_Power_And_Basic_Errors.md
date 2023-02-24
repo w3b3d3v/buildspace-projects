@@ -9,10 +9,9 @@ Dessa maneira, apenas o contrato de votação é capaz de cunhar novos tokens. N
 ```jsx
 import sdk from "./1-initialize-sdk.js";
 
-const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE");
-
 (async () => {
   try {
+    const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE", "token");
     // Mostre os papeis atuais.
     const allRoles = await token.roles.getAll();
 
@@ -61,7 +60,7 @@ $ node scripts/11-revoke-roles.js
 
 No começo você pode ver que meu endereço `0xf9aD3D9` tinha vários privilégios sobre o ERC-20. Então, depois de rodar `token.roles.setAll({ admin: [], minter: [] })` você vai ver que a única pessoa que tem a função de cunhagem é o contrato de votação!
 
-Agora nós estamos livre de um possível "roubo" vindo de admins :).
+Agora nós estamos livre de um possível "roubo" vindo de admins 😃.
 
 Você verá que ainda tenho a função `transfer` em conjunto com `AddressZero`, na matriz de papeis significa que todos podem transferir tokens (que é o que queremos). Não importa que nosso endereço também esteja lá.
 
@@ -70,8 +69,15 @@ Você verá que ainda tenho a função `transfer` em conjunto com `AddressZero`,
 Primeiramente, vamos importar um último hook `useNetwork` no topo de `App.jsx` para poder reconhecer uma conexão de fora da rede Goerli. Também importamos `ChainId` do thirdweb SDK:
 
 ```jsx
-import { useAddress, useMetamask, useEditionDrop, useToken, useVote, useNetwork } from '@thirdweb-dev/react';
-import { ChainId } from '@thirdweb-dev/sdk'
+import {
+  useAddress,
+  useNetwork,
+  useContract,
+  ConnectWallet,
+  Web3Button,
+  useNFTBalance,
+} from '@thirdweb-dev/react';
+import { ChainId } from '@thirdweb-dev/sdk';
 ```
 
 Então definimos nosso hook `useNetwork` abaixo do `useAddress`:
@@ -104,7 +110,7 @@ Você pode estar se perguntando como tokens como [ENS DAO](https://coinmarketcap
 
 Por exemplo — talvez uma pessoa aleatória acorde e diga, “Ei, eu te dou $100 por 100 $BIKES por que eu quero me juntar à MTBDAO e ter algum poder de governança”. Bem, isso significa que $BIKES tem valor real agora. Isso significa que 1 $BIKES = 1 Us Dollar. E uma vez que existem 1.000.000 $BIKES, isso significa que o valor de mercado totalmente diluído do meu token valeria $1.000.000.
 
-Bem louco, certo :)?
+Bem louco, certo 😃?
 
 Pessoas geralmente fazem trocas como essas na Uniswap.
 
