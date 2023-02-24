@@ -25,7 +25,7 @@ Agora precisamos escrever alguns scripts que nos permitem criar/dar deploy no no
 ```plaintext
 PRIVATE_KEY=SUA_CHAVE_PRIVADA_AQUI
 WALLET_ADDRESS=ENDEREÇO_DA_SUA_CARTEIRA
-ALCHEMY_API_URL=SUA_URL_HTTPS_ALCHEMY
+QUICKNODE_API_URL=SUA_QUICKNODE_API_URL
 ```
 
 *Nota: está no Replit? Você vai precisar usar [isto](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables). Basicamente arquivos .env não funcionam no Replit. Você precisa usar esse método para adicionar suas variáveis uma por uma com os mesmos nomes. Quando você terminar você precisará reiniciar o Replit parando e rodando o repositóro de novo, para que ele possa ter acesso as novas variáveis de ambiente!*
@@ -38,17 +38,13 @@ Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zend
 
 E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://www.web3dev.com.br/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
 
-### 🚀 Alchemy.
+### 🚀 QuickNode.
 
-A última coisa que você precisa no seu arquivo `.env` é a `ALCHEMY_HTTPS_URL`.
+A última coisa que você precisa no seu arquivo `.env` é a `QUICKNODE_API_URL`.
 
-Alchemy essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos miners na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir dai, todo mundo atualiza a sua cópia da blockchain.
+QuickNode essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos miners na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir dai, todo mundo atualiza a sua cópia da blockchain.
 
-Então, [faça uma conta na Alchemy](https://alchemy.com/?r=jQ3MDMxMzUyMDU3N).
-
-Veja esse vídeo abaixo para ver como acessar sua chave API para uma **testnet**! Não se confunda criando uma chave para a mainnet, **nós queremos uma chave para a testnet.**
-
-[Loom](https://www.loom.com/share/35aabe54c3294ef88145a03c311f1933)
+Então, [faça uma conta na QuickNode](https://www.quicknode.com/).
 
 Você deve ter por agora os três itens no seu arquivo `.env`!
 
@@ -68,7 +64,7 @@ if (!process.env.PRIVATE_KEY || process.env.PRIVATE_KEY == "") {
   console.log("🛑 Chave privada não encontrada.")
 }
 
-if (!process.env.ALCHEMY_API_URL || process.env.ALCHEMY_API_URL == "") {
+if (!process.env.QUICKNODE_API_URL || process.env.QUICKNODE_API_URL == "") {
   console.log("🛑 Alchemy API não encontrada.")
 }
 
@@ -176,7 +172,7 @@ import { readFileSync } from "fs";
 
     // essa inicialização retorna o endereço do nosso contrato
     // usamos para inicializar o contrato no sdk
-    const editionDrop = sdk.getEditionDrop(editionDropAddress);
+    const editionDrop = await sdk.getContract(editionDropAddress, "edition-drop");
 
     // com isso, temos os metadados no nosso contrato
     const metadata = await editionDrop.metadata.get();

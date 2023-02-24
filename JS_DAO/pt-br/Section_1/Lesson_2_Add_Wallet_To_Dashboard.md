@@ -8,7 +8,7 @@ Vá para `index.js` no seu React App e adicione o código abaixo:
 
 ```jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 
@@ -50,7 +50,6 @@ import { useAddress, ConnectWallet } from '@thirdweb-dev/react';
 const App = () => {
   // Use o hook connectWallet que o thirdweb nos dá.
   const address = useAddress();
-  const connectWithMetamask = useMetamask();
   console.log("👋 Address:", address);
 
   // Esse é o caso em que o usuário ainda não conectou sua carteira
