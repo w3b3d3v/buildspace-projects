@@ -104,10 +104,10 @@ import sdk from "./1-initialize-sdk.js";
 
 (async () => {
   try {
-  // Esse é o nosso contrato de governança.
-    const vote = sdk.getVote("INSERIR_ENDEREÇO_DO_CONTRATO_DE_VOTOS", "vote");
+    // Esse é o nosso contrato de governança.
+    const vote = await sdk.getContract("INSERIR_ENDEREÇO_DO_CONTRATO_DE_VOTOS", "vote");
     // Esse é o nosso contrato ERC-20.
-    const token = sdk.getToken("INSERIR_ENDEREÇO_DO_TOKEN", "token");
+    const token = await sdk.getContract("INSERIR_ENDEREÇO_DO_TOKEN", "token");
     // Dê para a nosso tesouro o poder de cunhar tokens adicionais se necessário.
     await token.roles.grant("minter", vote.getAddress());
 
@@ -124,9 +124,9 @@ import sdk from "./1-initialize-sdk.js";
 
   try {
     // Esse é o nosso contrato de governança.
-    const vote = sdk.getVote("INSERIR_ENDEREÇO_DO_CONTRATO_DE_VOTOS", "vote");
+    const vote = await sdk.getContract("INSERIR_ENDEREÇO_DO_CONTRATO_DE_VOTOS", "vote");
     // Esse é o nosso contrato ERC-20.
-    const token = sdk.getToken("INSERIR_ENDEREÇO_DO_TOKEN", "token");
+    const token = await sdk.getContract("INSERIR_ENDEREÇO_DO_TOKEN", "token");
     //Pegue o saldo de tokens da nossa carteira, lembre-se -- nós detemos basicamente o fornecimento inteiro agora!
     const ownedTokenBalance = await token.balanceOf(
       process.env.WALLET_ADDRESS

@@ -88,7 +88,7 @@ Vá para `6-print-money.js` e adicione:
 import sdk from "./1-initialize-sdk.js";
 
 // Esse é o endereço do nosso contrato ERC-20 impresso no passo anterior.
-const token = sdk.getContract("INSERT_TOKEN_ADDRESS", "token");
+const token = await sdk.getContract("INSERT_TOKEN_ADDRESS", "token");
 
 (async () => {
   try {
@@ -144,9 +144,9 @@ import sdk from "./1-initialize-sdk.js";
 (async () => {
   try {
     // Esse é o endereço do nosso contrato ERC-1155 do NFT de filiação.
-    const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
+    const editionDrop = await sdk.getContract("INSERT_EDITION_DROP_ADDRESS", "edition-drop");
     // Esse é o endereço do nosso contrato ERC-20 do nosso token.
-    const token = sdk.getToken("INSERT_TOKEN_ADDRESS","token");
+    const token = await sdk.getContract("INSERT_TOKEN_ADDRESS","token");
     // Pegue o endereço de todas as pessoas que possuem o nosso NFT de filiação, que tem
     // o tokenId 0.
     const walletAddresses = await editionDrop.history.getAllClaimerAddresses(0);

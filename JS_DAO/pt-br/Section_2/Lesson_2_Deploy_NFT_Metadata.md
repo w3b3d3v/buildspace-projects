@@ -8,10 +8,9 @@ Vá para `scripts/3-config-nft.js` e adicione:
 import sdk from "./1-initialize-sdk.js";
 import { readFileSync } from "fs";
 
-const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
-
 (async () => {
   try {
+    const editionDrop = await sdk.getContract("INSERT_EDITION_DROP_ADDRESS", "edition-drop");
     await editionDrop.createBatch([
       {
         name: "Capacete Super Estilo",
@@ -73,10 +72,9 @@ Vá para `scripts/4-set-claim-condition.js` e adicione:
 import sdk from "./1-initialize-sdk.js";
 import { MaxUint256 } from "@ethersproject/constants";
 
-const editionDrop = sdk.getEditionDrop("INSERT_EDITION_DROP_ADDRESS");
-
 (async () => {
   try {
+    const editionDrop = await sdk.getContract("INSERT_EDITION_DROP_ADDRESS", "edition-drop");
     // Especifique as condições.
     const claimConditions = [{
       // Quando as pessoas vão poder reivindicar seus NFTs

@@ -50,11 +50,8 @@ const App = () => {
   // Usando os hooks que o thirdweb nos dá.
   const address = useAddress();
   console.log("👋 Address:", address);
-
-  const connectWithMetamask = useMetamask();
-
   // inicializar o contrato editionDrop
-  const editionDrop = "INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP"
+  const editionDropAddress = "INSIRA_O_ENDEREÇO_DO_BUNDLE_DROP"
   const { contract: editionDrop } = useContract(editionDropAddress, "edition-drop");
   // Hook para sabermos se o usuário tem nosso NFT.
   const { data: nftBalance } = useNFTBalance(editionDrop, address, "0")
@@ -63,7 +60,6 @@ const App = () => {
     return nftBalance && nftBalance.gt(0)
   }, [nftBalance])
 
-  useEffect(() => {
     // Se ele não tiver uma carteira conectada vamos chamar Connect Wallet
     if (!address) {
     return (
@@ -76,21 +72,10 @@ const App = () => {
     );
   }
 
-  if (!address) {
-    return (
-      <div className="landing">
-        <h1>Bem-vind@s à MTBDAO a DAO dos pedaleiros de montanha</h1>
-        <button onClick={connectWithMetamask} className="btn-hero">
-          Conecte sua carteira
-        </button>
-      </div>
-    );
-  }
-
   // Renderiza a tela de cunhagem do NFT.
   return (
     <div className="mint-nft">
-      <h1>Mint your free 🍪DAO Membership NFT</h1>
+      <h1>Cunhe seu NFT 🍪 ele mostra que você é membro desta DAO</h1>
       <div className="btn-hero">
         <Web3Button 
           contractAddress={editionDropAddress}
@@ -109,9 +94,11 @@ const App = () => {
       </div>
     </div>
   );
-};
+
+}
 
 export default App;
+
 ```
 
 Okay, um monte de coisas acontecendo! Nós chamamos `bundleDropModule.claim("0", 1)` para de fato cunhar o NFT na carteira do usuário quando ele clicar no botão. Nesse caso o tokenId do nosso NFT de filiação é `0` então nós passamos 0. Depois, passamos `1` porque só queremos cunhar um NFT de filiação para a carteira do usuário!

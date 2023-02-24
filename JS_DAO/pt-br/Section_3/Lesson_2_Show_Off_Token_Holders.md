@@ -10,7 +10,7 @@ const { contract: token } = useContract('INSERT_TOKEN_ADDRESS', 'token');
 
 Nós precisamos disso para interagir tanto com o nosso contrato ERC-1155 quanto o ERC-20. Do ERC-1155, nós vamos pegar todos os endereços dos membros. Do ERC-20, vamos pegar o # de tokens que cada membro tem.
 
-Depois, adicione o código abaixo após `const [isClaiming, setIsClaiming] = useState(false)`:
+Depois, adicione o código abaixo de `hasClaimedNFT`:
 
 ```jsx
 // Guarda a quantidade de tokens que cada membro tem nessa variável de estado.
