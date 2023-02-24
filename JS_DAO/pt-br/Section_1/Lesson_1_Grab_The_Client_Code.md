@@ -76,11 +76,11 @@ Para o MyCrypto, você vai precisar conectar a sua carteira, criar uma conta e e
 
 Seguem alguns _faucets_ onde você pode solicitar ETH falso para a rede _Goerli_.
 
-| Nome | Link
-| ---------------- | --------------------------
-| Alchemy | https://goerlifaucet.com/ 
-| Mudit | https://goerli-faucet.mudit.blog/ 
-| Paradigm | https://faucet.paradigm.xyz/ 
+| Name             | Link                                  | Amount          | Time         |
+| ---------------- | ------------------------------------- | --------------- | ------------ |
+| MyCrypto         | https://app.mycrypto.com/faucet       | 0.01            | None         |
+| Official Goerli  | https://goerlifaucet.com/             | 0.2             | 24 Hours     |
+| Chainlink        | https://faucets.chain.link/goerli     | 0.1             | None         |
 
 Quando sua transação for minerada, você terá alguns ETH fake na sua carteira.
 
