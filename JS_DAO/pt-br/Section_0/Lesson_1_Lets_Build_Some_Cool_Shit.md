@@ -1,6 +1,7 @@
 ### **👋 Bem-Vindo(a).**
 
-Você conseguiu - Show de Bola! Bem-vindo(a) 😃. Eu me chamo [danicuki](https://twitter.com/danicuki) e vou conversar aqui contigo. A propósito -- um salve gigante para o [Rômulo](https://twitter.com/Rod_Romulo) e [Farza do Buildspace](https://twitter.com/FarzaTV) que nos ajudaram a escrever esses documentos.
+Você conseguiu - Show de Bola! 
+Bem-vindo(a) 😃. Eu me chamo [danicuki](https://twitter.com/danicuki) e vou conversar aqui contigo. A propósito -- um salve gigante para o [Rômulo](https://twitter.com/Rod_Romulo) e [Farza do Buildspace](https://twitter.com/FarzaTV) que nos ajudaram a escrever esses documentos.
 
 Esse projeto é para devs que querem entender melhor o que diabos é uma DAO enquanto constroem uma.
 
