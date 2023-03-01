@@ -9,7 +9,7 @@ Dessa maneira, apenas o contrato de votação é capaz de cunhar novos tokens. N
 ```jsx
 import sdk from "./1-initialize-sdk.js";
 
-const tokenModule = sdk.getTokenModule(
+const tokenModule = await sdk.getTokenModule(
   "INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE",
 );
 
