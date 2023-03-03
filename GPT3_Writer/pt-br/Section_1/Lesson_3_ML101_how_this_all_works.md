@@ -1,90 +1,92 @@
 
-You may be wondering how this thing works — and honestly, understanding how it works will make you even better at using it.
+Você pode estar se perguntando como essa coisa funciona - e, honestamente, entender como funciona irá aprimorar ainda mais seu uso.
 
-*Note: if you already know how GPT-3 (deep learning) works, feel free to skip this.*
+*Observação: se você já sabe como o GPT-3 (aprendizado profundo) funciona, fique à vontade para pular essa parte.*
 
-### The basics behind GPT-3
+### Os fundamentos por trás do GPT-3
 
-You may have heard that GPT-3 is made up of a lot of “parameters” — each parameter is a **specialized** **number**. When you input a sentence into GPT-3 it’ll combine that sentence with all its parameters to predict what should come next.
+Você pode ter ouvido por aí que o GPT-3 é composto de muitos "parâmetros" – cada parâmetro é um **número especializado**. Quando você insere uma frase no GPT-3, ele combinará essa frase com todos os seus parâmetros para prever o que deve vir a seguir.
 
-GPT-3 has **175 billion of these parameters**, and that takes up 800 GB.
+O GPT-3 tem **175 bilhões desses parâmetros**, e isso ocupa 800 GB.
 
-Each parameter actually looks something like this:
+Cada parâmetro na verdade se parece com isto:
 
-```
-output = input * parameter
-```
-
-*Note: I am simplifying the math here a lot, we’re just trying to understand concepts here. A lot of calculus happens within GPT-3, but I’m not trying to teach you about derivatives right now lol.*
-
-So in the case above, the “input” is the sentence we’re providing and the “parameter” is a unique number. **We gather up all the outputs from the 175 billion unique parameters, combine them, and get our final output: words that complete the sentence.**
-
-You may be wondering how we can multiply a sentence with a bunch of numbers. Essentially, each sentence is broken down into “**tokens**” and is converted into a set of numbers.
-
-GPT-3 has a dictionary created that maps pieces of words to numbers. For example, the word “gang” maybe be represented as a `4332` token.
-
-And by doing this, everything is just a number to GPT-3.
-
-It doesn’t see words, sentences, etc. **All it sees are numbers** (Matrix?). Even when it outputs something, it outputs as numbers — but, in Playground, it’ll automatically convert the tokens to English words based on its dictionary.
-
-This is pretty wild — it means GPT-3 doesn’t understand language like we do. Instead, it understands language as a collection of numbers and the relationships those numbers have with the parameters.
-
-When we see “I ate food and I” we know what it means because we understand the words. So, we’ll know how to complete the sentence.
-
-When GPT-3 sees “I ate food and I” it may see it as *“40222 5332 13211 433 45455”.* It takes these inputs, **combines them with its parameters**, and outputs “*45533 2233 4543”* which completes the sentence to “I ate food that was good”.
-
-### Parameters — the heart of GPT-3
-
-The parameter seems like the magical thing here, and you’d be right there.
-
-How the hell does GPT-3 know how to complete sentences?
-
-**Well, because the parameters were “trained” on a dataset that included a shit ton of text from the entire internet** — Wikipedia, news articles, blogs, github repos, twitter, forums, all of that stuff. GPT-3 is trained on nearly 500 billion tokens from the internet. All those YouTube comments, all those movie reviews, all those product landing pages, GPT-3 has seen all of it.
-
-So, what does it mean when we say that the parameters are “trained” on this data?
-
-Here’s a sentence I pulled from the Wikipedia page for Naruto:
 
 ```
-A powerful fox known as the Nine-Tails attacks Konoha
+saída = entrada * parâmetro
 ```
 
-When training GPT-3, what happens is we **remove** the last word, and tell GPT-3 to predict what comes next. So for example, during training we’d say:
+*Observação: estou simplificando bastante a matemática aqui, pois estamos apenas tentando entender os conceitos. Muitos cálculos acontecem dentro do GPT-3, mas não estou tentando ensiná-lo sobre derivadas agora rsrs.*
+
+Então, no caso acima, a “entrada” é a frase que estamos fornecendo e o “parâmetro” é um número exclusivo. **Reunimos todas as saídas dos 175 bilhões de parâmetros exclusivos, as combinamos e obtemos nossa saída final: palavras que completam a frase.**
+
+Você pode estar se perguntando como podemos multiplicar uma frase com vários números. Basicamente, cada frase é dividida em “**tokens**” e convertida em um conjunto de números.
+
+O GPT-3 possui um dicionário criado para mapear pedaços de palavras para números. Por exemplo, a palavra “gangue” pode ser representada como um token `4332`.
+
+E fazendo isso, tudo é apenas um número para o GPT-3.
+
+Ele não vê palavras, frases, etc. **Tudo o que vê são números** (Matrix?). Mesmo quando ele gera algo, ele gera como números - mas, no Playground, ele irá converter automaticamente os tokens em palavras em inglês com base em seu dicionário.
+
+Isso é muito impressionante - significa que o GPT-3 não entende a linguagem como nós entendemos. Em vez disso, ele entende a linguagem como uma coleção de números e as relações que esses números têm com os parâmetros.
+
+Quando vemos “Eu comi comida e eu”, sabemos o que isso significa porque entendemos as palavras. Então, saberemos como completar a frase.
+
+Quando o GPT-3 vê “Eu comi comida e eu”, pode ver a frase como *“40222 5332 13211 433 45455”.* Ele pega essas entradas, **as combina com seus parâmetros** e gera “*45533 2233 4543”*, que completa a frase “Eu comi comida que estava boa”.
+
+### Parâmetros — o coração do GPT-3
+
+O parâmetro parece ser a coisa mágica aqui, e você está certo nisso.
+
+Como diabos o GPT-3 sabe como completar as frases?
+
+**Bem, porque os parâmetros foram “treinados” em um conjunto de dados que incluía uma infinidade de textos de toda a Internet** — Wikipédia, artigos de notícias, blogs, repositórios do github, twitter, fóruns, todas essas coisas. O GPT-3 é treinado em quase 500 bilhões de tokens da Internet. Todos aqueles comentários no YouTube, todas aquelas críticas de filmes, todas aquelas páginas de destino de produtos, o GPT-3 viu tudo isso.
+
+Então, o que significa quando dizemos que os parâmetros são “treinados” nesses dados?
+
+Aqui está uma frase que eu retirei da página da Wikipedia sobre o Naruto:
 
 ```
-A powerful fox known as the Nine-Tails attacks
+Uma raposa poderosa conhecida como Nove Caudas ataca Konoha
 ```
 
-Now, if GPT-3 outputs “India” at the end of this sentence, what happens? Well, we need to tell GPT-3 that it was wrong! But how do we tell GPT-3 — “Hey you should have said Konoha, not India”.
+Ao treinar o GPT-3, o que acontece é que **removemos** a última palavra e dizemos ao GPT-3 para prever o que vem a seguir. Então, por exemplo, durante o treinamento diríamos:
 
-What we do here is we calculate the difference between “India” and “Konoha” — remember, GPT-3 deals in numbers. So we may say, “Hey, you gave us 4333 but we needed 32213”. We calculate the difference as an “error”.
+```
+Uma raposa poderosa conhecida como Nove Caudas ataca
+```
 
-*Please note: I am simplifying this, the math that’s happening behind the scenes to calculate error is much more involved. But, we just want you to understand it conceptually!*
+Agora, se o GPT-3 gerar “Índia” no final desta frase, o que acontece? Bem, precisamos dizer ao GPT-3 que ele estava errado! Mas como dizemos ao GPT-3 - “Ei, você deveria ter dito Konoha, não Índia”.
 
-This error, is then used to update each parameter in the model — we tell GPT-3 that it was off from the right answer by x amount and to adjust all its parameters slightly so it’ll be more likely to output the right answer next time.
+O que fazemos aqui é calcular a diferença entre “Índia” e “Konoha” — lembre-se, o GPT-3 lida com números. Então podemos dizer: “Ei, você nos deu 4333, mas precisávamos de 32213”. Calculamos a diferença como um “erro”.
 
-This is called “unsupervised training”, see a visual [here](https://jalammar.github.io/images/gpt3/03-gpt3-training-step-back-prop.gif).
+Por favor, observe: estou simplificando tudo isso. A matemática que está acontecendo nos bastidores para calcular o erro é muito mais complexa. Mas, queremos que você entenda isso conceitualmente!
 
-**This process goes on and on and on.**
+Esse erro é então usado para atualizar cada parâmetro no modelo - dizemos ao GPT-3 que ele errou a resposta correta por um valor x e para ajustar ligeiramente todos os seus parâmetros para que seja mais provável gerar a resposta correta na próxima vez
 
-When training, we keep giving GPT-3 **billions** of sentences to complete until it gets really really good at completing sentences. And it keeps doing this… for a long time on a lot of text.
+Isso é chamado de “treinamento não supervisionado”. Veja uma explicação visual [aqui](https://jalammar.github.io/images/gpt3/03-gpt3-training-step-back-prop.gif).
 
-Fun fact: it costs about $5M in GPU time to train GPT-3.
+**Este processo continua… e continua… e continua.**
 
-### There’s way more to this
+No treinamento, continuamos dando ao GPT-3 **bilhões** de frases para completar até que ele fique realmente bom em completar frases. E ele continua fazendo isso... por um longo tempo, em muitos textos. 
 
-Because GPT-3 is huge in terms of number of parameters and because the dataset used to train it is so huge, we get something magical — a model that feels like it has a real understanding of language, context, culture and factual knowledge.
+Curiosidade: custa cerca de 5 milhões de dólares em tempo de GPU para treinar o GPT-3.
 
-**It’s a beast trained on data generated by billions of people using the internet.** And, that’s one of the main reasons GPT-3 is so so so good. The dataset used to train it was the internet which is so vast and diverse.
+### Há muito mais coisas nisso tudo
 
-What I’ve explained to you above is actually the basics of something called “deep learning” — and, deep learning is the heart of GPT-3.
+Como o GPT-3 é enorme em termos de número de parâmetros e como o conjunto de dados usado para treiná-lo é imenso, obtemos algo mágico – um modelo que parece ter uma compreensão real da linguagem, contexto, cultura e conhecimento factual.
 
-You probably have a lot more questions — *What’s the math behind this thing? What is a parameter exactly, and how does a parameter update? What the heck is deep learning?*
+**Ele é uma fera treinada em dados gerados por bilhões de pessoas que utilizam a internet**. E essa é uma das principais razões pelas quais o GPT-3 é tão bom. O conjunto de dados usado para treiná-lo foi a internet, que é bem vasta e diversificada.
 
-**Here’s my advice: keep messing with GPT-3 and finish this build, don’t become obsessed with how it works right now.** Once you finish this project, I recommend going [here](https://course.fast.ai/Lessons/lesson3.html) to learn more about deep learning if you’re curious.
+O que expliquei acima são, na verdade, os fundamentos de algo chamado “aprendizado profundo” – e o aprendizado profundo é o coração do GPT-3.
 
-Also — it’s totally cool if you just **don’t get how this thing works/don’t care** and just want to use it. I doubt 99% of you *deeply* understand how the circuit board in your smartphones works. Most of us don’t give a shit! We just wanna use our smartphones.
+Você provavelmente tem muitas outras perguntas – *Qual é a matemática por trás disso? O que é exatamente um parâmetro e como ele é atualizado? O que diabos é aprendizado profundo?*
 
-And that’s okay. You don’t need to understand it all.
+**Aqui está o meu conselho: continue experimentando com o GPT-3 e termine este projeto. Não fique obcecado com o funcionamento dele agora.** Depois de terminar este projeto, recomendo acessar [este link](https://course.fast.ai/Lessons/lesson3.html) para aprender mais sobre aprendizado profundo, se você estiver curioso.
 
-As long as you understand the base concepts, we’re good to go!
+Além disso, está tudo bem se você simplesmente **não entender como essa coisa funciona ou não se importar** e apenas quiser usá-la. Duvido que 99% de vocês entendam *profundamente* como a placa de circuito em seus smartphones funciona. A maioria de nós realmente não se importa! Queremos apenas usar nossos smartphones.
+
+E está tudo bem. Você não precisa entender tudo.
+
+Desde que você entenda os conceitos fundamentais, estamos prontos para seguir em frente!!
+
