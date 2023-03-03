@@ -1,233 +1,233 @@
 
-I want to go over a few more prompt types, and then we’ll hop into some code.
+Quero revisar mais alguns tipos de prompt e, em seguida, entraremos em alguns códigos.
 
-### Prompt chaining — a highly underrated strategy.
+### Encadeamento de prompts — uma estratégia altamente subestimada
 
-One thing that you can do that’s pretty insane with GPT-3 is prompt chaining — this is where you use the output of one prompt as input to another prompt.
+Uma coisa bem incrível que você pode fazer com o GPT-3 é o encadeamento de prompts (prompt chaining). É aqui que você usa a saída de um prompt como entrada para outro prompt.
 
-Lemme show you — **let’s say I want to write a tweet thread about startups.**
+Deixa eu te mostrar — **digamos que eu queira escrever um thread de tweets sobre startups**.
 
-I really like Paul Graham’s writing style, so I asked GPT-3 to write me an essay about this thing I’ve been thinking about where startups aren’t all about “solving a problem”. When we started buildspace, we weren’t trying to solve a problem we were just messing around. I think when all we do is focus on problems, the startup loses its soul. To me, I believe more in understanding the user.
+Eu realmente gosto do estilo de escrita do Paul Graham, então pedi ao GPT-3 para escrever uma dissertação sobre essa coisa que tenho pensado, onde as startups não se resumem a “resolver um problema”. Quando começamos a buildspace, não estávamos tentando resolver um problema… estávamos apenas brincando. Eu acredito que quando tudo o que fazemos é focar nos problemas, a startup perde sua alma. Para mim, acredito mais em entender o usuário.
 
-What’s something you’d want to see a startup essay on? Ask Paul Graham! Come up with your own prompt.
+Qual assunto você gostaria de ver em uma dissertação sobre startups? Pergunte ao Paul Graham! Crie seu próprio prompt.
 
-Here’s my prompt — I left the sentence open at the end because I want GPT-3 to complete it.
-
-```
-Help me write an essay in the style of Paul Graham, the co-founder of Y-Combinator.
-
-I don't think it's always about "solving a problem", sometimes it's worth thinking about
-```
-
-Then, GPT-3 filled it in.
+Aqui está o meu prompt — deixei a frase aberta no final porque quero que o GPT-3 a complete.
 
 ```
-Help me write an essay in the style of Paul Graham, the co-founder of Y-Combinator.
+Ajude-me a escrever uma dissertação no estilo de Paul Graham, o co-fundador da Y-Combinator.
 
-I don't think it's always about "solving a problem", sometimes it's worth thinking about the problem in a different way.
-
-In the early days of a startup, it's often more important to focus on building something people want, than on solving a particular problem. It's easier to change your approach later, once you have a better understanding of what people want and what the problem is.
-
-This is why I often encourage founders to start by building something small and simple, rather than trying to solve a big problem from the start. It's important to get feedback from users as early as possible, so you can validate your assumptions and course correct if necessary.
-
-Of course, there are exceptions to this rule and some problems are so big and complex that it makes sense to focus on them from the start. But in general, I think it's more important to focus on building something people want, than on solving a particular problem.
+Eu não acho que se trata sempre de "resolver um problema", às vezes vale a pena pensar sobre
 ```
 
-Pretty good actually!! But, I want to turn these into a thread of tweets.
-
-Let me show you something wild. Open a new tab with an empty Playground. So, you should have two tabs now. One with the essay (Playground #1), and one empty (Playground #2).
-
-In Playground #2, go ahead and write this prompt:
+Então, o GPT-3 completou.
 
 ```
-Take the essay below and turn it into a tweet thread; number the tweets and show breaks in between.
+Ajude-me a escrever uma dissertação no estilo de Paul Graham, o co-fundador da Y-Combinator.
+
+Eu não acho que se trata sempre de "resolver um problema", às vezes vale a pena pensar no problema de uma forma diferente.
+
+Nos primeiros dias de uma startup, muitas vezes é mais importante focar em construir algo que as pessoas querem do que na solução de um problema específico. É mais fácil mudar sua abordagem mais tarde, quando você tem uma compreensão melhor do que as pessoas querem e qual é o problema. 
+
+É por isso que costumo encorajar os fundadores a começar construindo algo pequeno e simples, em vez de tentar resolver um grande problema desde o início. É importante obter feedback dos usuários o mais cedo possível, para validar suas suposições e corrigir o curso, se necessário. 
+
+Claro que existem exceções a essa regra, e alguns problemas são tão grandes e complexos que faz sentido focar neles desde o início. Mas, em geral, acredito que é mais importante focar em construir algo que as pessoas desejam do que resolver um problema específico.
 ```
 
-Now, underneath there — copy paste the output from Playground #1. So for me it looks like this:
+Realmente, muito bom!! Mas, eu quero transformar isso em um thread de tweets.
+
+Deixa eu te mostrar algo irado. Abra uma nova guia com um Playground vazio. Portanto, você deve ter duas guias agora. Um com a dissertação (Playground #1) e outro vazio (Playground #2).
+
+No Playground #2, vá em frente e escreva este prompt:
 
 ```
-Take the essay below and turn it into a tweet thread.
-
-I don't think it's always about "solving a problem", sometimes it's worth thinking about the problem in a different way. In the early days of a startup, it's often more important to focus on building something people want, than on solving a particular problem. It's easier to change your approach later, once you have a better understanding of what people want and what the problem is. This is why I often encourage founders to start by building something small and simple, rather than trying to solve a big problem from the start. It's important to get feedback from users as early as possible, so you can validate your assumptions and course correct if necessary. Of course, there are exceptions to this rule and some problems are so big and complex that it makes sense to focus on them from the start. But in general, I think it's more important to focus on building something people want, than on solving a particular problem.
+Pegue a dissertação abaixo e a transforme em um thread de tweets. Numere os tweets e mostre os intervalos entre eles.
 ```
 
-When I run Playground #2, here’s what’s generated:
+Agora, abaixo disso, copie e cole a saída do Playground #1. Então, para mim o prompt fica assim:
 
 ```
-1/ It's not always about "solving a problem". Sometimes it's more important to focus on building something people want. 
+Pegue a dissertação abaixo e a transforme em um thread de tweets.
 
-2/ This is why I often encourage founders to start by building something small and simple, rather than trying to solve a big problem from the start. 
-
-3/ It's important to get feedback from users as early as possible, so you can validate your assumptions and course correct if necessary. 
-
-4/ Of course, there are exceptions to this rule and some problems are so big and complex that it makes sense to focus on them from the start. 
-
-5/ But in general, I think it's more important to focus on building something people want, than on solving a particular problem.
+Eu não acho que se trata sempre de "resolver um problema", às vezes vale a pena pensar no problema de uma forma diferente. Nos primeiros dias de uma startup, muitas vezes é mais importante focar em construir algo que as pessoas querem do que na solução de um problema específico. É mais fácil mudar sua abordagem mais tarde, quando você tem uma compreensão melhor do que as pessoas querem e qual é o problema. É por isso que costumo encorajar os fundadores a começar construindo algo pequeno e simples, em vez de tentar resolver um grande problema desde o início. É importante obter feedback dos usuários o mais cedo possível, para validar suas suposições e corrigir o curso, se necessário. Claro que existem exceções a essa regra, e alguns problemas são tão grandes e complexos que faz sentido focar neles desde o início. Mas, em geral, acredito que é mais importante focar em construir algo que as pessoas desejam do que resolver um problema específico.
 ```
 
-Insane, right? You now have a Twitter thread in 2m about a thought you had — and it sounds super legit as well. It’s really concise and clear, which is exactly how Paul Graham writes.
-
-Now anyone can be a thought leader lol.
-
-**This is called prompt chaining.** We took the output from the prompt in Playground #1 and plugged it into another specialized prompt in Playground #2. You can keep doing this, and it’ll get even better at a specialized task.
-
-Why does this work so well?
-
-Well again — GPT-3 does better when 1) you give it more examples 2) you are highly specific in terms of what you ask from it. Prompt chaining blends these two!
-
-Here are other examples of prompts you can chain:
-
-- *generate a table of contents for a blog → write a sentence for each section → for each sentence, write two paragraphs → done*
-- **generate a sad love story about a boy and a girl → generate a rap chorus → generate a chorus that rhymes and has lyrics in the style of drake → generate the intro and outro verse based on the chorus → done.**
-- **generate headline landing page copy for a product → generate more detailed copy for the product → generate ad copy targeted to 26-year-olds in Pakistan → done**
-
-Prompt chaining is **highly** underrated and not talked about much. It really lets you get really great performance for specific tasks you have in mind. Shoutout to my buddy [Sharif](https://twitter.com/sharifshameem) for showing me it!
-
-### Build a startup with GPT-3 end-to-end: from idea to VC pitch. In 5-minutes.
-
-Let’s put those prompt skills to the test and build a startup with GPT-3 — from idea to landing to a VC pitch. The hardest part about starting a startup is usually coming up with good ideas, so let’s ask GPT-3!
-
-I’m going to ask for good ideas around GPT-3 and reading because I feel like GPT-3 is super cool, and reading is something everyone wants to do! I also told it specifically to generate ideas for things a kid could use. I did this because I used to run a company called [ZipSchool](https://mobile.twitter.com/FarzaTV/status/1488965852519022592) which made science content for kids.
+Quando eu executo o Playground #2, eis o que é gerado:
 
 ```
-Give me some cool startup ideas around ML and reading for kids:
+1/ Eu não acho que se trata sempre de "resolver um problema". Às vezes é mais importante focar em construir algo que as pessoas querem. 
+
+2/ É por isso que costumo encorajar os fundadores a começar construindo algo pequeno e simples, em vez de tentar resolver um grande problema desde o início.
+
+3/ É importante obter feedback dos usuários o mais cedo possível, para validar suas suposições e corrigir o curso, se necessário.
+
+4/ Claro que existem exceções a essa regra, e alguns problemas são tão grandes e complexos que faz sentido focar neles desde o início.
+
+5/ Mas, em geral, acredito que é mais importante focar em construir algo que as pessoas desejam do que resolver um problema específico.
 ```
 
-Be sure to ask it to generate ideas around stuff you’re interested in!
+Irado demais, não é? Agora você tem um thread do Twitter de 2 minutos sobre um pensamento que teve - e parece bem legal também. Está bem conciso e claro, exatamente como Paul Graham escreve.
 
-Again, be as specific as you can. What tech do you want your startup to use? Whats the audience you’re interested in? What’s something you really want the product to do?
+Agora qualquer pessoa pode ser um líder de pensamentos rsrs.
 
-My output is actually really cool.
+**Isso é chamado de encadeamento de prompts.** Pegamos a saída do prompt do Playground #1 e a inserimos em outro prompt especializado, no Playground #2. Você pode continuar fazendo isso, e ficará ainda melhor em uma tarefa especializada.
 
-```
-Give me some cool startup ideas around GPT-3 and reading for kids:
+Por que isso funciona tão bem?
 
-1. A GPT-3-powered reading app that can customize reading material for each individual child based on their reading level, interests, and needs.
+Bem, novamente, o GPT-3 se sai melhor quando: 1) você fornece mais exemplos, 2) você é altamente específico em termos do que você pede a ele. O encadeamento de prompts combina esses dois!
 
-2. A GPT-3-powered app that can generate personalized reading material for kids based on their interests and areas of need.
+Aqui estão outros exemplos de prompts que você pode encadear:
 
-3. A GPT-3-powered app that can read aloud to kids, highlighting words as it goes so they can follow along.
+- **gerar um sumário para um blog → escrever uma frase para cada seção → para cada frase, escrever dois parágrafos → pronto.**
+- **gerar uma triste história de amor entre um menino e uma menina → gerar um refrão de rap → gerar um refrão que rime e tenha a letra no estilo do cantor Drake → gerar o verso de introdução e encerramento baseado no refrão → pronto.**
+- **gerar título principal para a landing page (página de destino) de um produto → gerar um texto mais detalhado para o produto → gerar texto de anúncio direcionado a pessoas de 26 anos no Paquistão → pronto.**
 
-4. A GPT-3-powered app that can answer questions kids have about the material they're reading, helping them to understand and engage with the text.
-```
+O encadeamento de prompts é **altamente** subestimado e não é muito discutido. Ele realmente permite que você obtenha um ótimo desempenho para as tarefas específicas que você tem em mente. Um grande agradecimento ao meu amigo [Sharif](https://twitter.com/sharifshameem) por me mostrar isso!
 
-I love that first idea — it’s beautiful.
+### Crie uma startup com o GPT-3 de ponta a ponta: da ideia à apresentação aos investidores, em 5 minutos
 
-Imagine if kids could learn to read with custom stories generated just for them.
+Vamos colocar essas habilidades de prompt à prova e construir uma startup com o GPT-3, desde a ideia até a apresentação do projeto (pitch) aos investidores. Ter boas ideias é um dos maiores desafios ao iniciar uma startup, então vamos perguntar ao GPT-3!
 
-The stories would be perfect for them. GPT-3 could even generate stories they really like (ex. detective stories, adventure stories, etc). The stories could even include the names of the characters they come up with. They could be in their own stories. Plus, we could even tell GPT-3 to use certain types of vocabulary to make sure the reading level is just right.
-
-**Before moving on, be sure to generate an idea you kinda like in an industry you think is interesting — VR, crypto, AR, gaming, FinTech, consumer, etc. You’ll need to play around a lot with the industry, audience, etc. As always, don’t copy me! Get good at prompts!**
-
-### Write landing copy for your fictional startup.
-
-Now check this out, I’m going to take that output and chain it to a new prompt. I want to go deeper here and write some landing page copy. **Landing page copy is always super difficult for me** because it’s hard to be short, sweet, and descriptive.
-
-I’ve always loved Apple’s marketing/copy! Let’s generate it like that:
-
-Open a Playground #2. Here’s the initial prompt:
+Vou pedir boas ideias sobre “GPT-3 e leitura”, porque acho que o GPT-3 é super legal e ler é algo que todos querem fazer! Eu também pedi especificamente que ele gerasse ideias para coisas que uma criança poderia usar. Fiz isso porque dirigi uma empresa chamada [ZipSchool](https://mobile.twitter.com/FarzaTV/status/1488965852519022592), que produzia conteúdo científico para crianças.
 
 ```
-Write a list of short landing page headlines in the style of Apple for a startup that builds the following:
-
-<insert the generated idea from above here>
+Dê-me algumas ideias de startups legais relacionadas ao GPT-3 e leitura para crianças:
 ```
 
-So for me, my full chained prompt looks like this, all I did was take the idea that GPT-3 generated for me. Again, you should change your prompt — maybe you like other brands like Disney or Nike better. Maybe you like headlines that are more inspirational! Again, you just need to make sure you tell GPT-3 what you want.
+Certifique-se de pedir para gerar ideias sobre coisas que você está interessado!
+
+Novamente, seja o mais específico possível. Qual tecnologia você quer que sua startup utilize? Qual é o público em que você está interessado? O que você realmente quer que o produto faça?
+
+Minha saída ficou bem legal.
 
 ```
-Write a list of short landing page headlines in the style of Apple for a startup that builds the following:
+Dê-me algumas ideias de startups legais relacionadas ao GPT-3 e leitura para crianças:
 
-A GPT-3-powered reading app that can customize reading material for each individual child based on their reading level, interests, and needs.
+1. Um aplicativo de leitura baseado no GPT-3, que pode personalizar o material de leitura para cada criança com base em seu nível de leitura, interesses e necessidades.
+
+2. Um aplicativo baseado no GPT-3, que pode gerar material de leitura personalizado para crianças com base em seus interesses e áreas de necessidade.
+
+3. Um aplicativo baseado no GPT-3, que pode ler em voz alta para as crianças, destacando as palavras à medida que avança, para que elas possam acompanhar.
+
+4. Um aplicativo baseado no GPT-3, que pode responder a perguntas que as crianças possam ter sobre o material que estão lendo, ajudando-as a entender e se envolver com o texto.
 ```
 
-Here’s what was generated for me:
+Adorei a primeira ideia - é linda.
+
+Imagine se as crianças pudessem aprender a ler com histórias personalizadas geradas especialmente para elas.
+
+As histórias seriam perfeitas para elas. O GPT-3 poderia até gerar histórias que elas realmente gostassem (por exemplo, histórias de detetive, histórias de aventura, etc). As histórias até poderiam incluir os nomes dos personagens que elas inventaram, e elas poderiam estar nas próprias histórias. Além disso, poderíamos até dizer ao GPT-3 para usar certos tipos de vocabulário para garantir que o nível de leitura seja adequado
+
+**Antes de prosseguir, certifique-se de gerar uma ideia que você gosta, em um setor que considera interessante. Realidade virtual, criptomoedas, realidade aumentada, jogos, FinTechs, consumidor etc. Você precisará brincar muito com o setor, o público-alvo, etc. Como sempre, não me copie! Seja excelente em prompts!**
+
+### Escreva o título principal para a landing page da sua startup fictícia
+
+Agora, preste atenção. Eu vou usar a saída anterior e encadear em um novo prompt. Eu quero ir mais a fundo aqui e escrever um texto para a landing page. **Escrever textos para landing pages é sempre muito difícil para mim**, pois é complicado ser breve, conciso e descritivo ao mesmo tempo.
+
+Sempre adorei o marketing e os textos da Apple! Vamos gerar algo parecido com isso:
+
+Abra o Playground #2. Aqui está o prompt inicial:
 
 ```
-1. The ultimate reading app for kids – powered by GPT-3!
-2. Customize reading material for each child – based on their reading level, interests, and needs.
-3. The perfect reading app for kids of all ages and abilities!
-4. Get your kids reading with the help of GPT-3!
-5. The best reading app for kids – GPT-3 powered!
+Escreva uma lista de títulos principais curtos para uma landing page no estilo da Apple, para uma startup que cria o seguinte:
+
+<insira aqui a ideia gerada acima>
 ```
 
-Pretty good! But we can do better. In the prompt, we should include who this product is for! After all, a landing page is usually super optimized toward a specific user type.
-
-I’m going to specify parents for mine because I imagine I’m going to be marketing mainly toward parents who give the app to their little kids. I also don’t want confusing words like “GPT-3” in it since most people don’t even know what that is.
-
-I won’t cover this example much more, but be sure to try it out yourself.
-
-Here’s my prompt if you wanna check it out:
+Então, para mim, o prompt totalmente encadeado se parece com isso, e tudo o que fiz foi pegar a ideia que o GPT-3 gerou para mim. Novamente, você deve alterar seu prompt. Talvez você prefira outras marcas, como a Disney ou a Nike. Talvez você goste de títulos mais inspiradores! Novamente, você realmente só precisa dizer ao GPT-3 o que deseja.
 
 ```
-Write a list of short landing page headlines in the style of Apple for a startup. Write the copy to appeal to parents with kids in kindergarten. Don't include confusing terms like GPT-3 in it. The startup builds:
+Escreva uma lista de títulos principais curtos para uma landing page no estilo da Apple, para uma startup que cria o seguinte:
 
-<insert the generated idea from above here>
+Um aplicativo de leitura baseado no GPT-3, que pode personalizar o material de leitura para cada criança com base em seu nível de leitura, interesses e necessidades.
 ```
 
-### Write a pitch!
-
-Amazing! We now have an idea + a landing page headline — now we just need to create a business plan and raise some money from a few VCs! But damn, writing pitches is tough. Time to ask GPT-3 to make us one.
-
-Here’s the prompt I created, fill it in with your startup idea that GPT-3 generated from above. I also include the basic pieces of a pitch that Y-Combinator says to include [here](https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck).
+Eis o que foi gerado para mim:
 
 ```
-Write me a pitch to a VC for a startup that includes the problem it's solving, the solution, market size, and the business plan. This startup builds a:
+1. O aplicativo definitivo de leitura para crianças - alimentado pelo GPT-3!
+2. Personalize o material de leitura para cada criança - com base em seu nível de leitura, interesses e necessidades.
+3. O aplicativo de leitura perfeito para crianças de todas as idades e habilidades!
+4. Faça com que seus filhos leiam com a ajuda do GPT-3!
+5. O melhor aplicativo de leitura para crianças - alimentado pelo GPT-3!
 ```
 
-Here’s my full prompt with the idea below — feel free to edit the idea that GPT-3 spit out if you need to. If you feel like you want to rephrase the idea or if you have another idea, just change up the prompt as needed:
+Muito bom! Mas nós podemos fazer algo melhor. No prompt, devemos incluir para quem é este produto! Afinal, uma landing page geralmente é bem otimizada para um tipo de usuário específico.
+
+Vou especificar que é para pais, porque imagino que vou estar direcionando minha campanha principalmente para pais que dão o aplicativo para seus filhos pequenos. Também não quero palavras confusas nele, como "GPT-3", pois a maioria das pessoas nem sabe o que é isso.
+
+Não vou me aprofundar muito mais neste exemplo, mas certifique-se de experimentar por si mesmo.
+
+Se você quiser dar uma olhada, aqui está o meu prompt:
 
 ```
-Write me a pitch to a VC for a startup that includes the problem it's solving, the solution, market size, and the business plan. This startup builds a: GPT-3-powered reading app that can customize reading material for each individual child based on their reading level, interests, and needs.
+Escreva uma lista de títulos principais curtos para uma landing page no estilo da Apple, para uma startup. Escreva o texto para atrair os pais com filhos no jardim de infância. Não inclua termos confusos nele, como GPT-3. A startup cria:
+
+<insira aqui a ideia gerada acima>
 ```
 
-And once I run this the output is pretty insane:
+### Escreva uma apresentação!
+
+Incrível! Agora temos uma ideia + um título principal para a landing page. Agora só precisamos criar um plano de negócios e levantar algum dinheiro de alguns investidores! Mas caramba, escrever apresentações é difícil. É hora de pedir ao GPT-3 para fazer uma para nós.
+
+Aqui está o prompt que criei. Preencha com sua ideia de startup que o GPT-3 gerou acima. Eu também incluo as peças básicas de uma apresentação que o Y-Combinator diz para incluir [aqui](https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck).
 
 ```
-Hi, 
-
-Our startup is developing a GPT-3-powered reading app that can customize reading material for each individual child based on their reading level, interests, and needs. By using natural language processing and machine learning, our app is able to provide a personalized reading experience for every child. 
-
-The reading app market is growing rapidly and is expected to be worth $2.4 billion by 2025. Our app will be available for a monthly subscription of $9.99. 
-
-We have a strong team of experienced developers and educators who are committed to making our app the best it can be. We have a clear business plan and are confident in our ability to execute it. 
-
-We would love to have the opportunity to pitch our startup to you and answer any questions you may have. Thank you for your time!
+Escreva uma apresentação direcionada a um investidor para uma startup que inclua o problema que está sendo solucionado, a solução, o tamanho do mercado e o plano de negócios. Esta startup cria um:
 ```
 
-**GPT-3 literally wrote me a pitch better than 99% of founders lol.**
+Aqui está meu prompt completo com a ideia abaixo. Sinta-se à vontade para editar a ideia que o GPT-3 gerou, se necessário. Se você sentir que deseja reformular a ideia ou se tiver outra ideia, basta alterar o prompt conforme necessário:
 
-It includes all the good stuff — the market size, the biz plan, the team, etc. It even includes the fact that the app would cost $9.99 a month lol. It could have done a better job at explaining the problem though. But, we can just change our prompt and tell GPT-3 to make sure it focuses on that more.
+```
+Escreva uma apresentação direcionada a um investidor para uma startup que inclua o problema que está sendo solucionado, a solução, o tamanho do mercado e o plano de negócios. Esta startup cria um: Aplicativo de leitura alimentado pelo GPT-3, que pode personalizar o material de leitura para cada criança com base em seu nível de leitura, interesses e necessidades. 
+```
 
-Again, your generated pitch might suck right now. Take the time to play with the prompt.
+Uma vez que eu executo isso, a saída é bem impressionante:
 
-Just be really specific with GPT-3 — *“include a description of the monthly subscription”*, *“include a description of the market size”*, *“include how we plan to spend the money”,* etc. You can even do things like *“Write me an email pitch to a VC for a startup in the style of Paul Graham”* or any other founder you think is legit!
+```
+Olá,
 
-Whenever you read your output and think, “Man! I wish GPT-3 gave me more of X thing” — just literally ask GPT-3 for X thing!
+Nossa startup está desenvolvendo um aplicativo de leitura alimentado pelo GPT-3, que pode personalizar o material de leitura para cada criança com base em seu nível de leitura, interesses e necessidades. Usando processamento de linguagem natural e aprendizado de máquina, nosso aplicativo é capaz de fornecer uma experiência de leitura personalizada para cada criança.
 
-### Let’s build something for real.
+O mercado de aplicativos de leitura está crescendo rapidamente e deve valer 2.4 bilhões de dólares até 2025. Nosso aplicativo estará disponível por uma assinatura mensal de 9,99 dólares.
 
-Hope this was a fun little adventure for you — my hope is you’re bursting with ideas around cool shit you can make. A website to help people write landing page copy, an app to help people write better tweets, a tool to help script writers create more interesting worlds, etc.
+Temos uma equipe forte de desenvolvedores e educadores experientes que estão comprometidos em tornar nosso aplicativo o melhor possível. Temos um plano de negócios claro e confiamos em nossa capacidade de executá-lo.
 
-The use-cases with GPT-3 are literally endless and I only covered a few. Hell, this thing can even generate RegEx for you — [check out this thing built by one of our alumni](https://twitter.com/gd3kr/status/1545370626273120256) that went **viral**.
+Gostaríamos de ter a oportunidade de apresentar nossa startup e responder a quaisquer perguntas que você possa ter. Obrigado pelo seu tempo!
+```
 
-I haven’t even shown you stuff it can do with code! [This](https://www.buildgpt3.com/) is a really good website I recommend you scroll through for more examples of prompts and use cases + demos.
+**O GPT-3 literalmente escreveu uma apresentação melhor do que 99% dos fundadores rsrs.**
 
-And hey! I even gave you a free startup idea with this reading app for kids that generates stories with GPT-3 lol. Even gave you a free cold email to send to VCs! Hope one of y’all can raise a few million off of it lol.
+Ele inclui todas as coisas boas - o tamanho do mercado, o plano de negócios, a equipe etc. Inclui até o fato de que o aplicativo iria custar 9,99 dólares por mês rsrs. No entanto, ele poderia ter feito um trabalho melhor na explicação do problema que o produto resolve. Mas, podemos apenas mudar nosso prompt e dizer ao GPT-3 para garantir que ele se concentre mais nisso.
 
-Update: lol one of our alumni is [working on it now.](https://onceuponabot.com/) Can use it for free rn!
+Mais uma vez, sua apresentação gerada pode não estar boa o suficiente agora. Aproveite o tempo para brincar com o prompt.
 
-### Please do this or Farza will be sad.
+Seja bem específico com o GPT-3 — *“inclua uma descrição da assinatura mensal”*, *“inclua uma descrição do tamanho do mercado”*, *“inclua como planejamos gastar o dinheiro”*, etc. Você pode até fazer coisas como *“Escreva um e-mail para apresentar a startup para um investidor no estilo de Paul Graham”* ou qualquer outro fundador que você considere legítimo!
 
-Got ideas for something you’d wanna build? I know this build is titled “build your A.I writing assistant” but feel free to build whatever the fk you want lol. Random crazy ideas:
+Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivesse me dado mais de X” - basta literalmente pedir para o GPT-3 fazer a coisa X!!
 
-- An AI fitness coach where people can choose who they want to be their coach, imagine Goku giving your workout advice and workout plans.
-- A writing assistant for Notion that helps people write clear product docs — it would take the spec as input and output a version of the spec that’s more clear and more actionable.
-- A tool that generates really good titles for YouTube videos and automatically A/B tests them to see which one gets more views.
-- A recipe generator that takes the list of ingredients in your fridge and gives you a recipe for something you can make with it.
+### Vamos construir algo de verdade.
 
-The ideas are endless.
+Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar os roteiristas a criar mundos mais interessantes, etc.
 
-Before moving on, come up with your own wild idea you think would be cool. Once you got one, post it in #ideas. Feel free to check the channel out for ideas other people have as well for inspiration! 
+Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. Inferno, essa coisa pode até gerar RegEx para você — [confira essa coisa construída por um de nossos ex-alunos](https://twitter.com/gd3kr/status/1545370626273120256) que se tornou **viral**.
 
-*P.S: Most ideas can be tested pretty quickly in Playground. Whatever you have an idea — write a quick prompt for it in Playground and see how it goes. Iterate!*
+Eu ainda nem mostrei as coisas que ele pode fazer com códigos! [Este](https://www.buildgpt3.com/) é um site muito bom! Recomendo que você navegue por ele para obter mais exemplos de prompts e casos de uso + demonstrações.
+
+Ei! Eu até dei a você uma ideia de startup gratuita com este aplicativo de leitura para crianças que gera histórias com o GPT-3 rsrs. Também dei a você um exemplo de e-mail gratuito para enviar aos investidores! Espero que um de vocês consiga arrecadar alguns milhões com isso rsrs.
+
+Atualização: um de nossos ex-alunos está [trabalhando em um aplicativo desses agora](https://onceuponabot.com/). Por enquanto, você pode usá-lo gratuitamente!
+
+### Por favor, faça isso ou Farza ficará triste
+
+Tem ideias para algo que você gostaria de construir? Eu sei que este projeto é intitulado “construa seu assistente de escrita de IA”, mas sinta-se à vontade para construir o que você quiser rsrs. Algumas ideias malucas aleatórias:
+
+- Um treinador esportivo de IA, onde as pessoas podem escolher quem querem como seu treinador. Imagine o Goku dando conselhos para seus treinos e criando seus planos de treinamento.
+- Um assistente de escrita para o Notion, que ajuda as pessoas a escrever documentos de produtos claros - ele usaria a especificação como entrada e produziria uma versão da especificação mais clara e mais acionável.
+- Uma ferramenta que gera títulos realmente bons para vídeos do YouTube e faz testes A/B automáticos para ver qual deles obtém mais visualizações.
+- Um gerador de receitas que pega a lista de ingredientes da sua geladeira e gera uma receita de algo que você pode fazer com ela.
+
+As ideias são infinitas.
+
+Antes de seguir adiante, crie sua própria ideia maluca que você acha que seria legal. Quando criar uma, poste-a em #ideas. Sinta-se à vontade para conferir o canal em busca de ideias que outras pessoas tiveram, bem como para inspiração!
+
+*P.S: A maioria das ideias pode ser testada rapidamente no Playground. Sempre que tiver uma ideia, escreva um prompt rápido para ela no Playground e veja como fica. Vamos iterar!*
