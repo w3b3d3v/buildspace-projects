@@ -233,7 +233,7 @@ Então, basicamente, a lição é: você precisa ajustar mais do que apenas o pr
 
 Não teve uma reviravolta na história? Não se preocupe. Siga adiante! Há muito mais no GPT-3 que ainda precisamos desbloquear e que pode melhorar muito seu desempenho.
 
-### Por favor, faça isso ou Farza ficará triste.
+### Por favor, faça isso ou Farza ficará triste
 
 Vá em frente e tire uma captura de tela da sua história no Playground e poste-a em #prompts no Discord. Juntamente com a imagem, inclua seu **prompt** na mensagem para que outras pessoas possam vê-lo facilmente e se inspirar.
 
