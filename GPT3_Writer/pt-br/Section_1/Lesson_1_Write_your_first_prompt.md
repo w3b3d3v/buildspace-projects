@@ -1,47 +1,47 @@
 
-Like with all things buildspace, let’s just jump in without explaining anything lol. I think a lot of this you’ll understand pretty quickly once you start messing with it.
+Como fazemos em todas as coisas da buildspace, vamos apenas mergulhar sem explicar nada rsrs. Acho que você entenderá muito disso rapidamente, assim que começar a mexer com o projeto.
 
-### Get access to OpenAI
+### Tenha acesso à OpenAI
 
-First thing you’ll need to do is make an account on OpenAI [here](https://beta.openai.com/playground). Once you make a new account, OpenAI will drop $18 in credits to your account. This is more than enough for you to mess around, build your product, and even support ~100 users. Pretty awesome.
+A primeira coisa que você precisa fazer é criar uma conta na OpenAI [aqui](https://beta.openai.com/playground). Depois de criar uma nova conta, a OpenAI depositará $18 em créditos em sua conta. Isso é mais do que suficiente para você mexer, construir seu produto e até mesmo oferecer suporte a cerca de 100 usuários. Bem incrível.
 
-Once you make an account, head to the [Playground](https://beta.openai.com/playground). This is where we’ll be spending a bit of time before we even start writing any code.
+Depois de criar uma conta, vá para o [Playground](https://beta.openai.com/playground). É aqui que vamos gastar um pouco de tempo antes mesmo de começarmos a escrever qualquer código.
 
-Don’t worry too much about those settings on the right yet, we’ll get to them. Just make sure your model is `text-davinci-003` and make sure the “Temperature” is set to `0.7`. **And, also make sure `Maximum length` is set to `650`.**
+Não se preocupe muito ainda com aquelas configurações à direita, nós chegaremos a elas. Apenas certifique-se de que seu modelo seja `text-davinci-003` e de que a “Temperatura” esteja definida como `0.7`. **E também certifique-se de que `Maximum length` (comprimento máximo) esteja definido como `650`.**
 
-*Note: if you had an account in the past, you’ll need to make a new w/ a different email and phone number because the credits expire after 3-months.*
+*Observação: se você já teve uma conta no passado, precisará criar uma nova com um e-mail e número de telefone diferentes, pois os créditos expiram depois de 3 meses.*
 
-### Prompt mentality.
+### Mentalidade de Prompt
 
-A “prompt” is what you input to GPT-3.
+Um “prompt” é o que você insere no GPT-3.
 
-I just want to be very clear about something — **the next 30m may be super magical, or they may be painful.** Prompts can be really fkin annoying to write and I just want you to know that.
+Quero deixar algo muito claro sobre algo — **os próximos 30 minutos podem ser super mágicos ou podem ser dolorosos.** Os prompts podem ser realmente irritantes de escrever e só quero que você saiba disso.
 
-Prompt engineering is a skill - you won’t be good at it to start, and that’s fine. But, just be sure to keep treading forward. **Remember, your goal is to ship this project. Nothing else.** Don’t get caught up in trying to get **one** thing to work.
+A engenharia de prompts é uma habilidade - você não será bom nisso no começo, e está tudo bem. Apenas certifique-se de continuar evoluindo. **Lembre-se, seu objetivo é entregar este projeto. Nada mais.** Não se prenda em tentar fazer **uma** coisa funcionar.
 
-Some tips I wish I had when I was learning prompt engineering:
+Algumas dicas que gostaria de ter tido quando estava aprendendo a engenharia de prompts:
 
-- Good results won’t come ASAP, it takes me 6-12 attempts to get a prompt to a point where I think it’s decent. Don’t expect magic on the first try.
-- Iterate fast, and don’t get too attached to specific prompts you’re working on.
-- If your output doesn’t end up looking as good as mine, that’s fine. GPT-3’s output can vary wildly based on a few words even.
-- Don’t get sucked in trying to make one specific prompt work. After 6-12 attempts, feel free to say fuck it and either a) start the prompt from scratch and change it up a ton or b) move on to the next lesson.
+- Bons resultados não virão imediatamente. Eu levo de 6 a 12 tentativas para chegar a um ponto em que acho decente. Não espere mágica na primeira tentativa.
+- Itere rapidamente e não fique muito apegado a prompts específicos com os quais você está trabalhando.
+- Se sua saída não ficar parecida com a minha, está tudo bem. A saída do GPT-3 pode mesmo variar muito com base em algumas palavras.
+- Não fique obcecado em tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
 
-### Build your first few prompts to tell a story.
+### Crie seus primeiros prompts para contar uma história.
 
-All you need to start is give GPT-3 a prompt which is the initial text that you input in plain English. I know it sounds weird, but the text prompt is actually how you “program” the model.
+Tudo o que você precisa para começar é dar um prompt ao GPT-3, que é o texto inicial que você insere em português simples. Pode parecer estranho, mas o prompt de texto é, na verdade, como você “programa” o modelo.
 
-I want you to get a feel for the process of exploring a prompt that starts simple and gets more complex. And the first thing we’re going to do is have GPT-3 output a custom-written story. Let’s go!
+Quero que você tenha uma ideia do processo de experimentação de um prompt que começa simples e fica mais complexo. E primeiramente iremos fazer com que o GPT-3 produza uma história personalizada. Vamos lá!
 
-In playground input the following:
-
-```
-Write me a few anime titles.
-```
-
-Here’s what it gives me:
+No playground, insira o seguinte:
 
 ```
-Write me a few anime titles.
+Escreva alguns títulos de anime.
+```
+
+Aqui está o que ele me dá:
+
+```
+Escreva alguns títulos de anime.
 
 1. Attack on Titan
 2. Death Note
@@ -50,190 +50,192 @@ Write me a few anime titles.
 5. Tokyo Ghoul
 ```
 
-*Note: what you see may be different because each time GPT-3 runs, there is randomness injected in the model each time so that the outputs differ.*
+*Observação: o que você vê pode ser diferente, porque cada vez que o GPT-3 é executado, há aleatoriedade injetada no modelo, portanto, as saídas serão diferentes.*
 
-Pretty cool — these are animes that actually exist. That’s because GPT-3 was trained on a large amount of text on the internet. Be sure to ask it to write you something else (ex. something around movies, music, whatever).
+Muito legal - esses são animes que realmente existem. Isso porque o GPT-3 foi treinado com uma imensa quantidade de textos da internet. Não se esqueça de pedir a ele para escrever outras coisas para você (ex. algo sobre filmes, música, qualquer coisa).
 
-But, I want something **more** custom! I want titles to a **new** anime that features me as the main character. Go ahead and delete everything from Playground.
+Mas eu quero algo **mais** personalizado! Quero títulos para um **novo** anime que me tenha como personagem principal. Vá em frente e exclua tudo do Playground.
 
-I’m going to change my prompt 
-
-```
-Give me anime titles about a boy named Farza.
-```
-
-**Make sure you change your prompt to be personal you.** I’ll be saying this a lot through this build — but, don’t copy my prompts word for word. If all you’re doing is copy-pasting this will be a waste of time.
-
-Use your own name. Maybe you don’t want “anime” titles, maybe you want “sci-fi” movie titles. Maybe you don’t want titles about “a boy”, maybe you want titles around a “dragon”. Get creative. See what happens.
-
-When I run my prompt I get:
+Vou mudar meu prompt.
 
 ```
-Give me anime titles about a boy named Farza.
-
-1. Farza and the Seven Seas
-
-2. Farza and the Lost Kingdom
-
-3. Farza and the Search for the Holy Grail
-
-4. Farza and the Last Crusade
-
-5. Farza and the Voyage to the New World
-
-6. Farza and the Land of the Dragons
-
-7. Farza and the Tower of Babel
+Me dê títulos de anime sobre um garoto chamado Farza.
 ```
 
-Pretty cool! But, still doesn’t feel super custom. I feel like I’ve heard of these stories before. They don’t feel truly new. **We need to give GPT-3 more information around what we want.**
+**Certifique-se de alterar seu prompt para ser sobre você.** Eu direi isso muitas vezes durante esta construção - mas não copie minhas instruções palavra por palavra. Se tudo o que você está fazendo é copiar e colar, isso será uma total perda de tempo.
 
-For now, I kinda like “Farza and the Lost Kingdom” — so, I’m going to take that and now build a simple prompt to output a story. Again, plz don’t copy + paste my prompts — use your own name, your own setting, etc. Maybe you want your story set in space, or underwater, maybe you want your story to include Elon Musk as your side kick — do whatever.
+Use seu próprio nome. Talvez você não queira títulos de “anime”, talvez queira títulos de filmes de “ficção científica”. Talvez você não queira títulos sobre “um menino”, talvez queira títulos sobre um “dragão”. Seja criativo. Veja o que acontece.
 
-**Don’t just copy me.** If you just use what I give you it won’t be that magical. You need to be sure that you include your own interests in the prompts. Only then will you feel the magic.
-
-```
-Tell me a story titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
-```
-
-Here’s what I get:
+Quando executo meu prompt, recebo:
 
 ```
-Tell me a story titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
+Me dê títulos de anime sobre um garoto chamado Farza.
 
-Farza was a young girl living in the 1500s in a small kingdom that was on the verge of being taken over by a larger kingdom. One day, she stumbled upon a hidden passage that led her to a lost kingdom that was hidden away from the rest of the world. This kingdom was full of magical creatures and treasures, and Farza quickly realized that she was the only one who knew about it. She decided to keep it a secret and vowed to protect the kingdom and its inhabitants. Over the years, she became a powerful sorceress and led the kingdom to safety.
+1. Farza e os Sete Mares
+
+2. Farza e o Reino Perdido
+
+3. Farza e a Busca pelo Santo Graal
+
+4. Farza e a Última Cruzada
+
+5. Farza e a Viagem ao Novo Mundo
+
+6. Farza e a Terra dos Dragões
+
+7. Farza e a Torre de Babel
+```
+
+Bem legal! Mas ainda não parece super personalizado. Eu sinto que já ouvi essas histórias antes. Elas não parecem realmente novas. **Precisamos dar mais informações ao GPT-3 sobre o que queremos.**
+
+Por enquanto, eu meio que gosto de “Farza e o Reino Perdido” - então, vou pegar esse título e agora criar um prompt simples para produzir uma história. Mais uma vez, por favor, não copie + cole meus prompts - use seu próprio nome, seu próprio cenário etc. Talvez você queira que sua história seja ambientada no espaço ou debaixo d'água, ou talvez você queira que sua história inclua Elon Musk como seu amigo de aventuras - faça o que quiser.
+
+**Apenas não me copie.** Se você utilizar apenas o que eu lhe der, não será tão mágico. Você precisa ter certeza de incluir seus próprios interesses nos prompts. Somente assim você sentirá a magia.
+
+```
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+```
+
+Eis o que eu obtenho:
+
+```
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+
+Farza era uma jovem menina que vivia no século 1500 em um pequeno reino que estava prestes a ser conquistado por um reino maior. Um dia, ela encontrou uma passagem  secreta que a levou a um reino perdido que estava escondido do resto do mundo. Este reino estava cheio de criaturas mágicas e tesouros, e Farza rapidamente percebeu que ela era a única que sabia sobre ele. Ela decidiu manter isso em segredo e jurou proteger o reino e seus habitantes. Ao longo dos anos, ela se tornou uma poderosa feiticeira e liderou o reino à segurança.
 
 ```
 
-This is wild. **What’s crazy is that GPT-3 understands what the structure of a good story is**. This is a super cool base, now all I need to do is give the prompt a bit more info.
+Isso é muito louco. **O mais incrível é que o GPT-3 entende o que é a estrutura de uma boa história.** Esta é uma base bem legal, agora tudo o que preciso fazer é fornecer ao prompt um pouco mais de informação.
 
-For example — in this case GPT-3 thinks Farza is a girl, I’m a boy! Also, I love the idea of the lost kingdom being full of secret magical type shit, I’ll keep that. I also love the idea that the kingdom was taken by someone else.
+Por exemplo - neste caso, o GPT-3 pensa que Farza é uma menina, eu sou um menino! Além disso, adoro a ideia de um reino perdido estar cheio de coisas secretas e mágicas, então vou manter isso. Também adoro a ideia de que o reino foi conquistado por alguém diferente.
 
-But, I feel like the story needs a villain.
+Mas, eu sinto que a história precisa de um vilão.
 
-Let’s make it happen.
+Vamos fazer acontecer.
 
-I change my prompt to give it more info: Who is Farza? What’s the setting? Who’s the villain? What’s the basic plot I want? 
-
-```
-Tell me a story titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
-
-Farza: a 26 year-old boy that doesn't know he has secret powers.
-Setting: a poor, broken kingdom that's been destroyed by Furqan.
-Furqan: the villain of the story, he's a mysterious figure with crazy powers.
-Plot: Farza wants to beat Furqan and take the kingdom back.
-
-Story:
-```
-
-*Note here: I specifically tell GPT-3 where I want my story to start my doing `Story:`. This simply helps GPT-3 to understand that we want it to immediately start outputting the story.*
-
-Notice all the stuff I give GPT-3 here! `Farza`, `Setting`, `Furqan`, and `Plot`. I do this because I’m trying to explain to GPT-3 what I want. Again, we just want to be as specific as possible and literally tell GPT-3 what we want. It can do all the creative thinking, but, **we need to give it basic guidelines**.
-
-**Be sure you create your own setting, plot, villain, etc.**
-
-Tip to make this part easy: *think of your favorite shows, movies, etc.* Mix and match elements from them. That’s where this gets fun lol. Maybe your setting is from your favorite sci-fi movie, your plot is from a book your like, and your villain is Elon Musk, Tom Cruise, or some random real person lol.
-
-Here’s what I get when I run the prompt:
+Eu mudo meu prompt para fornecer mais informações: Quem é Farza? Qual é o cenário? Quem é o vilão? Qual é a trama básica que eu quero? 
 
 ```
-Tell me a story titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
 
-Farza: a 26 year-old boy that doesn't know he has secret powers.
-Setting: a poor, broken kingdom that's been destroyed by Furqan.
-Furqan: the villain of the story, he's a mysterious figure with crazy powers.
-Plot: Farza wants to beat Furqan and take the kingdom back.
+Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
+Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
+Furqan: o vilão da história, é uma figura misteriosa com poderes malucos.
+Enredo: Farza quer derrotar Furqan e recuperar o reino.
 
-Story:
-
-Farza had always been a bit of an outsider. He was born in a small village on the edge of the kingdom and never really fit in. He was always daydreaming about adventure and excitement, but it always seemed just out of reach.
-
-One day, Farza stumbled upon a hidden cave. Inside, he found a magical sword. When he picked it up, he felt a surge of power. Suddenly, he knew he was destined for greatness.
-
-He set out on a journey to find Furqan, the evil sorcerer who had destroyed the kingdom. Along the way, he made new friends and discovered his own hidden powers.
-
-Eventually, he confronted Furqan and was able to defeat him. He took back the kingdom and became its rightful ruler.
-
-Farza's story is one of courage, determination, and hope. It's an anime-inspired tale of a boy who found the strength to save his kingdom.
+História:
 ```
 
-**Insane.**
+*Observação: eu digo especificamente ao GPT-3 onde quero que minha história comece, escrevendo `História:`. Isso simplesmente ajuda o GPT-3 a entender que queremos que ele comece imediatamente a produzir a história.*
 
-GPT-3 came up with this whole idea of a **hidden cave**, **a magical sword**, all this shit. It literally feels like an anime. At this rate…maybe I’ll take [the $10M we just raised](https://buildspace.so/raise) and spend it on pivoting buildspace to become an anime studio instead lol.
+Observe todas as informações que dou GPT-3 aqui! `Farza`, `Cenário`, `Furqan`, e `Enredo`. Faço isso porque estou tentando explicar ao GPT-3 o que eu quero. Novamente, queremos apenas ser o mais específico possível e literalmente dizer ao GPT-3 o que queremos. Ele pode fazer todo o pensamento criativo, mas **precisamos dar a ele diretrizes básicas**.
 
-### Some recommendations.
+**Certifique-se de criar seu próprio cenário, enredo, vilão, etc.**
 
-When I was first messing with GPT-3, I was obsessed with getting my exact prompt/story perfect. But, that was my mistake.  Your output will not be perfect.
+Dica para facilitar esta parte: *pense em seus programas favoritos, filmes preferidos, etc.* Misture e combine elementos deles. É aí que isso fica divertido rsrs. Talvez seu cenário seja do seu filme de ficção científica favorito, seu enredo seja de um livro que você gosta e seu vilão seja Elon Musk, Tom Cruise ou alguma pessoa real aleatória rsrs.
 
-You’re only like 15-minutes into this journey. Keep going!
-
-So, if your story isn’t that cool yet or you’re noticing that the story is only a few sentences, **you need to keep improving your prompt**. Imagine you were given what you give GPT-3, would you be able to write a compelling story?
-
-Also, you can literally tell GPT-3 what you want. For example, if you feel like your story doesn’t feel very complete you can literally say `Tell me a full story with a beginning, middle, and end`. I actually added this later and it worked super well.
-
-Take some time here to fk around with your prompt. 99% of the time, it isn’t GPT-3 that’s the problem. It’s your prompt. You’ll get better at this overtime!
-
-Few recommendations:
-
-- **Is your story just 1-2 sentences long every time?** No worries, it’s okay. We’ll show you some fixes for this later on. But for now, try to give GPT-3 more info about your character, the plot you want, and the setting. Is your character funny? Is the world they’re in on some futuristic space planet? Set it all up for GPT-3!
-- **Not getting a good story?** Try and make your story something that remixes something in the real world. You can literally tell GPT-3 to do so. For example: `Tell me a full story with a beginning, middle, and end titled "Farza and the Magical Red Box". This story should combine vibes from Game of Thrones and Breaking Bad.`. The more context and comparisons you give GPT-3, the better.
-- **And most importantly** — don’t get obsessed with the same story/prompt. After a few attempts, it’s fine to say fuck it and delete your whole prompt and try something wildly new.
-
-### Temperature
-
-There are a bunch of crazy options on the right. These are “hyperparameters”. The main one is “Temperature”.
-
-Temperature is basically how risky you want the model to be. A higher temperature means the model will be a bit more unhinged and make more mistakes. A lower temperature means the model will take less risks and just give the more standard “right answer”.
-
-A higher temperature of `0.9` is better for more creative things, like telling a story. A lower temperature of `0.1` is better for prompts with well-defined answers.
-
-Let’s mess with it. Take the prompt you already wrote above, and set the temperature to `0.9` and see what happens.
+Aqui está o que vejo quando executo o prompt:
 
 ```
-Tell me a full story with a beginning, middle, and end titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
 
-Farza: a 26 year-old boy that doesn't know he has secret powers.
-Setting: a poor, broken kingdom that's been destroyed by Furqan.
-Furqan: the villain of the story, he's a mysterious figure with crazy powers.
-Plot: Farza wants to beat Furqan and take the kingdom back.
+Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
+Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
+Furqan: o vilão da história, é uma figura misteriosa com poderes malucos.
+Enredo: Farza quer derrotar Furqan e recuperar o reino.
 
-Story:
+História:
 
-Farza was just a normal boy, living in a poor, broken kingdom that had been destroyed by Furqan. But little did he know that he had secret powers that could help him defeat the villain and take back the kingdom.
+Farza sempre foi um pouco estranho. Ele nasceu em um vilarejo na periferia do reino e nunca realmente se encaixou. Ele sempre sonhou acordado com aventuras e emoções, mas tudo sempre parecia muito fora de alcance.
 
-One day, Farza decided to confront Furqan and challenge him to a duel. Farza was confident in his abilities, but Furqan was much stronger and more experienced. The battle was fierce, but eventually Furqan emerged victorious.
+Um dia, Farza se deparou com uma caverna escondida. Dentro dela, ele encontrou uma espada mágica. Quando ele pegou a espada, sentiu uma onda de poder. De repente, ele percebeu que estava destinado a fazer coisas grandiosas.
 
-However, as he was about to deliver the final blow, Farza's latent powers suddenly awakened and he was able to turn the tide of the battle. In the end, Farza emerged victorious and the kingdom was finally free from Furqan's tyranny.
+Ele partiu em uma jornada para encontrar Furqan, o feiticeiro malvado que havia destruído o reino. Ao longo do caminho, fez novos amigos e descobriu seus próprios poderes ocultos.
+
+Eventualmente, ele confrontou Furqan e conseguiu derrotá-lo. Ele recuperou o reino e se tornou seu governante legítimo.
+
+A história de Farza é de coragem, determinação e esperança. É um conto inspirado em anime sobre um menino que encontrou forças para salvar seu reino.
 ```
 
-Okay, this literally gave me goosebumps.
+**Que irado!**
 
-*“However, as he was about to deliver the final blow, Farza's latent powers suddenly awakened and he was able to turn the tide of the battle.”*
+O GPT-3 criou toda essa ideia de umaa **caverna escondida**, **uma espada mágica**, tudo isso. Parece literalmente um anime. Nesse ritmo, talvez eu pegue [os 10 milhões de dólares que acabamos de arrecadar](https://buildspace.so/raise) e gaste transformando a buildspace em um estúdio de anime rsrs.
 
-That’s some Lord of the Rings type shit.
+### Algumas recomendações
 
-At first, the story seems standard. But, that last paragraph — that’s the magic. **GPT-3 generated a twist ending for me**. Because we let the model take more risks with a higher temperature, it ended up doing the riskiest thing possible: writing a twist!
+Quando eu comecei a mexer com o GPT-3, eu estava obcecado em deixar meu prompt/história perfeito. Mas, esse foi o meu erro. A saída não será perfeita.
 
-**Your story probably *won’t* have a twist.**
+Você está nesta jornada por apenas 15 minutos. Continue!
 
-In fact, your story may be *worse* when you set a higher temperature. You just need to figure it out on your own and test out different combos of prompts/temperatures.
+Então, se sua história ainda não está tão legal ou você está percebendo que ela tem apenas algumas frases, **você precisa continuar melhorando seu prompt**. Imagine que você recebe o que dá ao GPT-3. Você seria capaz de escrever uma história convincente?
 
-This is all part of the prompt engineering game!
+Além disso, você pode literalmente dizer ao GPT-3 o que deseja. Por exemplo, se sentir que sua história não parece muito completa, você pode literalmente dizer `Conte-me uma história completa com começo, meio e fim.` Na verdade, adicionei isso mais tarde e funcionou muito bem.
 
-*Note: If you really want to get a twist in the story — I was able to get some more crazy twists with this format where I literally ask for a twist ending and tell GPT-3 generally what I want the twist ending to include. I also found that giving examples of good stories like Harry Potter, Breaking Bad, Naruto, etc helps.*
+Reserve algum tempo aqui para brincar com seu prompt. 99% das vezes, não é o GPT-3 que é o problema. É o seu prompt. Você vai melhorar com o tempo!
+
+Algumas recomendações:
+
+- **Sua história tem apenas 1-2 frases todas as vezes?** Não se preocupe, está tudo bem. Mostraremos algumas correções para isso mais tarde. Mas, por enquanto, tente dar ao GPT-3 mais informações sobre seu personagem, o enredo que deseja e o cenário. Seu personagem é engraçado? O mundo em que eles vivem é algum planeta espacial futurista? Deixe tudo pronto para o GPT-3!
+- **Não conseguiu uma boa história?** Experimente e faça da sua história algo que se misture com alguma coisa do mundo real.Você pode literalmente dizer ao GPT-3 para fazer isso. Por exemplo: `Conte-me uma história completa com começo, meio e fim, intitulada "Farza e a Caixa Mágica Vermelha". Esta história deve combinar as vibrações de Game of Thrones e Breaking Bad.` Quanto mais contexto e comparações você der ao GPT-3, melhor.
+- **E o mais importante** — não fique obcecado com a mesma história/prompt. Depois de algumas tentativas, não há problema em dizer f*@%-se, apagar todo o seu prompt, e tentar algo completamente novo.
+
+### Temperatura
+
+Existem várias opções malucas à direita, que são os “hiperparâmetros”. O principal é a "Temperatura".
+
+A temperatura é basicamente o quão arriscado você quer que o modelo seja. Uma temperatura mais alta significa que o modelo ficará um pouco mais desequilibrado e cometerá mais erros. Uma temperatura mais baixa significa que o modelo assumirá menos riscos e dará apenas a “resposta certa” mais padrão.
+
+Uma temperatura acima de `0,9` é melhor para coisas mais criativas, como contar uma história. Uma temperatura abaixo de `0,1` é melhor para prompts com respostas bem definidas.
+
+Então vamos mexer nisso. Pegue o prompt que você já escreveu acima, defina a temperatura para `0,9` e veja o que acontece.
+
 
 ```
-Tell me a full story with a beginning, middle, and end titled "Farza and the Magical Red Box". At the end of the story, include a crazy plot twist between Farza and the Red Box where something crazy happens to Farza. Make the story feel really awesome like Harry Potter.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+
+Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
+Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
+Furqan: o vilão da história, é uma figura misteriosa com poderes malucos.
+Enredo: Farza quer derrotar Furqan e recuperar o reino.
+
+História:
+
+Farza era apenas um menino normal, vivendo em um reino pobre e quebrado que havia sido destruído por Furqan. Mas ele mal sabia que tinha poderes secretos que poderiam ajudá-lo a derrotar o vilão e retomar o reino.
+
+Um dia, Farza decidiu enfrentar Furqan e desafiá-lo para um duelo. Farza confiava em suas habilidades, mas Furqan era muito mais forte e mais experiente. A batalha foi acirrada, mas finalmente Furqan saiu vitorioso.
+
+No entanto, quando ele estava prestes a desferir o golpe final, os poderes latentes de Farza despertaram repentinamente e ele foi capaz de mudar o rumo da batalha. No final, Farza saiu vitorioso e o reino estava finalmente livre da tirania de Furqan.
 ```
 
-**Keep messing around with the temperature as you run these** **different prompts.** I like changing the temperature by like `0.1` a few times to test. Also, the same prompt at a different temperature can create wildly different results.
+Ok, isso literalmente me deu arrepios.
 
-So basically lesson here: you need to adjust more than just the prompt to get good results, you also need to adjust your hyperparameters.
+*“No entanto, quando ele estava prestes a desferir o golpe final, os poderes latentes de Farza despertaram repentinamente e ele foi capaz de mudar o rumo da batalha.”*
 
-Didn’t get a plot twist? Don’t sweat it. Move on! There’s so much more to GPT-3 that we still have yet to unlock that can massively improve its performance.
+Isso é algo do tipo “O Senhor dos Anéis”.
 
-### Please do this or Farza will be sad.
+A princípio, a história aparenta ser padrão. Mas, o último parágrafo - aqui está a mágica. **O GPT-3 gerou um final com uma reviravolta para mim.** Como deixamos o modelo correr mais riscos com uma temperatura mais alta, acabou fazendo o mais arriscado possível: escrever uma reviravolta! 
 
-Go ahead and take a screenshot of your story in Playground and post it into #prompts on Discord. Along with the image, include your **prompt** in the message to make it easy for others to easily see your prompt for inspiration.
+**Sua história provavelmente *não* terá reviravoltas.**
 
-And, if you’re looking for some inspiration yourself you can find some there!
+Na verdade, sua história pode ser *pior* quando você define uma temperatura mais alta. Você só precisa descobrir por si mesmo e testar diferentes combinações de prompts/temperaturas. 
+
+Tudo isso faz parte do jogo de engenharia de prompt! 
+
+*Observação: Se você realmente quer uma reviravolta na história - eu consegui algumas reviravoltas bem loucas com este formato, onde eu literalmente peço um final de reviravolta na história e digo ao GPT-3 o que eu quero que, em geral, o final da reviravolta na história inclua. Eu também descobri que dar exemplos de boas histórias como Harry Potter, Breaking Bad, Naruto, etc ajuda bastante.*
+
+```
+Conte-me uma história completa com começo, meio e fim intitulada "Farza e a caixa mágica vermelha". No final da história, inclua uma reviravolta bem maluca entre Farza e a Caixa Vermelha, onde algo louco acontece com Farza. Faça com que a história pareça realmente incrível, assim como a do Harry Potter.
+```
+
+**Continue mexendo na temperatura enquanto executa esses diferentes prompts.** Eu gosto de mudar a temperatura em cerca de 0,1 algumas vezes para testar. Além disso, o mesmo prompt em uma temperatura diferente pode criar resultados completamente diferentes.
+
+Então, basicamente, a lição é: você precisa ajustar mais do que apenas o prompt para obter bons resultados. Você também precisa ajustar seus hiperparâmetros.
+
+Não teve uma reviravolta na história? Não se preocupe. Siga adiante! Há muito mais no GPT-3 que ainda precisamos desbloquear e que pode melhorar muito seu desempenho.
+
+### Por favor, faça isso ou Farza ficará triste.
+
+Vá em frente e tire uma captura de tela da sua história no Playground e poste-a em #prompts no Discord. Juntamente com a imagem, inclua seu **prompt** na mensagem para que outras pessoas possam vê-lo facilmente e se inspirar.
+
+E, se você está procurando por inspiração, pode encontrá-la lá!
+
