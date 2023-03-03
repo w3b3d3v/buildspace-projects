@@ -9,7 +9,7 @@ Olá! Meu nome é [Farza](https://twitter.com/FarzaTV). Comecei minha primeira e
 
 Pode parecer que eu fiz muito, mas no fundo, sinceramente, sou apenas um tolo tentando descobrir as coisas como todo mundo.
 
-### O que você precisa saber para construir isso.
+### O que você precisa saber para construir isso
 
 Você não precisa ter *muito* conhecimento para construir isso. Mostrarei como fazer a maior parte ao longo do caminho.
 
@@ -17,10 +17,10 @@ Você não precisa ter *muito* conhecimento para construir isso. Mostrarei como 
 
 - Se você não sabe codificar em nenhuma linguagem, minha recomendação é que você visite [este link](https://scrimba.com/learn/learnjavascript) primeiro. **Nossa especialidade na buildspace não é ensinar as pessoas a programar do zero**, existem plataformas muito melhores para isso.
 - Se você sabe codificar um *pouco*, mas não tem tanta confiança, veja até onde você consegue ir no que estamos construindo! Se você tiver problemas ou perceber lacunas óbvias em seu conhecimento, não se preocupe. Basta pesquisar no Google ou voltar ao básico [aqui](https://scrimba.com/learn/learnjavascript).
-- e você sabe como codificar em qualquer linguagem, mas nunca usou o React - vai ficar tudo bem! Apenas continue tentando. Se você acabar realmente tendo dificuldades com o React, poderá aprender sobre ele [aqui](https://scrimba.com/learn/learnreact).
+- Se você sabe como codificar em qualquer linguagem, mas nunca usou o React - vai ficar tudo bem! Apenas continue tentando. Se você acabar realmente tendo dificuldades com o React, poderá aprender sobre ele [aqui](https://scrimba.com/learn/learnreact).
 - Se você é um profissional, espero ver você no final com um produto realmente incrível. Inspire o resto de nós!
 
-### Nosso conteúdo é totalmente open-source.
+### Nosso conteúdo é totalmente open-source
 
 Tudo o que você vê aqui é 100% de código aberto.
 
@@ -54,7 +54,7 @@ Veja como ele é:
 
 **Observação: entre em contato com Alec (alec#8853), CodePerfect (CodePerfect#6638) ou Raza (TooManyBugs#3359) se tiver problemas ao reivindicar seus NFTs.**
 
-### Construindo publicamente.
+### Construindo publicamente
 
 Ao longo desta construção, lhe darei alguns momentos em que você poderá tweetar sobre o que está construindo e também lhe darei tweets pré-construídos para inspirá-lo a contar ao mundo sobre o que está construindo.
 
@@ -68,7 +68,7 @@ O [tweet](https://twitter.com/FarzaTV/status/1247917195767808000) estúpido abai
 
 ### O que acontece no final?
 
-No final de cada projeto na buildspace, você poderá garantir um NFT exclusivo.
+No final de cada projeto da buildspace, você poderá garantir um NFT exclusivo.
 
 Este NFT oferece acesso a alguns poderes secretos:
 
@@ -78,7 +78,7 @@ Este NFT oferece acesso a alguns poderes secretos:
 
 3. **Você será aceito instantaneamente no [Nights & Weekends](https://buildspace.so/nights-and-weekends)** (noites e finais de semana) se tiver o NFT. O N&W é como um acelerador que administramos - crie qualquer ideia que desejar em 6 semanas, venha para São Francisco por 3 dias para construir na vida real e apresente seu trabalho no dia da demonstração para milhares de pessoas. Os ex-alunos do N&W arrecadaram milhões de dólares.
 
-### Por favor, faça isso ou o Farza ficará triste.
+### Por favor, faça isso ou o Farza ficará triste
 
 No canal #gpt3-general, diga ao mundo por que você está curioso sobre como fazer essas coisas. Seria legal entender por que você está curioso, o que está tentando construir, o que o inspirou a se envolver com isso, etc.
 
