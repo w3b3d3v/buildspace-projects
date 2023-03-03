@@ -24,7 +24,7 @@ Algumas dicas que gostaria de ter tido quando estava aprendendo a engenharia de 
 - Bons resultados não virão imediatamente. Eu levo de 6 a 12 tentativas para chegar a um ponto em que acho decente. Não espere mágica na primeira tentativa.
 - Itere rapidamente e não fique muito apegado a prompts específicos com os quais você está trabalhando.
 - Se sua saída não ficar parecida com a minha, está tudo bem. A saída do GPT-3 pode mesmo variar muito com base em algumas palavras.
-- Não fique obcecado em tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
+- Não fique obcecado em tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e: a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
 
 ### Crie seus primeiros prompts para contar uma história.
 
@@ -62,7 +62,7 @@ Vou mudar meu prompt.
 Me dê títulos de anime sobre um garoto chamado Farza.
 ```
 
-**Certifique-se de alterar seu prompt para ser sobre você.** Eu direi isso muitas vezes durante esta construção - mas não copie minhas instruções palavra por palavra. Se tudo o que você está fazendo é copiar e colar, isso será uma total perda de tempo.
+**Certifique-se de alterar seu prompt para ser sobre você.** Eu direi isso muitas vezes durante esta construção. Por favor, não copie minhas instruções palavra por palavra. Se tudo o que você está fazendo é copiar e colar, isso será uma total perda de tempo.
 
 Use seu próprio nome. Talvez você não queira títulos de “anime”, talvez queira títulos de filmes de “ficção científica”. Talvez você não queira títulos sobre “um menino”, talvez queira títulos sobre um “dragão”. Seja criativo. Veja o que acontece.
 
@@ -88,18 +88,18 @@ Me dê títulos de anime sobre um garoto chamado Farza.
 
 Bem legal! Mas ainda não parece super personalizado. Eu sinto que já ouvi essas histórias antes. Elas não parecem realmente novas. **Precisamos dar mais informações ao GPT-3 sobre o que queremos.**
 
-Por enquanto, eu meio que gosto de “Farza e o Reino Perdido” - então, vou pegar esse título e agora criar um prompt simples para produzir uma história. Mais uma vez, por favor, não copie + cole meus prompts - use seu próprio nome, seu próprio cenário etc. Talvez você queira que sua história seja ambientada no espaço ou debaixo d'água, ou talvez você queira que sua história inclua Elon Musk como seu amigo de aventuras - faça o que quiser.
+Por enquanto, eu meio que gosto de “Farza e o Reino Perdido” - então, vou pegar esse título e agora criar um prompt simples para produzir uma história. Mais uma vez, por favor, não copie e cole meus prompts - use seu próprio nome, seu próprio cenário etc. Talvez você queira que sua história seja ambientada no espaço ou debaixo d'água, ou talvez você queira que sua história inclua Elon Musk como seu amigo de aventuras - faça o que quiser.
 
 **Apenas não me copie.** Se você utilizar apenas o que eu lhe der, não será tão mágico. Você precisa ter certeza de incluir seus próprios interesses nos prompts. Somente assim você sentirá a magia.
 
 ```
-Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 ```
 
 Eis o que eu obtenho:
 
 ```
-Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
 Farza era uma jovem menina que vivia no século 1500 em um pequeno reino que estava prestes a ser conquistado por um reino maior. Um dia, ela encontrou uma passagem  secreta que a levou a um reino perdido que estava escondido do resto do mundo. Este reino estava cheio de criaturas mágicas e tesouros, e Farza rapidamente percebeu que ela era a única que sabia sobre ele. Ela decidiu manter isso em segredo e jurou proteger o reino e seus habitantes. Ao longo dos anos, ela se tornou uma poderosa feiticeira e liderou o reino à segurança.
 
@@ -116,7 +116,7 @@ Vamos fazer acontecer.
 Eu mudo meu prompt para fornecer mais informações: Quem é Farza? Qual é o cenário? Quem é o vilão? Qual é a trama básica que eu quero? 
 
 ```
-Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
 Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
 Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
@@ -137,7 +137,7 @@ Dica para facilitar esta parte: *pense em seus programas favoritos, filmes prefe
 Aqui está o que vejo quando executo o prompt:
 
 ```
-Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
 Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
 Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
@@ -159,7 +159,7 @@ A história de Farza é de coragem, determinação e esperança. É um conto ins
 
 **Que irado!**
 
-O GPT-3 criou toda essa ideia de umaa **caverna escondida**, **uma espada mágica**, tudo isso. Parece literalmente um anime. Nesse ritmo, talvez eu pegue [os 10 milhões de dólares que acabamos de arrecadar](https://buildspace.so/raise) e gaste transformando a buildspace em um estúdio de anime rsrs.
+O GPT-3 criou toda essa ideia de uma **caverna escondida**, **uma espada mágica**... tudo isso. Parece literalmente um anime. Nesse ritmo, talvez eu pegue [os 10 milhões de dólares que acabamos de arrecadar](https://buildspace.so/raise) e gaste transformando a buildspace em um estúdio de anime rsrs.
 
 ### Algumas recomendações
 
@@ -169,14 +169,14 @@ Você está nesta jornada por apenas 15 minutos. Continue!
 
 Então, se sua história ainda não está tão legal ou você está percebendo que ela tem apenas algumas frases, **você precisa continuar melhorando seu prompt**. Imagine que você recebe o que dá ao GPT-3. Você seria capaz de escrever uma história convincente?
 
-Além disso, você pode literalmente dizer ao GPT-3 o que deseja. Por exemplo, se sentir que sua história não parece muito completa, você pode literalmente dizer `Conte-me uma história completa com começo, meio e fim.` Na verdade, adicionei isso mais tarde e funcionou muito bem.
+Além disso, você pode literalmente dizer ao GPT-3 o que deseja. Por exemplo, se sentir que sua história não parece muito completa, você pode literalmente dizer: `Conte-me uma história completa com começo, meio e fim.` Na verdade, adicionei isso mais tarde e funcionou muito bem.
 
 Reserve algum tempo aqui para brincar com seu prompt. 99% das vezes, não é o GPT-3 que é o problema. É o seu prompt. Você vai melhorar com o tempo!
 
 Algumas recomendações:
 
 - **Sua história tem apenas 1-2 frases todas as vezes?** Não se preocupe, está tudo bem. Mostraremos algumas correções para isso mais tarde. Mas, por enquanto, tente dar ao GPT-3 mais informações sobre seu personagem, o enredo que deseja e o cenário. Seu personagem é engraçado? O mundo em que eles vivem é algum planeta espacial futurista? Deixe tudo pronto para o GPT-3!
-- **Não conseguiu uma boa história?** Experimente e faça da sua história algo que se misture com alguma coisa do mundo real.Você pode literalmente dizer ao GPT-3 para fazer isso. Por exemplo: `Conte-me uma história completa com começo, meio e fim, intitulada "Farza e a Caixa Mágica Vermelha". Esta história deve combinar as vibrações de Game of Thrones e Breaking Bad.` Quanto mais contexto e comparações você der ao GPT-3, melhor.
+- **Não conseguiu uma boa história?** Experimente e faça da sua história algo que se misture com alguma coisa do mundo real. Você pode literalmente dizer ao GPT-3 para fazer isso. Por exemplo: `Conte-me uma história completa com começo, meio e fim, intitulada "Farza e a Caixa Mágica Vermelha". Esta história deve combinar as vibrações de Game of Thrones e Breaking Bad.` Quanto mais contexto e comparações você der ao GPT-3, melhor.
 - **E o mais importante** — não fique obcecado com a mesma história/prompt. Depois de algumas tentativas, não há problema em dizer f*@%-se, apagar todo o seu prompt, e tentar algo completamente novo.
 
 ### Temperatura
@@ -191,7 +191,7 @@ Então vamos mexer nisso. Pegue o prompt que você já escreveu acima, defina a 
 
 
 ```
-Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Conte-me uma história intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
 Farza: um garoto de 26 anos que não sabe que possui poderes secretos.
 Cenário: um reino pobre e quebrado, que foi destruído por Furqan.
@@ -213,7 +213,7 @@ Ok, isso literalmente me deu arrepios.
 
 Isso é algo do tipo “O Senhor dos Anéis”.
 
-A princípio, a história aparenta ser padrão. Mas, o último parágrafo - aqui está a mágica. **O GPT-3 gerou um final com uma reviravolta para mim.** Como deixamos o modelo correr mais riscos com uma temperatura mais alta, acabou fazendo o mais arriscado possível: escrever uma reviravolta! 
+A princípio, a história aparenta ser padrão. Mas, no último parágrafo - é aqui que está a mágica. **O GPT-3 gerou um final com uma reviravolta para mim.** Como deixamos o modelo correr mais riscos com uma temperatura mais alta, acabou fazendo o mais arriscado possível: escrever uma reviravolta! 
 
 **Sua história provavelmente *não* terá reviravoltas.**
 
@@ -237,5 +237,5 @@ Não teve uma reviravolta na história? Não se preocupe. Siga adiante! Há muit
 
 Vá em frente e tire uma captura de tela da sua história no Playground e poste-a em #prompts no Discord. Juntamente com a imagem, inclua seu **prompt** na mensagem para que outras pessoas possam vê-lo facilmente e se inspirar.
 
-E, se você está procurando por inspiração, pode encontrá-la lá!
+E, se você está procurando por inspiração, pode encontrá-la por lá!
 
