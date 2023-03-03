@@ -26,7 +26,7 @@ Agora, meu prompt fica assim, onde criei um novo prompt na parte inferior sobre 
 Isso é chamado de **“single-shot learning”** (aprendizado com único exemplo). Porque o GPT-3 tem um único exemplo com o qual está aprendendo!
 
 ```
-Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
+Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
 História: Farza era apenas um menino normal, vivendo em um reino pobre e quebrado que havia sido destruído por Furqan. Mas ele mal sabia que tinha poderes secretos que poderiam ajudá-lo a derrotar o vilão e retomar o reino.
 
@@ -45,7 +45,7 @@ Eu uso explicitamente `Prompt:` e `História:` apenas para que o GPT-3 saiba ond
 
 O mais louco aqui é que, quando eu executo tudo isso, o GPT-3 usa **todo esse texto como entrada** e usa a história gerada anteriormente **como um exemplo para si mesmo**.
 
-Antes de executar isso, altere`Maximum length` à direita para 1000. Vamos falar mais sobre isso depois, mas basicamente este é o limite para o tamanho que a entrada + saída gerada podem ter. Vamos colocar em 1000 - isso não *necessariamente* levará a uma história mais longa. Apenas dá espaço para o modelo fazê-lo, no entanto.
+Antes de executar isso, altere `Maximum length` à direita para 1000. Vamos falar mais sobre isso depois, mas basicamente este é o limite para o tamanho que a entrada e saída geradas podem ter. Vamos colocar em 1000 - isso não *necessariamente* levará a uma história mais longa. Apenas dá espaço para o modelo fazê-lo, no entanto.
 
 *Observação: mantenha esse número pequeno. A OpenAI cobra com base em quanto você está gerando. Acompanhe [aqui](https://beta.openai.com/account/usage) quanto de crédito você ainda tem.*
 
@@ -65,21 +65,21 @@ Absolutamente incrível. Imaginar Elon se teletransportando para o palácio do i
 
 Você vê a magia aqui?
 
-Está tudo no prompt. Leva um tempo, mas quando você chega lá, é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal de suporte se precisar de ajuda com o prompt.
+Está tudo no prompt. Demora um pouco, mas quando você chega lá é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal de suporte se precisar de ajuda com o prompt.
 
-Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo, a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o faz.
+Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo: a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o faz.
 
 **Se você ainda não criou uma história sólida com a qual esteja feliz - tudo bem**. Continue seguindo em frente, meu amigo. Não adianta ficar obcecado com prompts específicos!
 
 ### Magia: Utilizando o GPT-3 como um verdadeiro assistente de escrita
 
-Deixe-me mostrar-lhe algo super incrível. O GPT-3 é realmente bom para completar seus pensamentos.
+Deixa eu te mostrar algo super incrível. O GPT-3 é realmente bom para completar seus pensamentos.
 
 Portanto, podemos continuar construindo essa história apenas deixando o GPT-3 completar nossa frase ou **iniciando uma nova situação.**
 
-Veja só. Eu vou apenas agitar as coisas. Eu sou como aquele bêbado doidão na balada procurando briga.
+Olha só, eu vou começar a agitar as coisas. Eu sou como aquele bêbado doidão na balada procurando briga.
 
-Eu vou **apagar tudo** no Playground e usar apenas minha história do Elon gerada acima — *certifique-se de pegar sua própria história que foi gerada, não use a minha história do Elon! Eu continuo enfatizando isso, pois eu realmente não quero que você use minhas histórias e premissas. Crie suas próprias!*
+Eu vou **apagar tudo** no Playground e usar apenas minha história do Elon gerada acima. *Certifique-se de pegar sua própria história que foi gerada, não use a minha história do Elon! Eu continuo enfatizando isso, pois eu realmente não quero que você use minhas histórias e premissas. Crie suas próprias!*
 
 Eu adicionei uma nova situação no final em que Elon acaba sendo o vilão. Acrescentei: **“Mas então, uma reviravolta! Elon acabou sendo realmente o vilão. Depois de uma década de paz, as coisas mudaram. Acontece que”.**
 
@@ -99,7 +99,7 @@ Mas então, uma reviravolta! Elon acabou sendo realmente o vilão. Depois de uma
 
 Anteriormente, pode ter sido bem difícil para você gerar uma reviravolta. Mas agora, é bem direto porque o GPT-3 pode facilmente continuar sua história, já que grande parte dela já está escrita.
 
-Ao enviar aqui, você verá que o GPT-3 literalmente termina sua frase nesta nova situação. É bem legal! E aqui está o que eu obtive:
+Ao enviar isso aqui, você verá que o GPT-3 literalmente termina sua frase nesta nova situação. É bem legal! E aqui está o que eu obtive:
 
 
 ```
@@ -110,11 +110,11 @@ Agora, as pessoas do império espacial estão novamente vivendo com medo, sem sa
 
 Muito louco! Rsrs…
 
-**Quero deixar bem claro - você pode continuar fazendo isso. Você pode usar GPT-3 para completar qualquer pensamento. As aplicações são infinitas.** Escreva uma frase, deixe o GPT-3 adicionar mais algumas, escreva outra frase, veja o que o GPT-3 gera, adicione outra frase.
+**Quero deixar bem claro: você pode continuar fazendo isso. Você pode usar GPT-3 para completar qualquer pensamento. As aplicações são infinitas.** Escreva uma frase, deixe o GPT-3 adicionar mais algumas, escreva outra frase, veja o que o GPT-3 gera, adicione outra frase.
 
 Você pode usar esse mesmo fluxo para escrever tweets, descrições de produtos, ensaios, boletins informativos, artigos, blogs, o que quiser.
 
-Você pode estar se perguntando: “O que acontece se eu continuar clicando em Enviar e deixar o GPT-3 continuar sozinho?”. Experimente! Vá para a sua história e continue clicando em enviar. Eventualmente, o GPT-3 continuará gerando a mesma coisa indefinidamente. Por quê?
+Você pode estar se perguntando: “O que acontece se eu continuar clicando em Enviar e deixar o GPT-3 continuar sozinho?”. Experimente! Vá para a sua história e continue clicando em Enviar. Eventualmente, o GPT-3 continuará gerando a mesma coisa indefinidamente. Por quê?
 
 Bem, o modelo precisa que você (o humano) continue fornecendo a ele novos conteúdos para trabalhar, para que ele possa entender melhor o que você precisa. **Ele não é bom agindo por conta própria**, pois novamente, você precisa guiá-lo. É também assim que você pode continuar a prolongar a história.
 
@@ -172,13 +172,13 @@ Eu deixarei você brincar com esta música acima. É incrível porque ela **comb
 
 O prompt não é perfeito, então os resultados podem não ser surpreendentes, mas certifique-se de mexer com ele.
 
-Um grande agradecimento a um de nossos builders, Naklecha, que inspirou esta parte da lição. Ele realmente transformou esse explicador de histórias em um produto completo [veja aqui](https://twitter.com/naklecha/status/1587046444854190081), que usa histórias em vez de músicas.
+Um grande agradecimento a um de nossos builders, Naklecha, que inspirou esta parte da lição. Ele realmente transformou esse explicador de histórias em um produto completo ([veja aqui](https://twitter.com/naklecha/status/1587046444854190081)), que usa histórias em vez de músicas.
 
 ### Seguindo adiante
 
-Já fizemos algumas coisas bem loucas sem uma única linha de código rsrs. Nesse ponto, você provavelmente consegue imaginar várias ideias.
+Já fizemos algumas coisas bem loucas sem uma única linha de código rsrs. Nesse ponto, você provavelmente consegue ter várias ideias.
 
-Mas, por um pouco mais de tempo, vamos continuar brincando **um pouco** mais no Playground - e depois vamos começar a escrever algum código. Quero mostrar a você mais algumas coisas malucas e orientá-lo em mais alguns prompts. **Se você tem dificuldade em escrever prompts, nada disso será divertido rsrs.** Então, quero garantir que você tenha todos os segredos!
+Mas vamos continuar brincando no Playground **um pouco** mais para depois começarmos a escrever algum código. Quero mostrar mais algumas coisas malucas e orientá-lo em mais alguns prompts. **Se você tem dificuldade em escrever prompts, nada disso será divertido rsrs.** Então, quero garantir que você tenha todos os segredos!
 
 Mas, espere um segundo! Como exatamente tudo isso funciona mesmo?
 
