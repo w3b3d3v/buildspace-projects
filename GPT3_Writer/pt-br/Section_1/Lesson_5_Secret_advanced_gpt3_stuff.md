@@ -35,7 +35,7 @@ Claro que existem exceções a essa regra, e alguns problemas são tão grandes 
 
 Realmente, muito bom!! Mas, eu quero transformar isso em um thread de tweets.
 
-Deixa eu te mostrar algo irado. Abra uma nova guia com um Playground vazio. Portanto, você deve ter duas guias agora. Um com a dissertação (Playground #1) e outro vazio (Playground #2).
+Deixa eu te mostrar algo irado. Abra uma nova guia com um Playground vazio. Portanto, você deve ter duas guias agora. Uma com a dissertação (Playground #1) e outra visualizações (Playground #2).
 
 No Playground #2, vá em frente e escreva este prompt:
 
@@ -65,7 +65,7 @@ Quando eu executo o Playground #2, eis o que é gerado:
 5/ Mas, em geral, acredito que é mais importante focar em construir algo que as pessoas desejam do que resolver um problema específico.
 ```
 
-Irado demais, não é? Agora você tem um thread do Twitter de 2 minutos sobre um pensamento que teve - e parece bem legal também. Está bem conciso e claro, exatamente como Paul Graham escreve.
+Muito incrível, não é? Agora você tem um thread do Twitter de 2 minutos sobre um pensamento que teve - e que parece bem legal também. Está bem conciso e claro, exatamente como Paul Graham escreve.
 
 Agora qualquer pessoa pode ser um líder de pensamentos rsrs.
 
@@ -115,7 +115,7 @@ Adorei a primeira ideia - é linda.
 
 Imagine se as crianças pudessem aprender a ler com histórias personalizadas geradas especialmente para elas.
 
-As histórias seriam perfeitas para elas. O GPT-3 poderia até gerar histórias que elas realmente gostassem (por exemplo, histórias de detetive, histórias de aventura, etc). As histórias até poderiam incluir os nomes dos personagens que elas inventaram, e elas poderiam estar nas próprias histórias. Além disso, poderíamos até dizer ao GPT-3 para usar certos tipos de vocabulário para garantir que o nível de leitura seja adequado
+As histórias seriam perfeitas para elas. O GPT-3 poderia até gerar histórias que elas realmente gostassem (por exemplo, histórias de detetive, histórias de aventura, etc). As histórias até poderiam incluir os nomes dos personagens que elas inventaram, e elas poderiam estar nas próprias histórias. Além disso, poderíamos até dizer ao GPT-3 para usar certos tipos de vocabulário para garantir que o nível de leitura seja adequado.
 
 **Antes de prosseguir, certifique-se de gerar uma ideia que você gosta, em um setor que considera interessante. Realidade virtual, criptomoedas, realidade aumentada, jogos, FinTechs, consumidor etc. Você precisará brincar muito com o setor, o público-alvo, etc. Como sempre, não me copie! Seja excelente em prompts!**
 
@@ -201,7 +201,7 @@ Ele inclui todas as coisas boas - o tamanho do mercado, o plano de negócios, a 
 
 Mais uma vez, sua apresentação gerada pode não estar boa o suficiente agora. Aproveite o tempo para brincar com o prompt.
 
-Seja bem específico com o GPT-3 — *“inclua uma descrição da assinatura mensal”*, *“inclua uma descrição do tamanho do mercado”*, *“inclua como planejamos gastar o dinheiro”*, etc. Você pode até fazer coisas como *“Escreva um e-mail para apresentar a startup para um investidor no estilo de Paul Graham”* ou qualquer outro fundador que você considere legítimo!
+Seja bem específico com o GPT-3 — *“inclua uma descrição da assinatura mensal”*, *“inclua uma descrição do tamanho do mercado”*, *“inclua como planejamos gastar o dinheiro”*, etc. Você pode até fazer coisas como *“Escreva um e-mail para apresentar a startup para um investidor, no estilo de Paul Graham”* ou qualquer outro fundador que você considere legítimo!
 
 Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivesse me dado mais de X” - basta literalmente pedir para o GPT-3 fazer a coisa X!!
 
@@ -209,7 +209,7 @@ Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivess
 
 Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar os roteiristas a criar mundos mais interessantes, etc.
 
-Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. Inferno, essa coisa pode até gerar RegEx para você — [confira essa coisa construída por um de nossos ex-alunos](https://twitter.com/gd3kr/status/1545370626273120256) que se tornou **viral**.
+Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. Caramba, essa coisa pode até gerar RegEx para você — [confira esse aplicativo construído por um de nossos ex-alunos](https://twitter.com/gd3kr/status/1545370626273120256) que se tornou **viral**.
 
 Eu ainda nem mostrei as coisas que ele pode fazer com códigos! [Este](https://www.buildgpt3.com/) é um site muito bom! Recomendo que você navegue por ele para obter mais exemplos de prompts e casos de uso + demonstrações.
 
