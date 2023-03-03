@@ -1,85 +1,86 @@
 
 [https://vimeo.com/775481130](https://vimeo.com/775481130)
 
-### **Who am I.**
+### Quem sou eu
 
-Hey! My name’s [Farza](https://twitter.com/FarzaTV). I started my first company at 13, got it to $100K ARR by 15. Ever since then, I’ve just continued building.
+Olá! Meu nome é [Farza](https://twitter.com/FarzaTV). Comecei minha primeira empresa aos 13 anos, cheguei aos 100 mil dólares de faturamento recorrente anual (ARR) aos 15 anos. Desde então, tenho continuado a construir.
 
-**Random highlights:** made short films, worked on self-driving cars as a deep learning researcher, made products for gamers from my bedroom that gathered over 1M users, built 2 ML companies (one acquired by Niantic and the other by Riot Games), founded an online school for kids and streamed 2,000,000+ minutes of content per week + had 100,000+ kids on it, and [pivoted](https://twitter.com/farzatv/status/1488965852519022592) it to buildspace -- went through Y-Combinator and recently raised $10M from a16z.
+**Destaques aleatórios:** fiz curtas-metragens, trabalhei com carros autônomos como pesquisador de Deep Learning (aprendizado profundo), fiz produtos para gamers diretamente do meu quarto que reuniram mais de 1 milhão de usuários, construí 2 empresas de Machine Learning (aprendizado de máquina) (uma adquirida pela Niantic e outra pela Riot Games), fundei uma escola on-line para crianças e transmiti mais de 2 milhões de minutos de conteúdo por semana, tive mais de 100.000 crianças nesta escola e a [pivotei](https://twitter.com/farzatv/status/1488965852519022592) para construir a buildspace - que passou pela aceleração da Y Combinator e recentemente levantou 10 milhões de dólares de capital da a16z.
 
-It might seem like I’ve done a lot but tbh at my core I’m just a fool figuring stuff out like everyone else.
+Pode parecer que eu fiz muito, mas no fundo, sinceramente, sou apenas um tolo tentando descobrir as coisas como todo mundo.
 
-### **What you need to know to build this.**
+### O que você precisa saber para construir isso.
 
-You don’t need to know *that* much to build this thing. Most of it, I’ll show you how to do along the way.
+Você não precisa ter *muito* conhecimento para construir isso. Mostrarei como fazer a maior parte ao longo do caminho.
 
-**But, you should at least know how to code in one language and how to use the command line. If you know JS and React that helps a lot as well.**
+**Mas você deve pelo menos saber como codificar em uma linguagem e como usar a linha de comando. Se você conhece JavaScript e React, isso também ajuda bastante.**
 
-- If you don’t know how to code in any language at all, my recommendation is you go [here](https://scrimba.com/learn/learnjavascript) first. **Our specialty at buildspace isn’t teaching people to code from scratch**, there are much better platforms for that.
-- If you know how to code a *little* but aren’t that confident, see how far you get in this build! If you have issues or see obvious gaps in your knowledge, don’t worry. Just Google it, or go back to the basics [here](https://scrimba.com/learn/learnjavascript).
-- If you know how to code in any language, but have never used React -- you’ll be fine just power through. If you end up really struggling w/ React, you can learn it [here](https://scrimba.com/learn/learnreact).
-- If you’re a pro I better see you at the end with a really fucking cool product. Inspire the rest of us!
+- Se você não sabe codificar em nenhuma linguagem, minha recomendação é que você visite [este link](https://scrimba.com/learn/learnjavascript) primeiro. **Nossa especialidade na buildspace não é ensinar as pessoas a programar do zero**, existem plataformas muito melhores para isso.
+- Se você sabe codificar um *pouco*, mas não tem tanta confiança, veja até onde você consegue ir no que estamos construindo! Se você tiver problemas ou perceber lacunas óbvias em seu conhecimento, não se preocupe. Basta pesquisar no Google ou voltar ao básico [aqui](https://scrimba.com/learn/learnjavascript).
+- e você sabe como codificar em qualquer linguagem, mas nunca usou o React - vai ficar tudo bem! Apenas continue tentando. Se você acabar realmente tendo dificuldades com o React, poderá aprender sobre ele [aqui](https://scrimba.com/learn/learnreact).
+- Se você é um profissional, espero ver você no final com um produto realmente incrível. Inspire o resto de nós!
 
-### **All our content is fully open-source.**
+### Nosso conteúdo é totalmente open-source.
 
-All of the content you see here is 100% open-source.
+Tudo o que você vê aqui é 100% de código aberto.
 
-We’ve had over 1000+ PRs made to our repo.
+Tivemos mais de 1000 PRs feitos em nosso repositório.
 
-If you see an issue in the content or want to make an addition, just make a PR and once it’s accepted it’ll be instantly updated here for everyone.
+Se você encontrar um problema com o conteúdo ou quiser fazer uma adição, basta fazer um PR (pull request) e, uma vez aceito, será atualizado instantaneamente aqui para todos.
 
-Tech moves quick. And, it’s because of the beautiful people making PRs that this content always stays up to date.
+A tecnologia evolui rapidamente. E é graças às pessoas incríveis que fazem PRs que esse conteúdo fica sempre atualizado.
 
-**Please check out the repo [here](https://github.com/buildspace/buildspace-projects)** -- give it a star if you’re feeling nice! Helps us out a lot.
+**Confira o nosso repositório [aqui](https://github.com/buildspace/buildspace-projects)** -- dê uma estrela se você estiver de bem com a vida! Isso nos ajuda muito.
 
-### **How to get help.**
+### Como obter ajuda.
 
-You’ll probably run into some roadblocks while building.
+Você provavelmente encontrará alguns obstáculos durante a construção.
 
-That’s why we have a moderator team whose main goal it is to help you get through any issues so you can actually ship this thing.
+É por isso que temos uma equipe de moderadores cujo objetivo principal é ajudá-lo a superar qualquer problema, para que você possa realmente entregar isso.
 
-Whenever you run into something you can hit the mods up directly in the Discord by doing `@mods` to ping them. You can also run `/question` which will alert the mods with your question.
+Sempre que se deparar com algum problema, você pode procurar os moderadores diretamente no Discord usando `@mods` para mencioná-los. Também é possível usar `/question`, o que irá alertar os moderadores com sua pergunta.
 
-**Please keep all discussions around this build in the help sections of the `BUILD AN AI WRITER` section on the Discord. If you start asking questions in random channels in the Discord you’ll piss us off lol.**
+**Por favor, mantenha todas as discussões sobre esta construção nas seções de ajuda do canal `BUILD AN AI WRITER` do Discord. Se você começar a fazer perguntas em canais aleatórios do Discord, vai nos deixar irritados rsrs.**
 
-If you don’t have access to these channels, relink your Discord [here](https://buildspace.so/p/build-ai-writing-assistant-gpt3).
+Se você não tiver acesso a esses canais, reconecte seu Discord [aqui](https://buildspace.so/p/build-ai-writing-assistant-gpt3).
 
-### 💎 Earning an NFT
+### 💎 Ganhando um NFT
 
-When you reach the end of this project, you'll be able to mint an NFT.
+Quando chegar ao final deste projeto, você poderá cunhar um NFT
 
-Here's what it looks like:
+Veja como ele é:
 
 <img src="https://gateway.ipfscdn.io/ipfs/Qmc1s7wW8XoUirP4o8vw1H7FZw4BGMVEraiNC5ecdMkftF/4.png" />
 
-**Note: Please reach out to Alec(alec#8853), CodePerfect(CodePerfect#6638) or Raza(TooManyBugs#3359) if you encounter any issues with claiming your NFTs**
+**Observação: entre em contato com Alec (alec#8853), CodePerfect (CodePerfect#6638) ou Raza (TooManyBugs#3359) se tiver problemas ao reivindicar seus NFTs.**
 
-### Build in public.
+### Construindo publicamente.
 
-Through this build, I’ll give you certain moments where you can tweet about what you’re building + give you pre-built tweets to inspire you to tell the world about what you're building.
+Ao longo desta construção, lhe darei alguns momentos em que você poderá tweetar sobre o que está construindo e também lhe darei tweets pré-construídos para inspirá-lo a contar ao mundo sobre o que está construindo.
 
-There is zero harm in **building in public —** believe it or not, almost all the people I’ve met have helped me continue building great things I met because I tweeted randomly about what I was building lol. 
+Não há mal algum em **construir publicamente**. Acredite ou não, quase todas as pessoas que conheci me ajudaram a continuar construindo grandes coisas que conheci porque tweetei aleatoriamente sobre o que estava construindo rsrs. 
 
-The stupid [tweet](https://twitter.com/FarzaTV/status/1247917195767808000) below led a16z to reach out to me to invest in ZipSchool — the previous thing I was working on. I had like 200 followers at the time lol. I just randomly tweeted when I shipped new stuff. 
+O [tweet](https://twitter.com/FarzaTV/status/1247917195767808000) estúpido abaixo levou a16z a me procurar para investir na ZipSchool - a coisa anterior na qual eu estava trabalhando. Eu tinha uns 200 seguidores na época rsrs. Eu apenas tweetei aleatoriamente quando lancei coisas novas. 
 
 ![](https://i.imgur.com/cDBumIw.png)
 
-**Never** underestimate building in public.
+**Nunca** subestime a construção em público.
 
-### **What happens at the end?**
+### O que acontece no final?
 
-At the end of every build at buildspace, you get the ability to claim a unique NFT.
+No final de cada projeto na buildspace, você poderá garantir um NFT exclusivo.
 
-This NFT gives you access to a few secret powers:
+Este NFT oferece acesso a alguns poderes secretos:
 
-1. **It gets you access to alumni channels on our Discord,** which is where most of the more interesting discussions happen. Way less noise and way higher value -- it’s where all the true shippers are.
+1. **Ele concede acesso aos canais de ex-alunos em nosso Discord**, que é onde as conversas mais interessantes acontecem. Há muito menos ruído e muito mais valor - é onde estão todos os verdadeiros construtores.
 
-2. A lot of magic when building happens IRL. That’s why we’re building out IRL hubs around the world for our top alumni to visit/build from whenever they want. The more NFTs you hold, the better chance you have of getting access. **Our first IRL hub opens in SF on March 1, 2023.**
+2. Muito da magia acontece ao construir na vida real. É por isso que estamos criando hubs da vida real (presenciais) em todo o mundo, para que nossos principais ex-alunos possam visitar/construir sempre que quiserem. Quanto mais NFTs você tiver, mais chances terá de obter acesso. **Nosso primeiro hub presencial irá abrir em São Francisco, na Califórnia, em 1º de março de 2023.**
 
-3. **You’ll get accepted instantly to [Nights & Weekends](https://buildspace.so/nights-and-weekends)** if you have the NFT. N&W is kinda like an accelerator we run -- build out any idea you want over 6-weeks, come out to San Francisco for 3-days to build IRL, and present your work at demo day in front of thousands. N&W alumni have gone on to raise millions of dollars.
+3. **Você será aceito instantaneamente no [Nights & Weekends](https://buildspace.so/nights-and-weekends)** (noites e finais de semana) se tiver o NFT. O N&W é como um acelerador que administramos - crie qualquer ideia que desejar em 6 semanas, venha para São Francisco por 3 dias para construir na vida real e apresente seu trabalho no dia da demonstração para milhares de pessoas. Os ex-alunos do N&W arrecadaram milhões de dólares.
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou o Farza ficará triste.
 
-In #gpt3-general — tell the world why you’re curious about doing this stuff. It’d be cool to understand why you’re curious about this stuff, what you’re trying to build, what inspired you to get into this, etc.
+No canal #gpt3-general, diga ao mundo por que você está curioso sobre como fazer essas coisas. Seria legal entender por que você está curioso, o que está tentando construir, o que o inspirou a se envolver com isso, etc.
 
-Also, this is a cool way to make some friends — the magical thing about buildspace is that over **135,000 people are in the Discord** and you never know who may see your message, resonate with what you say, and reach out to you! 
+Além disso, esta é uma maneira legal de fazer alguns amigos - a coisa mágica sobre a buildspace é que mais de **135 mil pessoas estão no Discord** e você nunca sabe quem pode ver sua mensagem, se identificar com o que você diz e entrar em contato com você!
+
