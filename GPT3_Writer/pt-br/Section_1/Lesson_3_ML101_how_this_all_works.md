@@ -1,5 +1,5 @@
 
-Você pode estar se perguntando como essa coisa funciona - e, honestamente, entender como funciona irá aprimorar ainda mais seu uso.
+Você pode estar se perguntando como essa coisa funciona. Honestamente, entender como isso funciona irá aprimorar ainda mais seu uso.
 
 *Observação: se você já sabe como o GPT-3 (aprendizado profundo) funciona, fique à vontade para pular essa parte.*
 
@@ -62,7 +62,7 @@ O que fazemos aqui é calcular a diferença entre “Índia” e “Konoha” �
 
 Por favor, observe: estou simplificando tudo isso. A matemática que está acontecendo nos bastidores para calcular o erro é muito mais complexa. Mas, queremos que você entenda isso conceitualmente!
 
-Esse erro é então usado para atualizar cada parâmetro no modelo - dizemos ao GPT-3 que ele errou a resposta correta por um valor x e para ajustar ligeiramente todos os seus parâmetros para que seja mais provável gerar a resposta correta na próxima vez
+Esse erro é então usado para atualizar cada parâmetro no modelo - dizemos ao GPT-3 que ele errou a resposta correta por um valor x e para ajustar ligeiramente todos os seus parâmetros para que seja mais provável gerar a resposta correta na próxima vez.
 
 Isso é chamado de “treinamento não supervisionado”. Veja uma explicação visual [aqui](https://jalammar.github.io/images/gpt3/03-gpt3-training-step-back-prop.gif).
 
