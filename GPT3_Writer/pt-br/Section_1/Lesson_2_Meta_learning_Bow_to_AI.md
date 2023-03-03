@@ -1,189 +1,191 @@
 
-Creating good prompts isn’t easy!
+Criar bons prompts não é fácil!
 
-Like I said earlier, creating prompts is a skill and you won’t become a prompt god within 30-minutes. My goal is just to give you just enough skill so you can go on and build something interesting later on in this project.
+Como eu disse anteriormente, criar prompts é uma habilidade e você não se tornará um mestre do prompt em 30 minutos. Meu objetivo é apenas dar a você habilidades suficientes para que possa continuar e construir algo interessante mais tarde neste projeto.
 
-Let me give you another skill that will be super useful to you later on — meta-learning.
+Deixe-me dar a você uma outra habilidade que será muito útil mais tarde - o meta-aprendizado.
 
-### Meta-learning — using what GPT-3 generated as a prompt.
-We had to do **a lot of work** to get a good story, right? We had to give it a plot, a villain, all that stuff. We had to keep changing the temperature.
+### Meta-aprendizado — usando o que o GPT-3 gerou como um prompt
 
-Seems like a lot of work!
+Tivemos que **trabalhar muito** para obter uma boa história, não é mesmo? Tivemos que dar a ela um enredo, um vilão, todas essas coisas. Tivemos que ficar mudando a temperatura.
 
-That’s because so far what we’ve been doing is called **“zero-shot learning”** — this is where you don’t give GPT-3 any example of something that’s already good. You just expect the first thing it generates to be good. Sometimes, GPT-3 does fine in the scenario. *But just know that zero-shot learning is where GPT-3 performs its worst.*
+Parece ser muito trabalhoso!
 
-But the thing that makes GPT-3 really really good is where you give it **examples**.
+Isso ocorre porque até agora o que temos feito é chamado de **“zero-shot learning”** (aprendizado com zero exemplos) — isso significa que você não dá ao GPT-3 nenhum exemplo de algo que já é bom. Você apenas espera que a primeira coisa gerada seja boa. *Às vezes, o GPT-3 se sai bem no cenário. Mas saiba que é no zero-shot learning que o GPT-3 apresenta o pior desempenho.*
 
-But, check this out. This is where things get weird.
+Mas o que faz o GPT-3 ser realmente bom é quando você fornece **exemplos** a ele.
 
-I can use what GPT-3 generated as an **example** so that the next thing it generates will be even better. I’m going to delete all the `Setting` and `Plot` stuff. We don’t need it. **Now, GPT-3 has a clear example of a story we like so we don’t need all of that.**
+Mas, atenção. É aqui que as coisas ficam estranhas.
 
-**Note: at this point, be sure you have a generated story that you think is decent! Worst case scenario — copy my story.**
+Posso usar o que o GPT-3 gerou como **exemplo**, então a próxima coisa que ele gerar será ainda melhor. Vou apagar todas as coisas de `Cenário` e `Enredo`. Não precisamos disso. **Agora, o GPT-3 tem um exemplo claro de uma história que gostamos, então não precisamos de tudo isso.**
 
-Now, my prompt looks like this, where I created a new prompt at the bottom about “Elon and the Space Empire” — but notice once again I don’t need to provide a setting, plot, etc because GPT-3 already has an example.
+**Observação: neste ponto, certifique-se de ter gerado uma história que você acha decente! No pior cenário, copie minha história.**
 
-This is called **“single-shot learning”**. Because GPT-3 has a single example it’s learning from!
+Agora, meu prompt fica assim, onde criei um novo prompt na parte inferior sobre "Elon e o Império do Espaço" - mas observe mais uma vez que não preciso fornecer um cenário, enredo, etc porque o GPT-3 já tem um exemplo.
 
-```
-Prompt: Tell me a full story with a beginning, middle, and end titled "Farza and the Lost Kingdom" set in the 1500s that feels like an anime.
-
-Story: Farza was just a normal boy, living in a poor, broken kingdom that had been destroyed by Furqan. But little did he know that he had secret powers that could help him defeat the villain and take back the kingdom.
-
-One day, Farza decided to confront Furqan and challenge him to a duel. Farza was confident in his abilities, but Furqan was much stronger and more experienced. The battle was fierce, but eventually Furqan emerged victorious.
-
-However, as he was about to deliver the final blow, Farza's latent powers suddenly awakened and he was able to turn the tide of the battle. In the end, Farza emerged victorious and the kingdom was finally free from Furqan's tyranny.
-
-Prompt: Tell me a full story with a beginning, middle, and end titled "Elon and the Space Empire" set in a dystopian future that feels like an anime where Elon Musk has the power to teleport.
-
-Story:
-```
-
-I explicitly use `Prompt:` and `Story:` just so GPT-3 knows where the last story stopped, and where the next one should start. And like I said, I also came up with a new storyline at the bottom, now it’s an anime about Elon where he can teleport to save the galaxy. I also ask it this time for more of `fairy-tale type` story vs an anime.
-
-*Note: Try out other genres as well: horror, comedy, sci-fi, etc. Also, please don’t copy my Elon story premise! Come up with your own. Make your story something widely different from the first story.*
-
-What’s crazy here is when I run this, GPT-3 will take **all of this text as input** and use the previous story we generated **as an example for itself.**
-
-Before you run this, change the `Maximum length` on the right to 1000. We’ll talk more about this later, but basically, this is the limit to how long the input + generated output can be. We’ll make it 1000 — this won’t *necessarily* lead to a longer story though. It just gives the model room to do so, though.
-
-*Note: Keep this number small. OpenAI charges based on how much you’re generating. Keep track of how much credit you have left [here](https://beta.openai.com/account/usage).*
-
-Here’s what was generated after I ran the prompt:
+Isso é chamado de **“single-shot learning”** (aprendizado com único exemplo). Porque o GPT-3 tem um único exemplo com o qual está aprendendo!
 
 ```
-Elon was just an ordinary boy living in a dystopian future where the space empire ruled with an iron fist. But Elon had a secret power - he could teleport.
+Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 que parece um anime.
 
-One day, Elon decided to use his power to help the oppressed people of the space empire. He began by teleporting into the emperor's palace and stealing his prized space sword. Then, he teleported to different parts of the empire, freeing people from prison and helping them escape to safety.
+História: Farza era apenas um menino normal, vivendo em um reino pobre e quebrado que havia sido destruído por Furqan. Mas ele mal sabia que tinha poderes secretos que poderiam ajudá-lo a derrotar o vilão e retomar o reino.
 
-Elon's acts of defiance quickly gained the attention of the space empire, and they began to hunt him down. However, no matter how hard they tried, they could never catch him.
+Um dia, Farza decidiu enfrentar Furqan e desafiá-lo para um duelo. Farza confiava em suas habilidades, mas Furqan era muito mais forte e mais experiente. A batalha foi acirrada, mas finalmente Furqan saiu vitorioso.
 
-Eventually, Elon's actions inspired others to start rising up against the space empire. With Elon leading the charge, they were finally able to overthrow the tyrannical regime and create a new, better society.
+No entanto, quando ele estava prestes a desferir o golpe final, os poderes latentes de Farza despertaram repentinamente e ele foi capaz de mudar o rumo da batalha. No final, Farza saiu vitorioso e o reino estava finalmente livre da tirania de Furqan.
+
+Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Elon e o Império do Espaço", ambientada em um futuro distópico que parece um anime onde Elon Musk tem o poder de se teletransportar.
+
+História:
 ```
 
-Absolutely fucking insane. Imagining Elon teleporting into the emperors palace to steal his “prized space sword” killed me lol.
+Eu uso explicitamente `Prompt:` e `História:` apenas para que o GPT-3 saiba onde a última história parou e onde a próxima deve iniciar. E como eu disse, também criei um novo enredo no final, que agora é um anime sobre Elon, onde ele pode se teletransportar para salvar a galáxia. Desta vez, peço uma história mais do `tipo conto de fadas`, em vez de um anime.
 
-Do you see the magic here?
+*Observação: Experimente outros gêneros também, como terror, comédia, ficção científica, etc. Além disso, por favor, não copie a premissa da minha história sobre o Elon! Crie a sua própria história, algo completamente diferente da primeira.*
 
-It’s all in the prompt. It takes a while but once you get there it’s insane. **If you’re still struggling with your prompt** — that’s expected. Keep messing with the temperature, keep playing with the input. Feel free to ping the support channel if you need prompt help.
+O mais louco aqui é que, quando eu executo tudo isso, o GPT-3 usa **todo esse texto como entrada** e usa a história gerada anteriormente **como um exemplo para si mesmo**.
 
-It takes me like 6-12 changes every time to get what I want. For example, is the 2nd story that GPT-3 generates trash? Well — then maybe make changes to the 2nd stories description — give more context + details. GPT-3 is only as good as you make it.
+Antes de executar isso, altere`Maximum length` à direita para 1000. Vamos falar mais sobre isso depois, mas basicamente este é o limite para o tamanho que a entrada + saída gerada podem ter. Vamos colocar em 1000 - isso não *necessariamente* levará a uma história mais longa. Apenas dá espaço para o modelo fazê-lo, no entanto.
 
-**If you still haven’t come up with a solid story you’re happy with — that’s fine**. Keep on treading forward my friend. No point in getting obsessed with particular prompts!
+*Observação: mantenha esse número pequeno. A OpenAI cobra com base em quanto você está gerando. Acompanhe [aqui](https://beta.openai.com/account/usage) quanto de crédito você ainda tem.*
 
-### Magic: Using GPT-3 as a true writing assistant.
-
-Let me show you something super sick. GPT-3 is really good at completing your thought.
-
-So, we can actually continue building this story by just letting GPT-3 finish our sentence or **starting a new situation**.
-
-Check it out. I’m just gonna stir some shit up. I’m like that chaotic drunk dude at the club looking for a fight.
-
-I’m going to **delete everything** in Playground and use just my Elon story generated above — *be sure you take your own story that was generated, don’t use my Elon story! I keep stressing this, but I really don’t want you to use my stories and premises. Get your own!*
-
-I added a new situation at the end where Elon ends up being the bad guy. I added, ***“But then! A twist! Elon was actually the bad guy. After a decade of peace, things changed. It turns out that”.***
-
-Go ahead and do the same for your story. Notice how I didn’t finish the sentence I’m going to let GPT-3 do that for me.
+Aqui está o que foi gerado depois que executei o prompt:
 
 ```
-Elon was just an ordinary boy living in a dystopian future where the space empire ruled with an iron fist. But Elon had a secret power - he could teleport.
+Elon era apenas um garoto comum vivendo em um futuro distópico onde o império espacial governava com punhos de ferro. Mas Elon tinha um poder secreto - ele podia se teletransportar.
 
-One day, Elon decided to use his power to help the oppressed people of the space empire. He began by teleporting into the emperor's palace and stealing his prized space sword. Then, he teleported to different parts of the empire, freeing people from prison and helping them escape to safety.
+Um dia, Elon decidiu usar seu poder para ajudar as pessoas oprimidas do império espacial. Ele começou se teletransportando para o palácio do imperador e roubando sua valiosa espada espacial. Em seguida, ele se teletransportou para diferentes partes do império, libertando pessoas da prisão e ajudando-as a escapar em segurança.
 
-Elon's acts of defiance quickly gained the attention of the space empire, and they began to hunt him down. However, no matter how hard they tried, they could never catch him.
+Os atos de desafio de Elon rapidamente chamaram a atenção do império espacial, e eles começaram a persegui-lo. No entanto, não importa o quanto eles tentassem, nunca conseguiram capturá-lo.
 
-Eventually, Elon's actions inspired others to start rising up against the space empire. With Elon leading the charge, they were finally able to overthrow the tyrannical regime and create a new, better society.
-
-But then! A twist! Elon was actually the bad guy. After a decade of peace, things changed. It turns out that
+Eventualmente, as ações de Elon inspiraram outros a se levantarem contra o império espacial. Com a liderança de Elon no ataque, eles finalmente conseguiram derrubar o regime tirânico e criar uma sociedade nova e melhor.
 ```
 
-Earlier, it may have been really hard for you to generate a twist. But now, it’s pretty straight forward because GPT-3 can easily continue your story since so much of it is already written.
+Absolutamente incrível. Imaginar Elon se teletransportando para o palácio do imperador para roubar sua "espada espacial valiosa" me deixou pasmo rsrs.
 
-Once you submit here, you’ll see that GPT-3 literally finishes your sentence around this new situation. It’s pretty cool, here’s what I got:
+Você vê a magia aqui?
 
-```
-But then! A twist! Elon was actually the bad guy. After a decade of peace, things changed. It turns out that Elon had been using his power to mind control people and make them do his bidding. He had been using the revolution as a way to get more power for himself.
+Está tudo no prompt. Leva um tempo, mas quando você chega lá, é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal de suporte se precisar de ajuda com o prompt.
 
-Now, the people of the space empire are once again living in fear, not knowing who to trust. But Elon is still out there somewhere, waiting for his chance to strike again...
-```
+Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo, a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o faz.
 
-LOL — pretty wild.
+**Se você ainda não criou uma história sólida com a qual esteja feliz - tudo bem**. Continue seguindo em frente, meu amigo. Não adianta ficar obcecado com prompts específicos!
 
-**I want to be very clear — you can keep doing this**. **You can use GPT-3 to complete any thought. The applications are endless,** Keep writing a sentence, let GPT-3 add a few more, write another sentence, see what GPT-3 generates, add another sentence.
+### Magia: Utilizando o GPT-3 como um verdadeiro assistente de escrita
 
-You could use this same flow to write tweets, product descriptions, essays, newsletters, articles, blogs, whatever. .
+Deixe-me mostrar-lhe algo super incrível. O GPT-3 é realmente bom para completar seus pensamentos.
 
-You may be asking, “What happens if I keep clicking Submit and just let GPT-3 keep going by itself?”. Try it out! Go to your story, and keep clicking submit. Eventually — GPT-3 will keep outputting the same thing over and over. Why?
+Portanto, podemos continuar construindo essa história apenas deixando o GPT-3 completar nossa frase ou **iniciando uma nova situação.**
 
-Well, the model needs you (the human) to keep giving it new material to work with so it can better understand what you need. **It isn’t good at just going off on its own**, again, you need to guide it. This is also how you can keep making the story longer.
+Veja só. Eu vou apenas agitar as coisas. Eu sou como aquele bêbado doidão na balada procurando briga.
 
-There is a more interesting way to make the story longer we’ll talk about later.
+Eu vou **apagar tudo** no Playground e usar apenas minha história do Elon gerada acima — *certifique-se de pegar sua própria história que foi gerada, não use a minha história do Elon! Eu continuo enfatizando isso, pois eu realmente não quero que você use minhas histórias e premissas. Crie suas próprias!*
 
-### Fk it let’s write a song.
+Eu adicionei uma nova situação no final em que Elon acaba sendo o vilão. Acrescentei: **“Mas então, uma reviravolta! Elon acabou sendo realmente o vilão. Depois de uma década de paz, as coisas mudaram. Acontece que”.**
 
-If GPT-3 can generate stories — it can *probably* generate a song lol. And if it can generate a song, we can probably be really specific about what the lyrics of the songs are about. Run this prompt on your own:
+Vá em frente e faça o mesmo com sua história. Observe que eu não terminei a frase, pois irei deixar o GPT-3 fazer isso por mim.
 
 ```
-Write me a song that rhymes in the style of Drake that talks about black holes.
+Elon era apenas um garoto comum vivendo em um futuro distópico onde o império espacial governava com punhos de ferro. Mas Elon tinha um poder secreto - ele podia se teletransportar.
+
+Um dia, Elon decidiu usar seu poder para ajudar as pessoas oprimidas do império espacial. Ele começou se teletransportando para o palácio do imperador e roubando sua valiosa espada espacial. Em seguida, ele se teletransportou para diferentes partes do império, libertando pessoas da prisão e ajudando-as a escapar em segurança.
+
+Os atos de desafio de Elon rapidamente chamaram a atenção do império espacial, e eles começaram a persegui-lo. No entanto, não importa o quanto eles tentassem, nunca conseguiram capturá-lo.
+
+Eventualmente, as ações de Elon inspiraram outros a se levantarem contra o império espacial. Com a liderança de Elon no ataque, eles finalmente conseguiram derrubar o regime tirânico e criar uma sociedade nova e melhor.
+
+Mas então, uma reviravolta! Elon acabou sendo realmente o vilão. Depois de uma década de paz, as coisas mudaram. Acontece que
 ```
 
-Be sure to replace “Drake” with an artist you like and replace “black holes” with something else you want your song to be about. Maybe you want your song to be about a girl named Lisa or something.
+Anteriormente, pode ter sido bem difícil para você gerar uma reviravolta. Mas agora, é bem direto porque o GPT-3 pode facilmente continuar sua história, já que grande parte dela já está escrita.
 
-I actually got a pretty decent output:
+Ao enviar aqui, você verá que o GPT-3 literalmente termina sua frase nesta nova situação. É bem legal! E aqui está o que eu obtive:
 
-```
-I'm falling into a black hole
-And I can't get out
-I'm trapped in this dark space
-With no way to escape
-
-I keep falling deeper
-Into the abyss
-There's no bottom
-To this place
-
-I'm spinning faster
-And faster
-Toward the center
-Of this hole
-
-Gravity is pulling me
-In tighter
-And tighter
-Until I'm obsolete
-```
-
-If you go [here](https://www.youtube.com/watch?v=pueqv3SS_qA), and forward to 0:25 and start rapping the lyrics above it’s actually legit lol.
-
-You can even do hilarious shit like this:
 
 ```
-Write me a song for pirates that explains why Python is better than Javascript:
+Mas então, uma reviravolta! Elon acabou sendo realmente o vilão. Depois de uma década de paz, as coisas mudaram. Acontece que Elon estava usando seu poder para controlar a mente das pessoas e fazê-las cumprir suas ordens. Ele estava usando a revolução como uma forma de obter mais poder para si mesmo.
+
+Agora, as pessoas do império espacial estão novamente vivendo com medo, sem saber em quem confiar. Mas Elon ainda está por aí em algum lugar, esperando por sua chance de atacar novamente…
 ```
 
-Or, fuck it just write a song is a completely different language.
+Muito louco! Rsrs…
+
+**Quero deixar bem claro - você pode continuar fazendo isso. Você pode usar GPT-3 para completar qualquer pensamento. As aplicações são infinitas.** Escreva uma frase, deixe o GPT-3 adicionar mais algumas, escreva outra frase, veja o que o GPT-3 gera, adicione outra frase.
+
+Você pode usar esse mesmo fluxo para escrever tweets, descrições de produtos, ensaios, boletins informativos, artigos, blogs, o que quiser.
+
+Você pode estar se perguntando: “O que acontece se eu continuar clicando em Enviar e deixar o GPT-3 continuar sozinho?”. Experimente! Vá para a sua história e continue clicando em enviar. Eventualmente, o GPT-3 continuará gerando a mesma coisa indefinidamente. Por quê?
+
+Bem, o modelo precisa que você (o humano) continue fornecendo a ele novos conteúdos para trabalhar, para que ele possa entender melhor o que você precisa. **Ele não é bom agindo por conta própria**, pois novamente, você precisa guiá-lo. É também assim que você pode continuar a prolongar a história.
+
+Existe uma maneira mais interessante de prolongar a história, sobre a qual falaremos mais tarde.
+
+### Vamos então escrever uma música
+
+Se o GPT-3 pode gerar histórias - ele *provavelmente* pode gerar uma música rsrs. E se ele pode gerar uma música, provavelmente podemos ser bem específicos sobre o que falam as letras das músicas. Execute este prompt por conta própria:
 
 ```
-Write me a song in Hindi about a boy who lost his computer:
+Escreva uma música com rimas no estilo do cantor Drake, que fale sobre buracos negros.
 ```
 
-I’ll let you play around with this one above, it’s mind-blowing because it **combines creative writing + real-world facts**. Go try and have Taylor Swift write a song explaining how to play Super Smash Bros or something! You can do whatever.
+Certifique-se de substituir “Drake” por um artista que você gosta e substituir “buracos negros” por algo diferente sobre o qual você deseja que sua música seja. Talvez você queira que sua música seja sobre uma garota chamada Lisa ou algo assim.
 
-The prompt isn’t perfect so the results may not be amazing, but be sure to mess around with it.
+Na verdade, eu consegui uma saída bem decente:
 
-Shoutout out to one of our builders Naklecha who inspired this part of the lesson. He actually turned this story explainer thing into a fully-fledged product [here](https://twitter.com/naklecha/status/1587046444854190081) that uses stories instead of songs.
+```
+Estou caindo em um buraco negro 
+E não consigo sair 
+Estou preso neste espaço escuro 
+Sem nenhuma maneira de escapar
 
-### Onwards
+Eu continuo caindo mais fundo
+Para o abismo
+Não há fundo
+Para este lugar
 
-We’ve already done some pretty crazy shit without a single line of code lol. You can probably imagine tons of ideas at this point.
+Estou girando mais rápido
+E mais rápido
+Em direção ao centro
+Deste buraco
 
-But for a bit longer, let’s keep messing around in the Playground a **little** bit more — and then we’ll hop to writing some code. I want to show you a few more crazy things and walk you through a few more prompts. **If you suck at writing prompts, none of this will be fun lol.** So, I wanna make sure you got all the secrets!
+A gravidade está me puxando
+Apertando mais
+E apertando mais
+Até que eu me torne obsoleto
+```
 
-But — wait a second, how tf does all this stuff even work?
+Se você for [aqui](https://www.youtube.com/watch?v=pueqv3SS_qA), avançar para 0:25 e começar a fazer um rap com os versos acima, na verdade fica bem legal rsrs.
 
-### Please do this or Farza will be sad.
+Você pode até fazer coisas hilárias como esta:
 
-Some big progress was made here! Nice work.
+```
+Escreva uma música para piratas que explique por que Python é melhor que Javascript:
+```
 
-Once again — go ahead and take a screenshot of Playground with your latest story, song, or whatever else you want to show and post it into #prompts on Discord.
+Ou, f&%@-se, apenas escreva uma música em uma linguagem completamente diferente.
 
-Along with the image plz include your **prompt** to make it easy for others to easily see your prompt for inspo.
+```
+Escreva uma música em hindi sobre um menino que perdeu o computador:
+```
+
+Eu deixarei você brincar com esta música acima. É incrível porque ela **combina escrita criativa com fatos do mundo real**. Tente fazer com que a Taylor Swift escreva uma música explicando como jogar Super Smash Bros ou algo assim! Você pode fazer o que quiser.
+
+O prompt não é perfeito, então os resultados podem não ser surpreendentes, mas certifique-se de mexer com ele.
+
+Um grande agradecimento a um de nossos builders, Naklecha, que inspirou esta parte da lição. Ele realmente transformou esse explicador de histórias em um produto completo [veja aqui](https://twitter.com/naklecha/status/1587046444854190081), que usa histórias em vez de músicas.
+
+### Seguindo adiante
+
+Já fizemos algumas coisas bem loucas sem uma única linha de código rsrs. Nesse ponto, você provavelmente consegue imaginar várias ideias.
+
+Mas, por um pouco mais de tempo, vamos continuar brincando **um pouco** mais no Playground - e depois vamos começar a escrever algum código. Quero mostrar a você mais algumas coisas malucas e orientá-lo em mais alguns prompts. **Se você tem dificuldade em escrever prompts, nada disso será divertido rsrs.** Então, quero garantir que você tenha todos os segredos!
+
+Mas, espere um segundo! Como exatamente tudo isso funciona mesmo?
+
+### Por favor, faça isso ou Farza ficará triste
+
+Tivemos um grande progresso por aqui! Excelente trabalho!
+
+Mais uma vez, vá em frente e tire uma captura de tela do Playground com sua última história, música ou qualquer outra coisa que você queira mostrar e poste na seção #prompts do Discord.
+
+Juntamente com a imagem, por favor, inclua seu **prompt** para que outras pessoas possam vê-lo facilmente para se inspirar.
