@@ -84,7 +84,7 @@ const Home = () => {
         </div>
         {/* Adicione esse código aqui */}
         <div className="prompt-container">
-          <textarea placeholder="start typing here" className="prompt-box" />
+          <textarea placeholder="digite aqui..." className="prompt-box" />
         </div>
       </div>
       <div className="badge-container grow">
@@ -116,7 +116,7 @@ Depois de fazer isso, você terá algo parecido com a imagem abaixo. Tente digit
 
 O elemento `textarea` é muito legal, pois nos dá uma maneira simples de permitir que os usuários digitem em nosso aplicativo da web e também nos dá uma maneira fácil de realmente capturar o que o usuário está digitando, para que possamos enviá-lo para a API do GPT-3 mais tarde.
 
-Vamos configurar esse sistema de captura para podermos saber o que nosso usuário está digitando. Vamos adicionar um [Gancho do React](https://reactjs.org/docs/hooks-intro.html) (React Hook) para isso. Vá em frente e importe useState no topo do seu arquivo:
+Vamos configurar esse sistema de captura para podermos saber o que nosso usuário está digitando. Vamos adicionar um gancho do React ([React Hook](https://reactjs.org/docs/hooks-intro.html)) para isso. Vá em frente e importe `useState` no topo do seu arquivo:
 
 ```jsx
 import { useState } from 'react';
@@ -133,7 +133,7 @@ Agora, vamos usar essas variáveis no elemento `textarea` que você criou anteri
 ```jsx
 <textarea
   className="prompt-box"
-  placeholder="start typing here"
+  placeholder="digite aqui..."
   value={userInput}
   onChange={onUserChangedText}
 />;
@@ -158,14 +158,14 @@ Fácil! Vamos testar. Vá para o seu console e comece a digitar na área de text
 
 ![Untitled](https://i.imgur.com/X6cS8xx.png)
 
-Consegue ver como ele dispara um evento para cada tecla que você digita? Estamos pegando esse objeto do evento, capturando o texto, imprimindo-o e mantendo-o em nosso estado de entrada. Fique à vontade para remover a instrução `console.log` agora, para que ela não polua seu console
-.
+Consegue ver como ele dispara um evento para cada tecla que você digita? Estamos pegando esse objeto do evento, capturando o texto, imprimindo-o e mantendo-o em nosso estado de entrada. Fique à vontade para remover a instrução `console.log` agora, para que ela não polua seu console.
+
 Agora, vamos apenas adicionar um botão de geração que o usuário pode clicar para gerar algo mágico. Mais tarde, conectaremos isso à API do GPT-3. Mas, por enquanto, vamos adicioná-lo como um botão que não faz nada.
 
 ```jsx
 <div className="prompt-container">
   <textarea
-    placeholder="start typing here"
+    placeholder="digite aqui..."
     className="prompt-box"
     value={userInput}
     onChange={onUserChangedText}
@@ -212,7 +212,7 @@ Além disso, observe como cada caso de uso é específico! Quanto mais específi
 
 Assim que criar seu título principal e seu subtítulo, altere-os no código!
 
-```
+```jsx
 <div className="header-title">
   <h1>e aí… insira seu título principal aqui</h1>
 </div>
@@ -237,4 +237,4 @@ Por favor, **não copie** nenhum dos meus títulos aqui! Crie seu próprio caso 
 
 ### Por favor, faça isso ou Farza ficará triste
 
-Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.
+Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e seu subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.
