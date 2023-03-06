@@ -5,7 +5,7 @@ Vamos então construir algo!
 
 Já mostrei vários casos de uso e tipos de prompts. O que você provavelmente percebeu é que o GPT-3 é meio ruim como “assistente geral”, mas é bem eficiente quando você cria um prompt realmente bom para uma tarefa específica. Ex: escrever tweets, gerar ideias para startups, criar letras para uma música, etc.
 
-Um bom prompt pode levar de 15 a 20 minutos para ser criado. **Mas, uma vez criado esse prompt, você pode continuar usando-o em milhares de casos.** É isso que eu quero que você se lembre.
+Um bom prompt pode levar de 15 a 20 minutos para ser criado. **Mas, uma vez criado esse prompt, você pode continuar usando-o em milhares de casos.** É disso que eu quero que você se lembre.
 
 Por exemplo, descobri que esse prompt gera títulos principais decentes para landing pages:
 
