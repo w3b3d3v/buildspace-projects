@@ -1,74 +1,73 @@
 [https://vimeo.com/775481176](https://vimeo.com/775481176)
 
 
-Let’s build something!
+Vamos então construir algo!
 
-I’ve already shown you a ton of use cases and types of prompts. What you’ve probably noticed is that GPT-3 kinda sucks as a “general assistant” but it’s really fkin good once you come up with a really good prompt for a specific task. Ex: writing tweets, generating startup ideas, creating lyrics to a song, etc.
+Já mostrei vários casos de uso e tipos de prompts. O que você provavelmente percebeu é que o GPT-3 é meio ruim como “assistente geral”, mas é bem eficiente quando você cria um prompt realmente bom para uma tarefa específica. Ex: escrever tweets, gerar ideias para startups, criar letras para uma música, etc.
 
-A good prompt can take you 15-20m to come up with. **But, once you come up with that prompt you can just keep on using it for 1000s of cases.** That’s what I want you to remember.
+Um bom prompt pode levar de 15 a 20 minutos para ser criado. **Mas, uma vez criado esse prompt, você pode continuar usando-o em milhares de casos.** É isso que eu quero que você se lembre.
 
-For example, I figured out that this prompt generates decent landing page headlines:
+Por exemplo, descobri que esse prompt gera títulos principais decentes para landing pages:
 
 ```
-Write a list of short landing page headlines in the style of Apple for a startup that builds the following:
+Escreva uma lista de títulos principais curtos para uma landing page no estilo da Apple, para uma startup que constrói o seguinte:
 ```
 
-From here, I could create a website that help **anyone** generate landing page headlines! All they’d need to do would be to give me a description of their startup and then I’d plug it into the prompt here.
+A partir daqui, eu poderia criar um site que ajudaria **qualquer pessoa** a gerar títulos principais para landing pages! Tudo o que eles precisariam fazer seria me dar uma descrição de sua startup e eu inseriria ela no prompt aqui.
 
-What’s sick about OpenAI is that this can be done via the API so you can create really custom, specialized tools powered by GPT-3 + the magical prompts your discover.
+O mais incrível sobre a OpenAI é que isso pode ser feito por meio da API, então você pode criar ferramentas personalizadas e especializadas, alimentadas pelo GPT-3 + os prompts mágicos que você descobrir.
 
-So like I showed you way back at the beginning of this build, we’re going to build two things:
+Então, como eu mostrei lá no início deste projeto, vamos construir duas coisas:
 
-- First, a **web app** that lets anyone come and use GPT-3 for a specialized purpose you come up with (ex. writing a movie script, coming up with ad copy, generating a love letter, whatever you want).
-- Second, a **Chrome Extension** that lets people use your GPT-3 prompts on any website they want (ex. generate tweets right in Twitter, generate a cool post right in LinkedIn, generate landing page copy for the headline right into Webflow, etc).
+- Primeiro, um **aplicativo da web** que permite que qualquer pessoa use o GPT-3 para um propósito especializado que você criar (por exemplo, escrever um roteiro de filme, criar uma cópia de anúncio, gerar uma carta de amor, o que quiser).
+- Segundo, uma **extensão do Chrome** que permite que as pessoas usem seus prompts do GPT-3 em qualquer site que desejarem (por exemplo, gerar tweets diretamente no Twitter, criar uma postagem interessante diretamente no LinkedIn, gerar um título principal para uma landing page diretamente no Webflow, etc).
 
-### Clone the repo.
+### Clone o repositório
 
-If you don’t have an idea of your web app/chrome extension’s “specialized purpose” yet — don’t worry! One step at a time. Let’s get the base project working first.
+Se você ainda não tem uma ideia do "propósito especializado" do seu aplicativo da web/extensão do Chrome, não se preocupe! Um passo de cada vez. Vamos fazer o projeto-base funcionar primeiro.
 
-We’ve created a project with a basic React/NextJS project + some CSS to keep you moving fast. Go ahead and fork the project [here](https://github.com/buildspace/gpt3-writer-starter).
+Criamos um projeto básico com o React/NextJS + um pouco de CSS para manter as coisas fluindo. Vá em frente e faça um fork do projeto [aqui](https://github.com/buildspace/gpt3-writer-starter).
 
-To do so, just click “**Fork**” at the top and then clone the forked repo. This will fork the repo into your personal account which will make it easier to push code/deploy our project later.
+Para fazer isso, basta clicar em "**Fork**" na parte superior e, em seguida, clonar o repositório bifurcado. Isso vai bifurcar o repositório para a sua conta pessoal, o que tornará mais fácil enviar o código e implantar o nosso projeto depois.
 
-Also, drop a star on it as well if you’re feeling nice!
+Seria bem legal se você nos deixasse uma estrela por lá também!
 
 ![Untitled](https://i.imgur.com/bTgmHpL.png)
 
-Once you’ve forked the repo, go ahead and clone it, your clone URL will be specific to you. It should look like this:
+Após a bifurcação, vá em frente e clone o repositório. O URL da clonagem será específico para você. Deve ficar assim:
 
 ```
-https://github.com/YOUR_GITHUB_USERNAME_HERE/gpt3-writer-starter.git
+https://github.com/SEU_USERNAME_DO_GITHUB_AQUI/gpt3-writer-starter.git
 ```
 
-And from there, we’re ready to go. `cd` into the project, install `next`, `react`, and `react-dom` and then run `yarn` to get the project going.
+E a partir daí, estamos prontos para começar. Dê `cd` no projeto, instale o `next`, o `react` e o `react-dom` e, em seguida, execute o `yarn` para iniciar o projeto.
 
 ```
-
-# cd into the repo
+# dê cd no repositório
 cd gpt3-writer-starter
 
-# install next if you don't have it
+# instale o next se você não o tiver
 yarn add next react react-dom
 
-# run it
+# execute
 yarn dev
 ```
 
-Then, head to [localhost:3000](http://localhost:3000) and you should see the following:
+Em seguida, vá para [localhost:3000](http://localhost:3000) e você verá o seguinte:
 
 ![Untitled](https://i.imgur.com/5Ucablc.png)
 
-**A note for those who are pretty familiar with React** — Feel free to speed run this part of the build.
+**Uma nota para quem estiver familiarizado com o React**: sinta-se à vontade para acelerar esta parte do projeto.
 
-**A note for those ***not that familiar*** with React** — You don’t need to be a React expert to do this. If there are some things you don’t understand as you go through this, just Google them and power through.
+**Uma nota para quem** *não está tão familiarizado* **com o React**: você não precisa ser um especialista em React para fazer isso. Se houver algo que você não entenda ao seguir este tutorial, basta pesquisar no Google e seguir em frente.
 
-### Add a textbox + generate button.
+### Adicione uma caixa de texto + botão de geração
 
-So remember — our goal is to create a website where users can come on, type some stuff, and then have some text generated by GPT-3 for some specific purpose (ex. generate metal song titles, generate speeches in the tone of Obama, whatever).
+Lembre-se! Nosso objetivo é criar um site onde os usuários possam digitar algo e então ter algum texto gerado pelo GPT-3 para uma finalidade específica (por exemplo, gerar títulos de músicas de heavy metal, gerar discursos no tom de Barack Obama, etc.).
 
-Don’t worry about changing your headline or your subtitle just yet. Leave them as is for now. We’ll get there!
+Não se preocupe em alterar seu título principal ou subtítulo ainda. Deixe-os como estão por enquanto. Nós chegaremos neles!
 
-First thing we want to do is add a place where users can type stuff! So, we’re going to add a `textarea`. Go ahead and add it with the following code below in `index.js`, again — I added some CSS to help you out and make sure things look decent.
+A primeira coisa que queremos fazer é adicionar um local onde os usuários possam digitar algo! Então, vamos adicionar um elemento `textarea`, ou seja, uma área de texto. Adicione-o com o seguinte código abaixo em `index.js`. Novamente, adicionei um pouco de CSS para ajudá-lo e garantir que as coisas fiquem decentes.
 
 ```jsx
 const Home = () => {
@@ -77,13 +76,13 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>sup, insert your headline here</h1>
+            <h1>e aí… insira seu título principal aqui</h1>
           </div>
           <div className="header-subtitle">
-            <h2>insert your subtitle here</h2>
+            <h2>insira seu subtítulo aqui</h2>
           </div>
         </div>
-        {/* Add this code here*/}
+        {/* Adicione esse código aqui */}
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" />
         </div>
@@ -96,7 +95,7 @@ const Home = () => {
         >
           <div className="badge">
             <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <p>construído com a buildspace</p>
           </div>
         </a>
       </div>
@@ -108,28 +107,28 @@ export default Home;
 
 ```
 
-*Note: whenever I change code I’ll add a little comment above the part I changed/added to keep it easy for you. Ex. above I added the `{/* Add this code here*/}` comment above the div I added for the `textarea`.*
+*Observação: sempre que eu mudar o código, adicionarei um pequeno comentário acima da parte que eu mudei/adicionei para facilitar as coisas para você. Por exemplo, no código acima eu adicionei o comentário `{/* Adicione esse código aqui */}`, logo acima da div que adicionei para o `textarea`.*
 
-Once you’ve done that, you’ll have something that looks like this. Try typing in it as well to make sure it’s working as planned.
+Depois de fazer isso, você terá algo parecido com a imagem abaixo. Tente digitar na área de texto para garantir que tudo esteja funcionando conforme o planejado.
 
 
 ![Untitled](https://i.imgur.com/f3OCGVf.png)
 
-`textarea` is pretty cool because it gives us a simple way to let users type on our web app *and* it gives us an easy way to actually capture what the user is typing **so we can send it to the GPT-3 API later.
+O elemento `textarea` é muito legal, pois nos dá uma maneira simples de permitir que os usuários digitem em nosso aplicativo da web e também nos dá uma maneira fácil de realmente capturar o que o usuário está digitando, para que possamos enviá-lo para a API do GPT-3 mais tarde.
 
-Let’s set up that capture system so we know what our user is typing. We’re going to add a [React Hook](https://reactjs.org/docs/hooks-intro.html) for this —  go ahead and import `useState` at the top off your file:
+Vamos configurar esse sistema de captura para podermos saber o que nosso usuário está digitando. Vamos adicionar um [Gancho do React](https://reactjs.org/docs/hooks-intro.html) (React Hook) para isso. Vá em frente e importe useState no topo do seu arquivo:
 
 ```jsx
 import { useState } from 'react';
 ```
 
-From there, we’re going to create two new state variables: `userInput` and `setUserInput` which we’ll use in a moment. Go ahead and add this line right underneath `const Home = () => {`.
+A partir daí, vamos criar duas novas variáveis de estado que usaremos daqui a pouco: `userInput` e `setUserInput`. Vá em frente e adicione esta linha logo abaixo de `const Home = () => {`.
 
 ```jsx
 const [userInput, setUserInput] = useState('');
 ```
 
-Now, let’s put those variables to use on the `textarea` you created earlier.
+Agora, vamos usar essas variáveis no elemento `textarea` que você criou anteriormente.
 
 ```jsx
 <textarea
@@ -140,11 +139,11 @@ Now, let’s put those variables to use on the `textarea` you created earlier.
 />;
 ```
 
-*Note: Your code will be crashing here because we haven’t created the `onUserChangedText` function yet.*
+*Lembre-se: Seu código irá apresentar um erro aqui, porque ainda não criamos a função `onUserChangedText`.*
 
-What are we doing here? Well, first, we set the `value` of the `textarea` to `userInput` which means that whatever is in the `userInput` variable we’re going to show in the `textarea`.
+O que estamos fazendo aqui? Primeiro, definimos o valor (`value`) do `textarea` para `userInput`, o que significa que qualquer coisa que estiver na variável `userInput` será exibida no elemento `textarea`.
 
-Then we have an `onChange` parameter — so, whenever the user types, it’ll call `onUserChangedText`. Let’s go ahead and write that function. It’s pretty simple. Add this underneath where you have `const [userInput  , setUserInput]`:
+Então, temos o parâmetro `onChange`. Sempre que o usuário digitar algo, ele irá chamar `onUserChangedText`. Então, vamos escrever essa função. É bem simples. Adicione isso abaixo de onde você tem `const [userInput, setUserInput]`:
 
 ```jsx
 const onUserChangedText = (event) => {
@@ -153,15 +152,15 @@ const onUserChangedText = (event) => {
 };
 ```
 
-All this does is call `setUserInput` and sets it to whatever is in the `textarea`. This way, the value of `userInput` will always be updated with whatever is in the `textarea`.
+Tudo o que isso faz é chamar `setUserInput`, que é definido para qualquer texto que for inserido no elemento `textarea`. Dessa forma, o valor de `userInput` será sempre atualizado com o que estiver na área de texto.
 
-Easy! Let’s test it. Head to your console and start typing in your `textarea` to make sure you’re capturing the input properly:
+Fácil! Vamos testar. Vá para o seu console e comece a digitar na área de texto para garantir que você está capturando a entrada corretamente:
 
 ![Untitled](https://i.imgur.com/X6cS8xx.png)
 
-See how it drops an event for every key you type in? We’re taking that event object, grabbing the text, printing it, and then holding it in our input state. Feel free to remove the `console.log` statement now so it doesn’t clutter up your console.
-
-Now, we just want to add a generate button that our user can click to generate some magic — later we’ll connect this to the GPT-3 API. But for now, we’ll just add it in as a button that doesn’t do anything.
+Consegue ver como ele dispara um evento para cada tecla que você digita? Estamos pegando esse objeto do evento, capturando o texto, imprimindo-o e mantendo-o em nosso estado de entrada. Fique à vontade para remover a instrução `console.log` agora, para que ela não polua seu console
+.
+Agora, vamos apenas adicionar um botão de geração que o usuário pode clicar para gerar algo mágico. Mais tarde, conectaremos isso à API do GPT-3. Mas, por enquanto, vamos adicioná-lo como um botão que não faz nada.
 
 ```jsx
 <div className="prompt-container">
@@ -171,70 +170,71 @@ Now, we just want to add a generate button that our user can click to generate s
     value={userInput}
     onChange={onUserChangedText}
   />
-  {/* New code I added here */}
+  {/* Novo código que adicionei aqui */}
   <div className="prompt-buttons">
     <a className="generate-button" onClick={null}>
       <div className="generate">
-        <p>Generate</p>
+        <p>Gerar</p>
       </div>
     </a>
   </div>
 </div>
 ```
 
-I gave it an `onClick={null}` for now, later we’ll write a function to connect it to the GPT-3 API.
+Eu coloquei o `onClick={null}` por enquanto, e mais tarde escreveremos uma função para conectá-lo à API do GPT-3. 
 
-Sick, your app should look spicy now, nearly all our UI is in place.
+Irado! Seu aplicativo deve estar com uma aparência bem interessante agora, pois quase toda a interface do usuário está no lugar.
+
 
 ![Untitled](https://i.imgur.com/bf3JEzb.png)
 
-### Settle on your headline + subtitle.
+### Defina o seu título principal e subtítulo
 
-At this point, you got a pretty clean-looking web app that lets people input some text that we’ll later send to GPT-3. Hell yea.
+Neste ponto, você tem um aplicativo da web com uma aparência limpa que permite que as pessoas insiram algum texto que enviaremos posteriormente para o GPT-3. Aí sim!!
 
-So, now before we add in GPT-3 we have to do something really important, we need to settle on a headline + subtitle.
+Então, antes de adicionarmos o GPT-3, precisamos fazer algo realmente importante: precisamos decidir sobre um título principal e subtítulo.
 
-Imagine a random person hits your GPT-3 writer, **what do you want them to do?**
+Imagine uma pessoa aleatória acessando o seu escritor GPT-3. **O que você gostaria que ela fizesse?**
 
-Again, just using GPT-3 as a general assistant kinda sucks + we can just use Playground for that. It helps to decide on the specific thing you want this thing to do.
+Novamente, usar o GPT-3 apenas como um assistente geral é meio sem graça, e podemos simplesmente usar o Playground para isso. Use-o para ajudar a decidir sobre algo específico que você quer que essa coisa faça.
 
-*You can change this later of course*, but it helps to have at least something that you think is kinda cool before we move on.
+*É claro que você pode mudar isso mais tarde*, mas é útil ter pelo menos algo que você ache legal antes de prosseguirmos.
 
-Here are some examples:
+Aqui temos alguns exemplos:
 
-- **Headline**: Generate a tweet thread about crypto. **Subtitle**: Write a quick sentence about what you want the tweet thread to be about (ex. Ethereum and it’s price, Solana and it’s transaction speed, Bitcoin and it’s longevity).
-- **Headline**: Have Donald Trump explain stuff to you. **Subtitle:** Write a topic that you want Donald Trump to explain to you (ex. nuclear fission, how airplanes work, the meaning of life).
-- **Headline:** Talk to Goku from Dragon Ball Z **Subtitle:** Write a message to Goku, ask him about anything (ex. what’s the meaning of life, how did you get so strong, etc).
+- **Título principal**: Gerar um thread no Twitter sobre criptomoedas. **Subtítulo**: Escreva uma frase rápida sobre o que você deseja que o thread de tweets aborde (ex: Ethereum e seu preço, Solana e sua velocidade de transação, Bitcoin e sua longevidade).
+- **Título principal**: Faça Donald Trump explicar coisas para você. **Subtítulo**: Escreva um tópico que você gostaria que Donald Trump explicasse para você (ex: fissão nuclear, como funcionam os aviões, o significado da vida).
+- **Título principal**: Fale com o Goku, do Dragon Ball Z. **Subtítulo**: Escreva uma mensagem para o Goku e pergunte a ele sobre qualquer coisa (ex: qual é o significado da vida, como você ficou tão forte, etc.).
 
-It’s just like a landing page! The headline is short and sweet. And, the subtitle explains a bit more.
+É como uma landing page! O título principal é curto e objetivo. E o subtítulo explica um pouco mais.
 
-Also, notice how specific each of these are! The more specific the use case, the better GPT-3 will perform after all. There are sooooooo many use cases — GPT-3 can do everything from generate code to write amazing text messages to reply to your Tinder date. Get creative. Have fun with it.
+Além disso, observe como cada caso de uso é específico! Quanto mais específico for o caso de uso, melhor será o desempenho do GPT-3. Existem muuuuitos casos de uso! O GPT-3 pode fazer de tudo, desde gerar código até escrever mensagens de texto incríveis para responder ao seu encontro do Tinder. Seja criativo e divirta-se com isso!
 
-Once you come up with your headline + subtitle, change it in the code!
+Assim que criar seu título principal e seu subtítulo, altere-os no código!
 
 ```
 <div className="header-title">
-  <h1>sup, insert your headline here</h1>
+  <h1>e aí… insira seu título principal aqui</h1>
 </div>
 <div className="header-subtitle">
-  <h2>insert your subtitle here</h2>
+  <h2>insira seu subtítulo aqui</h2>
 </div>
 ```
 
-For my web app, I’m going to build something pretty simple — a tool that generates blog posts, but my special touch is that the blog posts all have the tone of Paul Graham because I really like his clear and concise style.
+Para o meu aplicativo da web, eu vou construir algo bem simples: uma ferramenta geradora de postagens de blog, mas com o meu toque especial, que neste caso será o estilo claro e conciso de Paul Graham, que tem um tom que eu gosto muito.
 
-I learn **a lot** from blog posts — but, it’s really hard to find good ones usually. Especially around topics that aren’t as popular.
+Eu aprendo **muito** com postagens de blog, mas é realmente difícil encontrar boas postagens, especialmente sobre tópicos que não são tão populares.
 
-For example, the other day I was Googling around about nuclear fission but all the posts were either extremely technical or super simple. Also, I hated the writing style of most of them.
+Por exemplo, outro dia eu estava pesquisando sobre fissão nuclear na internet, mas todas as postagens eram extremamente técnicas ou muito simples. Além disso, eu não gostava do estilo de escrita da maioria delas.
 
-I wanna generate really good ones myself to learn from! Plus, I could even use the generated ones on my own blog as well so they’re helpful to others.
+Eu quero gerar postagens realmente boas para aprender com elas! Além disso, eu poderia até usar as postagens geradas no meu próprio blog, para ajudar outras pessoas.
 
-Let’s go!
+Vamos lá!
 
 ![Untitled](https://i.imgur.com/GxwnSCs.png)
 
-Please **don’t copy** any of my headlines here — come up with your own specific use-case. Add your own spin to this thing. Otherwise, it won’t be fun I promise.
+Por favor, **não copie** nenhum dos meus títulos aqui! Crie seu próprio caso de uso específico. Adicione o seu próprio toque especial nessa coisa. Caso contrário, eu garanto que não será divertido.
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou Farza ficará triste
 
-Go ahead and take a screenshot of your GPT-3 writer with your fancy new headline and subtitle. Share it in #progress to inspire others who are searching for cool use cases.
+Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.
