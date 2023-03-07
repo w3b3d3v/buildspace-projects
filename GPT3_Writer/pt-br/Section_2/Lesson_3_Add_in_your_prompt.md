@@ -1,219 +1,218 @@
 
 
-The first thing you need to do is figure out your **base prompt**. Basically, the formulas here is
+A primeira coisa que você precisa fazer é descobrir seu **prompt-base**. Basicamente, a fórmula aqui é:
 
 ```
 finalPrompt = basePrompt + userInput
 ```
 
-Then, that `finalPrompt` is what we send to GPT-3 from our API. Remember, the problem right now is that we **don’t have a `basePrompt`**. All we’re doing is sending `userInput` to GPT-3.
+Então, `finalPrompt` é o que enviamos para o GPT-3 a partir de nossa API. Lembre-se, o problema agora é **que não temos um `basePrompt`**. Tudo o que estamos fazendo é enviar o `userInput` para o GPT-3.
 
-For example, let’s say you’re building a website that generates healthy recipes based on a list of ingredients your user gives you. You can imagine your user will give you something like this:
+Por exemplo, digamos que você esteja construindo um site que gera receitas saudáveis com base em uma lista de ingredientes fornecidos pelo usuário. Você pode imaginar que o usuário lhe dará algo parecido com isso:
+
 
 ```jsx
-broccoli, chicken, rice, beans, mayo, paprika
+brócolis, frango, arroz, feijão, maionese, páprica
 ```
 
-If all we do is send that to GPT-3, it won’t have any idea what to do.
+Se tudo o que fizermos for enviar isso para o GPT-3, ele não terá ideia do que fazer.
 
-That means you’d need a base prompt that will **expect** this sorta input. Here’s a simple base prompt I tried out in Playground based on the above example:
-
-```
-Write me a detailed step-by-step recipe by a professional chef for something healthy I can make with the following ingredients:
-
-broccoli, chicken, paprika, rice, olive oil, butter, garlic, parsley, eggs
-
-1. Heat up a large skillet.
-2. While it's heating, cut broccoli into small florets.
-3. Season chicken breasts with paprika, salt, and pepper.
-4. In skillet, heat olive oil over medium-high heat.
-5. Add chicken to the skillet and cook until browned and cooked through, about 4 minutes per side.
-6. Remove chicken from skillet and set aside.
-7. In the skillet, melt butter over medium heat.
-8. Add garlic and cook until fragrant, about 1 minute.
-9. Add broccoli and cook until tender, about 5 minutes.
-10. Add cooked chicken back to the skillet.
-11. Stir in cooked rice and parsley.
-12. Make 4 wells in the rice mixture and crack an egg into each well.
-13. Cover the skillet and cook until the eggs are cooked to your liking, about 5 minutes.
-14. Serve immediately.
-```
-
-Pretty cool! In this case, my `basePrompt` is:
+Isso significa que você precisaria de um prompt-base que **espera** por esse tipo de entrada. Aqui está um prompt-base simples que testei no Playground com base no exemplo acima:
 
 ```
-Write me a detailed step-by-step recipe by a professional chef for something healthy I can make with the following ingredients:
+Escreva uma receita detalhada passo a passo de um chef profissional para algo saudável que eu possa fazer com os seguintes ingredientes:
+
+brócolis, frango, páprica, arroz, azeite, manteiga, alho, salsa, ovos
+
+1. Aqueça uma frigideira grande.
+2. Enquanto isso, corte o brócolis em pequenos floretes.
+3. Tempere os peitos de frango com páprica, sal e pimenta.
+4. Na frigideira, aqueça o azeite em fogo médio-alto.
+5. Adicione o frango à frigideira e cozinhe até que fique dourado e cozido por completo, cerca de 4 minutos de cada lado.
+6. Retire o frango da frigideira e reserve.
+7. Na frigideira, derreta a manteiga em fogo médio.
+8. Adicione o alho e cozinhe até ficar perfumado, cerca de 1 minuto.
+9. Adicione o brócolis e cozinhe até ficar macio, cerca de 5 minutos.
+10. Adicione o frango cozido de volta à frigideira.
+11. Misture o arroz cozido e a salsa.
+12. Faça 4 cavidades na mistura de arroz e quebre um ovo em cada cavidade.
+13. Cubra a frigideira e cozinhe até que os ovos estejam cozidos ao seu gosto, cerca de 5 minutos.
+14. Sirva imediatamente.
 ```
 
-And, my `userInput` is:
+Muito legal! Nesse caso, meu `basePrompt` é:
 
 ```
-broccoli, chicken, paprika, rice, olive oil, butter, garlic, parsley, eggs
+Escreva uma receita detalhada passo a passo de um chef profissional para algo saudável que eu possa fazer com os seguintes ingredientes:
 ```
 
-So, let’s look at one more example which is what I’m working on — a blog post generator. I played around in Playground and found that this prompt did pretty well for me:
+E meu `userInput` é:
 
 ```
-Write me a blog post in the style of Paul Graham with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
-
-Title: The Pros and Cons of Large Language Models
-
-Language models are a type of artificial intelligence that are used to predict the next word in a sequence. They are trained on large amounts of data, and the larger the training data, the more accurate the predictions.
-
-There are several advantages to using large language models. First, they can handle long sequences of text, which is important for tasks like translation and summarization. Second, they can learn from a large variety of data sources, including both formal and informal text. This allows them to capture the nuances of language use, which is difficult for smaller models.
-
-However, large language models also have several disadvantages. First, they require a lot of computational power, which can be expensive. Second, they can be more difficult to interpret than smaller models, making it hard to understand why they make certain predictions. Finally, they can be biased towards the training data, which may not be representative of the real world.
-
-Overall, large language models have both advantages and disadvantages. While they can be very powerful, they also come with some risks. When deciding whether or not to use a large language model, it is important to weigh the pros and cons carefully.
+brócolis, frango, páprica, arroz, azeite, manteiga, alho, salsa, ovos
 ```
 
-So, in this case my `basePrompt` **was:
+Então, vejamos mais um exemplo no qual estou trabalhando – um gerador de postagem de blog. Eu brinquei no Playground e descobri que este prompt funcionou muito bem para mim:
 
 ```
-Write me a blog post in the style of Paul Graham with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
+Escreva uma postagem de blog no estilo de Paul Graham com o título abaixo. Certifique-se de que a postagem do blog se aprofunde no tópico e mostre que o escritor fez sua pesquisa.
 
-Title: 
+Título: Os Prós e Contras dos Grandes Modelos de Linguagem
+
+Os modelos de linguagem são um tipo de inteligência artificial usado para prever a próxima palavra em uma sequência. Eles são treinados em grandes quantidades de dados, e quanto maior for o conjunto de dados de treinamento, mais precisas serão as previsões.
+
+Existem várias vantagens em usar grandes modelos de linguagem. Primeiro, eles podem lidar com sequências longas de texto, o que é importante para tarefas como tradução e resumo. Segundo, eles podem aprender com uma grande variedade de fontes de dados, incluindo textos formais e informais. Isso permite que eles capturem as nuances do uso da linguagem, o que é difícil para modelos menores.
+
+No entanto, grandes modelos de linguagem também têm várias desvantagens. Primeiro, eles requerem muita potência computacional, o que pode ser caro. Em segundo lugar, podem ser mais difíceis de interpretar do que modelos menores, tornando difícil entender por que eles fazem certas previsões. Finalmente, podem ser tendenciosos em relação aos dados de treinamento, que podem não ser representativos do mundo real.
+
+No geral, grandes modelos de linguagem têm tanto vantagens quanto desvantagens. Embora possam ser muito poderosos, também apresentam alguns riscos. Ao decidir se deve ou não usar um grande modelo de linguagem, é importante ponderar os prós e contras cuidadosamente.
 ```
 
-And my `userInput` was the below title. This is the part that changes! Our users can give us whatever they want. But, our base prompt doesn’t change. 
+Então, neste caso, meu `basePrompt` era:
 
 ```
-The Pros and Cons of Large Language Models
+Escreva uma postagem de blog no estilo de Paul Graham com o título abaixo. Certifique-se de que a postagem do blog se aprofunde no tópico e mostre que o escritor fez sua pesquisa.
+
+Título:
 ```
 
-Before moving ahead, figure out your `basePrompt` for whatever you’re working on. If you’re struggling, ask yourself first — **“What is my user inputting?”**. From there, you can work backward and think about a really good prompt for GPT-3.
-
-**Spend like 5-10 minutes in Playground and do some prompt discovery**, also don’t forget to play around with your hyperparamaters! For me, I found that a temperature of `0.8` and a maximum length of `500` worked well for me.
-
-But again, your results will be very different because you have your own usecase, so just play around with it.
-
-### Add your base prompt to your API.
-
-Cool — so at this point, you should have a `basePrompt` for your use-case. Take note of your hyperparameters as well. Next thing we gotta do is add some new stuff to to `api/generate.js`.
-
-All you’ll need to do is paste in your base prompt to `basePromptPrefix`.
-
-So for me, here’s how it looks:
+E meu `userInput` foi o título abaixo. Essa é a parte que muda! Nossos usuários podem nos dar a entrada que quiserem. Mas, nosso prompt-base não muda. 
 
 ```
+Os Prós e Contras dos Grandes Modelos de Linguagem
+```
+
+Antes de prosseguir, descubra o `basePrompt` para o que quer que esteja trabalhando. Se você está com dificuldades, pergunte-se primeiro: **"O que meu usuário está inserindo?"** A partir daí, você pode trabalhar de trás para frente e pensar em um prompt realmente bom para o GPT-3.
+
+**Passe cerca de 5 a 10 minutos no Playground e faça algumas descobertas de prompt**, e não se esqueça de brincar com seus hiperparâmetros! Para mim, descobri que uma temperatura de `0,8` e um comprimento máximo de `500` funcionaram muito bem.
+
+Mas, novamente, seus resultados serão muito diferentes porque você tem seu próprio caso de uso, então apenas brinque um pouco com isso.
+
+### Adicione seu prompt-base à sua API
+
+Legal! Neste ponto, você deve ter um `basePrompt` para seu caso de uso. Anote também seus hiperparâmetros. A próxima coisa que precisamos fazer é adicionar algumas coisas novas ao arquivo `api/generate.js`.
+
+Tudo o que você precisa fazer é colar seu prompt-base em `basePromptPrefix`.
+
+Então, para mim, é assim que fica:
+
+```jsx
 const basePromptPrefix =
 `
-Write me a blog post in the style of Paul Graham with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
+Escreva uma postagem de blog no estilo de Paul Graham com o título abaixo. Certifique-se de que a postagem do blog se aprofunde no tópico e mostre que o escritor fez sua pesquisa.
 
-Title:
+Título:
 `
 ```
 
-*Note: here I use the backticks here instead of quotation marks; this is called a [template literal](https://www.w3schools.com/js/js_string_templates.asp). Basically, if we were to use just quotation marks then new lines wouldn’t be respected — it’d just be one big sentence with no new lines. And, I want new lines in my prompt!*
+*Observação: aqui eu uso o acento grave em vez de aspas; isso é chamado de [template literal](https://www.w3schools.com/js/js_string_templates.asp). Basicamente, se usássemos apenas as aspas, as novas linhas não seriam respeitadas - seria apenas uma grande frase sem novas linhas. E eu quero novas linhas no meu prompt!*
 
-And believe it or not, that’s all you gotta do! in our prompt we already do:
+E, acredite ou não, é tudo o que você precisa fazer! Em nosso prompt, já fazemos:
 
 ```
 prompt: `${basePromptPrefix}${req.body.userInput}`
 ```
 
-This will combine the base prompt with whatever the user gives us.
+Isso combinará o prompt-base com o que o usuário nos der.
 
-I’m actually going to do add a `\n` to this at the end. Why? Well, GPT-3 does better on generation tasks when it knows where to start writing. So in this case, I specifically make it start writing on a new line:
+Na verdade, vou adicionar um `\n` a isso no final. Por quê? Bem, o GPT-3 tem um desempenho melhor em tarefas de geração quando sabe onde começar a escrever. Portanto, neste caso, deixo especificado para que comece a escrever em uma nova linha:
 
 ```
 prompt: `${basePromptPrefix}${req.body.userInput}\n`
 ```
 
-**For example, if I didn’t have this** — GPT-3 would start writing directly after my title on the same line, so it might try and autocomplete my title instead of writing my actual blog post!
+**Por exemplo, se eu não tivesse isso**, o GPT-3 começaria a escrever diretamente após o meu título e na mesma linha, então poderia tentar completar automaticamente meu título em vez de escrever minha postagem real!
 
-But, just know this isn’t needed for all usecases, depends on what you’re doing. Maybe you **do** want GPT-3 to autocomplete a phrase, in which case it makes sense to **not** have a `\n`.
+Mas saiba que isso não é necessário para todos os casos de uso e também depende do que você está fazendo. Talvez você queira que o GPT-3 complete uma frase automaticamente, caso em que faz sentido **não** ter um `\n`.
 
-For example, if you have this prompt:
+Por exemplo, se você tem este prompt:
 
 ```
-My name is Abraham Lincoln and my opinion on ${req.body.userInput} is that
+Meu nome é Abraham Lincoln e minha opinião sobre ${req.body.userInput} é que
 ```
 
-***Note: this is an example of a prompt where I inject user input in the middle of the base prompt.***
+**Observação: este é um exemplo de prompt em que eu injeto a entrada do usuário no meio do prompt-base.**
 
-In this case above, we want Lincoln to start talking after `that` so we wouldn’t need a new line here.
+Neste caso acima, queremos que Lincoln comece a falar depois disso, então não precisaríamos de uma nova linha aqui.
 
-Lastly, if you wanna change your `temperature` or `max_tokens` in `generate.js` go for it! I actually set my `max_tokens` to `1250` since I want GPT-3 to potentially give me longer posts.
+Por último, se você quiser mudar `temperature` ou `max_tokens` em `generate.js`, vá em frente! Na verdade, defino meus `max_tokens` para `1250`, pois quero que o GPT-3 me dê postagens mais longas.
 
-*Note: remember, just because you make `max_tokens` higher, it doesn’t mean you’d magically get longer outputs. It all depends on the prompt.*
+*Observação: lembre-se! Só porque você aumentou `max_tokens` não significa que você obterá saídas mais longas magicamente. Tudo depende do prompt.*
 
-### Test it!
+### Testando!
 
-You should be able to head over to your web app now and give it a spin. I also changed my `placeholder` on my `textarea` with an example blog post title to help my user understand what they could type. You should do the same!
+Você agora deve ser capaz de acessar e testar o seu aplicativo da web. Eu também alterei o `placeholder` do meu elemento `textarea` com um exemplo de título de postagem de blog para ajudar o usuário a entender o que ele poderia digitar. Você deveria fazer o mesmo!
 
-Changeup your subtitle if needed as well, make it really clear to your user what they need to do to get good results out of your prompt.
+Se necessário, altere também o subtítulo. Deixe claro para o usuário o que ele precisa fazer para obter bons resultados do seu prompt.
 
 ![Untitled](https://i.imgur.com/GXLzBtx.png)
 
-### Improving your prompt + prompt chaining.
+### Melhorando seu prompt + encadeamento de prompts
 
-*Warning: if you end up struggling with this part, feel free to skip it completely and go to the next section. It’s not required, but it will make your results wayyyyy better. Though, it’s difficult because it requires a ton of experimentation/prompt engineering in Playground. Also, if your JS skills aren’t that strong — the code in this section may be tough for you as well.*
+**Aviso: se você acabar tendo dificuldades com esta parte, sinta-se à vontade para ignorá-la completamente e ir para a próxima seção. Ela não é obrigatória, mas fará com que seus resultados sejam muito melhores. No entanto, é difícil porque requer muita experimentação/engenharia de prompt no Playground. Além disso, se suas habilidades em JS não forem tão boas, o código nesta seção também pode ser bem difícil para você.** 
 
-Cool, you got something working!
+Legal, você conseguiu fazer algo funcionar! 
 
-Now you just need to spend some time improving your prompt. I showed you a ton of tricks earlier in this build. For example, right now I’m doing zero-shot learning, where I’m not giving my prompt any examples! Even if I did single-shot learning, my results would improve a ton.
+*Agora você só precisa passar um tempo melhorando seu prompt. Eu mostrei a você um monte de truques anteriormente, nesta construção. Por exemplo, no momento estou utilizando o zero-shot learning, onde não estou dando exemplos para meu prompt! Mesmo que eu utilizasse o single-shot learning, meus resultados melhorariam muito.* 
 
-**If your results are meh and you’re doing zero-shot learning, try out a prompt with single-shot learning and see what happens.**
+O principal truque que mostrei a você e que pode aumentar em 10 vezes a qualidade dos seus resultados é o **encadeamento de prompts**.
 
-The main trick I showed you that can 10X the quality of your results is **prompt chaining**.
+Não posso ajudá-lo diretamente com seu prompt, porque o prompt de cada pessoa é bem diferente. Mas, mostrarei como usei o encadeamento de prompts para aumentar em 10 vezes meus resultados. E você também poderá aplicar meus aprendizados ao seu projeto!
 
-I can’t help you directly with your prompt, because everyone’s prompt is so different. But, I’ll show you how I used prompt chaining to 10X my results. And, you can apply my learnings to your build as well!
+*Observação: talvez você já esteja satisfeito com seus resultados. Se for esse o caso, legal! Eu ainda recomendo que você explore o encadeamento de prompts, pois você nunca sabe o que pode obter.*
 
-*Note: maybe you’re already happy with your results already, if so, cool! I still recommend you explore prompt chaining, you never know what you may get.*
+Então, olha só o que eu fiz. Fui ao Playground e:
 
-So, here’s what I did, I went to Playground and:
+1. No Playground #1, fiz meu primeiro prompt gerar um sumário para o meu post do blog.
+2. No Playground #2, criei um segundo prompt para pegar esse sumário do Playground #1 e gerar um post completo para o blog com base nele.
 
-1. In Playground #1, I made my first prompt generate a table of contents for my blog post.
-2. In Playground #2, I made a second prompt to take that table of content from Playground #1 and generate a full blog post based off of it.
+**No encadeamento de prompts, a saída do seu primeiro prompt gera conteúdo que seu segundo prompt pode usar para gerar ainda mais conteúdo.** Novamente, será diferente para cada um de vocês.
 
-**In prompt chaining, the output of your first prompt generates content your second prompt can use to generate even more content.** Again, it’ll be different for each of you.
-
-Here are my two prompts I came up with after a bunch of experimentation:
+Aqui estão meus dois prompts que criei após muita experimentação:
 
 Prompt #1:
 
 ```
-Write me a detailed table of contents for a blog post with the title below.
+Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-Title: USER_TITLE_GOES_HERE
+Título: TÍTULO_DO_USUÁRIO_VAI_AQUI
 ```
 
 Prompt #2:
 
 ```
-Take the table of contents and title of the blog post below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+Pegue o sumário e o título da postagem do blog abaixo e gere uma postagem de blog escrita no estilo de Paul Graham. Faça parecer uma história. Não apenas liste os pontos. Mergulhe fundo em cada um. Explique o porquê.
 
-Title: USER_TITLE_GOES_HERE
+Título: TÍTULO_DO_USUÁRIO_VAI_AQUI
 
-Table of Contents: OUTPUT_FROM_PROMPT_ONE_HERE
+Sumário: SAÍDA_DO_PROMPT_UM_AQUI
 
-Blog Post:
+Postagem de blog:
 ```
 
-My second prompt builds on my first prompt, and this is what you need to do as well but for your own use-case.  It’s tricky, but, you got this.
+Meu segundo prompt constrói sobre o meu primeiro prompt, e é isso que você também precisa fazer para o seu próprio caso de uso. É meio complicado, mas você consegue.
 
-**So, my new prompts ended up generating some insanely good results for me that were 10X better than my previous prompt**. I just messed around with it in two Playgrounds. Try out prompt chaining on your end for your use case! See what happens.
+**Então, meus novos prompts acabaram gerando resultados incrivelmente bons para mim que eram 10 vezes melhores do que meu prompt anterior.** Eu apenas brinquei um pouco com isso em dois Playgrounds. Experimente o encadeamento de prompts no seu caso de uso! Veja o que acontece.
 
-### Add prompt chaining in your API.
+### Adicione o encadeamento de prompts à sua API
 
-Now let’s set it up in `api/generate.js`!
+Agora, vamos configurar tudo em `api/generate.js`!
 
-Yours will look **very** different because you’ll have different prompts! **But, once again, I’m going to show you how I did mine so you can use the same strategy for yours.
+O seu será **bem** diferente porque você terá prompts diferentes! Mas, mais uma vez, vou mostrar como fiz o meu para que você possa usar a mesma estratégia para o seu.
 
-We need to chain two API requests. Just like you’re using two Playgrounds and copy pasting results, we just need to do the same thing but all programatically. Here’s what we’re going to do:
+Precisamos encadear duas solicitações de API. Assim como você está usando dois Playgrounds e copiando e colando resultados, precisamos fazer a mesma coisa, mas tudo programaticamente. Aqui está o que vamos fazer:
 
-1. API Request #1 takes Prompt #1 + user input
-2. API Request #2 takes Prompt #2 + response from API Request #1.
+1. A Solicitação de API #1 leva o Prompt #1 + entrada do usuário
+2. A Solicitação de API #2 leva o Prompt #2 + resposta da Solicitação de API #1.
 
-Here’s my updated code in`generate.js`, I added comments as well to explain what I’m doing!
+Aqui está o meu código atualizado em `generate.js`, onde adicionei comentários para explicar o que estou fazendo!
 
 ```jsx
 const basePromptPrefix =
 `
-Write me a detailed table of contents for a blog post with the title below.
+Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-Title:
+Título:
 `
 
 const generateAction = async (req, res) => {
@@ -228,46 +227,47 @@ const generateAction = async (req, res) => {
   
   const basePromptOutput = baseCompletion.data.choices.pop();
 
-  // I build Prompt #2.
+  // Aqui construo o Prompt #2
   const secondPrompt = 
   `
-  Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+  Pegue o sumário e o título da postagem do blog abaixo e gere uma postagem de blog escrita no estilo de Paul Graham. Faça parecer uma história. Não apenas liste os pontos. Mergulhe fundo em cada um. Explique o porquê.
 
-  Title: ${req.body.userInput}
+  Título: ${req.body.userInput}
 
-  Table of Contents: ${basePromptOutput.text}
+  Sumário: ${basePromptOutput.text}
 
-  Blog Post:
+  Postagem de blog:
   `
   
-  // I call the OpenAI API a second time with Prompt #2
+  // Eu chamo a API da OpenAI uma segunda vez com o prompt #2
   const secondPromptCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `${secondPrompt}`,
-    // I set a higher temperature for this one. Up to you!
+    // Eu defino uma temperatura mais alta para este. Você decide!
     temperature: 0.85,
-		// I also increase max_tokens.
+		// Eu também aumento max_tokens
     max_tokens: 1250,
   });
   
-  // Get the output
+  // Obtenha a saída
   const secondPromptOutput = secondPromptCompletion.data.choices.pop();
 
-  // Send over the Prompt #2's output to our UI instead of Prompt #1's.
+  // Envie a saída do prompt #2 para nossa IU em vez da saída do prompt #1.
   res.status(200).json({ output: secondPromptOutput });
 };
 
 export default generateAction;
 ```
 
-The most important line here is `const secondPrompt`. This is where I “build” my second prompt based on the output of `basePromptOutput`. I also use `${req.body.userInput}` here as well to give my model even more context. At the end, I change final JSON result to `{ output: secondPromptOutput }` so my user see’s the output of the second prompt on our UI.
+A linha mais importante aqui é const `secondPrompt`. É aqui que "construo" meu segundo prompt com base na saída de `basePromptOutput`. Também uso `${req.body.userInput}` aqui para fornecer ainda mais contexto para o meu modelo. No final, altero o resultado JSON final para `{ output: secondPromptOutput }`, para que meu usuário veja a saída do segundo prompt em nossa IU.
 
-No UI changes required here btw! All we’re doing is changing the backend.
+Aliás, nenhuma mudança na IU é necessária aqui. Tudo o que estamos fazendo é alterando o backend.
 
-So…how’s your product feeling now? Mines is absolutely insane now lol. It’s creating some A+ tier blog posts for me about everything from anime to nuclear fission to relationship advice. Beautiful.
+Então... como está o seu produto agora? O meu está absolutamente incrível rsrs. Ele tem criado algumas postagens de blog de alta qualidade sobre tudo, desde anime até fissão nuclear e conselhos sobre relacionamento. Coisa linda!
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou Farza ficará triste
 
-You’ve gotten so far. I’m proud af of you. **Give yourself a pat on the back, you’re doing some insane stuff!!** Go ahead and take a screenshot of your web app with one of your favorite prompts + outputs and post it in #progress. I want to see all the crazy shit y’all are generating lol.
+Você chegou bem longe! Estou orgulhoso de você. **Dê a si mesmo um tapinha nas costas, você está fazendo coisas insanas!!** Vá em frente e tire uma captura de tela do seu aplicativo da web com um de seus prompts e saídas favoritos e poste em #progress. Quero ver todas as coisas incríveis que vocês estão gerando rsrs.
 
-Also, it’s time to **get your first user** — if you have someone near you, show them what you’re doing (ex. mom, friend, roomate, etc)! Pull them over, show them the crazy thing you built, and have them mess around in your web app. See what they say!
+Além disso, é hora de **conseguir seu primeiro usuário**. Se você tiver alguém por perto, mostre o que você está fazendo (ex. mãe, amigo, colega de quarto, etc)! Chame-os, mostre o que você construiu e peça para eles brincarem com o seu aplicativo da web. Veja o que eles dizem!
+
