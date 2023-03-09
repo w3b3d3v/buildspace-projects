@@ -6,7 +6,7 @@ Agora vem a parte divertida, que é realmente usar a nossa extensão para chamar
 
 O objetivo é destacar o texto em nosso navegador, clicar com o botão direito do mouse e ver uma opção que diga "Gerar postagem de blog". Tudo o que obtivermos do GPT-3, injetaremos diretamente em nosso site 🙂.
 
-**Novamente, para minha extensão, trabalharei com o [Calmly](https://www.calmlywriter.com/online/).** Eu recomendo que você acompanhe com o Calmly. Posteriormente, você poderá usar o mesmo fluxo para qualquer site onde deseja gerar texto.
+**Novamente, para minha extensão, trabalharei com o [Calmly](https://www.calmlywriter.com/online/)** e recomendo que você acompanhe com ele. Posteriormente, você poderá usar o mesmo fluxo para qualquer site onde deseja gerar texto.
 
 Para fazer tudo isso funcionar, precisaremos configurar esta coisa chamada service worker. Você pode pensar nisso como uma configuração de servidor para seu aplicativo. Em vez de ter todo o nosso código sendo executado em nossa IU, podemos fazer com que ela execute ações enquanto nosso service worker faz tudo em segundo plano!
 
@@ -94,9 +94,9 @@ const generateCompletionAction = async (info) => {
   try {
     const { selectionText } = info;
     const basePromptPrefix = `
-	Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
+        Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-  Título:
+        Título:
 	`;
   } catch (error) {
     console.log(error);
@@ -104,7 +104,7 @@ const generateCompletionAction = async (info) => {
 };
 ```
 
-Bastante simples para começar e as coisas devem parecer bem familiares para você. A primeira coisa a notar é que toda vez que a função `generateCompletionAction` é chamada, nosso ouvinte passa um objeto `info`. Esse objeto tem nossa propriedade `selectionText` (o que você destacou).
+Bem simples! As coisas devem parecer bem familiares para você agora. A primeira coisa a notar é que toda vez que a função `generateCompletionAction` é chamada, nosso ouvinte passa um objeto `info`. Esse objeto tem nossa propriedade `selectionText` (o que você destacou).
 
 Depois de configurar isso, podemos começar com nosso prompt-base. Você já tem os códigos de trapaça do seu site, então sinta-se à vontade para usá-los novamente aqui!
 
@@ -119,12 +119,12 @@ const generateCompletionAction = async (info) => {
     const { selectionText } = info;
     const basePromptPrefix =
       `
-      Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
+        Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-  	  Título:
+        Título:
       `;
 
-		// Adicione isso para chamar o GPT-3
+    // Adicione isso para chamar o GPT-3
     const baseCompletion = await generate(`${basePromptPrefix}${selectionText}`);
 
     // Vamos ver o que obtemos!
@@ -197,18 +197,18 @@ Acho que é hora de testarmos tudo. Este é um momento realmente emocionante. Vo
 
 Vá em frente e atualize seu aplicativo na página da extensão. Em seguida, vá ao Camly ou em qualquer site que você esteja usando e deixe essa coisa rolaaaar.
 
-Espere um segundo, como você sabe se alguma coisa aconteceu? Se você abrir o console do navegador nas configurações do desenvolvedor, verá… absolutamente nada!
+Espere um segundo... como você sabe se alguma coisa aconteceu? Se você abrir o console do navegador nas configurações do desenvolvedor, verá… absolutamente nada!
 
 Isso ocorre porque os service workers têm seus *próprios consoles*. Volte para o menu de extensões e clique no link do service worker. Isso abrirá uma nova janela do DevTools, onde você poderá ver todos os logs vindos do service worker 🙂.
 
 
 ![Untitled](https://i.imgur.com/2RHaPDt.png)
 
-Tudo bem, tudo bem... vamos tentar mais uma vez:
+Tudo bem, tudo bem... Vamos tentar mais uma vez:
 
 ![Screenshot 2022-11-27 at 5.35.16 AM.png](https://i.imgur.com/MGC5R0l.png)
 
-Agora estamos oficialmente chamando o GPT-3 de uma extensão do Chrome… **caramba**! Você fez um hat-trick aqui - chamou o GPT-3 do playground, criou o aplicativo da web e a extensão do Chrome.
+Agora estamos oficialmente chamando o GPT-3 de uma extensão do Chrome… **Caramba**! Você fez um hat-trick aqui - chamou o GPT-3 do playground, criou o aplicativo da web e a extensão do Chrome.
 
 Agora que temos nosso primeiro prompt funcionando, vamos configurar nosso encadeamento de prompts! Lembre-se, o encadeamento de prompts é a arma secreta que tornará sua extensão **verdadeiramente** valiosa.
 
@@ -223,7 +223,7 @@ const generateCompletionAction = async (info) => {
     const basePromptPrefix = `
       Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
    		 
-  	  Título:
+      Título:
       `;
 
     const baseCompletion = await generate(
@@ -249,12 +249,12 @@ const generateCompletionAction = async (info) => {
 };
 ```
 
-Vamos nessa! É isso! O código reutilizável nos serviu como um bom código. Basicamente, fizemos exatamente a mesma coisa que fizemos com o primeiro prompt, mas aqui passamos a saída do primeiro prompt!
+É isso! Vamos nessa! O código reutilizável nos serviu como um bom código. Basicamente, fizemos exatamente a mesma coisa que fizemos com o primeiro prompt, mas aqui passamos a saída do primeiro prompt!
 
 Agora tudo o que precisamos fazer é injetar tudo isso no Calmly. Há apenas um problema aqui. Nosso service worker não tem acesso ao DOM e não tem como manipular a IU... Esse é o objetivo desta extensão, não é?
 
 Não se preocupe, vamos te ajudar.
 
-### Por favor, faça isso ou Farza ficará triste.
+### Por favor, faça isso ou Farza ficará triste
 
 Publique a sua saída da OpenAI no console do service worker em #progress, no Discord. Isso tudo aqui é bem avançado… Parabéns! :)
