@@ -153,7 +153,7 @@ Se necessário, altere também o subtítulo. Deixe claro para o usuário o que e
 
 Legal, você conseguiu fazer algo funcionar! 
 
-*Agora você só precisa passar um tempo melhorando seu prompt. Já mostrei vários truques nesta construção. Por exemplo, no momento estou utilizando o zero-shot learning, onde não estou dando exemplos para meu prompt! Mesmo que eu utilizasse o single-shot learning, meus resultados melhorariam muito.* 
+*Agora você só precisa passar um tempo melhorando seu prompt. Já mostrei vários truques nesta compilação. Por exemplo, no momento estou utilizando o zero-shot learning, onde não estou dando exemplos para meu prompt! Mesmo que eu utilizasse o single-shot learning, meus resultados melhorariam muito.* 
 
 O principal truque que lhe mostrei e que pode aumentar em 10 vezes a qualidade dos seus resultados é o **encadeamento de prompts**.
 
