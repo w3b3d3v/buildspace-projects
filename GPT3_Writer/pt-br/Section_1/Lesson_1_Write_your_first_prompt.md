@@ -62,7 +62,7 @@ Vou mudar meu prompt.
 Me dê títulos de anime sobre um garoto chamado Farza.
 ```
 
-**Certifique-se de alterar seu prompt para ser sobre você.** Eu direi isso muitas vezes durante esta construção. Por favor, não copie minhas instruções palavra por palavra. Se tudo o que você está fazendo é copiar e colar, isso será uma total perda de tempo.
+**Certifique-se de alterar seu prompt para ser sobre você.** Eu direi isso muitas vezes durante esta compilação. Por favor, não copie minhas instruções palavra por palavra. Se tudo o que você está fazendo é copiar e colar, isso será uma total perda de tempo.
 
 Use seu próprio nome. Talvez você não queira títulos de “anime”, talvez queira títulos de filmes de “ficção científica”. Talvez você não queira títulos sobre “um menino”, talvez queira títulos sobre um “dragão”. Seja criativo. Veja o que acontece.
 
