@@ -205,7 +205,7 @@ Seja bem específico com o GPT-3 — *“inclua uma descrição da assinatura me
 
 Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivesse me dado mais de X” - basta literalmente pedir para o GPT-3 fazer a coisa X!!
 
-### Vamos construir algo de verdade.
+### Vamos construir algo de verdade
 
 Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar os roteiristas a criar mundos mais interessantes, etc.
 
