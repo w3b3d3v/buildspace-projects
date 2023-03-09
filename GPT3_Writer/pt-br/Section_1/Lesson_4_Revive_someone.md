@@ -1,6 +1,6 @@
 
 ```
-Vídeo de 1 minuto: As coisas que eu abordo nesta parte da construção me fizeram apaixonar por este assunto.
+Vídeo de 1 minuto: As coisas que eu abordo nesta parte da compilação me fizeram apaixonar por este assunto.
 ```
 
 ### Uma conversa com Steve Jobs
