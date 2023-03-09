@@ -6,7 +6,7 @@ Agora vem a parte divertida, que é realmente usar a nossa extensão para chamar
 
 O objetivo é destacar o texto em nosso navegador, clicar com o botão direito do mouse e ver uma opção que diga "Gerar postagem de blog". Tudo o que obtivermos do GPT-3, injetaremos diretamente em nosso site 🙂.
 
-**Novamente, para minha extensão, trabalharei com o [Calmly](https://www.calmlywriter.com/online/)** e recomendo que você acompanhe com ele. Posteriormente, você poderá usar o mesmo fluxo para qualquer site onde deseja gerar texto.
+**Novamente, para minha extensão, trabalharei com o [Calmly](https://www.calmlywriter.com/online/)**, e recomendo que você acompanhe com ele. Posteriormente, você poderá usar o mesmo fluxo para qualquer site onde deseja gerar texto.
 
 Para fazer tudo isso funcionar, precisaremos configurar esta coisa chamada service worker. Você pode pensar nisso como uma configuração de servidor para seu aplicativo. Em vez de ter todo o nosso código sendo executado em nossa IU, podemos fazer com que ela execute ações enquanto nosso service worker faz tudo em segundo plano!
 
