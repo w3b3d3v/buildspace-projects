@@ -35,11 +35,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 ```
-**Observação: Se você estiver enfrentando algum problema com o módulo da OpenAI, tente executar `npm install openai` no seu terminal*
+*Observação: Se você estiver enfrentando algum problema com o módulo da OpenAI, tente executar `npm install openai` no seu terminal*
 
-Isso é bem simples! Estamos usando a biblioteca OpenAI JS para configurar a API facilmente. Mas você verá aqui que precisamos de um `process.env.OPENAI_API_KEY`. Isso virá do nosso arquivo `.env`, que é um arquivo que contém qualquer informação secreta que você não deseja enviar acidentalmente para o GitHub.
+Isso é bem simples! Estamos usando a biblioteca JS da OpenAI para configurar a API mais facilmente. Mas você verá aqui que precisamos de `process.env.OPENAI_API_KEY`. Isso virá do nosso arquivo `.env`, que é um arquivo que contém as informações secretas que você não deseja enviar acidentalmente para o GitHub.
 
-*Observação: você pode copiar e colar sua chave de API aqui diretamente, mas, quando o código for enviado para o GitHub, qualquer pessoa poderá vê-la!*
+*Observação: você pode copiar e colar sua chave de API diretamente aqui, mas, quando o código for enviado para o GitHub, qualquer pessoa poderá vê-la!*
 
 Então, vá em frente e crie um arquivo chamado `.env` na raiz do seu projeto. Dentro dele, tudo o que você precisa é isso:
 
@@ -54,9 +54,9 @@ Veja como fica na minha tela:
 
 ![Untitled](https://i.imgur.com/A0BsiHa.png)
 
-*Observação: você pode ter que reiniciar seu terminal e executar `yarn dev` novamente. Às vezes, nosso frontend pode não reconhecer o arquivo `.env` sem uma reinicialização.*
+*Observação: você pode ter que reinicializar seu terminal e executar `yarn dev` novamente. Às vezes, nosso frontend pode não reconhecer o arquivo `.env` sem uma reinicialização.*
 
-Legal! Agora vamos terminar o `generate.js` para chamar a API do OpenAI. Adicione o seguinte código abaixo da linha `const openai`:
+Legal! Agora vamos terminar o `generate.js` para chamar a API da OpenAI. Adicione o seguinte código abaixo da linha `const openai`:
 
 ```jsx
 const basePromptPrefix = "";
@@ -92,7 +92,7 @@ Acredite ou não, esta função está pronta para ser chamada de nosso frontend.
 
 ### Conecte o botão mágico
 
-Vamos conectar nosso botão "Gerar" para chamar nossa nova API sofisticada.
+Vamos conectar nosso botão "Gerar" para chamar nossa nova e sofisticada API.
 
 Coloque o código a seguir *abaixo* de onde você tem `const [userInput, setUserInput]`.
 
@@ -195,7 +195,7 @@ Poxa, é uma pena ver o Elon Musk insatisfeito com a direção que a Tesla está
 
 Maaaaaais uma coisa para adicionar bem rapidinho - um estado de carregamento! Já temos o estado de carregamento salvo em `isGenerating`, que será `true` se estivermos aguardando a API e `false` se não estivermos.
 
-Tudo o que precisamos fazer é exibi-lo! Aqui está o código:
+Tudo o que precisamos fazer é exibir este estado! Aqui está o código:
 
 ```jsx
 <div className="prompt-buttons">
@@ -204,7 +204,7 @@ Tudo o que precisamos fazer é exibi-lo! Aqui está o código:
     onClick={callGenerateEndpoint}
   >
     <div className="generate">
-    {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+    {isGenerating ? <span className="loader"></span> : <p>Gerar</p>}
     </div>
   </a>
 </div>
