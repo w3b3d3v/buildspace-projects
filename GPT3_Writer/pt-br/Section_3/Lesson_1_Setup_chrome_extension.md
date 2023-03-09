@@ -1,75 +1,75 @@
 [https://vimeo.com/775481289](https://vimeo.com/775481289)
 
-At this point you’re probably pretty buried in your code. Fine tuning your model, making your website look even cleaner and more connected to your idea. But I want you to take a minute to take a step back and look at where you started, where you are, and where you’re going.
+Neste ponto, você provavelmente está bem envolvido no código. Ajustando seu modelo, deixando seu site ainda mais limpo e conectado com a sua ideia. Mas eu quero que você tire um minuto para dar um passo atrás e olhar para onde você começou, onde você está e para onde está indo.
 
-You may have just heard about this GPT-3 thing or have been interested in it for a while, either way you started off by just playing around with it on this thing called OpenAi playground. You picked up some epic learnings like prompt chaining and how you can train / make your models even better.
+Talvez você tenha acabado de ouvir falar sobre essa coisa chamada GPT-3, ou talvez esteja interessado nisso há algum tempo. De qualquer forma, você começou brincando com isso em uma ferramenta chamada OpenAI Playground. Você aprendeu algumas coisas incríveis, como o encadeamento de prompts e como pode treinar / melhorar seus modelos.
 
-You took all that and built out a website that anyone can go on and use your custom AI on. You have just given people a way to access the insanity of GPT-3 through your own idea + website and thats freaking epic.
+Você pegou tudo isso e construiu um site onde qualquer pessoa pode acessar e usar sua IA personalizada. Você acabou de dar às pessoas uma maneira de acessar a loucura que é o GPT-3 por meio de sua própria ideia + site, e isso é totalmente épico!
 
-**NOW** — we wanna take you one step further and show how you can use GPT-3 anywhere on the internet with chrome extensions.
+**Agora** vamos dar um passo adiante, pois queremos mostrar como você pode usar o GPT-3 em qualquer lugar na Internet com extensões do Chrome.
 
-### Wtf are we building?
+### Mas que diabos estamos construindo?
 
-Building a website where people can use GPT-3 in a closed environment is cool, but what if you could tap into the power of GPT-3 anywhere on the web? As we’ve seen, GPT-3 is way more powerful when it has context and a bunch of stuff to work with - that was the whole point of prompt chaining.
+Construir um site onde as pessoas possam usar o GPT-3 em um ambiente fechado é legal, mas e se você pudesse acessar o poder do GPT-3 em qualquer lugar na web? Como vimos, o GPT-3 é muito mais poderoso quando tem contexto e um monte de coisas para trabalhar, e é por isso que utilizamos o encadeamento de prompts.
 
-We’ll do this by building a Chrome browser extension that will let us inject GPT-3 responses into an online text writer, a lot like the OpenAI playground. I’m going to continue with the blog post writer idea I built for the website and you should also continue to extend your idea!
+Faremos isso construindo uma extensão do navegador Chrome, que nos permitirá injetar respostas do GPT-3 em um escritor de texto online, muito parecido com o playground da OpenAI. Vou continuar com a ideia do escritor de postagens de blog que criei para o site e você também deve continuar desenvolvendo sua ideia!
 
-### Why build an extension?
+### Por que construir uma extensão?
 
-Browser extensions are seriously overlooked. They’re basically an easy way to modify parts of the internet and can make **insane** products. Just recently, PayPal bought Honey, a browser extension that adds coupons to online checkouts for $4 billion 🤯. 
+As extensões de navegador são seriamente subestimadas. Basicamente, elas são uma maneira fácil de modificar partes da internet e podem criar produtos **incríveis**. Recentemente, o PayPal comprou o Honey, uma extensão de navegador que adiciona cupons a compras online, por 4 bilhões de dólares 🤯.
 
-By combining the versatility of browser extensions with the massive brain that GPT-3 has, you can use anything on the internet to generate stuff. Imagine an extension like [Blackmagic](https://blackmagic.so/) that generates responses to tweets lol.
+Ao combinar a versatilidade das extensões de navegador com o enorme cérebro que o GPT-3 possui, você pode usar qualquer coisa da Internet para gerar outras coisas. Imagine uma extensão que gera respostas para tweets, como a [Blackmagic](https://blackmagic.so/) rsrs.
 
-One important bit of context here is that you need to focus your extension on **one** area or website. Think of Grammarly - it works on `textarea` components. Password managers only work with `password` inputs. I’ll show you the cheat codes on one website and leave it up to you to take it and build whatever crazy ideas you have :).
+Um contexto importante aqui é que você precisa focar sua extensão em **uma** área ou site. Pense no Grammarly - ele funciona com elementos `textarea`. Os gerenciadores de senha funcionam apenas com entradas de senha (`password`). Eu vou mostrar os códigos de trapaça em um site e deixar você livre para pegar e construir as ideias malucas que tiver :).
 
-### How an extension works
+### Como uma extensão funciona
 
-Browser extensions are pretty simple - they’re made with the same stuff you make websites with: **HTML**, **CSS** and **JS**. You can think of an extension as an enclosed web app that has “under the hood” functionality to secret things in Chrome that regular websites don’t usually get access to!
+As extensões de navegador são bem simples - elas são feitas com as mesmas coisas que você utiliza para criar sites: **HTML**, **CSS** e **JS**. Você pode pensar em uma extensão como um aplicativo da Web anexado ao Chrome que possui funcionalidades "ocultas" para liberar coisas às quais os sites comuns geralmente não têm acesso!
 
-The three main parts we’re going to work with are:
+As três principais partes com as quais vamos trabalhar são:
 
-1. **The popup UI** - built with plain HTML/CSS, this is what the user sees when they click the extension icon
-2. **Content scripts** - JS files that handle the logic of our extension, including the logic of our popup UI
-3. **The service worker** - also a JS file, this is like our server: it’s loaded to handle tasks in the background when needed and it goes idle after it’s done
+1. **A interface do usuário pop-up** - construída com HTML/CSS simples. É isso que o usuário vê quando clica no ícone da extensão
+2. **Scripts de conteúdo** - arquivos JS que lidam com a lógica de nossa extensão, incluindo a lógica de nossa IU pop-up
+3. **O service worker** - também um arquivo JS, é como o nosso servidor: é carregado para lidar com tarefas em segundo plano quando necessário e fica ocioso depois de concluído
 
 ![Untitled](https://i.imgur.com/qhkATwy.png)
 
-In case you are more visual, here’s a handy graph of the architecture from the [Chrome docs](https://developer.chrome.com/docs/extensions/mv3/architecture-overview/).
+Caso você prefira uma abordagem mais visual, aqui está um gráfico bem útil da arquitetura do processo, retirado da [documentação do Chrome](https://developer.chrome.com/docs/extensions/mv3/architecture-overview/).
 
-Like most extensions, our extension will take data in from the browser, do some magic with it, and then inject a response into the UI (the tab we’re on). 
+Assim como a maioria das extensões, a nossa extensão irá receber dados do navegador, processá-los de alguma forma e, em seguida, injetar uma resposta na IU (na mesma aba em que estamos).
 
-**LET’S GOOOOOOOOOOOOOOOOOOO!** 
+**VAMOS LÁÁÁÁÁÁÁÁ!** 
 
-### Getting started
+### Iniciando
 
-Start building your $5b browser extension by cloning [this repo](https://github.com/buildspace/gpt3-writer-extension-starter). There’s no build or setup step here, the files are all you need to get going. Since this is Chromium-based, it’ll work on almost all the popular browsers - Google Chrome (lol), Brave and even Microsoft Edge (where my Edge homies at).
+Comece a construir sua extensão de navegador de 5 bilhões de dólares clonando [este repositório](https://github.com/buildspace/gpt3-writer-extension-starter). Não há etapa de configuração ou construção aqui, os arquivos têm tudo o que você precisa para começar. Como isso é baseado em Chromium, funcionará em quase todos os navegadores populares - Google Chrome (rsrs), Brave e até mesmo o Microsoft Edge (cadê meus amigos do Edge??).
 
 ```
 git clone https://github.com/buildspace/gpt3-writer-extension-starter
 cd gpt3-writer-extension-starter/
 ```
 
-There’s nothing in here except some assets and a `manifest.json` file. The `manifest.json` file has a bunch of metadata - it tells the browser what the extension is called, which assets it needs, what permissions are required for it to run and identifies which files to run in the background and on the page.
+Não há nada aqui, exceto alguns ativos e um arquivo `manifest.json`. O arquivo `manifest.json` contém vários metadados e informa ao navegador o nome da extensão, quais ativos são necessários, quais permissões são necessárias para executá-la e identifica quais arquivos devem ser executados em segundo plano e na página.
 
-### Building the manifest.json file
+### Construindo o arquivo manifest.json
 
-The goal of this extension is for you to build on your current idea. For example, if you’re creating a blog post generator and you use Substack all the time, you can build this extension to work with Substack and insert your GPT-3 generated text **DIRECTLY** into Substack’s text editor. It’s pretty powerful and you’re about to unlock this new power.
+O objetivo desta extensão é que você construa em cima da sua ideia atual. Por exemplo, se você está criando um gerador de postagem de blog e usa o Substack o tempo todo, poderá construir essa extensão para funcionar com o Substack e inserir o texto gerado pelo GPT-3 **DIRETAMENTE** no editor de texto do Substack. É bem poderoso, e você está prestes a desbloquear esse novo poder.
 
-I’m going to continue building on my magic blog post generator and inject it into a site called [Calmly](https://www.calmlywriter.com/online/). It’s a text editor I use all the time. Again - **you can pivot here.** If you have a kick-ass idea for what GPT-3 can do on a specific website/app, go for it.
+Vou continuar construindo meu gerador mágico de postagens de blog, para injetá-lo em um site chamado [Calmly](https://www.calmlywriter.com/online/). É um editor de texto que uso o tempo todo. Novamente - você pode mudar a direção das coisas aqui. Se você tem uma ideia incrível do que o GPT-3 pode fazer em um site/aplicativo específico, vá em frente.
 
-But — the strategy I’m going to show you here to inject into Calmly can be used on any website on the web — Reddit, Notion, Twitter, whatever.
+Mas, a estratégia que vou mostrar aqui para injetar no Calmly pode ser usada em qualquer site da web - Reddit, Notion, Twitter, o que for.
 
-Here’s the basic stuff we’ve given you in `manifest.json`— this is the time to change it up to your app idea:
+Aqui está o básico que fornecemos no `manifest.json` - este é o momento de alterá-lo para sua ideia de aplicativo:
 
 ```json
 {
-  // Change to your title
-  "name": "magic blog post generator",
-  // Change to your description
-  "description": "highlight your blog post title, we'll generate the rest",
+  // Mude para o seu título
+  "name": "gerador mágico de postagens de blog",
+  // Mude para sua descrição
+  "description": "destaque o título da postagem do blog, nós iremos gerar o restante",
   "version": "1.0",
   "manifest_version": 3,
-  // Update these assets in the folder
+  // Atualize esses recursos na pasta
   "icons": {
     "48": "assets/48.png",
     "72": "assets/72.png",
@@ -78,20 +78,21 @@ Here’s the basic stuff we’ve given you in `manifest.json`— this is the tim
   },
   "action": {
     "default_popup": "index.html",
-    // Change the default title
-    "default_title": "Generate blog post"
+    // Mude o título padrão
+    "default_title": "Gerar postagem de blog"
   }
 }
+
 ```
 
-If you copy paste this you’ll need to remove comments btw :P
+A propósito, se você copiar e colar, precisará remover os comentários.
 
-Because extensions can basically become malware that runs in your browser, security is a huge deal with them. You need to explicitly declare which permissions your extension needs. Make sure to add this line, we’ll explain later:
+Como as extensões podem basicamente se tornar malware executado em seu navegador, a segurança é um grande problema para elas. Você precisa declarar explicitamente quais permissões sua extensão precisa. Certifique-se de adicionar esta linha, que explicaremos mais tarde:
 
 ```json
 {
-  "name": "magic blog post generator",
-  "description": "highlight your blog post title, we'll generate the rest",
+  "name": "gerador mágico de postagens de blog",
+  "description": "destaque o título da postagem do blog, nós iremos gerar o restante",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -102,26 +103,26 @@ Because extensions can basically become malware that runs in your browser, secur
   },
   "action": {
     "default_popup": "index.html",
-    "default_title": "Generate blog post"
+    "default_title": "Gerar postagem de blog"
   },
   // Add this line
   "permissions": ["contextMenus", "tabs", "storage"]
 }
 ```
 
-### Creating a UI for your extension
+### Criando uma IU para sua extensão
 
-Our extension is going to have a super basic UI. This UI will be for inputting our OpenAI API key. You're going to need this because:
+Nossa extensão terá uma IU super básica. Essa IU será para inserir nossa chave de API da OpenAI. Você vai precisar dela porque:
 
-1. You need an API key to call GPT-3
-2. We don’t just want to hardcode it, so we are asking the user for it
-3. We want it stored in extension storage which can only be accessed by the person on the computer
+1. Você precisa de uma chave de API para chamar o GPT-3
+2. Não queremos apenas codificá-la rigidamente, então estamos pedindo ao usuário que a insira
+3. Queremos que seja guardada no armazenamento da extensão, que só pode ser acessado pelo usuário do computador
 
-This way we don't have to worry about OpenAI credits - the users do it all!
+Dessa forma, não precisamos nos preocupar com os créditos da OpenAI - os usuários fazem tudo!
 
-Take a look at your `manifest.json` file that and find the `default_popup` action. This is the file we will create to show up in our extension on open!
+Dê uma olhada no arquivo `manifest.json` e encontre a ação `default_popup`. Este é o arquivo que criaremos para aparecer em nossa extensão quando a abrirmos!
 
-Create a new file at the root of your project called `index.html`
+Crie um novo arquivo na raiz do seu projeto chamado `index.html`.
 
 ```html
 <html>
@@ -130,22 +131,22 @@ Create a new file at the root of your project called `index.html`
     </head>
     <body>
         <div id="key_needed">
-            <p>To get started, add your OpenAI API Key!</p>
+            <p>Para começar, adicione sua chave de API da OpenAI!</p>
             <input id="key_input" />
-            <button id="save_key_button">Add key</button>
+            <button id="save_key_button">Adicione chave</button>
         </div>
         <div id="key_entered">
-           <p>You entered your OpenAI API Key.</p>
-           <button id="change_key_button">Change key</button>
+           <p>Você inseriu sua chave de API da OpenAI.</p>
+           <button id="change_key_button">Altere a chave</button>
         </div>
     </body>
     <script src="index.js"></script>
 </html>
 ```
 
-Super simple, just some imports and classes. We'll show the `key_needed` div when the storage is empty and hide it with the `key_entered` div when there is a key in storage.
+Super simples, apenas algumas importações e classes. Mostraremos a div `key_needed` quando o armazenamento estiver vazio e a ocultaremos com a div `key_entered` quando houver uma chave no armazenamento.
 
-Let’s move onto styling all of this with CSS. First we’ll need to create an `index.css` file at the root of your project and set it up with this:
+Vamos agora estilizar tudo isso com o CSS. Primeiro, precisamos criar um arquivo `index.css` na raiz do seu projeto e configurá-lo assim:
 
 ```css
 body {
@@ -157,9 +158,9 @@ body {
 }
 ```
 
-Again, super basic. Just start with `key_entered` as a hidden `div` and we will be using Javascript to change that property. That will lead us to the `index.js` file that is also imported on the html page. Go ahead and create a `index.js` file at the root of this directory as well!
+Novamente, tudo bem básico. É só começar com `key_entered` como uma `div` oculta e então usaremos o JavaScript para alterar essa propriedade. Isso nos levará ao arquivo `index.js`, que também é importado na página HTML. Vá em frente e crie um arquivo `index.js` na raiz deste diretório também!
 
-We are going to start by writing some listeners so we know when buttons are clicked!
+Vamos começar escrevendo alguns ouvintes de eventos (listeners) para sabermos quando os botões são clicados!
 
 ```javascript
 document.getElementById('save_key_button').addEventListener('click', saveKey);
@@ -168,7 +169,7 @@ document
   .addEventListener('click', changeKey);
 ```
 
-You can see we're listening to `save_key_button` and `change_key_button`. These will both call different functions. Let’s get the function declaration setup for both of them, but start with the first listener and create the `saveKey` :
+Você pode ver que estamos ouvindo os eventos de clique `save_key_button` e `change_key_button`. Ambos chamarão funções diferentes. Vamos criar a declaração da função para ambos, mas vamos começar com o primeiro ouvinte e criar a função `saveKey`:
 
 ```javascript
 const saveKey = () => {}
@@ -181,9 +182,9 @@ document
   .addEventListener('click', changeKey);
 ```
 
-Nice! We want to save the OpenAI API Key that is entered. This may feel sus, but don’t worry this is actually pretty safe. The safest thing to do here would be to create an entire service to handle these requests — but we’ll leave that up to you 🙂
+Legal! Queremos salvar a chave de API da OpenAI que é inserida. Isso pode parecer suspeito, mas não se preocupe, é bem seguro. A coisa mais segura a fazer aqui seria criar um serviço inteiro para lidar com essas solicitações - mas deixaremos isso com você 🙂
 
-Here’s what it looks like:
+E é assim que fica:
 
 ```javascript
 const saveKey = () => {
@@ -192,10 +193,10 @@ const saveKey = () => {
   if (input) {
     const { value } = input;
 
-    // Encode String
+    // Codifique a string
     const encodedValue = encode(value);
 
-    // Save to google storage
+    // Salve no armazenamento do Google
     chrome.storage.local.set({ 'openai-key': encodedValue }, () => {
       document.getElementById('key_needed').style.display = 'none';
       document.getElementById('key_entered').style.display = 'block';
@@ -204,18 +205,18 @@ const saveKey = () => {
 };
 ```
 
-We’re grabbing the input value from the input box itself, then doing some Base64 encoding on it (this just makes it difficult to read to the naked eye), then setting the key in google storage and finally change CSS setting to show the “you have entered key” dialog.
+Estamos pegando o valor de entrada da caixa de entrada, fazendo um pouco de codificação Base64 nele (o que dificulta a leitura a olho nu), para, em seguida, definir a chave no armazenamento do Google e finalmente alterar a configuração de CSS para mostrar a caixa de diálogo "você inseriu a chave".
 
-You might be getting a JS error here — we still need to add the `encode` function! Super simple one-liner that you’ll put right above the `saveKey` function:
+Você pode estar recebendo um erro do JS aqui. Ainda precisamos adicionar a função `encode`! É uma linha super simples que você irá colocar logo acima da função `saveKey`:
 
 ```javascript
 const encode = (input) => {
   return btoa(input);
 };
 ```
-As the function name suggests, we're encoding whatever is passed in to something else. `btoa` stands for [Binary to ASCII.](https://developer.mozilla.org/en-US/docs/Web/API/btoa) All we’re doing here is changing the format - this is **not** secure at all lol
+Como o nome da função sugere, estamos codificando tudo o que é passado para outra coisa. `btoa` significa [Binary to ASCII](https://developer.mozilla.org/en-US/docs/Web/API/btoa), ou Binário para ASCII. Tudo o que estamos fazendo aqui é mudar o formato, o que **não** é nada seguro rsrs.
 
-Finally, let’s add some fanciness to the `changeKey` function:
+Por fim, vamos adicionar um pouco de sofisticação à função `changeKey`:
 
 ```javascript
 const changeKey = () => {
@@ -224,11 +225,11 @@ const changeKey = () => {
 };
 ```
 
-This is a really simple function that enables the `key_needed` ui to be shown to enter a new API key if needed. 3 for 3 simplicity lets gooooo.
+Essa é uma função realmente simples que permite mostrar a IU de `key_needed` para inserir uma nova chave de API, se necessário. Mais uma vez no alvo da simplicidade… vamos lá!
 
-Now, you have these two different states, how do we know which one to show first? We can actually write a function that runs every time the extension is opened to check for a key stored in our extension storage. If there is already a key show the `key_entered` UI else show the `key_needed` UI.
+Agora que temos esses dois estados diferentes. Como vamos saber qual mostrar primeiro? Na verdade, podemos escrever uma função que é executada toda vez que a extensão é aberta para verificar se há uma chave no armazenamento da extensão. Se já houver uma chave, mostre a IU de `key_entered`, caso contrário, mostre a IU de `key_needed`.
 
-At the top of your `index.js` file, go ahead and add this:
+No topo do seu arquivo `index.js`, vá em frente e adicione isso:
 
 ```javascript
 const checkForKey = () => {
@@ -240,9 +241,9 @@ const checkForKey = () => {
 };
 ```
 
-All we are doing here is checking for the key in our state. If it’s there go ahead and return it! We use a promise here because we need to wait for the callback to be called in the `chrome.storage` section. Once it’s called we can resolve our promise. 
+Tudo o que estamos fazendo aqui é verificar se a chave existe no nosso estado. Se ela estiver lá, vá em frente e retorne-a! Usamos uma promessa (promise) aqui porque precisamos esperar a chamada de retorno na seção `chrome.storag`e. Uma vez que ela é chamada, podemos resolver nossa promessa.
 
-Finally, call this at the very bottom of your file. Every time your extension is opened this will run:
+Por fim, chame isso na parte inferior do seu arquivo. Todas as vezes que sua extensão for aberta, isso será executado:
 
 ```javascript
 checkForKey().then((response) => {
@@ -253,46 +254,48 @@ checkForKey().then((response) => {
 });
 ```
 
-We wait for the promise to resolve and then we set it accordingly. If the key is there, show the `key_entered` UI. EZPZ.
+Esperamos que a promessa seja resolvida e então a definimos de acordo. Se a chave estiver lá, mostre a IU `key_entered`. Melzinho na chupeta.
 
-We have written **QUITE** a bit, but actually haven’t tested anything to see if it works lol. How can you test your extension quickly and easily? Check out these steps:
+Escrevemos **BASTANTE**, mas na verdade não testamos nada para ver se funciona rsrs. Como você pode testar sua extensão de forma rápida e fácil? Confira estes passos:
 
-1. **Go to extensions** - Head to your browser and go to `chrome://extensions` (note this will be different if you are using another chromium based browser). Here you will see a list of extensions. 
-2. Make sure you enable developer mode on the top right.
-3. **Load unpacked extension -** We are going to get our extension loaded up in our browser to actually test out! Navigate to the **root** of your project folder
-4. **Let it rip** - If all went well you should see your extension in all it’s glory in your list of extensions!
+
+1. **Vá para extensões** - Acesse o seu navegador e vá para `chrome://extensions` (observe que isso será diferente se você estiver usando outro navegador baseado em Chromium). Aqui você verá uma lista de extensões.
+2. Certifique-se de ativar o modo de desenvolvedor no canto superior direito.
+3. **Carregue a extensão descompactada** - Vamos carregar nossa extensão no navegador para realmente testá-la! Navegue até a raiz da pasta do seu projeto
+4. **Deixe fluir** - Se tudo correu bem, você deve ver a sua extensão em toda a sua glória na lista de extensões!
+
     
 ![Screenshot 2022-11-27 at 5.20.23 AM.png](https://i.imgur.com/dvkOyi0.png)
     
 
-Just like any other extension here, you should be able to see it in your list of extensions! Go ahead and click on it and see the magic **UNFOLD ✨**
+Assim como qualquer outra extensão, você deve ser capaz de vê-la na lista de extensões! Vá em frente e clique nela para ver a mágica **acontecer** ✨.
 
 ![Screenshot 2022-11-23 at 5.14.09 PM.png](https://i.imgur.com/0h1mgyI.png)
 
-Once you press add key your UI should change! Play around with it a few times to make sure it works!
+Após pressionar o botão "add key", sua IU deverá mudar! Brinque com ela algumas vezes para garantir que esteja tudo funcionando!
 
-And you’re done with the UI! Everything else with our extension will happen using context menus (the box that pops up when you right-click anywhere on the internet). 
+E assim terminamos com a IU! Tudo o mais em nossa extensão acontecerá usando menus de contexto (a caixa que aparece quando você clica com o botão direito em qualquer lugar da Internet).
 
-You can do all sorts of stuff with the UI in extensions - use React, make them pop to the side, it’s a wild world. Come back to the UI later when you’re done with the rest, sidebars are fun to play with.
+Você pode fazer todo tipo de coisa com a IU em extensões - usar o React, fazê-las aparecer para o lado… é um mundo muito irado. Mais tarde, quando terminar com o resto, volte para a IU. As barras laterais são bem divertidas de se brincar.
 
-One big note here — **there is no hot reloading!**
+Uma grande observação aqui - **não há carregamento automático do código**!
 
-So, every time you update your code, you have to go back to your list of extensions, find yours, and press the refresh button on the bottom right:
+Portanto, toda vez que você atualizar seu código, precisará voltar à lista, encontrar a sua extensão e pressionar o botão de atualização no canto inferior direito:
 
 ![Untitled](https://i.imgur.com/Ma9zU1C.png)
 
-But that's not all! Remember that extensions are injected _into_ your browser tabs when the tab loads. Refreshing the extension alone is not enough. You also need to refresh the tab you're using it on. So the flow will go:
+Mas isso não é tudo! Lembre-se de que as extensões são **injetadas nas guias** do seu navegador quando a guia é carregada. Apenas recarregar a extensão não é suficiente. Você também precisa atualizar a guia em que está usando a extensão. Então o fluxo será:
 
-1. Change extension code in VS Code 
-2. Reload extension in your browser
-3. Reload any tab you want to use the extension on
-4. Click the extension and add in the API key
-5. Test!
+1. Altere o código da extensão no VS Code
+2. Recarregue a extensão no seu navegador
+3. Recarregue qualquer guia na qual você deseja usar a extensão
+4. Clique na extensão e adicione a chave da API
+5. Teste!
 
-You'll get used to this pretty quick :P
+Você vai se acostumar com isso bem rápido!
 
-7/10 issues I'm seeing on Discord are because of this. There could be changes that you write that actually never applied to your bundle yet. Sometimes, if you're noticing that your code isn’t updating I recommend just deleting the extension and loading it from scratch.
+7 em cada 10 problemas que vejo no Discord são por causa disso. Pode haver alterações que você escreveu que ainda não foram aplicadas à sua extensão. Às vezes, se você perceber que seu código não está atualizando, recomendo simplesmente excluir a extensão e carregá-la do zero.
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou Farza ficará triste.
 
-Post in #progress with a screenshot of your fancy new Chrome extension!
+Faça uma postagem em #progress com uma captura de tela da sua nova e sofisticada extensão do Chrome!
