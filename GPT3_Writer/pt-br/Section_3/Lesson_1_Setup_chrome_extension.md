@@ -20,7 +20,7 @@ As extensões de navegador são seriamente subestimadas. Basicamente, elas são 
 
 Ao combinar a versatilidade das extensões de navegador com o enorme cérebro que o GPT-3 possui, você pode usar qualquer coisa da Internet para gerar outras coisas. Imagine uma extensão que gera respostas para tweets, como a [Blackmagic](https://blackmagic.so/) rsrs.
 
-Um contexto importante aqui é que você precisa focar sua extensão em **uma** área ou site. Pense no Grammarly - ele funciona com elementos `textarea`. Os gerenciadores de senha funcionam apenas com entradas de senha (`password`). Eu vou mostrar os códigos de trapaça em um site e deixar você livre para pegar e construir as ideias malucas que tiver :).
+Um contexto importante aqui é que você precisa focar sua extensão em **uma** área ou site. Pense no Grammarly - ele funciona com elementos `textarea`. Os gerenciadores de senha funcionam apenas com entradas de senha (`password`). Eu vou mostrar os códigos de trapaça (cheat codes) em um site e deixar você livre para pegar e construir as ideias malucas que tiver :).
 
 ### Como uma extensão funciona
 
@@ -105,7 +105,7 @@ Como as extensões podem basicamente se tornar malware executado em seu navegado
     "default_popup": "index.html",
     "default_title": "Gerar postagem de blog"
   },
-  // Add this line
+  // Adicione esta linha
   "permissions": ["contextMenus", "tabs", "storage"]
 }
 ```
@@ -169,7 +169,7 @@ document
   .addEventListener('click', changeKey);
 ```
 
-Você pode ver que estamos ouvindo os eventos de clique `save_key_button` e `change_key_button`. Ambos chamarão funções diferentes. Vamos criar a declaração da função para ambos, mas vamos começar com o primeiro ouvinte e criar a função `saveKey`:
+Você pode ver que estamos ouvindo os eventos de clique de `save_key_button` e `change_key_button`. Ambos chamarão funções diferentes. Vamos criar a declaração da função para ambos, mas vamos começar com o primeiro ouvinte e criar a função `saveKey`:
 
 ```javascript
 const saveKey = () => {}
@@ -214,7 +214,7 @@ const encode = (input) => {
   return btoa(input);
 };
 ```
-Como o nome da função sugere, estamos codificando tudo o que é passado para outra coisa. `btoa` significa [Binary to ASCII](https://developer.mozilla.org/en-US/docs/Web/API/btoa), ou Binário para ASCII. Tudo o que estamos fazendo aqui é mudar o formato, o que **não** é nada seguro rsrs.
+Como o nome da função sugere, estamos codificando qualquer coisa que seja passada adiante. `btoa` significa [Binary to ASCII](https://developer.mozilla.org/en-US/docs/Web/API/btoa), ou Binário para ASCII. Tudo o que estamos fazendo aqui é mudar o formato, o que **não** é nada seguro rsrs.
 
 Por fim, vamos adicionar um pouco de sofisticação à função `changeKey`:
 
@@ -241,7 +241,7 @@ const checkForKey = () => {
 };
 ```
 
-Tudo o que estamos fazendo aqui é verificar se a chave existe no nosso estado. Se ela estiver lá, vá em frente e retorne-a! Usamos uma promessa (promise) aqui porque precisamos esperar a chamada de retorno na seção `chrome.storag`e. Uma vez que ela é chamada, podemos resolver nossa promessa.
+Tudo o que estamos fazendo aqui é verificar se a chave existe no nosso estado. Se ela estiver lá, vá em frente e retorne-a! Usamos uma promessa (promise) aqui porque precisamos esperar a chamada de retorno na seção `chrome.storage`. Uma vez que ela é chamada, podemos resolver nossa promessa.
 
 Por fim, chame isso na parte inferior do seu arquivo. Todas as vezes que sua extensão for aberta, isso será executado:
 
@@ -272,7 +272,7 @@ Assim como qualquer outra extensão, você deve ser capaz de vê-la na lista de 
 
 ![Screenshot 2022-11-23 at 5.14.09 PM.png](https://i.imgur.com/0h1mgyI.png)
 
-Após pressionar o botão "add key", sua IU deverá mudar! Brinque com ela algumas vezes para garantir que esteja tudo funcionando!
+Após pressionar o botão "Adicione chave", sua IU deverá mudar! Brinque com ela algumas vezes para garantir que esteja tudo funcionando!
 
 E assim terminamos com a IU! Tudo o mais em nossa extensão acontecerá usando menus de contexto (a caixa que aparece quando você clica com o botão direito em qualquer lugar da Internet).
 
