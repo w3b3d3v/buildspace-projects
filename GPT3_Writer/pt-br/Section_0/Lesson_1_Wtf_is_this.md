@@ -32,7 +32,7 @@ A tecnologia evolui rapidamente. E é graças às pessoas incríveis que fazem P
 
 **Confira o nosso repositório [aqui](https://github.com/buildspace/buildspace-projects)** -- dê uma estrela se você estiver de bem com a vida! Isso nos ajuda muito.
 
-### Como obter ajuda
+### Como obter ajuda.
 
 Você provavelmente encontrará alguns obstáculos durante a construção.
 

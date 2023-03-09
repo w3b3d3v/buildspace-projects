@@ -68,7 +68,7 @@ No entanto, grandes modelos de linguagem também têm várias desvantagens. Prim
 No geral, grandes modelos de linguagem têm tanto vantagens quanto desvantagens. Embora possam ser muito poderosos, também apresentam alguns riscos. Ao decidir se deve ou não usar um grande modelo de linguagem, é importante ponderar os prós e contras cuidadosamente.
 ```
 
-Então, neste caso, meu `basePrompt` era:
+Então, neste caso, meu `basePrompt` foi:
 
 ```
 Escreva uma postagem de blog no estilo de Paul Graham com o título abaixo. Certifique-se de que a postagem do blog se aprofunde no tópico e mostre que o escritor fez sua pesquisa.
@@ -84,7 +84,7 @@ Os Prós e Contras dos Grandes Modelos de Linguagem
 
 Antes de prosseguir, descubra o `basePrompt` para o que quer que esteja trabalhando. Se você está com dificuldades, pergunte-se primeiro: **"O que meu usuário está inserindo?"** A partir daí, você pode trabalhar de trás para frente e pensar em um prompt realmente bom para o GPT-3.
 
-**Passe cerca de 5 a 10 minutos no Playground e faça algumas descobertas de prompt**, e não se esqueça de brincar com seus hiperparâmetros! Para mim, descobri que uma temperatura de `0,8` e um comprimento máximo de `500` funcionaram muito bem.
+**Passe cerca de 5 a 10 minutos no Playground e faça algumas descobertas de prompt**, e não se esqueça de brincar com seus hiperparâmetros! Para mim, descobri que uma temperatura de `0,8` e um comprimento máximo de `500` funcionam muito bem.
 
 Mas, novamente, seus resultados serão muito diferentes porque você tem seu próprio caso de uso, então apenas brinque um pouco com isso.
 
@@ -135,7 +135,7 @@ Meu nome é Abraham Lincoln e minha opinião sobre ${req.body.userInput} é que
 
 Neste caso acima, queremos que Lincoln comece a falar depois disso, então não precisaríamos de uma nova linha aqui.
 
-Por último, se você quiser mudar `temperature` ou `max_tokens` em `generate.js`, vá em frente! Na verdade, defino meus `max_tokens` para `1250`, pois quero que o GPT-3 me dê postagens mais longas.
+Por último, se você quiser mudar `temperature` ou `max_tokens` em `generate.js`, vá em frente! Na verdade, defino `max_tokens` em `1250`, pois quero que o GPT-3 me dê postagens mais longas.
 
 *Observação: lembre-se! Só porque você aumentou `max_tokens` não significa que você obterá saídas mais longas magicamente. Tudo depende do prompt.*
 
@@ -153,9 +153,9 @@ Se necessário, altere também o subtítulo. Deixe claro para o usuário o que e
 
 Legal, você conseguiu fazer algo funcionar! 
 
-*Agora você só precisa passar um tempo melhorando seu prompt. Eu mostrei a você um monte de truques anteriormente, nesta construção. Por exemplo, no momento estou utilizando o zero-shot learning, onde não estou dando exemplos para meu prompt! Mesmo que eu utilizasse o single-shot learning, meus resultados melhorariam muito.* 
+*Agora você só precisa passar um tempo melhorando seu prompt. Já mostrei vários truques nesta construção. Por exemplo, no momento estou utilizando o zero-shot learning, onde não estou dando exemplos para meu prompt! Mesmo que eu utilizasse o single-shot learning, meus resultados melhorariam muito.* 
 
-O principal truque que mostrei a você e que pode aumentar em 10 vezes a qualidade dos seus resultados é o **encadeamento de prompts**.
+O principal truque que lhe mostrei e que pode aumentar em 10 vezes a qualidade dos seus resultados é o **encadeamento de prompts**.
 
 Não posso ajudá-lo diretamente com seu prompt, porque o prompt de cada pessoa é bem diferente. Mas, mostrarei como usei o encadeamento de prompts para aumentar em 10 vezes meus resultados. E você também poderá aplicar meus aprendizados ao seu projeto!
 
@@ -245,7 +245,7 @@ const generateAction = async (req, res) => {
     prompt: `${secondPrompt}`,
     // Eu defino uma temperatura mais alta para este. Você decide!
     temperature: 0.85,
-		// Eu também aumento max_tokens
+	  // Eu também aumento max_tokens
     max_tokens: 1250,
   });
   
