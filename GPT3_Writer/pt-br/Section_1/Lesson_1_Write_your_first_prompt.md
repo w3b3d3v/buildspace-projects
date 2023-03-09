@@ -26,7 +26,7 @@ Algumas dicas que gostaria de ter tido quando estava aprendendo a engenharia de 
 - Se sua saída não ficar parecida com a minha, está tudo bem. A saída do GPT-3 pode mesmo variar muito com base em algumas palavras.
 - Não fique obcecado em tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e: a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
 
-### Crie seus primeiros prompts para contar uma história.
+### Crie seus primeiros prompts para contar uma história
 
 Tudo o que você precisa para começar é dar um prompt ao GPT-3, que é o texto inicial que você insere em português simples. Pode parecer estranho, mas o prompt de texto é, na verdade, como você “programa” o modelo.
 
