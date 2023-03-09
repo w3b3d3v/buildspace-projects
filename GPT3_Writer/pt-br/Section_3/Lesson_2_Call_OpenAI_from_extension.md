@@ -1,23 +1,23 @@
 
 
-### Building your first service worker
+### Construindo seu primeiro Service Worker
 
-Now for the fun stuff — actually using our extension to call OpenAI. The way we are going to call OpenAI is going to be a bit different from our website. On our website we had some text input that took the text that you typed in and called a specific API endpoint we made to call OpenAI. We even used a fancy node module to call it. We are going to be doing things a BIT differently this time around.
+Agora vem a parte divertida, que é realmente usar a nossa extensão para chamar a OpenAI. A maneira como vamos chamar a OpenAI será um pouco diferente do nosso site. Em nosso site, tivemos entradas de texto que recebiam o texto digitado e chamavam um ponto de extremidade de API específico que criamos para chamar a OpenAI. Chegamos até a usar um módulo sofisticado do Node nas chamadas. Desta vez, faremos as coisas um pouco diferentes.
 
-The goal is to highlight text in our browser, right click it, and see an option that says “Generate blog post”. Whatever we get from GPT-3 we will inject directly into our website 🙂.
+O objetivo é destacar o texto em nosso navegador, clicar com o botão direito do mouse e ver uma opção que diga "Gerar postagem de blog". Tudo o que obtivermos do GPT-3, injetaremos diretamente em nosso site 🙂.
 
-**Again for my extension, I’ll be working with [Calmly](https://www.calmlywriter.com/online/).** I recommend you follow along w/ Calmly. Afterwards, you’ll be able to use the same flow for whatever website you want to generate text on.
+**Novamente, para minha extensão, trabalharei com o [Calmly](https://www.calmlywriter.com/online/).** Eu recomendo que você acompanhe com o Calmly. Posteriormente, você poderá usar o mesmo fluxo para qualquer site onde deseja gerar texto.
 
-To get this all working we’ll need to setup this thing called a service worker. You can think of this like a server setup for your app. Instead of having all our code run in our UI, we can have our UI do things while our service worker does everything in the background!
+Para fazer tudo isso funcionar, precisaremos configurar esta coisa chamada service worker. Você pode pensar nisso como uma configuração de servidor para seu aplicativo. Em vez de ter todo o nosso código sendo executado em nossa IU, podemos fazer com que ela execute ações enquanto nosso service worker faz tudo em segundo plano!
 
-For us, we need to go out to GPT-3, get our completion result and send it to the UI to inject into the Calmly web browser tab! There will be a few steps in between, but alas lets start with creating the file lol.
+No nosso caso, precisamos ir ao GPT-3, obter nosso resultado de conclusão e enviá-lo para a IU para ser injetado na guia do navegador do Calmly! Teremos algumas etapas intermediárias, mas vamos começar criando o arquivo rsrs.
 
-Go ahead and make a `scripts/contextMenuServiceWorker.js` directory and file. The first thing we are going to tackle in this file is setting up our `contextMenu`! We need to tell our extension which file is going to be used for our `service_worker.` For this let’s head to the `manifest.json` file again and add this:
+Vá em frente e crie um diretório scripts e um arquivo `contextMenuServiceWorker.js` dentro dele. A primeira coisa que vamos abordar neste arquivo é configurar nosso `contextMenu`! Precisamos dizer à nossa extensão qual arquivo será usado para nosso `service_worker`. Para isso, vamos ao arquivo `manifest.json` novamente e adicionar isso:
 
 ```json
 {
-  "name": "magic blog post generator",
-  "description": "highlight your blog post title, we'll generate the rest",
+  "name": "gerador mágico de postagens de blog",
+  "description": "destaque o título da postagem do blog, nós iremos gerar o restante",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -28,9 +28,9 @@ Go ahead and make a `scripts/contextMenuServiceWorker.js` directory and file. Th
   },
   "action": {
     "default_popup": "index.html",
-    "default_title": "Generate blog post"
+    "default_title": "Gerar postagem de blog"
   },
-  // Add this thing here
+  // Adicione isso aqui
   "background": {
     "service_worker": "scripts/contextMenuServiceWorker.js"
   },
@@ -38,37 +38,39 @@ Go ahead and make a `scripts/contextMenuServiceWorker.js` directory and file. Th
 }
 ```
 
-Now that our extension knows about our service worker, we can start with writing the logic for our `contextMenu` item!
+Agora que nossa extensão sabe onde está nosso service worker, podemos começar escrevendo a lógica para nosso item `contextMenu`!
 
-Remember, we want to highlight some text in Calmly, right click it, and be able to select an option that says “Generate blog post”. Check out how simple this is:
+Lembre-se, queremos destacar um certo texto no Calmly, clicar com o botão direito do mouse e selecionar uma opção que diga “Gerar postagem no blog”. Confira como é simples:
+
 
 ```javascript
-// Add this in scripts/contextMenuServiceWorker.js
+// Adicione isso em scripts/contextMenuServiceWorker.js
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'context-run',
-    title: 'Generate blog post',
+    title: 'Gerar postagem de blog',
     contexts: ['selection'],
   });
 });
 
-// Add listener
+// Adicione um ouvinte de evento
 chrome.contextMenus.onClicked.addListener(generateCompletionAction);
 ```
 
-Nice so what we're doing here is listening for when the extension is installed. When that happens, we create a new option in our menu that will read “Generate blog post”. Then we setup a listener for whenever that is clicked to call the `generateCompletionAction` function. 
+Excelente! Então o que estamos fazendo aqui é ouvir quando a extensão é instalada. Quando isso acontecer, criamos uma nova opção em nosso menu: “Gerar postagem de blog”. Em seguida, configuramos um ouvinte para chamar a função `generateCompletionAction` sempre que essa opção do menu for clicada.
 
-Let’s go ahead and create that right above where we setup our listeners and then we can check out our `contextMenu`:
+Vamos criar essa função logo acima de onde configuramos nossos ouvintes para então verificarmos nosso `contextMenu`:
+
 
 ```javascript
-// New function here
+// Nova função aqui
 const generateCompletionAction = async (info) => {}
 
-// Don't touch this
+// Não toque nisso
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'context-run',
-    title: 'Generate blog post',
+    title: 'Gerar postagem de blog',
     contexts: ['selection'],
   });
 });
@@ -76,24 +78,25 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener(generateCompletionAction);
 ```
 
-**NICE**. Don’t forget to head back to your extension and press the reload button, else you won’t see any of your new code applied in your extension! 
+**Muito bom!**. Não se esqueça de voltar à sua extensão e clicar no botão para recarregá-la, caso contrário, você não verá nenhum dos novos códigos aplicados à sua extensão!
 
-Let’s jump into Calmly and start writing 🤘. Once you have some stuff written down, highlight the text, right click it, and check this out:
+Vamos pular para o Calmly e começar a escrever 🤘. Depois de anotar algumas coisas, destaque o texto, clique com o botão direito do mouse e confira:
 
 ![Untitled](https://i.imgur.com/YeT4PPn.png)
 
-**WOAH** — that’s pretty sick. Crazy how easy it was to get this going right? This is some of the “under the hood” stuff I was talking about earlier + one of the benefits of building a Chrome extension :).
+**Uau!** — Que irado isso! Incrível como foi fácil fazer isso funcionar, não é mesmo? Esse é um dos benefícios de construir uma extensão do Chrome e também faz parte das funcionalidades "ocultas" que eu mencionei anteriormente :).
 
-IGHT — lets get this selection to do something epic. We’re going to start by capturing the selection text and get it ready to package up for GPT-3! Lets start by adding this to the `generateCompleteAction` function:
+Tudo bem então. Vamos fazer com que a seleção faça algo épico. Vamos começar capturando o texto selecionado e preparando-o para ser enviado para o GPT-3! Vamos começar adicionando isso à função `generateCompleteAction`:
+
 
 ```javascript
 const generateCompletionAction = async (info) => {
   try {
     const { selectionText } = info;
     const basePromptPrefix = `
-	Write me a detailed table of contents for a blog post with the title below.
+	Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-	Title:
+  Título:
 	`;
   } catch (error) {
     console.log(error);
@@ -101,14 +104,14 @@ const generateCompletionAction = async (info) => {
 };
 ```
 
-Pretty simple to start and things should look pretty familiar to you. First thing to note is everytime `generateCompletionAction` is called, our listener passed over an `info` object. This homie has our `selectionText` property in it (which is what you highlighted).
+Bastante simples para começar e as coisas devem parecer bem familiares para você. A primeira coisa a notar é que toda vez que a função `generateCompletionAction` é chamada, nosso ouvinte passa um objeto `info`. Esse objeto tem nossa propriedade `selectionText` (o que você destacou).
 
-Once we get that setup, we can start with our base prompt. You already have the cheat codes from your website so feel free to use them again here!
+Depois de configurar isso, podemos começar com nosso prompt-base. Você já tem os códigos de trapaça do seu site, então sinta-se à vontade para usá-los novamente aqui!
 
-Okay cool, we are ready to actually call GPT-3. Lets start by declaring a new function called `generate` right above `generateCompletionAction` .  Once you do that, add the line right under your `basePromptPrefix` that will call our generate function:
+Ok, legal! Estamos prontos para chamar o GPT-3. Vamos começar declarando uma nova função de geração chamada `generate`, logo acima de `generateCompletionAction`. Depois disso, adicione a linha logo abaixo do seu `basePromptPrefix` que chamará nossa função de geração:
 
 ```jsx
-// Setup our generate function
+// Configure sua função de geração
 const generate = async (prompt) => {}
 
 const generateCompletionAction = async (info) => {
@@ -116,15 +119,15 @@ const generateCompletionAction = async (info) => {
     const { selectionText } = info;
     const basePromptPrefix =
       `
-      Write me a detailed table of contents for a blog post with the title below.
+      Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
 
-      Title:
+  	  Título:
       `;
 
-		// Add this to call GPT-3
+		// Adicione isso para chamar o GPT-3
     const baseCompletion = await generate(`${basePromptPrefix}${selectionText}`);
 
-    // Let's see what we get!
+    // Vamos ver o que obtemos!
     console.log(baseCompletion.text)	
   } catch (error) {
     console.log(error);
@@ -132,20 +135,20 @@ const generateCompletionAction = async (info) => {
 };
 ```
 
-The `generate` function is actually going to save quite a bit of time (you’ll see soon). This is going to be all the code that we use to call the GPT-3 API. You’ll notice right away that this looks pretty different from our landing page call. That’s because we used a package library from OpenAI that setup a lot of the boilerplate code for us. We are doing this the “vanilla Javascript” way hehe.
+A função `generate` vai realmente economizar um bom tempo (você vai ver em breve). Este será todo o código que usaremos para chamar a API do GPT-3. Você notará imediatamente que isso parece bem diferente de quando chamamos nossa landing page. Isso porque usamos uma biblioteca de pacotes da OpenAI que configurou grande parte do código básico para nós. Estamos fazendo isso do jeito "Javascript leve" hehe.
 
-Hey — you’re getting into some under the hood shit, look at you! Cool, lets write this thing:
+Ei, você está aprendendo algumas coisas exclusivas, olha só! Legal, vamos então escrever isso:
 
 ```javascript
-// Function to get + decode API key
+// Função para obter e decodificar a chave da API
 const getKey = () => {}
 
 const generate = async (prompt) => {
-  // Get your API key from storage
+  // Obtenha sua chave de API do armazenamento
   const key = await getKey();
   const url = 'https://api.openai.com/v1/completions';
 	
-  // Call completions endpoint
+  // Chame o ponto de extremidade “completion”
   const completionResponse = await fetch(url, {
     method: 'POST',
     headers: {
@@ -160,20 +163,20 @@ const generate = async (prompt) => {
     }),
   });
 	
-  // Select the top choice and send back
+  // Selecione a melhor opção e envie de volta
   const completion = await completionResponse.json();
   return completion.choices.pop();
 }
 ```
 
-That’s all about it! A few things to note here —
+Isso é tudo! Algumas coisas a serem observadas aqui:
 
-1. We need to know the url of the API call which is [https://api.openai.com/v1/completions](https://api.openai.com/v1/completions). You can find this by checking out the [docs for this API](https://beta.openai.com/docs/api-reference/completions)
-2. The `getKey` function! Remember the key we stored in our extension state? We are going to add the logic to that very soon, but it’s named as what it does lol.
-3. We have to make sure we are making a `POST` request + including our Authorization in the header object! This is all needed for the OpenAI API to say, “Yo what I expect this call to look like and you have permission to access this data!”
-4. Finally, the body. We pass in on the options we want GPT-3 to use. This should look very familiar as this is the same data you put in when calling GPT-3 through their library
+1. Precisamos saber o url da chamada da API, que é [https://api.openai.com/v1/completions](https://api.openai.com/v1/completions). Você pode encontrá-lo consultando a [documentação para esta API](https://beta.openai.com/docs/api-reference/completions).
+2. A função `getKey`! Você se lembra da chave que armazenamos no estado da extensão? Em breve adicionaremos a lógica para isso, mas esta função tem o mesmo nome de sua ação rsrs.
+3. Temos que garantir que estamos fazendo uma solicitação de método `POST` + incluindo nossa Autorização no objeto de cabeçalho! Tudo isso é necessário para que a API da OpenAI diga: "Ei, isso é o que espero que essa chamada pareça e você tem permissão para acessar esses dados!"
+4. Finalmente, o corpo. Passamos as opções que queremos que o GPT-3 use. Isso deve parecer bem familiar, pois são os mesmos dados que você inseriu ao chamar o GPT-3 por meio de sua biblioteca.
 
-At this point (assuming you have a proper API key) you should be able to call GPT-3 just like you did in your landing page. Let’s just quickly implement our `getKey` function and then we are well on our way to get this thing shipped 🚢:
+Neste ponto (assumindo que você tenha uma chave de API adequada), você deve ser capaz de chamar o GPT-3 da mesma forma que fez em sua landing page. Vamos implementar rapidamente nossa função `getKey` e então estaremos no caminho certo para despachar esta coisa 🚢:
 
 ```javascript
 const getKey = () => {
@@ -188,56 +191,57 @@ const getKey = () => {
 };
 ```
 
-This should look just like `saveKey` function just in reverse.
+Isso deve se parecer com a função `saveKey`, porém no sentido inverso.
 
-I think it’s time for us to give this a test. This is a really exciting moment. You’re about to unlock infinite potential across all websites with this. **This first call means a lot.**
+Acho que é hora de testarmos tudo. Este é um momento realmente emocionante. Você está prestes a desbloquear um potencial infinito em todos os sites com isso. **Esta primeira chamada significa muito**.
 
-Go ahead and update your app in the extension page then go to calmly or whichever site you are using, and let this thing riiipppp. 
+Vá em frente e atualize seu aplicativo na página da extensão. Em seguida, vá ao Camly ou em qualquer site que você esteja usando e deixe essa coisa rolaaaar.
 
-Wait a second, how do you know if anything happened? If you open up the browser console in developer settings, you’ll see… absolutely nothing!
+Espere um segundo, como você sabe se alguma coisa aconteceu? Se você abrir o console do navegador nas configurações do desenvolvedor, verá… absolutamente nada!
 
-This is because service workers have ***their own*** *consoles*. Head back to your extensions menu and click the service worker link. This will open up a new DevTools window - here you can see all the log statements coming from the service worker 🙂.
+Isso ocorre porque os service workers têm seus *próprios consoles*. Volte para o menu de extensões e clique no link do service worker. Isso abrirá uma nova janela do DevTools, onde você poderá ver todos os logs vindos do service worker 🙂.
+
 
 ![Untitled](https://i.imgur.com/2RHaPDt.png)
 
-Alright alright, lets try this one more time:
+Tudo bem, tudo bem... vamos tentar mais uma vez:
 
 ![Screenshot 2022-11-27 at 5.35.16 AM.png](https://i.imgur.com/MGC5R0l.png)
 
-We are now officially calling GPT-3 from a Chrome extension, **holy shit.** You hit the trifecta here — calling GPT-3 from playground, web app, and chrome extension.
+Agora estamos oficialmente chamando o GPT-3 de uma extensão do Chrome… **caramba**! Você fez um hat-trick aqui - chamou o GPT-3 do playground, criou o aplicativo da web e a extensão do Chrome.
 
-Now that we have our first prompt going, lets get our prompt chaining setup! Remember, prompt chaining is the secret sauce that will make your extension **truly** valuable.
+Agora que temos nosso primeiro prompt funcionando, vamos configurar nosso encadeamento de prompts! Lembre-se, o encadeamento de prompts é a arma secreta que tornará sua extensão **verdadeiramente** valiosa.
 
-Remember that `generate` function you wrote earlier? Here is the moment where it will save you time lol.
+Lembra daquela função `generate` que você escreveu anteriormente? Este é o momento em que ela vai economizar um pouco do seu tempo rsrs.
 
-Head back to your `generateCompletionAction` and go ahead and add these last few lines:
+Retorne em `generateCompletionAction`, vá em frente e adicione estas últimas linhas:
 
 ```javascript
 const generateCompletionAction = async (info) => {
   try {
     const { selectionText } = info;
     const basePromptPrefix = `
-      Write me a detailed table of contents for a blog post with the title below.
-			
-      Title:
+      Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
+   		 
+  	  Título:
       `;
 
     const baseCompletion = await generate(
       `${basePromptPrefix}${selectionText}`
     );
 
-    // Add your second prompt here
+    // Adicione seu segundo prompt aqui
     const secondPrompt = `
-      Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+      Pegue o sumário e o título da postagem do blog abaixo e gere uma postagem de blog escrita no estilo de Paul Graham. Faça parecer uma história. Não apenas liste os pontos. Mergulhe fundo em cada um. Explique o porquê.
       
-      Title: ${selectionText}
+      Título: ${selectionText}
       
-      Table of Contents: ${baseCompletion.text}
+      Sumário: ${baseCompletion.text}
       
-      Blog Post:
+      Postagem de blog:
       `;
 
-    // Call your second prompt
+    // Chame seu segundo prompt
     const secondPromptCompletion = await generate(secondPrompt);
   } catch (error) {
     console.log(error);
@@ -245,12 +249,12 @@ const generateCompletionAction = async (info) => {
 };
 ```
 
-LFG. That's it — reusable code is good code. We basically did the same exact thing we did with the first prompt, but just passed in the first prompt output!
+Vamos nessa! É isso! O código reutilizável nos serviu como um bom código. Basicamente, fizemos exatamente a mesma coisa que fizemos com o primeiro prompt, mas aqui passamos a saída do primeiro prompt!
 
-Now all we need to do is inject this into Calmly. There is just one problem here — our service worker doesn’t have access to the DOM. It has no way of manipulating the UI… That's the entire point of this extension isn’t it?
+Agora tudo o que precisamos fazer é injetar tudo isso no Calmly. Há apenas um problema aqui. Nosso service worker não tem acesso ao DOM e não tem como manipular a IU... Esse é o objetivo desta extensão, não é?
 
-Don’t worry — we got you.
+Não se preocupe, vamos te ajudar.
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou Farza ficará triste.
 
-Post in #progress with your output from the OpenAI in the service worker console. This stuff is pretty advanced, good stuff :)!
+Publique a sua saída da OpenAI no console do service worker em #progress, no Discord. Isso tudo aqui é bem avançado… Parabéns! :)
