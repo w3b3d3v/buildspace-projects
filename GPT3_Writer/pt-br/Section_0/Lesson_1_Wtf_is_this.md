@@ -34,13 +34,13 @@ A tecnologia evolui rapidamente. E é graças às pessoas incríveis que fazem P
 
 ### Como obter ajuda.
 
-Você provavelmente encontrará alguns obstáculos durante a construção.
+Você provavelmente encontrará alguns obstáculos durante a compilação.
 
 É por isso que temos uma equipe de moderadores cujo objetivo principal é ajudá-lo a superar qualquer problema, para que você possa realmente entregar isso.
 
 Sempre que se deparar com algum problema, você pode procurar os moderadores diretamente no Discord usando `@mods` para mencioná-los. Também é possível usar `/question`, o que irá alertar os moderadores com sua pergunta.
 
-**Por favor, mantenha todas as discussões sobre esta construção nas seções de ajuda do canal `BUILD AN AI WRITER` do Discord. Se você começar a fazer perguntas em canais aleatórios do Discord, vai nos deixar irritados rsrs.**
+**Por favor, mantenha todas as discussões sobre esta compilação nas seções de ajuda do canal `BUILD AN AI WRITER` do Discord. Se você começar a fazer perguntas em canais aleatórios do Discord, vai nos deixar irritados rsrs.**
 
 Se você não tiver acesso a esses canais, reconecte seu Discord [aqui](https://buildspace.so/p/build-ai-writing-assistant-gpt3).
 
@@ -56,7 +56,7 @@ Veja como ele é:
 
 ### Construindo publicamente
 
-Ao longo desta construção, lhe darei alguns momentos em que você poderá tweetar sobre o que está construindo e também lhe darei tweets pré-construídos para inspirá-lo a contar ao mundo sobre o que está construindo.
+Ao longo desta compilação, lhe darei alguns momentos em que você poderá tweetar sobre o que está construindo e também lhe darei tweets pré-construídos para inspirá-lo a contar ao mundo sobre o que está construindo.
 
 Não há mal algum em **construir publicamente**. Acredite ou não, quase todas as pessoas que conheci me ajudaram a continuar construindo grandes coisas que conheci porque tweetei aleatoriamente sobre o que estava construindo rsrs. 
 
@@ -64,7 +64,7 @@ O [tweet](https://twitter.com/FarzaTV/status/1247917195767808000) estúpido abai
 
 ![](https://i.imgur.com/cDBumIw.png)
 
-**Nunca** subestime a construção em público.
+**Nunca** subestime o poder de construir algo publicamente.
 
 ### O que acontece no final?
 
