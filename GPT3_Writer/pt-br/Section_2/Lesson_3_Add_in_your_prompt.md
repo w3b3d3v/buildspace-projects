@@ -265,7 +265,7 @@ Aliás, nenhuma mudança na IU é necessária aqui. Tudo o que estamos fazendo �
 
 Então... como está o seu produto agora? O meu está absolutamente incrível rsrs. Ele tem criado algumas postagens de blog de alta qualidade sobre tudo, desde anime até fissão nuclear e conselhos sobre relacionamento. Coisa linda!
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Você chegou bem longe! Estou orgulhoso de você. **Dê a si mesmo um tapinha nas costas, você está fazendo coisas insanas!!** Vá em frente e tire uma captura de tela do seu aplicativo da web com um de seus prompts e saídas favoritos e poste em #progress. Quero ver todas as coisas incríveis que vocês estão gerando rsrs.
 

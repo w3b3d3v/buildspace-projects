@@ -217,7 +217,7 @@ Ei! Eu até dei a você uma ideia de startup gratuita com este aplicativo de lei
 
 Atualização: um de nossos ex-alunos está [trabalhando em um aplicativo desses agora](https://onceuponabot.com/). Por enquanto, você pode usá-lo gratuitamente!
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Tem ideias para algo que você gostaria de construir? Eu sei que este projeto é intitulado “construa seu assistente de escrita de IA”, mas sinta-se à vontade para construir o que você quiser rsrs. Algumas ideias malucas aleatórias:
 

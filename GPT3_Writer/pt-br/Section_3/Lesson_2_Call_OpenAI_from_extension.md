@@ -255,6 +255,6 @@ Agora tudo o que precisamos fazer é injetar tudo isso no Calmly. Há apenas um 
 
 Não se preocupe, vamos te ajudar.
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Publique a sua saída da OpenAI no console do service worker em #progress, no Discord. Isso tudo aqui é bem avançado… Parabéns! :)

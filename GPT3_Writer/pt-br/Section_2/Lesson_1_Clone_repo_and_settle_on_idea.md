@@ -235,6 +235,6 @@ Vamos lá!
 
 Por favor, **não copie** nenhum dos meus títulos aqui! Crie seu próprio caso de uso específico. Adicione o seu próprio toque especial nessa coisa. Caso contrário, eu garanto que não será divertido.
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e seu subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.

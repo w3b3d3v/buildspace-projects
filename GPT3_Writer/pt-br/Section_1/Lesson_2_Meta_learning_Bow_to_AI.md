@@ -182,7 +182,7 @@ Mas vamos continuar brincando no Playground **um pouco** mais para depois começ
 
 Mas, espere um segundo! Como exatamente tudo isso funciona mesmo?
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Tivemos um grande progresso por aqui! Excelente trabalho!
 

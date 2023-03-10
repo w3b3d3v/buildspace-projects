@@ -89,6 +89,7 @@ Você terá que gerá-lo na aba de configurações do seu projeto:
 ![](https://hackmd.io/_uploads/ryTbIFhDi.png)
 
 **VOCÊ TERMINOU. VAMOS LÁ!**
-### Por favor, faça isso ou Farza ficará triste
+
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Assim que você implantar sua aplicação web, tire uma captura de tela dela e publique-a em #progress! Mostre ao mundo que você deu o fora do localhost.

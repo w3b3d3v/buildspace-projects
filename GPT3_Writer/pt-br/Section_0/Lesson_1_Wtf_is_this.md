@@ -78,7 +78,7 @@ Este NFT oferece acesso a alguns poderes secretos:
 
 3. **Você será aceito instantaneamente no [Nights & Weekends](https://buildspace.so/nights-and-weekends)** (noites e finais de semana) se tiver o NFT. O N&W é como um acelerador que administramos - crie qualquer ideia que desejar em 6 semanas, venha para São Francisco por 3 dias para construir na vida real e apresente seu trabalho no dia da demonstração para milhares de pessoas. Os ex-alunos do N&W arrecadaram milhões de dólares.
 
-### Por favor, faça isso ou o Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 No canal #gpt3-general, diga ao mundo por que você está curioso sobre como fazer essas coisas. Seria legal entender por que você está curioso, o que está tentando construir, o que o inspirou a se envolver com isso, etc.
 

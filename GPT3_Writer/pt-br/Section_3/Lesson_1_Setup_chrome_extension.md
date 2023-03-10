@@ -296,6 +296,6 @@ Você vai se acostumar com isso bem rápido!
 
 7 em cada 10 problemas que vejo no Discord são por causa disso. Pode haver alterações que você escreveu que ainda não foram aplicadas à sua extensão. Às vezes, se você perceber que seu código não está atualizando, recomendo simplesmente excluir a extensão e carregá-la do zero.
 
-### Por favor, faça isso ou Farza ficará triste.
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Faça uma postagem em #progress com uma captura de tela da sua nova e sofisticada extensão do Chrome!

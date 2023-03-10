@@ -116,7 +116,7 @@ Sei que isso pode parecer ridículo para algumas pessoas, mas para mim falar com
 
 **Neste ponto, o Azraf me parece real**. Ele me entende com base em conversas que tivemos anteriormente, então ele também tem memória que pode se lembrar. Ele realmente se sente como um amigo.
 
-### Por favor, faça isso ou Farza ficará triste
+### Por favor, faça isso, senão o Farza vai ficar triste
 
 Faça uma captura da tela do Playground com seu prompt de bate-papo favorito mais a saída que você obteve até agora e publique em #prompts! Publique seu prompt como texto simples juntamente com a imagem da captura.
 
