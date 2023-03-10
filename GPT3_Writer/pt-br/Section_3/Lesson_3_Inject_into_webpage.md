@@ -1,26 +1,26 @@
 
 
-### Communicating with the web app tab
+### Comunicando com a guia do aplicativo da web
 
-First off if you don’t know what the DOM is drop a quick search on Google to understand a bit more about it. Your UI is the only piece of any website that has access to this and that’s because it needs to manipulate + interact with it! 
+Primeiramente, se você não sabe o que é o DOM, faça uma pesquisa rápida no Google para entender um pouco mais sobre ele. A IU é a única parte de qualquer site que tem acesso ao DOM e isso porque ela precisa manipular e interagir com ele!
 
-Things like your service worker have 0 clue what the DOM is and how to manipulate it. Just like a server, it runs code in its own environment and your DOM can’t access it.
+Coisas como seu service worker não têm ideia do que é o DOM e como manipulá-lo. Assim como um servidor, ele executa o código em seu próprio ambiente e o DOM não pode acessá-lo.
 
-That's where **messaging** comes into play! You can actually communicate between a service worker and DOM by sending a message like, “hey DOM, I have a message for ya. Check it out and do something with it”.
+É aí que as **mensagens** entram no jogo! Na verdade, você pode se comunicar entre um service worker e o DOM enviando uma mensagem como “Ei, DOM! Tenho uma mensagem para você. Veja e faça algo com isso”.
 
-In our case, we are going to take our output from GPT-3 and send that to our front end to inject into the DOM of Calmly.
+No nosso caso, vamos pegar nossa saída do GPT-3 e enviá-la para o nosso frontend para injetar no DOM do Calmly.
 
-The flow is pretty simple, but helps to see it laid out. The game plan is:
+O fluxo é bem simples, mas ajuda manter tudo organizado. O plano de jogo é:
 
-1. Write a messenger in our service worker that sends messages to our UI
-2. Create a new file that can listen for messages from our service worker
-3. When we send a certain message, the extension injects a value into the DOM
+1. Escreva um mensageiro em nosso service worker que envia mensagens para nossa IU
+2. Crie um novo arquivo que possa ouvir as mensagens de nosso service worker
+3. Quando enviamos uma determinada mensagem, a extensão injeta um valor no DOM
 
-Think of it like going to a restaurant and ordering food. You (the customer) are the app. The extension is a waiter. The chef can’t talk to you (just pretend they’re locked in the kitchen by Gordon Ramsay). You send the chef an order, and the extension takes to chef GPT-3 and brings back a delicious AI-generated dish. 
+Pense nisso como ir a um restaurante e pedir comida. Você (o cliente) é o aplicativo. A extensão é um garçom. O chef não pode falar com você (apenas finja que ele está trancado na cozinha por Gordon Ramsay). Você envia um pedido ao chef GPT-3. A extensão leva o pedido ao chef e traz de volta um delicioso prato gerado por IA.
 
-It’s actually pretty straightforward when you look at it from a higher level. Ight enough chatting lets build.
+Na verdade, é bem simples quando você olha para isso de um nível superior. Chega de papo. Vamos construir!
 
-Head back to your `contextMenuServiceWorker.js`  file and add a new function called `sendMessage` right under where we declared `getKey`
+Volte para o arquivo `contextMenuServiceWorker.js` e adicione uma nova função chamada `sendMessage`, logo abaixo de onde declaramos `getKey`.
 
 ```javascript
 const sendMessage = (content) => {
@@ -29,10 +29,10 @@ const sendMessage = (content) => {
 
     chrome.tabs.sendMessage(
       activeTab,
-      { message: 'inject', content },
+      { message: 'injetar', content },
       (response) => {
-        if (response.status === 'failed') {
-          console.log('injection failed.');
+        if (response.status === 'falhou') {
+          console.log('A injeção falhou.');
         }
       }
     );
@@ -40,31 +40,31 @@ const sendMessage = (content) => {
 };
 ```
 
-This block of code is doing a few things — 
+Este bloco de código está fazendo algumas coisas… 
 
-1. First,  we’re looking for which tab is currently active. In order to send a message we need to do it in an active tab
-2. We then use a fancy `sendMessage` function given to us from chrome. This takes 3 things — `tab`, `payload`, and `callback`. Our payload is going to include a message called `inject` and the content of whatever we have passed in
-3. Finally, our message will respond with a status, to let us know things are working well 🤘
+1. Primeiro, estamos procurando a guia que está ativa no momento. Para enviar uma mensagem, precisamos fazê-lo em uma guia ativa
+2. Em seguida, usamos uma função elegante, `sendMessage`, fornecida pelo Chrome. Ela leva 3 coisas - a guia (`tab`), a carga útil (`payload`) e o retorno da chamada (`callback`). Nossa carga útil incluirá uma mensagem chamada `injetar` e o conteúdo de tudo o que já passamos
+3. Por fim, nossa mensagem responderá com um status, para nos informar que as coisas estão funcionando bem 🤘
 
-Niceee! So now that we have this, let’s start dropping some messages. We are going to add a few different types here:
+Legal! Agora que temos isso, vamos começar a enviar algumas mensagens. Vamos adicionar alguns tipos diferentes aqui:
 
-1. A message for when we start generating a completion
-2. A message for when we are ready to send over our final output
-3. A message in case we have an error so the user can see what it is
+1. Uma mensagem para quando começarmos a gerar uma conclusão
+2. Uma mensagem para quando estivermos prontos para enviar nossa saída final
+3. Uma mensagem caso tenhamos um erro, para que o usuário possa ver o que está acontecendo
 
-Go ahead and head to the `generateCompletionAction` function and add these lines:
+Vamos seguir adiante. Vá para a função generateCompletionAction e adicione estas linhas:
 
 ```jsx
 const generateCompletionAction = async (info) => {
   try {
-    // Send mesage with generating text (this will be like a loading indicator)
-    sendMessage('generating...');
+    // Enviar mensagem com geração de texto (isso será como um indicador de carregamento)
+    sendMessage('gerando...');
 
     const { selectionText } = info;
     const basePromptPrefix = `
-      Write me a detailed table of contents for a blog post with the title below.
+      Escreva um sumário detalhado para uma postagem de blog com o título abaixo.
       
-      Title:
+      Título:
       `;
 
       const baseCompletion = await generate(
@@ -72,43 +72,44 @@ const generateCompletionAction = async (info) => {
       );
       
       const secondPrompt = `
-        Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+        Pegue o sumário e o título da postagem do blog abaixo e gere uma postagem de blog escrita no estilo de Paul Graham. Faça parecer uma história. Não apenas liste os pontos. Mergulhe fundo em cada um. Explique o porquê.
         
-        Title: ${selectionText}
+        Título: ${selectionText}
         
-        Table of Contents: ${baseCompletion.text}
+        Sumário: ${baseCompletion.text}
         
-        Blog Post:
+        Postagem de blog:
 		  `;
       
       const secondPromptCompletion = await generate(secondPrompt);
       
-      // Send the output when we're all done
+      // Envie a saída quando terminarmos
       sendMessage(secondPromptCompletion.text);
   } catch (error) {
     console.log(error);
 
-    // Add this here as well to see if we run into any errors!
+    // Adicione isso aqui também para ver se encontramos algum erro!
     sendMessage(error.toString());
   }
 };
 ```
 
-Okay okay okay. **WE GETTING SOMEWHERE NOW**. 
+Ok ok ok! **AGORA ESTAMOS PROGREDINDO**.
 
-So we are sending messages, but we don’t have anything receiving it. It’s like you’re screaming at the top of your lungs in a forest, but no one is there to listen 😟. 
+Então, estamos enviando mensagens, mas não temos nada para recebê-las. É como se você estivesse gritando com toda as força dos seus pulmões em uma floresta, mas ninguém está lá para ouvir 😟.
 
-Since we want our UI to receive the message we should setup a listener over there. In order for us to do that, we need to create a file that handles scripts for us on the UI side. That’s where the `content.js` file will come in.
+Como queremos que nossa IU receba a mensagem, devemos configurar um ouvinte ali. Para fazermos isso, precisamos criar um arquivo que lida com scripts para nós no lado da IU. É aí que entra o arquivo `content.js`.
 
-### Listening for messages
-Let's go ahead and get some listeners going by first creating a brand new file in our `scripts` folder called `content.js`! This file will hold all of our scripts for the frontend of our extension, such as DOM manipulation 🤘.
+### Ouvindo mensagens
 
-Now, for our extension to know that this is the file that we will use for our frontend scripting, we need to let the `manifest.json` file know. Go ahead and head there and add this to your file:
+Vamos em frente! Adicione alguns ouvintes criando primeiro um novo arquivo chamado `content.js`, em nossa pasta `scripts`! Este arquivo conterá todos os nossos scripts para o frontend de nossa extensão, como o script da manipulação do DOM 🤘.
+
+Agora, para nossa extensão saber que este é o arquivo que usaremos para os script de frontend, precisamos informar isso ao arquivo `manifest.json`. Então, vá em frente e adicione isto a ele:
 
 ```json
 {
-  "name": "magic blog post generator",
-  "description": "highlight your blog post title, we'll generate the rest",
+  "name": "gerador mágico de postagens de blog",
+  "description": "destaque o título da postagem do blog, nós iremos gerar o restante",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -119,13 +120,13 @@ Now, for our extension to know that this is the file that we will use for our fr
   },
   "action": {
     "default_popup": "index.html",
-    "default_title": "Generate blog post"
+    "default_title": "Gerar postagem de blog"
   },
   "background": {
     "service_worker": "scripts/contextMenuServiceWorker.js"
   },
   "permissions": ["contextMenus", "tabs", "storage"],
-  // Add this array here
+  // Adicione este array aqui
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
@@ -135,124 +136,128 @@ Now, for our extension to know that this is the file that we will use for our fr
 }
 ```
 
-This array says, for any site we go on, allow us to run script code on it to do things like DOM manipulation.
+Este array diz para qualquer site que visitamos para nos permitir executar código de script nele, para fazer coisas como a manipulação de DOM.
 
-Now, if we decided to just run this now, we would get an error in our service worker saying, no response was returned from our message — connection closed. Our `content.js` file is here to change that by being around to listen to messages from our service worker.
+Agora, se decidirmos executar isso agora, receberemos um erro em nosso service worker dizendo que nenhuma resposta foi retornada de nossa mensagem - conexão fechada. Nosso arquivo `content.js` está aqui para mudar isso por estar por perto para ouvir as mensagens de nosso service worker.
 
-Lets head to our `content.js` file and setup our listener:
+Vamos para nosso arquivo `content.js` para configurar nosso ouvinte:
+
 
 ```javascript
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.message === 'inject') {
+  if (request.message === 'injetar') {
     const { content } = request;
 
     console.log(content);
 
-    sendResponse({ status: 'success' });
+    sendResponse({ status: 'sucesso' });
   }
 });
 ```
 
-This looks very similar to our `sendMessage` function, but in reverse! When this listener is triggered, it will receive 3 props, `request` , `sender` , and `sendResponse` . We really care about `request` and `sendResponse` right now.
+Isso é muito semelhante à nossa função `sendMessage`, mas ao contrário! Quando esse ouvinte for acionado, ele receberá 3 props: `request`, `sender` e `sendResponse`. Vamos nos preocupar com `request` e `sendResponse` por enquanto.
 
-Our request is going to be the object that holds the good stuff — message and content. But before we process anything, we want to make sure to check that our message is for our inject action. If so let’s grab the `content` from it. 
+Nossa solicitação será o objeto que contém as coisas interessantes — a mensagem e o conteúdo. Mas antes de processar qualquer coisa, queremos ter certeza de verificar se nossa mensagem é para nossa ação de injeção. Se for, vamos pegar o conteúdo que estiver em `content`.
 
-For now, we are going to just print out whatever the message sends our way and then use the `sendResponse` callback to send a message back saying things are perfect and nothing went horribly wrong 👀.
+Por enquanto, vamos apenas mostrar a saída de tudo o que a mensagem nos envia e, em seguida, usar o retorno de chamada `sendResponse` para enviar uma mensagem de volta dizendo que as coisas estão perfeitas e nada deu errado 👀.
 
-We are ready to test out our message functions! If you have never worked with this type of messaging before, get ready to be amazed. A lot of this project has some crazy magic moments and this will be one of them.
+Estamos prontos para testar nossas funções de mensagem! Se você nunca trabalhou com esse tipo de mensagem antes, prepare-se para se surpreender. Grande parte deste projeto tem alguns momentos mágicos bem incríveis. E este será um deles!
 
-Go ahead and reload your extension and head back to Calmly! Before we test this fully a few 🚨VERY IMPORTANT REMINDERS 🚨-
+Vá em frente, recarregue sua extensão e volte para o Calmly! Antes de testarmos isso completamente, alguns 🚨LEMBRETES MUITO IMPORTANTES 🚨-
 
-You'll need to remove the extension and install it again since you're adding new scripts. After that it's just the standard testing flow:
-1. Reload any tab you want to use the extension on
-2. Click the extension and add in the API key
-3. To see the log messages from `content.js` just open up the console in your web browser tab (not the extension logs)! Remember this is a front end script we are dealing with :)
+Você precisará remover a extensão e instalá-la novamente, pois está adicionando novos scripts. Depois disso, seguiremos com o fluxo de teste padrão:
 
-If you don’t refresh, stuff will not work as expected. If you look at the wrong console, you won’t see anything :P
+1. Recarregue qualquer guia em que você deseja usar a extensão
+2. Clique na extensão e adicione a chave de API
+3. Para ver as mensagens de log do arquivo `content.js`, basta abrir o console na guia do navegador da Web (não os logs de extensão)! Lembre-se de que estamos lidando com um script de frontend :)
+
+Se você não recarregar a extensão, as coisas não funcionarão como esperado. Se você olhar para o console errado, não verá nada :P
 
 ![Screenshot 2022-11-27 at 5.47.18 AM.png](https://i.imgur.com/8h7w1EJ.png)
 
-**BOOM** — just like that we get our `generating...` and GTP-3 output! 
+BOOM! É assim que conseguimos nosso `gerando...` e a saída do GTP-3!
 
-We’re sooo close now and this is where the true customization comes into play. By this point if you haven’t changed up your extension to be something other than a blog generator — take some time right now and think about it. This is your time to bring the power of GPT-3 to any website you want doing whatever you want. Pretty wild.
+Estamos tããão perto agora! É aqui que a verdadeira personalização entra em jogo. Até este ponto, se você ainda não mudou sua extensão para ser algo diferente de um gerador de postagem de blog, então reserve um tempo agora e pense nisso. Este é o seu momento de trazer o poder do GPT-3 para qualquer site que você queira, fazendo o que quiser. Bem irado.
 
-### It’s time — injecting into Calmly
+### Está na hora — injetando no Calmly
 
-You’re probably like, “damn Farza you keep hyping up this injection thing, but you haven’t even pointed at how to do it”. Alright alright, we here now.
+Você provavelmente está pensando: “Caramba, Farza! Você continua se empolgando nessa coisa de injeção, mas nem mostrou como fazer isso”. Tudo bem… eu estou aqui agora!
 
-Let’s dive right back into our `content.js` file. When we receive our content we want to take it and massage it in a way where Calmly (or the website you are using) will be able to receive it and render it as if you typed it.
+Vamos mergulhar de volta em nosso arquivo `content.js`. Quando recebemos nosso conteúdo, queremos pegar e adaptar este arquivo de forma que o Calmly (ou o site que você está usando) possa recebê-lo e renderizá-lo como se você o tivesse digitado.
 
-This is probably one of the most difficult parts about this process. Every site does this different and has different elements on it. Depending on the sites you plan to use, you will need to dig through a lot of the HTML to understand how it’s structured! It’s a difficult process, but my goodness it’s amazing when you see it all come together.
+Esta é provavelmente uma das partes mais difíceis deste processo. Cada site faz isso de maneira diferente e possui elementos diversos. Dependendo dos sites que planeja usar, você precisará vasculhar muito o HTML para entender como ele está estruturado! É um processo difícil, mas, tenha certeza… é incrível quando você vê tudo se encaixando.
 
-Go ahead and add these two lines in your message listener + declare a new function in `content.js`:
+Vá em frente e adicione estas duas linhas em seu ouvinte de mensagens e declare uma nova função em `content.js`:
 
 ```javascript
-// Declare new function
+// Declare uma nova função
 const insert = (content) => {}
 
 chrome.runtime.onMessage.addListener(
-  // This is the message listener
+  // Este é o ouvinte de mensagens
   (request, sender, sendResponse) => {
-    if (request.message === 'inject') {
+    if (request.message === 'injetar') {
       const { content } = request;
 			
-      // Call this insert function
+      // Chame esta função de inserção
       const result = insert(content);
 			
-      // If something went wrong, send a failed status
+      //  Se algo deu errado, envie um status de falha
       if (!result) {
-        sendResponse({ status: 'failed' });
+        sendResponse({ status: 'falhou' });
       }
 
-      sendResponse({ status: 'success' });
+      sendResponse({ status: 'sucesso' });
     }
   }
 );
 ```
 
-It’s awesome how chrome makes it so easy to hook into these events and add our own custom logic. We are going to use this `insert` function to actually find the proper HTML we need to inject our output into and then return a response.
+É incrível como o Chrome torna tão fácil conectar-se a esses eventos e adicionar nossa própria lógica personalizada. Vamos usar a função `insert` para realmente encontrar o HTML adequado no qual precisamos injetar nossa saída e, em seguida, retornar uma resposta.
 
-Before we go super deep into the `insert` function, I’m going to layout the flow we should follow with comments inside the function and then fill it in one by one (this is actually called pseudo code):
+Antes de nos aprofundarmos na função `insert`, vou fazer o layout do fluxo que devemos seguir com comentários dentro da função e preenchê-lo um a um (na verdade, isso é chamado de pseudocódigo):
+
 
 ```javascript
 const insert = (content) => {
-  // Find Calmly editor input section
+  // Encontre a seção de entrada do editor Calmly
 
-  // Grab the first p tag so we can replace it with our injection
+  // Encontre a primeira tag <p> para que possamos substituí-la por nossa injeção
 
-  // Split content by \n
+  // Divida o conteúdo utilizando \n
 
-  // Wrap in p tags
+  // Envolva em tags <p>
 
-  // Insert into HTML one at a time
+  // Insira ao HTML, um de cada vez
 
-  // On success return true
+  // Se tiver sucesso, retorne True
   return true;
 };
 ```
 
-Sick — this type of brainstorming always helps me setup some sort of flow without writing code. It becomes super clear the steps I need to take to get to where I wanna go. Let’s start from the top then, finding the calmly editor input section.
+Irado! Esse tipo de brainstorming sempre me ajuda a estabelecer algum tipo de fluxo sem escrever código. Os passos que preciso dar para chegar onde quero ir ficam bem claros. Vamos começar do topo, encontrando a seção de entrada do editor Calmly.
 
-To get everything we need here we are going to need to inspect! If you have never inspected a website before, this will be a great way to start. Using the inspector can help you debug code, see how other sites structure their code, and even help you develop faster!
+Para obter tudo o que precisamos aqui, precisaremos inspecionar o site! Se você nunca inspecionou um site antes, esta será uma ótima maneira de começar. Usar o inspetor pode auxiliar na depuração do seu código, ver como outros sites estruturam seus códigos e até mesmo ajudar com um desenvolvimento mais rápido!
 
-All you need to do is press `CMD + OPTION + i` (macOS) or `CTRL + ALT + i` (Windows) to get a popup with all the elements of the page!
+Tudo o que você precisa fazer é pressionar `CMD + OPTION + i` (macOS) ou `CTRL + ALT + i` (Windows) para obter um pop-up com todos os elementos da página!
 
-Wow. There is a lot of shit going on here lol. Step one though is to find where we can actually write in calmly because well, thats where we are trying to insert our text. 
+Uau. Tem muita coisa acontecendo aqui rsrs. O primeiro passo, porém, é descobrir onde podemos realmente escrever no Calmly, porque, bem, é onde estamos tentando inserir nosso texto.
+
 
 ![Untitled](https://i.imgur.com/DiO4GiK.png)
 
-Play around in here for a bit! You’ll notice you can use your cursor to hover over elements or just your arrow keys. Again, the goal for Calmly is to find the `div` where I typed in “hi there :)”.
+Explore um pouco por aqui! Você perceberá que pode usar o cursor para passar o mouse sobre os elementos ou apenas as teclas de seta. Mais uma vez, o objetivo do Calmly é encontrar a `div` onde digitei “olá :)”.
 
-Looking deeper we can see a `p` tag is created and inserted inside this `div` . But what are we actually looking for here?
+Olhando mais fundo, podemos ver que uma tag `<p>` é criada e inserida dentro desta `div`. Mas o que realmente estamos procurando aqui?
 
-We essentially need to write code that says — take me to this div and insert a `p` tag with some text in it. Okay nice, we can do that! But how? Javascript to the rescue! 
+Basicamente, precisamos escrever um código que diga: leve-me a esta `div` e insira uma tag `<p>` com algum texto nela. Ok, legal! Nós podemos fazer isso! Mas como? Chamando o Javascript para o resgate!
 
-The `document` element has tons of fancy operations to help us pinpoint specific elements in HTML and manipulate them.
+O elemento `document` tem toneladas de operações sofisticadas para nos ajudar a identificar elementos específicos em HTML e manipulá-los.
 
-**ALRIGHT CODE TIME:**
+**OK! HORA DO CÓDIGO:**
 
 ```javascript
-// Find Calmly editor input section
+// Encontre a seção de entrada do editor Calmly
 const elements = document.getElementsByClassName('droid');
 
 if (elements.length === 0) {
@@ -262,49 +267,50 @@ if (elements.length === 0) {
 const element = elements[0];
 ```
 
-So this is actually pretty simple! If you noticed, that `div` that holds our `p` tags, has a class named `droid`. We have an easy way to find this — `getElementsByClassName` ! 
+Então, isso é realmente bem simples! Se você percebeu, aquela `div` que contém nossas tags `<p>` tem uma classe chamada `droid`. Temos uma maneira fácil de achar isso, com o `getElementsByClassName` !
 
-You’ll notice it returns a list of these items, because technically there can be multiple divs with this classname. Since we know this is the topmost div with this class name it’s safe to just pop it off the top.
+Você notará que ele retorna uma lista desses itens, porque tecnicamente pode haver várias divs com esse nome de classe. Como sabemos que esta é a div mais ao topo com este nome de classe, é seguro apenas retirá-la do topo.
 
-Now we are going to do something a lil weird — remove the first `p` element of the `droid` div:
+Agora vamos fazer algo um pouco estranho. Remova o primeiro elemento `<p>` da `div` `droid`:
+
 
 ```jsx
-// Grab the first p tag so we can replace it with our injection
+// Pegue a primeira tag <p> para que possamos substituí-la por nossa injeção
 const pToRemove = element.childNodes[0];
 pToRemove.remove();
 ```
 
-This is just for fanciness sake, but essentially we want it to feel like you are submitting something and it has different loading states. 
+Isso é apenas para dar um toque de sofisticação, mas essencialmente queremos que pareça que você está enviando algo e que tenha diferentes estados de carregamento.
 
-Imagine you had a flow that looked like this:
+Imagine que você tenha um fluxo que se pareça com isso:
 
 ![Screenshot 2022-11-27 at 5.49.31 AM.png](https://i.imgur.com/Ivkr8cH.png)
 
-Would be much better if this was replaced on the first line, right? So thats all these two lines are doing before inserting the next piece of content.
+Seria muito melhor se isso fosse substituído na primeira linha, certo? Então é isso que essas duas linhas estão fazendo antes de inserir a próxima parte do conteúdo.
 
-Okay nice — so we are grabbing some divs manipulating some text, pretty cool right? Now lets take some real data and mess with that to inject.
+Ótimo! Então estamos pegando algumas divs manipulando algum texto… muito legal, certo? Agora vamos pegar alguns dados reais e mexer com eles para injetar.
 
-Our response from GPT-3 is actually nicely indented (yo thanks OpenAI) so we want to make sure to abide by that here as well! This is where step 3 comes in:
+A resposta do GPT-3 é realmente bem formatada (obrigado, OpenAI), por isso queremos ter certeza de fazer a mesma coisa aqui também! É aqui que entra o passo 3:
 
 ```javascript
-// Split content by \n
+// Divida o conteúdo utilizando \n
 const splitContent = content.split('\n');
 ```
 
-If you have never seen this before, all it means is “new line”. This tells your text editor to indent text to the next line. Indentations are a pretty big deal, especially in a blog post! They help breakup content and show emphasize on certain parts. So we want to make sure to account for this.
+Se você nunca viu isso antes, tudo o que isso significa é “nova linha”. Isso informa ao seu editor de texto para recuar o texto para a próxima linha. Recuos são muito importantes, especialmente em uma postagem de blog! Eles ajudam a separar o conteúdo e mostram ênfase em certas partes. Então, queremos ter certeza de considerar isso.
 
-If we take a look at what Calmly does when we press enter (or add a new line) it adds this type of HTML:
+Se dermos uma olhada no que o Calmly faz quando pressionamos Enter (ou adicionamos uma nova linha), podemos ver que ele adiciona este tipo de HTML:
 
 ![Untitled](https://i.imgur.com/Kbo5ZLt.png)
 
-That means if we encounter a `\n` we should create this `p` tag with a `br` element in it (break). 
+Isso significa que, se encontrarmos um `\n`, devemos criar essa tag `<p>` com um elemento `<br>` (break).
 
-**ALRIGHT -** so to capture this stuff, we are going to actually go through the content string and split it at these newline characters. This will help us to know where and when to add a new line in Calmly :).
+**Tudo certo!** Para capturar essas coisas, vamos realmente percorrer a string de conteúdo e dividi-la nesses caracteres de nova linha. Isso nos ajudará a saber onde e quando adicionar uma nova linha no Calmly :).
 
-To do that we can write this cool little piece of code:
+Para fazer isso, podemos escrever este pequeno pedaço de código maneiro:
 
 ```javascript
-// Wrap in p tags
+// Envolva em tags <p>
 splitContent.forEach((content) => {
   const p = document.createElement('p');
 
@@ -315,24 +321,25 @@ splitContent.forEach((content) => {
     p.textContent = content;
   }
 
-  // Insert into HTML one at a time
+  // Insira ao HTML, um de cada vez
   element.appendChild(p);
 });
 ```
 
-First thing’s first, lets go through our content string and put each line in a `p` tag! Really this consists of creating a new `p` tag via code and then inserting the text into the `textContent` of the element.
+Antes de tudo, vamos percorrer nossa string de conteúdo e colocar cada linha em uma tag `<p>`! Na verdade, isso consiste em criar uma nova tag `<p>` através do código e inserir o texto no `textContent` do elemento.
 
-Again, if we hit a `\n` (which also is `''` ) we are going to put a `br` element inside the `p` tag!
+Novamente, se colocarmos um `\n` (que também é `' '`), vamos colocar também um elemento `<br>` dentro da tag `<p>`!
 
-Finally, we take that beautifully constructed `p` tag and append it to the `droid` `div` element that we found earlier. I guess those ***were*** the droids we were looking for.
+Por fim, pegamos aquela tag `<p>` que foi lindamente construída e a anexamos ao elemento `div` `droid` que abordamos anteriormente. Acho que eram os droides que estávamos procurando.
 
-### Optional - adding host permission**
-If you are facing an issue where your targeted text area is not being populated by the response of OpenAI, it is because you don't have [host permission](https://developer.chrome.com/docs/extensions/mv3/declare_permissions/) to modify the data. To grant permission, simply add `"host_permissions": ["https://*/*"],` into `manifest.json`:
+### Opcional - adicionando permissão de host
+
+Se você estiver enfrentando um problema em que sua área de texto de destino não está sendo preenchida pela resposta da OpenAI, é porque você não tem [permissão de host](https://developer.chrome.com/docs/extensions/mv3/declare_permissions/) para modificar os dados. Para conceder permissão, basta adicionar `"host_permissions": ["https://*/*"],` em `manifest.json`:
 
 ```json
 {
-  "name": "magic blog post generator",
-  "description": "highlight your blog post title, we'll generate the rest",
+  "name": "gerador mágico de postagens de blog",
+  "description": "destaque o título da postagem do blog, nós iremos gerar o restante",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -343,13 +350,13 @@ If you are facing an issue where your targeted text area is not being populated 
   },
   "action": {
     "default_popup": "index.html",
-    "default_title": "Generate blog post"
+    "default_title": "Gerar postagem de blog"
   },
   "background": {
     "service_worker": "scripts/contextMenuServiceWorker.js"
   },
   "permissions": ["contextMenus", "tabs", "storage"],
-  // Add the line of code here
+  // Adicione a linha de código aqui
   "host_permissions": ["https://*/*"],
   "content_scripts": [
     {
@@ -361,18 +368,18 @@ If you are facing an issue where your targeted text area is not being populated 
 ```
 
 
-**WELL WELL WELL** — looks like we are ready to give this thing a proper run :). If things work out you have just unlocked a crazy cool new skill — GPT-3 AND Chrome extensions. 
+**MUITO BEM!** Parece que estamos prontos para testar direito essa coisa :). Se as coisas funcionarem, você acabou de desbloquear uma habilidade muito incrível: GPT-3 + extensões do Chrome.
 
-For real, this stuff is not easy to get into and you’re out here doing just that. Alright lets see this thing fly.
+De fato, isso não é fácil de se envolver, e você está aqui fazendo exatamente isso. Certo, vamos ver essa coisa voar.
 
-Go ahead reload your extension, refresh your webpage and run through your testing flow:
+Vá em frente, recarregue sua extensão, atualize sua página da Web e execute seu fluxo de testes:
 
 ![Screenshot 2022-11-27 at 5.54.24 AM.png](https://i.imgur.com/x4kRkqO.png)
 
-**WOW it’s beautiful 🥲.** This is insane… You should have seen `generating...` and then your next blog post drop right into Calmly!
+**UAU! Isso é maravilhoso! 🥲.** Que loucura… Você deve ter visto `gerando…` na tela. Assim sua próxima postagem de blog chegará direto no Calmly!
 
-Congratulations my friend — **YOU DID IT.** You can now drop GPT-3 calls anywhere on the web! 
+Parabéns, meu amigo. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
 
-### Please do this or Farza will be sad.
+### Por favor, faça isso ou Farza ficará triste.
 
-Post a screenshot in #progress showing off the text generated in Calmly by the injection script. Amazing work!
+Poste uma captura de tela em #progress, mostrando o texto gerado no Calmly pelo script de injeção. Excelente trabalho!
