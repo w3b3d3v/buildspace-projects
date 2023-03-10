@@ -1,77 +1,77 @@
 
-*Note: everything here is optional, except the last part titled “Deploy to prod”. Don’t skip that!*
+*Observação: tudo aqui é opcional, exceto a última parte de implantação para a produção. Não pule isso!*
 
-### Optional: **make the extension work on whatever website you want**
+### Opcional: faça a extensão funcionar em qualquer site que você quiser
 
-You now have a Chrome extension that can literally inject into a web page and generate text using GPT-3 wherever the user is writing.
+Você agora tem uma extensão do Chrome que pode literalmente injetar em uma página da web e gerar texto usando o GPT-3 onde quer que o usuário esteja escrevendo.
 
-I really want you to take a step back and understand how crazy that is.
+Eu realmente quero que você dê um passo atrás e entenda a loucura que isso é.
 
-**You have new powers. The possibilities are endless.**
+**Você tem novos poderes. As possibilidades são infinitas.**
 
-Today, I showed you how to get this thing working on Calmly which is a site that I use to a lot to write. But you can now follow the same exact instructions to get this thing working on whatever site you want -- Twitter, Gmail, Notion, Reddit, whatever.
+Hoje, mostrei a você como fazer essa coisa funcionar no Calmly, que é um site que uso muito para escrever. Mas agora você pode seguir as mesmas instruções exatas para fazer isso funcionar em qualquer site que quiser - Twitter, Gmail, Notion, Reddit, qualquer um.
 
-Remember, the reason it won’t work on any site right now is because every site has a very different HTML structure. So, if you wanna get it working on another site you just gotta inspect that site’s HTML structure and then write some code specific to that site’s HTML. Just like we did with Calmly.
+Lembre-se de que a razão pela qual não funcionará em nenhum site agora é porque cada site tem uma estrutura HTML muito diferente. Então, se você quiser fazê-lo funcionar em outro site, basta inspecionar a estrutura HTML do site desejado e depois escrever algum código específico para a estrutura HTML deste site. Assim como fizemos com o Calmly.
 
-For example, Twitter has a much more complex structure as you can see below. But, could use the same strategy we used with Calmly though.
+Por exemplo, o Twitter tem uma estrutura muito mais complexa, como você pode ver abaixo. Mas, poderíamos usar a mesma estratégia que usamos com o Calmly.
 
 ![Untitled](https://i.imgur.com/AVAy3fi.pngs)
 
-Hope you also see how crazy Chrome Extensions are now as well haha. They give you an insane amount of power.
+Espero que você possa ver agora como as extensões do Chrome são incríveis rsrs. Elas lhe dão uma quantidade insana de poder.
 
-I wouldn’t be surprised if one of you takes your Chrome Extension to $1M in MRR. I would literally pay $49 a month for a Chrome Extension that did any of these things:
+Eu não ficaria surpreso se um de vocês ganhasse 1 milhão de dólares em receita recorrente mensal (MRR) com sua extensão do Chrome. Eu literalmente pagaria 49 dólares por mês por uma extensão do Chrome que fizesse qualquer uma dessas coisas:
 
-- Inject directly into Figma to help designers write test copy for my designs.
-- Inject directly into Google Ads to help marketers write ad copy.
-- Inject directly into Twitter help users reply to DMs faster, in a more personalized way. Kinda like autocomplete on Gmail.
-- Inject directly into Webflow to help users write landing page copy while actually working on the landing page.
-- Inject directly into Notion to help product teams come up with new ideas + write really good specs and keep track of them in one place.
+- Injetar diretamente no Figma para ajudar os designers a escrever um texto de teste para meus projetos.
+- Injetar diretamente no Google Ads para ajudar os profissionais de marketing a escrever o texto do anúncio.
+- Injetar diretamente no Twitter ajuda os usuários a responder a DMs mais rapidamente, de maneira mais personalizada. Mais ou menos como o preenchimento automático do Gmail.
+- Injetar diretamente no Webflow para ajudar os usuários a escrever o texto da landing page enquanto estão realmente trabalhando na landing page.
+- Injetar diretamente no Notion para ajudar as equipes de produto a ter novas ideias e escrever especificações realmente boas e acompanhá-las em um só lugar.
 
-The possibilities truly are endless.
+As possibilidades são realmente infinitas.
 
-Feel free to try and go get your extension working on your website of choice. Just know it’ll takes a solid amount of trial and error, not every site has an HTML structure as simple as Calmly!
+Sinta-se à vontade para tentar fazer sua extensão funcionar no site que escolher. Apenas saiba que vai exigir uma quantidade sólida de tentativa e erro, nem todos os sites têm uma estrutura HTML tão simples quanto o Calmly!
 
-### Optional: set up your Extension for download.
+### Opcional: configure sua extensão para download
 
-Let’s say you actually want to make your Chrome Extension available for download directly from the Chrome Store like most extensions. *BTW — the Chrome Store is supported on all Chromium browsers — that means Brave users, Edge users, etc can all add the extension from he Chrome Store.*
+Digamos que você realmente queira disponibilizar sua extensão do Chrome para download diretamente na loja online do Chrome, a Chrome Web Store, como a maioria das extensões. *A propósito - a Chrome Web Store é suportada em todos os navegadores baseados em Chromium - o que significa que usuários do Brave, Edge, etc. podem adicionar a extensão diretamente da Chrome Web Store.*
 
 ![Untitled](https://i.imgur.com/oHxDLjO.png)
 
-Well, you’d need to actually submit it for approval which can take a few days. If you want to go down that path, you can read up on it [here](https://developer.chrome.com/docs/webstore/publish/). Highly recommend you explore this later once you’ve polished up your extension more.
+Bem, você precisaria enviá-la para aprovação, o que pode levar alguns dias. Se você quiser seguir esse caminho, pode ler mais sobre isso [aqui](https://developer.chrome.com/docs/webstore/publish/). É altamente recomendável que você explore isso mais tarde, depois de aprimorar mais sua extensão.
 
-But -- for now, what we can actually do is if someone wants to use your Extension we can just give them a download link to the code. Then, they can just do the same thing as you where they go to chrome://extensions/ and load the extension manually to their browser by doing “Load Unpacked”.
+Mas, por enquanto, o que podemos fazer é, se alguém quiser usar sua extensão, podemos apenas fornecer um link de download para o código. Em seguida, eles podem fazer a mesma coisa que você, acessando chrome://extensions/ e carregando a extensão manualmente no navegador, executando “Load Unpacked” (Carregar sem compactação).
 
-This may seem crappy, but, meh it’s better than nothing! Also, if users go through the pain of actually doing this, then that means they really want your product. You can always lessen the pain later once you know someone truly wants what you’ve built.
+Isso pode parecer ruim, mas, é melhor do que nada! Além disso, se os usuários passam pela dor de realmente fazer isso, isso significa que eles realmente querem seu produto. Você sempre pode diminuir essa dor mais tarde, quando souber que alguém realmente deseja o que você construiu.
 
-Go ahead and push your latest code to your repo for your extension. Github gives an easy way for people to download a ZIP file with the whole repo. Then, what’s cool now is you can link this repo directly on your web app!
+Vá em frente e envie seu código mais recente para o repositório da sua extensão. O Github oferece uma maneira fácil para as pessoas baixarem um arquivo ZIP com todo o repositório. Então, o legal agora é que você pode vincular este repositório diretamente no seu aplicativo da web!
 
-On your web app, you can add something to the bottom like -- “Like this tool? Download the Extension” and then link your extension. That way people can get a taste of your tool from the web app and then download the extension if they’re curious.
+Em seu aplicativo da web, você pode adicionar algo na parte inferior como -- “Gostou desta ferramenta? Baixe a extensão” e, em seguida, vincule sua extensão. Dessa forma, as pessoas podem experimentar sua ferramenta no aplicativo da web e depois baixar a extensão se estiverem curiosas.
 
-Now, the web app + extension should feel more like an end-to-end product vs two separate things that aren’t related at all!
+Agora, o aplicativo da web e a extensão devem parecer mais como um produto completo em vez de duas coisas separadas que não têm relação alguma!
 
-### Add some personalization
+### Adicione alguma personalização
 
-Before we deploy the web app, go ahead and make some final changes to it. Really make it feel like yours! Add images, gifs, change up the colors. Make it feel themed to whatever your use case is. Even just changing up button colors can go a long way to make this thing feel way more like yours.
+Antes de implantarmos o aplicativo da web, faça algumas mudanças finais nele. Realmente faça ele parecer seu! Adicione imagens, gifs, mude as cores. Faça parecer temático para o seu caso de uso. Até mesmo mudar as cores dos botões pode tornar a experiência mais personalizada.
 
-### GTFOL: Let’s go to prod.
+### GTFOL: Vamos para a produção!
 
-It’s time to [gtfol](https://www.urbandictionary.com/define.php?term=GTFOL).
+É hora de dar o fora do localhost, ou melhor, [GTFOL](https://www.urbandictionary.com/define.php?term=GTFOL).
 
-We don’t want to just stay on localhost, after all. That’d be boring! After all, this GPT-3 writer thing is way more fun once you see how other people use it!
+Afinal, não queremos apenas ficar no localhost. Isso seria chato! Afinal, essa ferramenta de escrita do GPT-3 é muito mais divertida quando você vê como outras pessoas a usam!
 
-Also, deploying a NextJS app has gotten so easy and should just take a few minutes — and then you’ll have a link to your creation you can share with the world.
+Além disso, implantar um aplicativo NextJS ficou tão fácil que deve levar apenas alguns minutos - e então você terá um link para a sua criação que pode compartilhar com o mundo.
 
-We’re going to be using [Railway](https://railway.app?referralCode=buildspace) which is deployment service like Vercel/Netlify. It’s **free** to use. You can use whatever you want though — ex. AWS, Netlify, etc.
+Vamos usar o [Railway](https://railway.app?referralCode=buildspace), que é um serviço de implantação como o Vercel/Netlify. É gratuito para usar. Você pode usar o que quiser, como AWS, Netlify, etc.
 
-The reason I'm going with Railway instead of Vercel is cuz on the Vercel Hobby plan serverless functions time out after 10 seconds. This sucks cause OpenAI can take 30-40 seconds to respond with longer prompts. You'll have to start the pro trial which will kill your app after 14 days unless you pay $20/m lol 
+A razão pela qual estou indo com o Railway em vez do Vercel é porque no plano Hobby do Vercel, as funções sem servidor expiram após 10 segundos. Isso é ruim porque a OpenAI pode levar de 30 a 40 segundos para responder com prompts mais longos. Você terá que começar o teste profissional que vai matar seu aplicativo depois de 14 dias, a menos que você pague $20/mês rsrs. 
 
 ![](https://hackmd.io/_uploads/HkecEt3Pj.png)
 
-Head over to Railway and connect your Github. Once you finish set up and accept their terms of service, you'll get 500 hours for free!
+Acesse o Railway e conecte sua conta do Github. Depois de concluir a configuração e aceitar os termos de serviço, você receberá 500 horas gratuitas!
 
 ![](https://hackmd.io/_uploads/H1sWrFnvs.png)
 
-All we need to do now is get your final code up on your Github Repo. Open up a new terminal window, `cd` into your project folder, and run:
+Tudo o que precisamos fazer agora é colocar seu código final em seu repositório do Github. Abra uma nova janela do terminal, dê `cd` na pasta do seu projeto e execute o seguinte comando:
 
 ```bash
 git add .
@@ -79,16 +79,16 @@ git commit -m "latest build"
 git push
 ```
 
-*Note: we have a .gitignore file that stops us from accidentally committing the `.env` file and other files that we don’t want going to source control.*
+*Observação: nós temos um arquivo .gitignore que nos impede de enviar acidentalmente o arquivo `.env` e outros arquivos que não queremos enviar para o controle de origem.*
 
-Here's how you can deploy it on Railway:
+Aqui está como você pode implantá-lo no Railway:
 [https://www.loom.com/share/15d1b1c45d0b46199d677ca3dc222d17](https://www.loom.com/share/15d1b1c45d0b46199d677ca3dc222d17)
 
-**Note: Railway won't give you a domain lol**  
-You'll have to generate it from the settings tab of your project:
+**Observação: o Railway não fornecerá um domínio rsrs.** 
+Você terá que gerá-lo na aba de configurações do seu projeto:
 ![](https://hackmd.io/_uploads/ryTbIFhDi.png)
 
-**YOU'RE DONE. LFG**
-### Please do this or Farza will be sad.
+**VOCÊ TERMINOU. VAMOS LÁ!**
+### Por favor, faça isso ou Farza ficará triste
 
-Once you deploy your web app, take a screenshot of your deployed app and post it in #progress! Show the world that you’re off localhost.
+Assim que você implantar sua aplicação web, tire uma captura de tela dela e publique-a em #progress! Mostre ao mundo que você deu o fora do localhost.
