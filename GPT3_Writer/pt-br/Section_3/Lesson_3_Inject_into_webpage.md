@@ -16,7 +16,7 @@ O fluxo é bem simples, mas ajuda manter tudo organizado. O plano de jogo é:
 2. Crie um novo arquivo que possa ouvir as mensagens de nosso service worker
 3. Quando enviamos uma determinada mensagem, a extensão injeta um valor no DOM
 
-Pense nisso como ir a um restaurante e pedir comida. Você (o cliente) é o aplicativo. A extensão é um garçom. O chef não pode falar com você (apenas finja que ele está trancado na cozinha por Gordon Ramsay). Você envia um pedido ao chef GPT-3. A extensão leva o pedido ao chef e traz de volta um delicioso prato gerado por IA.
+Pense nisso como ir a um restaurante e pedir comida. Você (o cliente) é o aplicativo. A extensão é um garçom. O chef não pode falar com você (apenas finja que ele foi trancado na cozinha pelo Gordon Ramsay). Você envia um pedido ao chef GPT-3. A extensão leva o pedido ao chef e traz de volta um delicioso prato gerado por IA.
 
 Na verdade, é bem simples quando você olha para isso de um nível superior. Chega de papo. Vamos construir!
 
@@ -52,7 +52,7 @@ Legal! Agora que temos isso, vamos começar a enviar algumas mensagens. Vamos ad
 2. Uma mensagem para quando estivermos prontos para enviar nossa saída final
 3. Uma mensagem caso tenhamos um erro, para que o usuário possa ver o que está acontecendo
 
-Vamos seguir adiante. Vá para a função generateCompletionAction e adicione estas linhas:
+Vamos seguir adiante. Vá para a função `generateCompletionAction` e adicione estas linhas:
 
 ```jsx
 const generateCompletionAction = async (info) => {
@@ -163,15 +163,15 @@ Por enquanto, vamos apenas mostrar a saída de tudo o que a mensagem nos envia e
 
 Estamos prontos para testar nossas funções de mensagem! Se você nunca trabalhou com esse tipo de mensagem antes, prepare-se para se surpreender. Grande parte deste projeto tem alguns momentos mágicos bem incríveis. E este será um deles!
 
-Vá em frente, recarregue sua extensão e volte para o Calmly! Antes de testarmos isso completamente, alguns 🚨LEMBRETES MUITO IMPORTANTES 🚨-
+Vá em frente, recarregue sua extensão e volte para o Calmly! Antes de testarmos isso completamente, alguns 🚨LEMBRETES MUITO IMPORTANTES 🚨!
 
 Você precisará remover a extensão e instalá-la novamente, pois está adicionando novos scripts. Depois disso, seguiremos com o fluxo de teste padrão:
 
 1. Recarregue qualquer guia em que você deseja usar a extensão
 2. Clique na extensão e adicione a chave de API
-3. Para ver as mensagens de log do arquivo `content.js`, basta abrir o console na guia do navegador da Web (não os logs de extensão)! Lembre-se de que estamos lidando com um script de frontend :)
+3. Para ver as mensagens de log do arquivo `content.js`, basta abrir o console na guia do navegador da web (não os logs de extensão)! Lembre-se de que estamos lidando com um script de frontend :)
 
-Se você não recarregar a extensão, as coisas não funcionarão como esperado. Se você olhar para o console errado, não verá nada :P
+Se você não recarregar a extensão, as coisas não funcionarão como esperado. Se você olhar para o console errado, não verá nada! :P
 
 ![Screenshot 2022-11-27 at 5.47.18 AM.png](https://i.imgur.com/8h7w1EJ.png)
 
@@ -213,9 +213,9 @@ chrome.runtime.onMessage.addListener(
 );
 ```
 
-É incrível como o Chrome torna tão fácil conectar-se a esses eventos e adicionar nossa própria lógica personalizada. Vamos usar a função `insert` para realmente encontrar o HTML adequado no qual precisamos injetar nossa saída e, em seguida, retornar uma resposta.
+É incrível como o Chrome facilita a conexão com esses eventos e a adição de nossa própria lógica personalizada. Vamos usar a função `insert` para realmente encontrar o HTML adequado no qual precisamos injetar nossa saída e, em seguida, retornar uma resposta.
 
-Antes de nos aprofundarmos na função `insert`, vou fazer o layout do fluxo que devemos seguir com comentários dentro da função e preenchê-lo um a um (na verdade, isso é chamado de pseudocódigo):
+Antes de nos aprofundarmos na função `insert`, vou fazer o layout do fluxo que devemos seguir com comentários dentro da função e preencher um a um (na verdade, isso é chamado de pseudocódigo):
 
 
 ```javascript
@@ -235,7 +235,7 @@ const insert = (content) => {
 };
 ```
 
-Irado! Esse tipo de brainstorming sempre me ajuda a estabelecer algum tipo de fluxo sem escrever código. Os passos que preciso dar para chegar onde quero ir ficam bem claros. Vamos começar do topo, encontrando a seção de entrada do editor Calmly.
+Irado! Esse tipo de brainstorming sempre me ajuda a estabelecer algum tipo de fluxo sem escrever código, pois os passos que preciso dar para chegar onde quero ir ficam bem claros. Vamos começar do topo, encontrando a seção de entrada do editor Calmly.
 
 Para obter tudo o que precisamos aqui, precisaremos inspecionar o site! Se você nunca inspecionou um site antes, esta será uma ótima maneira de começar. Usar o inspetor pode auxiliar na depuração do seu código, ver como outros sites estruturam seus códigos e até mesmo ajudar com um desenvolvimento mais rápido!
 
@@ -288,7 +288,7 @@ Imagine que você tenha um fluxo que se pareça com isso:
 
 Seria muito melhor se isso fosse substituído na primeira linha, certo? Então é isso que essas duas linhas estão fazendo antes de inserir a próxima parte do conteúdo.
 
-Ótimo! Então estamos pegando algumas divs manipulando algum texto… muito legal, certo? Agora vamos pegar alguns dados reais e mexer com eles para injetar.
+Ótimo! Então estamos pegando algumas divs apenas manipulando algum texto… muito legal, certo? Agora vamos pegar alguns dados reais e mexer com eles para injetar.
 
 A resposta do GPT-3 é realmente bem formatada (obrigado, OpenAI), por isso queremos ter certeza de fazer a mesma coisa aqui também! É aqui que entra o passo 3:
 
@@ -372,11 +372,11 @@ Se você estiver enfrentando um problema em que sua área de texto de destino n�
 
 De fato, isso não é fácil de se envolver, e você está aqui fazendo exatamente isso. Certo, vamos ver essa coisa voar.
 
-Vá em frente, recarregue sua extensão, atualize sua página da Web e execute seu fluxo de testes:
+Vá em frente, recarregue sua extensão, atualize sua página da web e execute seu fluxo de testes:
 
 ![Screenshot 2022-11-27 at 5.54.24 AM.png](https://i.imgur.com/x4kRkqO.png)
 
-**UAU! Isso é maravilhoso! 🥲.** Que loucura… Você deve ter visto `gerando…` na tela. Assim sua próxima postagem de blog chegará direto no Calmly!
+**UAU! Isso é maravilhoso! 🥲.** Que loucura… Você deve ter visto `gerando…` na tela. Assim, sua próxima postagem de blog chegará direto no Calmly!
 
 Parabéns, meu amigo. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
 
