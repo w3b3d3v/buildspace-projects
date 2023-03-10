@@ -380,6 +380,6 @@ Vá em frente, recarregue sua extensão, atualize sua página da web e execute s
 
 Parabéns, meu amigo. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
 
-### Por favor, faça isso ou Farza ficará triste.
+### Por favor, faça isso ou Farza ficará triste
 
 Poste uma captura de tela em #progress, mostrando o texto gerado no Calmly pelo script de injeção. Excelente trabalho!
