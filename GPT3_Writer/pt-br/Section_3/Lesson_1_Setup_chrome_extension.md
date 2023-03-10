@@ -24,7 +24,7 @@ Um contexto importante aqui é que você precisa focar sua extensão em **uma** 
 
 ### Como uma extensão funciona
 
-As extensões de navegador são bem simples - elas são feitas com as mesmas coisas que você utiliza para criar sites: **HTML**, **CSS** e **JS**. Você pode pensar em uma extensão como um aplicativo da Web anexado ao Chrome que possui funcionalidades "ocultas" para liberar coisas às quais os sites comuns geralmente não têm acesso!
+As extensões de navegador são bem simples - elas são feitas com as mesmas coisas que você utiliza para criar sites: **HTML**, **CSS** e **JS**. Você pode pensar em uma extensão como um aplicativo da web anexado ao Chrome que possui funcionalidades "ocultas" para liberar coisas às quais os sites comuns geralmente não têm acesso!
 
 As três principais partes com as quais vamos trabalhar são:
 
