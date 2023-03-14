@@ -85,7 +85,7 @@ Parece complicado 😂.
 
 Primeiro temos `[account(init, payer = user, space = 9000)]`. **Tudo o que estamos fazendo aqui é dizer a Solana como queremos inicializar `BaseAccount`.**
 
-Observe que, se após executar o teste abaixo você receber o erro `Transaction simulation failed: Error processing Instruction 0: custom program error: 0x64`, será necessário alterar `space = 9000` para `space = 10000`. Se você olhar para [estes documentos do Anchor](https://www.anchor-lang.com/docs/space) você pode ver que eles definem um programa simples que declara `space = 8 + 8` (por exemplo, 8 kilobytes + 8 kilobytes). Quanto mais lógica adicionarmos ao nosso programa, mais espaço ele ocupará!
+Observe que, se após executar o `anchor test` você receber o erro `Transaction simulation failed: Error processing Instruction 0: custom program error: 0x64`, será necessário alterar `space = 9000` para `space = 10000`. Se você olhar para [estes documentos do Anchor](https://www.anchor-lang.com/docs/space) você pode ver que eles definem um programa simples que declara `space = 8 + 8` (por exemplo, 8 kilobytes + 8 kilobytes). Quanto mais lógica adicionarmos ao nosso programa, mais espaço ele ocupará!
 
 1. `init` dirá a Solana para criar uma nova conta pertencente ao nosso programa atual.
 2. `payer = user` informa ao nosso programa quem está pagando pela criação da conta. Neste caso, é o `user` chamando a função.
