@@ -40,7 +40,7 @@ Usaremos essa coisa chamada [Replit](https://replit.com/~)!
 
 É um IDE baseado em navegador que nos permite facilmente criar aplicativos web e fazer o deploy deles a partir do navegador. E é totalmente legal. Em vez de ter que configurar um ambiente local completo e escrever comandos para fazer o deploy, tudo é dado para a gente.
 
-Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal. [Aqui está o link](https://github.com/w3b3d3v/portal-gif) para o repositório base que você pode clonar e trabalhar localmente.**
+🔴 Observação: **Você não precisa usar o replit para criar + deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e estiver confiante em suas habilidades de desenvolvimento web - isso é totalmente legal. [Aqui está o link](https://github.com/w3b3d3v/portal-gif) para o repositório base que você pode clonar e trabalhar localmente.**
 
 Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
 
