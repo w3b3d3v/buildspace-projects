@@ -45,7 +45,7 @@ Agora vá para seu código e abra o `App.js` na pasta `src`. É aqui que estar
 
 Se você tiver a extensão Phantom Wallet instalada, ela injetará automaticamente um objeto especial chamado `solana` em seu objeto `window` que possui algumas funções mágicas. Isso significa que antes de fazermos qualquer coisa, precisamos verificar se isso existe. Se não existir, vamos dizer ao nosso usuário para fazer o download:
 
-Substitua tudo que tem no `App.js` pelo código abaixo:
+Observe as mudanças no arquivo `App.js`, sempre contem um comentario acima das mudança nos arquivos :
 
 ```jsx
 /*
@@ -217,7 +217,7 @@ Precisamos criar um botão `connectWallet` . No mundo da web3, conectar sua ca
 
 Pronto para a experiência "Cadastre-se" mais fácil da sua vida 😊.
 
-Substitua o código abaixo so seu `App.js` (Mantemos o código e adicionamos códigos novos).
+Observe novamente as mudanças no arquivo `App.js`:
 
 ```jsx
 import React, { useEffect } from "react";
