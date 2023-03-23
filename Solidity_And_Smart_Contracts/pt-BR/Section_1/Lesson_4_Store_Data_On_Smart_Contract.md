@@ -7,7 +7,7 @@ Queremos ser capazes de deixar alguém acenar para nós e depois armazenar esse 
 
 Então, a primeira coisa que precisamos é de uma função que eles possam usar para acenar!
 
-A blockchain = Pense nela como um provedor de nuvem, como a AWS, mas que não pertence a ninguém. É executada pelo poder computacional de máquinas de mineração em todo o mundo. Normalmente essas pessoas são chamadas de mineradores e nós os pagamos para executar nosso código!
+A blockchain = Pense nela como um provedor de nuvem, como a AWS, mas que não pertence a ninguém. É executada pelo poder computacional de máquinas de validação (ou mineração antes do evento The Merge do Ethereum) em todo o mundo. Normalmente essas pessoas são chamadas de validadores (antigos mineradores) e nós os pagamos para executar nosso código!
 
 Um contrato inteligente = algo como o código do nosso servidor com diferentes funções e que as pessoas podem acessar.
 
