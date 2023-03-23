@@ -13,7 +13,7 @@ Então, gerar um número aleatório em contratos inteligentes é amplamente conh
 
 Por quê? Bem, pense em como um número aleatório é gerado normalmente. Quando você gera um random normalmente em um programa, **vai pegar vários números diferentes do seu computador como fonte de aleatoriedade** como: a velocidade das ventoinhas, a temperatura da CPU, o número de vezes que você pressionou "L" às 15h52 desde que comprou o computador, a velocidade da sua internet e muitos outros #s que são difíceis de controlar. Ele pega **todos** esses números que são "aleatórios" e os reúne em um algoritmo que gera um número que parece ser a melhor tentativa de um número realmente "aleatório". Faz sentido?
 
-Na blockchain, não há **quase nenhuma fonte de aleatoriedade**. Tudo o que o contrato vê, o público vê. Por causa disso, alguém poderia manipular o sistema apenas olhando para o contrato inteligente, vendo em que #s ele depende para aleatoriedade e, em seguida, a pessoa poderia fornecer os números exatos de que precisa para vencer.
+Na blockchain, não há **quase nenhuma fonte de aleatoriedade**. Isto porque a maioria das blockchains foram projetadas para serem determinísticas, de modo a garantir a imutabilidade dos contratos e a segurança das transações. Ou seja, as transações e suas operações são executadas sempre da mesma maneira. No caso do Ethereum, temos a EVM (Ethereum Virtual Machine) que realiza esse papel em uma máquina de Turing completa. Tudo o que o contrato vê, o público vê. Por causa disso, alguém poderia manipular o sistema apenas olhando para o contrato inteligente, vendo em que #s ele depende para aleatoriedade e, em seguida, a pessoa poderia fornecer os números exatos de que precisa para vencer.
 
 Vamos conferir o código abaixo :).
 
