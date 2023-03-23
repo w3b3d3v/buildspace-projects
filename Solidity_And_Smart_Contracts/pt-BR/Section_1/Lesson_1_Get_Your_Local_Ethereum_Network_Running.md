@@ -13,7 +13,7 @@ Então, neste caso, queremos que as pessoas façam 👋 para nós. De forma gera
 
 3\. **Vamos construir um site cliente** que permitirá que as pessoas interajam facilmente com nosso contrato inteligente na blockchain.
 
-Explicarei algumas coisas em profundidade conforme necessário (por exemplo, como a validação hoje ou a antiga mineração funciona, como os contratos inteligentes são compilados e executados etc.) *mas por enquanto vamos nos concentrar apenas em fazer as coisas funcionarem*.
+Explicarei algumas coisas em profundidade conforme necessário (por exemplo, como a validação dos contratos é feita hoje no proof-of-stake, como a mineração funcionava no proof-of-work, como os contratos inteligentes são compilados e executados etc.) *mas por enquanto vamos nos concentrar apenas em fazer as coisas funcionarem*.
 
 Se você tiver algum problema aqui, basta enviar uma mensagem no Discord em `#section-1-help`.
 
