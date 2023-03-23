@@ -58,7 +58,7 @@ Em um nível básico, os eventos são mensagens que nossos contratos inteligente
 
 Vamos dizer que estou relaxando no seu site e acabei de abri-lo. Enquanto estou fazendo isso, seu outro amigo Jeremy acena para você. No momento, a única maneira de ver o aceno de Jeremy é atualizando minha página. Isso parece ruim. Não seria legal se eu pudesse saber que aquele contrato foi atualizado e ter minha UI magicamente atualizada?
 
-Mesmo agora, é meio chato quando nós mesmos enviamos uma mensagem, e depois temos que esperar para que ela seja minerada e depois atualizar a página para ver toda a lista atualizada de mensagens, certo? Vamos corrigir isso.
+Mesmo agora, é meio chato quando nós mesmos enviamos uma mensagem, e depois temos que esperar para que ela seja validada e depois atualizar a página para ver toda a lista atualizada de mensagens, certo? Vamos corrigir isso.
 
 Confira meu código aqui onde atualizei `getAllWaves` em `App.js.`
 
