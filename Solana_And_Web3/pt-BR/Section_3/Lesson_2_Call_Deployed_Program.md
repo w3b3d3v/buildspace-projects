@@ -115,7 +115,7 @@ Antes de podermos interagir com os pacotes que instalamos anteriormente, precisa
 
 ```javascript
 import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js';
-import { Program, Provider, web3 } from '@project-serum/anchor';
+import { Program, AnchorProvider, web3 } from '@project-serum/anchor';
 ```
 
 *Nota: (somente para usuários Replit):*
@@ -155,7 +155,7 @@ Vamos criar uma função chamada `getProvider`. Adicione isso logo abaixo de `on
 ```javascript
 const getProvider = () => {
   const connection = new Connection(network, opts.preflightCommitment);
-  const provider = new Provider(
+  const provider = new AnchorProvider(
     connection, window.solana, opts.preflightCommitment,
   );
   return provider;
@@ -174,7 +174,7 @@ Esta é uma grande razão pela qual o Phantom é útil. Ele oferece aos nossos u
 
 Vamos criar algumas variáveis que estão faltando. Também precisaremos importar algumas coisas.
 
-Vá em frente e adicione este código em:
+Observe as novas mudanças no arquivo `App.js`
 
 ```javascript
 import React, { useEffect, useState } from 'react';
@@ -182,7 +182,7 @@ import twitterLogo from './assets/twitter-logo.svg';
 import './App.css';
 import { Connection, PublicKey, clusterApiUrl} from '@solana/web3.js';
 import {
-  Program, Provider, web3
+  Program, AnchorProvider, web3
 } from '@project-serum/anchor';
 
 import idl from './idl.json';
