@@ -109,11 +109,11 @@ const main = async () => {
    * Deixe-me enviar alguns acenos!
    */
   let waveTxn = await waveContract.wave("A message!");
-  await waveTxn.wait(); // aguarda a transação ser minerada
+  await waveTxn.wait(); // aguarda a transação ser validada
 
   const [_, randomPerson] = await hre.ethers.getSigners();
   waveTxn = await waveContract.connect(randomPerson).wave("Another message!");
-  await waveTxn.wait(); // aguarda a transação ser minerada
+  await waveTxn.wait(); // aguarda a transação ser validada
 
   let allWaves = await waveContract.getAllWaves();
   console.log(allWaves);
