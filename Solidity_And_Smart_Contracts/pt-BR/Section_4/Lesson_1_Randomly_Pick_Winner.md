@@ -94,7 +94,7 @@ contract WavePortal {
 }
 ```
 
-Aqui, eu pego dois números dados a mim pelo Solidity, `block.difficulty` e `block.timestamp` e os combino para criar um número aleatório. `block.difficulty` informa aos mineradores o quão difícil o bloco será para minerar com base nas transações no bloco. Os blocos ficam mais difíceis por vários motivos, mas, principalmente, ficam mais difíceis quando há mais transações no bloco (alguns mineradores preferem blocos mais fáceis, mas pagam menos). `block.timestamp` é apenas o timestamp Unix que o bloco está sendo processado.
+Aqui, eu pego dois números dados a mim pelo Solidity, `block.difficulty` e `block.timestamp` e os combino para criar um número aleatório. `block.difficulty` informa aos validadores o quão difícil o bloco será para validar com base nas transações no bloco. Os blocos ficam mais difíceis por vários motivos, mas, principalmente, ficam mais difíceis quando há mais transações no bloco (alguns validadores preferem blocos mais fáceis, mas pagam menos). `block.timestamp` é apenas o timestamp Unix que o bloco está sendo processado.
 
 Esses #s são *bastante* aleatórios. Mas, tecnicamente, tanto o `block.difficulty` quanto o `block.timestamp` podem ser controlados por um invasor sofisticado.
 
