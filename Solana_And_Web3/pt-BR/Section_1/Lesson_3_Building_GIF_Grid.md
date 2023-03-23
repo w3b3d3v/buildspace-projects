@@ -181,7 +181,7 @@ const onInputChange = (event) => {
 
 Esta função super simples será acionada enquanto você digita na caixa de texto e, em seguida, define o valor dela para nossa propriedade `inputValue`. Dessa forma, quando estivermos prontos para enviar nosso link GIF para nosso programa Solana, podemos acessar facilmente essa propriedade para obter o valor.
 
-Finalmente — vamos conectar o envio do formulário. Crie uma nova função na ação `connectWallet` chamada `sendGif`:
+Finalmente — vamos conectar o envio do formulário. Crie uma nova função chamada `sendGif`:
 
 ```javascript
 const sendGif = async () => {
