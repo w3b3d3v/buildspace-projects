@@ -170,7 +170,7 @@ Depois de adicionar esse arquivo e clicar no botão "Acenar" -- **você estará 
 📝 Escrevendo dados
 ---------------
 
-O código para gravar dados em nosso contrato não é muito diferente de ler dados. A principal diferença é que quando queremos escrever novos dados em nosso contrato, precisamos notificar os mineradores para que a transação possa ser minerada. Quando lemos dados, não precisamos fazer isso. As leituras são "gratuitas" porque tudo o que estamos fazendo é ler da blockchain, **não a estamos alterando. **
+O código para gravar dados em nosso contrato não é muito diferente de ler dados. A principal diferença é que quando queremos escrever novos dados em nosso contrato, precisamos notificar os validadores para que a transação possa ser validada. Quando lemos dados, não precisamos fazer isso. As leituras são "gratuitas" porque tudo o que estamos fazendo é ler da blockchain, **não a estamos alterando. **
 
 Aqui está o código para acenar:
 
@@ -191,10 +191,10 @@ const wave = async () => {
         * Executar o aceno a partir do contrato inteligente
         */
         const waveTxn = await wavePortalContract.wave();
-        console.log("Minerando...", waveTxn.hash);
+        console.log("Validando...", waveTxn.hash);
 
         await waveTxn.wait();
-        console.log("Minerado -- ", waveTxn.hash);
+        console.log("Validado -- ", waveTxn.hash);
 
         count = await wavePortalContract.getTotalWaves();
         console.log("Total de acenos recuperado...", count.toNumber());
@@ -209,7 +209,7 @@ const wave = async () => {
 
 Bem simples, né :)?
 
-O que é incrível aqui é que, enquanto a transação está sendo minerada, você pode imprimir o hash da transação, copiar/colar no [Etherscan](https://rinkeby.etherscan.io/) e vê-lo sendo processado em tempo real: ).
+O que é incrível aqui é que, enquanto a transação está sendo validada, você pode imprimir o hash da transação, copiar/colar no [Etherscan](https://rinkeby.etherscan.io/) e vê-lo sendo processado em tempo real: ).
 
 Quando executarmos isso, você verá que a contagem total de acenos é aumentada em 1. Você também verá que a Metamask aparece e nos pede para pagar "gas" que pagamos usando nosso $ falso. Há um ótimo artigo sobre isso [aqui](https://ethereum.org/en/developers/docs/gas/). Tente descobrir o que é o **gas** :).
 
@@ -227,7 +227,7 @@ As possibilidades são infinitas.
 
 *Nota: se você não fizer isso, Farza ficará muito triste :(.*
 
-Personalize um pouco seu site para mostrar o número total de acenos. Talvez mostrar uma barra de carregamento enquanto a onda está sendo minerada, o que você quiser. Faça algo um pouco diferente!
+Personalize um pouco seu site para mostrar o número total de acenos. Talvez mostrar uma barra de carregamento enquanto a onda está sendo validada, o que você quiser. Faça algo um pouco diferente!
 
 Quando sentir que está pronto, compartilhe o link do seu site conosco em #progress para que possamos conectar nossas carteiras e acenar para você :).
 
