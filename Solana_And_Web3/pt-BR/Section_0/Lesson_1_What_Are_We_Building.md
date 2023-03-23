@@ -23,18 +23,25 @@ Então, o que vamos construir aqui 😊? Segue um pequeno vídeo:
 
 Quando você chegar ao final deste projeto, poderá ganhar um NFT.
 
-Você só será elegível para o NFT se terminar dentro de 10 dias após a inscrição! Então certifique-se de agendar tempo para terminar, você tem isso!
-
-**Realizaremos o airdrop de um NFT para a sua carteira conectada se você terminar o projeto dentro de 24h após o kick-off.**
+Você só será elegível para o NFT se terminar dentro de 9 dias após a inscrição! Então certifique-se de agendar tempo para terminar, você tem isso!
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
+
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o `vitordev#1838` no Discord!** 
 
 🤚 Como obter ajuda.
 ---------------------------------------
 
-Quando você tiver uma pergunta, procure o canal adequado para o projeto.
+Quando você tiver uma dúvida, mande-a no canal específico do projeto.
 
-Este projeto é dividido em 4 seções. Você pode ver em que seção está verificando a barra de progresso no topo da página. Assim, por exemplo, se você estiver preso em alguma parte da seção 3, você teria que acessar `#seção-3-ajuda' no Discord. Se você faz parte de vários projetos, não deixe de fazer suas perguntas na categoria certa de projeto!
+Esse projeto é dividido em 4 sessões. Você pode ver em que seção você está pela barra de progresso no topo da página no seu dashboard. Por exemplo, se você está preso em alguma parte da seção 3, você deve pedir ajuda em `#seção-3-ajuda` no Discord. Se você faz parte de vários projetos, cheque se está fazendo a pergunta na categoria correta do projeto!
+
+**Se precisar de ajuda com alguma coisa sinta-se a vontade para marcar o time @Monitores Bootcamp diretamente.**
+
+### **🤘 Viu algum problema? Quer melhorar algo? Resolva você mesmo ;).**
+
+**[Todo esse conteúdo é completamente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Se você ver um problema, erro de digitação, etc - você pode ajustar você mesmo facilmente e fazer um PR! Se você precisa de ajuda para fazer isso, mande uma DM para `vitordev#1838` no Discord 😃.
+s projetos, não deixe de fazer suas perguntas na categoria certa de projeto!
 
 🤘 Viu algum problema? Deseja melhorar alguma coisa? Conserte-o você 😉.
 ---------------------------------------
