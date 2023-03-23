@@ -16,13 +16,13 @@ Então, quando queremos realizar uma ação no blockchain Ethereum, chamamos iss
 
 Então, quando chamamos `wave` e ele faz `totalWaves += 1`, isso é uma transação! **O deploy de um contrato inteligente também é uma transação.**
 
-Lembre-se, a blockchain não tem dono. É apenas um monte de computadores ao redor do mundo administrados por **mineradores** que possuem uma cópia da blockchain.
+Lembre-se, a blockchain não tem dono. É apenas um monte de computadores ao redor do mundo administrados por **validadores** (antigos mineradores) que possuem uma cópia da blockchain.
 
-Quando implantamos nosso contrato, precisamos dizer a **todos** mineradores: "ei, este é um novo contrato inteligente, adicione meu contrato inteligente à blockchain e também conte a todos sobre isso".
+Quando implantamos nosso contrato, precisamos dizer a **todos** validores: "ei, este é um novo contrato inteligente, adicione meu contrato inteligente à blockchain e também conte a todos sobre isso".
 
 É aí que entra o Alchemy.
 
-O Alchemy essencialmente nos ajuda a transmitir nossa transação de criação de contrato para que possa ser coletada pelos mineradores o mais rápido possível. Depois que a transação é minerada, ela é transmitida para a blockchain como uma transação legítima. A partir daí, todos atualizam sua cópia da blockchain.
+O Alchemy essencialmente nos ajuda a transmitir nossa transação de criação de contrato para que possa ser coletada pelos validadores o mais rápido possível. Depois que a transação é validada, ela é transmitida para a blockchain como uma transação legítima. A partir daí, todos atualizam sua cópia da blockchain.
 
 Isso é complicado. E, não se preocupe se você não entender completamente. À medida que você escreve mais código e realmente constrói este aplicativo, naturalmente fará mais sentido.
 
@@ -34,17 +34,17 @@ Confira o vídeo abaixo para ver como obter sua chave de API para uma rede de te
 🕸️ Redes de teste (Testnets)
 ------------
 
-Nós não vamos implantar na "mainnet Ethereum" (rede principal produtiva) até o final. Por quê? Porque custa $ real e não vale a pena para estragar tudo! Vamos começar na "testnet" que é um clone da "mainnet", mas usa $ falso para que possamos testar as coisas o quanto quisermos. Mas é importante saber que as redes de teste são executadas por mineradores reais e imitam cenários do mundo real.
+Nós não vamos implantar na "mainnet Ethereum" (rede principal produtiva) até o final. Por quê? Porque custa $ real e não vale a pena para estragar tudo! Vamos começar na "testnet" que é um clone da "mainnet", mas usa $ falso para que possamos testar as coisas o quanto quisermos. Mas é importante saber que as redes de teste são executadas por validadores reais e imitam cenários do mundo real.
 
 Isso é incrível porque podemos testar nosso aplicativo em um cenário do mundo real onde iremos:
 
 1\. Transmitir nossa transação
 
-2\. Esperar que ela seja selecionada por mineradores reais
+2\. Esperar que ela seja selecionada por validadores reais
 
-3\. Aguardar até que seja minerada
+3\. Aguardar até que seja validada
 
-4\. Esperar que seja transmitida de volta para a blockchain dizendo a todos os outros mineradores para atualizar suas cópias
+4\. Esperar que seja transmitida de volta para a blockchain dizendo a todos os outros validadores para atualizar suas cópias
 
 Então, você fará tudo isso nas próximas lições :).
 
