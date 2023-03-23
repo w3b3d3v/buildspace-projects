@@ -173,6 +173,6 @@ Acostume-se com este ciclo! É a maneira mais rápida de iterar em seus programa
 
 ### 🚨 Relatório de progresso
 
-*Faça isso senão a Sabrina vai ficar triste 😊*
+*Faça isso senão a Anna Bida vai ficar triste 😊*
 
 Poste uma captura de tela do seu teste básico funcionando em `#progresso`! Será muito motivador para seus colegas e nosso time, ver que você conseguiu finalizar mais uma etapa. 
