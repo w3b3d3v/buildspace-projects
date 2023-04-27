@@ -3,11 +3,11 @@ Quero revisar mais alguns tipos de prompt e, em seguida, entraremos em alguns c�
 
 ### Encadeamento de prompts — uma estratégia altamente subestimada
 
-Uma coisa bem incrível que você pode fazer com o GPT-3 é o encadeamento de prompts (prompt chaining). É aqui que você usa a saída de um prompt como entrada para outro prompt.
+Uma coisa bem incrível que você pode fazer com o GPT-3 é o encadeamento de prompts ("prompt chaining") - isso é quando você usa a saída de um prompt como entrada para outro prompt.
 
 Deixa eu te mostrar — **digamos que eu queira escrever um thread de tweets sobre startups**.
 
-Eu realmente gosto do estilo de escrita do Paul Graham, então pedi ao GPT-3 para escrever uma dissertação sobre essa coisa que tenho pensado, onde as startups não se resumem a “resolver um problema”. Quando começamos a buildspace, não estávamos tentando resolver um problema… estávamos apenas brincando. Eu acredito que quando tudo o que fazemos é focar nos problemas, a startup perde sua alma. Para mim, acredito mais em entender o usuário.
+Eu realmente gosto do estilo de escrita do Paul Graham, então pedi ao GPT-3 para escrever uma dissertação sobre essa coisa que tenho pensado, onde as startups não se resumem a “resolver um problema”. Quando começamos a web3dev, não estávamos tentando resolver um problema… estávamos apenas brincando. Eu acredito que quando tudo o que fazemos é focar nos problemas, a startup perde sua alma. Para mim, acredito mais em entender o usuário.
 
 Qual assunto você gostaria de ver em uma dissertação sobre startups? Pergunte ao Paul Graham! Crie seu próprio prompt.
 
@@ -35,7 +35,7 @@ Claro que existem exceções a essa regra, e alguns problemas são tão grandes 
 
 Realmente, muito bom!! Mas, eu quero transformar isso em um thread de tweets.
 
-Deixa eu te mostrar algo irado. Abra uma nova guia com um Playground vazio. Portanto, você deve ter duas guias agora. Uma com a dissertação (Playground #1) e outra visualizações (Playground #2).
+Deixa eu te mostrar algo irado. Abra uma nova guia com um Playground vazio. Portanto, você deve ter duas guias agora. Uma com a dissertação (Playground #1) e outra vazia (Playground #2).
 
 No Playground #2, vá em frente e escreva este prompt:
 
@@ -65,15 +65,15 @@ Quando eu executo o Playground #2, eis o que é gerado:
 5/ Mas, em geral, acredito que é mais importante focar em construir algo que as pessoas desejam do que resolver um problema específico.
 ```
 
-Muito incrível, não é? Agora você tem um thread do Twitter de 2 minutos sobre um pensamento que teve - e que parece bem legal também. Está bem conciso e claro, exatamente como Paul Graham escreve.
+Muito incrível, não é? Agora você tem, em 2 minutos, uma thread do Twitter sobre um pensamento que teve - e que parece bem legal também. Está bem conciso e claro, exatamente como Paul Graham escreve.
 
-Agora qualquer pessoa pode ser um líder de pensamentos rsrs.
+Agora qualquer pessoa pode ser líder de pensamentos rsrs.
 
 **Isso é chamado de encadeamento de prompts.** Pegamos a saída do prompt do Playground #1 e a inserimos em outro prompt especializado, no Playground #2. Você pode continuar fazendo isso, e ficará ainda melhor em uma tarefa especializada.
 
 Por que isso funciona tão bem?
 
-Bem, novamente, o GPT-3 se sai melhor quando: 1) você fornece mais exemplos, 2) você é altamente específico em termos do que você pede a ele. O encadeamento de prompts combina esses dois!
+Bem, novamente, o GPT-3 se sai melhor quando: 1) você fornece mais exemplos, 2) você faz a ele pedidos altamente específicos. O encadeamento de prompts combina esses dois!
 
 Aqui estão outros exemplos de prompts que você pode encadear:
 
@@ -93,9 +93,9 @@ Vou pedir boas ideias sobre “GPT-3 e leitura”, porque acho que o GPT-3 é su
 Dê-me algumas ideias de startups legais relacionadas ao GPT-3 e leitura para crianças:
 ```
 
-Certifique-se de pedir para gerar ideias sobre coisas que você está interessado!
+Certifique-se de pedir para gerar ideias sobre coisas pelas quais você se interessa!
 
-Novamente, seja o mais específico possível. Qual tecnologia você quer que sua startup utilize? Qual é o público em que você está interessado? O que você realmente quer que o produto faça?
+Novamente, especifique o máximo possível. Qual tecnologia você quer que sua startup utilize? Qual é o público em que você está interessado? O que você realmente quer que o produto faça?
 
 Minha saída ficou bem legal.
 
@@ -155,7 +155,7 @@ Muito bom! Mas nós podemos fazer algo melhor. No prompt, devemos incluir para q
 
 Vou especificar que é para pais, porque imagino que vou estar direcionando minha campanha principalmente para pais que dão o aplicativo para seus filhos pequenos. Também não quero palavras confusas nele, como "GPT-3", pois a maioria das pessoas nem sabe o que é isso.
 
-Não vou me aprofundar muito mais neste exemplo, mas certifique-se de experimentar por si mesmo.
+Não vou me aprofundar muito mais neste exemplo, mas certifique-se de fazer seu próprio teste.
 
 Se você quiser dar uma olhada, aqui está o meu prompt:
 
@@ -197,7 +197,7 @@ Gostaríamos de ter a oportunidade de apresentar nossa startup e responder a qua
 
 **O GPT-3 literalmente escreveu uma apresentação melhor do que 99% dos fundadores rsrs.**
 
-Ele inclui todas as coisas boas - o tamanho do mercado, o plano de negócios, a equipe etc. Inclui até o fato de que o aplicativo iria custar 9,99 dólares por mês rsrs. No entanto, ele poderia ter feito um trabalho melhor na explicação do problema que o produto resolve. Mas, podemos apenas mudar nosso prompt e dizer ao GPT-3 para garantir que ele se concentre mais nisso.
+Ela inclui tudo o que interessa - o tamanho do mercado, o plano de negócios, a equipe etc. Inclui até o fato de que o aplicativo iria custar 9,99 dólares por mês rsrs. No entanto, ele poderia ter feito um trabalho melhor na explicação do problema que o produto resolve. Mas, podemos apenas mudar nosso prompt e dizer ao GPT-3 para garantir que ele se concentre mais nisso.
 
 Mais uma vez, sua apresentação gerada pode não estar boa o suficiente agora. Aproveite o tempo para brincar com o prompt.
 
@@ -207,13 +207,13 @@ Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivess
 
 ### Vamos construir algo de verdade
 
-Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar os roteiristas a criar mundos mais interessantes, etc.
+Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar roteiristas a criar mundos mais interessantes, etc.
 
 Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. 
 
 Eu ainda nem mostrei as coisas que ele pode fazer com códigos! [Este](https://www.buildgpt3.com/) é um site muito bom! Recomendo que você navegue por ele para obter mais exemplos de prompts e casos de uso + demonstrações.
 
-Ei! Eu até dei a você uma ideia de startup gratuita com este aplicativo de leitura para crianças que gera histórias com o GPT-3 rsrs. Também dei a você um exemplo de e-mail gratuito para enviar aos investidores! Espero que um de vocês consiga arrecadar alguns milhões com isso rsrs.
+Ei! Eu até dei a você uma ideia de startup gratuita com este aplicativo de leitura para crianças que gera histórias com o GPT-3 rsrs. Também dei a você um exemplo de e-mail gratuito para enviar aos investidores! Espero que alguém entre vocês consiga arrecadar alguns milhões com isso rsrs.
 
 ### Por favor, faça isso, senão agora a Karla vai ficar triste
 
@@ -226,6 +226,6 @@ Tem ideias para algo que você gostaria de construir? Eu sei que este projeto é
 
 As ideias são infinitas.
 
-Antes de seguir adiante, crie sua própria ideia maluca que você acha que seria legal. Quando criar uma, poste-a em #ideas. Sinta-se à vontade para conferir o canal em busca de ideias que outras pessoas tiveram, bem como para inspiração!
+Antes de seguir adiante, crie sua própria ideia maluca que você acha que seria legal. Quando criar uma, poste-a em #ideias. Sinta-se à vontade para conferir o canal em busca de ideias que outras pessoas tiveram, bem como para inspiração!
 
 *P.S: A maioria das ideias pode ser testada rapidamente no Playground. Sempre que tiver uma ideia, escreva um prompt rápido para ela no Playground e veja como fica. Vamos iterar!*
