@@ -3,7 +3,7 @@
 
 Quero explorar uma outra coisa bem legal que você pode fazer com o GPT-3, que é criar aplicativos de bate-papo realmente envolventes. E, como o GPT-3 tem conhecimento do mundo real, você pode até escolher conversar com pessoas específicas.
 
-Dê uma olhada.
+Dê uma olhada:
 
 Digamos que eu queira falar com Steve Jobs. Sempre tive curiosidade de ter uma conversa com Steve Jobs sobre um monte de coisas - mas uma coisa importante era que eu queria saber se seu estilo de gestão agressivo valia a pena e se ele realmente era um babaca.
 
