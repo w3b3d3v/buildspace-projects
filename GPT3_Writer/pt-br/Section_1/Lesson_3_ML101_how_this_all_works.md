@@ -1,7 +1,7 @@
 
 Você pode estar se perguntando como essa coisa funciona. Honestamente, entender como isso funciona irá aprimorar ainda mais seu uso.
 
-*Observação: se você já sabe como o GPT-3 (aprendizado profundo) funciona, fique à vontade para pular essa parte.*
+*Observação: se você já sabe como o GPT-3 ("deep learning", ou "aprendizado profundo") funciona, fique à vontade para pular essa parte.*
 
 ### Os fundamentos por trás do GPT-3
 
@@ -28,7 +28,7 @@ O GPT-3 possui um dicionário criado para mapear pedaços de palavras para núme
 
 E fazendo isso, tudo é apenas um número para o GPT-3.
 
-Ele não vê palavras, frases, etc. **Tudo o que vê são números** (Matrix?). Mesmo quando ele gera algo, ele gera como números - mas, no Playground, ele irá converter automaticamente os tokens em palavras em inglês com base em seu dicionário.
+Ele não vê palavras, frases, etc. **Tudo o que vê são números** (Matrix?). Mesmo quando ele gera algo, ele gera como números - mas, no Playground, ele irá converter automaticamente os tokens em palavras com base em seu dicionário.
 
 Isso é muito impressionante - significa que o GPT-3 não entende a linguagem como nós entendemos. Em vez disso, ele entende a linguagem como uma coleção de números e as relações que esses números têm com os parâmetros.
 
@@ -38,7 +38,7 @@ Quando o GPT-3 vê “Eu comi comida e eu”, pode ver a frase como *“40222 53
 
 ### Parâmetros — o coração do GPT-3
 
-O parâmetro parece ser a coisa mágica aqui, e você está certo nisso.
+O parâmetro parece ser a coisa mágica aqui, e você tem razão nisso.
 
 Como diabos o GPT-3 sabe como completar as frases?
 
@@ -84,12 +84,12 @@ O que expliquei acima são, na verdade, os fundamentos de algo chamado “aprend
 
 Você provavelmente tem muitas outras perguntas – *Qual é a matemática por trás disso? O que é exatamente um parâmetro e como ele é atualizado? O que diabos é aprendizado profundo?*
 
-**Aqui está o meu conselho: continue experimentando com o GPT-3 e termine este projeto. Não fique obcecado com o funcionamento dele agora.** 
+**Aqui está o meu conselho: continue experimentando com o GPT-3 e termine este projeto. Não se prenda ao funcionamento dele agora.** 
 
 Além disso, está tudo bem se você simplesmente **não entender como essa coisa funciona ou não se importar** e apenas quiser usá-la. Duvido que 99% de vocês entendam *profundamente* como a placa de circuito em seus smartphones funciona. A maioria de nós realmente não se importa! Queremos apenas usar nossos smartphones.
 
 E está tudo bem. Você não precisa entender tudo.
 
-Desde que você entenda os conceitos fundamentais, estamos prontos para seguir em frente!!
+Desde que você entenda os conceitos fundamentais, está tudo certo para seguir em frente!!
 
-*Observação: Caso você seja a minoria que quer entender com profundidade esse assunto e talvez até trabalhar com isso em algum momento, nós te encorajamos. Esse build pode ser apenas seu primeiro passo de um longa jornada na área e ficaremos muito feliz em saber que fizemos parte disso!*
+*Observação: Caso você faça parte da minoria que quer entender com profundidade esse assunto e talvez até trabalhar com isso em algum momento, nós te encorajamos. Esse build pode ser apenas seu primeiro passo de um longa jornada na área e ficaremos muito felizes em saber que fizemos parte disso!*
