@@ -1,7 +1,7 @@
 
 Criar bons prompts não é fácil!
 
-Como eu disse anteriormente, criar prompts é uma habilidade e você não se tornará um mestre do prompt em 30 minutos. Meu objetivo é apenas dar a você habilidades suficientes para que possa continuar e construir algo interessante mais tarde neste projeto.
+Como eu disse anteriormente, criar prompts é uma habilidade e você não irá dominá-la em 30 minutos. Meu objetivo é apenas dar a você habilidades suficientes para que possa continuar e construir algo interessante mais tarde neste projeto.
 
 Deixe-me dar a você uma outra habilidade que será muito útil mais tarde - o meta-aprendizado.
 
@@ -19,7 +19,7 @@ Mas, atenção. É aqui que as coisas ficam estranhas.
 
 Posso usar o que o GPT-3 gerou como **exemplo**, então a próxima coisa que ele gerar será ainda melhor. Vou apagar todas as coisas de `Cenário` e `Enredo`. Não precisamos disso. **Agora, o GPT-3 tem um exemplo claro de uma história que gostamos, então não precisamos de tudo isso.**
 
-**Observação: neste ponto, certifique-se de ter gerado uma história que você acha decente! No pior cenário, copie minha história.**
+**Observação: neste ponto, certifique-se de ter gerado uma história que você ache razoável! No pior cenário, copie minha história.**
 
 Agora, meu prompt fica assim, onde criei um novo prompt na parte inferior sobre "Elon e o Império do Espaço" - mas observe mais uma vez que não preciso fornecer um cenário, enredo, etc porque o GPT-3 já tem um exemplo.
 
@@ -67,9 +67,9 @@ Você vê a magia aqui?
 
 Está tudo no prompt. Demora um pouco, mas quando você chega lá é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal do discord da se se precisar de ajuda com o prompt.
 
-Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo: a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o faz.
+Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo: a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o torna.
 
-**Se você ainda não criou uma história sólida com a qual esteja feliz - tudo bem**. Continue seguindo em frente, meu amigo. Não adianta ficar obcecado com prompts específicos!
+**Se você ainda não criou uma história sólida com a qual esteja feliz - tudo bem**. Continue seguindo em frente, colega. Não adianta se obcecar com prompts específicos!
 
 ### Magia: Utilizando o GPT-3 como um verdadeiro assistente de escrita
 
@@ -116,7 +116,7 @@ Você pode usar esse mesmo fluxo para escrever tweets, descrições de produtos,
 
 Você pode estar se perguntando: “O que acontece se eu continuar clicando em Enviar e deixar o GPT-3 continuar sozinho?”. Experimente! Vá para a sua história e continue clicando em Enviar. Eventualmente, o GPT-3 continuará gerando a mesma coisa indefinidamente. Por quê?
 
-Bem, o modelo precisa que você (o humano) continue fornecendo a ele novos conteúdos para trabalhar, para que ele possa entender melhor o que você precisa. **Ele não é bom agindo por conta própria**, pois novamente, você precisa guiá-lo. É também assim que você pode continuar a prolongar a história.
+Bem, o modelo precisa que você (o ser humano) continue fornecendo a ele novos conteúdos para trabalhar, para que ele possa entender melhor o que você precisa. **Ele não é bom agindo por conta própria**, você precisa guiá-lo. É também assim que você pode continuar a prolongar a história.
 
 Existe uma maneira mais interessante de prolongar a história, sobre a qual falaremos mais tarde.
 
@@ -176,7 +176,7 @@ O prompt não é perfeito, então os resultados podem não ser surpreendentes, m
 
 Já fizemos algumas coisas bem loucas sem uma única linha de código rsrs. Nesse ponto, você provavelmente consegue ter várias ideias.
 
-Mas vamos continuar brincando no Playground **um pouco** mais para depois começarmos a escrever algum código. Quero mostrar mais algumas coisas malucas e orientá-lo em mais alguns prompts. **Se você tem dificuldade em escrever prompts, nada disso será divertido rsrs.** Então, quero garantir que você tenha todos os segredos!
+Mas vamos continuar brincando no Playground **um pouco** mais para depois começarmos a escrever algum código. Quero mostrar mais algumas coisas malucas e te orientar em mais alguns prompts. **Se você tem dificuldade em escrever prompts, nada disso será divertido rsrs.** Então, quero garantir que você tenha todos os segredos!
 
 Mas, espere um segundo! Como exatamente tudo isso funciona mesmo?
 
