@@ -181,7 +181,7 @@ Estamos tããão perto agora! É aqui que a verdadeira personalização entra em
 
 ### Está na hora — injetando no Calmly
 
-Você provavelmente está pensando: “Caramba, Farza! Você continua se empolgando nessa coisa de injeção, mas nem mostrou como fazer isso”. Tudo bem… eu estou aqui agora!
+Você provavelmente está pensando: “Caramba, Dani! Você continua se empolgando nessa coisa de injeção, mas nem mostrou como fazer isso”. Tudo bem… eu estou aqui agora!
 
 Vamos mergulhar de volta em nosso arquivo `content.js`. Quando recebemos nosso conteúdo, queremos pegar e adaptar este arquivo de forma que o Calmly (ou o site que você está usando) possa recebê-lo e renderizá-lo como se você o tivesse digitado.
 
@@ -380,6 +380,6 @@ Vá em frente, recarregue sua extensão, atualize sua página da web e execute s
 
 Parabéns, meu amigo. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão a Thai vai ficar triste
 
 Poste uma captura de tela em #progress, mostrando o texto gerado no Calmly pelo script de injeção. Excelente trabalho!

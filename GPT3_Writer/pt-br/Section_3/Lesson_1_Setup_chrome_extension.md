@@ -1,4 +1,3 @@
-[https://vimeo.com/775481289](https://vimeo.com/775481289)
 
 Neste ponto, você provavelmente está bem envolvido no código. Ajustando seu modelo, deixando seu site ainda mais limpo e conectado com a sua ideia. Mas eu quero que você tire um minuto para dar um passo atrás e olhar para onde você começou, onde você está e para onde está indo.
 

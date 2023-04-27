@@ -81,15 +81,12 @@ git push
 
 *Observação: nós temos um arquivo .gitignore que nos impede de enviar acidentalmente o arquivo `.env` e outros arquivos que não queremos enviar para o controle de origem.*
 
-Aqui está como você pode implantá-lo no Railway:
-[https://www.loom.com/share/15d1b1c45d0b46199d677ca3dc222d17](https://www.loom.com/share/15d1b1c45d0b46199d677ca3dc222d17)
-
 **Observação: o Railway não fornecerá um domínio rsrs.** 
 Você terá que gerá-lo na aba de configurações do seu projeto:
 ![](https://hackmd.io/_uploads/ryTbIFhDi.png)
 
 **VOCÊ TERMINOU. VAMOS LÁ!**
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão vou ficar triste
 
 Assim que você implantar sua aplicação web, tire uma captura de tela dela e publique-a em #progress! Mostre ao mundo que você deu o fora do localhost.

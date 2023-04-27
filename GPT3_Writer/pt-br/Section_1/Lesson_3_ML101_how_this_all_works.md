@@ -5,7 +5,9 @@ Você pode estar se perguntando como essa coisa funciona. Honestamente, entender
 
 ### Os fundamentos por trás do GPT-3
 
-Você pode ter ouvido por aí que o GPT-3 é composto de muitos "parâmetros" – cada parâmetro é um **número especializado**. Quando você insere uma frase no GPT-3, ele combinará essa frase com todos os seus parâmetros para prever o que deve vir a seguir.
+Farei uma explicação bem simples e superficial, ok?
+
+Talvez você já tenha ouvido por aí que o GPT-3 é composto de muitos "parâmetros" – cada parâmetro é um **número especializado**. Quando você insere uma frase no GPT-3, ele combinará essa frase com todos os seus parâmetros para prever o que deve vir a seguir.
 
 O GPT-3 tem **175 bilhões desses parâmetros**, e isso ocupa 800 GB.
 
@@ -16,7 +18,7 @@ Cada parâmetro na verdade se parece com isto:
 saída = entrada * parâmetro
 ```
 
-*Observação: estou simplificando bastante a matemática aqui, pois estamos apenas tentando entender os conceitos. Muitos cálculos acontecem dentro do GPT-3, mas não estou tentando ensiná-lo sobre derivadas agora rsrs.*
+*Observação: estou simplificando bastante a matemática aqui, pois estamos apenas tentando entender os conceitos. Muitos cálculos acontecem dentro do GPT-3, mas não estou tentando te ensinar sobre derivadas agora rsrs.*
 
 Então, no caso acima, a “entrada” é a frase que estamos fornecendo e o “parâmetro” é um número exclusivo. **Reunimos todas as saídas dos 175 bilhões de parâmetros exclusivos, as combinamos e obtemos nossa saída final: palavras que completam a frase.**
 
@@ -82,7 +84,7 @@ O que expliquei acima são, na verdade, os fundamentos de algo chamado “aprend
 
 Você provavelmente tem muitas outras perguntas – *Qual é a matemática por trás disso? O que é exatamente um parâmetro e como ele é atualizado? O que diabos é aprendizado profundo?*
 
-**Aqui está o meu conselho: continue experimentando com o GPT-3 e termine este projeto. Não fique obcecado com o funcionamento dele agora.** Depois de terminar este projeto, recomendo acessar [este link](https://course.fast.ai/Lessons/lesson3.html) para aprender mais sobre aprendizado profundo, se você estiver curioso.
+**Aqui está o meu conselho: continue experimentando com o GPT-3 e termine este projeto. Não fique obcecado com o funcionamento dele agora.** 
 
 Além disso, está tudo bem se você simplesmente **não entender como essa coisa funciona ou não se importar** e apenas quiser usá-la. Duvido que 99% de vocês entendam *profundamente* como a placa de circuito em seus smartphones funciona. A maioria de nós realmente não se importa! Queremos apenas usar nossos smartphones.
 
@@ -90,3 +92,4 @@ E está tudo bem. Você não precisa entender tudo.
 
 Desde que você entenda os conceitos fundamentais, estamos prontos para seguir em frente!!
 
+*Observação: Caso você seja a minoria que quer entender com profundidade esse assunto e talvez até trabalhar com isso em algum momento, nós te encorajamos. Esse build pode ser apenas seu primeiro passo de um longa jornada na área e ficaremos muito feliz em saber que fizemos parte disso!*

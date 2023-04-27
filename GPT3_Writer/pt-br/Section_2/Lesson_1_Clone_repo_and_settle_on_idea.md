@@ -1,4 +1,3 @@
-[https://vimeo.com/775481176](https://vimeo.com/775481176)
 
 
 Vamos então construir algo!
@@ -30,11 +29,9 @@ Criamos um projeto básico com o React/NextJS + um pouco de CSS para manter as c
 
 Para fazer isso, basta clicar em "**Fork**" na parte superior e, em seguida, clonar o repositório bifurcado. Isso vai bifurcar o repositório para a sua conta pessoal, o que tornará mais fácil enviar o código e implantar o nosso projeto depois.
 
-Seria bem legal se você nos deixasse uma estrela por lá também!
+*Seria bem legal se você nos deixasse uma estrela por lá também!*
 
-![Untitled](https://i.imgur.com/bTgmHpL.png)
-
-Após a bifurcação, vá em frente e clone o repositório. O URL da clonagem será específico para você. Deve ficar assim:
+Vá em frente e clone o repositório. O URL da clonagem será específico para você. Deve ficar assim:
 
 ```
 https://github.com/SEU_USERNAME_DO_GITHUB_AQUI/gpt3-writer-starter.git
@@ -59,7 +56,7 @@ Em seguida, vá para [localhost:3000](http://localhost:3000) e você verá o seg
 
 **Uma nota para quem estiver familiarizado com o React**: sinta-se à vontade para acelerar esta parte do projeto.
 
-**Uma nota para quem** *não está tão familiarizado* **com o React**: você não precisa ser um especialista em React para fazer isso. Se houver algo que você não entenda ao seguir este tutorial, basta pesquisar no Google e seguir em frente.
+**Uma nota para quem** *não está tão familiarizado* **com o React**: você não precisa ser um especialista em React para fazer isso. Se houver algo que você não entenda ao seguir este tutorial, basta pesquisar no Google ou colocar sua dúvida no canal #seção-2-ajuda.
 
 ### Adicione uma caixa de texto + botão de geração
 
@@ -95,7 +92,7 @@ const Home = () => {
         >
           <div className="badge">
             <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>construído com a buildspace</p>
+            <p>construído com a web3dev</p>
           </div>
         </a>
       </div>
@@ -235,6 +232,6 @@ Vamos lá!
 
 Por favor, **não copie** nenhum dos meus títulos aqui! Crie seu próprio caso de uso específico. Adicione o seu próprio toque especial nessa coisa. Caso contrário, eu garanto que não será divertido.
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão o Lorenzo vai ficar triste
 
 Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e seu subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.

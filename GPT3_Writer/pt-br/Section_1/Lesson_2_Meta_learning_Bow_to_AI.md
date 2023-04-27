@@ -26,13 +26,13 @@ Agora, meu prompt fica assim, onde criei um novo prompt na parte inferior sobre 
 Isso é chamado de **“single-shot learning”** (aprendizado com único exemplo). Porque o GPT-3 tem um único exemplo com o qual está aprendendo!
 
 ```
-Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Farza e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
+Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Dani e o Reino Perdido", ambientada nos anos 1500 e que parece um anime.
 
-História: Farza era apenas um menino normal, vivendo em um reino pobre e quebrado que havia sido destruído por Furqan. Mas ele mal sabia que tinha poderes secretos que poderiam ajudá-lo a derrotar o vilão e retomar o reino.
+História: Dani era apenas um menino normal, vivendo em um reino pobre e quebrado que havia sido destruído por Furqan. Mas ele mal sabia que tinha poderes secretos que poderiam ajudá-lo a derrotar o vilão e retomar o reino.
 
-Um dia, Farza decidiu enfrentar Furqan e desafiá-lo para um duelo. Farza confiava em suas habilidades, mas Furqan era muito mais forte e mais experiente. A batalha foi acirrada, mas finalmente Furqan saiu vitorioso.
+Um dia, Dani decidiu enfrentar Furqan e desafiá-lo para um duelo. Dani confiava em suas habilidades, mas Furqan era muito mais forte e mais experiente. A batalha foi acirrada, mas finalmente Furqan saiu vitorioso.
 
-No entanto, quando ele estava prestes a desferir o golpe final, os poderes latentes de Farza despertaram repentinamente e ele foi capaz de mudar o rumo da batalha. No final, Farza saiu vitorioso e o reino estava finalmente livre da tirania de Furqan.
+No entanto, quando ele estava prestes a desferir o golpe final, os poderes latentes de Dani despertaram repentinamente e ele foi capaz de mudar o rumo da batalha. No final, Dani saiu vitorioso e o reino estava finalmente livre da tirania de Furqan.
 
 Prompt: Conte-me uma história completa com começo, meio e fim intitulada "Elon e o Império do Espaço", ambientada em um futuro distópico que parece um anime onde Elon Musk tem o poder de se teletransportar.
 
@@ -65,7 +65,7 @@ Absolutamente incrível. Imaginar Elon se teletransportando para o palácio do i
 
 Você vê a magia aqui?
 
-Está tudo no prompt. Demora um pouco, mas quando você chega lá é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal de suporte se precisar de ajuda com o prompt.
+Está tudo no prompt. Demora um pouco, mas quando você chega lá é incrível. **Se você ainda está lutando com seu prompt** — isso é esperado. Continue mexendo com a temperatura, continue brincando com a entrada. Sinta-se à vontade para enviar uma mensagem para o canal do discord da se se precisar de ajuda com o prompt.
 
 Todas as vezes, levo de 6 a 12 alterações para obter o que eu quero. Por exemplo: a segunda história que o GPT-3 gerou foi um lixo? Bem, então talvez faça alterações na descrição da segunda história - dê mais contexto e detalhes. O GPT-3 é tão bom quanto você o faz.
 
@@ -77,7 +77,7 @@ Deixa eu te mostrar algo super incrível. O GPT-3 é realmente bom para completa
 
 Portanto, podemos continuar construindo essa história apenas deixando o GPT-3 completar nossa frase ou **iniciando uma nova situação.**
 
-Olha só, eu vou começar a agitar as coisas. Eu sou como aquele bêbado doidão na balada procurando briga.
+Olha só, eu vou começar a agitar as coisas. Eu sou como aquele "bêbado doidão na balada procurando briga" rs.
 
 Eu vou **apagar tudo** no Playground e usar apenas minha história do Elon gerada acima. *Certifique-se de pegar sua própria história que foi gerada, não use a minha história do Elon! Eu continuo enfatizando isso, pois eu realmente não quero que você use minhas histórias e premissas. Crie suas próprias!*
 
@@ -162,7 +162,7 @@ Você pode até fazer coisas hilárias como esta:
 Escreva uma música para piratas que explique por que Python é melhor que Javascript:
 ```
 
-Ou, f&%@-se, apenas escreva uma música em uma linguagem completamente diferente.
+Ou, *que se dane*, apenas escreva uma música em uma linguagem completamente diferente.
 
 ```
 Escreva uma música em hindi sobre um menino que perdeu o computador:
@@ -170,9 +170,7 @@ Escreva uma música em hindi sobre um menino que perdeu o computador:
 
 Eu deixarei você brincar com esta música acima. É incrível porque ela **combina escrita criativa com fatos do mundo real**. Tente fazer com que a Taylor Swift escreva uma música explicando como jogar Super Smash Bros ou algo assim! Você pode fazer o que quiser.
 
-O prompt não é perfeito, então os resultados podem não ser surpreendentes, mas certifique-se de mexer com ele.
-
-Um grande agradecimento a um de nossos builders, Naklecha, que inspirou esta parte da lição. Ele realmente transformou esse explicador de histórias em um produto completo ([veja aqui](https://twitter.com/naklecha/status/1587046444854190081)), que usa histórias em vez de músicas.
+O prompt não é perfeito, então os resultados podem não ser surpreendentes, mas certifique-se de brincar com ele.
 
 ### Seguindo adiante
 
@@ -182,10 +180,10 @@ Mas vamos continuar brincando no Playground **um pouco** mais para depois começ
 
 Mas, espere um segundo! Como exatamente tudo isso funciona mesmo?
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão o Caio vai ficar triste
 
 Tivemos um grande progresso por aqui! Excelente trabalho!
 
-Mais uma vez, vá em frente e tire uma captura de tela do Playground com sua última história, música ou qualquer outra coisa que você queira mostrar e poste na seção #prompts do Discord.
+Mais uma vez, vá em frente e tire uma captura de tela do Playground com sua última história, música ou qualquer outra coisa que você queira mostrar e poste no canal #progresso do Discord.
 
 Juntamente com a imagem, por favor, inclua seu **prompt** para que outras pessoas possam vê-lo facilmente para se inspirar.

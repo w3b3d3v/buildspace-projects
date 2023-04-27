@@ -265,9 +265,9 @@ Aliás, nenhuma mudança na IU é necessária aqui. Tudo o que estamos fazendo �
 
 Então... como está o seu produto agora? O meu está absolutamente incrível rsrs. Ele tem criado algumas postagens de blog de alta qualidade sobre tudo, desde anime até fissão nuclear e conselhos sobre relacionamento. Coisa linda!
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão eu vou ficar triste
 
 Você chegou bem longe! Estou orgulhoso de você. **Dê a si mesmo um tapinha nas costas, você está fazendo coisas insanas!!** Vá em frente e tire uma captura de tela do seu aplicativo da web com um de seus prompts e saídas favoritos e poste em #progress. Quero ver todas as coisas incríveis que vocês estão gerando rsrs.
 
-Além disso, é hora de **conseguir seu primeiro usuário**. Se você tiver alguém por perto, mostre o que você está fazendo (ex. mãe, amigo, colega de quarto, etc)! Chame-os, mostre o que você construiu e peça para eles brincarem com o seu aplicativo da web. Veja o que eles dizem!
+Além disso, é hora de **conseguir seu primeiro usuário**. Se você tiver alguém por perto, mostre o que você está fazendo (ex. mãe, amigo, amiga, colega de quarto, etc)! Chame-os, mostre o que você construiu e peça para eles brincarem com o seu aplicativo da web. Veja o que eles dizem!
 

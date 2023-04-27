@@ -87,7 +87,7 @@ O encadeamento de prompts é **altamente** subestimado e não é muito discutido
 
 Vamos colocar essas habilidades de prompt à prova e construir uma startup com o GPT-3, desde a ideia até a apresentação do projeto (pitch) aos investidores. Ter boas ideias é um dos maiores desafios ao iniciar uma startup, então vamos perguntar ao GPT-3!
 
-Vou pedir boas ideias sobre “GPT-3 e leitura”, porque acho que o GPT-3 é super legal e ler é algo que todos querem fazer! Eu também pedi especificamente que ele gerasse ideias para coisas que uma criança poderia usar. Fiz isso porque dirigi uma empresa chamada [ZipSchool](https://mobile.twitter.com/FarzaTV/status/1488965852519022592), que produzia conteúdo científico para crianças.
+Vou pedir boas ideias sobre “GPT-3 e leitura”, porque acho que o GPT-3 é super legal e ler é algo que todos querem fazer!
 
 ```
 Dê-me algumas ideias de startups legais relacionadas ao GPT-3 e leitura para crianças:
@@ -209,17 +209,15 @@ Sempre que você ler a saída e pensar: “Nossa! Eu gostaria que o GPT-3 tivess
 
 Espero que essa tenha sido uma aventura divertida para você - minha esperança é que você esteja transbordando de ideias sobre coisas legais que pode criar. Um site para ajudar as pessoas a escrever textos para landing pages, um aplicativo para ajudar as pessoas a escrever tweets melhores, uma ferramenta para ajudar os roteiristas a criar mundos mais interessantes, etc.
 
-Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. Caramba, essa coisa pode até gerar RegEx para você — [confira esse aplicativo construído por um de nossos ex-alunos](https://twitter.com/gd3kr/status/1545370626273120256) que se tornou **viral**.
+Os casos de uso com o GPT-3 são literalmente infinitos e eu só abordei alguns. 
 
 Eu ainda nem mostrei as coisas que ele pode fazer com códigos! [Este](https://www.buildgpt3.com/) é um site muito bom! Recomendo que você navegue por ele para obter mais exemplos de prompts e casos de uso + demonstrações.
 
 Ei! Eu até dei a você uma ideia de startup gratuita com este aplicativo de leitura para crianças que gera histórias com o GPT-3 rsrs. Também dei a você um exemplo de e-mail gratuito para enviar aos investidores! Espero que um de vocês consiga arrecadar alguns milhões com isso rsrs.
 
-Atualização: um de nossos ex-alunos está [trabalhando em um aplicativo desses agora](https://onceuponabot.com/). Por enquanto, você pode usá-lo gratuitamente!
+### Por favor, faça isso, senão agora a Karla vai ficar triste
 
-### Por favor, faça isso, senão o Farza vai ficar triste
-
-Tem ideias para algo que você gostaria de construir? Eu sei que este projeto é intitulado “construa seu assistente de escrita de IA”, mas sinta-se à vontade para construir o que você quiser rsrs. Algumas ideias malucas aleatórias:
+Tem ideias para algo que você gostaria de construir? Eu sei que este projeto é intitulado “construa seu chat com IA”, mas sinta-se à vontade para construir o que você quiser rsrs. Algumas ideias malucas aleatórias:
 
 - Um treinador esportivo de IA, onde as pessoas podem escolher quem querem como seu treinador. Imagine o Goku dando conselhos para seus treinos e criando seus planos de treinamento.
 - Um assistente de escrita para o Notion, que ajuda as pessoas a escrever documentos de produtos claros - ele usaria a especificação como entrada e produziria uma versão da especificação mais clara e mais acionável.
