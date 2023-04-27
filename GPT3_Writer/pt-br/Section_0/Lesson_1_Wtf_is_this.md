@@ -7,13 +7,13 @@ Olá! Meu nome é [danicuki](https://twitter.com/danicuki). Comecei a programar 
 
 ### O que você precisa saber para construir isso
 
-Você não precisa ter *muito* conhecimento inicial para terminar com sucesso esse build. Pode ficar tranquilo e tranquila! Vou te acompanhar e te mostrarei como fazer a maior parte ao longo do caminho.
+Você não precisa ter *muito* conhecimento inicial para terminar com sucesso esse build. Pode relaxar! Vou te acompanhar e te mostrarei como fazer a maior parte ao longo do caminho.
 
-**É importante qie você saiba pelo menos codificar em uma linguagem de programação e saiba como usar a linha de comando. Se você conhece JavaScript e React, isso também ajudará bastante o seu aproveitamento.**
+**É importante que você saiba pelo menos codificar em uma linguagem de programação e saiba como usar a linha de comando. Se você conhece JavaScript e React, isso também ajudará bastante o seu aproveitamento.**
 
 - Se você não sabe codificar em nenhuma linguagem, minha recomendação é que você visite [este link](https://www.freecodecamp.org/portuguese/) primeiro. **Nossa especialidade na web3dev não é ensinar as pessoas a programar do zero**, existem plataformas muito melhores para isso.
 - Se você sabe codificar um *pouco*, mas não tem tanta confiança, veja até onde você consegue ir no que estamos construindo! Se você tiver problemas ou perceber lacunas óbvias em seu conhecimento, não se preocupe. Basta pesquisar no Google ou voltar ao básico [aqui](https://www.freecodecamp.org/portuguese/).
-- Se você sabe como codificar em qualquer linguagem, mas nunca usou o React - vai ficar tudo bem! Apenas continue tentando. Se você acabar realmente tendo dificuldades com o React, poderá aprender sobre ele [aqui](https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO).
+- Se você sabe como codificar em alguma linguagem, mas nunca usou o React - vai ficar tudo bem! Apenas continue tentando. Se você acabar realmente tendo dificuldades com o React, poderá aprender sobre ele [aqui](https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO).
 - Se você é profissional em desenvolvimento de software, espero ver você no final com uma aplicação realmente incrível. Inspire a todos nós!
 
 ### Nosso conteúdo é totalmente open-source
@@ -28,11 +28,11 @@ A tecnologia evolui rapidamente. E é graças às pessoas incríveis que fazem P
 
 **Confira o nosso repositório [aqui](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)** -- dê uma estrela se você estiver de bem com a vida! Isso nos ajuda muito.
 
-### Como obter ajuda.
+### Como obter ajuda:
 
 Você provavelmente encontrará alguns obstáculos durante a compilação.
 
-É por isso que temos uma equipe de monitores que tem por objetivo principal te ajudar a superar qualquer problema, para que você possa realmente entregar isso.
+É por isso que temos uma equipe de monitores que tem por objetivo principal te ajudar a superar qualquer problema, para que você realmente consiga chegar até o final.
 
 Sempre que se deparar com algum problema, você pode procurar os monitores diretamente mencionando no Discord `@Monitores Builds`.
 
