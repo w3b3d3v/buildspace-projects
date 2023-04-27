@@ -1,7 +1,7 @@
 
-Como fazemos em tudo aqui na web3dev, vamos apenas mergulhar (mão ) sem explicar nada rsrs. Acho que você entenderá muito disso rapidamente, assim que começar a mexer com o projeto.
+Como fazemos em tudo aqui na web3dev, vamos apenas mergulhar sem explicar nada rsrs. Acho que você entenderá muito disso rapidamente, assim que começar a mexer com o projeto.
 
-### Tenha acesso à OpenAI
+### Consiga acesso à OpenAI
 
 A primeira coisa que você precisa fazer é criar uma conta na OpenAI [aqui](https://beta.openai.com/playground).
 
@@ -17,14 +17,14 @@ Um “prompt” é o que você insere no GPT-3.
 
 Quero deixar algo muito claro sobre algo — **os próximos 30 minutos podem ser super mágicos ou podem ser dolorosos.** Os prompts podem ser realmente irritantes de escrever e é importante que você saiba disso.
 
-A engenharia de prompts é uma habilidade - você não será bom nisso no começo, e está tudo bem. Apenas certifique-se de continuar evoluindo. **Lembre-se, seu objetivo é entregar este projeto. Nada mais.** Não se prenda em tentar fazer **uma** coisa funcionar.
+A engenharia de prompts é uma habilidade - você não irá acertar tudo no começo, e está tudo bem. Apenas certifique-se de continuar evoluindo. **Lembre-se, seu objetivo é entregar este projeto. Nada mais.** Não se prenda em tentar fazer **uma** coisa funcionar.
 
 Algumas dicas que gostaria de ter tido quando estava aprendendo a engenharia de prompts:
 
-- Bons resultados não virão imediatamente. Eu levo de 6 a 12 tentativas para chegar a um ponto em que acho decente. Não espere mágica na primeira tentativa.
-- Itere rapidamente e não fique muito apegado a prompts específicos com os quais você está trabalhando.
-- Se sua saída não ficar parecida com a minha, está tudo bem. A saída do GPT-3 pode mesmo variar muito com base em algumas palavras.
-- Não fique obcecado em tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e: a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
+- Bons resultados não virão imediatamente. Eu levo de 6 a 12 tentativas para chegar a um ponto em que acho razoável. Não espere mágica na primeira tentativa.
+- Itere rapidamente e não fique se apegue muito a prompts específicos com os quais você está trabalhando.
+- Se o seu resultado não ficar parecida com o meu, está tudo bem. A saída do GPT-3 pode mesmo variar muito com base em algumas palavras.
+- Não entre na obsessão de tentar fazer um prompt específico funcionar. Após 6-12 tentativas, sinta-se à vontade para dizer f@*#-se e: a) iniciar o prompt do zero e alterá-lo significativamente ou b) seguir para a próxima lição.
 
 ### Crie seus primeiros prompts para contar uma história
 
@@ -129,7 +129,7 @@ Enredo: Dani quer derrotar Furqan e recuperar o reino.
 História:
 ```
 
-*Observação: eu digo especificamente ao GPT-3 onde quero que minha história comece, escrevendo `História:`. Isso simplesmente ajuda o GPT-3 a entender que queremos que ele comece imediatamente a produzir a história.*
+*Observação: eu digo especificamente ao GPT-3 onde quero que minha história comece, escrevendo `História:`. Isso serve apenas para ajudar o GPT-3 a entender que queremos que ele comece imediatamente a produzir a história à partir daquele ponto.*
 
 Observe todas as informações que dou GPT-3 aqui! `Dani`, `Cenário`, `Furqan`, e `Enredo`. Faço isso porque estou tentando explicar ao GPT-3 o que eu quero. Novamente, queremos apenas ser o mais específico possível e literalmente dizer ao GPT-3 o que queremos. Ele pode fazer todo o pensamento criativo, mas **precisamos dar a ele diretrizes básicas**.
 
@@ -162,7 +162,7 @@ A história de Dani é de coragem, determinação e esperança. É um conto insp
 
 **Que irado!**
 
-O GPT-3 criou toda essa ideia parece literalmente um anime. Nesse ritmo, talvez eu pegue [os 2,5 milhões de dólares que acabamos de arrecadar](https://exame.com/future-of-money/startup-educacional-recebe-aporte-de-fundo-japones-com-foco-em-web3/) e gaste transformando a web3dev em um estúdio de anime rsrs.
+O GPT-3 criou toda essa ideia, que parece literalmente um anime. Nesse ritmo, talvez eu pegue [os 2,5 milhões de dólares que acabamos de arrecadar](https://exame.com/future-of-money/startup-educacional-recebe-aporte-de-fundo-japones-com-foco-em-web3/) e gaste transformando a web3dev em um estúdio de anime rsrs.
 
 ### Algumas recomendações
 
@@ -180,7 +180,7 @@ Algumas recomendações:
 
 - **Sua história tem apenas 1-2 frases todas as vezes?** Não se preocupe, está tudo bem. Mostraremos algumas correções para isso mais tarde. Mas, por enquanto, tente dar ao GPT-3 mais informações sobre seu personagem, o enredo que deseja e o cenário. Seu personagem é engraçado? O mundo em que eles vivem é algum planeta espacial futurista? Deixe tudo pronto para o GPT-3!
 - **Não conseguiu uma boa história?** Experimente e faça da sua história algo que se misture com alguma coisa do mundo real. Você pode literalmente dizer ao GPT-3 para fazer isso. Por exemplo: `Conte-me uma história completa com começo, meio e fim, intitulada "Dani e a Caixa Mágica Vermelha". Esta história deve combinar as vibrações de Game of Thrones e Breaking Bad.` Quanto mais contexto e comparações você der ao GPT-3, melhor.
-- **E o mais importante** — não fique obcecado com a mesma história/prompt. Depois de algumas tentativas, não há problema em dizer f*@%-se, apagar todo o seu prompt, e tentar algo completamente novo.
+- **E o mais importante** — não se limite à mesma história/prompt. Depois de algumas tentativas, não há problema em dizer f*@%-se, apagar todo o seu prompt, e tentar algo completamente novo.
 
 ### Temperatura
 
