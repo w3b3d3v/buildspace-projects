@@ -228,4 +228,4 @@ Se `isGenerating` for verdadeiro, mostramos uma animação de carregamento e, se
 
 ### Por favor, faça isso, senão o Melk vai ficar triste
 
-Vá em frente, faça uma captura de tela do seu aplicativo da web, que agora deve estar limpo e simples de mexer, com alguma saída na tela e poste em #progress! Ótimo trabalho até agora. A maioria das pessoas teria parado ou se distraído, mas você se manteve focado. Vamos continuar. Ainda precisamos sair do localhost!
+Vá em frente, faça uma captura de tela do seu aplicativo da web, que agora deve estar limpo e simples de mexer, com alguma saída na tela e poste em #progresso! Ótimo trabalho até agora. A maioria das pessoas teria parado ou se distraído, mas você se manteve focado. Vamos continuar. Ainda precisamos sair do localhost!
