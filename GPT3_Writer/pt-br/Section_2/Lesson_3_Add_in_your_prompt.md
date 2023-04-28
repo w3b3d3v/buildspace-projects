@@ -267,7 +267,7 @@ Então... como está o seu produto agora? O meu está absolutamente incrível rs
 
 ### Por favor, faça isso, senão eu vou ficar triste
 
-Você chegou bem longe! Estou orgulhoso de você. **Dê a si mesmo um tapinha nas costas, você está fazendo coisas insanas!!** Vá em frente e tire uma captura de tela do seu aplicativo da web com um de seus prompts e saídas favoritos e poste em #progress. Quero ver todas as coisas incríveis que vocês estão gerando rsrs.
+Você chegou bem longe! Estou orgulhoso de você. **Dê a si mesmo um tapinha nas costas, você está fazendo coisas insanas!!** Vá em frente e tire uma captura de tela do seu aplicativo da web com um de seus prompts e saídas favoritos e poste em #progresso. Quero ver todas as coisas incríveis que vocês estão gerando rsrs.
 
 Além disso, é hora de **conseguir seu primeiro usuário**. Se você tiver alguém por perto, mostre o que você está fazendo (ex. mãe, amigo, amiga, colega de quarto, etc)! Chame-os, mostre o que você construiu e peça para eles brincarem com o seu aplicativo da web. Veja o que eles dizem!
 
