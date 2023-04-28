@@ -54,17 +54,17 @@ Em seguida, vá para [localhost:3000](http://localhost:3000) e você verá o seg
 
 ![Untitled](https://i.imgur.com/5Ucablc.png)
 
-**Uma nota para quem estiver familiarizado com o React**: sinta-se à vontade para acelerar esta parte do projeto.
+**Uma nota para quem já tiver mais familiaridade com o React**: sinta-se à vontade para acelerar esta parte do projeto.
 
-**Uma nota para quem** *não está tão familiarizado* **com o React**: você não precisa ser um especialista em React para fazer isso. Se houver algo que você não entenda ao seguir este tutorial, basta pesquisar no Google ou colocar sua dúvida no canal #seção-2-ajuda.
+**Uma nota para quem** *não tem tanta familiaridade* **com o React**: você não precisa ser especialista em React para fazer isso. Se houver algo que você não entenda ao seguir este tutorial, basta pesquisar no Google ou colocar sua dúvida no canal #seção-2-ajuda.
 
 ### Adicione uma caixa de texto + botão de geração
 
-Lembre-se! Nosso objetivo é criar um site onde os usuários possam digitar algo e então ter algum texto gerado pelo GPT-3 para uma finalidade específica (por exemplo, gerar títulos de músicas de heavy metal, gerar discursos no tom de Barack Obama, etc.).
+Lembre-se! Nosso objetivo é criar um site onde as pessoas possam digitar algo e então ter algum texto gerado pelo GPT-3 para uma finalidade específica (por exemplo, gerar títulos de músicas de heavy metal, gerar discursos no tom de Barack Obama, etc.).
 
 Não se preocupe em alterar seu título principal ou subtítulo ainda. Deixe-os como estão por enquanto. Nós chegaremos neles!
 
-A primeira coisa que queremos fazer é adicionar um local onde os usuários possam digitar algo! Então, vamos adicionar um elemento `textarea`, ou seja, uma área de texto. Adicione-o com o seguinte código abaixo em `index.js`. Novamente, adicionei um pouco de CSS para ajudá-lo e garantir que as coisas fiquem decentes.
+A primeira coisa que queremos fazer é adicionar um local onde as pessoas possam digitar algo! Então, vamos adicionar um elemento `textarea`, ou seja, uma área de texto. Adicione-o com o seguinte código abaixo em `index.js`. Novamente, adicionei um pouco de CSS para ajudá-lo e garantir que as coisas fiquem decentes.
 
 ```jsx
 const Home = () => {
@@ -111,9 +111,9 @@ Depois de fazer isso, você terá algo parecido com a imagem abaixo. Tente digit
 
 ![Untitled](https://i.imgur.com/f3OCGVf.png)
 
-O elemento `textarea` é muito legal, pois nos dá uma maneira simples de permitir que os usuários digitem em nosso aplicativo da web e também nos dá uma maneira fácil de realmente capturar o que o usuário está digitando, para que possamos enviá-lo para a API do GPT-3 mais tarde.
+O elemento `textarea` é muito legal, pois nos dá uma maneira simples de permitir que as pessoas digitem em nosso aplicativo da web e também nos dá uma maneira fácil de realmente capturar o que a pessoa está digitando, para que possamos enviá-lo para a API do GPT-3 mais tarde.
 
-Vamos configurar esse sistema de captura para podermos saber o que nosso usuário está digitando. Vamos adicionar um gancho do React ([React Hook](https://reactjs.org/docs/hooks-intro.html)) para isso. Vá em frente e importe `useState` no topo do seu arquivo:
+Vamos configurar esse sistema de captura para podermos saber o que a pessoa está digitando. Vamos adicionar um gancho do React ([React Hook](https://reactjs.org/docs/hooks-intro.html)) para isso. Vá em frente e importe `useState` no topo do seu arquivo:
 
 ```jsx
 import { useState } from 'react';
@@ -140,7 +140,7 @@ Agora, vamos usar essas variáveis no elemento `textarea` que você criou anteri
 
 O que estamos fazendo aqui? Primeiro, definimos o valor (`value`) do `textarea` para `userInput`, o que significa que qualquer coisa que estiver na variável `userInput` será exibida no elemento `textarea`.
 
-Então, temos o parâmetro `onChange`. Sempre que o usuário digitar algo, ele irá chamar `onUserChangedText`. Então, vamos escrever essa função. É bem simples. Adicione isso abaixo de onde você tem `const [userInput, setUserInput]`:
+Então, temos o parâmetro `onChange`. Sempre que a pessoa digitar algo, ele irá chamar `onUserChangedText`. Então, vamos escrever essa função. É bem simples. Adicione isso abaixo de onde você tem `const [userInput, setUserInput]`:
 
 ```jsx
 const onUserChangedText = (event) => {
@@ -157,7 +157,7 @@ Fácil! Vamos testar. Vá para o seu console e comece a digitar na área de text
 
 Consegue ver como ele dispara um evento para cada tecla que você digita? Estamos pegando esse objeto do evento, capturando o texto, imprimindo-o e mantendo-o em nosso estado de entrada. Fique à vontade para remover a instrução `console.log` agora, para que ela não polua seu console.
 
-Agora, vamos apenas adicionar um botão de geração que o usuário pode clicar para gerar algo mágico. Mais tarde, conectaremos isso à API do GPT-3. Mas, por enquanto, vamos adicioná-lo como um botão que não faz nada.
+Agora, vamos apenas adicionar um botão de geração que a pessoa pode clicar para gerar algo mágico. Mais tarde, conectaremos isso à API do GPT-3. Mas, por enquanto, vamos adicioná-lo como um botão que não faz nada.
 
 ```jsx
 <div className="prompt-container">
@@ -180,7 +180,7 @@ Agora, vamos apenas adicionar um botão de geração que o usuário pode clicar 
 
 Eu coloquei o `onClick={null}` por enquanto, e mais tarde escreveremos uma função para conectá-lo à API do GPT-3. 
 
-Irado! Seu aplicativo deve estar com uma aparência bem interessante agora, pois quase toda a interface do usuário está no lugar.
+Irado! Seu aplicativo deve estar com uma aparência bem interessante agora, pois quase toda a interface de usuário está no lugar.
 
 
 ![Untitled](https://i.imgur.com/bf3JEzb.png)
@@ -205,7 +205,7 @@ Aqui temos alguns exemplos:
 
 É como uma landing page! O título principal é curto e objetivo. E o subtítulo explica um pouco mais.
 
-Além disso, observe como cada caso de uso é específico! Quanto mais específico for o caso de uso, melhor será o desempenho do GPT-3. Existem muuuuitos casos de uso! O GPT-3 pode fazer de tudo, desde gerar código até escrever mensagens de texto incríveis para responder ao seu encontro do Tinder. Seja criativo e divirta-se com isso!
+Além disso, observe como cada caso de uso é específico! Quanto mais específico for o caso de uso, melhor será o desempenho do GPT-3. Existem muuuuitos casos de uso! O GPT-3 pode fazer de tudo, desde gerar código até escrever mensagens de texto incríveis para responder ao seu encontro do Tinder. Use a criatividade e divirta-se com isso!
 
 Assim que criar seu título principal e seu subtítulo, altere-os no código!
 
@@ -234,4 +234,4 @@ Por favor, **não copie** nenhum dos meus títulos aqui! Crie seu próprio caso 
 
 ### Por favor, faça isso, senão o Lorenzo vai ficar triste
 
-Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e seu subtítulo. Compartilhe a captura em #progress para inspirar outras pessoas que estão procurando por casos de uso interessantes.
+Vá em frente e tire uma captura de tela do seu escritor GPT-3 com o seu novo e elegante título principal e seu subtítulo. Compartilhe a captura em #progresso para inspirar outras pessoas que estão procurando por casos de uso interessantes.
