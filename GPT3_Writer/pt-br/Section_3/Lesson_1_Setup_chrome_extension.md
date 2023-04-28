@@ -1,7 +1,7 @@
 
-Neste ponto, você provavelmente está bem envolvido no código. Ajustando seu modelo, deixando seu site ainda mais limpo e conectado com a sua ideia. Mas eu quero que você tire um minuto para dar um passo atrás e olhar para onde você começou, onde você está e para onde está indo.
+Neste ponto, você provavelmente já se envolveu bastante com código. Ajustando seu modelo, deixando seu site ainda mais limpo e conectado com a sua ideia. Mas eu quero que você tire um minuto para dar um passo atrás e olhar para onde você começou, onde você está e para onde está indo.
 
-Talvez você tenha acabado de ouvir falar sobre essa coisa chamada GPT-3, ou talvez esteja interessado nisso há algum tempo. De qualquer forma, você começou brincando com isso em uma ferramenta chamada OpenAI Playground. Você aprendeu algumas coisas incríveis, como o encadeamento de prompts e como pode treinar / melhorar seus modelos.
+Talvez você tenha acabado de ouvir falar sobre essa coisa chamada GPT-3, ou talvez já tenha interesse nisso há algum tempo. De qualquer forma, você começou brincando com isso em uma ferramenta chamada OpenAI Playground. Você aprendeu algumas coisas incríveis, como o encadeamento de prompts e como pode treinar / melhorar seus modelos.
 
 Você pegou tudo isso e construiu um site onde qualquer pessoa pode acessar e usar sua IA personalizada. Você acabou de dar às pessoas uma maneira de acessar a loucura que é o GPT-3 por meio de sua própria ideia + site, e isso é totalmente épico!
 
@@ -15,7 +15,7 @@ Faremos isso construindo uma extensão do navegador Chrome, que nos permitirá i
 
 ### Por que construir uma extensão?
 
-As extensões de navegador são seriamente subestimadas. Basicamente, elas são uma maneira fácil de modificar partes da internet e podem criar produtos **incríveis**. Recentemente, o PayPal comprou o Honey, uma extensão de navegador que adiciona cupons a compras online, por 4 bilhões de dólares 🤯.
+As extensões de navegador são altamente subestimadas. Basicamente, elas são uma maneira fácil de modificar partes da internet e podem criar produtos **incríveis**. Recentemente, o PayPal comprou o Honey, uma extensão de navegador que adiciona cupons a compras online, por 4 bilhões de dólares 🤯.
 
 Ao combinar a versatilidade das extensões de navegador com o enorme cérebro que o GPT-3 possui, você pode usar qualquer coisa da Internet para gerar outras coisas. Imagine uma extensão que gera respostas para tweets, como a [Blackmagic](https://blackmagic.so/) rsrs.
 
@@ -27,7 +27,7 @@ As extensões de navegador são bem simples - elas são feitas com as mesmas coi
 
 As três principais partes com as quais vamos trabalhar são:
 
-1. **A interface do usuário pop-up** - construída com HTML/CSS simples. É isso que o usuário vê quando clica no ícone da extensão
+1. **A interface do usuário pop-up** - construída com HTML/CSS simples. É isso que será visto ao clicar no ícone da extensão
 2. **Scripts de conteúdo** - arquivos JS que lidam com a lógica de nossa extensão, incluindo a lógica de nossa IU pop-up
 3. **O service worker** - também um arquivo JS, é como o nosso servidor: é carregado para lidar com tarefas em segundo plano quando necessário e fica ocioso depois de concluído
 
@@ -295,6 +295,6 @@ Você vai se acostumar com isso bem rápido!
 
 7 em cada 10 problemas que vejo no Discord são por causa disso. Pode haver alterações que você escreveu que ainda não foram aplicadas à sua extensão. Às vezes, se você perceber que seu código não está atualizando, recomendo simplesmente excluir a extensão e carregá-la do zero.
 
-### Por favor, faça isso, senão o Farza vai ficar triste
+### Por favor, faça isso, senão o Dani vai ficar triste
 
-Faça uma postagem em #progress com uma captura de tela da sua nova e sofisticada extensão do Chrome!
+Faça uma postagem em #progresso com uma captura de tela da sua nova e sofisticada extensão do Chrome!
