@@ -96,7 +96,7 @@ const generateCompletionAction = async (info) => {
 
 Ok ok ok! **AGORA ESTAMOS PROGREDINDO**.
 
-Então, estamos enviando mensagens, mas não temos nada para recebê-las. É como se você estivesse gritando com toda as força dos seus pulmões em uma floresta, mas ninguém está lá para ouvir 😟.
+Então, estamos enviando mensagens, mas não temos nada para recebê-las. É como se você estivesse gritando com toda a força dos seus pulmões em uma floresta, mas ninguém está lá para ouvir 😟.
 
 Como queremos que nossa IU receba a mensagem, devemos configurar um ouvinte ali. Para fazermos isso, precisamos criar um arquivo que lida com scripts para nós no lado da IU. É aí que entra o arquivo `content.js`.
 
@@ -305,7 +305,7 @@ Se dermos uma olhada no que o Calmly faz quando pressionamos Enter (ou adicionam
 
 Isso significa que, se encontrarmos um `\n`, devemos criar essa tag `<p>` com um elemento `<br>` (break).
 
-**Tudo certo!** Para capturar essas coisas, vamos realmente percorrer a string de conteúdo e dividi-la nesses caracteres de nova linha. Isso nos ajudará a saber onde e quando adicionar uma nova linha no Calmly :).
+**Tudo certo!** Para capturar essas coisas, vamos percorrer a string de conteúdo e dividi-la nesses caracteres de nova linha. Isso nos ajudará a saber onde e quando adicionar uma nova linha no Calmly :).
 
 Para fazer isso, podemos escrever este pequeno pedaço de código maneiro:
 
@@ -368,7 +368,7 @@ Se você estiver enfrentando um problema em que sua área de texto de destino n�
 ```
 
 
-**MUITO BEM!** Parece que estamos prontos para testar direito essa coisa :). Se as coisas funcionarem, você acabou de desbloquear uma habilidade muito incrível: GPT-3 + extensões do Chrome.
+**MUITO BEM!** Parece que está tudo pronto para testar direito essa coisa :). Se as coisas funcionarem, você acabou de desbloquear uma habilidade muito incrível: GPT-3 + extensões do Chrome.
 
 De fato, isso não é fácil de se envolver, e você está aqui fazendo exatamente isso. Certo, vamos ver essa coisa voar.
 
@@ -378,8 +378,8 @@ Vá em frente, recarregue sua extensão, atualize sua página da web e execute s
 
 **UAU! Isso é maravilhoso! 🥲.** Que loucura… Você deve ter visto `gerando…` na tela. Assim, sua próxima postagem de blog chegará direto no Calmly!
 
-Parabéns, meu amigo. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
+Parabéns, colega. **VOCÊ CONSEGUIU!** Agora você pode fazer chamadas ao GPT-3 de qualquer lugar da web!
 
 ### Por favor, faça isso, senão a Thai vai ficar triste
 
-Poste uma captura de tela em #progress, mostrando o texto gerado no Calmly pelo script de injeção. Excelente trabalho!
+Poste uma captura de tela em #progresso, mostrando o texto gerado no Calmly pelo script de injeção. Excelente trabalho!
