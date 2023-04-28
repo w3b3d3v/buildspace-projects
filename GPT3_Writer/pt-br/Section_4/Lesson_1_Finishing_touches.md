@@ -5,7 +5,7 @@
 
 Você agora tem uma extensão do Chrome que pode literalmente injetar em uma página da web e gerar texto usando o GPT-3 onde quer que o usuário esteja escrevendo.
 
-Eu realmente quero que você dê um passo atrás e entenda a loucura que isso é.
+Eu quero muito que você dê um passo atrás e entenda a loucura que isso é.
 
 **Você tem novos poderes. As possibilidades são infinitas.**
 
@@ -19,12 +19,12 @@ Por exemplo, o Twitter tem uma estrutura muito mais complexa, como você pode ve
 
 Espero que você possa ver agora como as extensões do Chrome são incríveis rsrs. Elas lhe dão uma quantidade insana de poder.
 
-Eu não ficaria surpreso se um de vocês ganhasse 1 milhão de dólares em receita recorrente mensal (MRR) com sua extensão do Chrome. Eu literalmente pagaria 49 dólares por mês por uma extensão do Chrome que fizesse qualquer uma dessas coisas:
+Eu não ficaria surpreso se alguém entre de vocês ganhasse 1 milhão de dólares em receita recorrente mensal (MRR) com sua extensão do Chrome. Eu literalmente pagaria 49 dólares por mês por uma extensão do Chrome que fizesse qualquer uma dessas coisas:
 
-- Injetar diretamente no Figma para ajudar os designers a escrever um texto de teste para meus projetos.
-- Injetar diretamente no Google Ads para ajudar os profissionais de marketing a escrever o texto do anúncio.
-- Injetar diretamente no Twitter ajuda os usuários a responder a DMs mais rapidamente, de maneira mais personalizada. Mais ou menos como o preenchimento automático do Gmail.
-- Injetar diretamente no Webflow para ajudar os usuários a escrever o texto da landing page enquanto estão realmente trabalhando na landing page.
+- Injetar diretamente no Figma para ajudar designers a escrever um texto de teste para meus projetos.
+- Injetar diretamente no Google Ads para ajudar profissionais de marketing a escrever o texto do anúncio.
+- Injetar diretamente no Twitter ajuda as pessoas a responder a DMs mais rapidamente, de maneira mais personalizada. Mais ou menos como o preenchimento automático do Gmail.
+- Injetar diretamente no Webflow para facilitar escrever o texto da landing page enquanto estão realmente trabalhando na landing page.
 - Injetar diretamente no Notion para ajudar as equipes de produto a ter novas ideias e escrever especificações realmente boas e acompanhá-las em um só lugar.
 
 As possibilidades são realmente infinitas.
@@ -33,7 +33,7 @@ Sinta-se à vontade para tentar fazer sua extensão funcionar no site que escolh
 
 ### Opcional: configure sua extensão para download
 
-Digamos que você realmente queira disponibilizar sua extensão do Chrome para download diretamente na loja online do Chrome, a Chrome Web Store, como a maioria das extensões. *A propósito - a Chrome Web Store é suportada em todos os navegadores baseados em Chromium - o que significa que usuários do Brave, Edge, etc. podem adicionar a extensão diretamente da Chrome Web Store.*
+Digamos que você queira disponibilizar sua extensão do Chrome para download diretamente na loja online do Chrome, a Chrome Web Store, como a maioria das extensões. *A propósito - a Chrome Web Store é suportada em todos os navegadores baseados em Chromium - o que significa que usuários do Brave, Edge, etc. podem adicionar a extensão diretamente da Chrome Web Store.*
 
 ![Untitled](https://i.imgur.com/oHxDLjO.png)
 
@@ -41,7 +41,7 @@ Bem, você precisaria enviá-la para aprovação, o que pode levar alguns dias. 
 
 Mas, por enquanto, o que podemos fazer é, se alguém quiser usar sua extensão, podemos apenas fornecer um link de download para o código. Em seguida, eles podem fazer a mesma coisa que você, acessando chrome://extensions/ e carregando a extensão manualmente no navegador, executando “Load Unpacked” (Carregar sem compactação).
 
-Isso pode parecer ruim, mas, é melhor do que nada! Além disso, se os usuários passam pela dor de realmente fazer isso, isso significa que eles realmente querem seu produto. Você sempre pode diminuir essa dor mais tarde, quando souber que alguém realmente deseja o que você construiu.
+Isso pode parecer ruim, mas, é melhor do que nada! Além disso, se as pessoas passam realmente pela dor de fazer isso, isso significa que elas querem seu produto de verdade. Você sempre pode diminuir essa dor mais tarde, quando souber que alguém realmente deseja o que você construiu.
 
 Vá em frente e envie seu código mais recente para o repositório da sua extensão. O Github oferece uma maneira fácil para as pessoas baixarem um arquivo ZIP com todo o repositório. Então, o legal agora é que você pode vincular este repositório diretamente no seu aplicativo da web!
 
@@ -89,4 +89,4 @@ Você terá que gerá-lo na aba de configurações do seu projeto:
 
 ### Por favor, faça isso, senão vou ficar triste
 
-Assim que você implantar sua aplicação web, tire uma captura de tela dela e publique-a em #progress! Mostre ao mundo que você deu o fora do localhost.
+Assim que você implantar sua aplicação web, tire uma captura de tela dela e publique-a em #progresso! Mostre ao mundo que você deu o fora do localhost.
