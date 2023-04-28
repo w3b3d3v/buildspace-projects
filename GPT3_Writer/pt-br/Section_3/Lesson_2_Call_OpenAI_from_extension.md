@@ -171,7 +171,7 @@ const generate = async (prompt) => {
 
 Isso é tudo! Algumas coisas a serem observadas aqui:
 
-1. Precisamos saber o url da chamada da API, que é [https://api.openai.com/v1/completions](https://api.openai.com/v1/completions). Você pode encontrá-lo consultando a [documentação para esta API](https://beta.openai.com/docs/api-reference/completions).
+1. Precisamos saber a URL da chamada da API, que é [https://api.openai.com/v1/completions](https://api.openai.com/v1/completions). Você pode encontrá-la consultando a [documentação para esta API](https://beta.openai.com/docs/api-reference/completions).
 2. A função `getKey`! Você se lembra da chave que armazenamos no estado da extensão? Em breve adicionaremos a lógica para isso, mas esta função tem o mesmo nome de sua ação rsrs.
 3. Temos que garantir que estamos fazendo uma solicitação de método `POST` + incluindo nossa Autorização no objeto de cabeçalho! Tudo isso é necessário para que a API da OpenAI diga: "Ei, isso é o que espero que essa chamada pareça e você tem permissão para acessar esses dados!"
 4. Finalmente, o corpo. Passamos as opções que queremos que o GPT-3 use. Isso deve parecer bem familiar, pois são os mesmos dados que você inseriu ao chamar o GPT-3 por meio de sua biblioteca.
@@ -257,4 +257,4 @@ Não se preocupe, vamos te ajudar.
 
 ### Por favor, faça isso, senão o Yan vai ficar triste
 
-Publique a sua saída da OpenAI no console do service worker em #progress, no Discord. Isso tudo aqui é bem avançado… Parabéns! :)
+Publique a sua saída da OpenAI no console do service worker em #progresso, no Discord. Isso tudo aqui é bem avançado… Parabéns! :)
