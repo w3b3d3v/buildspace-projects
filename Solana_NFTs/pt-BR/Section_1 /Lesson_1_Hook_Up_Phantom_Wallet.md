@@ -1,6 +1,6 @@
 ### 🤖 Vamos pegar o código inicial
 
-Comece indo para este [link do GitHub](https://github.com/buildspace/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" (bifurcação) no canto superior direito da página.
+Comece indo para este [link do GitHub](https://github.com/w3b3d3v/nft-drop-starter-project), onde você encontra o código do repositório inicial. A partir daqui, você deve pressionar o botão "Fork" (bifurcação) no canto superior direito da página.
 
 ![image](https://i.imgur.com/p2FTyAM.png)
 
@@ -27,7 +27,7 @@ Se você decidir ir com a Replit, faça uma conta lá antes de seguir em frente!
 
 Já criei um projeto básico de Next que você pode fazer um **fork** no Replit.
 
-[Basta clicar aqui](https://replit.com/@vitormancio/SolanaNFTsWEB3DEV) **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
+[Basta clicar aqui](https://replit.com/@DanielCukier/SolanaNFTsWEB3DEV) **e, à direita, você verá o botão "Fork Repl".** Certifique-se você está logado, então clique no botão.
 
 Você clonará magicamente meu repositório e IDE completo em seu navegador para trabalhar com o código. Quando ele parar de carregar e mostrar algum código, clique em "Run" na parte superior e pronto. Pode levar de 2 a 4 minutos na primeira vez.
 
@@ -62,11 +62,11 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 // Constantes
-const TWITTER_HANDLE = "_buildspace";
+const TWITTER_HANDLE = "web3dev_";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const Home = () => {
-const WalletMultiButtonDynamic = dynamic(
+    const WalletMultiButtonDynamic = dynamic(
     async () =>
         (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
     { ssr: false }
@@ -209,6 +209,6 @@ E é isso!
 
 ### 🚨 Relatório de progresso
 
-_Por favor, faça isso, senão o Farza vai ficar triste :(_
+_Por favor, faça isso, senão o Yan vai ficar triste :(_
 
 Poste uma captura de tela em `#progresso` com o seu App inicial contendo a abreviação da sua carteira. Pode parecer simples, mas, muitas pessoas não sabem como fazer essas coisas! É épico.
