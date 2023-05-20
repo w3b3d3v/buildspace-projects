@@ -375,6 +375,6 @@ Não se preocupe! Na próxima seção vamos construir a lógica para este botão
 
 ### 🚨 Relatório de progresso
 
-_Por favor, faça isso, senão o vitordev vai ficar triste 😔_
+_Por favor, faça isso, senão o danicuki vai ficar triste 😔_
 
 Em `#progresso`, envie uma captura de tela do seu aplicativo web mostrando como ele renderiza os dados que recupera de sua Candy Machine no seu web app.

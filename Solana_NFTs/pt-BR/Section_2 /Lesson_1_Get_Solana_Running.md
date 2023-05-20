@@ -110,17 +110,16 @@ Agora que temos nossa CLI da Solana instalada, precisaremos instalar a CLI do Me
 Depois de instalar o Sugar com sucesso, você poderá obter o seguinte output digitando `sugar` no terminal.
 
 ```bash
-sugar-cli 1.0.0-rc.2
+sugar-cli 1.1.0
 Command line tool for creating and managing Metaplex Candy Machines.
 
 USAGE:
-sugar [OPTIONS] <SUBCOMMAND>
+    sugar [OPTIONS] <SUBCOMMAND>
 
 OPTIONS:
-
--h, --help Print help information
--l, --log-level <LOG_LEVEL> Log level: trace, debug, info, warn, error, off
--V, --version Print version information
+    -h, --help                     Print help information
+    -l, --log-level <LOG_LEVEL>    Log level: trace, debug, info, warn, error, off
+    -V, --version                  Print version information
 
 SUBCOMMANDS:
     bundlr            Interact with the bundlr network
@@ -135,7 +134,7 @@ SUBCOMMANDS:
     reveal            Reveal the NFTs from a hidden settings candy machine
     show              Show the on-chain config of an existing candy machine
     sign              Sign one or all NFTs from candy machine
-    thaw              Thaw an NFT or all NFTs in a candy machine
+    thaw              Thaw a NFT or all NFTs in a candy machine
     unfreeze-funds    Unlock treasury funds after freeze is turned off or expires
     update            Update the candy machine config on-chain
     upload            Upload assets to storage and creates the cache config

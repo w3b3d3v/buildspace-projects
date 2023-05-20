@@ -213,6 +213,6 @@ Tire algum tempo agora para organizar as coisas. Limpe um pouco seu código. Alt
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Anfoso vai ficar triste 😭.
+Por favor, faça isso, senão o Yan vai ficar triste 😭.
 
 Em `#progresso`, poste uma captura de tela dos NFTs que você cunhou! Agora também seria uma boa hora de publicar um tweet contando ao mundo o que você está fazendo. Só não se esqueça de marcar a `@web3dev_`!

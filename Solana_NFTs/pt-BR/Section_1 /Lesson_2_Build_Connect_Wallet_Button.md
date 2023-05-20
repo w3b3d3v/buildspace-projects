@@ -43,9 +43,9 @@ const WalletMultiButtonDynamic = dynamic(
             <div className="container">
                 <div className="header-container">
                     <p className="header">🍭 Candy Drop</p>
-                    <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+                    <p className="sub-text">Máquina de doces para mintar NFTs</p>
                     {/* Renderize seu botão conectar à carteira aqui */}
-                    {wallet.publicKey ? "Hello World" : renderNotConnectedContainer()}
+                    {wallet.publicKey ? "Olá Mundo" : renderNotConnectedContainer()}
                 </div>
 
                 <div className="footer-container">
@@ -70,13 +70,13 @@ Acho que isso é bem autoexplicativo. `useWallet` é um gancho personalizado for
 
 ```jsx
 {/* Adicione a condição para mostrar isso apenas se não tivermos um endereço de carteira */}
-{wallet.publicKey ? "Hello World" : renderNotConnectedContainer()}
+{wallet.publicKey ? "Olá Mundo" : renderNotConnectedContainer()}
 ```
-Aqui, estamos dizendo ao React para renderizar o `Hello World` apenas se tivermos uma `publicKey` disponível. Portanto, se não houver `publicKey`, isso significa que um usuário não conectou sua carteira e devemos mostrar a ele o botão para conectar sua carteira.
+Aqui, estamos dizendo ao React para renderizar o `Olá Mundo` apenas se tivermos uma `publicKey` disponível. Portanto, se não houver `publicKey`, isso significa que um usuário não conectou sua carteira e devemos mostrar a ele o botão para conectar sua carteira.
 
 Vá em frente, atualize sua página e pressione o botão "Selecionar carteira". Se tudo funcionar, você finalmente verá a extensão Phantom Wallet que ira abrir um balão como esse:
 
-![Untitled](https://i.imgur.com/wXQyWEe.png)
+![REVIEW](https://i.imgur.com/wXQyWEe.png)
 
 Depois de pressionar em conectar, seu botão deve desaparecer! ISSO É EXCELENTE!!
 
@@ -90,6 +90,6 @@ Em seguida, vamos configurar as funções que precisamos para chamar nosso progr
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Melk vai ficar triste :(
 
 Publique em `#progress` uma captura de tela do seu console exibindo sua chave pública! Não se preocupe, é seguro compartilhar a chave pública :).

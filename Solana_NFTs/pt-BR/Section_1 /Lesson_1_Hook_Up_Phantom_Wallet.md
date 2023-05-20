@@ -188,7 +188,7 @@ Como testamos este projeto totalmente com as Phantom Wallets, recomendamos mante
 
 Depois de fazer login com sucesso em sua carteira, seu site deve se parecer com isso.
 
-<img src="https://i.imgur.com/Rsg01DA.png" />
+<img src="https://i.imgur.com/jRqCzwy.png" />
 
 _Para obter instruções adicionais sobre como executar seu aplicativo, consulte o `README.md` na raiz do seu projeto._
 

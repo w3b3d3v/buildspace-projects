@@ -95,7 +95,7 @@ Isso pode parecer um pouco desafiador no começo, mas não se preocupe! Você s�
 `goLiveDate`: Quando você quer que a cunhagem comece. 
 `storage`: Onde seus NFTs serão armazenados.
 
-A única coisa que você precisará alterar aqui é o endereço da sua carteira. Se você estiver implantando mais de 3 NFTs, atualize o número! Você pode implantar até 10 NFTs na devnet.
+A única coisa que você precisará alterar aqui é o endereço da sua carteira. Se você estiver implantando mais de 3 NFTs, atualize o número! Você pode deployar até 10 NFTs na devnet.
 
 ### Armazenamento Alternativo
 
@@ -297,6 +297,6 @@ Isso significa que o comando não pode acessar o arquivo `cache.json` com os dad
 
 ### 🚨 Relatório de progresso
 
-Por favor, faça isso, senão o Farza vai ficar triste :(
+Por favor, faça isso, senão o Yan vai ficar triste :(
 
 Poste um dos links Arweave dos seus NFTs em `#progress`!
