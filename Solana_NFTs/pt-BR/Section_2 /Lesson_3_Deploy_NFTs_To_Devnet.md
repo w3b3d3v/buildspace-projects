@@ -148,8 +148,9 @@ O comando `upload` está essencialmente dizendo - "Olá, CLI do Sugar. Pegue tod
 À medida que este comando é executado, você deve ver um output no terminal sobre qual NFT está sendo carregado no momento.
 
 ```plaintext
-sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar create-config
-[1/2] 🍬 Sugar interactive config maker
+ ~/dev/web3dev/nft-drop-starter-project (solved)$ sugar upload
+[1/4] 🗂  Loading assets
+Found 3 asset pair(s), uploading files:
 +--------------------+
 | images    |      3 |
 | metadata  |      3 |
@@ -161,12 +162,12 @@ sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar create-config
 [3/4] 📤 Uploading image files 
 
 Sending data: (Ctrl+C to abort)
-[00:00:05] Upload successful ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 1/1
+[00:00:34] Upload successful ███████████████████████████████████████████████████████████████ 1/1
 
 [4/4] 📤 Uploading metadata files 
 
 Sending data: (Ctrl+C to abort)
-[00:00:03] Upload successful ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 1/1
+[00:00:03] Upload successful ███████████████████████████████████████████████████████████████ 1/1
 
 3/3 asset pair(s) uploaded.
 
@@ -184,27 +185,27 @@ Agora que todos os NFTs são enviados para o NFT.Storage, o Sugar deve gerar um 
   },
   "items": {
     "0": {
-      "name": "Number #0001",
-      "image_hash": "6e7fcf86a39f332caa9da55afff12f3bbf7de43458a0586e05c00c1c58a3dcbd",
-      "image_link": "https://nftstorage.link/ipfs/bafybeidqys52bzlqnt4mclhmkzojtgs622pbsvwjqsn5vfwg5puqu7aimi/0.png",
-      "metadata_hash": "8914d9935ddcf560152e40b0cdb2ecfa1086ab6225997c35d91373a88dc935bf",
-      "metadata_link": "https://nftstorage.link/ipfs/bafybeih3n56rqtq5573dcdgiedh7hkukfmeqdd6wdsdpranyw322k7hrb4/0.json",
+      "name": "Trindade",
+      "image_hash": "3d188b7df33fb5971e4c2c926af5ea6e6ad8e04c593bca7875c99130f7b4c51a",
+      "image_link": "https://nftstorage.link/ipfs/bafybeifaluahzlnst42vgfb7zizevayek22ym2ykshjkgxy57ynaervkfy/0.png",
+      "metadata_hash": "d5c2ab8818a75210fdfc679d297a36c75ce4c28ded77cbebd05546a0d7115b9d",
+      "metadata_link": "https://nftstorage.link/ipfs/bafybeig6kbljpmubtuaj7a4rwrucf53g23qzwxmhqci2rebyxoo3374iy4/0.json",
       "onChain": false
     },
     "1": {
-      "name": "Number #0002",
-      "image_hash": "003389bcc3b62044113897f81c3b39e2238b6b73218f73cfb51182db5a9a0635",
-      "image_link": "https://nftstorage.link/ipfs/bafybeidqys52bzlqnt4mclhmkzojtgs622pbsvwjqsn5vfwg5puqu7aimi/1.png",
-      "metadata_hash": "1c1a1bb8cb7b7bff0640fc87c69c6db0b6a404e648c81cdf9b08a8199e9bb1a7",
-      "metadata_link": "https://nftstorage.link/ipfs/bafybeih3n56rqtq5573dcdgiedh7hkukfmeqdd6wdsdpranyw322k7hrb4/1.json",
+      "name": "Bird",
+      "image_hash": "8e6634c0e1bce168ac30c414a0e66edb6ae40e2d62f67229eff7a9c47af914f2",
+      "image_link": "https://nftstorage.link/ipfs/bafybeifaluahzlnst42vgfb7zizevayek22ym2ykshjkgxy57ynaervkfy/1.png",
+      "metadata_hash": "37f6b1fee19ed408ac104639d5d813330e62212156d9bf43c2edf86e9cebb33e",
+      "metadata_link": "https://nftstorage.link/ipfs/bafybeig6kbljpmubtuaj7a4rwrucf53g23qzwxmhqci2rebyxoo3374iy4/1.json",
       "onChain": false
     },
     "2": {
-      "name": "Number #0003",
-      "image_hash": "1e103f64268d4f67ee9591a5d63e565a42e7a72d8eb95523f1a5c079ad9181c1",
-      "image_link": "https://nftstorage.link/ipfs/bafybeidqys52bzlqnt4mclhmkzojtgs622pbsvwjqsn5vfwg5puqu7aimi/2.png",
-      "metadata_hash": "a5e48e419e40062e6b3e84f944e1d2372ee211894dddcd4c8029711d8bf78c5a",
-      "metadata_link": "https://nftstorage.link/ipfs/bafybeih3n56rqtq5573dcdgiedh7hkukfmeqdd6wdsdpranyw322k7hrb4/2.json",
+      "name": "Cave",
+      "image_hash": "5a08e651a0784651fd8966ef4de4c19c6107181330d822ff8f7ebfae00dfd723",
+      "image_link": "https://nftstorage.link/ipfs/bafybeifaluahzlnst42vgfb7zizevayek22ym2ykshjkgxy57ynaervkfy/2.png",
+      "metadata_hash": "cfcc25759ff5aec34bdfba28af830776e4cb931787c38420fac6fba7a8670063",
+      "metadata_link": "https://nftstorage.link/ipfs/bafybeig6kbljpmubtuaj7a4rwrucf53g23qzwxmhqci2rebyxoo3374iy4/2.json",
       "onChain": false
     }
   }
@@ -218,13 +219,13 @@ sugar deploy
 O output deve se parecer com isso:
 
 ```bash
-sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar deploy
+ ~/dev/web3dev/nft-drop-starter-project (solved)$ sugar deploy
 [1/2] 🍬 Creating candy machine
-Candy machine ID: 9izUuhTxKhJ3qJTDtjR2UYNEvzTRiUiVebCqYdPNjxD8
+Candy machine ID: 6H1BEjM1B9jHEmhcX6ThH6smiZhYZPwWuNbt26hLh9J9
 
 [2/2] 📝 Writing config lines
 Sending config line(s) in 1 transaction(s): (Ctrl+C to abort)
-[00:00:02] Write config lines successful ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 1/1
+[00:00:04] Write config lines successful ███████████████████████████████████████████████████ 1/1
 
 ✅ Command successful.
 ```
@@ -243,25 +244,25 @@ sugar verify
 Se tudo correu bem, seu output deve se parecer um pouco com isso:
 
 ```bash
-sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar verify
+ ~/dev/web3dev/nft-drop-starter-project (solved)$ sugar verify
 [1/2] 🍬 Loading candy machine
 ▪▪▪▪▪ Completed
 
 [2/2] 📝 Verification
 Verifying 3 config line(s): (Ctrl+C to abort)
-[00:00:01] Config line verification successful ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 3/3
+[00:00:01] Config line verification successful █████████████████████████████████████████████ 3/3
 
 Verification successful. You're good to go!
 
 See your candy machine at:
-  -> https://www.solaneyes.com/address/9izUuhTxKhJ3qJTDtjR2UYNEvzTRiUiVebCqYdPNjxD8?cluster=devnet
+  -> https://www.solaneyes.com/address/6H1BEjM1B9jHEmhcX6ThH6smiZhYZPwWuNbt26hLh9J9?cluster=devnet
 
 ✅ Command successful.
 ```
 
 Boom! Você está pronto para avançar! Você notará que há um link fornecido no terminal. Clique nele e você deve ser redirecionado para sua página da coleção de NFTs. Deve se parecer com algo assim:
 
-<img src="https://i.imgur.com/XGo48BZ.png" />
+<img src="https://i.imgur.com/sJRpd95.png" />
 
 Se você olhar no arquivo `cache.json`, encontrará um atributo `image_link` anexado a cada um dos seus itens NFT. Copie + Cole um desses links no seu navegador e confira a imagem do seu NFT. Você também encontrará outro atributo `metadata_link` em cada um dos seus itens NFT. Copie + Cole no seu navegador e você poderá ver os metadados do seu NFT! Se você estiver usando o `bundlr`, ele armazenará sua imagem no Arweave, que armazena dados **permanentemente**. Isso é muito diferente do mundo do IPFS/Filecoin - onde os dados são armazenado ponto a ponto, com base em nós que decidem manter o arquivo na rede.
 

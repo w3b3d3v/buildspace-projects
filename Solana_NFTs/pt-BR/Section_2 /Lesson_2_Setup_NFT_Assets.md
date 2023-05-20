@@ -63,32 +63,6 @@ Vamos copiar e colar o seguinte em `0.json`:
     ]
   }
 }
-```
-Ele deve conter o link para cada uma das imagens que foram carregadas para o NFT.Storage. Vamos prosseguir e implantar nossos NFTs na blockchain. Execute isso em seu terminal:
-
-```plaintext
-sugar deploy
-```
-O output deve se parecer com isso:
-
-```bash
-sean@DESKTOP-BMVDNJH:/mnt/c/Users/seanl/Desktop/test$ sugar deploy
-[1/2] 🍬 Creating candy machine
-Candy machine ID: 9izUuhTxKhJ3qJTDtjR2UYNEvzTRiUiVebCqYdPNjxD8
-
-[2/2] 📝 Writing config lines
-Sending config line(s) in 1 transaction(s): (Ctrl+C to abort)
-[00:00:02] Write config lines successful ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 1/1
-
-✅ Command successful.
-```
-**Importante:**Salve o seu Candy machine ID pois iremos usar posteriormente.
-
-Esta é a informação básica que você precisará para começar a trabalhar com cada NFT. O Metaplex pegará esses dados e os armazenará **dentro da blockchain** para você. Bem legal. Existem certos atributos que mudam para cada arquivo `json`, como: `name`, `image` e `uri`. 
-
-```plaintext
-sugar verify
-```
 
 Esta é a informação básica que você precisará para começar a trabalhar com cada NFT. O Metaplex pegará esses dados e os armazenará **dentro da blockchain** para você. Bem legal. Existem certos atributos que mudam para cada arquivo `json`, como: `name`, `image` e `uri`. 
 
@@ -103,7 +77,6 @@ Pessoalmente escolhi algumas imagens do halloween 🎃.
 Observação: Agora, apenas PNGs são suportados por meio da CLI. Para outros tipos de arquivos como MP4, MP3, HTML, etc, você precisa criar um script personalizado. Veja [esta](https://github.com/metaplex-foundation/metaplex/pull/1601) página no Github.
 
 Você pode até dar um nome específico à sua coleção se quiser, adicionando seu próprio objeto `collection`. Confira um exemplo [aqui](https://docs.metaplex.com/developer-tools/sugar/guides/preparing-assets).
-
 
 ### 🚨 Relatório de progresso
 
