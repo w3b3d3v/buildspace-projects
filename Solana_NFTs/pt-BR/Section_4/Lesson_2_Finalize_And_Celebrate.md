@@ -4,13 +4,13 @@ Ao implantar na devnet, você não precisa se preocupar em armazenar seus NFTs, 
 
 O que acontece quando você quiser ir para a rede principal? Você pode seguir a rota padrão e enviá-los para o Arweave, mas isso custará algum dinheiro. Em vez disso, podemos usar algo chamado [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System). Em poucas palavras, é um sistema de armazenamento de arquivos descentralizado, semelhante ao Arweave, mas **muito** mais barato (às vezes até gratuito). Achei mais fácil usar o [Pinata](https://www.pinata.cloud/?utm_source=buildspace) para fazer o upload para o IPFS. Além disso, eles oferecem 1 GB de armazenamento gratuito, o que é suficiente para milhares de ativos. Eu ainda não implantei nada na rede principal, mas de qualquer maneira usei o Pinata, porque ele permite fazer o upload de arquivos muito maiores.
 
-Usá-lo é bastante simples. Depois de se inscrever em uma conta, selecione "API Keys" (chaves de API) no menu suspenso do canto superior direito.
+Usá-lo é bastante simples. Depois de se inscrever em uma conta, selecione "API Keys" (chaves de API) no menu ao lado esquerdo
 
-![API KEY](https://i.imgur.com/3Cp92wu.png)
+![API KEY](https://imgur.com/Pcp5CJs)
 
 Crie uma nova chave e certifique-se de que o acesso à `pinFileToIPFS` esteja ativado.
 
-![Pinata config](https://i.imgur.com/QBCmGSv.png)
+![Pinata config](https://imgur.com/t3AsYUd)
 
 Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o token JWT e mantenha-o à mão. Agora apenas atualizaremos nosso arquivo `config.json` com 2 novas propriedades:
 
@@ -54,7 +54,7 @@ E pronto! Agora realmente você tem NFTs de alta qualidade na devnet. Se você q
 
 ### 🚀 Lance para o mundo
 
-A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores do Buildspace não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
+A implantação de um aplicativo do React ficou tão fácil que não há razão para não fazê-la neste momento (risos). Além disso, é **grátis**. Você chegou até aqui, a implantação é a etapa final. Além disso, seus colegas construtores da Web3dev não devem ser privados de seus NFTs!! Por favor, nos dê a oportunidade de cunhar suas criações raras hehe.
 
 Deixei um vídeo bem rápido abaixo sobre a implantação via Vercel. Se você não quiser usar o Vercel, tudo bem. Use o programa que quiser.
 
@@ -101,6 +101,6 @@ E se você quiser, marque a @web3dev_ :). **Isso nos dá muita motivação, semp
 
 Nos dê essa dose de dopamina, por favor.
 
-Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no Buildspace? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
+Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou na Web3dev? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
 
 Vejo você por aí!!!
