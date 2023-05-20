@@ -1,6 +1,6 @@
 ### ☎️ Se comunique com a Candy Machine do seu aplicativo web
 
-**Aviso:** Caso você clique no botão `Cunhar Nft` durante esta lição, pode gerar um erro, não se desespere, na próxima lição iremos implementar a função, o importante é receber os dados no console.
+**Aviso:** Caso você clique no botão `Cunhar NFT` durante esta lição, pode gerar um erro, não se desespere, na próxima lição iremos implementar a função, o importante é receber os dados no console.
 
 Nós finalmente conseguimos. Vamos fazer uma pequena recapitulação do que fizemos até agora. Nós: 
 
@@ -42,7 +42,7 @@ As aspas **não** são necessárias aqui.
 
 `NEXT_PUBLIC_SOLANA_NETWORK` - Defina isso como `devnet`, pois esta é apenas a rede em que estamos acessando nossa Candy Machine.
 
-`NEXT_PUBLIC_SOLANA_RPC_HOST` - Isso é praticamente o mesmo que acima. Como estamos acessando a Candy Machine na devnet, precisamos apontar o RPC para o link devnet que é `https://explorer-api.devnet.solana.com`.
+`NEXT_PUBLIC_SOLANA_RPC_HOST` - Isso é praticamente o mesmo que acima. Como estamos acessando a Candy Machine na devnet, precisamos apontar o RPC para o link devnet que é `https://metaplex.devnet.rpcpool.com/`.
 
 Legal, tudo isso parece estar configurado. Nosso aplicativo da web precisa de todas essas variáveis para saber coisas como: com qual Candy Machine conversar, em qual rede cunhar, etc.
 
@@ -51,6 +51,9 @@ Quando você alterar o arquivo `.env.local`, precisa também finalizar o process
 Mais uma coisa aleatória para fazer antes de seguir em frente. Na Phantom Wallet, vá para Configurações → Alterar rede → e escolha "Devnet". Nossa Candy Machine vive na devnet, então precisamos ter certeza de que nossa carteira também está na devnet!
 
 ![Untitled](https://i.imgur.com/wzxriNg.png)
+
+OBS: As versões mais novas da Phantom você configura isso em "Developer Settings" como na imagem abaixo:
+![phantom](https://i.imgur.com/5szBNTH.png)
 
 ### 🤬 Uma nota sobre como alterar seus NFTs
 
