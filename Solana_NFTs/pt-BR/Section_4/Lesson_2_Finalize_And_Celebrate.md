@@ -6,11 +6,11 @@ O que acontece quando você quiser ir para a rede principal? Você pode seguir a
 
 Usá-lo é bastante simples. Depois de se inscrever em uma conta, selecione "API Keys" (chaves de API) no menu ao lado esquerdo
 
-![API KEY](https://imgur.com/Pcp5CJs)
+![API KEY](https://i.imgur.com/Pcp5CJs.png)
 
 Crie uma nova chave e certifique-se de que o acesso à `pinFileToIPFS` esteja ativado.
 
-![Pinata config](https://imgur.com/t3AsYUd)
+![Pinata config](https://i.imgur.com/t3AsYUd.png)
 
 Depois de criar a chave, você verá um pop-up com todos os segredos. Copie o token JWT e mantenha-o à mão. Agora apenas atualizaremos nosso arquivo `config.json` com 2 novas propriedades:
 
