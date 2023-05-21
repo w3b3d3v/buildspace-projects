@@ -106,6 +106,7 @@ Agora que temos nossa CLI da Solana instalada, precisaremos instalar a CLI do Me
 1. sudo apt install libudev-dev pkg-config unzip
 2. bash <(curl -sSf https://sugar.metaplex.com/install.sh)
 ```
+*OBS: No inicio da instalação você terá opção de selecionar diferentes versões do sugar, nós recomendamos fortemente que você escolha a versão 1 do sugar (Metaplex Candy Machine V2) para o bom funcionamento desse curso tutorial.*
 
 Depois de instalar o Sugar com sucesso, você poderá obter o seguinte output digitando `sugar` no terminal.
 
