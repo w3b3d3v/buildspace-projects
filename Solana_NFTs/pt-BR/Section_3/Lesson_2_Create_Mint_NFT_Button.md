@@ -185,16 +185,17 @@ Legal, então agora quando você clicar em "Cunhar NFT", verá um pop-up como es
 
 Depois de clicar em "Aprovar" e pagar a taxa de transação, sua carteira dirá à sua Candy Machine para cunhar o NFT.
 
-**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo 😂.
+**Não temos nenhum indicador de carregamento atualmente configurado** **aqui**, então pode parecer que nada está acontecendo 😂. Pode demorar uns 10 segundos para o mint realmente ocorrer
 
-A primeira coisa a se fazer é abrir a última aba da carteira Phaton e verificar as transações :
+Você pode ver essa mensagem no seu console quando terminar o mint:
+![Untitled](https://i.imgur.com/EszxhAH.png)
+
+Você também pode abrir a última aba da carteira Phaton e verificar as transações:
 
 ![Untitled](https://i.imgur.com/5PCi1Vi.png)
 
-<<<<<<< HEAD:Solana_NFTs/pt-BR/Section_3/Lesson_2_Create_Mint_NFT_Button.md
-![Untitled](https://i.imgur.com/EszxhAH.png)
-
 Você cunhou com **SUCESSO** seu primeiro NFT na Solana. **Isso aí! Então, onde está o NFT?**
+
 Clicando na transação você pode abrir o site do explorer Solana.
 
 Caso não aparecer nenhuma trasanção abra o console e verifique o problema.
