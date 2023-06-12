@@ -1,7 +1,8 @@
 👋 Bem-vindo
 ----------------------------------
 
-Você conseguiu - sim, conseguiu! Seja bem-vindo 😃. Nós somos Daniel e Yan e seremos seus instrutores. Este projeto é para os desenvolvedores que querem mergulhar mais na tecnologia por trás de Cripto. Tudo o que você precisa saber para começar é: ter alguma habilidade com terminais de comando (ex. bash), saber um pouco de javascript e um pouco de react.js. O resto você pega ao longo do caminho.
+Você conseguiu - sim, conseguiu! Seja bem-vindo 😃
+Nós somos Daniel e Yan e seremos seus instrutores. Este projeto é para os desenvolvedores que querem mergulhar mais na tecnologia por trás de Cripto. Tudo o que você precisa saber para começar é: ter alguma habilidade com terminais de comando (ex. bash), saber um pouco de javascript e um pouco de react.js. O resto você pega ao longo do caminho.
 
 Alguns pontos importantes para você executar antes de seguir em frente:
 
@@ -32,7 +33,7 @@ Você só será elegível para o NFT se terminar dentro de 9 dias após a inscri
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
 
-**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @vitordev no Discord!**
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @Valter Lobo no Discord!**
 
 🛠 O que você construirá?
 -----------------------------
@@ -61,7 +62,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/web3dev-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@vitordev` no Discord no canal `#pod-educação` 😊.
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@Valter Lobo | W3D` no Discord no canal `#pod-educação` 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
