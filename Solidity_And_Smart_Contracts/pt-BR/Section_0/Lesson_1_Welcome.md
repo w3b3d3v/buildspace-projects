@@ -6,9 +6,9 @@ Nós somos Daniel e Yan e seremos seus instrutores. Este projeto é para os dese
 
 Alguns pontos importantes para você executar antes de seguir em frente:
 
-* **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta e exclusíva no Discord, à qual você só terá acesso quando conectar o seu Discord.
-* **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada.
-* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/streams).
+* **Conecte o seu Discord, temos um botão conectar discord na parte superior da página do Build**. Todas as coisas legais acontecerão em uma categoria secreta e exclusiva no Discord, à qual você só terá acesso quando conectar o seu Discord.
+* **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este Build, e se não tiver uma carteira conectada não será possível enviá-lo.
+* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer. Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/streams).
 
 🚀 Isto vai ser fantástico.
 ----------------------------------
@@ -29,11 +29,11 @@ Confira abaixo um pequeno vídeo de introdução que fizemos sobre este projeto!
 
 Quando você chegar ao final deste projeto, poderá ganhar um NFT.
 
-Você só será elegível para o NFT se terminar dentro de 9 dias após a inscrição! Então certifique-se de agendar tempo para terminar, você tem isso!
+Você só será elegível para o NFT se terminar dentro de 10 dias após o Kickoff! Então certifique-se de agendar tempo para terminar, você tem isso!
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
 
-**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @Valter Lobo no Discord!**
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o @danicuki no Discord!**
 
 🛠 O que você construirá?
 -----------------------------
@@ -62,7 +62,7 @@ Este projeto está dividido em 4 seções. Você pode ver em qual seção você 
 
 ### 🤘 Viu um problema? Quer melhorar algo? Conserte você mesmo 😉
 
-[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@Valter Lobo | W3D` no Discord no canal `#pod-educação` 😊.
+[Todo esse conteúdo é totalmente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version). Se você vir um problema, erro de digitação, etc - você pode corrigi-lo facilmente e fazer um PR! Se você precisar de ajuda para fazer isso, mande uma mensagem marcando o `@danicuki` no Discord no canal `#pod-educação` 😊.
 
 Ao menos deixe um ⭐ no repositório, se estiver se sentindo inspirado!
 
@@ -76,4 +76,4 @@ Há tanto trabalho a fazer e a maior parte do trabalho nem tem a ver com contrat
 
 A Web3 também precisa desesperadamente de designers, gerentes de produto, especialistas em marketing e muito mais.
 
-Temos parceria com várias empresas web3 fantásticas que querem contratar pessoas da web3dev.
+Saiba que temos parceria com várias empresas web3 fantásticas que querem contratar pessoas da web3dev.
