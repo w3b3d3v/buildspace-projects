@@ -58,7 +58,7 @@ Por quê?
 
 Bem, precisamos chamar manualmente as funções que criamos.
 
-Basicamente, quando implantamos nosso contrato na blockchain (o que fazemos quando executamos `waveContractFactory.deploy()`), nossas funções ficam disponíveis para serem chamadas na blockchain porque usamos essa palavra-chave especial **public** em nossa função.
+Basicamente, quando implantamos nosso contrato na blockchain (o que fazemos quando executamos `waveContract.waitForDeployment()`), nossas funções ficam disponíveis para serem chamadas na blockchain porque usamos essa palavra-chave especial **public** em nossa função.
 
 Pense nisso como um endpoint de API pública 😊
 
@@ -68,35 +68,27 @@ Altere o arquivo `scripts/run.js` e coloque o conteúdo abaixo:
 
 ```javascript
 const main = async () => {
-  const [owner, randomPerson] = await hre.ethers.getSigners();
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
+    const [owner, randomPerson] = await hre.ethers.getSigners();
+    const waveContract = await hre.ethers.deployContract("WavePortal");
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
+    console.log("Contract deployed by:", owner.address);
 
-  console.log("Contract deployed to:", waveContract.address);
-  console.log("Contract deployed by:", owner.address);
+    let waveCount;
+    waveCount = await waveContract.getTotalWaves();
 
-  let waveCount;
-  waveCount = await waveContract.getTotalWaves();
+    let waveTxn = await waveContract.wave();
+    await waveTxn.wait();
 
-  let waveTxn = await waveContract.wave();
-  await waveTxn.wait();
-
-  waveCount = await waveContract.getTotalWaves();
+    waveCount = await waveContract.getTotalWaves();
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
 ```
+
 **O VSCode pode importar automaticamente `ethers`, logo não precisamos importar `ethers`. Portanto, certifique-se de não ter importações. Lembre-se, sobre o que falamos na última aula sobre hre?**
 
 🤔 Como funciona?
@@ -138,9 +130,9 @@ npx hardhat run scripts/run.js
 
 Aqui está minha saída:
 
-![](https://i.imgur.com/HDjtCN9.png)
+![npx hardhat run scripts/run.js](https://i.imgur.com/CXIeCvU.png)
 
-Muito legal, hein ? 😊 
+Muito legal, hein ? 😊
 
 Você também pode ver o endereço da carteira que tchauzinhou igual ao endereço que implantou o contrato. Eu acenei para mim mesmo!
 
@@ -151,8 +143,7 @@ Então nós:\
 
 Esta é praticamente a base da maioria dos contratos inteligentes. Funções de leitura. Funções de escrita. E alterando uma variável de estado. Temos os blocos necessários para nos manter trabalhando no nosso WavePortal épico.
 
-Muito em breve, poderemos chamar estas funções a partir de nosso aplicativo de front em React no qual estaremos trabalhando 😄 
-
+Muito em breve, poderemos chamar estas funções a partir de nosso aplicativo de front em React no qual estaremos trabalhando 😄
 
 🤝 Testar outros usuários
 --------------------
@@ -165,39 +156,30 @@ Altere o arquivo `scripts/run.js` e coloque o conteúdo abaixo:
 
 ```javascript
 const main = async () => {
-  const [owner, randomPerson] = await hre.ethers.getSigners();
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
+    const [owner, randomPerson] = await hre.ethers.getSigners();
+    const waveContract = await hre.ethers.deployContract("WavePortal");
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
+    console.log("Contract deployed by:", owner.address);
 
-  console.log("Contract deployed to:", waveContract.address);
-  console.log("Contract deployed by:", owner.address);
+    let waveCount;
+    waveCount = await waveContract.getTotalWaves();
 
-  let waveCount;
-  waveCount = await waveContract.getTotalWaves();
+    let waveTxn = await waveContract.wave();
+    await waveTxn.wait();
 
-  let waveTxn = await waveContract.wave();
-  await waveTxn.wait();
+    waveCount = await waveContract.getTotalWaves();
 
-  waveCount = await waveContract.getTotalWaves();
+    waveTxn = await waveContract.connect(randomPerson).wave();
+    await waveTxn.wait();
 
-  waveTxn = await waveContract.connect(randomPerson).wave();
-  await waveTxn.wait();
-
-  waveCount = await waveContract.getTotalWaves();
+    waveCount = await waveContract.getTotalWaves();
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
 ```
 
 Os itens mais recentes adicionados a este bloco de código são:
