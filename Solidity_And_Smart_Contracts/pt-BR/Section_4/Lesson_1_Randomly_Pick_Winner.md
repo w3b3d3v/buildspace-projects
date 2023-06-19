@@ -11,7 +11,7 @@ Vamos fazer primeiro a parte do vencedor aleatório!
 
 Então, gerar um número aleatório em contratos inteligentes é amplamente conhecido como um **problema difícil**.
 
-Por quê? Bem, pense em como um número aleatório é gerado normalmente. Quando você gera um random normalmente em um programa, **vai pegar vários números diferentes do seu computador como fonte de aleatoriedade** como: a velocidade das ventoinhas, a temperatura da CPU, o número de vezes que você pressionou "L" às 15h52 desde que comprou o computador, a velocidade da sua internet e muitos outros #s que são difíceis de controlar. Ele pega **todos** esses números que são "aleatórios" e os reúne em um algoritmo que gera um número que parece ser a melhor tentativa de um número realmente "aleatório". Faz sentido?
+Por quê? Bem, pense em como um número aleatório é gerado normalmente. Quando você gera um random normalmente em um programa, **vai pegar vários números diferentes do seu computador como fonte de aleatoriedade** como: a velocidade das ventoinhas, a temperatura da CPU, o número de vezes que você pressionou "L" às 15h52 desde que comprou o computador, a velocidade da sua internet e muitas outras coisas que são difíceis de controlar. Ele pega **todos** esses números que são "aleatórios" e os reúne em um algoritmo que gera um número que parece ser a melhor tentativa de um número realmente "aleatório". Faz sentido?
 
 Na blockchain, não há **quase nenhuma fonte de aleatoriedade**. Tudo o que o contrato vê, o público vê. Por causa disso, alguém poderia manipular o sistema apenas olhando para o contrato inteligente, vendo em que #s ele depende para aleatoriedade e, em seguida, a pessoa poderia fornecer os números exatos de que precisa para vencer.
 
@@ -33,11 +33,14 @@ contract WavePortal {
     uint256 private seed;
 
     event NewWave(address indexed from, uint256 timestamp, string message);
-
+    /*
+     * Crio um struct Wave.
+     * Um struct é basicamente um tipo de dados customizado onde nós podemos customizar o que queremos armazenar dentro dele
+     */
     struct Wave {
-        address waver;
-        string message;
-        uint256 timestamp;
+        address waver; // Endereço do usuário que deu tchauzinho
+        string message; // Mensagem que o usuário envio
+        uint256 timestamp; // Data/hora de quando o usuário tchauzinhou.
     }
 
     Wave[] waves;
@@ -54,6 +57,9 @@ contract WavePortal {
         totalWaves += 1;
         console.log("%s tchauzinhou!", msg.sender);
 
+        /*
+         * Aqui é onde eu efetivamenet armazeno o tchauzinho no array.
+         */
         waves.push(Wave(msg.sender, _message, block.timestamp));
 
         /*
@@ -81,9 +87,16 @@ contract WavePortal {
             require(success, "Falhou em sacar dinheiro do contrato.");
         }
 
+        /*
+         * Eu adicionei algo novo aqui. Use o Google para tentar entender o que é e depois me conte o que aprendeu em #general-chill-chat
+         */
         emit NewWave(msg.sender, block.timestamp, _message);
     }
 
+    /*
+     * Adicionei uma função getAllWaves que retornará os tchauzinhos.
+     * Isso permitirá recuperar os tchauzinhos a partir do nosso site!
+     */
     function getAllWaves() public view returns (Wave[] memory) {
         return waves;
     }
@@ -115,61 +128,57 @@ Vamos garantir que funcione! Aqui está meu `run.js` atualizado. Neste caso, eu 
 
 ```javascript
 const main = async () => {
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.1"),
-  });
-  await waveContract.deployed();
-  console.log("Endereço do contrato:", waveContract.address);
+    const waveContract = await hre.ethers.deployContract("WavePortal", { value: hre.ethers.parseEther('0.1') });
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
 
-  let contractBalance = await hre.ethers.provider.getBalance(
-    waveContract.address
-  );
-  console.log(
-    "Saldo do contrato:",
-    hre.ethers.utils.formatEther(contractBalance)
-  );
+    /*
+    * Consulta saldo do contrato
+    */
+    let contractBalance = await hre.ethers.provider.getBalance(
+        waveContract.target
+    );
+    console.log(
+        "Saldo do contrato:",
+        hre.ethers.formatEther(contractBalance)
+    );
 
-  /*
-   * Vamos tentar mandar um tchauzinho 2 vezes agora
-   */
-  const waveTxn = await waveContract.wave("tchauzinho #1");
-  await waveTxn.wait();
+    /*
+     * Vamos tentar mandar um tchauzinho 2 vezes agora
+     */
+    const waveTxn = await waveContract.wave("tchauzinho #1");
+    await waveTxn.wait();
 
-  const waveTxn2 = await waveContract.wave("tchauzinho #2");
-  await waveTxn2.wait();
+    const waveTxn2 = await waveContract.wave("tchauzinho #2");
+    await waveTxn2.wait();
 
-  contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
-  console.log(
-    "Saldo do contrato:",
-    hre.ethers.utils.formatEther(contractBalance)
-  );
+    /*
+    * Recupera o saldo do contrato para verificar o que aconteceu!
+    */
+    contractBalance = await hre.ethers.provider.getBalance(waveContract.target);
+    console.log(
+        "Saldo do contrato:",
+        hre.ethers.formatEther(contractBalance)
+    );
 
-  let allWaves = await waveContract.getAllWaves();
-  console.log(allWaves);
+    let allWaves = await waveContract.getAllWaves();
+    console.log(allWaves);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
 ```
 
 Você nem sempre terá bons tutoriais como este para orientá-lo sobre como testar seu código. Cabe a você descobrir :
 
- 1) O que você quer testar 
+ 1) O que você quer testar
  2) Como testá-lo. Nesse caso, eu sabia que queria garantir que o saldo do contrato fosse reduzido em 0.0001 apenas no caso de um # aleatório menor que 50 ser gerado!
 
 Então, quando executo o código acima, aqui está o que recebo:
 
-![](https://i.imgur.com/V3k35Dg.png)
+![npx hardhat run scripts/run.js](https://i.imgur.com/yD4Sn65.png)
 
 Legal! Funciona. Quando "65" foi gerado, o usuário não ganhou o prêmio. Mas, quando 45 foi gerado, o tchauzinho venceu! E o saldo do contrato caiu exatamente 0.0001. Ótimo :).
 
@@ -193,19 +202,26 @@ contract WavePortal {
     uint256 totalWaves;
     uint256 private seed;
 
+    /*
+     * Um pouco de mágica, use o Google para entender o que são eventos em Solidity!
+     */
     event NewWave(address indexed from, uint256 timestamp, string message);
 
+    /*
+     * Crio um struct Wave.
+     * Um struct é basicamente um tipo de dados customizado onde nós podemos customizar o que queremos armazenar dentro dele
+     */
     struct Wave {
-        address waver;
-        string message;
-        uint256 timestamp;
+        address waver; // Endereço do usuário que deu tchauzinho
+        string message; // Mensagem que o usuário envio
+        uint256 timestamp; // Data/hora de quando o usuário tchauzinhou.
     }
 
     Wave[] waves;
 
     /*
-     * Este é um endereço => uint mapping, o que significa que eu posso associar o endereço com um número!
-     * Neste caso, armazenarei o endereço com o últimoo horário que o usuário tchauzinhou.
+     * Declara a variável waves que permite armazenar um array de structs.
+     * Isto que me permite armazenar todos os tchauzinhos que qualquer um tenha me enviado!
      */
     mapping(address => uint256) public lastWavedAt;
 
@@ -234,6 +250,9 @@ contract WavePortal {
         totalWaves += 1;
         console.log("%s tchauzinhou!", msg.sender);
 
+        /*
+         * Aqui é onde eu efetivamenet armazeno o tchauzinho no array.
+         */
         waves.push(Wave(msg.sender, _message, block.timestamp));
 
         /*
@@ -253,9 +272,16 @@ contract WavePortal {
             require(success, "Falhou em sacar dinheiro do contrato.");
         }
 
+        /*
+         * Eu adicionei algo novo aqui. Use o Google para tentar entender o que é e depois me conte o que aprendeu em #general-chill-chat
+         */
         emit NewWave(msg.sender, block.timestamp, _message);
     }
 
+    /*
+     * Adicionei uma função getAllWaves que retornará os tchauzinhos.
+     * Isso permitirá recuperar os tchauzinhos a partir do nosso site!
+     */
     function getAllWaves() public view returns (Wave[] memory) {
         return waves;
     }
@@ -265,6 +291,7 @@ contract WavePortal {
     }
 }
 ```
-Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar mandar um tchauzinho duas vezes seguidas sem esperar 15 minutos 😊 
+
+Tente executar `npx hardhat run scripts/run.js` e veja a mensagem de erro que você recebe se tentar mandar um tchauzinho duas vezes seguidas sem esperar 15 minutos 😊
 
 💥 E é assim que você constrói cooldowns!
