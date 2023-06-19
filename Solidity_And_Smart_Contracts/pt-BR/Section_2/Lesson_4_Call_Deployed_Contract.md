@@ -81,12 +81,12 @@ Mas, o que é um ABI? Muito antes eu mencionei como quando você compila um cont
 🏠 Configurando o endereço do seu contrato
 -----------------------------
 
-Lembra quando você implantou seu contrato no Goerli Testnet (épico, por sinal)? A saída dessa implantação incluiu seu endereço de contrato inteligente, que deve ser algo assim:
+Lembra quando você implantou seu contrato na Sepolia Testnet (épico, por sinal)? A saída dessa implantação incluiu seu endereço de contrato inteligente, que deve ser algo assim:
 
-```
-Deploying contracts with the account: 0xF79A3bb8d5b93686c4068E2A97eAeC5fE4843E7D
-Account balance: 3198297774605223721
-WavePortal address: 0xd5f08a0ae197482FA808cE84E00E97d940dBD26E
+```bash
+Deploying contracts with account: 0xA55899dbAacE2b25C83Ee1c2b5e646Fb8828fD4E
+Account balance: 377126289290356720
+WavePortal address: 0xfE63BB4d0D8C14A7e0cc0CC4c4b8100Dc13D3C12
 ```
 
 Você precisa ter acesso a ele em seu aplicativo React. É tão fácil quanto criar uma nova propriedade em seu arquivo `App.js` chamada `contractAddress` e definir seu valor para o `WavePortal address` que é impresso em seu console. O início do seu código ficará como este aqui:
@@ -101,13 +101,14 @@ const App = () => {
   /**
    * Cria uma variável para guardar o endereço do contrato após o deploy!
    */
-  const contractAddress = "0xF2482AEDB6bfF7Cc73772fCBCeAA9157ff00c287";
+  const contractAddress = "0xfE63BB4d0D8C14A7e0cc0CC4c4b8100Dc13D3C12";
 ```
 
 Substitua o conteúdo da constante `contractAddress` pelo valor do seu contrato.
 
 🛠 Obtendo o conteúdo do arquivo ABI
 ---------------------------
+
 **Prefere me ver passar por isso?**
 
 Confira este [vídeo onde explico como fazer](https://www.loom.com/share/53de0a270060417e94aae5032764afd1)
@@ -116,7 +117,7 @@ Olhe para você, já está no meio do caminho! Vamos voltar para nossa pasta do 
 
 Quando você compila seu contrato inteligente, o compilador gera vários arquivos necessários que permitem que você interaja com o contrato. Você pode encontrar esses arquivos na pasta `artifacts` localizada na raiz do seu projeto Solidity.
 
-O arquivo ABI é algo que nosso aplicativo web precisa para saber como se comunicar com nosso contrato. [Leia mais sobre o arquivo ABI](https://docs.soliditylang.org/en/v0.5.3/abi-spec.html).
+O arquivo ABI é algo que nosso aplicativo web precisa para saber como se comunicar com nosso contrato. [Leia mais sobre o arquivo ABI](https://docs.soliditylang.org/en/v0.8.0/abi-spec.html).
 
 O conteúdo do arquivo ABI pode ser encontrado em um arquivo JSON em seu projeto Hardhat:
 
@@ -131,7 +132,6 @@ Copie para a área de trabalho (CRTL + C) o conteúdo do seu `WavePortal.json` e
 Cole todo o arquivo JSON ali mesmo!
 
 Agora que você tem seu arquivo com todo o conteúdo da ABI pronto, é hora de importá-lo para o arquivo `App.js` e criar uma referência a ele. Logo abaixo de onde você importou `App.css` vá em frente e importe seu arquivo JSON e crie sua referência para o conteúdo ABI:
-
 
 ```javascript
 import React, { useEffect, useState } from "react";
@@ -148,6 +148,7 @@ const App = () => {
    */
   const contractABI = abi.abi;
 ```
+
 Vamos dar uma olhada onde você está usando o conteúdo ABI:
 
 ```javascript
@@ -180,7 +181,7 @@ Depois de adicionar esse arquivo e clicar no botão "Mandar Tchauzinho" -- **voc
 📝 Escrevendo dados
 ---------------
 
-O código para gravar dados em nosso contrato não é muito diferente de ler dados. A principal diferença é que quando queremos escrever novos dados em nosso contrato, precisamos notificar os mineradores para que a transação possa ser minerada. Quando lemos dados, não precisamos fazer isso. As leituras são "gratuitas" porque tudo o que estamos fazendo é ler da blockchain, **não a estamos alterando. **
+O código para gravar dados em nosso contrato não é muito diferente de ler dados. A principal diferença é que quando queremos escrever novos dados em nosso contrato, precisamos notificar os mineradores para que a transação possa ser minerada. Quando lemos dados, não precisamos fazer isso. As leituras são "gratuitas" porque tudo o que estamos fazendo é ler da blockchain, **não a estamos alterando.**
 
 Aqui está o código para mandar um tchauzinho:
 
@@ -192,6 +193,10 @@ const wave = async () => {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
+
+        /*
+        * Você está usando o contractABI aqui
+        */
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
         let count = await wavePortalContract.getTotalWaves();
@@ -219,7 +224,7 @@ const wave = async () => {
 
 Bem simples, né?
 
-O que é incrível aqui é que, enquanto a transação está sendo minerada, você pode imprimir o hash da transação, copiar/colar no [Etherscan](https://goerli.etherscan.io/) e vê-lo sendo processado em tempo real.
+O que é incrível aqui é que, enquanto a transação está sendo minerada, você pode imprimir o hash da transação, copiar/colar no [Etherscan](https://sepolia.etherscan.io/) e vê-lo sendo processado em tempo real.
 
 Quando executarmos isso, você verá que a contagem total de tchauzinhos é aumentada em 1. Você também verá que a Metamask aparece e nos pede para pagar "gas" que pagamos usando nosso $ falso. Há um ótimo [artigo sobre como funciona o gas](https://ethereum.org/en/developers/docs/gas/). Tente descobrir o que é o **gas** :)
 
@@ -235,7 +240,7 @@ As possibilidades são infinitas.
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, Daniel ficará muito triste :(.*
+*Nota: se você não fizer isso, Daniel ficará muito triste :(*
 
 Personalize um pouco seu site para mostrar o número total de tchauzinhos. Talvez mostrar uma barra de carregamento enquanto o tchauzinho está sendo minerada, o que você quiser. Faça algo um pouco diferente!
 
@@ -244,4 +249,4 @@ Quando sentir que está pronto, compartilhe o link do seu site conosco no canal 
 🎁 Encerramento
 --------------------
 
-Você está a caminho de conquistar a web descentralizada. IMPRESSIONANTE. Dê uma olhada em todo o código que você escreveu nesta seção visitando [este link](https://gist.github.com/danicuki/882259a049077bc8c8d228405b6c8c12) para ter certeza de que está no caminho certo com seu código!
+Você está a caminho de conquistar a web descentralizada. **IMPRESSIONANTE**. Dê uma olhada em todo o código que você escreveu nesta seção visitando [este link](https://gist.github.com/danicuki/882259a049077bc8c8d228405b6c8c12) para ter certeza de que está no caminho certo com seu código!
