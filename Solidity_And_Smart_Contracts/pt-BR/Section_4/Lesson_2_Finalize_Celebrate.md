@@ -1,7 +1,7 @@
-🎨 Finalize sua interface de usuário e a personalize.
+🎨 Finalize sua interface de usuário e a personalize
 ---------------------------------------
 
-Você tem todas as funcionalidades principais! Agora, é hora de realmente tornar isso seu, se ainda não o fez. Altere o CSS, o texto, adicione alguns vídeos engraçados do YouTube, adicione sua própria biografia, seja o que for. Faça as coisas parecerem legais 😊 
+Você tem todas as funcionalidades principais! Agora, é hora de realmente tornar isso seu, se ainda não o fez. Altere o CSS, o texto, adicione alguns vídeos engraçados do YouTube, adicione sua própria biografia, seja o que for. Faça as coisas parecerem legais 😊
 
 **Gaste uns 30 minutos nisso se quiser!! Eu recomendo!**
 
@@ -26,7 +26,7 @@ Bem, basicamente a Metamask tentará estimar quanto gas a transação usará. Ma
 
 Estimar o gas é um problema difícil e uma solução fácil para ele (para que nossos usuários não fiquem bravos quando uma transação falha) é definir um limite.
 
-No App.js, alterei a linha que envia o tchauzinho para
+No `App.jsx`, alterei a linha que envia o tchauzinho para
 
 ```solidity
 wavePortalContract.wave(message, { gasLimit: 300000 })
@@ -41,7 +41,7 @@ Portanto, se uma transação custar 250.000 gas, então *depois* que a transaç�
 
 Quando seu contrato foi implantado e você o está testando com sua interface do usuário e sua carteira, pode ser confuso no início determinar se a conta da sua carteira foi recompensada com sucesso com o prêmio. Sua conta terá usado uma certa quantidade de gás e potencialmente será recompensada com ETH. Então, como você pode validar se seu contrato está funcionando conforme o esperado?
 
-Para validar, você pode abrir seu endereço de contrato no [Goerli Etherscan](https://goerli.etherscan.io/) e visualizar as transações que ocorreram. Você encontrará todo tipo de informação útil aqui, incluindo o método que foi chamado, que neste caso é `Wave`. Se você clicar em uma transação `Wave`, você notará que na propriedade `To`, ela identificará que o endereço do contrato foi chamado. Se o usuário ganhou um prêmio, você notará nesse campo que o contrato transferiu 0.0001 ETH do endereço do contrato para o endereço da sua conta.
+Para validar, você pode abrir seu endereço de contrato no [Sepolia Etherscan](https://sepolia.etherscan.io/) e visualizar as transações que ocorreram. Você encontrará todo tipo de informação útil aqui, incluindo o método que foi chamado, que neste caso é `Wave`. Se você clicar em uma transação `Wave`, você notará que na propriedade `To`, ela identificará que o endereço do contrato foi chamado. Se o usuário ganhou um prêmio, você notará nesse campo que o contrato transferiu 0.0001 ETH do endereço do contrato para o endereço da sua conta.
 
 Observe que o `Value` da transação ainda é 0 ETH, pois o usuário nunca pagou nada para iniciar o tchauzinho. A transferência interna de ETH por um contrato inteligente é chamada de "transação interna".
 
@@ -132,7 +132,6 @@ Isso é superpoderoso. Ele nos permite criar aplicativos web que são atualizado
 
 Eu quero que você brinque com isso e construa o que quiser 😀
 
-
 🙉 Uma nota no github
 ----------------
 
@@ -147,13 +146,14 @@ npm install --save dotenv
 Seu arquivo hardhat.config.js seria algo como:
 
 ```javascript
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.0",
   networks: {
-    goerli: {
+    sepolia: {
       url: process.env.STAGING_ALCHEMY_KEY,
       accounts: [process.env.PRIVATE_KEY],
     },
@@ -168,7 +168,7 @@ module.exports = {
 
 E seu arquivo .env seria algo como:
 
-```
+```.env
 STAGING_ALCHEMY_KEY=BLAHBLAH
 PROD_ALCHEMY_KEY=BLAHBLAH
 PRIVATE_KEY=BLAHBLAH
@@ -183,13 +183,12 @@ Você já fez isso. Você implantou um contrato inteligente e escreveu um aplica
 
 Esperamos que esta tenha sido uma introdução divertida à web3 e esperamos que você continue sua jornada.
 
-Manteremos todos informados sobre novos projetos no Discord 😊 
+Manteremos todos informados sobre novos projetos no Discord 😊
 
 🤟 Sua NFT!
 -----------
 
-Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@vitordev`.
-
+Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@lorenzo_wb`.
 
 ### 🌈 Antes de você ir embora
 
@@ -197,7 +196,7 @@ Vá para **#progresso** no Discord e envie-nos o link do seu aplicativo final �
 
 Além disso, você deve postar seu projeto final no Twitter ou Likedin e mostrar para o mundo a sua criação épica! O que você fez não foi nada fácil. Tente até fazer um pequeno vídeo mostrando seu projeto e anexe-o ao tweet. Deixe seu tweet bonito e mostre para o mundo o que você fez!!
 
-E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.** 
+E se você quiser, marque a @web3dev_ 😊. **Isso nos dá muita motivação, sempre que vemos as pessoas enviarem seus projetos.**
 Nos dê essa dose de dopamina, por favor.
 
 Por fim, o que também seria incrível, é se você nos dissesse na seção de feedback do Discord o quanto gostou deste projeto e de como ele foi estruturado. O que você mais gostou no bootcamp? O que não curtiu? O que gostaria que mudássemos para projetos futuros? Seu feedback seria incrível!
@@ -205,7 +204,6 @@ Por fim, o que também seria incrível, é se você nos dissesse na seção de f
 Não deixe de mandar seu feeback na sala `#pod-educação` no nosso discord.
 
 Vejo você por aí!!!
-
 
 🎁 Encerramento
 ----------
