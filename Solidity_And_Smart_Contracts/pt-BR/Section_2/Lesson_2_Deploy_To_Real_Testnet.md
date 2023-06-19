@@ -51,19 +51,18 @@ Então, você fará tudo isso nas próximas lições :).
 🤑 Conseguindo $ falso
 ------------------------
 
-Existem algumas redes de teste por aí e a que usaremos é chamada de "Goerli", que é administrada pela fundação Ethereum.
+Existem algumas redes de teste por aí e a que usaremos é chamada de "Sepolia", que é administrada pela fundação Ethereum.
 
-Para implantar na Goerli, precisamos de **ether** falso. Por quê? Porque se você estivesse implantando na rede principal Ethereum real, usaria dinheiro real! Então, as testnets copiam como a rede principal funciona, a única diferença é que nenhum dinheiro real está envolvido.
+Para implantar na Sepolia, precisamos de **ether** falso. Por quê? Porque se você estivesse implantando na rede principal Ethereum real, usaria dinheiro real! Então, as testnets copiam como a rede principal funciona, a única diferença é que nenhum dinheiro real está envolvido.
 
-Para obter ETH falso, temos que pedir à alguma rede. **Este ETH falso só funcionará nesta rede de teste específica.** Você pode pegar algum ETH falso para Goerli através de um **faucet** (torneira). Certifique-se de que sua carteira MetaMask esteja definida como "Goerli Test Network" antes de usar a faucet.
+Para obter ETH falso, temos que pedir à alguma rede. **Este ETH falso só funcionará nesta rede de teste específica.** Você pode pegar algum ETH falso para Sepolia através de um **faucet** (torneira). Certifique-se de que sua carteira MetaMask esteja definida como "Sepolia Test Network" antes de usar a faucet.
 
-Seguem alguns _faucets_ onde você pode solicitar ETH falso para a rede _Goerli_.
+Seguem alguns *faucets* onde você pode solicitar ETH falso para a rede *Sepolia*.
 
 | Nome | Link
 | ---------------- | --------------------------
-| Alchemy | https://goerlifaucet.com/ 
-| Mudit | https://goerli-faucet.mudit.blog/ 
-| Paradigm | https://faucet.paradigm.xyz/ 
+| Alchemy | <https://sepoliafaucet.com/>
+| Chainlink | <https://faucets.chain.link/sepolia>
 
 Para o MyCrypto, você precisará conectar sua carteira, criar uma conta e clicar no mesmo link novamente para solicitar fundos.
 
@@ -72,7 +71,7 @@ Para o MyCrypto, você precisará conectar sua carteira, criar uma conta e clica
 
 Se os links acima não funcionarem, entre no [Discord da web3dev](https://discord.web3dev.com.br/), procure a categoria exclusiva, e manda um S.O.S na sala `#seção-2-ajuda`
 
-📈 Faça o deploy na rede de teste Goerli.
+📈 Faça o deploy na rede de teste Sepolia
 ----------------------------------
 
 Precisaremos alterar nosso arquivo `hardhat.config.js`. Você pode encontrá-lo no diretório raiz do seu projeto de contrato inteligente.
@@ -83,9 +82,9 @@ require("@nomiclabs/hardhat-waffle");
 module.exports = {
   solidity: "0.8.0",
   networks: {
-    goerli: {
+    sepolia: {
       url: "YOUR_ALCHEMY_API_URL",
-      accounts: ["YOUR_PRIVATE_GOERLI_ACCOUNT_KEY"],
+      accounts: ["YOUR_PRIVATE_SEPOLIA_ACCOUNT_KEY"],
     },
   },
 };
@@ -95,38 +94,38 @@ module.exports = {
 
 Falaremos sobre variáveis `.env` mais tarde e como manter essas coisas em segredo.
 
-Você pode pegar a URL da API no painel do Alchemy e colá-lo. Em seguida, você precisará da sua chave **privada** goerli (não sua chave pública!), que você pode pegar da Metamask e colá-la lá também.
+Você pode pegar a URL da API no painel do Alchemy e colá-lo. Em seguida, você precisará da sua chave **privada** sepolia (não sua chave pública!), que você pode pegar da Metamask e colá-la lá também.
 
-ℹ️ **Nota:** O acesso à sua chave privada pode ser feito abrindo a MetaMask, alterando a rede para "Goerli Test Network" e depois clicando nos três pontos e selecionando "Account Details" > "Export Private Key"
+ℹ️ **Nota:** O acesso à sua chave privada pode ser feito abrindo a MetaMask, alterando a rede para "Sepolia Test Network" e depois clicando nos três pontos e selecionando "Account Details" > "Export Private Key"
 
 Por que você precisa usar sua chave privada? Porque para realizar uma transação como o deploy de um contrato, você precisa "fazer login" na blockchain. E, seu nome de usuário é seu endereço público e sua senha é sua chave privada. É como fazer login na AWS ou no GCP para fazer o deploy.
 
 Uma vez que você tenha sua configuração, estamos prontos para realizar o deploy com o script que escrevemos anteriormente.
 
-Execute este comando a partir do diretório raiz do `meu-portal-tchauzinho`. Observe que tudo o que fazemos é alterá-lo de `localhost` para `goerli`.
+Execute este comando a partir do diretório raiz do `meu-portal-tchauzinho`. Observe que tudo o que fazemos é alterá-lo de `localhost` para `sepolia`.
 
 ```bash
-npx hardhat run scripts/deploy.js --network goerli
+npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-❤️ Implantado!
+❤️ Implantado
 -------------
 
 Aqui está saída da execução:
 
 ```bash
-Deploying contracts with account:  0xe0c0041f496116Ee081aE9CE118D718794628654
-Account balance:  377126289290356720
-WavePortal address:  0xdC6b92Dd42a2f9C497186d11210893cD597432B2
+Deploying contracts with account: 0xA55899dbAacE2b25C83Ee1c2b5e646Fb8828fD4E
+Account balance: 377126289290356720
+WavePortal address: 0xfE63BB4d0D8C14A7e0cc0CC4c4b8100Dc13D3C12
 ```
 
 Copie esse endereço do contrato implantado na última linha e salve-o em algum lugar. Não o perca! Você precisará dele para o frontend mais tarde 😊 O seu será diferente do meu.
 
 **Você acabou de fazer o deploy do seu contrato. UAAAAAAAAU!** 🤩
 
-Você pode pegar esse endereço e [colá-lo no Etherscan](https://goerli.etherscan.io/). Etherscan é um lugar que apenas nos mostra o estado da blockchain e nos ajuda a ver onde está nossa transação. Você deve ver sua transação aqui. Pode ser que demore um minuto para aparecer!
+Você pode pegar esse endereço e [colá-lo no Etherscan](https://sepolia.etherscan.io/). Etherscan é um lugar que apenas nos mostra o estado da blockchain e nos ajuda a ver onde está nossa transação. Você deve ver sua transação aqui. Pode ser que demore um minuto para aparecer!
 
-Por exemplo, [aqui está a minha](https://goerli.etherscan.io/address/0xdc6b92dd42a2f9c497186d11210893cd597432b2)!
+Por exemplo, [aqui está a minha](https://sepolia.etherscan.io/address/0xfE63BB4d0D8C14A7e0cc0CC4c4b8100Dc13D3C12)!
 
 🚨 Antes de clicar em "Próxima lição"
 ----------------------------------

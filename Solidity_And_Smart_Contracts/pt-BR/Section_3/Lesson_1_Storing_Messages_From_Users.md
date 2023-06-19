@@ -15,7 +15,6 @@ Então, queremos:
 
 Confira meu código de contrato inteligente atualizado. Eu adicionei muitos comentários aqui para ajudá-lo a ver o que mudou 😃.
 
-
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 
@@ -93,7 +92,6 @@ Sempre que alteramos nosso contrato, queremos alterar o `run.js` para testar a n
 
 Aqui está meu `run.js` atualizado.
 
-
 ```javascript
 const main = async () => {
   const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
@@ -154,7 +152,7 @@ Então, agora que atualizamos nosso contrato, precisamos fazer algumas coisas:
 
 3\. Precisamos atualizar o arquivo ABI em nosso frontend.
 
-**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça **
+**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça**
 
 Por que precisamos fazer tudo isso? Bem, é porque os contratos inteligentes são **imutáveis.** Eles não podem mudar. Eles são permanentes. Isso significa que a alteração de um contrato requer um deploy completo. Isso também **redefinirá** todas as variáveis, pois seria tratado como um novo contrato. **Isso significa que perderíamos todos os nossos dados de tchauzinhos se quiséssemos atualizar o código do contrato.**
 
@@ -162,7 +160,7 @@ Por que precisamos fazer tudo isso? Bem, é porque os contratos inteligentes sã
 
 Então o que você precisa fazer agora é:
 
-1\. Faça do redeploy usando `npx hardhat run scripts/deploy.js --network goerli`
+1\. Faça do redeploy usando `npx hardhat run scripts/deploy.js --network sepolia`
 
 2\. Altere `contractAddress` em `App.js` para ser o novo endereço do contrato obtido no terminal na etapa acima, assim como fizemos antes da primeira vez que implantamos.
 
@@ -271,7 +269,7 @@ return (
 
 Basicamente, eu apenas passo pelo `allWaves` e crio novas divs para cada tchauzinho e mostro esses dados em tela.
 
-🙀 Ah!! `wave()` está quebrado!
+🙀 Ah!! `wave()` está quebrado
 ---------------------------
 
 Então, em `App.js`, nossa função `wave()` não funciona mais! Se tentarmos mandar um tchauzinho, ele nos dará um erro porque está esperando que uma mensagem seja enviada por ele! Por enquanto, você pode corrigir isso codificando uma mensagem como:
@@ -284,7 +282,7 @@ Vou deixar isso para você: descubra como adicionar uma caixa de texto que permi
 
 O objetivo? Você quer dar aos seus usuários a capacidade de enviar uma mensagem personalizada usando uma caixa de texto que eles podem digitar! Ou talvez você queira que eles enviem um link para um meme? Ou um link do Spotify? Você decide!
 
-👷‍♀️ Vá construir uma interface para o usuário!
+👷‍♀️ Vá construir uma interface para o usuário
 --------------------
 
 Vá fazer essa coisa parecer como você quer que fique! Eu não vou te ensinar muito disso aqui. Sinta-se à vontade para fazer perguntas no canal `#seção-3-ajuda`!

@@ -56,7 +56,7 @@ require(prizeAmount <= address(this).balance, "Tentando sacar mais dinheiro que 
 
 Muito legal né :)?
 
-🏦 Financie o contrato para que possamos enviar ETH!
+🏦 Financie o contrato para que possamos enviar ETH
 -----------------------------------------------
 
 Agora configuramos nosso código para enviar ETH. Legal! Agora precisamos realmente garantir que nosso contrato seja financiado, caso contrário, não temos ETH para enviar!
@@ -208,10 +208,10 @@ Fácil!
 Vamos implantar nosso contrato usando a mesma linha antiga
 
 ```bash
-npx hardhat run scripts/deploy.js --network goerli
+npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-Agora, quando você entrar em [Etherscan](https://goerli.etherscan.io/) e colar o endereço do seu contrato, verá que seu contrato agora tem um valor de 0.001 ETH! Sucesso!
+Agora, quando você entrar em [Etherscan](https://sepolia.etherscan.io/) e colar o endereço do seu contrato, verá que seu contrato agora tem um valor de 0.001 ETH! Sucesso!
 
 **Lembre-se de atualizar seu frontend com o novo endereço do contrato *e* o novo arquivo ABI. Caso contrário, ele irá** **quebrar**.
 
