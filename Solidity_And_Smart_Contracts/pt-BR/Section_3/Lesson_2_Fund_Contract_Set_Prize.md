@@ -56,7 +56,7 @@ require(prizeAmount <= address(this).balance, "Tentando sacar mais dinheiro que 
 
 Muito legal né :)?
 
-🏦 Financie o contrato para que possamos enviar ETH!
+🏦 Financie o contrato para que possamos enviar ETH
 -----------------------------------------------
 
 Agora configuramos nosso código para enviar ETH. Legal! Agora precisamos realmente garantir que nosso contrato seja financiado, caso contrário, não temos ETH para enviar!

@@ -176,7 +176,7 @@ PRIVATE_KEY=BLAHBLAH
 
 Certifique-se de ter o .env em seu .gitignore.
 
-🎉 É isto!
+🎉 É isto
 ----------------
 
 Você já fez isso. Você implantou um contrato inteligente e escreveu um aplicativo Web que fala com ele. Essas são duas habilidades que vão mudar ainda mais o mundo à medida que avançamos para uma realidade em que os aplicativos web descentralizados se tornam mais comuns.
@@ -185,7 +185,7 @@ Esperamos que esta tenha sido uma introdução divertida à web3 e esperamos que
 
 Manteremos todos informados sobre novos projetos no Discord 😊
 
-🤟 Sua NFT!
+🤟 Sua NFT
 -----------
 
 Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@lorenzo_wb`.
