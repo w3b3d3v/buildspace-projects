@@ -15,7 +15,6 @@ Então, queremos:
 
 Confira meu código de contrato inteligente atualizado. Eu adicionei muitos comentários aqui para ajudá-lo a ver o que mudou 😃.
 
-
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 
@@ -93,53 +92,46 @@ Sempre que alteramos nosso contrato, queremos alterar o `run.js` para testar a n
 
 Aqui está meu `run.js` atualizado.
 
-
 ```javascript
 const main = async () => {
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
-  console.log("Endereço do contrato:", waveContract.address);
+    const waveContract = await hre.ethers.deployContract("WavePortal");
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
 
-  let waveCount;
-  waveCount = await waveContract.getTotalWaves();
-  console.log(waveCount.toNumber());
+    let waveCount = await waveContract.getTotalWaves();
+    console.log(parseInt(waveCount))
 
-  /**
-   * Deixe-me enviar alguns tchauzinhos!
-   */
-  let waveTxn = await waveContract.wave("Uma mensagem!");
-  await waveTxn.wait(); // aguarda a transação ser minerada
+    /**
+     * Deixe-me enviar alguns tchauzinhos!
+     */
+    let waveTxn = await waveContract.wave("Uma mensagem!");
+    await waveTxn.wait(); // aguarda a transação ser minerada
 
-  const [_, randomPerson] = await hre.ethers.getSigners();
-  waveTxn = await waveContract.connect(randomPerson).wave("Outra mensagem!");
-  await waveTxn.wait(); // aguarda a transação ser minerada
+    const [_, randomPerson] = await hre.ethers.getSigners();
+    waveTxn = await waveContract.connect(randomPerson).wave("Outra mensagem!");
+    await waveTxn.wait(); // aguarda a transação ser minerada
 
-  let allWaves = await waveContract.getAllWaves();
-  console.log(allWaves);
+    let allWaves = await waveContract.getAllWaves();
+    console.log(allWaves);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
 ```
 
 Aqui está o que eu recebo no meu terminal quando eu executo `npx hardhat run scripts/run.js`.
 
-![](https://i.imgur.com/VfA0vuK.png)
+![npx hardhat run scripts/run.js](https://i.imgur.com/rIdh5m5.png)
 
 Muito legal né 😃 ?
 
-O array parece um pouco assustador, mas podemos ver os dados ao lado das palavras `waver`, `message` e `timestamp`!! Ele armazena corretamente nossas mensagens `"Uma mensagem"` e `"Outra mensagem"` 🤩
-Nota: "timestamp" é devolvido para nós como tipo "BigNumber". Vamos aprender a trabalhar com isso mais tarde, mas saiba que não há nada de errado aqui!
+O array parece um pouco assustador, mas podemos ver os dados ao lado das palavras `waver`, `message` e `timestamp`!!
+Ele armazena corretamente nossas mensagens `"Uma mensagem"` e `"Outra mensagem"` 🤩
+
+> **Nota:**
+"timestamp" é devolvido para nós como tipo "BigNumber". Vamos aprender a trabalhar com isso mais tarde, mas saiba que não há nada de errado aqui!
 
 Parece que as coisas estão funcionando, vamos para o nosso **frontend** para que possamos ver todos os nossos tchauzinhos em nosso site!
 
@@ -154,17 +146,18 @@ Então, agora que atualizamos nosso contrato, precisamos fazer algumas coisas:
 
 3\. Precisamos atualizar o arquivo ABI em nosso frontend.
 
-**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça **
+**As pessoas constantemente se esquecem de fazer esses 3 passos quando mudam de contrato. Não esqueça**
 
 Por que precisamos fazer tudo isso? Bem, é porque os contratos inteligentes são **imutáveis.** Eles não podem mudar. Eles são permanentes. Isso significa que a alteração de um contrato requer um deploy completo. Isso também **redefinirá** todas as variáveis, pois seria tratado como um novo contrato. **Isso significa que perderíamos todos os nossos dados de tchauzinhos se quiséssemos atualizar o código do contrato.**
 
-**Bônus**: no canal #chat-geral, alguém pode me sugerir soluções? Onde mais poderíamos armazenar nossos dados de tchauzinhos de forma a permitir a atualização do código do contrato, mas mantendo os dados originais por perto? Existem algumas soluções aqui, deixe-me saber o que você encontra!
+>**Bônus:**
+no canal **#chat-geral**, alguém pode me sugerir soluções? Onde mais poderíamos armazenar nossos dados de tchauzinhos de forma a permitir a atualização do código do contrato, mas mantendo os dados originais por perto? Existem algumas soluções aqui, deixe-me saber o que você encontra!
 
 Então o que você precisa fazer agora é:
 
-1\. Faça do redeploy usando `npx hardhat run scripts/deploy.js --network goerli`
+1\. Faça do redeploy usando `npx hardhat run scripts/deploy.js --network sepolia`
 
-2\. Altere `contractAddress` em `App.js` para ser o novo endereço do contrato obtido no terminal na etapa acima, assim como fizemos antes da primeira vez que implantamos.
+2\. Altere `contractAddress` em `App.jsx` para ser o novo endereço do contrato obtido no terminal na etapa acima, assim como fizemos antes da primeira vez que implantamos.
 
 3\. Obtenha o arquivo ABI atualizado de `artifacts` tal qual fizemos antes e copie e cole no Replit como fizemos antes. Se você esqueceu como fazer isso, certifique-se de rever a lição anterior e/ou assista o vídeo que fizemos sobre os arquivos ABI abaixo:
 [Loom](https://www.loom.com/share/2a5794fca9064a059dca1989cdfa2c37).
@@ -174,15 +167,15 @@ Então o que você precisa fazer agora é:
 🔌 Conectando tudo ao nosso cliente
 ----------------------------------
 
-Então, aqui está a nova função que adicionei ao `App.js`.
+Então, aqui está a nova função que adicionei ao `App.jsx`.
 
 ```javascript
   const [currentAccount, setCurrentAccount] = useState("");
   const [allWaves, setAllWaves] = useState([]);
-  const contractAddress = "0xd289A2e424dE94E9dcfFE03Ae050961Df70a4474";
+  const contractAddress = "0x390baCd0F5Ee63B5fcB34F9c165A93Aadd8381f7";
   const contractABI = abi.abi;
 
-    /*
+  /*
    * Método para consultar todos os tchauzinhos do contrato
    */
   const getAllWaves = async () => {
@@ -271,20 +264,21 @@ return (
 
 Basicamente, eu apenas passo pelo `allWaves` e crio novas divs para cada tchauzinho e mostro esses dados em tela.
 
-🙀 Ah!! `wave()` está quebrado!
+🙀 Ah!! `wave()` está quebrado
 ---------------------------
 
-Então, em `App.js`, nossa função `wave()` não funciona mais! Se tentarmos mandar um tchauzinho, ele nos dará um erro porque está esperando que uma mensagem seja enviada por ele! Por enquanto, você pode corrigir isso codificando uma mensagem como:
+Então, em `App.jsx`, nossa função `wave()` não funciona mais! Se tentarmos mandar um tchauzinho, ele nos dará um erro porque está esperando que uma mensagem seja enviada por ele! Por enquanto, você pode corrigir isso codificando uma mensagem como:
 
-```
+```javascript
 const waveTxn = await wavePortalContract.wave("esta é uma mensagem")
 ```
 
-Vou deixar isso para você: descubra como adicionar uma caixa de texto que permite aos usuários adicionar sua própria mensagem personalizada que eles podem enviar para a função wave 😊
+>**🎯 Desafio:**
+Descubra como adicionar uma caixa de texto que permite aos usuários adicionar sua própria mensagem personalizada que eles podem enviar para a função wave 😊
 
-O objetivo? Você quer dar aos seus usuários a capacidade de enviar uma mensagem personalizada usando uma caixa de texto que eles podem digitar! Ou talvez você queira que eles enviem um link para um meme? Ou um link do Spotify? Você decide!
+De aos seus usuários a capacidade de enviar uma mensagem personalizada usando uma caixa de texto que eles podem digitar! Ou talvez você queira que eles enviem um link para um meme? Ou um link do Spotify? Você decide!
 
-👷‍♀️ Vá construir uma interface para o usuário!
+👷‍♀️ Vá construir uma interface para o usuário
 --------------------
 
 Vá fazer essa coisa parecer como você quer que fique! Eu não vou te ensinar muito disso aqui. Sinta-se à vontade para fazer perguntas no canal `#seção-3-ajuda`!
