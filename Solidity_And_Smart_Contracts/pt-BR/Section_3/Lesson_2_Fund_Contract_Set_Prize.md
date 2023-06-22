@@ -67,59 +67,49 @@ Vamos para `run.js` e fazemos algumas alterações para garantir que tudo funcio
 
 ```javascript
 const main = async () => {
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.1"),
-  });
-  await waveContract.deployed();
-  console.log("Endereço do contrato:", waveContract.address);
+    const waveContract = await hre.ethers.deployContract("WavePortal", { value: hre.ethers.parseEther('0.1') });
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
 
-  /*
-   * Consulta saldo do contrato
-   */
-  let contractBalance = await hre.ethers.provider.getBalance(
-    waveContract.address
-  );
-  console.log(
-    "Saldo do contrato:",
-    hre.ethers.utils.formatEther(contractBalance)
-  );
+    /*
+    * Consulta saldo do contrato
+    */
+    let contractBalance = await hre.ethers.provider.getBalance(
+        waveContract.target
+    );
+    console.log(
+        "Saldo do contrato:",
+        hre.ethers.formatEther(contractBalance)
+    );
 
-  /*
-   * Enviar tchauzinho
-   */
-  let waveTxn = await waveContract.wave("Uma mensagem!");
-  await waveTxn.wait();
+    /*
+    * Enviar tchauzinho
+    */
+    let waveTxn = await waveContract.wave("Uma mensagem!");
+    await waveTxn.wait();
 
-  /*
-   * Recupera o saldo do contrato para verificar o que aconteceu!
-   */
-  contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
-  console.log(
-    "Saldo do  contrato:",
-    hre.ethers.utils.formatEther(contractBalance)
-  );
+    /*
+    * Recupera o saldo do contrato para verificar o que aconteceu!
+    */
+    contractBalance = await hre.ethers.provider.getBalance(waveContract.target);
+    console.log(
+        "Saldo do  contrato:",
+        hre.ethers.formatEther(contractBalance)
+    );
 
-  let allWaves = await waveContract.getAllWaves();
-  console.log(allWaves);
+    let allWaves = await waveContract.getAllWaves();
+    console.log(allWaves);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
 ```
 
-A mágica está em `hre.ethers.utils.parseEther("0.1"),`. É aqui que eu digo: "vá e faça o deploy do meu contrato e financie-o com 0.1 ETH". Isso removerá o ETH da minha carteira e o usará para financiar o contrato. **É isso**.
+A mágica está em `hre.ethers.parseEther("0.1"),`. É aqui que eu digo: "vá e faça o deploy do meu contrato e financie-o com 0.1 ETH". Isso removerá o ETH da minha carteira e o usará para financiar o contrato. **É isso**.
 
-Eu então faço `hre.ethers.utils.formatEther(contractBalance)` para testar para ver se meu contrato realmente tem um saldo de 0.1. Eu uso uma função que o `ethers` me dá aqui chamada `getBalance` e passo o endereço do meu contrato!
+Eu então faço `hre.ethers.formatEther(contractBalance)` para testar para ver se meu contrato realmente tem um saldo de 0.1. Eu uso uma função que o `ethers` me dá aqui chamada `getBalance` e passo o endereço do meu contrato!
 
 Mas então, também queremos ver se quando chamamos `wave` se 0.0001 ETH é removido corretamente do contrato!! É por isso que eu imprimo o saldo novamente depois de chamar `wave`.
 
@@ -155,7 +145,7 @@ npx hardhat run scripts/run.js
 
 Isto é o que eu recebo:
 
-![](https://i.imgur.com/JQyLSe4.png)
+![npx hardhat run scripts/run.js](https://i.imgur.com/SEvYYZx.png)
 
 **Maravilhoso**.
 
@@ -168,40 +158,26 @@ Precisamos fazer uma pequena atualização no `deploy.js`.
 
 ```javascript
 const main = async () => {
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.001"),
-  });
-
-  await waveContract.deployed();
-
-  console.log("Endereço do WavePortal: ", waveContract.address);
+    const waveContract = await hre.ethers.deployContract("WavePortal", { value: hre.ethers.parseEther('0.001') });
+    await waveContract.waitForDeployment();
+    console.log("Contract deployed to:", waveContract.target);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
+main().catch((error) => {
     console.error(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+    process.exitCode = 1;
+});
 ```
 
 Tudo o que fiz foi financiar o contrato 0.001 ETH assim:
 
 ```javascript
-const waveContract = await waveContractFactory.deploy({
-    value: hre.ethers.utils.parseEther("0.001"),
-});
+const waveContract = await hre.ethers.deployContract("WavePortal", { value: hre.ethers.parseEther('0.001') });
 ```
 
 Eu gosto de fazer o deploy em testnets com uma quantidade menor de ETH primeiro para testar!
 
-E eu também adicionei `await waveContract.deployed()` para tornar mais fácil para eu saber quando ele foi implantado!
+E eu também adicionei `await waveContract.waitForDeployment();` para tornar mais fácil para eu saber quando ele foi implantado!
 
 Fácil!
 

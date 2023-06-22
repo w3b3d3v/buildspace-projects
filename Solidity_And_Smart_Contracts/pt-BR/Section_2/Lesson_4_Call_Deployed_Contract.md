@@ -193,6 +193,10 @@ const wave = async () => {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
+
+        /*
+        * Você está usando o contractABI aqui
+        */
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
         let count = await wavePortalContract.getTotalWaves();
@@ -236,7 +240,7 @@ As possibilidades são infinitas.
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------
 
-*Nota: se você não fizer isso, Daniel ficará muito triste :(.*
+*Nota: se você não fizer isso, Daniel ficará muito triste :(*
 
 Personalize um pouco seu site para mostrar o número total de tchauzinhos. Talvez mostrar uma barra de carregamento enquanto o tchauzinho está sendo minerada, o que você quiser. Faça algo um pouco diferente!
 
@@ -245,4 +249,4 @@ Quando sentir que está pronto, compartilhe o link do seu site conosco no canal 
 🎁 Encerramento
 --------------------
 
-Você está a caminho de conquistar a web descentralizada. IMPRESSIONANTE. Dê uma olhada em todo o código que você escreveu nesta seção visitando [este link](https://gist.github.com/danicuki/882259a049077bc8c8d228405b6c8c12) para ter certeza de que está no caminho certo com seu código!
+Você está a caminho de conquistar a web descentralizada. **IMPRESSIONANTE**. Dê uma olhada em todo o código que você escreveu nesta seção visitando [este link](https://gist.github.com/danicuki/882259a049077bc8c8d228405b6c8c12) para ter certeza de que está no caminho certo com seu código!

@@ -7,7 +7,6 @@ Abra o arquivo `App.jsx` em `src`, é aqui que faremos todo o nosso trabalho.
 
 Se estivermos logados na Metamask, ela injetará automaticamente um objeto especial chamado `ethereum` em nossa janela. Vamos verificar primeiro se temos isso.
 
-
 ```javascript
 import React, { useEffect } from "react";
 import { ethers } from "ethers";
@@ -61,7 +60,7 @@ export default function App() {
 🔒 Veja se podemos acessar a conta do usuário
 -----------------------------------------
 
-Então quando você executar o projeto, deverá ver a linha "Temos o objeto ethereum" impressa no console do site quando for inspecioná-lo. Se você estiver usando o Replit, verifique se está olhando para o console do site do seu projeto, não para o espaço de trabalho do Replit! Você pode acessar o console do seu site abrindo-o em sua própria janela/guia e iniciando as ferramentas do desenvolvedor. 
+Então quando você executar o projeto, deverá ver a linha "Temos o objeto ethereum" impressa no console do site quando for inspecioná-lo. Se você estiver usando o Replit, verifique se está olhando para o console do site do seu projeto, não para o espaço de trabalho do Replit! Você pode acessar o console do seu site abrindo-o em sua própria janela/guia e iniciando as ferramentas do desenvolvedor.
 
 O endereço da nova janela no navegador deve ser algo como - `https://projeto-tchauzinho.seuusuario.repl.co/`. É nesta janela que você pode clicar com o botão direito do mouse e selecionar a opção Inspecionar para conseguir ver o `Console` e as mensagens de log.
 
@@ -252,10 +251,10 @@ Também adicionei um botão para que possamos chamar nossa função `connectWall
 
 **Dica:** Para o seu aprendizado é importante você ler o código e identificar o que está mudando entre uma versão e outra e entender o que faz cada nova linha adicionada. Se você somente copiar e colar, terá dificuldades nas etapas seguintes.
 
-🌐 Conecte-se!
+🌐 Conecte-se
 -----------
 
-Agora, é hora da mágica! 🪄
+Agora, é hora da mágica! ✨
 
 Confira [esse vídeo que preparei pra você](https://www.loom.com/share/2a5794fca9064a059dca1989cdfa2c37?t=0).
 

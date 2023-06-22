@@ -64,8 +64,6 @@ Seguem alguns *faucets* onde você pode solicitar ETH falso para a rede *Sepolia
 | Alchemy | <https://sepoliafaucet.com/>
 | Chainlink | <https://faucets.chain.link/sepolia>
 
-Para o MyCrypto, você precisará conectar sua carteira, criar uma conta e clicar no mesmo link novamente para solicitar fundos.
-
 🙃 Está com problemas para obter ETH na Testnet?
 -----------------------------------
 
@@ -77,7 +75,7 @@ Se os links acima não funcionarem, entre no [Discord da web3dev](https://discor
 Precisaremos alterar nosso arquivo `hardhat.config.js`. Você pode encontrá-lo no diretório raiz do seu projeto de contrato inteligente.
 
 ```javascript
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
   solidity: "0.8.0",
@@ -90,13 +88,15 @@ module.exports = {
 };
 ```
 
-🚨 **Atenção:** NÃO FAÇA COMMIT DESTE ARQUIVO NO GITHUB, ELE POSSUI A SUA CHAVE PRIVADA. VOCÊ VAI SER HACKEADO + ROUBADO SE ESSA CHAVE VAZAR. ESTA CHAVE PRIVADA É A MESMA DA MAINNET. NÃO USE A SUA CARTEIRA PESSOAL QUE TENHA TOKENS NA MAINNET. CRIE UMA NOVA CHAVE PRIVADA E NOVA CARTEIRA SÓ PRA ISSO.
+> 🚨 **Atenção:**
+  **NÃO FAÇA COMMIT DESTE ARQUIVO NO GITHUB**, ELE POSSUI A SUA CHAVE PRIVADA. **VOCÊ VAI SER HACKEADO + ROUBADO SE ESSA CHAVE VAZAR.** ESTA CHAVE PRIVADA É A MESMA DA MAINNET. **NÃO USE A SUA CARTEIRA PESSOAL QUE TENHA TOKENS NA MAINNET.** CRIE UMA NOVA CHAVE PRIVADA E NOVA CARTEIRA SÓ PRA ISSO.
 
-Falaremos sobre variáveis `.env` mais tarde e como manter essas coisas em segredo.
+**Falaremos sobre variáveis `.env` mais tarde e como manter essas coisas em segredo.**
 
 Você pode pegar a URL da API no painel do Alchemy e colá-lo. Em seguida, você precisará da sua chave **privada** sepolia (não sua chave pública!), que você pode pegar da Metamask e colá-la lá também.
 
-ℹ️ **Nota:** O acesso à sua chave privada pode ser feito abrindo a MetaMask, alterando a rede para "Sepolia Test Network" e depois clicando nos três pontos e selecionando "Account Details" > "Export Private Key"
+> ℹ️ **Nota:**
+O acesso à sua chave privada pode ser feito abrindo a MetaMask, alterando a rede para "Sepolia Test Network" e depois clicando nos três pontos e selecionando "Account Details" > "Export Private Key"
 
 Por que você precisa usar sua chave privada? Porque para realizar uma transação como o deploy de um contrato, você precisa "fazer login" na blockchain. E, seu nome de usuário é seu endereço público e sua senha é sua chave privada. É como fazer login na AWS ou no GCP para fazer o deploy.
 

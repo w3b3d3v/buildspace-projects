@@ -21,7 +21,7 @@ Vá para o seu terminal e abra uma **nova janela ou aba do terminal**. Nesta jan
 npx hardhat node
 ```
 
-💥 BOOM 💥 
+💥 BOOM 💥
 
 Você acabou de iniciar uma rede local Ethereum que **permanece viva**. E, como você pode ver, a Hardhat nos deu 20 contas para trabalhar e deu a todas elas 10.000 ETH, agora estamos ricos! Uau! Melhor projeto de todos os tempos. 😃
 
@@ -33,30 +33,23 @@ Na pasta `scripts`, crie um arquivo chamado `deploy.js`. Aqui está o código pa
 
 ```javascript
 const main = async () => {
+  let provider = ethers.getDefaultProvider();
   const [deployer] = await hre.ethers.getSigners();
-  const accountBalance = await deployer.getBalance();
+  const accountBalance = await provider.getBalance(deployer.address);
 
   console.log("Deploying contracts with account: ", deployer.address);
   console.log("Account balance: ", accountBalance.toString());
 
-  const Token = await hre.ethers.getContractFactory("WavePortal");
-  const portal = await Token.deploy();
-  await portal.deployed();
+  const Token = await hre.ethers.deployContract("WavePortal");
+  const portal = await Token.waitForDeployment();
 
-  console.log("WavePortal address: ", portal.address);
+  console.log("WavePortal address: ", portal.target);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.error(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 ```
 
 Esse código é parecido com o `run.js` mas cuidado pra não se confundir.
@@ -80,7 +73,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 Ok, então uma vez que executamos, isso é o que a gente recebe:
 
-![](https://i.imgur.com/BzoSlsu.png)
+![npx hardhat run scripts/deploy.js --network localhost](https://i.imgur.com/f3GbQjq.png)
 
 Épico.
 
@@ -88,12 +81,11 @@ Implantamos o contrato e também temos seu endereço na blockchain! Nosso site v
 
 Na janela do seu terminal que mantém sua rede local Ethereum ativa, você verá algo novo!
 
-![](https://i.imgur.com/DmhZRJN.png)
+![npx hardhat node](https://i.imgur.com/uqUpflu.png)
 
-INTERESSANTE. Mas... o que é **gas**? O que significa bloco nº 1? O que é o código grande ao lado de "Transaction"? 
+INTERESSANTE. Mas... o que é **gas**? O que significa bloco nº 1? O que é o código grande ao lado de "Transaction"?
 
 [Artigo Web3dev sobre gas](https://www.web3dev.com.br/aiengineer13/o-que-e-gas-2ned)
-
 
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------

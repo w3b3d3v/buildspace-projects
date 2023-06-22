@@ -7,7 +7,7 @@ Por enquanto, tudo o que você precisa saber é que um contrato inteligente é u
 
 Então, neste caso, queremos que as pessoas façam 👋 para nós. De forma geral:
 
-1\. **Vamos escrever um Contrato Inteligente (ou Smart Contract).** Esse contrato tem toda a lógica de como os 👋 s são tratados. Isso é como o código do seu servidor.
+1\. **Vamos escrever um Contrato Inteligente (ou Smart Contract).** Esse contrato tem toda a lógica de como os 👋 são tratados. Isso é como o código do seu servidor.
 
 2\. **Nosso contrato inteligente será implantado na blockchain.** Dessa forma, qualquer pessoa no mundo poderá acessar e executar nosso contrato inteligente (se dermos permissão para isso). Então, praticamente como um servidor 😃.
 
@@ -46,13 +46,13 @@ Vá em frente e execute `cd` para o diretório em que você deseja trabalhar. Qu
 mkdir meu-portal-tchauzinho
 cd meu-portal-tchauzinho
 npm init -y
-npm install --save-dev hardhat@2.9.9
+npm install --save-dev hardhat@2.15.0
 ```
 
 👏 Comece o projeto de exemplo
 ---------------------------
 
-**Obs:** Recomendo usar a versão `16` do `Node.js`.
+**Obs:** Recomendo usar a versão `18` do `Node.js`.
 
 Legal, agora devemos ter o Hardhat. Vamos começar um projeto de exemplo.
 
@@ -66,21 +66,21 @@ npx hardhat
 
 Após executar você vai ter uma opção de seleção como esta :
 
-![](https://i.imgur.com/3GnYFoD.png)
+![npx hardhat](https://i.imgur.com/tcbPgMD.png)
 
-Selecione a primeira : `Create a basic sample project`
+Selecione a primeira : `Create a JavaScript project`
 
 Após você pode selecionar (y) a todas opções.
 
-O projeto de exemplo solicitará que você instale o hardhat-waffle e o hardhat-ethers. Essas são outras "guloseimas" que usaremos mais tarde 😀.
+O projeto de exemplo solicitará que você instale o hardhat-toolbox. Essa é uma das "guloseimas" que usaremos mais tarde 😀.
 
 Vá em frente e instale essas outras dependências caso não tenha feito isso automaticamente.
 
 ```bash
-npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+npm install --save-dev "hardhat@^2.15.0" "@nomicfoundation/hardhat-toolbox@^3.0.0"
 ```
 
-Finalmente, execute `npx hardhat accounts`, o que deverá imprimir um monte de strings que se parecem com:
+Finalmente, execute `npx hardhat node`, o que deverá imprimir um monte de strings que se parecem com:
 
 `0xa0Ee7A142d267C1f36714E4a8F75612F20a79720`
 
@@ -103,13 +103,13 @@ npx hardhat test
 
 Você deve ver algo assim:
 
-![](https://i.imgur.com/rjPvls0.png)
+![npx hardhat test](https://i.imgur.com/sdWzFl3.png)
 
 Vamos fazer uma pequena limpeza.
 
 Vá em frente e abra o código do projeto em seu editor de código favorito. Gostamos mais do VSCode! Queremos excluir todo o código inicial inútil gerado para nós. Não precisaremos de nada disso. Somos profissionais ;)!
 
-Vá em frente e exclua o arquivo `sample-test.js` em `test`. Além disso, exclua `sample-script.js` em `scripts`. Em seguida, exclua `Greeter.sol` em `contracts`. Não exclua as pastas!
+Vá em frente e exclua o arquivo `Lock.js` em `test`. Além disso, exclua `deploy.js` em `scripts`. Em seguida, exclua `Lock.sol` em `contracts`. **Não exclua as pastas!**
 
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------

@@ -26,7 +26,7 @@ Bem, basicamente a Metamask tentará estimar quanto gas a transação usará. Ma
 
 Estimar o gas é um problema difícil e uma solução fácil para ele (para que nossos usuários não fiquem bravos quando uma transação falha) é definir um limite.
 
-No App.js, alterei a linha que envia o tchauzinho para
+No `App.jsx`, alterei a linha que envia o tchauzinho para
 
 ```solidity
 wavePortalContract.wave(message, { gasLimit: 300000 })
@@ -146,9 +146,10 @@ npm install --save dotenv
 Seu arquivo hardhat.config.js seria algo como:
 
 ```javascript
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.0",
   networks: {
@@ -167,7 +168,7 @@ module.exports = {
 
 E seu arquivo .env seria algo como:
 
-```
+```.env
 STAGING_ALCHEMY_KEY=BLAHBLAH
 PROD_ALCHEMY_KEY=BLAHBLAH
 PRIVATE_KEY=BLAHBLAH
@@ -187,7 +188,7 @@ Manteremos todos informados sobre novos projetos no Discord 😊
 🤟 Sua NFT
 -----------
 
-Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@vitordev`.
+Enviaremos sua NFT por airdrop nos próximos dias e enviaremos um e-mail assim que ela estiver em sua carteira. Está rodando em um cron job! Se você não receber o e-mail em 24 horas, por favor, envie-nos uma mensagem no discord e marque o `@lorenzo_wb`.
 
 ### 🌈 Antes de você ir embora
 

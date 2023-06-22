@@ -29,23 +29,16 @@ Copie e cole o conteúdo abaixo e salve no arquivo **`run.js`**:
 
 ```javascript
 const main = async () => {
-  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-  const waveContract = await waveContractFactory.deploy();
-  await waveContract.deployed();
-  console.log("Contract deployed to:", waveContract.address);
+  const waveContract = await hre.ethers.deployContract("WavePortal");
+  await waveContract.waitForDeployment();
+  console.log("Contract deployed to:", waveContract.target);
 };
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
-runMain();
 ```
 
 Impressionante.
@@ -56,30 +49,26 @@ Impressionante.
 Novamente indo linha por linha.
 
 ```javascript
-const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
+const waveContract = await hre.ethers.deployContract("WavePortal");
 ```
 
 Esse trecho compilará nosso contrato e gerará os arquivos necessários que precisamos para trabalhar com nosso contrato no diretório `artifacts`. Vá dar uma olhada depois que colocar para executar 😊
 
 ```javascript
-const waveContract = await waveContractFactory.deployed();
+await waveContract.waitForDeployment();
 ```
 
 Isso é bem loko 😊
 
 O que está acontecendo aqui é que a Hardhat criará uma rede Ethereum local, mas apenas para este contrato. Então, depois que o script for concluído, ele destruirá essa rede local. Então, toda vez que você executar o contrato, será uma nova blockchain. Qual é o ponto? É como atualizar seu servidor local todas as vezes para que você sempre comece de um papel em branco, o que facilita a depuração dos erros.
 
-```javascript
-await waveContract.deploy();
-```
-
 Vamos esperar até que o nosso contrato seja oficialmente implantado na nossa blockchain local! Nosso `constructor` é executado quando fazemos o deploy.
 
 ```javascript
-console.log("Contract deployed to:", waveContract.address);
+console.log("Contract deployed to:", waveContract.target);
 ```
 
-Finalmente, uma vez implantado, o `waveContract.address` basicamente nos dará o endereço do contrato. Este endereço é a forma como podemos encontrar nosso contrato na blockchain. Existem milhões de contratos no blockchain real. Assim, este endereço nos dá acesso fácil ao contrato com o qual estamos interessados em trabalhar! Isso será mais importante um pouco mais tarde, quando implantarmos em uma rede Ethereum real.
+Finalmente, uma vez implantado, o `waveContract.target` basicamente nos dará o endereço do contrato. Este endereço é a forma como podemos encontrar nosso contrato na blockchain. Existem milhões de contratos no blockchain real. Assim, este endereço nos dá acesso fácil ao contrato com o qual estamos interessados em trabalhar! Isso será mais importante um pouco mais tarde, quando implantarmos em uma rede Ethereum real.
 
 Vamos executá-lo!
 
@@ -89,8 +78,7 @@ npx hardhat run scripts/run.js
 
 Você deverá ver seu `console.log` rodando dentro do contrato e então você também deverá ver o endereço do contrato impresso!!! Aqui está o que apareceu pra mim:
 
-![](https://i.imgur.com/QuQjT5v.png)
-
+![npx hardhat run scripts/run.js](https://i.imgur.com/yoizzcV.png)
 
 🎩 Hardhat e HRE
 ----------------
