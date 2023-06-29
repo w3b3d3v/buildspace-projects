@@ -70,7 +70,7 @@ Por favor, faça isso, senão o danicuki ficará triste 😟
 
 Ei! vá em frente e diga gm em `#gm` no Discord. Isto é muito importante. Extremamente importante. Se você não fizer isso, então toda a humanidade saltará coletivamente e romperá a órbita da Terra causando a colisão com Vênus.
 
-Por falar nisso se você quiser fazer um tweet dizendo ao mundo que você está construindo um aplicativo com Solana Pay hoje e marcar a [@_webdev](https://twitter.com/web3dev_), vá em frente!
+Por falar nisso se você quiser fazer um tweet dizendo ao mundo que você está construindo um aplicativo com Solana Pay hoje e marcar a [@webdev_](https://twitter.com/web3dev_), vá em frente!
 
 Nós sempre dizemos isso, mas 
 1) Esse tweet poderia inspirar outra pessoa a se juntar à web3.  
