@@ -22,11 +22,10 @@ Essa ação cria o container para os contratos que vamos dar deploy, on-chain. *
 
 Agora precisamos escrever alguns scripts que nos permitem criar/dar deploy no nosso contrato para a Goerli usando o thirdweb. A primeira coisa que nós precisamos fazer é criar um arquivo `.env` na raiz do seu projeto que se parece com isso:
 
-```plaintextPRIVATE_KEY
-WALLET_ADDRESS
-QUICKNODE_API_URL
-THIRDWEB_CLIENT_ID 
-THIRDWEB_SECRET_KEY 
+```plaintext
+PRIVATE_KEY=SUA_CHAVE_PRIVADA_AQUI
+WALLET_ADDRESS=ENDEREÇO_DA_SUA_CARTEIRA
+QUICKNODE_API_URL=SUA_QUICKNODE_API_URL
 ```
 
 *Nota: está no Replit? Você vai precisar usar [isto](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables). Basicamente arquivos .env não funcionam no Replit. Você precisa usar esse método para adicionar suas variáveis uma por uma com os mesmos nomes. Quando você terminar você precisará reiniciar o Replit parando e rodando o repositóro de novo, para que ele possa ter acesso as novas variáveis de ambiente!*
@@ -39,16 +38,15 @@ Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zend
 
 E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://www.web3dev.com.br/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
 
-### 🚀 Serviços da Thirdweb.
+### 🚀 QuickNode.
 
-A última coisa que você precisa no seu arquivo `.env` são as credenciais da Thirdweb.
+A última coisa que você precisa no seu arquivo `.env` é a `QUICKNODE_API_URL`.
 
-Os serviços da Thirdweb são essenciais para facilitar a criação e o deploy dos nossos smart contracts. Eles fornecem uma plataforma robusta para criação e deploy dos nossos smart contracts de maneira eficiente.
+QuickNode essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos miners na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir dai, todo mundo atualiza a sua cópia da blockchain.
 
-Para dar continuidade, vamos integrar os serviços da Thirdweb para criação e deploy dos nossos smart contracts. [Crie uma chave de API da Thirdweb](https://thirdweb.com/create-api-key) para acessar esses recursos.
+Então, [faça uma conta na QuickNode](https://www.quicknode.com/).
 
-Agora, você deve ter `THIRDWEB_CLIENT_ID` e `THIRDWEB_SECRET_KEY` no seu arquivo `.env`!
-
+Você deve ter por agora os três itens no seu arquivo `.env`!
 
 ### 🥳 Inicializando o SDK
 
@@ -75,10 +73,12 @@ if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "") {
 }
 
 
-const sdk = ThirdwebSDK.fromPrivateKey(process.env.PRIVATE_KEY, "goerli", {
-  clientId: process.env.THIRDWEB_CLIENT_ID, // Cliente ID gerado pela API do ThirdWeb
-  secretKey: process.env.THIRDWEB_SECRET_KEY, // Secret Key gerado pela API do ThirdWeb
-});
+const sdk = ThirdwebSDK.fromPrivateKey(
+  // A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
+  process.env.PRIVATE_KEY,
+  // RPC URL
+  process.env.QUICKNODE_API_URL
+);
 
 (async () => {
   try {
