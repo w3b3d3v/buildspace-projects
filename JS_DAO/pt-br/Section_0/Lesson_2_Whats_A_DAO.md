@@ -45,7 +45,7 @@ Se você ainda não entendeu, não se preocupe. **Vamos começar a codar e criar
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(*
+*Por favor faça isso ou Yan vai ficar triste :(*
 
 Ei! em `#progresso` diga pra gente que tipo de DAO você vai construir nesse projeto. Quanto mais divertido, melhor. Se você não sabe ainda, jogue qualquer coisa lá! Exemplos:
 

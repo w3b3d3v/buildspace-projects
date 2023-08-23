@@ -92,6 +92,6 @@ A propósito - Aqui eu faço `<h1>Bem-vind@s à MTBDAO - a DAO dos pedaleiros de
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(*
+*Por favor faça isso ou Yan vai ficar triste :(*
 
 Poste uma captura de tela em `#progresso` mostrando a página de boas vindas da sua DAO com o botão de conectar na carteira. É melhor que não esteja escito MTBDAO!

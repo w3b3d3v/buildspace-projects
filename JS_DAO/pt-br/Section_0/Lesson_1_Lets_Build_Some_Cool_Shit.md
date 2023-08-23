@@ -24,7 +24,7 @@ Você só será elegível para o NFT se terminar dentro de 9 dias após a inscri
 
 A sua turma terá um nome especial que aparecerá no NFT - cada turma tem um nome diferente! Além disso, o # embaixo à direita será o # cunhado que dependerá de quando você conquistar o NFT.
 
-**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com o `vitordev#1838` no Discord!**
+**Nota: pode levar até 7 dias para seu NFT chegar (você também receberá um e-mail!). Se já se passaram mais de 7 dias, entre em contato com os monitores através do cargo `@Monitores Builds` em algum dos canais de Build no nosso Discord 😃.**
 
 ### **🤚 Como conseguir ajuda.**
 
@@ -36,7 +36,7 @@ Esse projeto é dividido em 4 sessões. Você pode ver em que seção você est�
 
 ### **🤘 Viu algum problema? Quer melhorar algo? Resolva você mesmo ;).**
 
-**[Todo esse conteúdo é completamente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Se você ver um problema, erro de digitação, etc - você pode ajustar você mesmo facilmente e fazer um PR! Se você precisa de ajuda para fazer isso, mande uma DM para `vitordev#1838` no Discord 😃.
+**[Todo esse conteúdo é completamente open-source](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. Se você ver um problema, erro de digitação, etc - você pode ajustar você mesmo facilmente e fazer um PR! Se você precisar de alguma ajuda para fazer isso marque peça ajuda para um monitor mencionando o cargo `@Monitores Builds` em algum dos canais de Build no nosso Discord 😃.
 
 Por último mas não menos importante, deixe uma ⭐ no repositório se sentir que deve!
 
@@ -44,7 +44,7 @@ Vamos lá lhe dar o repositório open source!!!
 
 ### 👀 **Curioso para trabalhar com web3?**
 
-**As pessoas tendem a pensar que a web3 só precisa de pessoas que podem desenvolver smart contrats ou escrever codido que interage com a blockchain. Isso não é verdade.**
+**As pessoas tendem a pensar que a web3 só precisa de pessoas que podem desenvolver smart contrats ou escrever codigo que interage com a blockchain. Isso não é verdade.**
 
 Existe muito trabalho a fazer e a maior parte nem tem a ver com smart contracts lol. Ser um engenheiro na web3 só significa que você usa suas habilidades da web2 e as aplica na web3.
 

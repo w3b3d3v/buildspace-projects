@@ -20,7 +20,7 @@ Essa ação cria o container para os contratos que vamos dar deploy, on-chain. *
 
 ### 📝 Crie um lugar para rodar os scripts do thirdweb.
 
-Agora precisamos escrever alguns scripts que nos permitem criar/dar deploy no nosso contrato para a Goerli usando o thirdweb. A primeira coisa que nós precisamos fazer é criar um arquivo `.env` na raiz do seu projeto que se parece com isso:
+Agora precisamos escrever alguns scripts que nos permitem criar/dar deploy no nosso contrato para a Mumbaiusando o thirdweb. A primeira coisa que nós precisamos fazer é criar um arquivo `.env` na raiz do seu projeto que se parece com isso:
 
 ```plaintext
 PRIVATE_KEY=SUA_CHAVE_PRIVADA_AQUI
@@ -230,7 +230,7 @@ Você pode até ir para o IPFS diretamente usando a URI `ipfs://` (nota - não v
 
 *Nota: IPFS é basicamente um sistema de armazenamento descentralizado. Temos vários artigos sobre o tema [nas páginas da comunidade](https://www.web3dev.com.br/t/ipfs) e [vídeos no nosso YouTube](https://www.youtube.com/watch?v=GZCUdnIuZD8&list=PLVX4xVoD65UMJmx0RabEw-Cv0PDxoLWDs)
 
-Se você desenvolveu um smart contract personalizado em Solidity antes, isso é um pouco de explodir cabeças. Nós já temos um contrato lançado na Goerli + dados hospedados no IPFS. Louco. Seguindo, nós precisamos de fato criar nossos NFTs!
+Se você desenvolveu um smart contract personalizado em Solidity antes, isso é um pouco de explodir cabeças. Nós já temos um contrato lançado na Mumbai+ dados hospedados no IPFS. Louco. Seguindo, nós precisamos de fato criar nossos NFTs!
 
 ### 🚨 Relatório de Progresso
 

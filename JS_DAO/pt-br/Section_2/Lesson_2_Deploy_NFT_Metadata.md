@@ -120,6 +120,6 @@ Boom! Nós interagimos com o nosso smart contract com sucesso e demos ao nosso N
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou o danicuki vai ficar triste :(.*
+*Por favor faça isso ou o Yan vai ficar triste :(.*
 
 Ei! Vá em frente e compartilhe o NFT de filiação que você escolheu em `#progresso` e diga para nós por que você escolheu esse NFT épico para sua DAO

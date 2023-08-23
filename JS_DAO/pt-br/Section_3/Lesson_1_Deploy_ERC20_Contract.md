@@ -225,7 +225,7 @@ Okay, então agora se eu for ver meu contrato ERC-20 na Etherscan, eu posso ver 
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(.*
+*Por favor faça isso ou Yan vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela em `#progresso` do contrato do seu token na Etherscan que mostre o nome do token, fornecimento, etc!
 

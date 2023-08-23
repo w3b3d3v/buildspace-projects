@@ -21,7 +21,7 @@ Aqui está um vídeo que eu fiz explicando sobre o Replit em um projeto passado:
 
 Se você não quer usar o Replit, não precisa.
 
-Começe indo [aqui](https://github.com/w3b3d3v/dao-app-web3dev) onde você acha o código do repositório. A partir disso você vai querer clicar no botão "Fork" no topo direito da página:
+Começe indo [aqui](https://github.com/w3b3d3v/dao-app-web3dev) onde você acha o código do repositório. A partir disso você clique no botão "Fork" no topo direito da página:
 
 ![Fork](https://i.imgur.com/OnOIO2A.png)
 
@@ -70,7 +70,7 @@ Uma vez que sua carteira estiver configurada, certifique-se de mudar para a rede
 
 Nós **não** vamos fazer o deploy na rede mainnet do Ethereum. Por que? Porque custa dinheiro de verdade e não vale a pena quando se está testando. Nós vamos começar com uma "testnet" que é um clone da "mainnet" mas que usa dinheiro de mentira para que possamos testar o tanto que quisermos. Mas é importante saber que que testnets são rodadas por miners que imitam os cenários do mundo real.
 
-Para conseguirmos ETH falso, precisamos pedir alguns para a rede. **Esse ETH falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns Ethereum falsos para o Goerli por um faucet. Você só precisa achar algum que funcione.
+Para conseguirmos ETH falso, precisamos pedir alguns para a rede. **Esse ETH falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns Ethereum falsos para o Mumbaipor um faucet. Você só precisa achar algum que funcione.
 
 Para o MyCrypto, você vai precisar conectar a sua carteira, criar uma conta e então clicar no mesmo link para pedir fundos. Para o faucet oficial do Goerli, se listar 0 "peers", não vale o tempo para fazer um tweet/post público no Facebook.
 
@@ -79,8 +79,8 @@ Seguem alguns _faucets_ onde você pode solicitar ETH falso para a rede _Goerli_
 | Name             | Link                                  | Amount          | Time         |
 | ---------------- | ------------------------------------- | --------------- | ------------ |
 | MyCrypto         | https://app.mycrypto.com/faucet       | 0.01            | None         |
-| Official Goerli  | https://goerlifaucet.com/             | 0.2             | 24 Hours     |
-| Chainlink        | https://faucets.chain.link/goerli     | 0.1             | None         |
+| Official Mumbai | https://goerlifaucet.com/             | 0.2             | 24 Hours     |
+| Chainlink        | https://faucets.chain.link/Mumbai    | 0.1             | None         |
 
 Quando sua transação for minerada, você terá alguns ETH fake na sua carteira.
 
@@ -90,4 +90,4 @@ Quando sua transação for minerada, você terá alguns ETH fake na sua carteira
 
 *Por favor faça isso ou Yan ficará triste 😃*
 
-Em `#progresso` envie uma captura de tela da sua Metamask mostrando o balanço total na rede Goerli como na imagem acima.
+Em `#progresso` envie uma captura de tela da sua Metamask mostrando o balanço total na rede Mumbaicomo na imagem acima.
