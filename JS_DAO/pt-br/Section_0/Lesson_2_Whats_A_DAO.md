@@ -14,7 +14,7 @@ Eu sinto que mesmo depois de ler isso, eu ainda não entendo o que diabos é uma
 
 ![Untitled](https://i.imgur.com/ocP0bNm.png)
 
-YC tem uma abordagem extremamente centralizada onde um # pequeno de pessoas decide em qual empresa investir - o que não é ruim! Eu quero deixar claro que só porque algo é centralizado **não quer dizer que é ruim, lol.** 
+YC tem uma abordagem extremamente centralizada onde um número pequeno de pessoas decide em qual empresa investir - o que não é ruim! Eu quero deixar claro que só porque algo é centralizado **não quer dizer que é ruim, lol.** 
 
 🤠 Y-Combinator como uma DAO.
 ----------------------
@@ -36,8 +36,6 @@ Vamos dizer que 90% das pessoas na YCDAO votaram "Sim" para investir na DogDAO -
 Digamos que a DogDAO decola e se torna amplamente lucrativa vendendo aulas de adestramento de cachorro ou algo do tipo. Isso significa que o token $DOG que a YCDAO tem aumentaria em valor e a YCDAO poderia lucrar vendendo o token se eles quisessem. o token $YCDAO por si só também valorizaria porque o tesouro da YCDAO aumentou em valor graças ao seu investimento fantástico.
 
 O que é mágico aqui é que você não precisa confiar numa entidade centralizada para ter certeza de que o investimento é realmente feito. Tudo é feito automaticamente e se baseia nas regras que a DAO define quando é criada.
-
-Você definitivamente deveria ler esse exemplo algumas vezes! Eu quis fazer um exemplo concreto para que fique bem fixado na sua mente. YCDAO não é real é claro, mas existem algumas pessoas usando esse modelo. [Aqui](https://www.hyperscalefund.com/) está um exemplo.
 
 **Lembre-se, no fim do dia uma DAO é só um grupo de estranhos com uma conta bancária compartilhada que votam em como usar essa conta.**
 
