@@ -13,15 +13,18 @@ import sdk from "./1-initialize-sdk.js";
   try {
     const token = sdk.getToken("INSIRA_O_ENDEREÇO_DO_TOKEN_MODULE", "token");
     // Mostre os papeis atuais.
-    const allRoles = await token.roles.getAll();
+    const allRoles = (await token).roles;
 
-    console.log("👀 Papeis que existem agora:", allRoles);
+    console.log(
+      "👀 Papeis que existem agora:",
+      await allRoles.getAll(allRoles.roles)
+    );
 
     // Remova todos os superpoderes que sua carteira tinha sobre o contrato ERC-20.
-    await token.roles.setAll({ admin: [], minter: [] });
+    await allRoles.setAll({ admin: [], minter: [] });
     console.log(
       "🎉 Papeis depois de remover nós mesmos",
-      await token.roles.getAll()
+      await allRoles.getAll(allRoles.roles)
     );
     console.log("✅ Revogados nossos super-poderes sobre os tokens ERC-20");
 
