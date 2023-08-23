@@ -174,6 +174,6 @@ Isso meio que explodiu minha mente quando eu vi pela primeira vez. *Nós literal
 
 ### 🚨 Relatório de Progresso
 
-*Por favor faça isso ou danicuki vai ficar triste :(.*
+*Por favor faça isso ou Yan vai ficar triste :(.*
 
 Vá em frente e compartilhe uma captura de tela do Etherscan em `#progresso` do seu fornecimento de tokens no seu contrato de votação. Vamos ver seu tesouro épico!

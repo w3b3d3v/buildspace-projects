@@ -32,7 +32,7 @@ A partir daí, abaixo do `console.log("👋 Address:", address);`, vamos adicion
   // ... inclua todo o seu outro código que já estava abaixo.
 ```
 
-Primeiro nós inicializados mo contrato editionDrop.
+Primeiro nós inicializamos o contrato editionDrop.
 
 A partir daí, nós usamos `bundleDropModule.balanceOf(address, "0")` para checar se o usuário tem o nosso NFT. Isso vai na verdade requisitar os dados ao nosso contrato que está na blockchain. Por que nós usamos `0`? Bem, se você se lembra o `0` é o tokenId do nosso NFT de filiação. Então aqui estamos perguntando ao nosso contrato, "Ei, esse usuário é dono de um token com o id 0?".
 
