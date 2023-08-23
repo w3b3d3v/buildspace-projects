@@ -42,7 +42,7 @@ useEffect(() => {
 
   };
   getAllAddresses();
-}, [hasClaimedNFT, editionDrop.history]);
+}, [hasClaimedNFT, editionDrop]);
 
 // Esse useEffect pega o # de tokens que cada membro tem.
 useEffect(() => {
@@ -61,7 +61,7 @@ useEffect(() => {
     }
   };
   getAllBalances();
-}, [hasClaimedNFT, token.history]);
+}, [hasClaimedNFT, token]);
 
 
 // Agora, nós combinamos os memberAddresses e os memberTokenAmounts em um único array
