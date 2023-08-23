@@ -25,7 +25,8 @@ Agora precisamos escrever alguns scripts que nos permitem criar/dar deploy no no
 ```plaintext
 PRIVATE_KEY=SUA_CHAVE_PRIVADA_AQUI
 WALLET_ADDRESS=ENDEREÇO_DA_SUA_CARTEIRA
-QUICKNODE_API_URL=SUA_QUICKNODE_API_URL
+THIRDWEB_CLIENT_ID=CLIENT_ID_GERADO_PELA_THIRDWEB
+THIRDWEB_SECRET_KEY=SECRET_KEY_GERADO_PELA_THIRDWEB
 ```
 
 *Nota: está no Replit? Você vai precisar usar [isto](https://docs.replit.com/programming-ide/storing-sensitive-information-environment-variables). Basicamente arquivos .env não funcionam no Replit. Você precisa usar esse método para adicionar suas variáveis uma por uma com os mesmos nomes. Quando você terminar você precisará reiniciar o Replit parando e rodando o repositóro de novo, para que ele possa ter acesso as novas variáveis de ambiente!*
@@ -38,15 +39,15 @@ Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zend
 
 E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://www.web3dev.com.br/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
 
-### 🚀 QuickNode.
+### 🚀 Serviços da Thirdweb.
 
-A última coisa que você precisa no seu arquivo `.env` é a `QUICKNODE_API_URL`.
+A última coisa que você precisa no seu arquivo `.env` são as credenciais da Thirdweb.
 
-QuickNode essencialmente nos ajuda a transmitir a criação do nosso smart contract para que ele possa ser pego pelos miners na testnet o mais rápido o possível. Uma vez que a transação é minerada, ela é então transmitida para a blockchain como uma transação legítima. A partir dai, todo mundo atualiza a sua cópia da blockchain.
+Os serviços da Thirdweb são essenciais para facilitar a criação e o deploy dos nossos smart contracts. Eles fornecem uma plataforma robusta para criação e deploy dos nossos smart contracts de maneira eficiente.
 
-Então, [faça uma conta na QuickNode](https://www.quicknode.com/).
+Para dar continuidade, vamos integrar os serviços da Thirdweb para criação e deploy dos nossos smart contracts. [Crie uma chave de API da Thirdweb](https://thirdweb.com/create-api-key) para acessar esses recursos.
 
-Você deve ter por agora os três itens no seu arquivo `.env`!
+Agora, você deve ter `THIRDWEB_CLIENT_ID` e `THIRDWEB_SECRET_KEY` no seu arquivo `.env` junto com sua `PRIVATE_KEY` e `WALLET_ADDRESS`!
 
 ### 🥳 Inicializando o SDK
 
@@ -64,20 +65,25 @@ if (!process.env.PRIVATE_KEY || process.env.PRIVATE_KEY == "") {
   console.log("🛑 Chave privada não encontrada.")
 }
 
-if (!process.env.QUICKNODE_API_URL || process.env.QUICKNODE_API_URL == "") {
-  console.log("🛑 Alchemy API não encontrada.")
-}
-
 if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "") {
   console.log("🛑 Endereço de carteira não encontrado.")
 }
 
+if (!process.env.THIRDWEB_CLIENT_ID || process.env.THIRDWEB_CLIENT_ID == "") {
+  console.log("🛑 Client ID não encontrado.")
+}
+
+if (!process.env.THIRDWEB_SECRET_KEY || process.env.THIRDWEB_SECRET_KEY == "") {
+  console.log("🛑 Secret Key não encontrada.")
+}
 
 const sdk = ThirdwebSDK.fromPrivateKey(
-  // A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
-  process.env.PRIVATE_KEY,
-  // RPC URL
-  process.env.QUICKNODE_API_URL
+  process.env.PRIVATE_KEY, 
+  "mumbai", //A chave privada da nossa carteira. SEMPRE MANTENHA ISSO PRIVADO, NÃO COMPARTILHE COM NINGUÉM, adicione no seu arquivo .env e NÃO comite aquele arquivo para o github!
+  {
+    clientId: process.env.THIRDWEB_CLIENT_ID, // Cliente ID gerado pela API do ThirdWeb
+    secretKey: process.env.THIRDWEB_SECRET_KEY, // Secret Key gerado pela API do ThirdWeb
+  }
 );
 
 (async () => {
