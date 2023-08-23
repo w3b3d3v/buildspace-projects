@@ -25,7 +25,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider activeChain={activeChainId}>
       <App />
     </ThirdwebProvider>
   </React.StrictMode>,
