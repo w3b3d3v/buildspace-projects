@@ -77,7 +77,7 @@ $ node scripts/8-deploy-vote.js
 
 Isso é bem legal. Basicamente, nós criamos e fizemos o deploy de um novo smart contract que vai nos permitir de fato votar em propostas on-chain. Esse é um contrato de [governança](https://docs.openzeppelin.com/contracts/4.x/api/governance?utm_source=web3dev&utm_medium=web3dev_project) padrão. Você pode ver o contrato exato que você fez o deploy [aqui](https://github.com/thirdweb-dev/contracts/blob/main/contracts/vote/VoteERC20.sol?utm_source=web3dev&utm_medium=web3dev_project).
 
-Se você for para `https://goerli.etherscan.io/` você vai ver ele lá!
+Se você for para `https://mumbai.polygonscan.com/` você vai ver ele lá!
 
 Então, agora nós temos três contratos: nosso contrato do NFT, o contrato do token, e o contrato de votação! Certifique-se de salvar o endereço do seu contrato de votação, nós vamos usá-lo novamente em um momento.
 
@@ -164,7 +164,7 @@ $ node scripts/9-setup-vote.js
 ✅ Transferiu 887433.3 tokens para o módulo de votos com sucesso
 ```
 
-Okay, preparado para ver algo épico? Vá para o seu contrato de votação no `https://goerli.etherscan.io/`. Clique no dropdown perto da palavra “Token”. Aqui você vai ver que meu contrato tem “887433,3 $BIKES” nele.
+Okay, preparado para ver algo épico? Vá para o seu contrato de votação no `https://mumbai.polygonscan.com/`. Clique no dropdown perto da palavra “Token”. Aqui você vai ver que meu contrato tem “887433,3 $BIKES” nele.
 
 Isso meio que explodiu minha mente quando eu vi pela primeira vez. *Nós literalmente temos nosso próprio tesouro.*
 
@@ -176,4 +176,4 @@ Isso meio que explodiu minha mente quando eu vi pela primeira vez. *Nós literal
 
 *Por favor faça isso ou Yan vai ficar triste :(.*
 
-Vá em frente e compartilhe uma captura de tela do Etherscan em `#progresso` do seu fornecimento de tokens no seu contrato de votação. Vamos ver seu tesouro épico!
+Vá em frente e compartilhe uma captura de tela do Polygonscan (Etherscan da Polygon) em `#progresso` do seu fornecimento de tokens no seu contrato de votação. Vamos ver seu tesouro épico!

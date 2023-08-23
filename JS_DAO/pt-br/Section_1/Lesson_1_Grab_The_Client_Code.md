@@ -62,29 +62,28 @@ Então, para nosso website se comunicar com a blockchain, nós precisamos de alg
 
 Então, vá em frente e configure tudo! A configuração deles é bem auto-explicativa.
 
-Uma vez que sua carteira estiver configurada, certifique-se de mudar para a rede "**Goerli**" que é a rede de teste que nós vamos trabalhar.
+Uma vez que sua carteira estiver configurada, certifique-se de mudar para a rede "**Mumbai**" que é a rede de teste que nós vamos trabalhar.
 
 ![Untitled](https://i.imgur.com/rx1BtmY.png)
 
 ### 💸 Certifique-se de ter fundos na rede de teste.
 
-Nós **não** vamos fazer o deploy na rede mainnet do Ethereum. Por que? Porque custa dinheiro de verdade e não vale a pena quando se está testando. Nós vamos começar com uma "testnet" que é um clone da "mainnet" mas que usa dinheiro de mentira para que possamos testar o tanto que quisermos. Mas é importante saber que que testnets são rodadas por miners que imitam os cenários do mundo real.
+Nós **não** vamos fazer o deploy na rede mainnet do Ethereum. Por que? Porque custa dinheiro de verdade e não vale a pena quando se está testando. Nós vamos começar com uma "testnet" que é um clone da "mainnet" mas que usa dinheiro de mentira para que possamos testar o tanto que quisermos. Mas é importante saber que que testnets são rodadas por miners que imitam os cenários do mundo real e no nosso caso vamos usar a testnet da rede Polygon (Que roda aplicativos Ethereum) chamada `Mumbai` porquê ela é muito boa para testes e é fácil obter MATICs falsos.
 
-Para conseguirmos ETH falso, precisamos pedir alguns para a rede. **Esse ETH falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns Ethereum falsos para o Mumbaipor um faucet. Você só precisa achar algum que funcione.
+Para conseguirmos MATIC falso, precisamos pedir alguns para a rede. **Esse MATIC falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns MATICs falsos para a Mumbai por um faucet. Você só precisa achar algum que funcione.
 
-Para o MyCrypto, você vai precisar conectar a sua carteira, criar uma conta e então clicar no mesmo link para pedir fundos. Para o faucet oficial do Goerli, se listar 0 "peers", não vale o tempo para fazer um tweet/post público no Facebook.
+Para o MyCrypto, você vai precisar conectar a sua carteira, criar uma conta e então clicar no mesmo link para pedir fundos. Para o faucet oficial do Mumbai, se listar 0 "peers", não vale o tempo para fazer um tweet/post público no Facebook.
 
-Seguem alguns _faucets_ onde você pode solicitar ETH falso para a rede _Goerli_.
+Seguem alguns _faucets_ onde você pode solicitar MATIC falso para a rede _Mumbai_.
 
 | Name             | Link                                  | Amount          | Time         |
 | ---------------- | ------------------------------------- | --------------- | ------------ |
-| MyCrypto         | https://app.mycrypto.com/faucet       | 0.01            | None         |
-| Official Mumbai | https://goerlifaucet.com/             | 0.2             | 24 Hours     |
-| Chainlink        | https://faucets.chain.link/Mumbai    | 0.1             | None         |
+| Mumbai Faucet    | https://mumbaifaucet.com/             | 0.5             | None         |
+| Chainlink        | https://faucets.chain.link/mumbai     | 0.5             | None         |
 
-Quando sua transação for minerada, você terá alguns ETH fake na sua carteira.
+Quando sua transação for minerada, você terá alguns MATIC fake na sua carteira.
 
-![Untitled](https://i.imgur.com/dNv0GXs.png)
+![Untitled](https://i.imgur.com/7faPqWJ.png)
 
 ### 🚨 Relatório de Progresso
 

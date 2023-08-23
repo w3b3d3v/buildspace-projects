@@ -12,9 +12,9 @@ Uma vez que você dá deploy no contrato, você pode interagir com ele diretamen
 
 Eu não posso ser mais claro sobre como é fácil de criar um smart contract usando o thirdweb comparado com escrever seu próprio código em Solidity, vai ser como interagir com uma biblioteca backend normal. Vamos lá:
 
-Vá para o dashboard do thirdweb [aqui](https://thirdweb.com/dashboard?utm_source=web3dev). Clique em "**Let's get started**". Conecte sua carteira. Selecione sua rede (**Goerli**).
+Vá para o dashboard do thirdweb [aqui](https://thirdweb.com/dashboard?utm_source=web3dev). Clique em "**Let's get started**". Conecte sua carteira. Selecione sua rede (**Mumbai**).
 
-Crie o seu primeiro projeto e dê um nome como "My DAO" ou algo do tipo. Quando você clicar em "Criar" você vai ver que um pop-up da Metamask é aberto e você tem que pagar uma taxa de transação na rede Goerli. Por que?
+Crie o seu primeiro projeto e dê um nome como "My DAO" ou algo do tipo. Quando você clicar em "Criar" você vai ver que um pop-up da Metamask é aberto e você tem que pagar uma taxa de transação na rede Mumbai. Por que?
 
 Essa ação cria o container para os contratos que vamos dar deploy, on-chain. **o thirdweb não tem uma base de dados, todos os seus dados são armazenados on-chain.** 
 
@@ -144,7 +144,7 @@ Certifique-se de copiar o endereço do seu app! Você vai precisar dele em um se
 
 ### 🧨 Crie uma coleção ERC-1155.
 
-O que nós vamos fazer agora é criar + fazer deploy de um contrato ERC-1155 para a Goerli. Isso é basicamente o módulo base que nós vamos precisar para criar nossos NFTs. **Nós não estamos criando nossos NFT aqui ainda, nós estamos apenas configurado os metadados ao redor da coleção em si.** Coisas como o nome da coleção (ex. CryptoPunks) e uma imagem associada com a coleção que aparece no cabeçalho do OpenSea.
+O que nós vamos fazer agora é criar + fazer deploy de um contrato ERC-1155 para a Mumbai. Isso é basicamente o módulo base que nós vamos precisar para criar nossos NFTs. **Nós não estamos criando nossos NFT aqui ainda, nós estamos apenas configurado os metadados ao redor da coleção em si.** Coisas como o nome da coleção (ex. CryptoPunks) e uma imagem associada com a coleção que aparece no cabeçalho do OpenSea.
 
 *Nota: Você deve conhecer ERC-721 onde todo NFT é único, mesmo se eles tiverem a mesma imagem, nome e propriedades. Com um ERC-1155, múltiplas pessoas podem ser holders do mesmo NFT. Nesse caso, nosso NFT de filiação é o mesmo para todo mundo, então ao invés de fazer um novo NFT todas as vezes, nós podemos simplesmente atribuir o mesmo NFT para todos os nossos membros. Isso também é mais eficiente em relação a taxas! Essa é uma abordagem bem comum para casos em que o NFT é o mesmo para todos os holders.*
 
@@ -216,7 +216,7 @@ $ node scripts/2-deploy-drop.js
 
 Okay, o que acabou de acontecer é muito lôko. Duas coisas aconteceram:
 
-**Um, nós acabamos de fazer deploy de um contrato [ERC-1155](https://docs.openzeppelin.com/contracts/3.x/erc1155) na rede Goerli.** Isso mesmo! Se você for em `https://goerli.etherscan.io/` e colar o endereço do módulo `bundleDrop`, você vai ver que você acabou de dar deploy num smart contract! A parte mais legal é que você é o **dono** desse contrato e ele foi feito usando a **sua** carteira. O endereço "From" vai ser o **seu** endereço público.
+**Um, nós acabamos de fazer deploy de um contrato [ERC-1155](https://docs.openzeppelin.com/contracts/3.x/erc1155) na rede Mumbai.** Isso mesmo! Se você for em `https://mumbai.polygonscan.com/` e colar o endereço do módulo `bundleDrop`, você vai ver que você acabou de dar deploy num smart contract! A parte mais legal é que você é o **dono** desse contrato e ele foi feito usando a **sua** carteira. O endereço "From" vai ser o **seu** endereço público.
 
 *Nota: Mantenha o endereço do seu `editionDrop` por perto, vamos precisar dele mais tarde.*
 
@@ -236,4 +236,4 @@ Se você desenvolveu um smart contract personalizado em Solidity antes, isso é 
 
 *Por favor faça isso ou Yan vai ficar triste :(.*
 
-Vá lá e compartilhe uma screenshot do Etherscan em `#progresso` mostrando o seu contrato lançado.
+Vá lá e compartilhe uma screenshot do Polygonscan (Etherscan da Polygon) em `#progresso` mostrando o seu contrato lançado.

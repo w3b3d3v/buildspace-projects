@@ -58,7 +58,7 @@ $ node scripts/5-deploy-token.js
 ✅ Módulo de token implantado com sucesso. Endereço: 0x551ab187397F8A2a7a599557C13cb2279071d4D5
 ```
 
-Boom! O deploy do contrato do token foi feito. Se você for para [`https://goerli.etherscan.io/`](https://goerli.etherscan.io/) e pesquisar o endereço do módulo do token, você vai ver o contrato que acabou de subir. Novamente, você vai ver que o deploy foi feito da **sua carteira**, então **você é o dono**.
+Boom! O deploy do contrato do token foi feito. Se você for para [`https://mumbai.polygonscan.com/`](https://mumbai.polygonscan.com/) e pesquisar o endereço do módulo do token, você vai ver o contrato que acabou de subir. Novamente, você vai ver que o deploy foi feito da **sua carteira**, então **você é o dono**.
 
 ![Untitled](https://i.imgur.com/qyKEwoI.png)
 
@@ -122,7 +122,7 @@ $ node scripts/6-print-money.js
 ✅ Agora temos 1000000.0 $BIKES em circulação
 ```
 
-Agora para a parte épica. Volte para o seu contrato ERC-20 na Etherscan. Você vai ver que você tem seu próprio rastreador de token!
+Agora para a parte épica. Volte para o seu contrato ERC-20 na Polygonscan (Etherscan da Polygon). Você vai ver que você tem seu próprio rastreador de token!
 
 ![Untitled](https://i.imgur.com/6GrjsSW.png)
 
@@ -217,7 +217,7 @@ Você poderia criar a sua própria fórmula como o ENS fez por exemplo:
 
 Você pode pensar — “As pessoas que estão recebendo o token vão ter mais poder sobre a DAO. Isso é bom? Os maiores detentores de tokens vão fazer o que é certo pra DAO?”. Isso entra num tópico chamado tokenomics o qual você pode ler sobre [aqui](https://www.web3dev.com.br/yanluiz/tokenomics-101-daos-2fii), [aqui](https://www.web3dev.com.br/arnaldocampos/introducao-a-tokenomics-3bn3) ou [aqui](https://www.web3dev.com.br/aiengineer13/entendendo-tokenomics-o-valor-real-de-uma-cripto-token-47l7). Também temos um canal exclusivo sobre #tokenomics no Discord da WEB3DEV. Vai lá! Têm várias discussões interessantes!
 
-Okay, então agora se eu for ver meu contrato ERC-20 na Etherscan, eu posso ver todos os meus novos detentores de tokens e quantos `$BIKES` eles tem.
+Okay, então agora se eu for ver meu contrato ERC-20 na Polygonscan (Etherscan da Polygon), eu posso ver todos os meus novos detentores de tokens e quantos `$BIKES` eles tem.
 
 É ISSO AÍ.
 
@@ -227,6 +227,6 @@ Okay, então agora se eu for ver meu contrato ERC-20 na Etherscan, eu posso ver 
 
 *Por favor faça isso ou Yan vai ficar triste :(.*
 
-Vá em frente e compartilhe uma captura de tela em `#progresso` do contrato do seu token na Etherscan que mostre o nome do token, fornecimento, etc!
+Vá em frente e compartilhe uma captura de tela em `#progresso` do contrato do seu token na Polygonscan (Etherscan da Polygon) que mostre o nome do token, fornecimento, etc!
 
 **A propósito, se você chegou até aqui e está se divertindo -- talvez você queira tweetar que está construindo sua própria DAO e marcar [@Web3dev_](https://twitter.com/Web3dev_) 😃?**

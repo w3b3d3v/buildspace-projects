@@ -114,7 +114,7 @@ Depois de rodar `node scripts/4-set-claim-condition.js` aqui está o que eu rece
 ✅ Condições de reinvidicação configuradas com sucesso!
 ```
 
-Boom! Nós interagimos com o nosso smart contract com sucesso e demos ao nosso NFT certas regras que ele deve seguir, isso aí! Se você copiar e colar o endereço do seu bundle drop impresso aí em cima e procurar em `https://goerli.etherscan.io/` você verá lá a prova de que nós interagimos com o contrato!
+Boom! Nós interagimos com o nosso smart contract com sucesso e demos ao nosso NFT certas regras que ele deve seguir, isso aí! Se você copiar e colar o endereço do seu bundle drop impresso aí em cima e procurar em `https://mumbai.polygonscan.com/` você verá lá a prova de que nós interagimos com o contrato!
 
 ![Untitled](https://i.imgur.com/sioQiQA.png)
 
