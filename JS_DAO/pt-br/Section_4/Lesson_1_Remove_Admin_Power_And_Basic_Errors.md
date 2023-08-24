@@ -67,6 +67,77 @@ Agora nós estamos livre de um possível "roubo" vindo de admins 😃.
 
 Você verá que ainda tenho a função `transfer` em conjunto com `AddressZero`, na matriz de papeis significa que todos podem transferir tokens (que é o que queremos). Não importa que nosso endereço também esteja lá.
 
+### Execute as propostas depois da votação.
+
+A jornada épica que trilhamos juntos está se aproximando do desfecho. Neste estágio crucial, nos deparamos com um momento de grande importância: a execução das propostas que já conquistaram seus votos.
+
+Mas antes de dar vida às decisões tomadas, temos uma tarefa essencial: identificar aquelas propostas que já completaram seu ciclo de votação e então avançaremos com a execução.
+
+Vá para `scripts/12-executing-proposals.js` e adicione:
+
+```jsx
+import sdk from "./1-initialize-sdk.js";
+
+(async () => {
+  try {
+    // inicializar o contrato de governança
+    const vote = await sdk.getContract("0x3F631d3De33BAeAF8C33E6398f903F2041Dfe25b", "vote");
+
+    // Ver todas as propostas
+    const allProposals = await vote.getAll()
+    console.log(`Total de propostas: `, allProposals);
+
+} catch (error) {
+    console.error("Falha ao listar propostas:", error);
+    process.exit(1);
+  }
+})();
+```
+
+Aqui está a saída quando eu executo `node scripts/12-executing-proposals.js`
+
+![Untitled](https://i.imgur.com/FJGYAlS.png)
+
+Repare que nossa proposta está como o `state=3` isso aconteceu porquê durante meu testes eu votei só com uma carteira e as outras se absteram então não conseguiremos excecutar essa proposta. Esse contrato de governança se baseia nos contratos do Compound e aqui estão seus valores:
+
+0.  Pending: Aguardando aprovação ou início.
+1.  Active: Em andamento ou em processo de votação.
+2.  Canceled: Cancelado e não será mais considerado.
+3.  Defeated: A proposta foi rejeitada pela maioria dos votantes.
+4.  Succeeded: A proposta foi aprovada pela maioria dos votantes
+5.  Queued: Na fila para ser processado ou executado.
+6.  Expired: O prazo para a ação ou votação terminou.
+7.  Executed: A ação ou proposta foi realizada com sucesso.
+
+Eu criei uma nova proposta e votei com outras carteiras para que pudesse ser uma proposta vencedora e aqui está o resultado após eu ter executado essa proposta:
+![Untitled](https://i.imgur.com/tynVVik.png)
+
+Note que ela está com o `state=7` de executed e você deve estar se perguntando como eu fiz isso, foi bem simples basta atualizar seu scripto com o seguinte código e então executar `node scripts/12-executing-proposals.js`
+
+```jsx
+import sdk from "./1-initialize-sdk.js";
+
+(async () => {
+  try {
+    // inicializar o contrato de governança
+    const vote = await sdk.getContract("0x3F631d3De33BAeAF8C33E6398f903F2041Dfe25b", "vote");
+
+    // Ver todas as propostas
+    const allProposals = await vote.getAll()
+    console.log(`Total de propostas: `, allProposals);
+
+    // Primeiro você deve pegar o id da proposta para depois executa-la
+    // Nese caso estou selecionando a proposta [2] que refere-se à terceira proposta que eu criei
+    const proposalId = allProposals[2].proposalId
+    console.log("Proposal Executed: ", await vote.execute(proposalId))
+
+} catch (error) {
+    console.error("Falha ao listar e executar propostas:", error);
+    process.exit(1);
+  }
+})();
+```
+
 ### 👍 Lide com erro de network não suportada.
 
 Primeiramente, vamos importar um último hook `useNetwork` no topo de `App.jsx` para poder reconhecer uma conexão de fora da rede Mumbai. Também importamos `ChainId` do thirdweb SDK:
