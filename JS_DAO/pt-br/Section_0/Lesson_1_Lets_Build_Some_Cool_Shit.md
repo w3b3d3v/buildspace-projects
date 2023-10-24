@@ -1,6 +1,6 @@
 ### **👋 Bem-Vindo(a).**
 
-Você conseguiu - Show de Bola! Bem-vindo(a) 😃. Eu me chamo [danicuki](https://twitter.com/danicuki) e eu sou quem vai conversar com você aqui. A propósito -- um salve gigante para o [Rômulo](https://twitter.com/Rod_Romulo) e [Farza do Buildspace](https://twitter.com/FarzaTV) que nos ajudaram a escrever esses documentos.
+Você conseguiu - Show de Bola! Bem-vindo(a) 😃. Eu me chamo [danicuki](https://twitter.com/danicuki) e eu sou quem vai conversar com você aqui. A propósito -- um salve gigante para o [Yan](https://twitter.com/nomadbitcoin) e [Farza do Buildspace](https://twitter.com/FarzaTV) que nos ajudaram a escrever esses documentos.
 
 Esse projeto é para devs que querem entender melhor o que diabos é uma DAO enquanto constroem uma.
 
@@ -10,7 +10,7 @@ Alguns pontos importantes para você executar antes de seguir em frente:
 
 * **Conecte o seu Discord, temos um botão conectar discord na parte superior da página**. Todas as coisas legais acontecerão em uma categoria secreta e exclusíva no Discord, à qual você só terá acesso quando conectar o seu Discord.
 * **Conecte a sua carteira Ethereum.** Lhe enviaremos um NFT assim que você finalizar este bootcamp, e se não tiver uma carteira conectada.
-* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/streams).
+* **Certifique-se de participar do kick-off ao vivo**. Se você perder, não se preocupe. Não é obrigatório comparecer! Eu também colocarei a gravação no [nosso YouTube](https://www.youtube.com/@web3dev/).
 
 ### **🤔 O que estamos construindo?**
 Confira um vídeo que fizemos cobrindo o projeto aqui:
@@ -66,4 +66,4 @@ Ei! vá em frente e diga gm em `#gm` no Discord. Isso é importante. Extremament
 
 Se você não fizer isso toda a humanidade vai coletivamente pular e pertubar a órbita da Terra a fazendo colidir com Vênus.
 
-**A propósito -- se você quiser, pode fazer um tweet mostrando ao mundo que você está fazendo sua própria DAO hoje e marcar [@Web3dev_](https://twitter.com/Web3dev_)! Eu sempre digo isso, mas 1) esse tweet pode inspirar outra pessoa a dar seus primeiros passos na web3 e 2) nos ajuda!**
+**A propósito -- se você quiser, pode fazer um tweet mostrando ao mundo que você está fazendo sua própria DAO hoje e marcar [@web3dev_](https://twitter.com/web3dev_)! Eu sempre digo isso, mas 1) esse tweet pode inspirar outra pessoa a dar seus primeiros passos na web3 e 2) nos ajuda!**

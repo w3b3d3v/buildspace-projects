@@ -8,7 +8,7 @@ Nós vamos usar essa coisa chamada [Replit](https://replit.com/~)! É uma IDE b
 
 Faça uma conta no Replit antes de continuar.
 
-Eu já criei um projeto react básico que você pode fazer **fork** no Replit. **Simplesmente vá [aqui](https://replit.com/@VitorMancio1/Dao-starter-project?v=1), e perto da direita você vai ver o botão "Fork".** cheque se você está logado, e então clique no botão.
+Eu já criei um projeto react básico que você pode fazer **fork** no Replit. **Simplesmente vá [aqui](https://replit.com/@DanielCukier/dao-app-web3dev), e perto da direita você vai ver o botão "Fork".** cheque se você está logado, e então clique no botão.
 
 Você vai magicamente clonar meu repositório e vai ter uma IDE completa no seu navegador para trabalhar com o código. Uma vez que terminar de carregar e mostrar algum código, clique em "run" no topo e você está pronto.
 

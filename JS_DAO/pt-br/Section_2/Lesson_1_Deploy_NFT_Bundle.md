@@ -234,7 +234,7 @@ Bem Épico. Um contrato customizado e lançado usando apenas javascript. Você p
 
 Você pode até ir para o IPFS diretamente usando a URI `ipfs://` (nota - não vai funcionar no Chrome porque você precisa está rodando um nó IPFS, mas funciona no Brave que faz isso por você!)
 
-*Nota: IPFS é basicamente um sistema de armazenamento descentralizado. Temos vários artigos sobre o tema [nas páginas da comunidade](https://www.web3dev.com.br/t/ipfs) e [vídeos no nosso YouTube](https://www.youtube.com/watch?v=GZCUdnIuZD8&list=PLVX4xVoD65UMJmx0RabEw-Cv0PDxoLWDs)
+*Nota: IPFS é basicamente um sistema de armazenamento descentralizado. Temos vários artigos sobre o tema [nas páginas da comunidade](https://pt.w3d.community/t/ipfs) e [vídeos no nosso YouTube](https://www.youtube.com/watch?v=GZCUdnIuZD8&list=PLVX4xVoD65UMJmx0RabEw-Cv0PDxoLWDs)
 
 Se você desenvolveu um smart contract personalizado em Solidity antes, isso é um pouco de explodir cabeças. Nós já temos um contrato lançado na Mumbai+ dados hospedados no IPFS. Louco. Seguindo, nós precisamos de fato criar nossos NFTs!
 

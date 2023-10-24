@@ -83,7 +83,7 @@ const App = () => {
             contract.erc1155.claim(0, 1)
           }}
           onSuccess={() => {
-            console.log(`🌊 Successfully Minted! Check it out on OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`);
+            console.log(`🌊 Successfully Minted! Check it out on OpenSea: https://testnets.opensea.io/assets/mumbai/${editionDrop.getAddress()}/0`)
           }}
           onError={error => {
             console.error("Failed to mint NFT", error);
