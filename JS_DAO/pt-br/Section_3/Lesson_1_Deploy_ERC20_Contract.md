@@ -215,7 +215,7 @@ Você poderia criar a sua própria fórmula como o ENS fez por exemplo:
 
 ![Untitled](https://i.imgur.com/IqboZsX.png)
 
-Você pode pensar — “As pessoas que estão recebendo o token vão ter mais poder sobre a DAO. Isso é bom? Os maiores detentores de tokens vão fazer o que é certo pra DAO?”. Isso entra num tópico chamado tokenomics o qual você pode ler sobre [aqui](https://www.web3dev.com.br/yanluiz/tokenomics-101-daos-2fii), [aqui](https://www.web3dev.com.br/arnaldocampos/introducao-a-tokenomics-3bn3) ou [aqui](https://www.web3dev.com.br/aiengineer13/entendendo-tokenomics-o-valor-real-de-uma-cripto-token-47l7). Também temos um canal exclusivo sobre #tokenomics no Discord da WEB3DEV. Vai lá! Têm várias discussões interessantes!
+Você pode pensar — “As pessoas que estão recebendo o token vão ter mais poder sobre a DAO. Isso é bom? Os maiores detentores de tokens vão fazer o que é certo pra DAO?”. Isso entra num tópico chamado tokenomics o qual você pode ler sobre [aqui](https://pt.w3d.community/yanluiz/tokenomics-101-daos-2fii), [aqui](https://pt.w3d.community/arnaldocampos/introducao-a-tokenomics-3bn3) ou [aqui](https://pt.w3d.community/aiengineer13/entendendo-tokenomics-o-valor-real-de-uma-cripto-token-47l7). Também temos um canal exclusivo sobre #tokenomics no Discord da WEB3DEV. Vai lá! Têm várias discussões interessantes!
 
 Okay, então agora se eu for ver meu contrato ERC-20 na Polygonscan (Etherscan da Polygon), eu posso ver todos os meus novos detentores de tokens e quantos `$BIKES` eles tem.
 

@@ -37,7 +37,7 @@ Para acessar sua chave privada na Metamask, veja [isto aqui](https://metamask.ze
 
 Para acessar o endereço da sua carteira, veja [isto aqui](https://metamask.zendesk.com/hc/en-us/articles/360015289512-How-to-copy-your-MetaMask-account-public-address-).
 
-E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://www.web3dev.com.br/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
+E se você quiser aprender um pouco mais sobre assinaturas digitais com chaves privadas e públicas, veja [isto aqui](https://pt.w3d.community/bernardojaymovic/porque-as-assinaturas-digitais-sao-essenciais-nas-blockchains-11i1)
 
 ### 🚀 Serviços da Thirdweb.
 
