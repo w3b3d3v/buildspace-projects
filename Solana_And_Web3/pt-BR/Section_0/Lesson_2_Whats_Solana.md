@@ -45,10 +45,10 @@ Cada blockchain tem seus próprios prós e contras. Eu não acho que nenhuma das
 
 _Esta é apenas uma opinião pessoal_, mas acho que estamos nos movendo rapidamente para um mundo onde teremos muitas blockchains diferentes (já acontecendo agora). Isso é realmente uma coisa boa. Em vez de uma blockchain ser uma vencedora clara, temos muitas chains diferentes, cada uma com suas próprias especialidades. Se você quiser depois explorar outras blockchains, saiba que existem vários canais no Discord da WEB3DEV exclusivos para cada tecnologia. Também encontra muitos vídeos no YouTube da comunidade sobre várias blockchains diferentes. Todos os vídeos são criados pelas próprias pessoas da comunidade como você!
 
-**Mas teremos [pontes](https://www.web3dev.com.br/fatimalima/o-que-sao-bridges-pontes-nocoes-basicas-fatos-e-estatisticas-do-brigde-9gm) que permitem que diferentes redes conversem entre si.**
+**Mas teremos [pontes](https://pt.w3d.community/fatimalima/o-que-sao-bridges-pontes-nocoes-basicas-fatos-e-estatisticas-do-brigde-9gm) que permitem que diferentes redes conversem entre si.**
 
 Isso significa que você pode implantar seu programa em Solana e fazer com que ele se comunique com um contrato em uma blockchain diferente como Ethereum, Avalanche, Polygon, etc. Por exemplo, você pode comprar um NFT no Ethereum e depois movê-lo para Solana, se quiser. Ou talvez você possa ter uma ponte que permita mover facilmente tokens da rede Solana para a rede Ethereum.
 
 O que seria **horrível** é se tivéssemos mais de 100 redes diferentes e **nenhuma** delas pudesse conversar umas com as outras. Então, cada rede se torna um jardim murado onde a transferência de dados entre redes é quase impossível. Os usuários perdem a liberdade de escolha.
 
-As pontes estão se tornando mais populares. Sinta-se à vontade para ler [este](https://www.web3dev.com.br/arnaldocampos/pontes-e-trocas-o-futuro-da-interoperabilidade-5dia) post sempre que quiser! Mas, por enquanto, vamos construir.
+As pontes estão se tornando mais populares. Sinta-se à vontade para ler [este](https://pt.w3d.community/arnaldocampos/pontes-e-trocas-o-futuro-da-interoperabilidade-5dia) post sempre que quiser! Mas, por enquanto, vamos construir.

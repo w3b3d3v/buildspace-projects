@@ -16,7 +16,7 @@ Eu também recomendo ler [esses](https://solidity.web3dev.com.br/) documentos qu
 
 ## ⚙️ Ferramentas para o ambiente local.
 
-Nós vamos usar muito uma ferramenta chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html). Se estiver usando Windows, pode também usar [essa página](https://www.web3dev.com.br/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3)
+Nós vamos usar muito uma ferramenta chamada **Hardhat**, a qual vai nos deixar compilar e testar rapidamente os contratos inteligentes localmente. Primeiro, você precisa ter instalado o node/npm. Se você não tiver, dê uma olhada [aqui](https://hardhat.org/tutorial/setting-up-the-environment.html). Se estiver usando Windows, pode também usar [essa página](https://pt.w3d.community/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3)
 
 _Nota: eu estou usando o Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas do Node, então se isso acontecer, use o Node 16!_
 

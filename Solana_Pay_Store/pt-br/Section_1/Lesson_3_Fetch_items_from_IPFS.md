@@ -1,6 +1,6 @@
 ## 🌐 Buscando itens no IPFS
 
-O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://www.web3dev.com.br/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://www.web3dev.com.br/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
+O próximo passo em nossa poderosa aventura é adicionar itens à nossa loja. A grande questão aqui é: onde você armazena seus arquivos? Você poderia colocá-los na AWS ou em outro fornecedor de armazenamento na nuvem, mas isso não é muito web3. Em vez disso, usaremos o [IPFS](https://pt.w3d.community/paulogio/um-guia-tecnico-para-ipfs-o-armazenamento-descentralizado-da-web3-432o), que é essencialmente um sistema de arquivo distribuído. Hoje - você pode usar algo como S3 ou GCP Storage. Mas, neste caso, podemos simplesmente confiar no IPFS, que é executado por estranhos que estão usando a rede. Dê uma rápida leitura [nisto](https://pt.w3d.community/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm) quando puder! Abrange muitos bons conhecimentos básicos 😊 .
 
 Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústria para armazenamento de ativos. É imutável, permanente e descentralizado.
 
@@ -8,7 +8,7 @@ Realmente, tudo o que você precisa saber é que o IPFS é o padrão da indústr
 
 A sua utilização é bastante simples. Tudo que você precisa fazer é carregar seus arquivos no IPFS e depois usar o hash de identificação de conteúdo único que ele lhe retorna em seu aplicativo web quando quiser baixar alguma coisa.
 
-Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://www.web3dev.com.br/paulogio/fixando-arquivos-usando-o-ipfs-1bj5)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
+Primeiro, você precisará carregar seus arquivos em um serviço especializado em "[pinning](https://pt.w3d.community/paulogio/fixando-arquivos-usando-o-ipfs-1bj5)" (fixação) — o que significa que seu arquivo será essencialmente armazenado em cache para que possa ser facilmente recuperado. Eu gosto de usar o [**Pinata**](https://www.pinata.cloud) para meu serviço de pinning — eles lhe dão 1 GB de armazenamento gratuito, o que é suficiente para muitos ativos. Basta criar uma conta, carregar os arquivos de sua loja através da interface do usuário, e pronto!
 
 ![](https://i.imgur.com/CUQ3XEy.png)
 

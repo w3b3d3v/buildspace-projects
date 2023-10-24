@@ -32,9 +32,9 @@ contract MyEpicNFT is ERC721URIStorage {
 }
 ```
 
-Várias coisas estão acontecendo aqui. Primeiro você vai ver que eu "herdei" um contrato do OpenZeppelin usando `is ERC721URIStorage` quando eu declaro o contrato. Você pode ler mais sobre herança [aqui](https://solidity.web3dev.com.br/exemplos/linguagem-v0.8.3/heranca) e [aqui](https://www.web3dev.com.br/fatimalima/heranca-em-smart-contracts-com-uso-da-metodologia-orientada-a-objetos-28fa), mas, basicamente, significa que podemos chamar outros contratos a partir do nosso. É quase como importar funções para usarmos!
+Várias coisas estão acontecendo aqui. Primeiro você vai ver que eu "herdei" um contrato do OpenZeppelin usando `is ERC721URIStorage` quando eu declaro o contrato. Você pode ler mais sobre herança [aqui](https://solidity.web3dev.com.br/exemplos/linguagem-v0.8.3/heranca) e [aqui](https://pt.w3d.community/fatimalima/heranca-em-smart-contracts-com-uso-da-metodologia-orientada-a-objetos-28fa), mas, basicamente, significa que podemos chamar outros contratos a partir do nosso. É quase como importar funções para usarmos!
 
-O padrão NFT é conhecido como `ERC721`, sobre o qual você pode ler um pouco [aqui](https://www.web3dev.com.br/lorenzobattistela/erc20-vs-erc721-vs-erc-1155-36la) e [aqui](https://eips.ethereum.org/EIPS/eip-721). O OpenZeppelin essencialmente implementa o padrão NFT para nós e deixa escrevermos nossa própria lógica e customizá-la em cima disso. Isso significa que não precisamos escrever código repetido.
+O padrão NFT é conhecido como `ERC721`, sobre o qual você pode ler um pouco [aqui](https://pt.w3d.community/lorenzobattistela/erc20-vs-erc721-vs-erc-1155-36la) e [aqui](https://eips.ethereum.org/EIPS/eip-721). O OpenZeppelin essencialmente implementa o padrão NFT para nós e deixa escrevermos nossa própria lógica e customizá-la em cima disso. Isso significa que não precisamos escrever código repetido.
 
 Eu seria louco de escrever um servidor HTTP do zero sem usar uma biblioteca, certo? Claro, a não ser que você quisesse explorar. Mas nós só queremos fazer funcionar aqui.
 

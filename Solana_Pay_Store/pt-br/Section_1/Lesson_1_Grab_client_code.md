@@ -10,7 +10,7 @@ Neste caso é muito mais fácil do que você imagina! Aqui está o plano passo a
 
 1. Obtenha o código base do aplicativo da Web para este projeto (forneci alguns HTML/CSS iniciais para que você possa se concentrar nas coisas que realmente importam 😂.
 2. Escreva o código que permitirá que os usuários conectem sua carteira Solana e se conectem ao seu aplicativo para configurar um estado de "autenticação" básico.
-3. Configure um item que você deseja vender no [IPFS](https://www.web3dev.com.br/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm).
+3. Configure um item que você deseja vender no [IPFS](https://pt.w3d.community/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm).
 4. Comece a escrever o código Solana Pay para receber pagamentos.
 
 Vai ser **MUITO MASSA**!

@@ -22,7 +22,7 @@ Em 2015, eu gostava muito de aprendizado de máquina e tudo isso ainda era muito
 
 Esse é o preço de brincar com uma tecnologia emergente 😊.
 
-Acho que Solana está em uma situação semelhante e realmente quero deixar claro - **não espere uma experiência de desenvolvedor super limpa. Você provavelmente encontrará obstáculos aleatórios e cabe a você descobrir uma resposta e ajudar os outros, você pode compartilhar artigos no nosso site [web3dev](https://www.web3dev.com.br/),além de ler alguns do site específicos de [Solana](https://www.web3dev.com.br/t/solana) isso pode te ajudar muito e poupar muito tempo, também indico dentro do nosso discord o canal `#Solana`.**
+Acho que Solana está em uma situação semelhante e realmente quero deixar claro - **não espere uma experiência de desenvolvedor super limpa. Você provavelmente encontrará obstáculos aleatórios e cabe a você descobrir uma resposta e ajudar os outros, você pode compartilhar artigos no nosso site [web3dev](https://pt.w3d.community/),além de ler alguns do site específicos de [Solana](https://pt.w3d.community/t/solana) isso pode te ajudar muito e poupar muito tempo, também indico dentro do nosso discord o canal `#Solana`.**
 
 Eu gosto deste [tweet](https://twitter.com/armaniferrante/status/1434554725093949452) também, que meio que apresenta uma ideia semelhante.
 

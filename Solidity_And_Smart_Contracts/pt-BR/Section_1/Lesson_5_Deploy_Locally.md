@@ -85,7 +85,7 @@ Na janela do seu terminal que mantém sua rede local Ethereum ativa, você verá
 
 INTERESSANTE. Mas... o que é **gas**? O que significa bloco nº 1? O que é o código grande ao lado de "Transaction"?
 
-[Artigo Web3dev sobre gas](https://www.web3dev.com.br/aiengineer13/o-que-e-gas-2ned)
+[Artigo Web3dev sobre gas](https://pt.w3d.community/aiengineer13/o-que-e-gas-2ned)
 
 🚨 Antes de clicar em "Próxima lição"
 --------------------------------------------

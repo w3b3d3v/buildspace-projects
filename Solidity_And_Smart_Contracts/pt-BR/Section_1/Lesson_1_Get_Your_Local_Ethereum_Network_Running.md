@@ -27,7 +27,7 @@ As dependências que precisam ser instaladas são:
 1. [GIT](https://git-scm.com/downloads)
 2. [Node.js](https://nodejs.org/en/download/)
 
-Preparamos um [tutorial de como preparar o seu ambiente do windows](https://www.web3dev.com.br/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3) para te ajudar nas instalações.
+Preparamos um [tutorial de como preparar o seu ambiente do windows](https://pt.w3d.community/web3melk/como-preparar-o-seu-windows-para-participar-dos-bootcamps-da-web3dev-1dc3) para te ajudar nas instalações.
 
 ✨ A magia do Hardhat
 -----------------------
