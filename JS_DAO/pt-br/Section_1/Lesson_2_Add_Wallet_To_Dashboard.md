@@ -1,5 +1,7 @@
 ### ⛓ Especificando sua rede e tipo de carteira.
 
+[Youtube](https://www.youtube.com/watch?v=LLfG5qnaJZU)
+
 Para que nosso site possa se comunicar com a blockchain, nós precisamos de alguma forma conectar nossa carteira com ele. Uma vez que nossa carteira esteja conectada, nosso website terá permissão para chamar smart contracts em nosso favor. **Lembre-se, é como se autenticar em um website.**
 
 Talvez você já tenha criado botões de "Connectar Wallet" antes! Desta vez, nós usaremos o SDK front-end do thirdweb que faz isso ser muito mais fácil.
