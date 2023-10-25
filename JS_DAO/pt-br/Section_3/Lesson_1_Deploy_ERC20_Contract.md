@@ -1,3 +1,5 @@
+[Youtube](https://www.youtube.com/watch?v=7CI6nta9dNs)
+
 Agora nossos membros tem um NFT para comprovar que são membros da nossa DAO. Perfeito. Vamos dar mais um passo. Vamos criar um fornecimento de tokens de governança para fazer um airdrop para os nosso membros.
 
 Talvez você se lembre do airdrop do token de governança da ENS DAO [aqui](https://decrypt.co/85894/ethereum-name-service-market-cap-hits-1-billion-just-days-after-ens-airdrop). O que isso tudo significa? Por que um token de governança tem uma capitalização de mercado tem quase um bilhão de dólares [nesse momento](https://coinmarketcap.com/currencies/ethereum-name-service/)?

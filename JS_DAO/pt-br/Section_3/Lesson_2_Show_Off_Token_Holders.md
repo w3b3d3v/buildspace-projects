@@ -1,5 +1,7 @@
 ### 🥺 Recuperando os Detentores do Token no Web App.
 
+[Youtube](https://www.youtube.com/watch?v=9IEfkbsUMqg)
+
 Seria legal para todos os membros da sua DAO conseguir facilmente ver todas as pessoas da DAO que detêm tokens juntamente com quantos tokens eles detêm. Para fazer isso, vamos precisar chamar nosso smart contract pelo nosso cliente e recuperar os dados.
 
 Vamos fazer isso! Vá para `App.jsx` Depois, abaixo de `editionDrop`, adicione o seu `token`.

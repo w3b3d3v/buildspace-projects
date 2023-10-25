@@ -1,5 +1,7 @@
 ### 🍪 Se familiarizando com o thirdweb.
 
+[Youtube](https://www.youtube.com/watch?v=9EOLEGhelns)
+
 Impressionante! Agora podemos nos conectar a carteria de um usuário, o que significa que podemos checar se ele está na nossa DAO! Para poder se juntar a nossa DAO, o usuário precisa de um NFT de filiação. Se ele não tiver um NFT de filiação, nós vamos incentivá-lo a cunhar um para se juntar à nossa DAO!
 
 Mas existe um problema. Para que possamos cunhar NFTs, precisamos escrever + dar deploy no nosso próprio smart contract. **É aqui em que Thirdweb brilha.**

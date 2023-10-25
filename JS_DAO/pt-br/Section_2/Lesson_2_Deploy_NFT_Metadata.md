@@ -1,5 +1,7 @@
 ### 👾 Configuração dos dados do NFT
 
+[Youtube](https://www.youtube.com/watch?v=TxZsZMK7ulo)
+
 Okay, agora nós vamos de fato fazer o deploy dos metadados associados com o nosso NFT de filiação. Nós não fizemos isso ainda. Tudo o que fizemos até agora foi criar o contrato ERC-1155 e adicionar alguns dados básicos. Não configuramos o nosso NFT de filiação de fato, vamos fazer isso!
 
 Vá para `scripts/3-config-nft.js` e adicione:

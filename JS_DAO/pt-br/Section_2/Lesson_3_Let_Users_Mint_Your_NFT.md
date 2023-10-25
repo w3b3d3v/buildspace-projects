@@ -1,3 +1,5 @@
+[Youtube](https://www.youtube.com/watch?v=aycwF88rl3g)
+
 Vamos para `App.jsx`. O que nós vamos fazer agora é
 
 1) Se detectarmos que o usuário tem um NFT de filiação, mostramos para ele nossa tela de "DAO dashboard" onde ele pode votar nas propostas e ver informações relacionadas a DAO.
