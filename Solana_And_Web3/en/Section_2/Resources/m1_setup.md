@@ -172,6 +172,11 @@ Let's now run our Solana validator
 solana-test-validator
 ```
 
+If you have this problem: Unable to connect to validator: Client error: test-ledger/admin.rpc does not exist, try running the following command before running solana-test-validator 
+
+```bash
+cd ~/
+
 This may take a bit to get started but once it's going you should see something like this:
 
 ![Untitled](https://i.imgur.com/FUjRage.jpg)
