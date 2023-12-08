@@ -168,7 +168,7 @@ module.exports = {
 
 E seu arquivo .env seria algo como:
 
-```.env
+```
 STAGING_ALCHEMY_KEY=BLAHBLAH
 PROD_ALCHEMY_KEY=BLAHBLAH
 PRIVATE_KEY=BLAHBLAH
