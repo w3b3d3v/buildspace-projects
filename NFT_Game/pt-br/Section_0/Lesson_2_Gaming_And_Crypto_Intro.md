@@ -6,7 +6,7 @@ Por que as pessoas estão perdendo a cabeça desse jeito?
 
 ![Untitled](https://i.imgur.com/wkPSIjR.png)
 
-> **📝Nota:** isso é uma NFT "Axie" - que é o personagem que você joga dentro de Axie Infinity! Jogadores compram NFTs Axie primeiro, e depois vão jogar o jogo. Bem estranho, certo? Comprar os personagens antes de você jogar o jogo!
+> 💡**Nota:** isso é uma NFT "Axie" - que é o personagem que você joga dentro de Axie Infinity! Jogadores compram NFTs Axie primeiro, e depois vão jogar o jogo. Bem estranho, certo? Comprar os personagens antes de você jogar o jogo!
 
 A filosofia da WEB3DEV é entender construindo e mexendo com a tecnologia. Mas, eu gostaria de passar por um exemplo rápido e informal 😉!
 

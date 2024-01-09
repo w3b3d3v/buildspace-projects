@@ -1,4 +1,4 @@
-_Nota: Se você já fez outros projetos na WEB3DEV, vários dos itens de configuração das próximas duas aulas são repetidos de projetos passados. Se você ja entende, incrível! Você é um pro. Sinta-se livre para passar por eles bem rápido._
+>_Se você já fez outros projetos na WEB3DEV, vários dos itens de configuração das próximas duas aulas são repetidos de projetos passados. Se você ja entende, incrível! Você é um pro. Sinta-se livre para passar por eles bem rápido._
 
 ### **📚 Um pequeno resumo sobre blockchain.**
 
@@ -20,7 +20,7 @@ Eu recomendo ler [essas](https://ethereum.org/pt-br/developers/docs/intro-to-eth
 
 Nós vamos usar uma muito ferramenta chamada  **Hardhat**, a qual vai nos deixar compilar e testar contratos inteligentes rapidamente e localmente. Primeiro você precisa ter o node/npm. Se você não tiver, vá até  [aqui](https://hardhat.org/tutorial/setting-up-the-environment).
 
->Nota: Eu estou usando o Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas, então, se isso acontecer, utilize um versão do Node `>=16.0`!
+> 💡**Nota:** Eu estou usando o Node 16. Eu sei que algumas pessoas tiveram "erros de falta de memória" em versões mais velhas, então, se isso acontecer, utilize um versão do Node `>=16.0`!
 
 Depois, vamos abrir o terminal. Crie a pasta chamada `epic-game` acesse ela pelo terminal utilizando o comando `cd`. Uma vez que estiver lá, rode esses comandos:
 
@@ -44,7 +44,7 @@ Legal, agora nós temos o hardhat. Vamos colocar um projeto experimental funcion
 npx hardhat init
 ```
 
-> **📝Nota:**  Se você estiver no Windows usando Git Bash para instalar o Hardhat, você pode dar de cara com um erro nesse passo (HH1). Você pode tentar usar a CMD Windows para performar a instalação do HardHat se você tiver problemas. Informações adicionais podem ser encontradas [aqui](https://github.com/nomiclabs/hardhat/issues/1400#issuecomment-824097242).
+> 💡**Nota:**  Se você estiver no Windows usando Git Bash para instalar o Hardhat, você pode dar de cara com um erro nesse passo (HH1). Você pode tentar usar a CMD Windows para performar a instalação do HardHat se você tiver problemas. Informações adicionais podem ser encontradas [aqui](https://github.com/nomiclabs/hardhat/issues/1400#issuecomment-824097242).
 
 1. Esse comando irá te fazer algumas perguntas para saber que tipo de projeto você deseja criar, vamos criar um projeto JavaScript:
 
