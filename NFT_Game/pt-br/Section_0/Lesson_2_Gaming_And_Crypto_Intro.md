@@ -8,9 +8,9 @@ Por que as pessoas estão perdendo a cabeça desse jeito?
 
 **Nota: isso é uma NFT "Axie" - que é o personagem que você joga dentro de Axie Infinity! Jogadores compram NFTs Axie primeiro, e depois vão jogar o jogo. Bem estranho, certo? Comprar os personagens antes de você jogar o jogo!**
 
-A filosofia da WEB3DEV é entender construindo e mexendo com a tecnologia. Mas, eu gostaria de passar por um exemplo rápido e informal ;)!
+A filosofia da WEB3DEV é entender construindo e mexendo com a tecnologia. Mas, eu gostaria de passar por um exemplo rápido e informal 😉!
 
-### 🎮 Um exemplo rápido com a Nintendo.
+### 🎮 Um exemplo rápido com a Nintendo
 
 **Vamos dizer que você é a Nintendo** e você criou o Super Mario Bros. Mario é agora **sua** Propriedade Intelectual. **Você** é o criador ou criadora. Ninguém está permitido criar mais jogos com o Mario exceto **você**. Você também quer controlar quem ganha % em cima dos seus personagens/universo.
 
@@ -40,7 +40,7 @@ Isso é causado basicamente pela inflação do mercado. Só uma quantidade de Ax
 
 "_O crescimento da população Axie é um grande fator dentro do ecossistema Axie. Até agora em nenhum momento existiu uma taxa de inflação que nos permitiu crescer até nosso potencial máximo. Muito lento e os preços do Axie estão muito altos para pessoas nova entrarem; especialmente os Axies competitivos. Muito rápido e você tem uma inflação não saudável._"
 
-### 🛠 Construindo jogos abertos.
+### 🛠 Construindo jogos abertos
 
 Eu quero passar por um outro benefício. Fazer jogos e universos que qualquer um pode construir em cima via NFTs facilmente.
 
@@ -56,10 +56,10 @@ $5 Iriam diretamente para a wallet da Nintendo, e $5 para a wallet do desenvolve
 
 As possibilidades são literalmente infinitas porque nós podemos programar o sistema de royalty para funcionar como quisermos.
 
-### 💪 Vamos ao trabalho;
+### 💪 Vamos ao trabalho
 
 Nós falamos muito. Vamos construir nossa pequena versão de um jogo NFT. No final, eu espero que tudo isso se torne bem mais concreto, e talvez você esteja no seu caminho de construir o próximo hit dos jogos NFT ;).
 
-### 🚨 Reporte seu Progresso!
+### 🚨 Reporte seu Progresso
 
 Poste uma screenshot em #progresso com o nome do seu video game favorito! Ajude a levantar o ânimo de jogadores na galera!

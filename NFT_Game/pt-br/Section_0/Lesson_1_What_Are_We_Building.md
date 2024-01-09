@@ -1,17 +1,17 @@
-### 👋 Bem vindo.
+### 👋 Bem vindo
 
 Você conseguiu - é isso aí! Bem vindo :). Meu nome é danicuki e serei seu instrutor. Esse projeto é para desenvolvedores que querem conhecer e entrar mais no mundo de tecnologia cripto. Tudo que você precisa saber para entrar nisso são **algumas habilidades com o terminal, um pouco de javascript e um pouco de React.js**. O resto você aprende no caminho.
 
-### 🛠 O projeto. 
+### 🛠 O projeto
 
 Então, o que vamos construir aqui :)? Aqui está um pequeno vídeo:
 
 [Loom](https://www.loom.com/share/bfea6f9e52444d189952ade6ab89605d)
 
-👀 No final, ganhe um NFT da WEB3DEV.
+👀 No final, ganhe um NFT da WEB3DEV
 -------------------
 
-Quando você chegar no fim deste projeto, poderá ganhar um NFT. 
+Quando você chegar no fim deste projeto, poderá ganhar um NFT.
 **Realizaremos o airdrop de um NFT para a sua carteira conectada se você terminar o projeto dentro de 9 dias após o kick-off.**
 
 ![Imagem do NFT](https://i.imgur.com/U8leQpj.png)
