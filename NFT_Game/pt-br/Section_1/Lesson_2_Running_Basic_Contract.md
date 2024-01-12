@@ -53,7 +53,7 @@ Um pouco de mágica nos é dada pelo Hardhat para fazermos alguns console logs n
 ```solidity
 contract MyEpicGame {
     constructor() {
-        console.log("Esse é o contrato do meu jogo, vamo!");
+      console.log("Esse eh o contrato do meu jogo, vamo!");
     }
 }
 ```
@@ -74,8 +74,8 @@ Vá dentro de  `scripts` e crie um arquivo chamado `run.js` e escreva o seguinte
 
 ```javascript
 async function main() {
-  const gameContract = await hre.ethers.deployContract("MyEpicGame");
-  await gameContract.waitForDeployment();
+  const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
+  const gameContract = await gameContractFactory.deploy();
   console.log("Contrato implantado no endereço:", gameContract.target);
 };
 
@@ -85,7 +85,6 @@ main().catch((error) => {
 });
 ```
 
-Com esse código o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for completo, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
 O `run.js` é o nosso playground para brincar com o contrato!
 
 ### **🤔 Como isso funciona?**
@@ -95,14 +94,17 @@ O `run.js` é o nosso playground para brincar com o contrato!
 Vamos entender linha-por-linha do que fizemos até aqui.
 
 ```javascript
-const gameContract = await hre.ethers.deployContract("MyEpicGame");
+const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
 ```
 
 Isso vai compilar nosso contrato e gerar os arquivos necessários que precisamos para trabalhar com o contrato dentro de  `artifacts` . Olhe depois que rodarmos esse código 😃.
 
 ```javascript
-await gameContract.waitForDeployment();
+const gameContract = await gameContractFactory.deploy();
 ```
+Isso é bem chique 😃.
+
+O que está acontecendo aqui é que o Hardhat cria uma rede Ethereum local para a gente, mas só para esse contrato. Depois que o script for completo, ele vai destruir essa rede local. Então, cada vez que você rodar o contrato, será uma blockchain nova. E qual é o objetivo? É como refazer o seu server local toda vez de maneira que você sempre parta de um ponto limpo, o que deixa mais fácil o debug de erros.
 
 Nós vamos esperar até que o nosso contrato esteja oficialmente minerado e implementado na nossa blockchain local! Exatamente, hardhat cria "mineradores" falsos na nossa máquina para tentar imitar da melhor forma a blockchain.
 
