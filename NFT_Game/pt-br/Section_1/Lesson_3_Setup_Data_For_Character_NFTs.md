@@ -2,7 +2,7 @@
 
 Haha, essa é uma grande questão. Esteja certo de ler [isso](https://github.com/w3b3d3v/buildspace-projects/blob/web3dev-version/NFT_Collection/pt-br/Section_1/Lesson_1_What_Is_A_NFT.md) rapidamente para te dar uma noção antes de seguir em frente. Enquanto você tiver a _ideia geral_ sobre o que é uma NFT, isso é tudo o que você precisa aqui!
 
-### 😮 Como vamos usar NFTs jogáveis.
+### 😮 Como vamos usar NFTs jogáveis
 
 Legal. Nós temos todo ambiente básico configurado. Vamos dar uma passo pra trás para explicar esse jogo que estamos fazendo em um nível mais alto:
 
@@ -10,7 +10,7 @@ O objetivo do nosso jogo vai ser destruir um chefão, um boss. Vamos falar que o
 
 O objetivo? Jogadores precisam trabalhar juntos para atacar o boss e trazer seu HP (vida) para 0. Qual é o truque? Toda vez que um player bater no boss, o boss bate nele de volta! Se a vida da NFT for pra 0 ou menos, o jogador daquela NFT **morre** e ele não pode mais bater no boss. Jogadores **só podem ter um personagem NFT em suas carteiras.** Uma vez que o personagem NFT morre, o jogo acaba. Isso significa que muitos jogadores precisam juntar forças para atacar o boss e matá-lo.
 
-**Nota: Se você quiser que o seu jogador esteja apto a segurar múltiplos personagens em sua carteira (como no Pokémon), sinta-se livro para fazer modificações você mesmo!**
+> 💡**Nota:** Se você quiser que o seu jogador esteja apto a segurar múltiplos personagens em sua carteira (como no Pokémon), sinta-se livre para fazer modificações você mesmo!
 
 O importante a saber aqui é que os personagens são **NFTs**.
 
@@ -38,7 +38,7 @@ Eu atualizei `MyEpicGame.sol` para parecer com isso:
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.19;
 
 import "hardhat/console.sol";
 
@@ -116,49 +116,36 @@ Tudo isso nos dá fácil acesso a cada personagem. Por exemplo, eu posso apenas 
 Precisamos atualizar `run.js`. Aqui está como se parece:
 
 ```javascript
-const main = async () => {
+async function main() {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
   const gameContract = await gameContractFactory.deploy(
     ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
-		[
-			"https://i.imgur.com/gC5qXsl.png",
-			"https://i.imgur.com/0PvxtwP.png",
-			"https://i.imgur.com/Pj8lHpM.png",
-		],
-    [100, 200, 300], // HP values
-    [100, 50, 25] // Attack damage values
+    [
+      "https://i.imgur.com/gC5qXsl.png",
+      "https://i.imgur.com/0PvxtwP.png",
+      "https://i.imgur.com/Pj8lHpM.png",
+    ],
+    [100, 200, 300], // Pontos de vida
+    [100, 50, 25] // Dando de ataque
   );
-  await gameContract.deployed();
-  console.log("Contrato implantado no endereço:", gameContract.address);
-};
+  console.log("Contrato implantado no endereço:", gameContract.target);
+}
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 ```
 
-Não estou fazendo nada muito chique aqui. Em `run.js`, basicamente definimos os três personagens e suas estatísticas. Meus personagens são Anitta, Ronaldinho Gaúcho e Zeca Pagodinho... Cada personagem tem basicamente um id, nome, imagem, valor de vida, e valor de ataque.
+Não estou fazendo nada muito chique aqui. Em `run.js`, basicamente definimos os três personagens e suas estatísticas. Meus personagens são `Anitta`, `Ronaldinho Gaúcho` e `Zeca Pagodinho`... Cada personagem tem basicamente um `id`, `nome`, `imagem`, `pontos de vida`, e `dano de ataque`.
 
-Por exemplo, nesse caso `Ronaldinho Gaúcho` tem 200 HP, 50 de dano de ataque. Ele tem muita vida, mas seu ataque não dá tanto dano quanto o de Anitta! Anitta tem menos HP, mas dá mais dano. Isso significa que no jogo, ele morrerá mais rápido, mas dará muito dano.
+Por exemplo, nesse caso `Ronaldinho Gaúcho` tem `200 HP`, `50 de dano de ataque`. Ele tem muita vida, mas seu ataque não dá tanto dano comparado ao da Anitta! Ela tem menos vida (HP), mas dá mais dano. Isso significa que no jogo, ela morrerá mais rápido, mas dará muito dano.
 
-**Você pode balancear seus personagens como quiser :). Por favor, não copie os meus. Adicione três seus.**
+**Você pode balancear seus personagens como quiser 😃. Para ser mais legal, não copie os meus. Adicione seus próprios três.**
 
-Ok, é isso :)!! Quando eu rodar isso usando `npx hardhat run scripts/run.js` e aqui é o que eu tenho:
+Ok, é isso 😃!! Quando eu rodar isso usando `npx hardhat run scripts/run.js` e aqui é o que eu tenho:
 
-```plaintext
-Personagem inicializado: Anitta com 100 de HP, img https://i.imgur.com/gC5qXsl.png
-Personagem inicializado: Ronaldinho Gaúcho com 200 de HP, img https://i.imgur.com/NplQpes.png
-Personagem inicializado: Zeca Pagodinho com 300 de HP, img https://i.imgur.com/WMB6g9u.png
-Contrato implantado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-```
+![Imgur](https://i.imgur.com/pWJ35N2.png)
 
 Boom! Nós oficialmente criamos três personagens e estamos salvando os dados deles diretamente no nosso contrato.
 
@@ -170,10 +157,10 @@ Talvez você nem queria personagens. Você pode querer que as pessoas mintem "**
 
 Talvez queira que seus personagens tenham coisas como "mana", "energia", ou "chakra" onde os seus personagens podem invocar "feitiços" usando esses atributos.
 
-**Customize seus personagens. É isso que faz ficar divertido!** Por exemplo, eu adicionei Anitta e Zeca Pagodinho como personagens pois pensei que seria engraçado - e eu rio toda vez que vejo haha.
+**Customize seus personagens. É isso que faz ficar divertido!** Por exemplo, eu adicionei Anitta e Zeca Pagodinho como personagens pois pensei que seria engraçado - e dou risada toda vez que vejo 😂.
 
-Mudar coisas pequenas como personagens vai fazer você sentir que é uma coisa mais sua e você estará mais motivado a construir tudo isso no caminho :).
+**Mudar coisas pequenas como personagens vai fazer você sentir que é uma coisa mais sua** e você estará mais motivado a construir tudo isso no caminho :).
 
-### 🚨 Reporte seu Progresso!
+### 🚨 Reporte seu Progresso
 
 Poste uma screenshot em #progresso exibindo alguns dos seus personagens -- talvez você possa mostrar o personagem e nos falar o nome dele e quanto HP e Ataque ele tem!!!
