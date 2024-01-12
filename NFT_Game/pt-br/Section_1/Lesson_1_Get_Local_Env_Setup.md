@@ -79,7 +79,7 @@ O projeto vai pedir para você instalar o `@nomicfoundation/hardhat-toolbox`. Va
 Você também vai querer instalar algo chamado  **OpenZeppelin** , que é outra biblioteca muito usada para desenvolver contratos inteligentes seguros. Vamos aprender mais sobre ela depois. Por agora, só a instale 😃.
 
 ```bash
-npm install @openzeppelin/contracts
+npm install @openzeppelin/contracts@4.9.5
 ```
 
 Depois rode:

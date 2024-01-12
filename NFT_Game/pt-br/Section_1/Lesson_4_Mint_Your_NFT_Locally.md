@@ -4,108 +4,113 @@ Agora que temos todos os dados configurados para nossos personagens, a próxima 
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.19;
 
 // Contrato NFT para herdar.
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 // Funcoes de ajuda que o OpenZeppelin providencia.
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
-
+import {Counters} from "@openzeppelin/contracts/utils/Counters.sol";
+import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 
 import "hardhat/console.sol";
 
-// Nosso contrato herda do ERC721, que eh o contrato padrao de
-// NFT!
+// Nosso contrato herda do ERC721, que eh o contrato padrao de NFT!
 contract MyEpicGame is ERC721 {
-
-  struct CharacterAttributes {
-    uint characterIndex;
-    string name;
-    string imageURI;
-    uint hp;
-    uint maxHp;
-    uint attackDamage;
-  }
-
-  // O tokenId eh o identificador unico das NFTs, eh um numero
-  // que vai incrementando, como 0, 1, 2, 3, etc.
-
-  using Counters for Counters.Counter;
-  Counters.Counter private _tokenIds;
-
-  CharacterAttributes[] defaultCharacters;
-
-  // Criamos um mapping do tokenId => atributos das NFTs.
-  mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
-
-  // Um mapping de um endereco => tokenId das NFTs, nos da um
-  // jeito facil de armazenar o dono da NFT e referenciar ele
-  // depois.
-  mapping(address => uint256) public nftHolders;
-
-  constructor(
-    string[] memory characterNames,
-    string[] memory characterImageURIs,
-    uint[] memory characterHp,
-    uint[] memory characterAttackDmg
-    // Embaixo, voce tambem pode ver que adicionei um simbolo especial para identificar nossas NFTs
-    // Esse eh o nome e o simbolo do nosso token, ex Ethereum ETH.
-    // Eu chamei o meu de Heroes e HERO. Lembre-se, um NFT eh soh um token!
-  )
-    ERC721("Heroes", "HERO")
-  {
-    for(uint i = 0; i < characterNames.length; i += 1) {
-      defaultCharacters.push(CharacterAttributes({
-        characterIndex: i,
-        name: characterNames[i],
-        imageURI: characterImageURIs[i],
-        hp: characterHp[i],
-        maxHp: characterHp[i],
-        attackDamage: characterAttackDmg[i]
-      }));
-
-      CharacterAttributes memory c = defaultCharacters[i];
-
-      // O uso do console.log() do hardhat nos permite 4 parametros em qualquer order dos seguintes tipos: uint, string, bool, address
-
-      console.log("Personagem inicializado: %s com %s de HP, img %s", c.name, c.hp, c.imageURI);
+    struct CharacterAttributes {
+        uint characterIndex;
+        string name;
+        string imageURI;
+        uint hp;
+        uint maxHp;
+        uint attackDamage;
     }
 
-    // Eu incrementei tokenIds aqui para que minha primeira NFT tenha o ID 1.
-    // Mais nisso na aula!
-    _tokenIds.increment();
-  }
+    // O tokenId eh o identificador unico das NFTs, eh um numero
+    // que vai incrementando, Ex: 0, 1, 2, 3, etc...
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
 
-  // Usuarios vao poder usar essa funcao e pegar a NFT baseado no personagem que mandarem!
-  function mintCharacterNFT(uint _characterIndex) external {
-    // Pega o tokenId atual (começa em 1 já que incrementamos no constructor).
-    uint256 newItemId = _tokenIds.current();
+    CharacterAttributes[] defaultCharacters;
 
-    // A funcao magica! Atribui o tokenID para o endereço da carteira de quem chamou o contrato.
+    // Criamos um mapping do tokenId => atributos das NFTs.
+    mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
 
-    _safeMint(msg.sender, newItemId);
+    // Um mapping de um endereco => tokenId das NFTs, nos da um
+    // jeito facil de armazenar o dono da NFT e referenciar ele depois.
+    mapping(address => uint256) public nftHolders;
 
-    // Nos mapeamos o tokenId => os atributos dos personagens. Mais disso abaixo
+    constructor(
+        string[] memory characterNames,
+        string[] memory characterImageURIs,
+        uint[] memory characterHp,
+        uint[] memory characterAttackDmg
+    )
+        // Embaixo, voce tambem pode ver que adicionei um simbolo especial para identificar nossas NFTs
+        // Esse eh o nome e o simbolo do nosso token, ex Ethereum ETH.
+        // Eu chamei o meu de Heroes e HERO. Lembre-se, um NFT eh soh um token!
+        ERC721("Heroes", "HERO")
+    {
+        for (uint i = 0; i < characterNames.length; i += 1) {
+            defaultCharacters.push(
+                CharacterAttributes({
+                    characterIndex: i,
+                    name: characterNames[i],
+                    imageURI: characterImageURIs[i],
+                    hp: characterHp[i],
+                    maxHp: characterHp[i],
+                    attackDamage: characterAttackDmg[i]
+                }));
 
-    nftHolderAttributes[newItemId] = CharacterAttributes({
-      characterIndex: _characterIndex,
-      name: defaultCharacters[_characterIndex].name,
-      imageURI: defaultCharacters[_characterIndex].imageURI,
-      hp: defaultCharacters[_characterIndex].hp,
-      maxHp: defaultCharacters[_characterIndex].maxHp,
-      attackDamage: defaultCharacters[_characterIndex].attackDamage
-    });
+            CharacterAttributes memory c = defaultCharacters[i];
 
-    console.log("Mintou NFT c/ tokenId %s e characterIndex %s", newItemId, _characterIndex);
+            // O uso do console.log() do hardhat nos permite 4 parametros em qualquer order dos seguintes tipos: uint, string, bool, address
 
-    // Mantem um jeito facil de ver quem possui a NFT
-    nftHolders[msg.sender] = newItemId;
+            console.log(
+                "Personagem inicializado: %s com %s de HP, img %s",
+                c.name,
+                c.hp,
+                c.imageURI
+            );
+        }
 
-    // Incrementa o tokenId para a proxima pessoa que usar.
-    _tokenIds.increment();
-  }
+        // Eu incrementei tokenIds aqui para que minha primeira NFT tenha o ID 1.
+        // Mais nisso na aula!
+        _tokenIds.increment();
+    }
+
+    // Usuarios vao poder usar essa funcao e pegar a NFT baseado no personagem que mandarem!
+    function mintCharacterNFT(uint _characterIndex) external {
+        // Pega o tokenId atual (começa em 1 já que incrementamos no constructor).
+        uint256 newItemId = _tokenIds.current();
+
+        // A funcao magica! Atribui o tokenID para o endereço da carteira de quem chamou o contrato.
+
+        _safeMint(msg.sender, newItemId);
+
+        // Nos mapeamos o tokenId => os atributos dos personagens. Mais disso abaixo
+
+        nftHolderAttributes[newItemId] = CharacterAttributes({
+            characterIndex: _characterIndex,
+            name: defaultCharacters[_characterIndex].name,
+            imageURI: defaultCharacters[_characterIndex].imageURI,
+            hp: defaultCharacters[_characterIndex].hp,
+            maxHp: defaultCharacters[_characterIndex].maxHp,
+            attackDamage: defaultCharacters[_characterIndex].attackDamage
+        });
+
+        console.log(
+            "Mintou NFT c/ tokenId %s e characterIndex %s",
+            newItemId,
+            _characterIndex
+        );
+
+        // Mantem um jeito facil de ver quem possui a NFT
+        nftHolders[msg.sender] = newItemId;
+
+        // Incrementa o tokenId para a proxima pessoa que usar.
+        _tokenIds.increment();
+    }
 }
 ```
 
@@ -124,9 +129,9 @@ Depois, eu tenho `nftHolders` que basicamente me deixa mapear facilmente o ender
 
 ### ⚡️ ERC 721
 
-Você também vai ver que eu "herdo" um contrato OpenZeppelin usando `is ERC721`  quando eu declaro o contrato. Você pode ler mais sobre hereditariedade [aqui](https://solidity-by-example.org/inheritance/), mas basicamente, significa que podemos chamar outros contratos a partir do nosso. É quase como importar funções para usarmos.
+Você também vai ver que eu "herdo" um contrato OpenZeppelin usando `is ERC721`  quando eu declaro o contrato. Você pode ler mais sobre hereditariedade [aqui](https://solidity.w3d.community/apostila/extra-avancado/24.-heranca.html), mas basicamente, significa que podemos chamar outros contratos a partir do nosso. É quase como importar funções para usarmos.
 
-O padrão NFT é conhecido como `ERC721` , o qual você pode ler um pouco mais sobre [aqui](https://eips.ethereum.org/EIPS/eip-721). OpenZeppelin essencialmente implementa o padrão NFT para nós e nos deixa escrever nossa própria lógica em cima disso para customizá-lo. Isso significa que não precisamos escrever código repetitivo e básico.
+O padrão NFT é conhecido como `ERC721` , o qual você pode ler um pouco mais sobre [aqui](https://ethereum.org/pt-br/developers/docs/standards/tokens/erc-721). OpenZeppelin essencialmente implementa o padrão NFT para nós e nos deixa escrever nossa própria lógica em cima disso para customizá-lo. Isso significa que não precisamos escrever código repetitivo e básico.
 
 Seria loucura escrever um servidor HTTP do zero sem usar uma biblioteca, certo? Claro, a menos que você quisesse explorar. De maneira semelhante - seria loucura apenas escrever um contrato NFT do zero! Você pode explorar o contrato `ERC721`  que estamos herdando  [daqui](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
 
@@ -136,9 +141,9 @@ _tokenIds.increment();
 
 Então, `_tokenIds` começa no `0`. É só um contador. `increment()´ só adiciona mais 1 - veja [aqui](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/fa64a1ced0b70ab89073d5d0b6e01b0778f7e7d6/contracts/utils/Counters.sol#L32).
 
-**No constructor** eu incremento ele em 1. Por quê? Basicamente porque eu não gosto de lidar com zeros no meu código. Em Solidity, 0 é um [valor padrão](https://docs.soliditylang.org/en/v0.5.11/control-structures.html#scoping-and-declarations) e eu tento me manter longe de valores padrão. Só confie em mim por agora ;).
+**No constructor** eu incremento ele em 1. Por quê? Basicamente porque eu não gosto de lidar com zeros no meu código. Em Solidity, 0 é um [valor padrão](https://docs.soliditylang.org/en/v0.5.11/control-structures.html#scoping-and-declarations) e eu tento me manter longe de valores padrão. Só confie em mim por agora 😉.
 
-Eu também tenho `increment()` em `mintCharacterNFT` mas não esqueça de adicioná-la no `constructor` também ;).
+Eu também tenho `increment()` em `mintCharacterNFT` mas não esqueça de adicioná-la no `constructor` também 😉.
 
 ```solidity
 function mintCharacterNFT(uint _characterIndex)
@@ -164,13 +169,13 @@ Nós estamos usando `_tokenIds` para manter a contagem dos identificadores únic
 _safeMint(msg.sender, newItemId).
 ```
 
-Essa é a linha mágica! Quando fazemos `_safeMint(msg.sender, newItemId)`  está basicamente dizendo: "minte a NFT com o id `newItemId` para o usuário com endereço `msg.sender`". Aqui, `msg.sender` é uma variável que o  [Solidity providencia](https://docs.soliditylang.org/en/develop/units-and-global-variables.html#block-and-transaction-properties) que nos dá fácil acesso ao  **endereço público** da pessoa que estiver chamando o contrato.
+Essa é a linha mágica! Quando fazemos `_safeMint(msg.sender, newItemId)`  está basicamente dizendo: "mint a NFT com o id `newItemId` para o usuário com endereço `msg.sender`". Aqui, `msg.sender` é uma variável que o  [Solidity providencia](https://docs.soliditylang.org/en/develop/units-and-global-variables.html#block-and-transaction-properties) que nos dá fácil acesso ao  **endereço público** da pessoa que estiver chamando o contrato.
 
 **Você não pode chamar um contrato anonimamente**, você precisa ter as credenciais da sua carteira conectadas. Isso é quase como "fazendo login" e ser autenticado :).
 
 O que é incrível aqui é que essa é uma  **maneira super segura de conseguir o endereço público do usuário**. Manter o endereço público em segredo não é um problema, já é público, todo mundo consegue enxergar. Mas, usando `msg.sender` você não consegue fingir ser o endereço público de outra pessoa a não ser que você tenha as credenciais da carteira dela!
 
-### 🎨 Mantendo dados dinâmicos em uma NFT.
+### 🎨 Mantendo dados dinâmicos em uma NFT
 
 Então, na medida que jogadores jogam o jogo, certos valores em seus personagens vão mudar, certo? Por exemplo, se meu personagem atacar o boss, o boss vai atacar de volta! **Nesse caso, o HP da minha NFT vai precisar ser diminuído.** Nós precisamos de uma maneira de armazenar esses dados por jogador:
 
@@ -198,7 +203,7 @@ Muitas coisas acontecendo aqui! Basicamente, **nossa NFT segura dados relacionad
 }
 ```
 
-**Lembre-se, todo jogador tem seu próprio personagem NFT e a NFT mesma segura os dados do estado do personagem.**
+**Lembre-se, todo jogador tem seu próprio personagem NFT e ela segura os dados do estado do personagem.**
 
 Digamos que o meu personagem seja atacado e perca 50 de HP, bom, então o HP iria de 200 -> 150, certo? Esse valor vai precisar mudar na NFT!
 
@@ -229,7 +234,7 @@ nftHolders[msg.sender] = newItemId;
 
 Mapeia o endereço público da carteira para o tokenId das NFTs. Isso é o que nos deixa manter a contagem de quem possui as NFTs facilmente.
 
-_Nota: Nesse momento isso é desenhado de maneira que cada jogador possa ter apenas um personagem NFT por endereço de carteira. Se você quisesse, você poderia ajustar isso para os jogadores poderem ter múltiplos personagens, mas eu fiquei com 1 por jogador para facilitar! Esse é nosso jogo, faça o que quiser!_
+> 💡**Nota:** Nesse momento isso é desenhado de maneira que **cada jogador possa ter apenas um personagem NFT por endereço de carteira**. Se você quisesse, você poderia ajustar isso para os **jogadores poderem ter múltiplos personagens**, mas eu fiquei com 1 por jogador para facilitar! **Esse é nosso jogo, faça o que você quiser!**
 
 ```solidity
 _tokenIds.increment();
@@ -237,7 +242,7 @@ _tokenIds.increment();
 
 Depois que a NFT é mintada, nós incrementamos `tokenIds` usando `_tokenIds.increment()` (que é uma função que o OpenZeppelin nos dá). Isso nos dá a certeza de que da próxima vez que uma NFT for mintada, vai ter um identificador `tokenIds` diferente. Ninguém pode ter um `tokenIds` que já foi mintado.
 
-### 😳 Rodando localmente.
+### 😳 Rodando localmente
 
 Em `run.js` o que precisamos fazer é chamar `mintCharacterNFT`. Eu adicionei as linhas seguintes em `run.js` logo embaixo de onde escrevemos o endereço do contrato.
 
@@ -257,7 +262,7 @@ Quando fazemos `mintCharacterNFT(2)` o Hardhat vai chamar essa função com uma 
 
 A função `tokenURI` é algo que pegamos de graça do `ERC721` já que herdamos dele.
 
-Basicamente, `tokenUri` é uma função em **cada NFT** que retorna os **dados atuais** que estão ligados à NFT. Então quando eu chamo `gameContract.tokenURI(1)` está basicamente dizendo, _"vá pegar para mims os dados dentro da NFT com tokenId 1"_, que seria a primeira NFT mintada. E, deveria me devolver todas as coisas, como o nome do personagem, o hp atual e etc.
+Basicamente, `tokenUri` é uma função em **cada NFT** que retorna os **dados atuais** que estão ligados à NFT. Então quando eu chamo `gameContract.tokenURI(1)` está basicamente dizendo, _"vá pegar para mim os dados dentro da NFT com tokenId 1"_, que seria a primeira NFT mintada. E, deveria me devolver todas as coisas, como o nome do personagem, o hp atual e etc.
 
 Plataformas como o OpenSea e Rarible sabem como pegar o `tokenURI` já que a forma padrão de pegar os metadados da NFT. Vamos tentar rodar o nosso contrato de novo (lembre-se que o comando é `npx hardhat run scripts/run.js`)
 
@@ -272,7 +277,7 @@ Mintou um NFT com tokenId 1 e characterIndex 2
 Token URI:
 ```
 
-**Hmmmmmm**. Token URI não escreve nada! Isso significa que não temos nenhum dado ligado à nossa NFT. Mas espera, isso não faz sentido. Nós não configuramos os dados com `nftHolderAttributes`?
+**Hmmm**. Token URI não escreve nada! Isso significa que não temos nenhum dado ligado à nossa NFT. Mas espera, isso não faz sentido. Nós não configuramos os dados com `nftHolderAttributes`?
 
 **Não. `nftHolderAttributes` não ligou os dados às NFTs de nenhuma maneira. É só um mapping que vive no contrato nesse momento.** O que vamos fazer agora é basicamente fixar `nftHolderAttributes` para o `tokenURI` sobrescrevendo ele :).
 
@@ -280,7 +285,7 @@ Token URI:
 
 O `tokenURI` tem um formato específico, na verdade! Na verdade, está esperando os dados NFT em **JSON**.
 
-Vamos ver como fazer isso :).
+Vamos ver como fazer isso 😃.
 
 Crie uma pasta nova dentro de `contracts` chamada `libraries`. Crie um arquivo chamado `Base64.sol` e coloque ele dentro de libraries. Copie e cole [esse código](https://gist.github.com/danicuki/4157b854d6dc83021674c5b08bd5f2df) dentro de `Base64.sol`. Isso basicamente nos dá funções que nos ajudam a codificar qualquer tipo de dado em uma string Base64 - que é um padrão para codificar pedaços de dado em uma string. Não se preocupe, você vai ver como isso funciona logo!
 
@@ -363,9 +368,9 @@ string memory json = Base64.encode(
 );
 ```
 
-Nós configuramos coisas como o nome da NFT, o HP, o Dano de ataque e etc **dinâmicamente**. _Nota: abi.encodePacked só combina strings._ Isso é realmente legal porque nós podemos mudar coisas como o HP da NFT e a imagem dela se quiséssemos, e atualizar na NFT! **É dinâmico!**
+Nós configuramos coisas como o nome da NFT, o HP, o Dano de ataque e etc **dinamicamente**. _Nota: abi.encodePacked só combina strings._ Isso é realmente legal porque nós podemos mudar coisas como o HP da NFT e a imagem dela se quisermos, e atualizar na NFT! **É dinâmico!**
 
-Também esse padrão de metadados é seguido por muitos sites populares de NFT como o OpenSea. Então, tudo que estamos fazendo na função é formatando a nossa variável `json` para seguir os padrões. Note: `max_value` não é necessário, mas eu quis adicioná-lo por diversão.
+Também esse padrão de metadados é seguido por muitos sites populares de NFT como o **OpenSea**. Então, tudo que estamos fazendo na função é formatando a nossa variável `json` para seguir os padrões. Note: `max_value` não é necessário, mas eu quis adicioná-lo por diversão.
 
 ```solidity
 abi.encodePacked("data:application/json;base64,", json)
@@ -373,14 +378,7 @@ abi.encodePacked("data:application/json;base64,", json)
 
 Essa linha é na verdade difícil de explicar, é mais fácil apenas mostrar! Vá em frente e rode `run.js`. Aqui está meu output:
 
-```plaintext
-Personagem inicializado: Anitta com 100 de HP, img https://i.imgur.com/gC5qXsl.png
-Personagem inicializado: Ronaldinho Gaúcho com 200 de HP, img https://i.imgur.com/NplQpes.png
-Personagem inicializado: Zeca Pagodinho com 300 de HP, img https://i.imgur.com/Pj8lHpM.png
-Contrato implantado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-Mintou um NFT com tokenId 1 e characterIndex 2
-Token URI: data:application/json;base64,eyJuYW1lIjogIlplY2EgUGFnb2RpbmhvIC0tIE5GVCAjOiAxIiwgImRlc2NyaXB0aW9uIjogIkVzdGEgTkZUIGRhIGFjZXNzbyBhbyBtZXUgam9nbyBORlQhIiwgImltYWdlIjogImh0dHBzOi8vaS5pbWd1ci5jb20vUGo4bEhwTS5wbmciLCAiYXR0cmlidXRlcyI6IFsgeyAidHJhaXRfdHlwZSI6ICJIZWFsdGggUG9pbnRzIiwgInZhbHVlIjogMzAwLCAibWF4X3ZhbHVlIjozMDB9LCB7ICJ0cmFpdF90eXBlIjogIkF0dGFjayBEYW1hZ2UiLCAidmFsdWUiOiAyNX0gXX0=
-```
+![Terminal](https://i.imgur.com/giXoab3.png)
 
 Você verá que Token URI agora escreve coisas! **Boa!!** Vá em frente e copie essa grande string depois de `Token URI:`. Por exemplo, a minha se parece com isso:
 
@@ -392,7 +390,7 @@ Cole essa string dentro da barra de URL no seu browser. Você vai ver algo como 
 
 ![Imagem](https://i.imgur.com/5qVWxSQ.png)
 
-BOOOM!!!
+🤯 **BOOM!!!**
 
 Basicamente o que fizemos foi que formatamos nosso arquivo JSON e **codificamos ele** em Base64. Então, acontece que o arquivo JSON se torna essa string codificada super longa, que é legível para o nosso browser quando usamos o prefixo `data:application/json;base64,`.
 
@@ -402,12 +400,12 @@ Adicionamos `data:application/json;base64,` porque o nosso browser precisa saber
 
 De novo, isso é considerado um padrão para a maioria dos navegadores, o que é perfeito porque nós queremos que os dados das nossas NFT sejam compatíveis com o maior número de sistemas possível.
 
-Por que estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares ocomo o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso conrtato.
+Por que estamos fazendo essas coisas de Base64? Bom, basicamente isso é como sites populares como o OpenSea, Rarible e muitos outros preferem quando passam dados JSON diretamente do nosso contrato.
 
 **Incrível**. Então, agora estamos no ponto em que mintamos oficialmente e localmente as NFTs e a NFT tem dados fixados nela em uma maneira que siga os padrões.
 
 **Estamos prontos para fazer o deploy da nossa NFT no OpenSea :).**
 
-### 🚨 Reporte seu Progresso !
+### 🚨 Reporte seu Progresso
 
 Poste uma screenshot do seu JSON quando você colou o `tokenURI` no endereço do seu navegador :)!
