@@ -6,7 +6,7 @@ O próximo passo é uma testnet, que você pode pensar como ambiente de desenvol
 
 ### 🦊 Metamask
 
-Depois, precisamos de uma carteira Ethereum. Existem várias, mas, para esse projeto, vamos usar a Metamask. Baixe a extensão de navegador e configure sua carteira  [aqui](https://metamask.io/download.html). Mesmo se você tiver outra carteira, só use a Metamask por agora.
+Depois, precisamos de uma carteira Ethereum. Existem várias, mas, para esse projeto, vamos usar a **Metamask**. Baixe a extensão de navegador e configure sua carteira  [aqui](https://metamask.io/download/). Mesmo se você tiver outra carteira, **vamos usar a Metamask por agora**.
 
 Por que precisamos da Metamask? Bom. Precisamos estar aptos a chamar funções no nosso contrato inteligente que vive na blockchain. E, para fazer isso, precisamos ter uma carteira que tem nosso endereço Ethereum e chave privada.
 
@@ -14,7 +14,7 @@ Por que precisamos da Metamask? Bom. Precisamos estar aptos a chamar funções n
 
 É quase como autenticação. Precisamos de algo para fazer "login" na blockchain e depois usar essas credenciais para fazer requisições na API pelo nosso site.
 
-Então, vá em frente e configure! O fluxo de setup deles é bem autoexplicativo :).
+Então, vá em frente e configure! O fluxo de setup deles é bem autoexplicativo 😃.
 
 ### **💳 Transações**
 
@@ -24,22 +24,22 @@ Então, quando nós quisermos realizar uma ação que mude a blockchain, nós ch
 
 Lembre-se, a blockchain não tem dono. É só um monte de computadores ao redor do mundo rodando através de **mineradores** que tem a cópia da blockchain.
 
-Quando implementarmos nosso contrato, nós precisamos falar **para todos esses** mineradores, "ei, esse é um contrato inteligente novo, por favor adicione meu contrato inteligente à blockchain e diga para todo mundo sobre ele também".
+Quando implementarmos nosso contrato, nós precisamos falar **para todos esses** mineradores, "_ei, esse é um contrato inteligente novo, por favor adicione meu contrato inteligente à blockchain e diga para todo mundo sobre ele também_".
 
-Aqui é onde o [Alchemy](https://alchemy.com/?r=jQ3MDMxMzUyMDU3N) entra.
+Aqui é onde o [Alchemy](https://www.alchemy.com/) entra.
 
-Alchemy essencialmente nos ajuda a transmitir a criação do nosso contrato para que ele possa ser pego pelos mineradores o mais rápido possível. Uma vez que a transação for minerada (validada), será então transmitida para a blockchain como uma transação legítima. A partir daí, todo mundo atualiza suas cópias da blockchain.
+**Alchemy** essencialmente nos ajuda a transmitir a criação do nosso contrato para que ele possa ser pego pelos mineradores o mais rápido possível. Uma vez que a transação for minerada (validada), será então transmitida para a blockchain como uma transação legítima. A partir daí, todo mundo atualiza suas cópias da blockchain.
 
 Isso é complicado. E, não se preocupe se você não entendeu completamente. Enquanto você escrever mais código e construir esse app, vai fazer mais sentido naturalmente.
 
-Então, crie uma conta com o Alchemy [aqui](https://alchemy.com/?r=jQ3MDMxMzUyMDU3N).
+Então, crie uma conta com o Alchemy [aqui](https://www.alchemy.com/).
 
 E depois dê uma olhada no meu vídeo abaixo:
 [Loom](https://www.loom.com/share/35aabe54c3294ef88145a03c311f1933)
 
 ## 🕸 Testnets
 
-Nós não vamos estar implantando (deploying) diretamente na rede principal do Ethereum (Ethereum mainnet) por enquanto. Por quê? Porque custa dinheiro real e não vale a pena bagunçar as coisas. Nós estamos apenas aprendendo nesse momento. Nós vamos começar com uma "tesnet" (rede de teste) que é um clone da mainnet, mas usa dinheiro falso para que possamos testar coisas o quanto quisermos. Mas, é importante saber que testnets são mantidas por minerados e cenários mímicos de mundo real.
+Nós não vamos estar implantando (deploying) diretamente na rede principal do Ethereum (Ethereum mainnet) por enquanto. Por quê? Porque custa dinheiro real e não vale a pena bagunçar as coisas. Nós estamos apenas aprendendo nesse momento. Nós vamos começar com uma **"tesnet" (rede de teste) que é um clone da mainnet**, mas usa **dinheiro falso para que possamos testar coisas o quanto quisermos**. Mas, é importante saber que **testnets são mantidas por minerados e cenários mímicos de mundo real**.
 
 Isso é incrível porque podemos testar nossa aplicação num cenário de mundo real, onde vamos fazer algumas coisas:
 
@@ -53,21 +53,19 @@ Isso é incrível porque podemos testar nossa aplicação num cenário de mundo 
 
 ## 🤑 Pegando um pouco de dinheiro falso
 
-Existem algumas testnets por aí, e a que usaremos é chamada "Goerli".
+Existem algumas testnets por aí, e a que usaremos é chamada "Sepolia".
 
-Para poder fazer deploy na Goerli, precisamos de ETH falso. Por quê? Porque se estivéssemos fazendo deploy na mainnet Ethereum, você usaria dinheiro real! Por isso, testnets copiam como a mainnet funciona, a única diferença é que não tem dinheiro real envolvido.
+Para poder fazer deploy na Sepolia, precisamos de ETH falso. Por quê? Porque se estivéssemos fazendo deploy na mainnet Ethereum, você usaria dinheiro real! Por isso, testnets copiam como a mainnet funciona, a única diferença é que não tem dinheiro real envolvido.
 
-Para conseguirmos ETH falso, precisamos pedir alguns para a rede. **Esse ETH falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns Ethereum falsos para o Goerli por um faucet. Você só precisa achar algum que funcione.
+Para conseguirmos ETH falso, precisamos pedir alguns para a rede. **Esse ETH falso só vai funcionar nessa testnet específica.** Você pode conseguir alguns Ethereum falsos para o Sepolia por um faucet. Você só precisa achar algum que funcione.
 
 Você tem alguns faucets para escolher:
 
 | Nome | Link
 | ---------------- | --------------------------
-| Alchemy | https://goerlifaucet.com/ 
-| Mudit | https://goerli-faucet.mudit.blog/ 
-| Paradigm | https://faucet.paradigm.xyz/ 
-
-Nota: para o MyCrypto, você vai ter que conectar sua carteira, criar uma conta e clicar no mesmo link **de novo** para pedir fundos. O faucet do buildspace é bem confiável também, só tenha certeza que o seu Metamask estiver na rede Goerli :).
+| Alchemy | <https://sepoliafaucet.com/>
+| Rockx | <https://access.rockx.com/faucet-sepolia/>
+| PoWFaucet | <https://sepolia-faucet.pk910.de/>
 
 ## 🚀 Configurar um arquivo deploy.js
 
@@ -80,16 +78,16 @@ const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
   const gameContract = await gameContractFactory.deploy(
     ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
-		[
+  [
           "https://i.imgur.com/gC5qXsl.png",
           "https://i.imgur.com/0PvxtwP.png",
           "https://i.imgur.com/Pj8lHpM.png",
-		],
+  ],
     [100, 200, 300],
     [100, 50, 25]
   );
   await gameContract.deployed();
-  console.log("Contrato implantado no endereço:", gameContract.address)
+  console.log("Contrato implantado no endereço:", gameContract.target)
 
   let txn;
   txn = await gameContract.mintCharacterNFT(0);
@@ -103,10 +101,6 @@ const main = async () => {
   txn = await gameContract.mintCharacterNFT(2);
   await txn.wait();
   console.log("Mintou NFT #3");
-
-  txn = await gameContract.mintCharacterNFT(1);
-  await txn.wait();
-  console.log("Minted NFT #4");
 
   console.log("Fim do deploy e mint!");
 };
@@ -124,24 +118,27 @@ const runMain = async () => {
 runMain();
 ```
 
-## **📈 Fazer o deploy para a testnet Goerli.**
+## **📈 Fazer o deploy para a testnet Sepolia.**
 
 Nós vamos precisar mudar nosso arquivo `hardhat.config.js` . Você pode encontrá-lo na raíz do diretório do projeto do seu contrato inteligente.
 
 ```javascript
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
+
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.19",
   networks: {
-    goerli: {
+    sepolia: {
       url: "SEU_URL_DA_API_ALCHEMY",
-      accounts: ["SUA_KEY_PRIVADA_DA_CONTA_GOERLI"],
+      accounts: ["SUA_KEY_PRIVADA_DA_CONTA_SEPOLIA"],
     },
   },
 };
+
 ```
 
-Você pode conseguir URL da sua API no dashboard do Alchemy e colar ali mesmo. Depois, você vai precisar da sua chave **privada** do Goerli (não o seu endereço público!) o qual você pode [pegar no metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) e colar ali também.
+Você pode conseguir URL da sua API no dashboard do Alchemy e colar ali mesmo. Depois, você vai precisar da sua chave **privada** do Sepolia (não o seu endereço público!) o qual você pode [pegar no metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) e colar ali também.
 
 **Nota: NÃO FAÇA COMMIT DESSE ARQUIVO NO GITHUB. ELE CONTÉM SUA CHAVE PRIVADA. VOCÊ PODE SER ROUBADO E HACKEADO. ESSA CHAVE PRIVADA É A MESMA QUE A DA MAINNET.** Nós vamos falar sobre variáveis `.env` depois e como mantê-las em segredo.
 
@@ -152,27 +149,20 @@ Uma vez que você configurou o seu setup, estamos prontos para fazer o deploy co
 Rode esse comando pela raíz do seu diretório `epic-nfts`.
 
 ```bash
-npx hardhat run scripts/deploy.js --network goerli
+npx hardhat run scripts/deploy.js --network sepolia
 ```
 
 Aqui está o que eu consigo:
 
-```plaintext
-Contrato implantado no endereço: 0x067f2Ac969091c285BcC1e537EC748aEdD779F02
-Mintou NFT #1
-Mintou NFT #2
-Mintou NFT #3
-Minted NFT #4
-Fim do deploy e mint!
-```
+![Imgur](https://i.imgur.com/AbXDLLf.png)
 
-Podemos ter certeza que tudo funcionou corretamente usando o [Goerli Etherscan](https://goerli.etherscan.io/) onde você copiar e colar o endereço do contrato que foi o output para ver o que aconteceu com ele. Aqui eu posso ver que tivemos **cinco** transações. **Uma** transação de criação de contrato e **quatro** transações onde mintamos NFT. Isso está certo :).
+Podemos ter certeza que tudo funcionou corretamente usando o [Sepolia Etherscan](https://sepolia.etherscan.io/) onde você copiar e colar o endereço do contrato que foi o output para ver o que aconteceu com ele. Aqui eu posso ver que tivemos **cinco** transações. **Uma** transação de criação de contrato e **quatro** transações onde mintamos NFT. Isso está certo :).
 
 ![Untitled](https://i.imgur.com/hJtoYRp.png)
 
-**Se acostume a usar muito o Etherscan do Goerli para debugar os deploys** porque é a maneira mais fácil de acompanhar os deployments e se algo der errado. Se não estiver mostrando no Etherscan, isso significa que está ou processando ou algo deu errado. Isso é o que eu consigo:
+**Se acostume a usar muito o Etherscan do Sepolia para debugar os deploys** porque é a maneira mais fácil de acompanhar os deployments e se algo der errado. Se não estiver mostrando no Etherscan, isso significa que está ou processando ou algo deu errado. Isso é o que eu consigo:
 
-Se funcionou - **INCRÍVEL VOCÊ ACABOU DE FAZER DEPLOY DE UM CONTRATO E MINTOU NFTS!!**
+Se funcionou - **INCRÍVEL VOCÊ ACABOU DE FAZER DEPLOY DE UM CONTRATO E MINTOU NFTS!!** 👩‍💻
 
 ### **🌊 Ver no OpenSea**
 
@@ -196,40 +186,25 @@ Por exemplo:
 
 Nesse caso, o OpenSea renderizou todos os atributos dos personagens eficientemente!
 
-O que é legal aqui é que se nós trocarmos o valor do HP da NFT do jogador para `150` ou qualquer valor, ele mudaria e atualizaria no OpenSea! **Isso é super legal porque a NFT segura dinamicamente o estado do personagem :).** Nós não precisamos de nenhum servidor centralizado para segurar aqueles dados.
+O que é legal aqui é que se nós trocarmos o valor do HP da NFT do jogador para `150` ou qualquer valor, ele mudaria e atualizaria no OpenSea! **Isso é super legal porque a NFT segura dinamicamente o estado do personagem :).** Nós não precisamos de **nenhum servidor centralizado** para segurar aqueles dados.
 
 Isso é incrível porque agora quando nossos jogadores forem jogar o jogo e nós detectarmos sua NFT, vamos saber exatamente qual o estado do personagem da NFT dele no jogo!
 
-_Nota: você vai perceber que nós mintamos 4 NFTs para a mesma carteira nesse caso - isso **não seria** permitido no nosso jogo porque cada jogador estaria permitido a ter apenas 1 NFT. Eu só queria testar. Também, nesse momento `nftHolders` pode apenas segurar um `tokenId` por endereço único. Então, cada vez que uma nova NFT é mintada para o mesmo endereço, o `tokenId` anterior é sobrescrito. Você poderiar retornar um erro se quisesse ao invés disso._
+> 💡**Nota:** você vai perceber que nós mintamos 4 NFTs para a mesma carteira nesse caso - isso **não seria** permitido no nosso jogo porque cada jogador estaria permitido a ter apenas 1 NFT. Eu só queria testar. Também, nesse momento `nftHolders` pode apenas segurar um `tokenId` por endereço único. Então, cada vez que uma nova NFT é mintada para o mesmo endereço, o `tokenId` anterior é sobrescrito. Você poderiar retornar um erro se quisesse ao invés disso.
 
 ### **🙀 "Ajuda, minhas NFTs não estão mostrando no OpenSea!"**
 
-**Se suas NFTs não estiverem aparecendo no OpenSea** - espere alguns minutos, as vezes o OpenSea pode levar até 5 minutos. Aqui vai meu conselho, se já fazem mais de 5 minutos e seus metadados ainda se parecem com isso:
+**Se suas NFTs não estiverem aparecendo no OpenSea** - espere alguns minutos, as vezes o OpenSea pode levar até 5 minutos.
 
 ![Untitled](https://i.imgur.com/dVACrDl.png)
 
-**Use o Rarible ao invés do OpenSea.** Rarible é outro marketplace NFT como o OpenSea. Aqui está como configurá-lo:
-
-1. Vá para `goerli.rarible.com`.
-2. Crie esse URL: `https://goerli.rarible.com/token/INSIRA_O_ENDEREÇO_DO_CONTRATO_AQUI:INSIRA_O_TOKEN_ID_AQUI.`
-
-Por exemplo, esse é o meu link:
-
-```plaintext
-https://goerli.rarible.com/token/0xcec8593c046364f163926a4327dfce6f546d9f98:4
-```
-
-Esse é a NFT do Zeca Pagodinho!! Meu `tokenId` é `4` porque foi o quarto mint feito daquele contrato. Sinta-se livre para tentar colocar outros Ids.
-
-**Basicamente, se você não vir sua NFT no OpenSea dentro de alguns minutos, tente o Rarible para ter certeza que está funcionando.**
-
 ### 🤯 Porque isso é épico?
 
-Vale a pena falar sobre o porque o que você acabou de fazer é grande coisa.
+Vale a pena falar sobre o **porque o que você acabou de fazer é grande coisa**.
 
-Basicamente, você criou uma NFT. Então, isso já é legal. As pessoas podem possuir um personagem do seu jogo em suas carteiras, yay!
+Basicamente, **você criou uma NFT**. Então, isso já é legal. As pessoas podem possuir um personagem do seu jogo em suas carteiras, yay!
 
-Mas, essas NFTs tem atributos também! Como ataque, vida, mana ou qualquer coisa que você adicionou. Então, isso significa que a NFT é mais do que só um JPG - tem outros elementos que a fazem mais interativa.
+Mas, essas **NFTs tem atributos também!** Como ataque, vida, mana ou qualquer coisa que você adicionou. Então, isso significa que a NFT é mais do que só um JPG - tem outros elementos que a fazem mais interativa.
 
 O maior jogo NFT do mundo, Axie Infinity, funciona assim também. É um jogo baseado em turnos, estilo Pokemon onde você luta contra outros players 1v1.
 
@@ -271,7 +246,8 @@ Em cima disso, como o criador das NFTs originais do Zeca Pagodinho - eu posso co
 
 Ok - vamos programar a lógica do jogo.
 
-### 🚨 Reporte seu Progresso !
+### 🚨 Reporte seu Progresso
+
 *Por favor, faça isso se não o yanluiz vai ficar triste :(*
 
 Poste uma screenshot em #progresso dos seus NFTs épicos no OpenSea. Faça um tweet sobre isso, espalhe pro mundo o que você fez, foi incrível! Marque a @Web3dev_ no twitter que a gente retweeta para você. Adoramos quando as pessoas interagem pelo twitter, é como uma dose de dopamina e motivação. Além do mais o seu tweet pode ajudar a divulgar a comunidade e a web3 para o mundo!
