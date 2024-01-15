@@ -1,4 +1,4 @@
-### 🙀 Construindo nosso boss.
+### 🙀 Construindo nosso boss
 
 Então, no nosso jogo o personagem NFT vai estar apto a atacar um boss.
 
@@ -60,18 +60,18 @@ Finalmente, só mudamos `run.js` e `deploy.js` para passar em parâmetros para o
 ```javascript
 const gameContract = await gameContractFactory.deploy(
   ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
-		[
-			"https://i.imgur.com/gC5qXsl.png",
-			"https://i.imgur.com/0PvxtwP.png",
-			"https://i.imgur.com/Pj8lHpM.png",
-		],
-		[100, 200, 300],
-		[100, 50, 25],
-		"Capitão Nascimento",
-		"https://i.imgur.com/yWpKMDt.png",
-		10000,
-		50
-	);
+  [
+   "https://i.imgur.com/gC5qXsl.png",
+   "https://i.imgur.com/0PvxtwP.png",
+   "https://i.imgur.com/Pj8lHpM.png",
+  ],
+  [100, 200, 300],
+  [100, 50, 25],
+  "Capitão Nascimento",
+  "https://i.imgur.com/yWpKMDt.png",
+  10000,
+  50
+ );
 ```
 
 Parece um pouco feio, mas, é isso!
@@ -84,7 +84,7 @@ Seria bem divertido se o boss fosse seu cachorro, e ao invés de tentar destruí
 
 De qualquer jeito, seja criativo. Esse é o seu projeto :).
 
-### 👾 Recuperando os atributos dos NFTs do jogador.
+### 👾 Recuperando os atributos dos NFTs do jogador
 
 Nós vamos criar uma função `attackBoss`. Aqui está um início dela:
 
@@ -118,7 +118,7 @@ Eu então pego os atributos do jogador usando `nftHolderAttributes[nftTokenIdOfP
 
 Em contraste, se fôssemos usar `memory` ao invés de `storage`, iria criar uma cópia local da variável dentro do escopo da função. Isso significa que se fizéssemos `player.hp = 0` seria desse jeito apenas na função e não mudaria o valor global da variável.
 
-Em `run.js` você pode testar isso adicionando isso em qualquer lugar embaixo de `gameContract.deployed();`:
+Em `run.js` você pode testar isso adicionando isso em qualquer lugar embaixo de `gameContract.deploy();`:
 
 ```javascript
 let txn;
@@ -137,25 +137,15 @@ Então, fazemos `attackBoss()`.
 
 Quando rodo isso, isso é o que consigo:
 
-```plaintext
-Terminamos de incializar o boss Capitão Nascimento com HP 10000, img https://i.imgur.com/yWpKMDt.png
-Terminamos de incializar o Anitta com HP 100, img https://i.imgur.com/gC5qXsl.png
-Terminamos de incializar o Ronaldinho Gaúcho com HP 200, img https://i.imgur.com/NplQpes.png
-Terminamos de incializar o Zeca Pagodinho com HP 300, img https://i.imgur.com/Pj8lHpM.png
-Contrato deployado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-NFT Mintado com tokenId 0 e characterId 2
-
-Jogador com personagem Zeca Pagodinho ira atacar. Tem 300 de HP e 25 de PA
-Boss Capitão Nascimento tem 10000 HP e 50 PA
-```
+![Imgur](https://i.imgur.com/VTqAORU.png)
 
 Parece bom! `Zeca Pagodinho` está indo atacar nosso boss `Capitão Nascimento`. Tudo funcionou perfeitamente e estamos recuperando o estado das NFTs :).
 
-### 🔍 Conferir algumas coisas antes de atacar.
+### 🔍 Conferir algumas coisas antes de atacar
 
 Depois, nós só precisamos checar que o **personagem tenha HP**, se o personagem está morto ele não pode atacar! Nós vamos precisar ter certeza que o **boss tenha HP**. Não dá para atacar o boss se ele estiver destruído.
 
-Algumas coisas para notar aqui -
+Algumas coisas para notar aqui:
 
 - Você também vai notar a palavra chave especial `require` aqui. Sinta-se livre para ler mais [aqui](https://ethereum.stackexchange.com/questions/60585/what-difference-between-if-and-require-in-solidity).
 
@@ -184,15 +174,16 @@ function attackBoss() public {
 }
 ```
 
-### 🔫 Ataque o boss!!
+### 🔫 Ataque o boss
 
 Atacar, na verdade **não é** super fácil.
 
-Basicamente, estamos trabalhando com `uint` agora. Isso é um "[unsigned integer](https://solidity-by-example.org/primitives/)" significando que não pode ser negativo! Isso é meio estranho. Digamos que o boss tenha 10 HP sobrando e nosso personagem tenha 50 de dano de ataque. Isso significa que precisaremos fazer `10 HP - 50 dano de ataque` para calcular o HP novo do boss, que seria `-40`. Mas, estamos trabalhando com `uint` então não podemos lidar com números negativos!
+Basicamente, estamos trabalhando com `uint` agora. Isso é um "[unsigned integer](https://solidity.w3d.community/exemplos/linguagem-v0.8.3/tipos-de-dados-primarios.html)" significando que não pode ser negativo! Isso é meio estranho. Digamos que o boss tenha 10 HP sobrando e nosso personagem tenha 50 de dano de ataque. Isso significa que precisaremos fazer `10 HP - 50 dano de ataque` para calcular o HP novo do boss, que seria `-40`. Mas, estamos trabalhando com `uint` então não podemos lidar com números negativos!
 
 **Teríamos um erro de overflow ou underflow.**
 
-Nós **poderíamos** usar `int` que permitiria armazenar números negativos. Mas, isso fica bagunçado porque a maioria das libraries como OpenZeppelin ou Hardhat não tem um suporte decente para `int` em suas funções de library. Por exemplo, nós umas `Strings.toString` que só funciona com `uint`. `console.log` também não funciona com `int` facilmente.
+Nós **poderíamos** usar `int` que permitiria armazenar números negativos. Mas, isso fica bagunçado porque a maioria das libraries como OpenZeppelin ou Hardhat não tem um suporte decente para `int` em suas funções de library.
+Por exemplo, nós umas `Strings.toString` que só funciona com `uint`. `console.log` também não funciona com `int` facilmente.
 
 Então, vale a pena ficar com `uint` só pela facilidade por agora.
 
@@ -232,7 +223,7 @@ function attackBoss() public {
 
 `bigBoss.hp < player.attackDamage` só está checando se o boss vai ter seu HP reduzido para menos do que 0 no dano de ataque dos jogadores. Por exemplo, se `bigBoss.hp` fosse 10 e `player.attackDamage` fosse 30, então sabemos que o boss teria seu HP reduzido para menos que 0, o que causaria um erro! Então, vamos checar esse caso e configurar o hp do boss para 0 manualmente. Se não for para menos que 0, nós só fazemos `bigBoss.hp = bigBoss.hp - player.attackDamage` o que iria reduzir o HP do boss baseado em quanto dano o jogador dá!
 
-### 🔪 Adicionando a lógica para o boss atacar o jogador.
+### 🔪 Adicionando a lógica para o boss atacar o jogador
 
 Nós também precisamos ter certeza que o HP do jogador não se torne negativo também, porque o HP dos jogadores é um `uint` também. Então fazemos:
 
@@ -294,26 +285,9 @@ await txn.wait();
 
 Agora quando rodo `run.js` aqui está o que eu consigo:
 
-```plaintext
-Terminamos de incializar o boss Capitão Nascimento w/ HP 10000, img https://i.imgur.com/yWpKMDt.png
-Terminamos de incializar o Anitta com HP 100, img https://i.imgur.com/gC5qXsl.png
-Terminamos de incializar o Ronaldinho Gaúcho com HP 200, img https://i.imgur.com/NplQpes.png
-Terminamos de incializar o Zeca Pagodinho com HP 300, img https://i.imgur.com/Pj8lHpM.png
-Contrato deployado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-NFT Mintado com tokenId 0 e characterId 2
+![Imgur](https://i.imgur.com/qoUUT88.png)
 
-Jogador com personagem Zeca Pagodinho ira atacar. Tem 300 de HP e 25 de PA
-Boss Capitão Nascimento tem 10000 HP and 50 AD
-Jogador atacou o boss. Boss ficou com hp: 9975
-Boss atacou o jogador. Jogador ficou com hp: 250
-
-Jogador com personagem Zeca Pagodinho ira atacar. Tem 250 de HP e 25 de PA
-Boss Capitão Nascimento tem 9975 de HP e 50 de PA
-Jogador atacou o boss. Boss ficou com hp: 9950
-Boss atacou o jogador. Jogador ficou com hp: 200
-```
-
-**Está tudo funcionando?** Vamos ver. Parece que o `Zeca Pagodinho` atacou o `Capitão Nascimento` com `25 AD` e a saúde do Capitão Nascimento caiu de `10000` para `9975` o que está certo! Então o Capitão Nascimento ataca o Zeca Pagodinho com `50` de dano de ataque e a saúde do Zeca Pagodinho cai de `300` para `250`. Parece que tudo está funcionando bem :).
+**Está tudo funcionando?** Vamos ver. Parece que o `Zeca Pagodinho` atacou o `Capitão Nascimento` com `25 PA` e a saúde do Capitão Nascimento caiu de `10000` para `9975` o que está certo! Então o Capitão Nascimento ataca o Zeca Pagodinho com `50` de dano de ataque e a saúde do Zeca Pagodinho cai de `300` para `250`. Parece que tudo está funcionando bem :).
 
 Você pode ver que quando atacamos uma segunda vez, os valores atualizados de HP são usados tanto para o personagem quanto para o boss :).
 
@@ -321,34 +295,10 @@ Sinta-se livre para testar essa função tentando com um boss com `1 de HP` ou u
 
 Por exemplo, se eu dou ao jogador `1 HP`, aqui está o resultado:
 
-```plaintext
-Terminamos de incializar o boss Capitão Nascimento HP 10000, img https://i.imgur.com/yWpKMDt.png
-Terminamos de incializar o Anitta com, img https://i.imgur.com/gC5qXsl.png
-Terminamos de incializar o Ronaldinho Gaúcho com, img https://i.imgur.com/NplQpes.png
-Terminamos de incializar o Zeca Pagodinho com, img https://i.imgur.com/Pj8lHpM.png
-Contrato deployado no endereço: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-NFT Mintado com tokenId 0 e characterId 2
-
-Jogador com personagem Zeca Pagodinho ira atacar. Tem 1 HP e 25 de PA
-Boss Capitão Nascimento tem 10000 de HP e 50 de PA
-Jogador atacou o boss. Boss ficou com hp: 9975
-Boss atacou jogador. Jogador ficou com hp: 0
-
-Jogador com personagem Zeca Pagodinho ira atacar. Tem 0 de HP e 25 de PA
-Boss Capitão Nascimento tem 9975 de HP e 50 de PA
-Error: VM Exception while processing transaction: reverted with reason string 'Error: personagem precisa ter HP para atacar o boss.'
-    at MyEpicGame.attackBoss (contracts/MyEpicGame.sol:88)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at runNextTicks (node:internal/process/task_queues:65:3)
-    at listOnTimeout (node:internal/timers:526:9)
-    at processTimers (node:internal/timers:500:7)
-    at HardhatNode._mineBlockWithPendingTxs (/Users/flynn/Developer/epic-game/node_modules/hardhat/src/internal/hardhat-network/provider/node.ts:1582:23)
-    at HardhatNode.mineBlock (/Users/flynn/Developer/epic-game/node_modules/hardhat/src/internal/hardhat-network/provider/node.ts:435:16)
-    at EthModule._sendTransactionAndReturnHash (/Users/flynn/Developer/epic-game/node_modules/hardhat/src/internal/hardhat-network/provider/modules/eth.ts:1494:18)
-```
+![Imgur](https://i.imgur.com/lLUAoVx.png)
 
 Então, você pode ver que o primeiro ataque aconteceu de maneira correta, `Boss atacou jogador. Jogador ficou com hp: 0`. Incrível! Nossa função funcionou perfeitamente. O hp do nosso personagem ia ser negativo, mas foi configurado para `0`! Yay!
 
-Mas, na segunda vez que atacamos, conseguimos um erro com: `Error: personagem precisa ter HP para atacar o boss`. O que está correto!!! Isso é basciamente como devolver um erro na nsosa API quando algo dá errado.
+Mas, na segunda vez que atacamos, conseguimos um erro com: `Error: personagem precisa ter HP para atacar o boss`. O que está correto!!! Isso é basciamente como devolver um erro na nossa API quando algo dá errado.
 
 Legal - nossa função `attackBoss` está basicamente feita. Vamos adicionar mais alguma mágica depois mas por agora estamos bem. Nós oficialmente temos nossa lógica de jogo **on-chain** :).
