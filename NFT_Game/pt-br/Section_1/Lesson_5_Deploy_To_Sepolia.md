@@ -131,7 +131,7 @@ module.exports = {
   networks: {
     sepolia: {
       url: "SEU_URL_DA_API_ALCHEMY",
-      accounts: ["SUA_KEY_PRIVADA_DA_CONTA_SEPOLIA"],
+      accounts: ["SUA_KEY_PRIVADA_DA_CONTA"],
     },
   },
 };
@@ -140,7 +140,7 @@ module.exports = {
 
 Você pode conseguir URL da sua API no dashboard do Alchemy e colar ali mesmo. Depois, você vai precisar da sua chave **privada** do Sepolia (não o seu endereço público!) o qual você pode [pegar no metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) e colar ali também.
 
-**Nota: NÃO FAÇA COMMIT DESSE ARQUIVO NO GITHUB. ELE CONTÉM SUA CHAVE PRIVADA. VOCÊ PODE SER ROUBADO E HACKEADO. ESSA CHAVE PRIVADA É A MESMA QUE A DA MAINNET.** Nós vamos falar sobre variáveis `.env` depois e como mantê-las em segredo.
+> ⚠️ **ATENÇÃO: NÃO FAÇA COMMIT DO `hardhat.config.js` NO GITHUB. ELE CONTÉM SUA CHAVE PRIVADA. VOCÊ PODE SER ROUBADO E HACKEADO. ESSA CHAVE PRIVADA É A MESMA QUE A DA MAINNET`Nós vamos falar sobre variáveis`.env` depois e como mantê-las em segredo.**
 
 Por quê você precisa dessa chave privada? Porque para realizar uma transação, como fazer deploy de um contrato, você precisa "logar" na blockchain e assinar / fazer deploy do contrato. E, o seu nome de usuário é o seu endereço público, e sua senha é sua chave privada. É como fazer login na AWS ou GCP para fazer deploy.
 
@@ -245,6 +245,48 @@ Por exemplo, digamos que nós temos outros devs construindo itens em cima dos no
 Em cima disso, como o criador das NFTs originais do Zeca Pagodinho - eu posso cobrar uma taxa royalty toda vez que alguém compre ou venda a NFT original e isso significa que quanto mais popular a NFT, mais dinheiro eu faria por venda.
 
 Ok - vamos programar a lógica do jogo.
+
+### **🙉 Uma nota sobre o github**
+
+Se estiver fazendo upload para o Github, **não faça upload do seu arquivo `hardhat.config.js` com sua chave privada** para seu repositório. **Você vai ser roubado**.
+
+Eu uso o `dotenv` para isso.
+
+```javascript
+npm install --save dotenv
+```
+
+```javascript
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
+  solidity: "0.8.19",
+  networks: {
+    sepolia: {
+      url: process.env.STAGING_ALCHEMY_KEY,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    mainnet: {
+      chainId: 1,
+      url: process.env.PROD_ALCHEMY_KEY,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
+};
+```
+
+E o seu arquivo `.env` vai se parecer com isso:
+
+```javascript
+STAGING_ALCHEMY_KEY=SEU_URL_DA_API_ALCHEMY_TESTNET;
+PROD_ALCHEMY_KEY=SEU_URL_DA_API_ALCHEMY_PROD;
+PRIVATE_KEY=SUA_KEY_PRIVADA_DA_CONTA_METAMASK;
+```
+
+> ⚠️ **ATENÇÃO:** **Não commite seu arquivo .env depois disso.
+> Adicione ele no `.gitignore`** [aqui](https://www.atlassian.com/br/git/tutorials/saving-changes/gitignore) você pode entender melhor sobre e como usá-lo.
 
 ### 🚨 Reporte seu Progresso
 
