@@ -1,6 +1,6 @@
 Abaixo eu vou passar por algumas funções. Elas não vão parecer muito úteis por agora, mas vão ser absurdamente úteis quando formos trabalhar no nosso web app.
 
-### ✅ Construir função para checar se o usuário tem a NFT.
+### ✅ Construir função para checar se o usuário tem a NFT
 
 Nós precisamos de uma maneira de checar se o usuário tem um personagem NFT que demos a ele, e depois recuperar os atributos da NFT se ela existir. Por quê?
 
@@ -38,7 +38,7 @@ Por que fazemos `userNftTokenId > 0`? Bom, basicamente [não tem outro jeito](ht
 
 Esse é um problema para o usuário que tem a NFT com o tokenId `0`. Aí está o motivo do porque eu fiz `_tokenIds.increment()` antes no constructor! Dessa maneira, **ninguém está permitido a ter o tokenID 0.** Esse é um dos casos em que precisamos ser espertos para configurar nosso código por causa de algumas especificidades do Solidity :).
 
-### 🎃 Recuperando os personagens padrão.
+### 🎃 Recuperando os personagens padrão
 
 Nosso web app vai ter uma "tela de selecionar personagem" para novos jogadores para que eles possam escolher qual personagem NFT eles querem mintar!
 
@@ -52,9 +52,9 @@ function getAllDefaultCharacters() public view returns (CharacterAttributes[] me
 
 Você deve estar se perguntando, "Porque estamos construindo funções para pegar variáveis sozinhas? Não podemos acessar elas diretamente do contrato?". Sim, você pode! Mas, é uma boa prática criar funções `get` :). Isso faz tudo organizado.
 
-### 💀 Recuperando o boss.
+### 💀 Recuperando o boss
 
-Precisamos poder recuperar o boss. Por quê? Bom - quando nosso jogador estiver jogando o nosso jogo, o nosso ap vai precisar estar apto a mostrar coisas para ele, como o HP do boss, o nome, a imagem e etc!
+Precisamos poder recuperar o boss. Por quê? Bom - quando nosso jogador estiver jogando o nosso jogo, o nosso Dapp vai precisar estar apto a mostrar coisas para ele, como o HP do boss, o nome, a imagem e etc!
 
 Essa também é uma função bem fácil de escrever:
 
@@ -66,7 +66,7 @@ function getBigBoss() public view returns (BigBoss memory) {
 
 É isso!
 
-### 🧠 Adicionando `Event` no nosso contrato.
+### 🧠 Adicionando `Event` no nosso contrato
 
 Quando chamamos `mintCharacterNFT`, como vamos saber se foi **feito**? Quando fazemos:
 
@@ -112,50 +112,41 @@ Tudo o que precisamos fazer é adicionar essa linha no final da função `attack
 emit AttackComplete(bigBoss.hp, player.hp);
 ```
 
-### ➡️ Fazendo Deploy das mudanças.
+### ➡️ Fazendo Deploy das mudanças
 
 Muito bom! Agora adicionamos as funções que nosso web app vai usasr no nosso jogo! Estamos caminhando para um jogo incrível! Lembre-se que precisamos fazer o deploy do contrato de novo para usarmos essas funções.
 
-Antes de irmos para o nosso web app, vamos precisar ter certeza de que temos um contrato limpo e pornto. Vamos ter certeza de que nosso arquivo de deploy não minte nenhum personagem ou faça algum ataque.
+Antes de irmos para o nosso web app, vamos precisar ter certeza de que temos um contrato limpo e pronto. Vamos ter certeza de que nosso arquivo de deploy não minte nenhum personagem ou faça algum ataque.
 
 Aqui está meu arquivo `deploy.js` depois que removi as NFTs mintadas e os ataques do nosso último deploy:
 
 ```javascript
-const main = async () => {
+async function main() {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
-
   const gameContract = await gameContractFactory.deploy(
     ["Anitta", "Ronaldinho Gaúcho", "Zeca Pagodinho"],
-		[
-			"https://i.imgur.com/gC5qXsl.png",
-			"https://i.imgur.com/0PvxtwP.png",
-			"https://i.imgur.com/Pj8lHpM.png",
-		],
-		[100, 200, 300],
-		[100, 50, 25],
-		"Capitão Nascimento",
-		"https://i.imgur.com/yWpKMDt.png",
-		10000,
-		50
-	);
+    [
+      "https://i.imgur.com/gC5qXsl.png",
+      "https://i.imgur.com/0PvxtwP.png",
+      "https://i.imgur.com/Pj8lHpM.png",
+    ],
+    [100, 200, 300], // Pontos de vida
+    [100, 50, 25], // Dando de ataque
+    "Capitão Nascimento",
+    "https://i.imgur.com/yWpKMDt.png",
+    10000, // Pontos de vida do boss
+    50 // Dando de ataque do boss
+  );
+  console.log("Contrato deployado no endereço:", gameContract.target);
+}
 
-  await gameContract.deployed();
-  console.log("Contrato deployado no endereço:", gameContract.address);
-};
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
-
-runMain();
 ```
 
-Tudo o que sobrou é fazer o deploy usando `npx hardhat run scripts/deploy.js --network goerli`. Lembre-se de salvar o endereço do seu contrato para a próxima seção.
+Tudo o que sobrou é fazer o deploy usando `npx hardhat run scripts/deploy.js --network sepolia`. Lembre-se de salvar o endereço do seu contrato para a próxima seção.
 
 É isso :). Vamos para o nosso web app!
