@@ -1,10 +1,10 @@
 A parte legal sobre o jogo? Nós mintamos NFTs de verdade que são usadas para jogar e toda a lógica do jogo acontece on-chain. Mais cedo nesse projeto, nós configuramos toda a lógica do nosso contrato inteligente. Agora é hora de interagir com ele.
 
-### 🌊 O flow.
+### 🌊 O flow
 
 A primeira coisa que vamos começar é checar se o endereço da carteira conectada com o nosso app tem um personagem NFT. Se tiver, podemos ir em frente e pegar os metadados da NFT e usá-los para batalhar contra o boss no metaverso ⚔️.
 
-Aqui está o flow de conseguir o nosso web app conectando com nosso contrato inteligente na Testnet Goerli:
+Aqui está o flow de conseguir o nosso web app conectando com nosso contrato inteligente na Testnet Sepolia:
 
 1. Copie o endereço do último contrato que você fez deploy, e cole dentro do nosso web app.
 
@@ -16,11 +16,11 @@ Aqui está o flow de conseguir o nosso web app conectando com nosso contrato int
 
 Bem intuitivo, certo? Vamos nessa!
 
-### 🏠 Pegando o endereço do último contrato inteligente.
+### 🏠 Pegando o endereço do último contrato inteligente
 
 Bem simples, esse é o endereço do contrato que fizemos deploy. Lembra que cada vez que você roda seu script `run.js`, seu console escreve o endereço de onde seu contrato vive? Precisamos desse endereço para conectar a UI com o nosso contrato inteligente. A blockchain tem milhões de contratos nela. Nosso cliente precisa desse endereço para saber com qual contrato ele vai se conectar.
 
-Nós vamos usar esse endereço em múltiplos componentes, então, vamos fazer isso funcionar! Na raíz do seu projeto, embaixo de `src` vá em frente e crie um arquivo `constants.js` e adicione o seguinte código:
+Nós vamos usar esse endereço em múltiplos componentes, então, vamos fazer isso funcionar! Na pasta `src` vá em frente e crie um arquivo `constants.jsx` e adicione o seguinte código:
 
 ```javascript
 const CONTRACT_ADDRESS = "ENDEREÇO_DO_SEU_CONTRATO";
@@ -34,7 +34,7 @@ Então volte para o arquivo `App.js` e importe isto no topo do seu arquivo para 
 import { CONTRACT_ADDRESS } from "./constants";
 ```
 
-### 📁 Pegandos o último arquivo ABI.
+### 📁 Pegandos o último arquivo ABI
 
 **Eu fiz um pequeno vídeo abaixo explicando as coisas sobre ABI:**
 
@@ -44,7 +44,7 @@ import { CONTRACT_ADDRESS } from "./constants";
 
 Quando você compilar seu contrato inteligente, o compilador devolverá vários arquivos necessários que nos deixam interagir com o contrato. Você pode achar esses arquivos na pasta `artifacts` localizada na raíz do seu projeto Solidity.
 
-Nosso web app confia no arquivo ABI para saber como se comunicar com nosso contrato. Leia mais sobre isso [aqui](https://docs.soliditylang.org/en/v0.5.3/abi-spec.html).
+Nosso web app confia no arquivo ABI para saber como se comunicar com nosso contrato. Leia mais sobre isso [aqui](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html).
 
 Os conteúdos do nosso arquivo ABI pode ser encontrado em um arquivo JSON chique no seu projeto hardhat:
 
@@ -84,7 +84,7 @@ Por que precisamos fazer tudo isso? Porque contratos inteligentes são **imutáv
 
 Então, o que você precisa fazer é isso:
 
-1. Fazer o dpeloy de novo usando `npx hardhat run scripts/deploy.js --network goerli`
+1. Fazer o dpeloy de novo usando `npx hardhat run scripts/deploy.js --network sepolia`
 
 2. Mudar `contractAddress` em `constants.js` para ser o novo endereço do contrato que pegamos do passo acima no terminal (como fizemos antes da primeira vez que fizemos deploy).
 
@@ -92,9 +92,15 @@ Então, o que você precisa fazer é isso:
 
 **De novo -- você precisa fazer isso toda vez que mudar o código do seu contrato, senão você terá erros :).**
 
-### 📞 Chamando os contratos inteligentes com ethers.js.
+### 📞 Chamando os contratos inteligentes com ethers.js
 
 Agora que temos tudo o que precisamos, nós podemos configurar um objeto em JavaScript para interagir com nosso contrato inteligente. Aqui é onde o [ethers.js](https://github.com/ethers-io/ethers.js) entra!
+
+adicione o ethers no seu projeto caso ainda não tenha feito isso:
+
+```bash
+npm install ethers@5.7.2
+```
 
 Importe o ethers dentro do seu arquivo `App.js`:
 
@@ -102,15 +108,15 @@ Importe o ethers dentro do seu arquivo `App.js`:
 import { ethers } from "ethers";
 ```
 
-### 🌐 Cheque sua rede!
+### 🌐 Cheque sua rede
 
-Nesse ponto é realmente importante ter certeza que você está conectada na rede de teste do Goerli com o Metamask! Se não, você vai estar tentando usar funções no contrato inteligente que não existem em outras redes, e isso pode causar erros no React como "Unhandled Rejection (Error): call revert exception." Algo que você pode adicionar no seu código React para manter as coisas certas é uma função que deixa você saber se estiver na rede errada! Coloque isso na função dentro do seu useEffect:
+Nesse ponto é realmente importante ter certeza que você está conectada na rede de teste do Sepolia com o Metamask! Se não, você vai estar tentando usar funções no contrato inteligente que não existem em outras redes, e isso pode causar erros no React como `Unhandled Rejection (Error): call revert exception`. Algo que você pode adicionar no seu código React para manter as coisas certas é uma função que deixa você saber se estiver na rede errada! Coloque isso na função dentro do seu `useEffect`:
 
 ```javascript
 const checkNetwork = async () => {
   try {
     if (window.ethereum.networkVersion !== "5") {
-      alert("Please connect to Goerli!");
+      alert("Please connect to Sepolia!");
     }
   } catch (error) {
     console.log(error);
@@ -118,11 +124,11 @@ const checkNetwork = async () => {
 };
 ```
 
-Aqui está um passo a passo do que estamos fazendo aqui. Semelhante a como definimos `const { ethereum } = window` nós estamos usando `networkVersion` no objeto ethereum para checar qual rede ethereum nós estamos. As redes ethereum tem diferentes chain IDs, e o ID do Goerli é 5. Tudo que precisamos fazer é falar "se a atual rede ethereum não for o Goerli, alerte o usuário!" Agora a qualquer hora que a página não estiver carregado no Goerli você terá um aviso para seus usuários trocarem para o Goerli.
+Aqui está um passo a passo do que estamos fazendo aqui. Semelhante a como definimos `const { ethereum } = window` nós estamos usando `networkVersion` no objeto ethereum para checar qual rede ethereum nós estamos. As redes ethereum tem diferentes chain IDs, e o ID do Sepolia é `11155111`. Tudo que precisamos fazer é falar "se a atual rede ethereum não for o Sepolia, alerte o usuário!" Agora a qualquer hora que a página não estiver carregado no Sepolia você terá um aviso para seus usuários trocarem para o Sepolia.
 
 ### Recapitulação
 
-Nós fizemos bastante coisa, mas vamos ter certeza que estamos na mesma página aqui -
+Nós fizemos bastante coisa, mas vamos ter certeza que estamos na mesma página aqui:
 
 Nossa meta é chamar nosso contrato para checar se o endereço de carteira atual já mintou um personagem NFT. Se já tiver mintado, podemos mover o jogadore para a ⚔️ Arena. ⚔️ **SENÃO**, _precisamos que eles mintem um personagem NFT antes de jogar!_
 
@@ -212,7 +218,7 @@ const gameContract = new ethers.Contract(
 const txn = await gameContract.checkIfUserHasNFT();
 ```
 
-Depois que criarmos nosso provedor e o signer, estamos prontos para criar nosso objeto do contrato! Essa linha é o que cria a conexão para o nosso contrato. Ele precisa: o endereço do contrato, o arquivo ABI e um signer. Essas são as três coisas que sempre precisamos para comunicar com os contratos na blockchain.
+Depois que criarmos nosso provedor e o signer, estamos prontos para criar nosso objeto do contrato! Essa linha é o que cria a conexão para o nosso contrato. Ele precisa: o `endereço do contrato`, o `arquivo ABI` e um `signer`. Essas são as três coisas que sempre precisamos para comunicar com os contratos na blockchain.
 
 Com isso configurado, nós podemos finalmente chamar o método `checkIfUserHasNFT`. De novo, isso vai ir para o nosso contrato na blockchain e rodar um request de leitura e retornar dados para nós. **Podemos parar e ver quão legal é isso?** Você é um desenvolvedor blockchain agora 🔥!
 
@@ -255,6 +261,7 @@ export { CONTRACT_ADDRESS, transformCharacterData };
 ```
 
 E no `App.js`:
+
 ```javascript
 import { CONTRACT_ADDRESS, transformCharacterData } from "./constants"
 ```
@@ -272,15 +279,15 @@ Lembre-se nós só queremos chamar essa função se tivermos um endereço de car
 
 ```javascript
 useEffect(() => {
-	...
+ ...
 }, [currentAccount]);
 ```
 
 Bom, o que diabos é essa `[currentAccount]`? É o endereço público da carteira que pegamos do Metamask. **Qualquer hora que o valor de `currentAccount` muda, esse `useEffect` será disparado!** Por exemplo, quando `currentAccount` muda de `null` para um endereço novo de carteira, essa lógica rodaria.
 
-Pesquise um pouco e [cheque esse link](https://reactjs.org/docs/hooks-effect.html) das docs do React para aprender mais.
+Pesquise um pouco e [cheque esse link](https://react.dev/reference/react/hooks#effect-hooks) das docs do React para aprender mais.
 
-### ⭕️ Trazendo o círculo inteiro.
+### ⭕️ Trazendo o círculo inteiro
 
 Todas as coisas estão no lugar. Você está se sentindo bem e é um engenheiro insanamente talentoso. Então vamos testar isso, sim?
 
