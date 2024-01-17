@@ -12,7 +12,7 @@ Nós vamos estar usando essa coisa chamada [Replit](https://replit.com/)!
 
 É uma IDE baseada em navegador que nos deixa facilmente construir web apps e fazer o deploy deles a partir do navegador. É bem legítimo. Ao invés de configurar um ambiente local inteiro e escrever comandos para fazer deploy, é tudo dado para nós.
 
-Nota: **Você não tem que usar replit para construir + fazer deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e está confiante de suas habilidades em desenvolvimento web -- isso está legal. [Aqui está o link](https://github.com/w3b3d3v/nft-game-web3dev) para o repositório base que você pode clonar e trabalhar localmente.**
+> 💡**Nota:**  **Você não tem que usar replit para construir + fazer deploy do seu site. Se você quiser trabalhar localmente no VSCode e usar Vercel/Heroku/AWS para fazer o deploy e está confiante de suas habilidades em desenvolvimento web -- isso está legal. [Aqui está o link](https://github.com/w3b3d3v/nft-game-web3dev) para o repositório base que você pode clonar e trabalhar localmente.**
 
 Crie uma conta no Replit antes de ir em frente.
 
