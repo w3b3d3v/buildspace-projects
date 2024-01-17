@@ -2,12 +2,12 @@
 
 Então, para conseguir que o nosso site fale com a blockchain, precisamos de alguma maneira conectar nossa carteira nele. Uma vez que conectarmos nossa carteira no website, nosso site terá a permissão de chamar um contrato inteligente no nosso comportamento. **Lembre-se, é como fazer a autenticação dentro de um site.**
 
-Vá para o seu código e entre em  `App.js` embaixo de `src`. Aí é o ponto de entrada principal do nosso site será feito.
+Vá para o seu código e entre em  `App.jsx` dentro da pasta `src`. Aí é o ponto de entrada principal do nosso site será feito.
 
 Se estivermos logados no MetaMask, ele vai injetar automaticamente um objeto chamado `ethereum` dentro da nossa janela que tem alguns métodos mágicos. Vamos checar se temos isso primeiro:
 
 ```javascript
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
@@ -50,7 +50,7 @@ const App = () => {
         </div>
         <div className="connect-wallet-container">
           <img
-            src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+            src="https://i.imgur.com/NqlaaTJ.gif"
             alt="Monty Python Gif"
           />
         </div>
@@ -87,7 +87,7 @@ Cheque o código abaixo:
 /*
  * Nós vamos precisar usar estados agora! Não esqueça de importar useState
  */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
@@ -146,7 +146,7 @@ const App = () => {
           <p className="sub-text">Junte os amigos e proteja o Metaverso!!</p>
           <div className="connect-wallet-container">
             <img
-              src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+              src="https://i.imgur.com/NqlaaTJ.gif"
               alt="Nascimento Gif"
             />
           </div>
@@ -180,7 +180,7 @@ Pronto para a experiência de login mais fácil da sua vida?
 /*
  * Nós vamos precisar usar estados agora! Não esqueça de importar useState
  */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 
@@ -269,7 +269,7 @@ const App = () => {
           <p className="sub-text">Junte os amigos e proteja o Metaverso!!</p>
           <div className="connect-wallet-container">
             <img
-              src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+              src="https://i.imgur.com/NqlaaTJ.gif"
               alt="Nascimento Gif"
             />
             {/*
@@ -302,9 +302,8 @@ export default App;
 
 Clique seu novo botão chique e você deve ver sua extensão Chrome do Metamask aparecer. Boa!
 
-![Untitled](https://i.imgur.com/8pJqLFd.png)
+![Imgur](https://i.imgur.com/UgGfTei.png)
 
-
-## 🚨 Reporte seu Progresso!
+## 🚨 Reporte seu Progresso
 
 Em #progresso, poste uma screenshot do seu site muito chique e não se esqueça de mudar seus GIFs e títulos para ficar algo mais a sua cara. Faça do SEU jeito!
