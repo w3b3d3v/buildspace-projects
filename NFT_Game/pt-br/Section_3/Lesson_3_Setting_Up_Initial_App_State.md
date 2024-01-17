@@ -10,7 +10,7 @@ Essa seção vai te ajudar a entender como vamos renderizar cada estado do nosso
 
 Boa. Parece que nós temos três visões diferentes que precisamos criar! Nós vamos ver algumas coisas bem legais de React.js que podem ser novas pra você. Se você não entende isso completamente - **não se preocupe**! Faça algumas pesquisas e lembre-se o Google é seu amigo :).
 
-### 🧱 Configurando o componente SelectCharacter.
+### 🧱 Configurando o componente SelectCharacter
 
 Vamos começar criando nosso componente `SelectCharacter`! Vá para a pasta `src/Components/SelectCharacter` e crie um novo arquivo chamado `index.js`. Esse diretório terá a nossa lógica principal para o nosso componente `SelectCharacter` e seu estilo! Você deve ver um arquivo `SelectCharacter.css` com várias estilizações!
 
@@ -38,7 +38,7 @@ export default SelectCharacter;
 
 Muito bom! Viu como foi fácil? Você já tem um componente pronto! Vamos em frente e configurar nossa renderização condicional para que possamos ver essa coisa.
 
-### 👁 Mostrando o componente SelectCharacter.
+### 👁 Mostrando o componente SelectCharacter
 
 Nós vamos precisar voltar para `App.js` e importar nosso novo componente. Logo abaixo de onde você importou `App.css`, adicione essa linha:
 
@@ -75,7 +75,7 @@ const renderContent = () => {
     return (
       <div className="connect-wallet-container">
         <img
-          src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+          src="https://i.imgur.com/NqlaaTJ.gif"
           alt="Nascimento Gif"
         />
         <button
@@ -135,11 +135,10 @@ return (
 );
 ```
 
-Nota: Lembre-se de importar SelectCharacter adicionando essa linha ao início do seu arquivo:
-
+> 💡**Nota:** Lembre-se de importar `SelectCharacter` adicionando essa linha ao início do seu arquivo:
 `import SelectCharacter from './Components/SelectCharacter';`
 
-### 🥵 Tenha certeza que tudo está funcionando!
+### 🥵 Tenha certeza que tudo está funcionando
 
 Nós fizemos muita coisa! Nesse ponto, vamos ter certeza que os métodos estão funcionando:
 
@@ -147,7 +146,7 @@ Nós fizemos muita coisa! Nesse ponto, vamos ter certeza que os métodos estão 
 
 O primeirio cenário é que o usuário não tenha conectado a sua carteira ao nosso app - então mostre o botão de conectar carteira!
 
-Nota: tenha certeza que sua carteira não está conectado ao app por um projeto antigo. Para fazer isso, clique na extensão do Metamask e clique nos três pontos na direita. Você deve ver algo como "Sites Conectados". Vá em frente e clique nisso. Você deve ver `http://localhost:3000` com um ícone de lata de lixo do lado. Clique no ícone para remover a conexão da sua carteira do seu app.
+> 💡**Nota:**  Tenha certeza que sua carteira não está conectado ao app por um projeto antigo. Para fazer isso, clique na extensão do **Metamask** e clique nos **três pontos** na direita. Você deve ver algo como "**Sites Conectados**". Vá em frente e clique nisso. Você deve ver `http://localhost:3000` com um **ícone de lata de lixo do lado**. Clique no ícone para **remover a conexão da sua carteira do seu app**.
 
 ![Untitled](https://i.imgur.com/wWoKMRX.png)
 
@@ -170,6 +169,6 @@ Na próxima seção vamos começar a interagir com o nosso contrato e ver se o e
 1. Escreva a lógica para mintar o personagem NFT.
 2. Configure o componente `Arena` para que possamos derrubar o boss na nossa maneira 😈.
 
-## 🚨 Reporte seu Progresso!
+## 🚨 Reporte seu Progresso
 
 Em #progresso, poste um screenshot com a saída do seu console exibindo a mensagem que conectou na sua carteira. Incrível que você conseguiu! Conectar carteiras é o coração da magia da web3.
