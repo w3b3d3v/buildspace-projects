@@ -2,11 +2,11 @@ Nós estamos muito bem agora. Nós configuramos dois cenários e vimos o básico
 
 Agora que estamos aptos a interagir com o nosso contrato inteligente a partir da UI e criamos nosso componente `SelectCharacter`, nós podemos facilmente pegar todos os personagens mintáveis do nosso contrato e mostrá-los na nossa UI. Vamos nessa.
 
-### 👀 Só mais uma coisa.
+### 👀 Só mais uma coisa
 
-Antes de começar, remova qualquer chamada de função para mintar um personagem ou atacar o boss no seu arquivo `script/deploy.js`! Isso vai prevenir alguns erros de estado na nossa UI.
+Antes de começar, **remova qualquer chamada de função para mintar um personagem ou atacar o boss no seu arquivo** `script/deploy.js`! Isso vai prevenir alguns erros de estado na nossa UI.
 
-### ♻️ Configurando um objeto reutilizável de contrato.
+### ♻️ Configurando um objeto reutilizável de contrato
 
 Já que sabemos que vamos usar nosso contrato inteligente, vamos começar configurando nosso objeto `ethers` para interagir com ele. Vai ser o mesmo flow que antes, com algumas mudanças. Vamos começar importando todas as coisas em `Components/SelectCharacter/index.js`:
 
@@ -39,7 +39,9 @@ const SelectCharacter = ({ setCharacterNFT }) => {
 export default SelectCharacter;
 ```
 
-Quando o nosso componente for montado, nós vamos criar nosso `gameContract` para começar a usá-lo em seguida! Quero mostrar nossos personagens mintáveis o mais rápido possível. Isso significa que vamos chamar nosso contrato o mais cedo que pudermos. Nota: esse bloco de código vai embaixo da variável useState (embaixo de `const [gameContract, setGameContract] = useState(null);`.
+Quando o nosso componente for montado, nós vamos criar nosso `gameContract` para começar a usá-lo em seguida! Quero mostrar nossos personagens mintáveis o mais rápido possível. Isso significa que vamos chamar nosso contrato o mais cedo que pudermos.
+> 💡**Nota:** esse bloco de código vai embaixo da variável useState, embaixo de:
+> `const [gameContract, setGameContract] = useState(null);`
 
 ```javascript
 // UseEffect
@@ -65,7 +67,7 @@ useEffect(() => {
 }, []);
 ```
 
-### 😎 Buscando todos os personagens.
+### 😎 Buscando todos os personagens
 
 Não tem muita diferença aqui com configurar nosso `gameContract` no estado. Nós vamos usar um pouco mais das ferramentas do `useEffect`! Já que precisamos dos nossos dados o mais rápido possível, queremos saber logo quando nosso `gameContract` ficar pronto para o uso. Então, porque não configurar outro `useEffect` para ouvir qualquer mudanças em `gameContract`? Logo abaixo do `useEffect` que você escreveu acima, adiciona isso:
 
@@ -106,7 +108,7 @@ useEffect(() => {
 }, [gameContract]);
 ```
 
-Boa. Isso está se parecendo bem similar com o que tínhamos em `App.js`, certo? Nós temos essa função async chamada `getCharacters` que usa o nosso `gameContract` para chamar nossa função `getAllDefaultCharacters` que escrevemos anteriormente na Solidity Land!
+Boa. Isso está se parecendo bem similar com o que tínhamos em `App.js`, certo? Nós temos essa função `async` chamada `getCharacters` que usa o nosso `gameContract` para chamar nossa função `getAllDefaultCharacters` que escrevemos anteriormente na Solidity Land!
 
 Nós então mapeamos o que é retornado para nós para transformar os dados em uma maneira que nossa UI possa entender facilmente.
 
@@ -121,7 +123,7 @@ Antes de ir em frente, vamos tentar um teste rápido! Nós devemos poder ver alg
 
 Isso é legal, mas seria mais legal se fosse mostrado no nosso app, certo?
 
-### 👓 Renderizando a UI dos personagens.
+### 👓 Renderizando a UI dos personagens
 
 Nós vamos pegar o mesmo método de renderização aqui criando uma função que vai mapear por todos os personagens e criar uma UI para renderizá-los na página. Vamos começar criando o método de renderização no componente `SelectCharacter`:
 
@@ -146,7 +148,7 @@ const renderCharacters = () =>
 
 Tem algumas coisas que quero falar aqui antes de irmos em frente:
 
-1. Se você lembra da lição anterior, eu dei todo o css necessário para esse componente. Isso vai fazer as coisas funcionarem, mas eu recomendo _FORTEMENTE_ a mudar isso!
+1. Se você lembra da lição anterior, eu dei todo o css necessário para esse componente. Isso vai fazer as coisas funcionarem, mas eu recomendo **_FORTEMENTE_** a mudar isso!
 2. Você provavelmente vai ver outro erro de undefined para `mintCharacterNFTAction`. Não se preocupe - isso vai ser adicionado depois!
 3. Nós ainda precisamos chamar esse método de renderização, então faremos isso agora no componente `SelectCharacter`:
 
@@ -169,9 +171,9 @@ return (
 
 **VAMOS NESSA! CONSEGUIMOS ALGUNS PERSONAGENS :).**
 
-_Nota: os personagens podem estar na vertical ao invés de na horizontal!_
+> 💡**Nota:** os personagens podem estar na vertical ao invés de na horizontal!
 
-### ✨ Mintando nosso personagen NFT a partir da UI.
+### ✨ Mintando nosso personagen NFT a partir da UI
 
 Isso é incrível, mas nós podemos levar isso um passo mais longe - **um botão para mintar nossa NFT.** Nós vamos começar adicionando na nossa função `mintCharacterNFTAction`. Vá em frente e adicione isso logo abaixo de onde você declarou seu estado em `SelectCharacter`:
 
@@ -191,15 +193,17 @@ const mintCharacterNFTAction = (characterId) => async () => {
 };
 ```
 
-_Nota: Lembre-se de tirar os comentários de `onClick={mintCharacterNFTAction(index)} em `renderCharacters`._
+> 💡**Nota:** Lembre-se de tirar os comentário de:
+> `onClick={mintCharacterNFTAction(index)}` em `renderCharacters`.
 
-Eu espero que você esteja começando a se familizar com interações com contratos inteligentes! Se você tiver o atributo `onClick` comentado no seu código de método de renderização, tire o comentário dele agora.
+Eu espero que você esteja começando a se familizar com interações com contratos inteligentes! Se você tiver o atributo `onClick` **comentado no seu código de método de renderização, tire o comentário dele agora**.
 
 Essa função vai chamar a função `mintCharacterNFT` no nosso contrato. Ela precisa saber qual personagem mintar, então passamos o index daquele personagem!
 
 Nós então esperamos a transação acabar antes de fazer qualquer coisa. Algo parece estranho... Não parece que estamos retornando dados do nosso contrato inteligente, certo? Como sabemos que a NFT foi mintada? **Lembra daquele `event` que você criou que dispara quando uma NFT foi mintada?** Isso que vamos usar!
 
-Nós vamos escutar por esse evento do nosso contrato inteligente que diz: "Ei, acabei de mintar sua NFT. Pode continuar."
+Nós vamos escutar por esse evento do nosso contrato inteligente que diz: 
+"_Ei, acabei de mintar sua NFT. Pode continuar._"
 
 Vamos ir para o primeiro `useEffect` onde esperamos pelo nosso `gameContract` ser gerado. Nós vamos precisar adicionar algumas coisas aqui:
 
@@ -276,7 +280,7 @@ const onCharacterMint = async (sender, tokenId, characterIndex) => {
 };
 ```
 
-Esse método é chamado toda vez que uma nova NFT é mintada. Ela simplesmente escreve os dados para ter certeza que as coisas estão funcionando e depois nós precisamos pegar os metadados atuais da nossa recém mintada personagem NFT! Se você tem experiência em React, você pode ver algumas rotas onde você pode pegar os metadados do personagem sem ter que chamar nosso contrato de novo! Se você souber como, mude isso :). Senão, sem problemas! Nós já configuramos essa lógica no nosso contrato (graças ao seu antigo eu).
+**Esse método é chamado toda vez que uma nova NFT é mintada**. Ela simplesmente escreve os dados para ter certeza que as coisas estão funcionando e depois nós precisamos pegar os metadados atuais da nossa recém mintada personagem NFT! **Se você tem experiência em React, você pode ver algumas rotas onde você pode pegar os metadados do personagem sem ter que chamar nosso contrato de novo! Se você souber como, mude isso** :). Senão, sem problemas! Nós já configuramos essa lógica no nosso contrato (graças ao seu antigo eu).
 
 Tudo que estamos fazendo é chamar a função `checkIfUserHasNFT` que vai retornar todos os nossos metadados! Nesse ponto, podemos transformar os dados configurados no nosso estado. Uma vez que ele estiver configurado, vamos ser transportados para o componente `Arena` (logo que configurarmos ele, claro).
 
@@ -296,7 +300,7 @@ return () => {
 
 Finalmente, nós queremos ter certeza de parar de ouvir esse evento quando o componente não estiver sendo mais usado! É boa prática no React e ajuda com futuras melhorias :).
 
-### 🌌 Vendo seu personagem NFT no Metaverso.
+### 🌌 Vendo seu personagem NFT no Metaverso
 
 ![Untitled](https://media.giphy.com/media/rHR8qP1mC5V3G/giphy.gif)
 
@@ -304,17 +308,17 @@ Nesse ponto podemos fazer um teste sólido - vamos mintar uma NFT! Como sempre, 
 
 ![Untitled](https://i.imgur.com/gxL57uZ.png)
 
-Você acabou de mintar um personagem NFT do seu contrato inteligente. Antes de ir em frente, vá para o OpenSea e veja se seu personagem foi mintado de verdade. Para pegar o link direto para sua NFT você pode só fazer:
+Você acabou de mintar um personagem NFT do seu contrato inteligente. Antes de ir em frente, vá para o [OpenSea](https://testnets.opensea.io/) e veja se seu personagem foi mintado de verdade. Para pegar o link direto para sua NFT você pode só fazer:
 
 ```javascript
-https://testnets.opensea.io/assets/CONTRACT_ADDRES/TOKEN_ID
+https://testnets.opensea.io/assets/sepolia/CONTRACT_ADDRES/TOKEN_ID
 ```
 
 Aqui está como o meu se parece:
 
-![Untitled](https://i.imgur.com/7nSpif2.png)
+![Imgur](https://i.imgur.com/LpI2VTP.png)
 
-Aí está meu NFT do Zeca Pagodinho. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando a Goerli!
+Aí está meu NFT do Ronaldinho. Uma coisa para notar aqui - tenha certeza de ver sua NFT no [https://testnets.opensea.io/](https://testnets.opensea.io/) já que estamos usando a Sepolia!
 
 Você conseguiu! Agora que temos nosso personagem NFT nós podemos finalmente sair e proteger o Metaverso de seres malignos!
 
@@ -326,8 +330,7 @@ alert(
 );
 ```
 
-
-### 🚨 Reporte seu Progresso!
+### 🚨 Reporte seu Progresso
 
 Poste uma screenshot da sua seleção de personagens em #progresso -- é sempre muito divertido ver os personagens da galera!! É também ótima ideia fazer um tweet disso! Espalhe ao mundo que seu jogo NFT tem um personagem novo e fale do seu jogo para outras pessoas :).
 
