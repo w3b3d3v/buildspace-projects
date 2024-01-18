@@ -2,7 +2,7 @@ Nesse ponto, fomos introduzidos a basicamente tudo que precisamos saber para con
 
 Com com o componente `SelectCharacter`, vamos criar um novo arquivo em `Components/Arena` chamado `index.js`. De novo, você deve ver um arquivo `Arena.css` nessa pasta! Uma vez que você tiver configurado sua base, não se esqueça de estilizar do seu jeito 💅.
 
-### ⚔️ Configurando a Arena.
+### ⚔️ Configurando a Arena
 
 Depois, vamos configurar nosso componente `Arena`. Esteja certo de que você está trabalhando em `Arena/index.js`. Eu vou adicionar muito mais código base aqui já que já estamos familiarizados com o que está acontecendo:
 
@@ -70,7 +70,7 @@ const renderContent = () => {
     return (
       <div className="connect-wallet-container">
         <img
-          src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+          src="https://i.imgur.com/NqlaaTJ.gif"
           alt="Nascimento Gif"
         />
         <button
@@ -83,9 +83,9 @@ const renderContent = () => {
     );
   } else if (currentAccount && !characterNFT) {
     return <SelectCharacter setCharacterNFT={setCharacterNFT} />;
-	/*
-	* Se tiver uma carteira conectada e um personagem NFT, é hora de batalhar!
-	*/
+ /*
+ * Se tiver uma carteira conectada e um personagem NFT, é hora de batalhar!
+ */
   } else if (currentAccount && characterNFT) {
     return <Arena characterNFT={characterNFT} />;
   }
@@ -101,7 +101,7 @@ Então para recapitular, até agora você:
 - Mintou um personagem NFT para essa carteira
 - Está pronto para levar seu próprio **🔥 Boss 🔥**
 
-### 😈 Buscando o Boss a partir do contrato inteligente.
+### 😈 Buscando o Boss a partir do contrato inteligente
 
 No componente `SelectCharacter` nós configuramos uma maneira de buscar todos os personagens mintáveis a partir do nosso contrato. Bom, no componente `Arena` nós vamos fazer a mesma coisa, mas buscando nosso boss!
 
@@ -141,7 +141,7 @@ Boa! Pra ter certeza que tudo está funcionando, recarregue seu app rapidamente 
 
 Capitão Nascimento chegou. Vamos em frente e configurar nosso componente para mostrar o Capitão Nascimento com toda sua glória.
 
-### 🙀 Renderizando o grande Boss.
+### 🙀 Renderizando o grande Boss
 
 Aqui é onde a diversão começa 🤘. De novo, construir nossa UI é algo que você pode ser bem criativo. Enquanto eu dei toda a estilização necessária para começar, explore o CSS e faça algo que você **_AMA_** e mostre para seus amigos.
 
@@ -189,7 +189,7 @@ Vá em frente e recarregue o app e você deve ver Capitão Nascimento, sua saúd
 Essa é uma UI simples com uma estilização sólida. A parte boa é pegar todos os dados do nosso contrato inteligente:
 ![Untitled](https://i.imgur.com/jWJT68P.png)
 
-### 🛡 Renderizando o personagem NFT.
+### 🛡 Renderizando o personagem NFT
 
 Agora que podemos ver o boss, só faz sentido ver também o sue personagem NFT, certo? Isso vai ser basicamente a mesma coisa que configurar o boss, só com uma estilização diferente! Vamos lá:
 
@@ -255,7 +255,7 @@ Capitão Nascimento e Anitta estão prontos para uma batalha épica 🔥. Agora 
 
 ![Untitled](https://64.media.tumblr.com/79a84e0c1c80962b99578eca0d5bbd15/c844d69a678024f4-e8/s540x810/94f7fabdec543af4f6fd0f1978aee6bd21fa34c9.gifv)
 
-### 💥 Atacando o Boss.
+### 💥 Atacando o Boss
 
 O grande objetivo do nosso jogo é derrotar o Boss no metaverso! Nós levamos em conta todo o dano de ataque que seu personagem NFT tem e a vida para cada jogador. O objetivo dessa seção é desferir um ataque no Capitão Nascimento e ver se ele desfere um em nós.
 
@@ -419,12 +419,12 @@ setCharacterNFT((prevState) => {
 });
 ```
 
-No React, `useState` nos permite pegar o valor anterior do estado antes de setar um novo! Isso é muito útil porque tudo que queremos é sobrescrever a vida para cada personagem. A maneira de fazer isso é com algo chamado [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Eu não vou entrar muito a fundo nisso, mas saiba que faz uma cópia de todas as propriedades no nosso objeto.
+No React, `useState` nos permite pegar o valor anterior do estado antes de setar um novo! Isso é muito útil porque tudo que queremos é sobrescrever a vida para cada personagem. A maneira de fazer isso é com algo chamado [spread operator](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Eu não vou entrar muito a fundo nisso, mas saiba que faz uma cópia de todas as propriedades no nosso objeto.
 
 Finalmente, nós precisamos só adicionar a propriedade `hp` e os novos valores. Já que isso é DEPOIS do spread, o JavaScript sabe sobrescrever o valor de HP atual com o novo. É isso.
 
 Vamos tentar atacar o Capitão Nascimento novamente. Passe pelo seu mesmo setup e você deve ver agora as barras de vida do personagem atualizarem. Olhe seu console e você também verá seus dados escritos como isso:
 
-![Untitled](https://i.imgur.com/0JUrAJs.png)
+![Imgur](https://i.imgur.com/ZZ5ugni.png)
 
-Você tem um jogo bem legítimo agora. Animações, vida e atualizações em tempo real. Capitão Nascimento é muito forte agora, pois ele matou o Zeca Pagodinho :(.
+Você tem um jogo bem legítimo agora. Animações, vida e atualizações em tempo real. Capitão Nascimento é muito forte agora, pois ele esta quase matando o Ronaldinho ;(.
