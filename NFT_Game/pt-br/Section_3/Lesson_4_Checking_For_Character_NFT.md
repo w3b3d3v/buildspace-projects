@@ -62,7 +62,7 @@ Cole o arquivo ABI dentro do nosso novo arquivo.
 import myEpicGame from "./utils/MyEpicGame.json";
 ```
 
-**Nota: você pode precisar Parar (Stop) e depois Começar(Run) seu Replit depois de adicionar esse arquivo**. Algumas vezes ele não pega o novo arquivo!
+> 💡**Nota:** você pode precisar Parar (Stop) e depois Começar(Run) seu Replit depois de adicionar esse arquivo**. Algumas vezes ele não pega o novo arquivo!
 
 Nós agora temos as duas coisas necessárias para chamar nosso contrato a partir do web app: **o arquivo ABI e o endereço do contrato que fizemos deploy**!
 
