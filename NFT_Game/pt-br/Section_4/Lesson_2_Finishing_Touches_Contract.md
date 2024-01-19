@@ -1,10 +1,10 @@
-### 🌎 Pegue seus assets de imagem no IPFS.
+### 🌎 Pegue seus assets de imagem no IPFS
 
 Agora - as imagens do nosso boss e do personagem estão no Imgur.
 
 **Isso não é bom**. Se o Imgur for derrubado, nossos incríveis personagens se vão e nossas NFTs são inúteis!!
 
-Com sorte nós temos algo chamado [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System) que é essencialmente um sistema de arquivos distribuídos hoje em dia - você pode usar algo como S2 ou GCP Storage. Mas, nesse caso nós simplesmente confiamos no IPFS que é rodada por estranhos que estão usando a rede. Leia [isso](https://decrypt.co/resources/how-to-use-ipfs-the-backbone-of-web3) rapidamente quando puder! Fala muito sobre conhecimentos base :).
+Com sorte nós temos algo chamado [IPFS](https://pt.wikipedia.org/wiki/InterPlanetary_File_System) que é essencialmente um sistema de arquivos distribuídos hoje em dia - você pode usar algo como S2 ou GCP Storage. Mas, nesse caso nós simplesmente confiamos no IPFS que é rodada por estranhos que estão usando a rede. Leia [isso](https://pt.w3d.community/beperello/como-usar-o-ipfs-a-espinha-dorsal-da-web3-57jm) rapidamente quando puder! Fala muito sobre conhecimentos base :).
 
 Eu não vou estar cobrindo como colocar suas coisas no IPFS + conectar seu React app passo a passo, mas vou te dar alguma direção!
 
@@ -28,7 +28,7 @@ E isso vai começar um node IPFS na sua máquina local e recuperar o arquivo! Ma
 
 ![Untitled](https://i.imgur.com/NplQpes.png)
 
-Daqui, você pode mudar seu link imgur em `run.js` para `ipfs` hashes! Para o exemplo, eu usei o mesmo CID para todos os personagens mas no seu caso você deve ter três diferentes, um para cada personagem!
+Daqui, você pode mudar seu link imgur em `run.js` para `ipfs` hashes! Para o exemplo, **eu usei o mesmo CID para todos os personagens mas no seu caso você deve ter três diferentes, um para cada personagem!**
 
 ```javascript
 const gameContract = await gameContractFactory.deploy(
@@ -51,7 +51,7 @@ Daqui, nós precisamos atualizar nossa função `tokenURI` para preceder `ipfs:/
 
 Você deve estar se perguntando porque em `run.js` eu não apenas diretamente linkei para `ipfs://INSIRA_SUA_CID_AQUI` ou `https://cloudflare-ipfs.com/ipfs/INSIRA_SUA_CID_AQUI`. Basicamente - é mais seguro só armazenar o hash no contrato, isso nos deixa ser mais flexível :).
 
-Então, eu mudei a variável `json` no `tokenURI` para parecer com isso:
+Então, eu mudei a variável `json` no `tokenURI` no contrato `MyEpicGame.sol` para parecer com isso:
 
 ```javascript
 string memory json = Base64.encode(
@@ -62,7 +62,7 @@ string memory json = Base64.encode(
             charAttributes.name,
             ' -- NFT #: ',
             Strings.toString(_tokenId),
-            '", "description": "An epic NFT", "image": "ipfs://',
+            '", "description": "Esta NFT da acesso ao meu jogo NFT!", "image": "ipfs://',
             charAttributes.imageURI,
             '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
             strAttackDamage,'} ]}'
@@ -76,21 +76,21 @@ Tudo que eu fiz foi preceder aquele pequeno `ipfs://` depois da tag `image` - e 
 
 ```javascript
 {
-	"name": "Zeca Pagodinho -- NFT #: 1",
-	"description": "An epic NFT",
-	"image": "ipfs://bafybeiaaghdi5oio5a5gt6gwgxcii4h54ua4kvpjqbwszcmxvxisjoawoy",
-	"attributes": [{
-		"trait_type": "Health Points",
-		"value": 300,
-		"max_value": 300
-	}, {
-		"trait_type": "Attack Damage",
-		"value": 25
-	}]
+ "name": "Zeca Pagodinho -- NFT #: 1",
+ "description": "An epic NFT",
+ "image": "ipfs://bafybeiaaghdi5oio5a5gt6gwgxcii4h54ua4kvpjqbwszcmxvxisjoawoy",
+ "attributes": [{
+  "trait_type": "Health Points",
+  "value": 300,
+  "max_value": 300
+ }, {
+  "trait_type": "Attack Damage",
+  "value": 25
+ }]
 }
 ```
 
-Épico, estamos fora do imgur.
+Épico, estamos fora do imgur 🥳.
 
 Plataformas como OpenSea suportam links `ipfs` para que isso funcione - eles vão saber como ler e renderizar isso! Nós agora temos um problema final - **renderizar a imagem no nosso app React**!! Se nós só dermos ao nosso app React como `ipfs://bafybeiaaghdi5oio5a5gt6gwgxcii4h54ua4kvpjqbwszcmxvxisjoawoy` na tag `src` do `<img>` que não vai funcionar! Ao invés disso, no nosso app React, onde for que você renderizar a tag `src` da imagem, simplesmente faça isso:
 
@@ -100,11 +100,11 @@ Plataformas como OpenSea suportam links `ipfs` para que isso funcione - eles vã
 />
 ```
 
-Agora, você deve estar se perguntando - o que o Cloudflare está fazendo aqui? Basicamente - eles estão rodando um nó IPFS no seu comportamente e nos deixar usá-lo para acessar os arquivos na rede. Tecnicamente, você poderia fazer isso [você mesmo](https://dev.to/dabit3/uploading-files-to-ipfs-from-a-web-application-50a) se você realmente quisesse!
+Agora, você deve estar se perguntando - o que o Cloudflare está fazendo aqui? Basicamente - eles estão rodando um nó IPFS no seu comportamente e nos deixar usá-lo para acessar os arquivos na rede. Tecnicamente, você poderia fazer isso [você mesmo](https://pt.w3d.community/fatimalima/tutorial-web-3-como-carregar-e-enviar-arquivos-na-rede-ipfs-usando-nodejs-908) se você realmente quisesse!
 
 **Bam - você agora está usando IPFS :). Não foi tão difícil, certo!?**
 
-## 🐸 Mostre todos os outros jogadores no jogo!
+## 🐸 Mostre todos os outros jogadores no jogo
 
 Agora, tudo que você vê é você mesmo e o boss -- e se pudéssemos ver uma lista de todos os outros jogadores? Talvez você poderia mostrar o endereço de suas carteiras, a imagem dos seus personagens, e quanto dano eles deram no boss!
 
@@ -122,4 +122,4 @@ Seria legal se personagem específicos tivessem uma chance maior de um ataque cr
 
 Conseguir um número aleatório **verdadeiro** é impossível em Solidity. Sinta-se livre para ler mais sobre [aqui](https://github.com/buildspace/buildspace-projects/blob/main/Solidity_And_Smart_Contracts/en/Section_4/Lesson_1_Randomly_Pick_Winner.md) de um projeto anterior da buildspace.
 
-Aqui é onde o Chainlink entra -- que é um oracle que nos dá números que são verdadeiramente aleatórios. Aqui está um guia na implementação [disso](https://www.youtube.com/watch?v=JqZWariqh5s). Você pode tentar implementar números aleatórios sem Chainlink primeiro, como fazemos [aqui](https://github.com/buildspace/buildspace-projects/blob/main/Solidity_And_Smart_Contracts/en/Section_4/Lesson_1_Randomly_Pick_Winner.md).
+Aqui é onde o Chainlink entra -- que é um oracle que nos dá números que são verdadeiramente aleatórios. Aqui está um guia na implementação [disso](https://www.youtube.com/live/vbVDNhGnDRI?si=i2xdI6INlTKtmFht). Você pode tentar implementar números aleatórios sem Chainlink primeiro, como fazemos [aqui](https://github.com/buildspace/buildspace-projects/blob/main/Solidity_And_Smart_Contracts/en/Section_4/Lesson_1_Randomly_Pick_Winner.md).
