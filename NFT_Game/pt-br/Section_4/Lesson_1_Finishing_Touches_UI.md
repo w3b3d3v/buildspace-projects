@@ -1,16 +1,16 @@
-## 🔥 Toque finais na UI.
+## 🔥 Toque finais na UI
 
 Você provavelmente notou alguns pontos onde nada foi indicado ao usuário sobre o que estava acontecendo quando fizemos coisas como mintar o personagem NFT ou buscar os dados do Boss. Eu vou passar por isso e mostrar indicadores de carregamento que pensei serem legais para adicionar!
 
 Vamos configurar alguns indicadores de carregamento:
 
-1. `App.js` - Esperando para ver se o usuário já mintou a NFT
+1. `App.jsx` - Esperando para ver se o usuário já mintou a NFT
 2. `SelectCharacter Component` - Esperando que o personagem seja mintado.
 3. - `Arena Component` - Esperando pela ação de ataque terminar.
 
 Lembra daquele componente `LoadingIndicator` que foi dado para você? Nós finalmente vamos poder usá-lo!
 
-### 🔁 Adicionando indicadores de carregamento para App.js.
+### 🔁 Adicionando indicadores de carregamento para App.jsx
 
 Nós queremos ter certeza que o usuário possa ver que algo está acontecendo já que estamos esperando que o nosso app descubra em qual cenário estamos. Para isso, é bem simples - mostre um indicador de carregamento até que os nossos dados voltem.
 
@@ -92,7 +92,7 @@ const renderContent = () => {
     return (
       <div className="connect-wallet-container">
         <img
-          src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+          src="https://i.imgur.com/NqlaaTJ.gif"
           alt="Nascimento Gif"
         />
         <button
@@ -155,7 +155,7 @@ const checkIfWalletIsConnected = async () => {
 
 No nosso componente `SelectCharacter`, vamos mintar um personagem NFT. Isso é uma boa hora para adicionar um indicador de carregamento. Eu tenho um perfeito!
 
-Vamos começar indo para `Components/SelectCharacter/index.js` . Como em `App.js`, nós vamos querer segurar o estado para saber quando estamos na fase de mint ou não. Comece adicionando uma propriedade nova de estado como essa:
+Vamos começar indo para `Components/SelectCharacter/index.jsx` . Como em `App.jsx`, nós vamos querer segurar o estado para saber quando estamos na fase de mint ou não. Comece adicionando uma propriedade nova de estado como essa:
 
 ```javascript
 // State
@@ -224,7 +224,7 @@ return (
 );
 ```
 
-Não esqueça de adicionar algum CSS para o seu `SelectedCharacter.css` também:
+Adicione algum CSS para o seu `SelectedCharacter.css` também:
 
 ```css
 .select-character-container .loading {
@@ -250,13 +250,19 @@ Não esqueça de adicionar algum CSS para o seu `SelectedCharacter.css` também:
 }
 ```
 
+Não esqueça de importar o `LoadingIndicator` no topo do seu arquivo:
+
+```javascript
+import LoadingIndicator from "./Components/LoadingIndicator";
+```
+
 Com esse HTML e CSS, você deve ver algo como isso:
 
 ![Untitled](https://i.imgur.com/uqEkuTd.png)
 
 Gandalf está agora preparando você para a batalha enquanto você fica pronto para derrotar o boss na Arena 🧙‍♂️.
 
-### 🔁 Adicionando os indicadores de carregamento na página da Arena.
+### 🔁 Adicionando os indicadores de carregamento na página da Arena
 
 O último ponto que queremos adicionar um indicador de carregamento está no nosso componente `Arena`. Enquanto nós já temos algumas animações acontecendo durante o ataque, porque não adicionamos mais um pouco para ficar melhor!
 
@@ -318,7 +324,7 @@ Com esse código você deve ter algo que se pareça com isso:
 
 Nada mau, certo? Todos esses indicadores de carregamento funcionam da mesma maneira e vivem nos nossos próprios componentes. Na próxima seção nós vamos adicionar mais uma peça que vai deixar nosso componente `Arena` melhor ainda quando um ataque é desferido!
 
-### 🚨 Adicione os alertas de ataque na página da Arena.
+### 🚨 Adicione os alertas de ataque na página da Arena
 
 Outra coisa legal que você pode adicionar para o projeto é uma mensagem mostrando quanto dano você deu no boss! Isso faz o seu jogo ser mais interativo ainda. Nós vamos usar um codepen muito legal para configurar nossa UI para isso. [Vá para esse codepen](https://codepen.io/jrsmiffy/pen/eYYwrap) para o código! Se você quer ser ainda mais chique com isso, você pode criar seu próprio componente React para que possa usar isso em qualquer lugar. Por agora, só vamos adicionar o código no nosso componente `Arena`!
 
@@ -328,7 +334,7 @@ Comece adicionando algum CSS para seu arquivo `Arena.css`:
 /* Toast */
 #toast {
   visibility: hidden;
-  max-width: 500px;
+  max-width: 45vw;
   height: 90px;
   margin: auto;
   background-color: gray;

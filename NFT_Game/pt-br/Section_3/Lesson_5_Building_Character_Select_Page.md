@@ -326,7 +326,7 @@ Sinta-se livre para configurar um `alert` que dá automaticamente o link do Open
 
 ```javascript
 alert(
-  `Seu NFT está pronto -- veja aqui: https://testnets.opensea.io/assets/${gameContract}/${tokenId.toNumber()}`
+  `Seu NFT está pronto -- veja aqui: https://testnets.opensea.io/assets/sepolia/${gameContract.address}/${tokenId.toNumber()}`
 );
 ```
 
