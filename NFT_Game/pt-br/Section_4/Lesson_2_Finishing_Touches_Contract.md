@@ -72,7 +72,8 @@ string memory json = Base64.encode(
     );
 ```
 
-Tudo que eu fiz foi preceder aquele pequeno `ipfs://` depois da tag `image` - e depois eu anexo na CID! Isso vai basicamente criar nosso link. Nota: é realmente fácil confundir isso então seja cuidadoso com todas as marcas de cotação, etc! Aqui está como meus metadados parecem agora, por exemplo:
+Tudo que eu fiz foi preceder aquele pequeno `ipfs://` depois da tag `image` - e depois eu anexo na CID! Isso vai basicamente criar nosso link.
+> 💡**Nota:**  É realmente fácil confundir isso então seja cuidadoso com todas as marcas de cotação, etc! Aqui está como meus metadados parecem agora, por exemplo:
 
 ```javascript
 {
