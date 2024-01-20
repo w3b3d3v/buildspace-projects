@@ -236,7 +236,7 @@ Por exemplo, digamos que eu tenho 100,000 pessoas que mintaram meu Zeca Pagodinh
 
 Outro desenvolvedor pode vir e construir outro jogo em cima da NFT Zeca Pagodinho e permitir que qualquer jogador que tenha a NFT possa entrar no seu jogo e jogá-lo! Eles poderiam fazer com que qualquer um com a NFT do Zeca Pagodinho possa usá-lo como personagem em seus jogos. Eles que decidem.
 
-_Nota: nesse caso, os criadores de Pokemon podem ficar brabos. Mas imagine o Zeca Pagodinho como seu personagem original!_
+> 💡**Nota:** Nesse caso, os criadores de Pokemon podem ficar brabos. Mas imagine o Zeca Pagodinho como seu personagem original!
 
 Talvez coisas como HP e dano de ataque são até compartilhados entre jogos, significando que diferentes jogos podem usar os atributos originais que criamos.
 

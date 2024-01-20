@@ -58,7 +58,7 @@ runMain();
 
 De novo, eu só gosto de manter os dois separados já que `deploy.js` não muda muito. O que queremos testar aqui é a função `attackBoss`. Ela deve mudar o HP no NFT.
 
-Eu faço o deploy usando `npx hardhat run scripts/deploy.js --network goerli`. A partir daí, aqui está meu output:
+Eu faço o deploy usando `npx hardhat run scripts/deploy.js --network sepolia`. A partir daí, aqui está meu output:
 
 ```plaintext
 Contrato deployado no endereço: 0x8c7925f549F055292cbC6cf61F0CDA06AeE2f69B
