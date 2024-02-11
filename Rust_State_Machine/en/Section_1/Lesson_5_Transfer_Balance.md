@@ -1,4 +1,5 @@
-You can find the [solution for the previous step here](1.3-solution.md).
+You can find the [solution for the previous step here](Lesson_4_Solution
+.md).
 # Enable Balance Transfers
 
 Now that we have initialized and started to use our balances module, let's add probably the most important API: `transfer`.
