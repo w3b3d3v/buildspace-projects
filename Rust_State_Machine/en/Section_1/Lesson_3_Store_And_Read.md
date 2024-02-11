@@ -1,4 +1,5 @@
-You can find the [solution for the previous step here](1.1-solution.md).
+You can find the [solution for the previous step here](Lesson_2
+_Solution).
 
 # Interacting with Balances
 
