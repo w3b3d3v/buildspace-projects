@@ -24,7 +24,7 @@ Maps are simple `key -> value` objects, allowing us to define an arbitrary sized
 	In the end, that looks like:
 
 	```rust
-	pub struct BalancesModule {
+	pub struct Pallet {
 		balances: BTreeMap<String, u128>,
 	}
 	```
@@ -32,7 +32,7 @@ Maps are simple `key -> value` objects, allowing us to define an arbitrary sized
 3. Finally, we need a way to initialize this object and its state. For this, we will implement a function on the `Pallet` called `fn new()`:
 
 	```rust
-	impl BalancesModule {
+	impl Pallet {
 		pub fn new() -> Self {
 			Self {
 				balances: BTreeMap::new()
@@ -47,12 +47,12 @@ On `balances.rs`:
 ```rust
 use std::collections::BTreeMap;
 
-pub struct BalancesModule {
+pub struct Pallet {
 	// A simple storage mapping from accounts (`String`) to their balances (`u128`).
 	/* TODO: Add a field `balances` which is a `BTreeMap` fom `String` to `u128`. */
 }
 
-impl BalancesModule {
+impl Pallet {
 	/// Create a new instance of the balances module.
 	pub fn new() -> Self {
 		/* TODO: Return a new instance of the `Pallet` struct. */

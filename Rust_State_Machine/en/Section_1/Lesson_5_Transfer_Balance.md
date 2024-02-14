@@ -74,7 +74,7 @@ In this case, we are writing code which completely handles the `Option` type in 
 
 On `balances.rs`:
 ```rust
-impl BalancesModule {
+impl Pallet {
     /// ... previous code.
 
     /// Transfer `amount` from one account to another.
