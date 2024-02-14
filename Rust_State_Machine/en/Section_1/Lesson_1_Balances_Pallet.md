@@ -27,7 +27,7 @@ This is a great starting point, and the very first Pallet we will build.
 2. In this file, create a `struct`, which will act as the state and entry point for this module:
 
 	```rust
-	pub struct BalancesModule {}
+	pub struct Pallet {}
 	```
 
 3. Now go back to `src/main.rs`, and import this new module, which will include all the logic inside of it:
@@ -42,7 +42,7 @@ This is a great starting point, and the very first Pallet we will build.
 	warning: struct `Pallet` is never constructed
 	--> src/balances.rs:1:12
 	|
-	1 | pub struct BalancesModule {    }
+	1 | pub struct Pallet {    }
 	|              ^^^^^^
 	|
 	= note: `#[warn(dead_code)]` on by default

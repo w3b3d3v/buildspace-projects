@@ -18,7 +18,7 @@ For that, we will go back to the `main.rs` file, and create our first `#[test]` 
 	```rust
 	#[test]
 	fn init_balances() {
-		let mut balances = balances::BalancesModule::new();
+		let mut balances = balances::Pallet::new();
 	}
 	```
 
@@ -29,7 +29,7 @@ For that, we will go back to the `main.rs` file, and create our first `#[test]` 
 	```rust
 	#[test]
 	fn init_balances() {
-		let mut balances = balances::BalancesModule::new();
+		let mut balances = balances::Pallet::new();
 
 		assert_eq!(balances.balance("alice".to_string()), 0);
 		balances.set_balance("alice".to_string(), 100);
