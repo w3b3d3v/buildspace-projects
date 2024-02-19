@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/08f3332cecd21122b0f8e89436f74e9a#file-section_2_lesson_2-rs).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/4d41571e1155cb262c116e88b185bcd3).
 
 # Creating Our Runtime
 

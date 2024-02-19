@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/08f3332cecd21122b0f8e89436f74e9a#file-section_2_lesson_5-rs).   
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/fe73ad648ad4cd64c782fdc85ceb5791).   
 
 # Generic and Configurable Types
 

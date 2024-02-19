@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/08f3332cecd21122b0f8e89436f74e9a#file-section_2_lesson_4-rs).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/1bb9765d3c037b651b5b1154c2e586e3).
 
 # Derive Debug
 

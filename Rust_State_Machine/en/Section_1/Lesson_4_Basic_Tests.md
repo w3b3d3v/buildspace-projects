@@ -1,5 +1,5 @@
-You can find the [solution for the previous step here](Lesson_3
-_Solution.md).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/9171430e3a44c42513b5c1104ef972e2).
+
 # Basic Balance Test
 
 Now that we have the basics of our `Pallet` set up, let's actually interact with it.

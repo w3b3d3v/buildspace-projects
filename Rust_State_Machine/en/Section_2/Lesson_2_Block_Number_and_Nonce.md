@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/08f3332cecd21122b0f8e89436f74e9a#file-section_2_lesson_1-rs).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/1a3548177e89c4d691f78b691f1a38a1).
 
 # Making Your System Functional
 
