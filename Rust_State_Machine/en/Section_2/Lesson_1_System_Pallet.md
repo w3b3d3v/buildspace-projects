@@ -1,3 +1,5 @@
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/afd212bee56108f0cd87c712ad5d3fdf).
+
 # The System and Runtime
 
 In this section, you will create the System Pallet, a low level Pallet for managing basic blockchain state.

@@ -1,5 +1,5 @@
-You can find the [solution for the previous step here](Lesson_4_Solution
-.md).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/03914776998cb74eaa0a6adaa7edacec).
+
 # Enable Balance Transfers
 
 Now that we have initialized and started to use our balances module, let's add probably the most important API: `transfer`.

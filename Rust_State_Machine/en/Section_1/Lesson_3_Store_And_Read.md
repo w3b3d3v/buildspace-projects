@@ -1,5 +1,4 @@
-You can find the [solution for the previous step here](Lesson_2
-_Solution).
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/d116a728d944026dd9fd4f3f689b75cf).
 
 # Interacting with Balances
 
