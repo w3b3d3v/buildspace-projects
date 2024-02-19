@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here]().
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/81c56b7ae67dd2f4524d999e4879c05f).
 
 # Add PoE Extrinsics to Blocks
 

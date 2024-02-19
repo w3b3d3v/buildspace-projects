@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here]().
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/29701a39662dbff21d9f82a1abbdc318).
 
 # Add Proof of Existence Dispatch
 
