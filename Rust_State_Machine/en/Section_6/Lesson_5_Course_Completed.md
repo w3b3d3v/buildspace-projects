@@ -1,0 +1,1 @@
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/b229be16c47c0091bf29046cfd0865de).

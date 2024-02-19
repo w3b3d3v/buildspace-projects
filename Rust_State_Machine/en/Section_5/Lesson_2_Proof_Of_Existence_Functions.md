@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here]().
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/d73d5173a7f5d40909bad87604b76270).
 
 # Proof Of Existence Functions
 

@@ -1,4 +1,4 @@
-You can find the [solution for the previous step here]().
+You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/4a8f9dec88337d3b6f40e4d6840dc305).
 
 # Integrate PoE Into Your Runtime
 
