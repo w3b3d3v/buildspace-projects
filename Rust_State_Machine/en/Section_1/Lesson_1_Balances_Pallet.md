@@ -1,3 +1,10 @@
+---
+title: Cool Title 
+submission_title: Yes I do
+submission_text: I dont know
+submission_type: text
+---
+
 # The Balances Pallet
 
 In this section, we will build the very first logic for our state machine: a Balances Pallet.

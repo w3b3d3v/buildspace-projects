@@ -1,3 +1,10 @@
+---
+title: Cool Title 
+submission_title: Yes I do
+submission_text: I dont know
+submission_type: text
+---
+
 # Introduction to the Rust State Machine
 
 Welcome to the Rust State Machine tutorial.
