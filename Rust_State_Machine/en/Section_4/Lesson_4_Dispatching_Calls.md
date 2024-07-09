@@ -100,5 +100,24 @@ impl crate::support::Dispatch for Runtime {
 	}
 }
 
+//also ADD THIS CODE TO YOUR main.rs file:
+impl crate::support::Dispatch for Runtime {
+	type Caller = <Runtime as system::Config>::AccountId;
+	type Call = RuntimeCall;
+	// Dispatch a call on behalf of a caller. Increments the caller's nonce.
+	//
+	// Dispatch allows us to identify which underlying module call we want to execute.
+	// Note that we extract the `caller` from the extrinsic, and use that information
+	// to determine who we are executing the call on behalf of.
+	fn dispatch(
+		&mut self,
+		caller: Self::Caller,
+		runtime_call: Self::Call,
+	) -> support::DispatchResult {
+		unimplemented!();
+	}
+}
+
+
 /// ... previous code.
 ```
