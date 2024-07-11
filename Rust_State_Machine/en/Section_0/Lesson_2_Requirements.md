@@ -33,4 +33,8 @@ However, to provide the full functionality that it does, Rust Analyzer needs to 
 It is my personal recommendation that Rust Analyzer is not needed in this workshop, and generally you should not use it for Substrate development. However, this section might be updated in the future to include special configurations of Rust Analyzer which will work well with Polkadot SDK in the future.
 
 However, if you would like to use it anyway, now is the right time to set it up.
-ht
+
+### 🎉 First Step
+YOU'RE ON YOUR WAY.
+
+You've successfully completed section 0! Great start :).

@@ -190,3 +190,7 @@ pub struct Runtime {
 	balances: balances::Pallet,
 }
 ```
+
+Making the Balances Pallet generic is a crucial skill for creating flexible and scalable blockchain solutions. Great work on completing this lesson! 🌟
+
+Post a screenshot in [#progress](https://discord.com/channels/898706705779687435/980906289968345128) showing your runtime with the new generic Balances Pallet in action. It better not still be using &'static str!

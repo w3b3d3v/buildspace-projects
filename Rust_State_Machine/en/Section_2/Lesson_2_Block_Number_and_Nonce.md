@@ -111,3 +111,7 @@ mod test {
 	}
 }
 ```
+
+## 🚨Progress report
+
+Did you manage to create some cool code? Don't forget to share a screenshot in the [#progress](https://discord.com/channels/898706705779687435/980906289968345128) channel on Discord!

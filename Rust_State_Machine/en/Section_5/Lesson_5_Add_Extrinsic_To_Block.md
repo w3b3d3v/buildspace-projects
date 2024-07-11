@@ -60,3 +60,8 @@ fn main() {
 	println!("{:#?}", runtime);
 }
 ```
+
+### 🔥 On Fire
+YOU DID IT AGAIN.
+
+Section 5 is complete! Your hard work is paying off. Keep going :).

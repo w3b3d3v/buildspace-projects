@@ -132,4 +132,4 @@ impl Pallet {
 }
 ```
 
-Next we will write our first test and actually interact with our balances module.
+Next we will write our first test and actually interact with our balances module. Excited for the next step? We are!

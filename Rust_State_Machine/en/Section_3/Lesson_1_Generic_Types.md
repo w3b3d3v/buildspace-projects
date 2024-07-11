@@ -1,4 +1,6 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/fe73ad648ad4cd64c782fdc85ceb5791).   
+Before you go any further, if you want to check that your answer matches [solution for the previous step here](https://gist.github.com/nomadbitcoin/fe73ad648ad4cd64c782fdc85ceb5791).   
+
+Fantastic! You now understand the importance of the Genesis State and are ready to take the first steps in your blockchain!
 
 # Generic and Configurable Types
 

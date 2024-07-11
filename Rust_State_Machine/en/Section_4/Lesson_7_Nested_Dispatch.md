@@ -120,3 +120,8 @@ fn main() {
     /// ... previous code.
 }
 ```
+
+### 🚀 Keep Soaring
+YOU'RE DOING GREAT.
+
+Section 4 is finished! The final stretch has begun. Excellent job :).

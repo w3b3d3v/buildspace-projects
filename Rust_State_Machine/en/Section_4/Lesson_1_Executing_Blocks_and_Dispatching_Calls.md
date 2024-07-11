@@ -1,5 +1,7 @@
 You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/2b3beb37b376732e6c000053e04f07ff).
 
+Amazing! You've mastered another important stage and you're already halfway there. You're about to add an outstanding achievement to your portfolio!
+
 # Executing Blocks and Dispatching Calls
 
 In this next section, you will construct the core pipeline used to interact with your state machine.

@@ -1,3 +1,5 @@
+I've seen a lot of complicated tutorials, so let's try to keep this one simple and organized. :) I hope you enjoy it!
+
 # The Balances Pallet
 
 In this section, we will build the very first logic for our state machine: a Balances Pallet.
@@ -77,3 +79,7 @@ fn main() {
 	println!("Hello, world!");
 }
 ```
+
+If you have a question you're curious about, feel free to ask it in [🆘・section-1](https://discord.com/channels/898706705779687435/980904325763186788) on Discord.
+
+Normally, I start to really understand things when I start programming. So, let's start building some code. :)

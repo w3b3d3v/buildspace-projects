@@ -107,3 +107,5 @@ fn main() {
 	/* TODO: Execute another balance transfer, this time from `alice` to `charlie` for 20. */
 }
 ```
+
+Now that you've mastered simulating your first block, you're on your way to blockchain wizardry! Get ready for the exciting adventures ahead!

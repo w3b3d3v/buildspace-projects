@@ -52,3 +52,10 @@ impl<T: Config> crate::support::Dispatch for Pallet<T> {
 
 /// ... previous code.
 ```
+
+Hey! Great job on adding the Proof of Existence dispatch logic!
+
+If you don't post a screenshot in [#progress](https://discord.com/channels/898706705779687435/980906289968345128) showing your new CreateClaim and RevokeClaim calls in action, all of humanity will collectively jump and disrupt the Earth's orbit causing it to collide with Venus.
+
+BTW -- if you want to make a tweet telling the world that you've just implemented Proof of Existence on your blockchain and tag [@web3dev_](https://x.com/web3dev_) 
+That tweet could inspire someone else to join web3 and it supports us!

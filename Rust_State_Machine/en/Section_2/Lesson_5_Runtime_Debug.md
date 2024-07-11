@@ -116,3 +116,9 @@ pub struct Pallet {
 	nonce: BTreeMap<String, u32>,
 }
 ```
+
+### 👑 You dropped this
+YOU DID IT.
+
+This is a big deal, we've officially finished section 2!
+Good stuff :).

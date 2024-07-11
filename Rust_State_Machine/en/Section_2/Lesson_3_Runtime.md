@@ -49,3 +49,7 @@ fn main() {
 	println!("Hello, world!");
 }
 ```
+
+That's it :). Let's move on! I'm amazed by your progress!
+
+If you need assistance or have any questions about integrating your pallets into the Runtime, feel free to ask for help in the [#🆘・section-2](https://discord.com/channels/898706705779687435/980905562566967427) channel on Discord. We're here to support you on your journey! 
