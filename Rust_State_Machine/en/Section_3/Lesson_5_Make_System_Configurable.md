@@ -229,3 +229,6 @@ mod test {
 	/// ... previous code.
 }
 ```
+
+If you have any questions or need further assistance with implementing custom traits or configuring your System, feel free to reach out for support in the [#🆘・section-3](https://discord.com/channels/898706705779687435/980905695689998366) channel on Discord. 
+We're here to support you! 🌟

@@ -133,3 +133,7 @@ mod test {
 	}
 }
 ```
+
+Implementing the Proof of Existence functions is a critical step in building a functional blockchain module. Great work on completing this lesson!
+
+If you get stuck or feel lost with creating, getting, or revoking claims, don't be shy to ask for help in the [#🆘・section-5](https://discord.com/channels/898706705779687435/1261079360341934161) channel on Discord. Even superheroes need a hand sometimes! 🦸‍♂️🦸‍♀️

@@ -1,5 +1,7 @@
 You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/6a7506ad26d4bdcf9db1f7f358b687ff).
 
+Sensational! Few have reached this point, making you exceptionally persistent. Great opportunities await those who complete all the lessons!
+
 # Rust Macros
 
 In this section, we will introduce Rust Macros to our project to reduce boilerplate code and automate implementations.

@@ -1,5 +1,8 @@
 # Introduction to the Rust State Machine
-Welcome to the Rust State Machine tutorial.
+
+You've made it — hell yeah! Welcome to the Rust state machine tutorial :) 
+This is Dani (@danicuki) and Yan (@nomadbitcoin) and we'll be your instructors. 
+This project is for devs that want to get more into the Polkadot Stack based on Substrate and the Rust programming language.
 
 This is a guided tutorial intended to teach readers the basics of Rust, Blockchain, and eventually the inner workings of the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk).
 
@@ -67,3 +70,14 @@ If we look at what has been generated, in that folder, you will see the followin
 - `target/*` - You might also see a target folder if you did `cargo run`. This is a folder where all the build artifacts are placed during compilation. We do not commit this folder into our git history.
 
 All of this should be pretty familiar to you if you have already had some minimal experience with Rust. If any of this is new, I would suggest you first walk through the [Rust Book](https://doc.rust-lang.org/book/) and [Rust by Example](https://doc.rust-lang.org/rust-by-example/), as this is already an indication that this guide might not be targeted at your level of knowledge.
+
+## 🤘 Want to improve something? 
+
+Polkadot's culture is built on proactive spirit and open-source and so are we. If you see an issue, typo, etc — you can fix it yourself easily and make a PR!
+
+All tgus content are
+**[All this content can be found at this repository](https://github.com/w3b3d3v/buildspace-projects/tree/web3dev-version)**. ! If you need help doing this, DM `@nomadbitcoin` in the Discord and he can help you out :).
+
+Let's get you some open-source rep!!
+
+And last but not least, give the repository a ⭐ so we feel important!

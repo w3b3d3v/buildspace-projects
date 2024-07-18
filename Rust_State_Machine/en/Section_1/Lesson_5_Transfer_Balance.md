@@ -116,3 +116,10 @@ mod tests {
 	}
 }
 ```
+
+And remember, we're available to answer any questions on [Discord](https://discord.com/channels/898706705779687435/980904325763186788).
+
+### 🌱 Growing Strong
+YOU'RE GETTING THERE.
+
+Section 1 is done! You're building a solid foundation. Well done :).

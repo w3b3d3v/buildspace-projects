@@ -12,9 +12,9 @@ Now that you've laid a solid foundation, you're ready to dive deeper into the [P
 
 To advance further, consider enrolling in the [Polkadot Blockchain Academy](https://polkadot.network/development/blockchain-academy/). This rigorous and competitive program will elevate your skills, making you a sought-after Rust and blockchain developer. With guidance from industry leaders like Gavin Wood, you'll delve into modules on Polkadot, parachains, Frame, and more, preparing you for a stellar career in the blockchain space. Register your interest and join the next cohort to continue your journey towards becoming a Polkadot expert.
 
+### 🏆 Champion
+YOU DID IT!
 
+The big day is here! You've earned a completion NFT and now have a standout portfolio in the market. We're proud of you! 🎉
 
-
-
-
-
+Note: To receive your NFT, make sure to connect your wallet on the course platform.

@@ -137,3 +137,8 @@ mod tests {
     
 }
 ```
+
+### 🌟 You're a Star
+YOU NAILED IT.
+
+You've successfully completed section 3! Fantastic job :).

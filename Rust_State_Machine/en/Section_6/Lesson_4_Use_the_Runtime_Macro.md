@@ -252,3 +252,9 @@ fn main() {
 	println!("{:#?}", runtime);
 }
 ```
+
+Adding the #[macros::runtime] attribute is the final step to tidy up and improve your runtime code. Well done on reaching the end of this tutorial!
+
+If you have questions or need assistance, feel free to ask in the [#🆘・section-6](https://discord.com/channels/898706705779687435/1261079463731662959) channel on Discord. 
+
+And remember, helping others with their questions can strengthen your own understanding too. Sharing knowledge is a great way to solidify what you've learned! 🚀

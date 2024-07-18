@@ -1,4 +1,6 @@
-You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/afd212bee56108f0cd87c712ad5d3fdf).
+Before moving on, you can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/afd212bee56108f0cd87c712ad5d3fdf).
+
+Congratulations on reaching section 2! ;)
 
 # The System and Runtime
 
@@ -63,3 +65,4 @@ fn main() {
 }
 ```
 
+It's going to be epic. :) Let's do this!

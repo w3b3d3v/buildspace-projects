@@ -150,3 +150,7 @@ impl crate::support::Dispatch for Runtime {
 
 /// ... previous code.
 ```
+
+Executing blocks is a fundamental aspect of blockchain functionality, and you've now taken a significant step towards mastering this process. Well done on reaching this milestone!
+
+If you have any questions or run into issues, don't hesitate to ask for help in the [#🆘・section-4](https://discord.com/channels/898706705779687435/980905761783832637) channel on Discord. We're here to support you! 🚀

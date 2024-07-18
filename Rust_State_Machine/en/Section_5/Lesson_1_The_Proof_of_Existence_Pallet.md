@@ -1,5 +1,7 @@
 You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/1883ed94b8c8439df4264024af3e31c2).
 
+Congratulations! Your determination to push forward and tackle programming challenges is truly commendable!
+
 # The Proof of Existence Pallet
 
 In this section, we will create a Proof of Existence Pallet.
