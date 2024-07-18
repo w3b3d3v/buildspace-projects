@@ -253,7 +253,7 @@ fn main() {
 }
 ```
 
-Adding the #[macros::runtime] attribute is the final step to clean up and streamline your runtime code. Well done on reaching the end of this tutorial!
+Adding the #[macros::runtime] attribute is the final step to tidy up and improve your runtime code. Well done on reaching the end of this tutorial!
 
 If you have questions or need assistance, feel free to ask in the [#🆘・section-6](https://discord.com/channels/898706705779687435/1261079463731662959) channel on Discord. 
 
