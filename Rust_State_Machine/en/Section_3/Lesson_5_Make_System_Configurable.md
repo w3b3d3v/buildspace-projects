@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Make System Configurable
 
+[Youtube](https://www.youtube.com/watch?v=6KP4o5HPIrg)
+
 We have one more step to take to make our Runtime as generic and configurable as possible.
 
 To do it, we will need to take advantage of traits.

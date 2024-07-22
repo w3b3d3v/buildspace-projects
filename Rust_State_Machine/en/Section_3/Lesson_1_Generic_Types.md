@@ -4,6 +4,8 @@ Fantastic! You now understand the importance of the Genesis State and are ready 
 
 # Generic and Configurable Types
 
+[Youtube](https://www.youtube.com/watch?v=avNPoSDGiv4)
+
 In this section, we will be harnessing the full power of Rust to create a generic and configurable Runtime.
 
 There will be no real logical changes happening in the next steps.

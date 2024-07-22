@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Pallet Level Dispatch
 
+[Youtube](https://www.youtube.com/watch?v=GPs7q1FYb1E)
+
 We want to make our code more modular and extensible.
 
 Currently, all dispatch happens through the `RuntimeCall`, which is hardcoding dispatch logic for each of the Pallets in our system.

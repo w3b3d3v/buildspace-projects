@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Proof Of Existence Functions
 
+[Youtube](https://www.youtube.com/watch?v=I8W3GQU3Tyw)
+
 The Proof of Existence Pallet is quite simple, so let's build out the logic needed.
 
 ## Get Claim

@@ -4,6 +4,8 @@ Congratulations! Your determination to push forward and tackle programming chall
 
 # The Proof of Existence Pallet
 
+[Youtube](https://www.youtube.com/watch?v=k8MEr54_-AI)
+
 In this section, we will create a Proof of Existence Pallet.
 
 We will take advantage of all the refactoring we have done so far to make it very simple to integrate this new Pallet into our existing Runtime.

@@ -8,6 +8,8 @@ Let's change that by using our Runtime and actually executing logic on our block
 
 ## Simulating a Block
 
+[Youtube](https://www.youtube.com/watch?v=38CPh4HK8ZQ)
+
 The input to any blockchain state transition function is a block of transactions.
 
 Later in the tutorial we will actually spend more time to build proper blocks and execute them, but for now, we can "simulate" all the basics of what a block would do by individually calling the functions our Pallets expose.

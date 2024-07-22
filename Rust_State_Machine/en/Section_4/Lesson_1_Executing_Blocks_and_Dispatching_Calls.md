@@ -12,6 +12,8 @@ The goal of this section is to make your existing state machine resemble a block
 
 # Add Our Support Module
 
+[Youtube](https://www.youtube.com/watch?v=WBasxmMvwCc)
+
 In this step, we will introduce a `support` module to help bring in various types and traits that we will use to enhance our simple state machine.
 
 ## Constructing a Block

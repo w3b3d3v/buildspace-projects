@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Final Thoughts
 
+[Youtube](https://www.youtube.com/watch?v=c1hWHQldpPg)
+
 ## Congratulations! You are a Rust superhero!
 
 If you’ve reached this point, having completed all the lessons and built your first blockchain using Rust from scratch, you are among the elite few who have accomplished this feat. Congratulations on this incredible achievement! Let's recap our journey: we created our blockchain using the pallets infrastructure, each responsible for specific functions. We developed the Balances pallet for managing user accounts and the Proof of Existence pallet for creating and revoking claims. We utilized macros to generate code efficiently, significantly reducing redundancy. This is just the beginning; there's much more to explore and learn.

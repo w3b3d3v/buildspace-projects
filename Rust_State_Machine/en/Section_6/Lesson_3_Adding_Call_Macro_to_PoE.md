@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Adding Call Macro to PoE
 
+[Youtube](https://www.youtube.com/watch?v=XZ0jFKl8gt0)
+
 We have already seen the `#[macros::call]` macro help clean up the Balances Pallet.
 
 Let's also add it to the Proof of Existence Pallet, where there is even more code that can be eliminated.

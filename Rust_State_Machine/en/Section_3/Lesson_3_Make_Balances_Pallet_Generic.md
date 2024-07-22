@@ -1,5 +1,7 @@
 # Make Balances Pallet Generic
 
+[Youtube](https://www.youtube.com/watch?v=ix61ZRqkl20)
+
 Our goal over the next few steps will be to continually make our runtime more generic and configurable over the types we use in our Pallets.
 
 ## Why Generic?

@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Import the Num Crate
 
+[Youtube](https://www.youtube.com/watch?v=PpLmza4FF08)
+
 Rust is designed to be very lightweight and provides very little right out of the box.
 
 Within the ecosystem, many functions and features which you might expect to be included into Rust `std` or `core` are actually delegated to small, well-known, and widely used crates.

@@ -10,6 +10,8 @@ Then you will integrate both the Balances Pallet and System Pallet into your sta
 
 # Introduce the System Pallet
 
+[Youtube](https://www.youtube.com/watch?v=ROioE9Tlrmc)
+
 We have basically completed the creation of a basic Balances Pallet. This is the pallet that most users will interact with.
 
 However, your blockchain usually needs to keep track of many other pieces of data to function properly.

@@ -6,6 +6,8 @@ We will now start the process to replace the simple block simulation in our `mai
 
 ## Execute Block
 
+[Youtube](https://www.youtube.com/watch?v=nWmSo6tfeog)
+
 We have introduced a new function to our `Runtime` called `fn execute_block`.
 
 The steps of this function is exactly the same as our current `main` function, but using the concrete `Block` type we defined to extract details like the expected block number and the extrinsics that we want to execute.

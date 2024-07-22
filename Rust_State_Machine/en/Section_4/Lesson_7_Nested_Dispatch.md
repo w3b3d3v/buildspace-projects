@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Nested Dispatch
 
+[Youtube](https://www.youtube.com/watch?v=CYZ6Kwx7AWs)
+
 Now that we have defined Pallet level dispatch logic in the Pallet, we should update our Runtime to take advantage of that logic.
 
 After this, whenever the Pallet logic is updated, the Runtime dispatch logic will also automatically get updated and route calls directly. This makes our code easier to manage, and prevent potential errors or maintenance in the future.

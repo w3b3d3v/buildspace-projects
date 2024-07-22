@@ -8,6 +8,8 @@ We wouldn't want this on a real production blockchain. Instead, we would want to
 
 ## Trait Inheritance
 
+[Youtube](https://www.youtube.com/watch?v=T4oMp-L8EPs)
+
 Rust has the ability for traits to inherit from one another. That is, that for you to implement some trait, you also need to implement all traits that it inherits.
 
 Let's look at some examples.

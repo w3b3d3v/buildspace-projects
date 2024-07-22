@@ -6,6 +6,8 @@ Finally, let's add the `#[macros::runtime]` macro to our `main.rs` file, and rea
 
 ## Runtime Macro
 
+[Youtube](https://www.youtube.com/watch?v=VTg4SCSgfsI&t=1s)
+
 The purpose of the `#[macros::runtime]` macro is to get rid of all of the boilerplate function we implemented for the `Runtime`, including `fn new()` and `fn execute_block()`. Similar to the `Call` macro, it also generates the `enum RuntimeCall` and all the `dispatch` logic for re-dispatching to pallets.
 
 We apply the `#[macros::runtime]` attribute on top of the main `struct Runtime` object.

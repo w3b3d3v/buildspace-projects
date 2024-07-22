@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Create Your Block Type
 
+[Youtube](https://www.youtube.com/watch?v=eIHxIr_zeq0)
+
 The support module provided for us a bunch of generic types which can be customized for our simple state machine. To actually start using them, we need to define concrete versions of these types using our other concrete types.
 
 ## Runtime Call

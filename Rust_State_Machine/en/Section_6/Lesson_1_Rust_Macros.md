@@ -4,6 +4,8 @@ Sensational! Few have reached this point, making you exceptionally persistent. G
 
 # Rust Macros
 
+[Youtube](https://www.youtube.com/watch?v=q9aZ0Lsl8sE)
+
 In this section, we will introduce Rust Macros to our project to reduce boilerplate code and automate implementations.
 
 You can imagine that continuing to add new Pallets to our runtime would lead to a lot of similar or redundant code.

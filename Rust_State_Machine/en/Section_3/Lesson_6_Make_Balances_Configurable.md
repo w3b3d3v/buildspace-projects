@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Make Balances Configurable
 
+[Youtube](https://www.youtube.com/watch?v=3CRrFloyaRU)
+
 There is nothing new to learn in this step, just repeating the same process we did for our System Pallet for the Balances pallet.
 
 In this case, our `Config` trait will only have two associated types: `AccountId` and `Balance`.

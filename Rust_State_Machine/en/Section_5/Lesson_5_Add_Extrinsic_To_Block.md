@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Add PoE Extrinsics to Blocks
 
+[Youtube](https://www.youtube.com/watch?v=za5kBf046FY)
+
 The Proof Of Existence Pallet is fully integrated into your runtime at this point, but we aren't really using it.
 
 Create some new `Block`s in your `fn main()` to test out the functionality of the Proof of Existence Pallet.

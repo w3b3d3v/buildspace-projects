@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Using Execute Block
 
+[Youtube](https://www.youtube.com/watch?v=TOJXnXNuLFM)
+
 We have now successfully implemented the `execute_block` and `dispatch` logic needed to build and execute real `Blocks`.
 
 Let's bring that logic into our `main` function.
