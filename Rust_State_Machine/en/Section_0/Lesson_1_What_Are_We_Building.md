@@ -4,7 +4,9 @@ You've made it — hell yeah! Welcome to the Rust state machine tutorial :)
 This is Dani (@danicuki) and Yan (@nomadbitcoin) and we'll be your instructors. 
 This project is for devs that want to get more into the Polkadot Stack based on Substrate and the Rust programming language.
 
-This is a guided tutorial intended to teach readers the basics of Rust, Blockchain, and eventually the inner workings of the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk).
+This learning journey created by WEB3DEV was based on the **Rust State Machine project by Shawn Tabrizi**, who deserves our immense recognition for his beautiful work and thanks for sharing his vast knowledge with us.
+
+The aim of this tutorial is to teach developers the basics of Rust, Blockchain and, eventually, the inner workings of the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk).
 
 It has been my experience that the hardest part of building your first blockchain using the Polkadot SDK is navigating the advance Rust features used by [Substrate](https://github.com/paritytech/polkadot-sdk/tree/master/substrate), and understanding the underlying magic behind various macros which generate code for you.
 
