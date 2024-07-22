@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Basic Balance Test
 
+[Youtube](https://www.youtube.com/watch?v=2-OWpKw8CzU)
+
 Now that we have the basics of our `Pallet` set up, let's actually interact with it.
 
 For that, we will go back to the `main.rs` file, and create our first `#[test]` which will play with the code we have written so far.

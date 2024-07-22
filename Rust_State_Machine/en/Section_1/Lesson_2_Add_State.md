@@ -1,5 +1,7 @@
 # Adding State to Our Pallet
 
+[Youtube](https://www.youtube.com/watch?v=g9oeiF2J2hE)
+
 So let's add some simple state to our `balances.rs` module.
 
 We can do this by adding fields into our `Pallet` struct.

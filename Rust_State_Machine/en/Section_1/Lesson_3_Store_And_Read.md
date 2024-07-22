@@ -1,6 +1,7 @@
 You can find the [solution for the previous step here](https://gist.github.com/nomadbitcoin/d116a728d944026dd9fd4f3f689b75cf).
 
 # Interacting with Balances
+[Youtube](https://www.youtube.com/watch?v=7dHaZUvXYJc)
 
 Now that we have established the basics of our balances module, let's add ways to interact with it.
 
