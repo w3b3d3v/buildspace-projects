@@ -1,6 +1,5 @@
 Você pode encontrar a [solução para a etapa anterior aqui](https://gist.github.com/nomadbitcoin/03914776998cb74eaa0a6adaa7edacec).
 
-
 # Habilitando Transferências de Saldos
 
 [Youtube](https://youtu.be/7Ue4xmpcDnk?si=5N8ukbaDizs5QXeq)
@@ -44,7 +43,7 @@ enum Result<T, E> {
 }
 ```
 
-`T` and `E` são parâmetros genéricos que permitem customizar o tipo de resultado conforme suas necessidades. Para os propósitos deste tutorial, sempre retornaremos `Ok(())` quando tudo ocorrer bem, e um `Err(&static str)` para descrever quaisquer erros com uma string básica.
+`T` e `E` são parâmetros genéricos que permitem customizar o tipo de resultado conforme suas necessidades. Para os propósitos deste tutorial, sempre retornaremos `Ok(())` quando tudo ocorrer bem, e um `Err(&static str)` para descrever quaisquer erros com uma string básica.
 
 Você pode então definir o tipo `Result` assim:
 
@@ -58,7 +57,7 @@ Você pode usar o tipo `Option` para acionar um `Err`, o que é útil quando voc
 
 Nesse contexto, queremos uma função que retorne um erro sempre que alguma operação de matemática segura retornar `None`.
 
-Para isso, podemos encadear  `ok_or` juntamente com `?` diretamente após a operação de matemática segura, assim:
+Para isso, podemos encadear `ok_or` juntamente com `?` diretamente após a operação de matemática segura, assim:
 
 ```rust
 let new_from_balance = from_balance
@@ -66,7 +65,7 @@ let new_from_balance = from_balance
     .ok_or("Not enough funds.")?;
 ```
 
-Se `checked_sub` retornar `None`, retornaremos um `Err` com a mensagem  `"Not enough funds."` que pode ser exibida ao usuário. Caso contrário, se `checked_sub` retornar `Some(value)`, atribuiremos `new_from_balance` diretamente a esse valor.
+Se `checked_sub` retornar `None`, retornaremos um `Err` com a mensagem `"Not enough funds."` que pode ser exibida ao usuário. Caso contrário, se `checked_sub` retornar `Some(value)`, atribuiremos `new_from_balance` diretamente a esse valor.
 
 Nesse caso, estamos escrevendo código que trata completamente o tipo `Option` de maneira segura e ergonômica.
 
@@ -76,6 +75,7 @@ Nesse caso, estamos escrevendo código que trata completamente o tipo `Option` d
 2. Crie um teste mostrando que tudo está funcionando conforme o esperado, incluindo o tratamento de erros.
 
 No `balances.rs`:
+
 ```rust
 impl Pallet {
     /// ... código anterior.
@@ -83,41 +83,40 @@ impl Pallet {
     /// Transfere `amount` de uma conta para outra.
     /// Esta função verifica se `caller` tem pelo menos `amount` de saldo para transferir,
     /// e se não ocorrem overflow/underflow matemáticos.
-	pub fn transfer(
-		&mut self,
-		caller: String,
-		to: String,
-		amount: u128,
-	) -> Result<(), &'static str> {
-		/* TODO:
-			- Obter o saldo da conta `caller`.
-			- Obter o saldo da conta `to`.
+    pub fn transfer(
+        &mut self,
+        caller: String,
+        to: String,
+        amount: u128,
+    ) -> Result<(), &'static str> {
+        /* TODO:
+            - Obter o saldo da conta `caller`.
+            - Obter o saldo da conta `to`.
+            - Usar matemática segura para calcular um `new_caller_balance`.
+            - Usar matemática segura para calcular um `new_to_balance`.
+            - Inserir o novo saldo de `caller`.
+            - Inserir o novo saldo de `to`.
+        */
 
-			- Usar matemática segura para calcular um `new_caller_balance`.
-			- Usar matemática segura para calcular um `new_to_balance`.
-
-			- Inserir o novo saldo de `caller`.
-			- Inserir o novo saldo de `to`.
-		*/
-
-		Ok(())
-	}
+        Ok(())
+    }
 }
 ```
+
 Também no `balances.rs`:
 
 ```rust
 mod tests {
-    /// ... previous code.
+     /// ... código anterior.
 
     #[test]
-	fn transfer_balance() {
-		/* TODO: Crie um teste que verifique o seguinte:
-			- Essa `alice` não pode transferir fundos que ela não possui.
-			- Essa `alice` pode transferir fundos para `bob` com sucesso.
-			- Que o saldo de `alice` e `bob` esteja atualizado corretamente.
-		*/
-	}
+    fn transfer_balance() {
+        /* TODO: Crie um teste que verifique o seguinte:
+            - Que `alice` não pode transferir fundos que ela não possui.
+            - Que `alice` pode transferir fundos para `bob` com sucesso.
+            - Que o saldo de `alice` e `bob` esteja atualizado corretamente.
+        */
+    }
 }
 ```
 

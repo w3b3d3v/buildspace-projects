@@ -18,7 +18,7 @@ Como mencionado anteriormente, no coração de uma blockchain está uma máquina
 
 Podemos criar uma máquina de estados muito ingênua usando abstrações simples de Rust, e através disso aprender sobre Rust no contexto de blockchains.
 
-Queremos manter nosso código organizado, então não vamos realmente começar a construir no arquivo main.rs, mas sim em módulos Rust separados. Podemos pensar no arquivo main.rs como a cola que une tudo, e veremos isso ao longo deste projeto.
+Queremos manter nosso código organizado, então não vamos realmente começar a construir no arquivo `main.rs`, mas sim em módulos Rust separados. Podemos pensar no arquivo `main.rs` como a cola que une tudo, e veremos isso ao longo deste projeto.
 
 "Pallet" é um termo específico do Polkadot SDK, que se refere a módulos Rust que contêm lógica específica para o runtime da sua blockchain. Vamos começar a usar esse termo aqui porque o que construímos aqui se assemelhará muito ao que você verá com o Polkadot SDK.
 
@@ -34,51 +34,53 @@ Este é um ótimo ponto de partida, e o primeiro Pallet que vamos construir.
 
 1. Crie um novo arquivo na pasta `src` chamado `balances.rs`
 
-```bash
-touch src/balances.rs
-```
+	```bash
+	touch src/balances.rs
+	```
 
 2. Neste arquivo, crie uma `struct`, que atuará como estado e ponto de entrada para este módulo:
 
-```rust
-pub struct Pallet {}
-```
+	```rust
+	pub struct Pallet {}
+	```
 
 3. Agora volte para `src/main.rs` e importe este novo módulo, que incluirá toda a lógica dentro dele:
 
-```rust
-mod balances;
-```
+	```rust
+	mod balances;
+	```
 
 4. Se executarmos seu programa agora, você verá que ele ainda é compilado e executado, mas poderá mostrar alguns avisos como:
 
-```rust
-warning: struct `Pallet` is never constructed
---> src/balances.rs:1:12
-|
-1 | pub struct Pallet {    }
-|              ^^^^^^
-|
-= note: `#[warn(dead_code)]` on by default
+	```rust
+	warning: struct `Pallet` is never constructed
+	--> src/balances.rs:1:12
+	|
+	1 | pub struct Pallet {    }
+	|              ^^^^^^
+	|
+	= note: `#[warn(dead_code)]` on by default
 
-warning: `pr` (bin "pr") generated 1 warning
-```
+	warning: `pr` (bin "pr") generated 1 warning
+	```
 
 Tudo bem! Ainda não começamos a usar nosso Pallet, mas você pode ver que o compilador Rust está detectando nosso novo código e trazendo essa lógica para nosso programa principal. Este é o início da construção do nosso primeiro módulo de máquina de estados.
 
 ## Exercícios:
 
 Em `balances.rs`:
+
 ```rust
 /* TODO: crie uma nova struct pública chamada `Pallet`. */
 ```
 
-On `main.rs`:
+Em `main.rs`:
+
 ```rust
 /* TODO: use seu novo módulo `balances` */
 
 fn main() {
-	println!("Hello, world!");
+    println!("Hello, world!");
 }
 ```
 
