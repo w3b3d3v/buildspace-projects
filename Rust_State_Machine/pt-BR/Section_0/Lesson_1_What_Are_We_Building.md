@@ -28,7 +28,7 @@ Sem mais delongas, aproveite e espero que você aprenda muito! 😎
 
 Nesta etapa, vamos inicializar um projeto Rust básico, onde podemos começar a construir nossa máquina de estados simples.
 
-> 💡 **Nota:** Nesse [vídeo](https://youtu.be/oBfgvUBksg4?si=xUqPPvEGjzY_O5UZ) você consegue ver como iniciar um projeto em Rust.
+[Youtube](https://youtu.be/oBfgvUBksg4?si=xUqPPvEGjzY_O5UZ)
 
 ### Iniciando um novo projeto
 
