@@ -14,35 +14,34 @@ Para isso, usaremos um `BTreeMap`, que podemos importar da biblioteca `std` do R
 
 1. Importe o objeto `BTreeMap`.
 
-```rust
-use std::collections::BTreeMap;
-```
+    ```rust
+    use std::collections::BTreeMap;
+    ```
 
 2. Crie um campo `balances` em `Pallet` usando o `BTreeMap`.
+   Para a `chave`, usaremos uma string estática simples por enquanto. Dessa forma, podemos acessar usuários como `"alice"`, `"bob"`, etc. Isso será alterado no futuro.
 
-Para a `chave`, usaremos uma string estática simples por enquanto. Dessa forma, podemos acessar usuários como  `"alice"`, `"bob"`, etc... Isso será alterado no futuro.
+   Para o `valor`, usaremos um `u128`, que é o maior tipo suportado nativamente no Rust. Isso permitirá que nossos usuários tenham saldos muito grandes se quisermos.
 
-Para o `valor`, usaremos um `u128`, que é o maior tipo suportado nativamente no Rust. Isso permitirá que nossos usuários tenham saldos muito grandes se quisermos.
+   No final, isso ficará assim:
 
-No final, isso ficará assim:
+    ```rust
+    pub struct Pallet {
+        balances: BTreeMap<String, u128>,
+    }
+    ```
 
-```rust
-pub struct Pallet {
-	balances: BTreeMap<String, u128>,
-}
-```
+3. Finalmente, precisamos de uma maneira de inicializar este objeto e seu estado. Para isso, vamos implementar uma função na `Pallet` chamada `fn new()`:
 
-1. Finalmente, precisamos de uma maneira de inicializar este objeto e seu estado. Para isso, vamos implementar uma função na  `Pallet` chamada `fn new()`:
-
-```rust
-impl Pallet {
-	pub fn new() -> Self {
-		Self {
-			balances: BTreeMap::new()
-		}
-	}
-}
-```
+    ```rust
+    impl Pallet {
+        pub fn new() -> Self {
+            Self {
+                balances: BTreeMap::new(),
+            }
+        }
+    }
+    ```
 
 ## Exercício:
 
@@ -52,16 +51,16 @@ No `balances.rs`:
 use std::collections::BTreeMap;
 
 pub struct Pallet {
-	// Um armazenamento simples mapeando contas (`String`) para seus saldos (`u128`).
-	/* TODO: Adicionar um campo `balances` que é um `BTreeMap` de `String` para `u128`. */
+    // Um armazenamento simples mapeando contas (`String`) para seus saldos (`u128`).
+    /* TODO: Adicionar um campo `balances` que é um `BTreeMap` de `String` para `u128`. */
 }
 
 impl Pallet {
-	/// Cria uma nova instância do módulo de saldos.
-	pub fn new() -> Self {
-		/* TODO: Retornar uma nova instância da struct `Pallet`. */
-		unimplemented!() // Remova esta linha após implementar a função
-	}
+    /// Cria uma nova instância do módulo de saldos.
+    pub fn new() -> Self {
+        /* TODO: Retornar uma nova instância da struct `Pallet`. */
+        unimplemented!() // Remova esta linha após implementar a função
+    }
 }
 ```
 
