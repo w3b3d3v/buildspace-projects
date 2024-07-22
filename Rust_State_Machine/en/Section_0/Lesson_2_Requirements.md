@@ -1,5 +1,7 @@
 # Rust Tooling
 
+[Youtube](https://www.youtube.com/watch?v=LK6Ua7URfq4)
+
 In this step, we will initialize a basic rust project, where we can start building our simple Rust state machine.
 
 ## rustfmt

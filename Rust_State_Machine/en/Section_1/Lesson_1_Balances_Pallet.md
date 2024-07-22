@@ -2,6 +2,8 @@ I've seen a lot of complicated tutorials, so let's try to keep this one simple a
 
 # The Balances Pallet
 
+[Youtube](https://www.youtube.com/watch?v=9wWHRZfwahc)
+
 In this section, we will build the very first logic for our state machine: a Balances Pallet.
 
 This Pallet will manage the balances of users and allow them to transfer tokens to one another.

@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Enable Balance Transfers
 
+[Youtube](https://www.youtube.com/watch?v=cyaS0WvdgKU)
+
 Now that we have initialized and started to use our balances module, let's add probably the most important API: `transfer`.
 
 ## Learn
