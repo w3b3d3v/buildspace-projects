@@ -8,6 +8,8 @@ Let's add functions which make it useful.
 
 ## Block Number
 
+[Youtube](https://www.youtube.com/watch?v=fd5NtxPJ83s)
+
 Your blockchain's blocknumber is stored in the System Pallet, and the System Pallet needs to expose functions which allow us to access and modify the block number.
 
 For this we need two simple functions:

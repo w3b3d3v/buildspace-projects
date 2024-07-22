@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Integrate PoE Into Your Runtime
 
+[Youtube](https://www.youtube.com/watch?v=Ma7MzDVqjXY)
+
 The Proof of Existence pallet is done, but we still need to integrate it into your Runtime.
 
 Let's take a look at that process.

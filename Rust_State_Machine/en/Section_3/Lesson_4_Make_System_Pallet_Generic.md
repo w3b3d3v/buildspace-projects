@@ -4,6 +4,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 ### Make System Pallet Generic
 
+[Youtube](https://www.youtube.com/watch?v=uQFrV3OowTw)
+
 Now that you have some practice with the Balances Pallet, let's do the same task for the System Pallet.
 
 1. In this case we need to make System generic over `AccountId`, `BlockNumber`, and `Nonce`.

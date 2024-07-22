@@ -2,6 +2,8 @@ You can find the [solution for the previous step here](https://gist.github.com/n
 
 # Add Proof of Existence Dispatch
 
+[Youtube](https://www.youtube.com/watch?v=zw_mDF7YMGk)
+
 We have already established the nested dispatch pipeline for Pallets in the `Runtime`.
 
 Let's build Pallet level dispatch logic for the Proof of Existence to take advantage of that.

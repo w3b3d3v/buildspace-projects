@@ -6,6 +6,8 @@ In Rust, `derive` macros provide a convenient way to automatically implement tra
 
 ## Macros
 
+[Youtube](https://www.youtube.com/watch?v=si7wrJ6J66A)
+
 In the most simple terms, Macros are rust code that write more rust code.
 
 Macros can make your code easier to read, help avoid repetition, and even let you create your own special rules for coding in Rust.
