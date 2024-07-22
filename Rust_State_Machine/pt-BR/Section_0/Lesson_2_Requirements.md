@@ -1,6 +1,6 @@
 # Ferramentas do Rust
 
-> 💡 **Nota:** Nesse [vídeo](https://youtu.be/wvwNxmah3-c?si=Ta0PhkTdJPMTnmEx) você pode ver como configurar o formatador de código Rust.
+[Youtube](https://youtu.be/wvwNxmah3-c?si=Ta0PhkTdJPMTnmEx)
 
 Nesta etapa, vamos inicializar um projeto Rust básico, onde podemos começar a construir nossa máquina de estados simples em Rust.
 
