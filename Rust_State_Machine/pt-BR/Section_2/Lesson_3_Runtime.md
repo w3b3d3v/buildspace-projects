@@ -20,7 +20,7 @@ Certamente isso parece bastante abstrato, mas fará mais sentido à medida que c
 
 ## Criar o Runtime
 
-Assim como nossos Pallets, nosso Runtime será representado por uma `struct`simples, no entanto, neste caso, os campos da nossa  `struct` serão nossos Pallets!
+Assim como nossos Pallets, nosso Runtime será representado por uma `struct` simples, no entanto, neste caso, os campos da nossa `struct` serão nossos Pallets!
 
 Complete as instruções para criar um novo runtime que inclua nossos pallets de Sistema e Saldos. Para isso, você precisará aproveitar as funções `new()` que expusemos para cada um dos Pallets.
 
@@ -35,20 +35,20 @@ mod system;
 // Este é o nosso Runtime principal.
 // Ele acumula todos os diferentes pallets que queremos usar.
 pub struct Runtime {
-	/* TODO: cria um campo `system` que é do tipo `system::Pallet`. */
-	/* TODO: cria um campo `balances` que é do tipo `balances::Pallet`. */
+    /* TODO: cria um campo `system` que é do tipo `system::Pallet`. */
+    /* TODO: cria um campo `balances` que é do tipo `balances::Pallet`. */
 }
 
 impl Runtime {
     // Cria uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
-	fn new() -> Self {
-		/* TODO: Crie um novo `Runtime` criando novas instâncias de `system` e `balances`. */
-		unimplemented!()
-	}
+    fn new() -> Self {
+        /* TODO: Crie um novo `Runtime` criando novas instâncias de `system` e `balances`. */
+        unimplemented!()
+    }
 }
 
 fn main() {
-	println!("Hello, world!");
+    println!("Hello, world!");
 }
 ```
 

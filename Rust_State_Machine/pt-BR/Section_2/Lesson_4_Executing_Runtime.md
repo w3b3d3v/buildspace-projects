@@ -32,9 +32,9 @@ Vamos rapidamente dividir as etapas de execução de um bloco básico:
 
 1. Primeiro, incrementamos o número do bloco, já que cada novo bloco terá um novo número de bloco.
 2. Em seguida, passamos e executamos cada transação nesse bloco:
-	1. Cada transação para nossa blockchain virá de um usuário, portanto, incrementaremos o nonce dos usuários à medida que processamos suas transações.
-	2. Então tentaremos executar a função que eles desejam chamar, por exemplo `transfer`.
-	3. Repetimos este processo para cada transação.
+    1. Cada transação para nossa blockchain virá de um usuário, portanto, incrementaremos o nonce dos usuários à medida que processamos suas transações.
+    2. Então tentaremos executar a função que eles desejam chamar, por exemplo `transfer`.
+    3. Repetimos este processo para cada transação.
 
 ### Tratamento de Erros
 
@@ -48,8 +48,7 @@ Devemos entrar em pânico?
 
 Absolutamente não! Este é o tipo de erro que nosso Runtime deve ser capaz de tratar, pois é esperado que tais erros ocorram. **Um bloco pode ser válido, mesmo que transações no bloco sejam inválidas!**
 
-Quando uma transação retorna um erro, devemos mostrar esse erro ao usuário e então "engolir" o resultado.
-Por exemplo:
+Quando uma transação retorna um erro, devemos mostrar esse erro ao usuário e então "engolir" o resultado. Por exemplo:
 
 ```rust
 let _res = i_can_return_error().map_err(|e| eprintln!("{}", e));
@@ -60,7 +59,6 @@ Neste caso, você pode ver que qualquer erro que `i_can_return_error` retornaria
 Você deve ter **MUITO CUIDADO** ao fazer isso. Engolir um erro é exatamente o oposto do tratamento adequado de erros que Rust oferece aos desenvolvedores. No entanto, realmente não temos escolha aqui em nossa função `main`, e entendemos completamente o que estamos fazendo aqui.
 
 Em sistemas de blockchain reais, os usuários ainda são cobrados por uma taxa de transação, mesmo quando sua transação resulta em um `Err`. Isso garante que os usuários ainda estejam pagando um custo por acionar a lógica na blockchain, mesmo quando a função falha. Isso é uma parte importante para manter nossa blockchain resiliente a ataques de DDOS e sybil.
-
 
 ## Simule Seu Primeiro Bloco
 
@@ -79,35 +77,34 @@ mod system;
 // Este é o nosso Runtime principal.
 // Ele acumula todos os diferentes pallets que queremos usar.
 pub struct Runtime {
-	system: system::Pallet,
-	balances: balances::Pallet,
+    system: system::Pallet,
+    balances: balances::Pallet,
 }
 
 impl Runtime {
-	// Cria uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
-	fn new() -> Self {
-		Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
-	}
+    // Cria uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
+    fn new() -> Self {
+        Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
+    }
 }
 
 fn main() {
-	/* TODO: Cria uma variável mutável `runtime`, que é uma nova instância de `Runtime`. */
-	/* TODO: Define o saldo de `alice` para 100, permitindo-nos executar outras transações. */
+    /* TODO: Cria uma variável mutável `runtime`, que é uma nova instância de `Runtime`. */s
+    /* TODO: Define o saldo de `alice` para 100, permitindo-nos executar outras transações. */
+    // começa a emular um bloco
+    /* TODO: Aumenta o número do bloco no sistema. */
+    /* TODO: Afirmar que o número do bloco é o que esperamos. */
 
-  	//começa a emular um bloco
-	/* TODO: Aumenta o número do bloco no sistema. */
-  	/* TODO: Afirmar que o número do bloco é o que esperamos. */
-
-	//primeira transação
-	/* TODO: Aumenta o nonce de `alice`. */
-	/* TODO: Executa uma transferência de `alice` para `bob` por 30 tokens.
-		- A transferência _poderia_ retornar um erro. Deveríamos usar `map_err` para imprimir
-		o erro, se houver.
-		- Devemos capturar o resultado da transferência em uma variável não utilizada como `_res`.
-	*/
-
-	//segunda transação
-	/* TODO: Aumenta o nonce de `alice` novamente. */
-	/* TODO: Executa outra transferência de saldo, desta vez de `alice` para `charlie` por 20. */
+    // primeira transação
+    /* TODO: Aumenta o nonce de `alice`. */
+    /* TODO: Executa uma transferência de `alice` para `bob` por 30 tokens.
+        - A transferência _poderia_ retornar um erro. Deveríamos usar `map_err` para imprimir
+        o erro, se houver.
+        - Devemos capturar o resultado da transferência em uma variável não utilizada como `_res`.
+    */
+	
+    // segunda transação
+    /* TODO: Aumenta o nonce de `alice` novamente. */
+    /* TODO: Executa outra transferência de saldo, desta vez de `alice` para `charlie` por 20. */
 }
 ```

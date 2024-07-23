@@ -4,6 +4,8 @@ Parabéns por chegar à seção 2! ;)
 
 # O Sistema e o Runtime
 
+[Youtube](https://youtu.be/jhzHGEu29dk?si=wfwf9ytHDT-Hy_Op)
+
 Nesta seção, você criará o Pallet de Sistema, um Pallet de baixo nível para gerenciar o estado básico da blockchain.
 
 Em seguida, você integrará tanto o Pallet de Saldos quanto o Pallet de Sistema na sua função de transição de estado, chamada Runtime.
@@ -32,36 +34,38 @@ Veremos a importância do Pallet de Sistema evoluir à medida que avançamos nos
 
 Você notará que as instruções aqui são bastante breves. Você já fez todos esses passos antes, então já deve estar familiarizado com tudo que precisa para completar esta etapa.
 
-
 ## Exercícios:
 
 Crie o arquivo `src/system.rs`:
+
 ```rust
 /* TODO: Talvez seja necessário atualizar suas importações. */
 
 /// Este é o Palete do Sistema.
 /// Ele lida com o estado de baixo nível necessário para seu blockchain.
 pub struct Pallet {
-	/// O número do bloco atual.
-	/* TODO: Cria um campo `block_number` que armazena um `u32`. */
-	/// Um ​​mapa de uma conta para seu nonce.
-	/* TODO: Crie um campo `nonce` que seja um `BTreeMap` de `String` para `u32`. */
+    /// O número do bloco atual.
+    /* TODO: Crie um campo `block_number` que armazena um `u32`. */
+    /// Um mapa de uma conta para seu nonce.
+    /* TODO: Crie um campo `nonce` que seja um `BTreeMap` de `String` para `u32`. */
 }
 
 impl Pallet {
-	/// Crie uma nova instância do System Pallet.
-	pub fn new() -> Self {
-		/* TODO: Retorne uma nova instância da struct `Pallet`. */
-	}
+    /// Cria uma nova instância do System Pallet.
+    pub fn new() -> Self {
+        /* TODO: Retorne uma nova instância da struct `Pallet`. */
+    }
 }
 ```
-On `main.rs`:
+
+No `main.rs`:
+
 ```rust
 mod balances;
 /* TODO: Importe seu novo módulo `system`. */
 
 fn main() {
-	println!("Hello, world!");
+    println!("Hello, world!");
 }
 ```
 

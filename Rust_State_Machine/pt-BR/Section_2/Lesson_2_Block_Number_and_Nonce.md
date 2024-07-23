@@ -29,7 +29,7 @@ Lembre-se que blockchains são sistemas descentralizados e distribuídos, e tran
 
 Para isso, usamos novamente um `BTreeMap` para dar a cada usuário seu próprio contador de `nonce`.
 
-Nossa blockchain simples não usará esse valor, mas para o exemplo, manteremos o controle dele criando uma função `inc_nonce` Se você estivesse criando uma blockchain mais complexa, o  `nonce` do usuário se tornaria uma parte importante do seu sistema.
+Nossa blockchain simples não usará esse valor, mas para o exemplo, manteremos o controle dele criando uma função `inc_nonce`. Se você estivesse criando uma blockchain mais complexa, o `nonce` do usuário se tornaria uma parte importante do seu sistema.
 
 ## Matemática Segura?
 
@@ -68,48 +68,48 @@ use std::collections::BTreeMap;
 /// Ele lida com o estado de baixo nível necessário para sua blockchain.
 pub struct Pallet {
     /// O número atual do bloco.
-	block_number: u32,
+    block_number: u32,
     /// Um mapa de uma conta para seu nonce.
-	nonce: BTreeMap<String, u32>,
+    nonce: BTreeMap<String, u32>,
 }
 
 impl Pallet {
     /// Cria uma nova instância do Pallet de Sistema.
-	pub fn new() -> Self {
-		Self { block_number: 0, nonce: BTreeMap::new() }
-	}
+    pub fn new() -> Self {
+        Self { block_number: 0, nonce: BTreeMap::new() }
+    }
 
     /// Obtém o número atual do bloco.
-	pub fn block_number(&self) -> u32 {
-		/* TODO: Retorne o número do bloco atual. */
-		unimplemented!()
-	}
+    pub fn block_number(&self) -> u32 {
+        /* TODO: Retorne o número do bloco atual. */
+        unimplemented!()
+    }
 
-    // Esta função pode ser usada para incrementar o número do bloco.
-    // Aumenta o número do bloco em um.
-	pub fn inc_block_number(&mut self) {
-		/* TODO: Aumenta o número do bloco atual em um. */
-		unimplemented!()
-	}
+    /// Esta função pode ser usada para incrementar o número do bloco.
+    /// Aumenta o número do bloco em um.
+    pub fn inc_block_number(&mut self) {
+        /* TODO: Aumenta o número do bloco atual em um. */
+        unimplemented!()
+    }
 
-    // Incrementa o nonce de uma conta. Isso nos ajuda a acompanhar quantas transações cada conta fez.
-	pub fn inc_nonce(&mut self, who: &String) {
-		/* TODO: Obtenha o nonce atual de `who` e aumente-o em um. */
-		unimplemented!()
-	}
+    /// Incrementa o nonce de uma conta. Isso nos ajuda a acompanhar quantas transações cada conta fez.
+    pub fn inc_nonce(&mut self, who: &String) {
+        /* TODO: Obtenha o nonce atual de `who` e aumente-o em um. */
+        unimplemented!()
+    }
 }
 
 #[cfg(test)]
 mod test {
-	#[test]
-	fn init_system() {
-		/* TODO: Crie um teste que verifique o seguinte:
-			- Aumenta o número do bloco atual.
-			- Aumente o nonce de `alice`.
-			- Verifique se o número do bloco é o que esperamos.
-			- Verifique se o nonce de `alice` é o que esperamos.
-		*/
-	}
+    #[test]
+    fn init_system() {
+        /* TODO: Crie um teste que verifique o seguinte:
+            - Aumenta o número do bloco atual.
+            - Aumente o nonce de `alice`.
+            - Verifique se o número do bloco é o que esperamos.
+            - Verifique se o nonce de `alice` é o que esperamos.
+        */
+    }
 }
 ```
 
