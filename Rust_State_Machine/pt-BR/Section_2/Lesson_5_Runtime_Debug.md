@@ -20,14 +20,13 @@ Por enquanto, trate-as como "mágica".
 
 Pense nas traits em Rust como regras compartilhadas para diferentes tipos. Elas permitem que você defina um conjunto de coisas que os tipos devem ser capazes de fazer. Dessa forma, você pode garantir que diferentes partes do seu código sigam as mesmas regras.
 
-
 Dê uma olhada neste [exemplo](https://doc.rust-lang.org/rust-by-example/trait.html) ou releia o [Rust Book](https://doc.rust-lang.org/book/ch10-02-traits.html) se precisar relembrar sobre Traits.
 
-Faremos e usaremos traits personalizadas mais adiante neste tutorial, mas saiba que neste passo  `#[derive(Debug)]`  é uma macro que implementa a trait `Debug` para seus tipos personalizados.
+Faremos e usaremos traits personalizadas mais adiante neste tutorial, mas saiba que neste passo `#[derive(Debug)]` é uma macro que implementa a trait `Debug` para seus tipos personalizados.
 
 ### Trait Debug
 
-A trait Debug em Rust faz parte da biblioteca padrão e é usada para imprimir e formatar valores para fins de depuração. Ela fornece uma implementação padrão através da anotação `#[derive(Debug)].
+A trait Debug em Rust faz parte da biblioteca padrão e é usada para imprimir e formatar valores para fins de depuração. Ela fornece uma implementação padrão através da anotação `#[derive(Debug)]`.
 
 Por exemplo:
 
@@ -54,7 +53,6 @@ Este é um passo muito simples, mas útil!
 
 Queremos ser capazes de imprimir o estado atual do nosso `Runtime` no final do nosso `main` para permitir que inspecionemos facilmente como ele se parece e garantir que tudo esteja funcionando como esperado.
 
-
 Para fazer isso, precisamos adicionar `#[derive(Debug)]` à `struct Runtime`.
 
 No entanto... a `struct Runtime` é composta de `system::Pallet` e `balances::Pallet`, então essas structs TAMBÉM precisam implementar a trait Debug.
@@ -70,7 +68,7 @@ mod balances;
 mod system;
 
 // Este é o nosso Runtime principal.
-// Acumula todos os diferentes paletes que queremos utilizar.
+// Acumula todos os diferentes pallets que queremos utilizar.
 /* TODO: Adicione a macro derivada para implementar a característica `Debug` para `Runtime`. */
 pub struct Runtime {
 	system: system::Pallet,
@@ -96,28 +94,29 @@ No `balances.rs`:
 use std::collections::BTreeMap;
 
 /// Este é o Módulo de Saldos.
-/// É um módulo simples que monitora quanto saldo cada conta tem neste estado
-/// máquina.
+/// É um módulo simples que monitora quanto saldo cada conta tem nesta máquina de estados.
 /* TODO: Adicione a macro derivada para implementar a característica `Debug` para `Pallet`. */
+#[derive(Debug)]
 pub struct Pallet {
-	// Um ​​mapeamento simples de armazenamento de contas (`String`) para seus saldos (`u128`).
-	balances: BTreeMap<String, u128>,
+    // Um mapeamento simples de armazenamento de contas (`String`) para seus saldos (`u128`).
+    balances: BTreeMap<String, u128>,
 }
 ```
 
-On `system.rs`:
+No `system.rs`:
 
 ```rust
 use std::collections::BTreeMap;
 
 /// Este é o Palete do Sistema.
-/// Ele lida com o estado de baixo nível necessário para seu blockchain.
+/// Ele lida com o estado de baixo nível necessário para sua blockchain.
 /* TODO: Adicione a macro derivada para implementar a característica `Debug` para `Pallet`. */
+#[derive(Debug)]
 pub struct Pallet {
-	/// O número do bloco atual.
-	block_number: u32,
-	/// Um ​​mapa de uma conta para seu nonce.
-	nonce: BTreeMap<String, u32>,
+    /// O número do bloco atual.
+    block_number: u32,
+    /// Um mapa de uma conta para seu nonce.
+    nonce: BTreeMap<String, u32>,
 }
 ```
 
