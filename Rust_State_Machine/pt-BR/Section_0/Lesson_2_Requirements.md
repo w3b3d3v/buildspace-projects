@@ -1,6 +1,6 @@
 # Ferramentas do Rust
 
-[Youtube](https://youtu.be/wvwNxmah3-c?si=Ta0PhkTdJPMTnmEx)
+[Youtube](https://youtu.be/wvwNxmah3-c?si=t2xhiTCfrVIllJDu)
 
 Nesta etapa, vamos inicializar um projeto Rust básico, onde podemos começar a construir nossa máquina de estados simples em Rust.
 
