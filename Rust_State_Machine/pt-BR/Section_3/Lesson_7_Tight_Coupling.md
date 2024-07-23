@@ -18,18 +18,17 @@ Vamos ver alguns exemplos.
 
 Podemos estender nosso exemplo anterior para mostrar o que a herança de traits faz com as funções:
 
-
 ```rust
 pub trait GetName {
-	// retorna uma string representando o nome do objeto
-	fn name() -> String;
+    // retorna uma string representando o nome do objeto
+    fn name() -> String;
 }
 
 pub trait SayName: GetName {
-	// imprimirá o nome de `name()` no console
-	fn say_name() {
-		println!("{}", Self::name());
-	}
+    // imprimirá o nome de `name()` no console
+    fn say_name() {
+        println!("{}", Self::name());
+    }
 }
 ```
 
@@ -40,9 +39,9 @@ Então, quando implementamos essas traits, fica assim:
 ```rust
 struct Shawn;
 impl GetName for Shawn {
-	fn name() -> String {
-		return "shawn".to_string();
-	}
+    fn name() -> String {
+        return "shawn".to_string();
+    }
 }
 
 impl SayName for Shawn {}
@@ -52,13 +51,14 @@ Poderíamos escolher implementar nossa própria versão da função `SayName`, p
 
 ```rust
 impl SayName for Shawn {
-	fn say_name() {
-		println!("My name is {}!", Self::name());
-	}
+    fn say_name() {
+        println!("My name is {}!", Self::name());
+    }
 }
 ```
 
 Mas não precisamos fazer isso. O que precisamos fazer é garantir que `GetName` esteja implementado para `Shawn` ou não será possível usar a trait `SayName`. Novamente, não usaremos isso em nosso tutorial, mas é bom ver exemplos de como isso pode ser usado.
+
 ### Tipos Associados
 
 Em vez de redefinir `type AccountId` em cada Pallet que precisa dele, e se o definíssemos apenas em `system::Config`, e herdássemos esse tipo em outras configurações de Pallet?
@@ -67,7 +67,7 @@ Vamos ver como isso ficaria:
 
 ```rust
 pub trait Config: crate::system::Config {
-	type Balance: Zero + CheckedSub + CheckedAdd + Copy;
+    type Balance: Zero + CheckedSub + CheckedAdd + Copy;
 }
 ```
 
@@ -92,15 +92,15 @@ No `main.rs`:
 /// ...código anterior.
 
 impl balances::Config for Runtime {
-	/* TODO: Depois de herdar do trait `system::Config`, você não precisará de `AccountId` aqui. */
+    /* TODO: Depois de herdar do trait `system::Config`, você não precisará de `AccountId` aqui. */
 	type AccountId = types::AccountId;
-	type Balance = types::Balance;
+    type Balance = types::Balance;
 }
 
 /// ...código anterior.
 ```
 
-On `balances.rs`:
+No `balances.rs`:
 
 ```rust
 use num::traits::{CheckedAdd, CheckedSub, Zero};
@@ -109,9 +109,9 @@ use std::collections::BTreeMap;
 /// A característica de configuração do Módulo Balances.
 /// Contém os tipos básicos necessários para lidar com saldos.
 /*
-	TODO:
-	Acople firmemente os saldos ao palete do sistema, herdando a característica `system::Config`.
-	Depois disso, você não precisará redefinir o tipo `AccountId` aqui.
+    TODO:
+    Acople firmemente os saldos ao pallet do sistema, herdando a característica `system::Config`.
+    Depois disso, você não precisará redefinir o tipo `AccountId` aqui.
 */
 pub trait Config {
 	/// Um ​​tipo que pode identificar uma conta em nossa máquina de estado.
@@ -126,7 +126,7 @@ pub trait Config {
 
 #[cfg(test)]
 mod tests {
-	struct TestConfig;
+    struct TestConfig;
 
 	/* TODO: Implemente `crate::system::Config` para `TestConfig` para fazer seus testes funcionarem novamente. */
 
@@ -141,6 +141,7 @@ mod tests {
 ```
 
 ### 🌟 Você é uma estrela
+
 VOCÊ CONSEGUIU.
 
 Você completou com sucesso a seção 3! Trabalho fantástico :).

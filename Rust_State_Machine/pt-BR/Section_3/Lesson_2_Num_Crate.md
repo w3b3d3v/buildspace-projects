@@ -6,20 +6,20 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 Rust é projetado para ser muito leve e fornece muito pouco pronto para uso.
 
-Dentro do ecossistema, muitas funções e recursos que você poderia esperar ser incluídos no Rust  `std` ou `core` são na verdade delegados para pequenos crates bem conhecidos e amplamente utilizados.
+Dentro do ecossistema, muitas funções e recursos que você poderia esperar ser incluídos no Rust `std` ou `core` são na verdade delegados para pequenos crates bem conhecidos e amplamente utilizados.
 
 Para nosso próximo passo, queremos acessar traits para operações numéricas básicas como:
 
-- `CheckedAdd` - Um tipo que suporta  `checked_add`
-- `CheckedSub` - Um tipo que suporta  `checked_sub`
+- `CheckedAdd` - Um tipo que suporta `checked_add`
+- `CheckedSub` - Um tipo que suporta `checked_sub`
 - `Zero` - Um tipo que pode retornar o valor zero ao chamar `zero()`
-- `One` - Um tipo que pode retornar o valor um ao chamar  `one()`
+- `One` - Um tipo que pode retornar o valor um ao chamar `one()`
 
 Para acessar essas traits, precisaremos importar um novo crate em nosso projeto.
 
 ## Cargo.toml
 
-Quando inicializamos nosso projeto, um arquivo  `Cargo.toml` foi gerado para nós.
+Quando inicializamos nosso projeto, um arquivo `Cargo.toml` foi gerado para nós.
 
 Como mencionado antes, é muito semelhante a um arquivo `package.json` que você esperaria encontrar em um projeto Node.js.
 
