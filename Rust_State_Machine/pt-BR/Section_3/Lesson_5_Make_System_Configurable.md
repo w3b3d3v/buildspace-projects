@@ -33,7 +33,7 @@ Você poderia criar uma trait `GetName`:
 
 ```rust
 pub trait GetName {
-	fn name() -> String;
+    fn name() -> String;
 }
 ```
 
@@ -42,9 +42,9 @@ Então, você poderia implementar essa trait para qualquer objeto.
 ```rust
 struct Shawn;
 impl GetName for Shawn {
-	fn name() -> String {
-		return "shawn".to_string();
-	}
+    fn name() -> String {
+        return "shawn".to_string();
+    }
 }
 ```
 
@@ -52,7 +52,7 @@ E então chamar essa função no objeto que a implementa.
 
 ```rust
 fn main() {
-	println!("{}", Shawn::name());
+    println!("{}", Shawn::name());
 }
 ```
 
@@ -72,7 +72,7 @@ Por exemplo:
 
 ```rust
 pub struct Pallet<AccountId, BlockNumber, BlockLength, BlockWeight, Hash, Nonce, Runtime, Version, ...> {
-	// um monte de coisas
+    // um monte de coisas
 }
 ```
 
@@ -82,10 +82,10 @@ Para isso, usaremos uma trait com um monte de tipos associados:
 
 ```rust
 pub trait Config {
-	type AccountId: Ord;
-	type BlockNumber: Zero + One + AddAssign + Copy;
-	type Nonce: Zero + One + Copy;
-	// e mais, se necessário
+    type AccountId: Ord;
+    type BlockNumber: Zero + One + AddAssign + Copy;
+    type Nonce: Zero + One + Copy;
+    // e mais, se necessário
 }
 ```
 
@@ -93,8 +93,8 @@ Então, podemos definir nosso tipo genérico usando um único parâmetro genéri
 
 ```rust
 pub struct Pallet<T: Config> {
-	block_number: T::BlockNumber,
-	nonce: BTreeMap<T::AccountId, T::Nonce>,
+    block_number: T::BlockNumber,
+    nonce: BTreeMap<T::AccountId, T::Nonce>,
 }
 ```
 
@@ -102,7 +102,7 @@ e implementar funções usando:
 
 ```rust
 impl<T: Config> Pallet<T> {
-	// funções usando tipos de T aqui
+    // funções usando tipos de T aqui
 }
 ```
 
@@ -111,9 +111,9 @@ Vamos tentar entender essa sintaxe rapidamente.
 1. Há um tipo genérico `T`. `T` não tem um nome significativo porque representa um monte de coisas, e isso é a convenção mais comumente usada em Rust.
 2. `T` é obrigado a implementar a trait `Config`, que definimos anteriormente.
 3. Porque `T` implementa `Config`, e `Config` tem os tipos associados `AccountId`, `BlockNumber`, e `Nonce`, podemos acessar esses tipos assim:
-	- `T::AccountId`
-	- `T::BlockNumber`
-	- `T::Nonce`
+    - `T::AccountId`
+    - `T::BlockNumber`
+    - `T::Nonce`
 
 Não há diferença significativa entre o que tínhamos antes com 3 parâmetros genéricos e um único parâmetro genérico representado por uma trait `Config`, mas certamente torna tudo mais escalável, fácil de ler e fácil de configurar.
 
@@ -127,17 +127,17 @@ Assim como antes, precisamos de algum objeto que implemente essa trait. No nosso
 
 ```rust
 impl system::Config for Runtime {
-	type AccountId = String;
-	type BlockNumber = u32;
-	type Nonce = u32;
+    type AccountId = String;
+    type BlockNumber = u32;
+    type Nonce = u32;
 }
 ```
 
-Então, ao definir o `system::Pallet` dentro do `Runtime`,  podemos usar a seguinte sintaxe:
+Então, ao definir o `system::Pallet` dentro do `Runtime`, podemos usar a seguinte sintaxe:
 
 ```rust
 pub struct Runtime {
-	system: system::Pallet<Self>,
+    system: system::Pallet<Self>,
 }
 ```
 
@@ -177,23 +177,23 @@ mod system;
 // Os módulos são configurados diretamente para esses tipos e satisfazem todos os nossos
 // requisitos de característica.
 mod types {
-	pub type AccountId = String;
-	pub type Balance = u128;
-	pub type BlockNumber = u32;
-	pub type Nonce = u32;
+    pub type AccountId = String;
+    pub type Balance = u128;
+    pub type BlockNumber = u32;
+    pub type Nonce = u32;
 }
 
 /*
-	TODO:
-	Implemente a característica `system::Config` que você criou em seu `Runtime`.
-  	Use `Self` para satisfazer o parâmetro genérico necessário para `system::Pallet`.
+    TODO:
+    Implemente a característica `system::Config` que você criou em seu `Runtime`.
+    Use `Self` para satisfazer o parâmetro genérico necessário para `system::Pallet`.
 */
 
 // Este é o nosso Runtime principal.
-// Acumula todos os diferentes paletes que queremos utilizar.
+// Acumula todos os diferentes pallets que queremos utilizar.
 ```
 
-On `system.rs`:
+No `system.rs`:
 
 ```rust
 use core::ops::AddAssign;
@@ -201,22 +201,24 @@ use num::traits::{One, Zero};
 use std::collections::BTreeMap;
 
 /*
-	TODO: Combine todos os tipos genéricos e seus limites de características em um único `pub trait Config`.
-  	Quando terminar, seu `Pallet` pode simplesmente ser definido com `Pallet<T: Config>`.
+    TODO: Combine todos os tipos genéricos e seus limites de características em um único `pub trait Config`.
+    Quando terminar, seu `Pallet` pode simplesmente ser definido com `Pallet<T: Config>`.
 */
 
-/// Este é o Palete do Sistema.
+/// Este é o Pallet do Sistema.
 /// Ele lida com o estado de baixo nível necessário para seu blockchain.
 #[derive(Debug)]
-pub struct Pallet<AccountId, BlockNumber, Nonce> {
-	/// O número do bloco atual.
-	block_number: BlockNumber,
-	/// Um mapa de uma conta até seu nonce.
-	nonce: BTreeMap<AccountId, Nonce>,
+pub struct Pallet<AccountId, BlockNumber, Nonce>
+
+ {
+    /// O número do bloco atual.
+    block_number: BlockNumber,
+    /// Um mapa de uma conta até seu nonce.
+    nonce: BTreeMap<AccountId, Nonce>,
 }
 
 /*
-	TODO: Atualize todas essas funções para usar seu novo traço de configuração.
+    TODO: Atualize todas essas funções para usar seu novo traço de configuração.
 */
 
 /// ...código anterior.

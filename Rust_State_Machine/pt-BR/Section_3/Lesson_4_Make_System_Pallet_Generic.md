@@ -32,18 +32,18 @@ mod system;
 // Módulos são configurados diretamente para esses tipos e eles satisfazem todos os nossos
 // requisitos de traits.
 mod types {
-	pub type AccountId = String;
-	pub type Balance = u128;
-	/* TODO: Mova suas definições de tipo para `BlockNumber` e `Nonce` aqui. */
+    pub type AccountId = String;
+    pub type Balance = u128;
+    /* TODO: Mova suas definições de tipo para `BlockNumber` e `Nonce` aqui. */
 }
 
 // Este é o nosso Runtime principal.
-// Acumula todos os diferentes paletes que queremos utilizar.
+// Acumula todos os diferentes pallets que queremos utilizar.
 #[derive(Debug)]
 pub struct Runtime {
-	/* TODO: Use suas definições de tipo para seu novo `system::Pallet` genérico */
-	system: system::Pallet,
-	balances: balances::Pallet<types::AccountId, types::Balance>,
+    /* TODO: Use suas definições de tipo para seu novo `system::Pallet` genérico */
+    system: system::Pallet,
+    balances: balances::Pallet<types::AccountId, types::Balance>,
 }
 ```
 
@@ -57,43 +57,46 @@ type BlockNumber = u32;
 type Nonce = u32;
 
 /*
-	TODO:
-	Atualize a estrutura `Pallet` para ser genérica sobre os tipos `AccountId`, `BlockNumber` e `Nonce`.
-  	Você não precisará das definições de tipo acima depois de terminar.
-  	Os tipos agora serão definidos em `main.rs`. Veja os TODOs lá.
+    TODO:
+    Atualize a estrutura `Pallet` para ser genérica sobre os tipos `AccountId`, `BlockNumber` e `Nonce`.
+    Você não precisará das definições de tipo acima depois de terminar.
+    Os tipos agora serão definidos em `main.rs`. Veja os TODOs lá.
 */
 
-/// Este é o Palete do Sistema.
+/// Este é o Pallet do Sistema.
 /// Ele lida com o estado de baixo nível necessário para seu blockchain.
 #[derive(Debug)]
 pub struct Pallet {
-	/// O número do bloco atual.
-	block_number: BlockNumber,
-	/// Um ​​mapa de uma conta para seu nonce.
-	nonce: BTreeMap<AccountId, Nonce>,
+    /// O número do bloco atual.
+    block_number: BlockNumber,
+    /// Um ​​mapa de uma conta para seu nonce.
+    nonce: BTreeMap<AccountId, Nonce>,
 }
 
 /*
-	TODO:
-	Os tipos genéricos precisam satisfazer certas características para serem usados ​​nas funções abaixo.
-  	Veja se você consegue descobri-los sozinho.
+    TODO:
+    Os tipos genéricos precisam satisfazer certas características para serem usados ​​nas funções abaixo.
+    Veja se você consegue descobri-los sozinho.
 
- 	NOTA: Pode ser necessário ajustar algumas das funções abaixo para satisfazer o verificador de empréstimo.
+    NOTA: Pode ser necessário ajustar algumas das funções abaixo para satisfazer o verificador de empréstimo.
 */
 
 /// ...código anterior.
 
 #[cfg(test)]
 mod test {
-	#[test]
-	fn init_system() {
-		/*
+    #[test]
+    fn init_system() {
+        /*
 			TODO:
 			Ao criar uma instância de `Pallet`, você deve definir explicitamente os tipos que usa.
 		*/
-		let mut system = super::Pallet::new();
-		
+        let mut system = super::Pallet::<String, u32, u32>::new();
+
         /// ...código anterior.
-	}
+    }
 }
 ```
+
+Tornar o Pallet de Sistema genérico é uma habilidade crucial para a criação de soluções blockchain flexíveis e escaláveis. Ótimo trabalho ao concluir esta lição! 🌟
+Poste uma captura de tela em [#progress](https://discord.com/channels/898706705779687435/980906289968345128) mostrando seu runtime com o novo Sistema Pallet genérico em ação.

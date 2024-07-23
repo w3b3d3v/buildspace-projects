@@ -44,19 +44,19 @@ No `balances.rs`:
 use std::collections::BTreeMap;
 
 /*
-  TODO: Defina os tipos comuns usados ​​nesta palete:
-  - `ID da conta`
-  - `Equilíbrio`
+  TODO: Defina os tipos comuns usados ​​nesta pallet:
+  - `AccountId`
+  - `Balance`
 
   Em seguida, atualize esta paleta para usar esses tipos comuns.
 */
 
 /// Este é o Módulo de Saldos.
-/// É um módulo simples que monitora quanto saldo cada conta tem neste máquina de estado.
+/// É um módulo simples que monitora quanto saldo cada conta tem nesta máquina de estado.
 #[derive(Debug)]
 pub struct Pallet {
-	// Um ​​mapeamento simples de armazenamento de contas (`String`) para seus saldos (`u128`).
-	balances: BTreeMap<String, u128>,
+    // Um mapeamento simples de armazenamento de contas (`String`) para seus saldos (`u128`).
+    balances: BTreeMap<String, u128>,
 }
 ```
 No `system.rs`:
@@ -64,20 +64,20 @@ No `system.rs`:
 use std::collections::BTreeMap;
 
 /*
-	TODO: Defina os tipos comuns usados ​​nesta palete:
-		- `AccountID`
-		- `BlockNumber`
-		- `Nonce`
+  TODO: Defina os tipos comuns usados ​​nesta pallet:
+  - `AccountId`
+  - `BlockNumber`
+  - `Nonce`
 
-	Em seguida, atualize esta paleta para usar esses tipos comuns.
+  Em seguida, atualize esta paleta para usar esses tipos comuns.
 */
 
-/// Este é o Palete do Sistema.
+/// Este é o Pallet do Sistema.
 /// Ele lida com o estado de baixo nível necessário para seu blockchain.
 #[derive(Debug)]
 pub struct Pallet {
-	/// O número do bloco atual.
-	block_number: u32,
+    /// O número do bloco atual.
+    block_number: u32,
 	/// Um ​​mapa de uma conta para seu nonce.
 	nonce: BTreeMap<String, u32>,
 }

@@ -26,7 +26,7 @@ Se quisermos tornar nosso `Pallet` genérico, ele pareceria algo assim:
 
 ```rust
 pub struct Pallet<AccountId, Balance> {
- 	balances: BTreeMap<AccountId, Balance>,
+    balances: BTreeMap<AccountId, Balance>,
 }
 ```
 
@@ -34,7 +34,7 @@ E implementar funções em `Pallet` pareceria assim:
 
 ```rust
 impl<AccountId, Balance> Pallet<AccountId, Balance> {
-	// funções que usam esses tipos
+    // funções que usam esses tipos
 }
 ```
 
@@ -59,10 +59,10 @@ Isso parecerá assim:
 ```rust
 impl<AccountId, Balance> Pallet<AccountId, Balance>
 where
-	AccountId: Ord,
-	Balance: Zero + CheckedSub + CheckedAdd + Copy,
+    AccountId: Ord,
+    Balance: Zero + CheckedSub + CheckedAdd + Copy,
 {
-	// functions which use these types and have access to the traits specified
+    // functions which use these types and have access to the traits specified
 }
 ```
 
@@ -109,13 +109,11 @@ No `balances.rs`:
 ```rust
 /* TODO: Você pode precisar importar algumas coisas para este passo. */
 use std::collections::BTreeMap;
+use num::traits::{CheckedAdd, CheckedSub, Zero};
 
-type AccountId = String;
-type Balance = u128;
-
-/*
-	TODO: 
-	Atualize a struct `Pallet` para ser genérica em relação aos tipos `AccountId` e `Balance`.
+/* 
+  TODO: 
+  Atualize a struct `Pallet` para ser genérica em relação aos tipos `AccountId` e `Balance`.
 
 	Você não precisará das definições de tipo abaixo depois de concluir.
 	Os tipos agora serão definidos em `main.rs`. Veja os TODOs lá.
@@ -126,14 +124,14 @@ type Balance = u128;
 #[derive(Debug)]
 pub struct Pallet {
     // Um armazenamento simples mapeando contas para seus saldos.
-	balances: BTreeMap<AccountId, Balance>,
+    balances: BTreeMap<AccountId, Balance>,
 }
 
 /*
   TODO:
   Os tipos genéricos precisam satisfazer certas características para serem usados ​​nas funções abaixo.
-  - ID da conta: pedido
-  - Saldo: Zero + CheckedSub + CheckedAdd + Copiar
+  - AccountId: Ord
+  - Balance: Zero + CheckedSub + CheckedAdd + Copy
 
   Você pode descobrir essas características deixando o compilador dizer o que está faltando.
 
@@ -144,31 +142,34 @@ pub struct Pallet {
 
 #[cfg(test)]
 mod tests {
-	#[test]
-	fn init_balances() {
+    use super::*;
+
+    #[test]
+    fn init_balances() {
 		/*
+			TODO:
+			Ao criar uma instância de `Pallet`, você deve definir explicitamente os tipos que usa.
+		*/
+        let mut balances = super::Pallet::new();
+
+       	/// ...código anterior.
+    }
+
+    #[test]
+    fn transfer_balance() {
+        /*
 			TODO:
 			Ao criar uma instância de `Pallet`, você deve definir explicitamente os tipos que usa.
 		*/
 		let mut balances = super::Pallet::new();
 
-		/// ...código anterior.
-	}
-
-	#[test]
-	fn transfer_balance() {
-		/*
-			TODO:
-			Ao criar uma instância de `Pallet`, você deve definir explicitamente os tipos que usa.
-		*/
-		let mut balances = super::Pallet::new();
-
-		/// ...código anterior.
-	}
+        /// ...código anterior.
+    }
 }
 ```
 
 No `main.rs`:
+
 ```rust
 mod balances;
 mod system;
@@ -177,20 +178,20 @@ mod system;
 // Os módulos são configurados diretamente para esses tipos e satisfazem todos os nossos
 // requisitos de característica.
 mod types {
-	/*
+    /*
 		TODO: Mova suas definições de tipo para `AccountId` e `Balance` aqui.
 	*/
 }
 
 // Este é o nosso Runtime principal.
-// Acumula todos os diferentes paletes que queremos utilizar.
+// Acumula todos os diferentes pallets que queremos utilizar.
 #[derive(Debug)]
 pub struct Runtime {
-	system: system::Pallet,
-	/* TODO: Use suas definições de tipo para seus novos `balances::Pallet` genéricos. */
-	balances: balances::Pallet,
+    system: system::Pallet,
+    /* TODO: Use suas definições de tipo para seus novos `balances::Pallet` genéricos. */
+    balances: balances::Pallet,
 }
 ```
 
 Tornar o Balances Pallet genérico é uma habilidade crucial para a criação de soluções blockchain flexíveis e escaláveis. Ótimo trabalho ao concluir esta lição! 🌟
-Poste uma captura de tela em [#progress](https://discord.com/channels/898706705779687435/980906289968345128) mostrando seu tempo de execução com o novo Balances Pallet genérico em ação. É melhor ainda não estar usando &'static str!
+Poste uma captura de tela em [#progress](https://discord.com/channels/898706705779687435/980906289968345128) mostrando seu runtime com o novo Balances Pallet genérico em ação. É melhor ainda não estar usando `&'static str`!

@@ -2,6 +2,8 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Tornando o Pallet de Saldos Configurável
 
+[Youtube](https://youtu.be/Fgk4lCiAw6s?si=NnucDWZFlDYhMbHc)
+
 Não há nada novo para aprender nesta etapa, apenas repetindo o mesmo processo que fizemos para o Pallet de Sistema no Pallet de Saldos.
 
 Neste caso, nossa trait `Config` terá apenas dois tipos associados: `AccountId` e `Balance`.
@@ -32,53 +34,54 @@ mod system;
 // Os módulos são configurados diretamente para esses tipos e satisfazem todos os nossos
 // requisitos de característica.
 mod types {
-	pub type AccountId = String;
-	pub type Balance = u128;
-	pub type BlockNumber = u32;
-	pub type Nonce = u32;
+    pub type AccountId = String;
+    pub type Balance = u128;
+    pub type BlockNumber = u32;
+    pub type Nonce = u32;
 }
 
 // Este é o nosso Runtime principal.
-// Acumula todos os diferentes paletes que queremos utilizar.
+// Acumula todos os diferentes pallets que queremos utilizar.
 #[derive(Debug)]
 pub struct Runtime {
-	system: system::Pallet<Self>,
-	balances: balances::Pallet<types::AccountId, types::Balance>,
+    system: system::Pallet<Self>,
+    balances: balances::Pallet<types::AccountId, types::Balance>,
 }
 
 impl system::Config for Runtime {
-	type AccountId = types::AccountId;
-	type BlockNumber = types::BlockNumber;
-	type Nonce = types::Nonce;
+    type AccountId = types::AccountId;
+    type BlockNumber = types::BlockNumber;
+    type Nonce = types::Nonce;
 }
 
 /*
-	TODO:
-	Implemente o trait `balances::Config` que você criou em seu `Runtime`.
- 	Use `Self` para satisfazer o parâmetro genérico necessário para `balances::Pallet`.
+    TODO:
+    Implemente o trait `balances::Config` que você criou em seu `Runtime`.
+    Use `Self` para satisfazer o parâmetro genérico necessário para `balances::Pallet`.
 */
 
+
 impl Runtime {
-	// Crie uma nova instância do Runtime principal, criando uma nova instância de cada palete.
-	fn new() -> Self {
-		Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
-	}
+    // Crie uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
+    fn new() -> Self {
+        Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
+    }
 }
 ```
 
-On `balances.rs`:
+No `balances.rs`:
 
 ```rust
 use num::traits::{CheckedAdd, CheckedSub, Zero};
 use std::collections::BTreeMap;
 
 /*
-	TODO: Combine todos os tipos genéricos e seus limites de características em um único `pub trait Config`.
-  	Quando terminar, seu `Pallet` pode simplesmente ser definido com `Pallet<T: Config>`.
+    TODO: Combine todos os tipos genéricos e seus limites de características em um único `pub trait Config`.
+    Quando terminar, seu `Pallet` pode simplesmente ser definido com `Pallet<T: Config>`.
 */
 
 /// Este é o Módulo de Saldos.
-/// É um módulo simples que monitora quanto saldo cada conta tem neste máquina de estado.
+/// É um módulo simples que monitora quanto saldo cada conta tem nesta máquina de estados.
 #[derive(Debug)]
 pub struct Pallet<AccountId, Balance> {
 	// Um mapeamento simples de armazenamento de contas para seus saldos.
@@ -86,7 +89,7 @@ pub struct Pallet<AccountId, Balance> {
 }
 
 /*
-	TODO: Atualize todas essas funções para usar seu novo traço de configuração.
+    TODO: Atualize todas essas funções para usar seu novo traço de configuração.
 */
 
 /// ...código anterior.
