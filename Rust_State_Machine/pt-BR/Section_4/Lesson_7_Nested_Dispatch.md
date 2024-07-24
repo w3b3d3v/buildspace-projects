@@ -102,22 +102,22 @@ impl crate::support::Dispatch for Runtime {
 fn main() {
     /// ...código anterior.
 
-	// Aqui estão os extrínsecos do nosso bloco.
-  	// Você pode adicionar ou remover estes com base nos módulos e chamadas que você configurou.
-	let block_1 = types::Block {
-		header: support::Header { block_number: 1 },
-		extrinsics: vec![
-			/* TODO: Atualize seus extrínsecos para usar o enum aninhado. */
-			support::Extrinsic {
-				caller: alice.clone(),
-				call: RuntimeCall::BalancesTransfer { to: bob, amount: 20 },
-			},
-			support::Extrinsic {
-				caller: alice,
-				call: RuntimeCall::BalancesTransfer { to: charlie, amount: 20 },
-			},
-		],
-	};
+    // Aqui estão os extrínsecos do nosso bloco.
+    // Você pode adicionar ou remover estes com base nos módulos e chamadas que você configurou.
+    let block_1 = types::Block {
+        header: support::Header { block_number: 1 },
+        extrinsics: vec![
+            /* TODO: Atualize seus extrínsecos para usar o enum aninhado. */
+            support::Extrinsic {
+                caller: alice.clone(),
+                call: RuntimeCall::Balances(balances::Call::Transfer { to: bob, amount: 20 }),
+            },
+            support::Extrinsic {
+                caller: alice,
+                call: RuntimeCall::Balances(balances::Call::Transfer { to: charlie, amount: 20 }),
+            },
+        ],
+    };
 
     /// ...código anterior.
 }

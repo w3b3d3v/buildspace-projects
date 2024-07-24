@@ -62,9 +62,9 @@ Agora que você entende o que está no módulo de suporte, adicione-o ao seu pro
 
 1. Crie o arquivo `support.rs`:
 
-	```bash
-	touch src/support.rs
-	```
+    ```bash
+    touch src/support.rs
+    ```
 
 2. Copie e cole o conteúdo fornecido no seu arquivo.
 3. Importe o módulo de suporte no topo do seu arquivo `main.rs`.
@@ -75,10 +75,10 @@ Crie o arquivo `src/support.rs`:
 ```rust
 /// A representação mais primitiva de um bloco de blockchain.
 pub struct Block<Header, Extrinsic> {
-	/// O cabeçalho do bloco contém metadados sobre o bloco.
-	pub header: Header,
-	/// Os extrínsecos representam as transições de estado a serem executadas neste bloco.
-	pub extrinsics: Vec<Extrinsic>,
+    /// O cabeçalho do bloco contém metadados sobre o bloco.
+    pub header: Header,
+    /// Os extrínsecos representam as transições de estado a serem executadas neste bloco.
+    pub extrinsics: Vec<Extrinsic>,
 }
 
 /// Estamos usando um cabeçalho extremamente simplificado que contém apenas o número atual do bloco.
@@ -88,14 +88,14 @@ pub struct Block<Header, Extrinsic> {
 /// - raiz dos extrínsecos
 /// - etc...
 pub struct Header<BlockNumber> {
-	pub block_number: BlockNumber,
+    pub block_number: BlockNumber,
 }
 
 /// Este é um "extrínseco": literalmente uma mensagem externa de fora da blockchain.
 /// Esta versão simplificada de um extrínseco nos diz quem está fazendo a chamada e qual chamada eles estão fazendo.
 pub struct Extrinsic<Caller, Call> {
-	pub caller: Caller,
-	pub call: Call,
+    pub caller: Caller,
+    pub call: Call,
 }
 
 /// O tipo Result para nosso runtime. Quando tudo é concluído com sucesso, retornamos `Ok(())`,
@@ -104,19 +104,18 @@ pub type DispatchResult = Result<(), &'static str>;
 
 /// Uma trait que nos permite despachar um extrínseco recebido para a chamada de função de transição de estado apropriada.
 pub trait Dispatch {
-	/// O tipo usado para identificar o chamador da função.
-	type Caller;
-	/// A chamada de função de transição de estado que o chamador está tentando acessar.
-	type Call;
+    /// O tipo usado para identificar o chamador da função.
+    type Caller;
+    /// A chamada de função de transição de estado que o chamador está tentando acessar.
+    type Call;
 
-	/// Esta função recebe um `caller` e a `call` que eles querem fazer, e retorna um `Result`
-	/// com base no resultado dessa chamada de função.
-	fn dispatch(&mut self, caller: Self::Caller, call: Self::Call) -> DispatchResult;
+    /// Esta função recebe um `caller` e a `call` que eles querem fazer, e retorna um `Result`
+    /// com base no resultado dessa chamada de função.
+    fn dispatch(&mut self, caller: Self::Caller, call: Self::Call) -> DispatchResult;
 }
 ```
 
-
-On `main.rs`:
+No `main.rs`:
 
 ```rust
 mod balances;

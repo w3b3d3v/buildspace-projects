@@ -6,6 +6,8 @@ Agora começaremos o processo de substituir a simulação simples de bloco em no
 
 ## Executar Bloco
 
+[Youtube](https://youtu.be/B-Q_QMK4Ins?si=QPJqYGuPiYnEVxFs)
+
 Introduzimos uma nova função no nosso `Runtime` chamada `fn execute_block`.
 
 Os passos desta função são exatamente os mesmos da nossa função `main` atual, mas usando o tipo de `Block` concreto que definimos para extrair detalhes como o número do bloco esperado e os extrínsecos que queremos executar.
@@ -24,7 +26,7 @@ No nosso contexto, queremos usar `into_iter()`, então obteremos algo que se par
 
 ```rust
 for support::Extrinsic { caller, call } in block.extrinsics.into_iter() {
-	// fazer algo com `caller` e `call`
+    // fazer algo com `caller` e `call`
 }
 ```
 
@@ -54,8 +56,8 @@ Como esta é uma função mais permanente do nosso projeto, também faz sentido 
 
 ```rust
 eprintln!(
-	"Erro de Extrínseco\n\tNúmero do Bloco: {}\n\tNúmero do Extrínseco: {}\n\tErro: {}",
-	block.header.block_number, i, e
+    "Erro de Extrínseco\n\tNúmero do Bloco: {}\n\tNúmero do Extrínseco: {}\n\tErro: {}",
+    block.header.block_number, i, e
 )
 ```
 
@@ -85,32 +87,32 @@ mod system;
 // Estas são todas as chamadas expostas para o mundo.
 // Note que é apenas uma acumulação das chamadas expostas por cada módulo.
 pub enum RuntimeCall {
-	// TODO: Não implementado ainda.
+    // TODO: Não implementado ainda.
 }
 
 // Este é o nosso Runtime principal.
 // Ele acumula todos os diferentes pallets que queremos usar.
 #[derive(Debug)]
 pub struct Runtime {
-	system: system::Pallet<Self>,
-	balances: balances::Pallet<Self>,
+    system: system::Pallet<Self>,
+    balances: balances::Pallet<Self>,
 }
 
 impl system::Config for Runtime {
-	type AccountId = types::AccountId;
-	type BlockNumber = types::BlockNumber;
-	type Nonce = types::Nonce;
+    type AccountId = types::AccountId;
+    type BlockNumber = types::BlockNumber;
+    type Nonce = types::Nonce;
 }
 
 impl balances::Config for Runtime {
-	type Balance = types::Balance;
+    type Balance = types::Balance;
 }
 
 impl Runtime {
-	// Cria uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
-	fn new() -> Self {
-		Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
-	}
+    // Cria uma nova instância do Runtime principal, criando uma nova instância de cada pallet.
+    fn new() -> Self {
+        Self { system: system::Pallet::new(), balances: balances::Pallet::new() }
+    }
 
 	// Executa um bloco de extrínsecos. Incrementa o número do bloco.
 	fn execute_block(&mut self, block: types::Block) -> support::DispatchResult {
@@ -132,20 +134,21 @@ impl Runtime {
 
 //também ADICIONE ESTE CÓDIGO AO SEU arquivo main.rs:
 impl crate::support::Dispatch for Runtime {
-	type Caller = <Runtime as system::Config>::AccountId;
-	type Call = RuntimeCall;
-	// Despacha uma chamada em nome de um chamador. Aumenta o nonce do chamador.
-	//
-	// Dispatch nos permite identificar qual chamada de módulo subjacente queremos executar.
-	// Observe que extraímos o `chamador` do extrínseco e usamos essa informação
-	// para determinar em nome de quem estamos executando a chamada.
-	fn dispatch(
-		&mut self,
-		caller: Self::Caller,
-		runtime_call: Self::Call,
-	) -> support::DispatchResult {
-		unimplemented!();
-	}
+    type Caller = <Runtime as system::Config>::AccountId;
+    type Call = RuntimeCall;
+
+    // Despacha uma chamada em nome de um chamador. Aumenta o nonce do chamador.
+    //
+    // Dispatch nos permite identificar qual chamada de módulo subjacente queremos executar.
+    // Observe que extraímos o `chamador` do extrínseco e usamos essa informação
+    // para determinar em nome de quem estamos executando a chamada.
+    fn dispatch(
+        &mut self,
+        caller: Self::Caller,
+        runtime_call: Self::Call,
+    ) -> support::DispatchResult {
+        unimplemented!();
+    }
 }
 
 /// ...código anterior.

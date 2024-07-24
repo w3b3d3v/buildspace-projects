@@ -2,6 +2,10 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Dispatch em Nível de Pallet
 
+[Youtube](https://youtu.be/ufT4-auig3Q?si=W7IE46jYxNPANd9B)
+
+[Youtube](https://youtu.be/-tuxS8X5Gys?si=WtlS5yTWEjEjNGT6)
+
 Queremos tornar nosso código mais modular e extensível.
 
 Atualmente, todo o dispatch ocorre através do `RuntimeCall`, o que codifica a lógica de dispatch para cada um dos Pallets em nosso sistema.
@@ -43,13 +47,13 @@ No `balances.rs`:
 pub enum Call<T: Config> {
 	/* TODO: Crie uma variante enum `Transfer` que contenha campos nomeados:
 	- `to`: um `T::AccountId`
-	- `amount`: a `T::Saldo`
+	- `amount`: um `T::Balance`
 	*/
 	/* TODO: Remova o espaço reservado `RemoveMe`. */
 	RemoveMe(core::marker::PhantomData<T>),
 }
 
-/// Implementação da lógica de despacho, mapeamento de `BalancesCall` para o subjacente apropriado
+/// Implementação da lógica de despacho, mapeamento de `Call` para o subjacente apropriado
 /// função que queremos executar.
 impl<T: Config> crate::support::Dispatch for Pallet<T> {
 	type Caller = T::AccountId;
