@@ -41,7 +41,7 @@ Crie o arquivo `src/system.rs`:
 ```rust
 /* TODO: Talvez seja necessário atualizar suas importações. */
 
-/// Este é o Palete do Sistema.
+/// Este é o Pallet do Sistema.
 /// Ele lida com o estado de baixo nível necessário para seu blockchain.
 pub struct Pallet {
     /// O número do bloco atual.
