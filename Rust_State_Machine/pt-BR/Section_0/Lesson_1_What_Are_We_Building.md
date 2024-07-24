@@ -4,7 +4,9 @@ Você conseguiu - incrível! Bem-vindo ao tutorial de máquina de estados em Rus
 Aqui é Dani (@danicuki) e Yan (@nomadbitcoin) e seremos seus instrutores.
 Este projeto é para desenvolvedores que desejam se aprofundar mais na Stack Polkadot baseada em Substrate e na linguagem de programação Rust.
 
-Este tutorial é destinado a ensinar os conceitos básicos de Rust, Blockchain e, eventualmente, o funcionamento interno do [Polkadot SDK](https://github.com/paritytech/polkadot-sdk).
+Esta jornada de aprendizado criada pelo WEB3DEV foi baseada no projeto **Rust State Machine de Shawn Tabrizi**, que merece nosso imenso reconhecimento por seu belo trabalho e obrigado por compartilhar seu vasto conhecimento conosco.
+
+O objetivo deste tutorial é ensinar aos desenvolvedores os conceitos básicos de Rust, Blockchain e, eventualmente, o funcionamento interno do [Polkadot SDK](https://github.com/paritytech/polkadot-sdk).
 
 Pela minha experiência, a parte mais difícil de construir seu primeiro blockchain usando o Polkadot SDK é navegar pelos recursos avançados do Rust usados pelo [Substrate](https://github.com/paritytech/polkadot-sdk/tree/master/substrate) e entender a magia por trás de vários macros que geram código para você.
 
