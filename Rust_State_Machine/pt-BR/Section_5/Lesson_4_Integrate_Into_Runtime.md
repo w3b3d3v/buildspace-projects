@@ -59,7 +59,7 @@ pub struct Runtime {
 	/* TODO: Adicione o campo `proof_of_existence` ao seu `Runtime`. */
 }
 
-/// ... código anterior.
+/// ...código anterior.
 
 /* TODO: Implemente `proof_of_existence::Config` para `Runtime`. */
 

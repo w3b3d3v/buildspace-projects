@@ -60,5 +60,4 @@ Ei! Ótimo trabalho ao adicionar a lógica de dispatch para Prova de Existência
 
 Se você não postar uma captura de tela no [#progress](https://discord.com/channels/898706705779687435/980906289968345128) mostrando suas novas chamadas CreateClaim e RevokeClaim em ação, Anna pode enlouquecer! E se você não conhece a Anna, claramente não está compartilhando seu progresso o suficiente.
 
-A propósito -- se você quiser fazer um tweet dizendo ao mundo que você acabou de implementar a Prova de Existência na sua blockchain e marcar [@web3dev_](https://x.com/web3dev_)
-Esse tweet pode inspirar alguém a se juntar ao web3 e isso nos apoia!
+A propósito -- se você quiser fazer um tweet dizendo ao mundo que você acabou de implementar a Prova de Existência na sua blockchain e marcar [@web3dev_](https://x.com/web3dev_) Esse tweet pode inspirar alguém a se juntar ao web3 e isso nos apoia!

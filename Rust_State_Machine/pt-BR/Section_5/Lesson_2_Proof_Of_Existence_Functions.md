@@ -10,7 +10,7 @@ O Pallet de Prova de Existência é bastante simples, então vamos construir a l
 
 Nosso Pallet tem um mapa de armazenamento simples de algum conteúdo de reivindicação para o proprietário dessa reivindicação.
 
-A função `get_claim` deve atuar como uma função de leitura simples retornando o `T::AccountId` do proprietário, se houver. No caso de consultarmos uma reivindicação que não possui proprietário, devemos retornar `None`.
+A função `get_claim` deve atuar como uma função de leitura simples, retornando o `T::AccountId` do proprietário, se houver. No caso de consultarmos uma reivindicação que não possui proprietário, devemos retornar `None`.
 
 Esta não é uma função que um usuário chamaria a partir de um extrínseco, mas é útil para outras partes da sua máquina de estado acessarem os dados neste Pallet.
 
@@ -26,7 +26,7 @@ Você pode verificar se alguma reivindicação já está no armazenamento `claim
 
 ```rust
 if self.claims.contains_key(&claim) {
-	return Err(&"this content is already claimed");
+	return Err(&"este conteúdo já foi reivindicado");
 }
 ```
 
@@ -45,7 +45,7 @@ Para revogar uma reivindicação, precisamos verificar duas coisas:
 
 Você deve ser capaz de lidar com toda essa lógica chamando a função `get_claim` e usando `ok_or` para retornar um erro quando a reivindicação não existir. Se a reivindicação existir, você deve ser capaz de extrair diretamente o proprietário da consulta de estado.
 
-# Exercícios:
+## Exercícios:
 
 ### Construa Suas Funções
 
@@ -98,7 +98,7 @@ impl<T: Config> Pallet<T> {
 		Ok(())
 	}
 
-		/// Revoga uma reivindicação existente em algum conteúdo.
+	/// Revoga uma reivindicação existente em algum conteúdo.
 	/// Esta função só deve ter sucesso se o chamador for o proprietário de uma reivindicação existente.
 	/// Retornará um erro se a reivindicação não existir ou se o chamador não for o proprietário.
 	pub fn revoke_claim(&mut self, caller: T::AccountId, claim: T::Content) -> DispatchResult {

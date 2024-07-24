@@ -10,32 +10,28 @@ Nesta seção, vamos criar um Pallet de Prova de Existência.
 
 Vamos aproveitar toda a refatoração que fizemos até agora para tornar muito simples a integração deste novo Pallet em nosso Runtime existente.
 
-Não há novos conceitos para aprender nesta seção, no entanto, isso testará se você entende e pode reproduzir todas as etapas e conceitos aprendidos nas seções anteriores.
+Não há novos conceitos para aprender nesta seção; no entanto, isso testará se você entende e pode reproduzir todas as etapas e conceitos aprendidos nas seções anteriores.
 
-# Pallet de Prova de Existência
+## Pallet de Prova de Existência
 
-Percorremos um longo caminho desde que construímos nosso primeiro Pallet de Saldos.
-
-A estrutura do nosso Runtime e dos Pallets evoluiu bastante desde então.
+Percorremos um longo caminho desde que construímos nosso primeiro Pallet de Saldos. A estrutura do nosso Runtime e dos Pallets evoluiu bastante desde então:
 
 - Tipos Genéricos
 - Trait Config
 - Dispatch Aninhado
 - e mais...
 
-Este será o último pallet que construiremos para este tutorial, mas vamos construí-lo conhecendo todas as dicas e truques que aprendemos até agora.
+Este será o último pallet que construiremos para este tutorial, mas vamos construí-lo conhecendo todas as dicas e truques que aprendemos até agora. O objetivo aqui é garantir que todas as complexidades do desenvolvimento de Pallets sejam bem compreendidas e que você seja capaz de navegar por todo o código Rust.
 
-O objetivo aqui é garantir que todas as complexidades do desenvolvimento de Pallets sejam bem compreendidas e que você seja capaz de navegar por todo o código Rust.
-
-## O que é Prova de Existência?
+### O que é Prova de Existência?
 
 O Pallet de Prova de Existência usa a blockchain para fornecer um ledger seguro e imutável que pode ser usado para verificar a existência de um documento, arquivo ou dado específico em um determinado momento.
 
 Como a blockchain atua como um ledger imutável cuja história não pode ser alterada, quando alguns dados são colocados na blockchain, eles podem ser referenciados no futuro para mostrar que esses dados já existiam no passado.
 
-Por exemplo, imagine que você soubesse o resultado da próxima eleição presidencial, mas antes de revelá-lo, você quer garantir que pode provar que o descobriu em um determinado momento. Você poderia colocar algum tipo de dado na blockchain que representa a descoberta, e depois, quando sua pesquisa for revisada e publicada, você pode provar que tinha essa informação antes.
+Por exemplo, imagine que você soubesse o resultado da próxima eleição presidencial, mas antes de revelá-lo, você quer garantir que pode provar que o descobriu em um determinado momento. Você poderia colocar algum tipo de dado na blockchain que represente a descoberta e, depois, quando sua pesquisa for revisada e publicada, você pode provar que tinha essa informação antes.
 
-Normalmente, você não colocaria o conteúdo bruto da sua reivindicação na blockchain, mas um [hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) dos dados, que é menor e obfusca os dados da sua reivindicação antes que você esteja pronto para revelá-los.
+Normalmente, você não colocaria o conteúdo bruto da sua reivindicação na blockchain, mas um [hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) dos dados, que é menor e ofusca os dados da sua reivindicação antes que você esteja pronto para revelá-los.
 
 No entanto, para os propósitos deste tutorial, não introduziremos funções de hash ainda.
 
@@ -45,7 +41,7 @@ O `BTreeMap` é novamente a melhor ferramenta para usar para armazenar dados nes
 
 Essa construção de `conteúdo -> conta` permite que uma conta seja a proprietária de várias reivindicações diferentes, mas cada reivindicação só pode ser de um único usuário.
 
-# Exercícios:
+## Exercícios:
 
 ### Crie Seu Pallet
 
@@ -58,6 +54,7 @@ Vamos começar a criar este pallet:
 	```
 
 2. Copie o conteúdo do template para o seu novo arquivo.
+
 ```rust
 use core::fmt::Debug;
 use std::collections::BTreeMap;
