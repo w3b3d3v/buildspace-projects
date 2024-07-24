@@ -65,7 +65,7 @@ impl<T: Config> Pallet<T> {
 /// ...código anterior.
 ```
 
-On `main`:
+No `main.rs`:
 
 ```rust
 /// ...código anterior.

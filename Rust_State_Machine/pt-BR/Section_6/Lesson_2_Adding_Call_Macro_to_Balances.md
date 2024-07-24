@@ -66,7 +66,7 @@ Em última análise, isso não tem impacto significativo no seu código subjacen
 
 De fato, as macros podem ser peculiares, mas a quantidade de tempo que economizam faz com que valham a pena.
 
-# Exercícios:
+## Exercícios:
 
 ### Hora de Adicionar Sua Macro Call
 
@@ -120,7 +120,7 @@ impl<T: Config> crate::support::Dispatch for Pallet<T> {
 /// ...código anterior.
 ```
 
-On `main.rs`
+No `main.rs`:
 
 ```rust
 /// ...código anterior.
@@ -129,7 +129,7 @@ fn main() {
 	/// ...código anterior.
 
 	// Aqui estão as extrinsics em nosso bloco.
-	// Você pode adicionar ou remover essas com base nos módulos e chamadas que configurou.
+	// Você pode adicionar ou remover esses com base nos módulos e chamadas que configurou.
 	let block_1 = types::Block {
 		header: support::Header { block_number: 1 },
 		extrinsics: vec![

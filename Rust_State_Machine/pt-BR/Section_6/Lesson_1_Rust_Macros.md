@@ -12,7 +12,7 @@ Você pode imaginar que continuar adicionando novos Pallets ao nosso runtime lev
 
 Até o final desta seção, você verá como as Macros em Rust podem gerar automaticamente o código que temos escrito e por que o SDK do Polkadot usa essa técnica para melhorar a experiência do desenvolvedor e a produtividade.
 
-# Introduzindo Macros
+## Introduzindo Macros
 
 Se você chegou até aqui, então terminou de projetar sua máquina de estados simples.
 
