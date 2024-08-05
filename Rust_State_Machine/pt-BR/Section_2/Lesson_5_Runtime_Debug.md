@@ -108,7 +108,7 @@ No `system.rs`:
 ```rust
 use std::collections::BTreeMap;
 
-/// Este é o Palete do Sistema.
+/// Este é o Pallet do Sistema.
 /// Ele lida com o estado de baixo nível necessário para sua blockchain.
 /* TODO: Adicione a macro derivada para implementar a característica `Debug` para `Pallet`. */
 #[derive(Debug)]
