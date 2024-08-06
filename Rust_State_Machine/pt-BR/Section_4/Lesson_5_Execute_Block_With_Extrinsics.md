@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Usando Execute Block
 
-[Youtube](https://youtu.be/7G8jdZk0Cyg?si=ChTQgWl7ywjat3Xw)
+[Youtube](https://www.youtube.com/watch?v=7G8jdZk0Cyg)
 
 Agora implementamos com sucesso a lógica de `execute_block` e `dispatch` necessária para construir e executar `Blocks` reais.
 

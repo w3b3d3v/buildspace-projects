@@ -12,7 +12,7 @@ O objetivo desta seção é fazer com que sua máquina de estados existente se p
 
 # Adicionando Nosso Módulo de Suporte
 
-[Youtube](https://youtu.be/F9uPCvAX9_k?si=9uGfJAVAEBbq2ewv)
+[Youtube](https://www.youtube.com/watch?v=F9uPCvAX9_k)
 
 Neste passo, introduziremos um módulo de `support` para ajudar a trazer vários tipos e traits que usaremos para aprimorar nossa máquina de estados simples.
 

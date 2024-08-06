@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Tornando Seu Sistema Funcional
 
-[Youtube](https://youtu.be/_qkR8NAzk1A?si=jw8OPIlIeI2yeyX1)
+[Youtube](https://www.youtube.com/watch?v=_qkR8NAzk1A)
 
 Nós estabelecemos novamente a base de um novo Pallet.
 

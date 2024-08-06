@@ -6,7 +6,7 @@ Agora começaremos o processo de substituir a simulação simples de bloco em no
 
 ## Executar Bloco
 
-[Youtube](https://youtu.be/B-Q_QMK4Ins?si=QPJqYGuPiYnEVxFs)
+[Youtube](https://www.youtube.com/watch?v=B-Q_QMK4Ins)
 
 Introduzimos uma nova função no nosso `Runtime` chamada `fn execute_block`.
 

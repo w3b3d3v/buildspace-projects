@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Adicionar Dispatch para Prova de Existência
 
-[Youtube](https://youtu.be/SMlaSsr0UOk?si=uyKxutZeccHgB7Kw)
+[Youtube](https://www.youtube.com/watch?v=SMlaSsr0UOk)
 
 Já estabelecemos o pipeline de dispatch aninhado para Pallets no `Runtime`.
 

@@ -2,7 +2,7 @@ Já vi muitos tutoriais complicados, então vamos tentar manter este simples e o
 
 # O Pallet de Saldos
 
-[Youtube](https://youtu.be/49NApUfg-w8?si=L1n02_Fg-NT45cVn)
+[Youtube](https://www.youtube.com/watch?v=49NApUfg-w8)
 
 Nesta seção, vamos construir a primeira lógica para nossa máquina de estados: um Pallet de Saldos.
 

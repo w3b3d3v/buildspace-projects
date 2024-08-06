@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Importando o Crate Num
 
-[Youtube](https://youtu.be/FWCqR0ijnck?si=YlFCz6D6ivTAxVUk)
+[Youtube](https://www.youtube.com/watch?v=FWCqR0ijnck)
 
 Rust é projetado para ser muito leve e fornece muito pouco pronto para uso.
 

@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Adicionando Interação com Saldos
 
-[Youtube](https://youtu.be/coBI_avKIMw?si=qb-E3eBsOI_aFiOa)
+[Youtube](https://www.youtube.com/watch?v=coBI_avKIMw)
 
 Agora que estabelecemos os conceitos básicos do nosso módulo de saldos, vamos adicionar maneiras de interagir com ele.
 

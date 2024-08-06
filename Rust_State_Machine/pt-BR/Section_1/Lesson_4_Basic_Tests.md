@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Teste Básico de Saldo
 
-[Youtube](https://youtu.be/Y_G6xJomcJU?si=1fzfU5gG5QYaI27A)
+[Youtube](https://www.youtube.com/watch?v=Y_G6xJomcJU)
 
 Agora que temos os conceitos básicos do nosso `Pallet` configurados, vamos realmente interagir com ele.
 

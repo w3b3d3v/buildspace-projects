@@ -1,6 +1,6 @@
 # Adicionando Estado ao Nosso Pallet
 
-[Youtube](https://youtu.be/CCxkdf2VX8w?si=nY_7Mze68Wkw12QR)
+[Youtube](https://www.youtube.com/watch?v=CCxkdf2VX8w)
 
 Então, vamos adicionar algum estado simples ao nosso módulo `balances.rs`.
 

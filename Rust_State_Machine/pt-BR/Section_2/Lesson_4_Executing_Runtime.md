@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Usando Nosso Runtime
 
-[Youtube](https://youtu.be/d4Bp3avZXx0?si=v8WnHztHiYDsSKpQ)
+[Youtube](https://www.youtube.com/watch?v=d4Bp3avZXx0)
 
 Até agora, apenas estruturamos partes da nossa blockchain. Os testes garantiram que o código que escrevemos até agora faz sentido, mas ainda não USAMOS nenhuma das lógicas que escrevemos para nosso programa `main`.
 

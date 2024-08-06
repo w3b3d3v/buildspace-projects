@@ -4,7 +4,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 ### Tornando o Pallet de Sistema Genérico
 
-[Youtube](https://youtu.be/p9R6FEaOd7E?si=EvymG0SLUEPCwoRx)
+[Youtube](https://www.youtube.com/watch?v=p9R6FEaOd7E)
 
 Agora que você tem alguma prática com o Pallet de Saldos, vamos fazer a mesma tarefa para o Pallet de Sistema.
 

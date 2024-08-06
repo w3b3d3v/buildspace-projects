@@ -4,7 +4,7 @@ Sensacional! Poucos chegaram a este ponto, tornando você excepcionalmente persi
 
 # Macros em Rust
 
-[Youtube](https://youtu.be/DMMp3lc3Vbk?si=lAVbcAq4AzWeEM4D)
+[Youtube](https://www.youtube.com/watch?v=DMMp3lc3Vbk)
 
 Nesta seção, introduziremos Macros em Rust ao nosso projeto para reduzir o código boilerplate e automatizar implementações.
 

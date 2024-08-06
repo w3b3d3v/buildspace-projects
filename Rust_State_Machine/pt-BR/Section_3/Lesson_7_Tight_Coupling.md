@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Acoplamento Apertado
 
-[Youtube](https://youtu.be/UgJkeZ7E-Fw?si=Y6zozHd9uLJ5Ev6W)
+[Youtube](https://www.youtube.com/watch?v=UgJkeZ7E-Fw)
 
 Você pode ter notado alguma redundância ao tornar nossos pallets genéricos e configuráveis. Ambos os pallets definiram um tipo `AccountId`, e tecnicamente poderíamos definir seu tipo concreto de maneira diferente!
 

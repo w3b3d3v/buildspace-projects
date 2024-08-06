@@ -1,6 +1,6 @@
 # Tornando o Pallet de Saldos Genérico
 
-[Youtube](https://youtu.be/Yq_WZJrDVhk?si=hdJbSEHav_zbJiTg)
+[Youtube](https://www.youtube.com/watch?v=Yq_WZJrDVhk)
 
 Nosso objetivo nas próximas etapas será tornar nosso runtime mais genérico e configurável em relação aos tipos que usamos em nossos Pallets.
 

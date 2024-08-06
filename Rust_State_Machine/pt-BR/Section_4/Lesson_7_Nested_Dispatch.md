@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Dispatch Aninhado
 
-[Youtube](https://youtu.be/alTqa9Idu2I?si=2A7-tHZALDiPw7sv)
+[Youtube](https://www.youtube.com/watch?v=alTqa9Idu2I)
 
 Agora que definimos a lógica de dispatch em nível de Pallet no próprio Pallet, devemos atualizar nosso Runtime para aproveitar essa lógica.
 

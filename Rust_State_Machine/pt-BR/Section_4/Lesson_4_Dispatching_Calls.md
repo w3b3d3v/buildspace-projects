@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Despachando Chamadas
 
-[Youtube](https://youtu.be/Gs9oenkABZo?si=BDuLWYp6BB86kT9M)
+[Youtube](https://www.youtube.com/watch?v=Gs9oenkABZo)
 
 Construímos nossa lógica de `execute_block` dependendo da lógica de `dispatch` que ainda não implementamos.
 

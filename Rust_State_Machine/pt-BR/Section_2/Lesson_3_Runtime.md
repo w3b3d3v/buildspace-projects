@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Criando Nosso Runtime
 
-[Youtube](https://youtu.be/uXzBcZgrH50?si=igqKuiLIKXmIMkf3)
+[Youtube](https://www.youtube.com/watch?v=uXzBcZgrH50)
 
 Agora estabelecemos dois Pallets diferentes para nossa blockchain: o Pallet de Sistema e o Pallet de Saldos.
 

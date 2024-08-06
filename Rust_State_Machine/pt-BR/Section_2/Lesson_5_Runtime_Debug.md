@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Derive Debug
 
-[Youtube](https://youtu.be/fgm7YbP_-PE?si=krW1c2o1LhbIMWYj)
+[Youtube](https://www.youtube.com/watch?v=fgm7YbP_-PE)
 
 Em Rust, macros `derive` fornecem uma maneira conveniente de implementar automaticamente a funcionalidade de traits para estruturas de dados personalizadas.
 

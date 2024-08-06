@@ -4,7 +4,7 @@ Fantástico! Agora você entende a importância do Estado de Gênesis e está pr
 
 # Tipos Genéricos e Configuráveis
 
-[Youtube](https://youtu.be/uXEoRoeoTg8?si=NnhqrqECI2N947pz)
+[Youtube](https://www.youtube.com/watch?v=uXEoRoeoTg8)
 
 Nesta seção, vamos aproveitar todo o poder do Rust para criar um Runtime genérico e configurável.
 

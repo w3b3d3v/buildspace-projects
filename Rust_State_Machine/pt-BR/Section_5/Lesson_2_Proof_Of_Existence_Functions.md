@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Funções de Prova de Existência
 
-[Youtube](https://youtu.be/0uE1hQSl5_0?si=mtGZQtTggxQY6kwi)
+[Youtube](https://www.youtube.com/watch?v=0uE1hQSl5_0)
 
 O Pallet de Prova de Existência é bastante simples, então vamos construir a lógica necessária.
 

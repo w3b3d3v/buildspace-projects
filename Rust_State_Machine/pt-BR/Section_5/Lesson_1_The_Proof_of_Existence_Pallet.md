@@ -4,7 +4,7 @@ Parabéns! A sua determinação em avançar e enfrentar os desafios de programa�
 
 # Pallet de Prova de Existência
 
-[Youtube](https://youtu.be/7F7qn7n7_i0?si=7UeQMtEd7Q787ijI)
+[Youtube](https://www.youtube.com/watch?v=7F7qn7n7_i0)
 
 Nesta seção, vamos criar um Pallet de Prova de Existência.
 

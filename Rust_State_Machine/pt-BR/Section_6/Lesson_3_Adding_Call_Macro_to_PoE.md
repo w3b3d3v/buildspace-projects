@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Adicionando a Macro Call ao PoE
 
-[Youtube](https://youtu.be/CzwZJCwidPs?si=wZ7v6ffeIX9i9xVh)
+[Youtube](https://www.youtube.com/watch?v=CzwZJCwidPs)
 
 Já vimos a macro `#[macros::call]` ajudar a limpar o Pallet de Balances.
 

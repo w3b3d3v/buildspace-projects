@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Tornando o Pallet de Saldos Configurável
 
-[Youtube](https://youtu.be/Fgk4lCiAw6s?si=NnucDWZFlDYhMbHc)
+[Youtube](https://www.youtube.com/watch?v=Fgk4lCiAw6s)
 
 Não há nada novo para aprender nesta etapa, apenas repetindo o mesmo processo que fizemos para o Pallet de Sistema no Pallet de Saldos.
 

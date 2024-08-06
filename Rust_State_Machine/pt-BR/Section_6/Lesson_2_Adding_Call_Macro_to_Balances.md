@@ -1,6 +1,6 @@
 # Adicionando a Macro Call ao Balances
 
-[Youtube](https://youtu.be/fvIw0ezyZLg?si=II3yTvycbfh6wEig)
+[Youtube](https://www.youtube.com/watch?v=fvIw0ezyZLg)
 
 Vamos começar adicionando a macro `#[macros::call]` ao nosso Pallet de Balances.
 

@@ -2,9 +2,9 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Dispatch em Nível de Pallet
 
-[Youtube](https://youtu.be/ufT4-auig3Q?si=W7IE46jYxNPANd9B)
+[Youtube](https://www.youtube.com/watch?v=ufT4-auig3Q)
 
-[Youtube](https://youtu.be/-tuxS8X5Gys?si=WtlS5yTWEjEjNGT6)
+[Youtube](https://www.youtube.com/watch?v=-tuxS8X5Gys)
 
 Queremos tornar nosso código mais modular e extensível.
 

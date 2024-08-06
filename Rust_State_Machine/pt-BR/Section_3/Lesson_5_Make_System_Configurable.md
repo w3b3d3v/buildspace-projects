@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Tornando o Sistema Configurável
 
-[Youtube](https://youtu.be/nmoTi2SvEsU?si=c-lcw6g5aBjS0Bvx)
+[Youtube](https://www.youtube.com/watch?v=nmoTi2SvEsU)
 
 Temos mais um passo a dar para tornar nosso Runtime o mais genérico e configurável possível.
 

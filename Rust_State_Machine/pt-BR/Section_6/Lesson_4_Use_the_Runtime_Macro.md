@@ -6,7 +6,7 @@ Finalmente, vamos adicionar a macro `#[macros::runtime]` ao nosso arquivo `main.
 
 ## Macro Runtime
 
-[Youtube](https://youtu.be/OJe29Z3rxLw?si=BkRT0Y0AheAoJogS)
+[Youtube](https://www.youtube.com/watch?v=OJe29Z3rxLw)
 
 O objetivo da macro `#[macros::runtime]` é eliminar todas as funções repetitivas que implementamos para o `Runtime`, incluindo `fn new()` e `fn execute_block()`. Semelhante à macro `Call`, ela também gera o `enum RuntimeCall` e toda a lógica de `dispatch` para redespachar para os pallets.
 

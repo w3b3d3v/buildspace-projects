@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Integrar PoE ao seu Runtime
 
-[Youtube](https://youtu.be/E318nxGLXb8?si=5i1YURis8mFDLQ2q)
+[Youtube](https://www.youtube.com/watch?v=E318nxGLXb8)
 
 O pallet de Prova de Existência está concluído, mas ainda precisamos integrá-lo ao seu Runtime.
 

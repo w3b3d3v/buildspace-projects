@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Criar Seu Tipo de Bloco
 
-[Youtube](https://youtu.be/0ohriBEmJks?si=U8AjrqPhtOosNuwM)
+[Youtube](https://www.youtube.com/watch?v=0ohriBEmJks)
 
 O módulo de suporte forneceu um monte de tipos genéricos que podem ser personalizados para nossa máquina de estados simples. Para realmente começar a usá-los, precisamos definir versões concretas desses tipos usando nossos outros tipos concretos.
 
