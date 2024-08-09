@@ -4,7 +4,7 @@ Parabéns por chegar à seção 2! ;)
 
 # O Sistema e o Runtime
 
-[Youtube](https://www.youtube.com/watch?v=jhzHGEu29dk)
+[Youtube](https://www.youtube.com/watch?v=7Ue4xmpcDnk)
 
 Nesta seção, você criará o Pallet de Sistema, um Pallet de baixo nível para gerenciar o estado básico da blockchain.
 
