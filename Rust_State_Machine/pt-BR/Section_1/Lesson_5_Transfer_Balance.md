@@ -2,7 +2,7 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Habilitando Transferências de Saldos
 
-[Youtube](https://www.youtube.com/watch?v=7Ue4xmpcDnk)
+[Youtube](https://www.youtube.com/watch?v=TWcQsUKtcTY)
 
 Agora que inicializamos e começamos a usar nosso módulo de saldos, vamos adicionar provavelmente a API mais importante: `transfer`.
 

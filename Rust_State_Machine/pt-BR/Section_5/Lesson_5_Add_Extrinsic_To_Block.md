@@ -2,6 +2,8 @@ Você pode encontrar a [solução para a etapa anterior aqui](https://gist.githu
 
 # Adicionar Extrinsics de PoE aos Blocos
 
+[Youtube](https://www.youtube.com/watch?v=9EMLdAWB_eE)
+
 O Pallet de Prova de Existência está totalmente integrado ao seu runtime neste ponto, mas ainda não o estamos utilizando.
 
 Crie alguns novos `Block`s em sua função `fn main()` para testar a funcionalidade do Pallet de Prova de Existência.
