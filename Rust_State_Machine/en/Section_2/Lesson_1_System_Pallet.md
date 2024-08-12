@@ -10,7 +10,7 @@ Then you will integrate both the Balances Pallet and System Pallet into your sta
 
 # Introduce the System Pallet
 
-[Youtube](https://www.youtube.com/watch?v=ROioE9Tlrmc)
+[Youtube](https://www.youtube.com/watch?v=8Tyhf6jtHpI)
 
 We have basically completed the creation of a basic Balances Pallet. This is the pallet that most users will interact with.
 
