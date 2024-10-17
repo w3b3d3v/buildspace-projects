@@ -15,7 +15,7 @@ Before we continue, let's take a moment to go over some Rust which we will be us
 
 ### Option and Option Handling
 
-One of the key principals of Rust is to remove undefined behavior from your code.
+One of the key principles of Rust is to remove undefined behavior from your code.
 
 One way undefined behavior can happen is by allowing states like `null` to exist. Rust prevents this by having the user explicitly handle all cases, and this is where the creation of the `Option` type comes in. Spend a moment to re-review [the section on `Option`](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html?highlight=option#the-option-enum-and-its-advantages-over-null-values) from the Rust book if needed.
 
@@ -49,7 +49,7 @@ match maybe_value {
 
 > IMPORTANT NOTE!
 
-What you SHOULD NOT do is blindly `unwrap()` options. This will result in a `panic` in your code, which is exactly the kind of thing Rust was designed to prevent! Instead, you should always explicitly handle all of your different logical cases, and if you let Rust do it's job, your code will be super safe.
+What you SHOULD NOT do is blindly `unwrap()` options. This will result in a `panic` in your code, which is exactly the kind of thing Rust was designed to prevent! Instead, you should always explicitly handle all of your different logical cases, and if you let Rust do its job, your code will be super safe.
 
 In the context of what we are designing for with the balances module, we have a map which has an arbitrary number of user keys, and their balance values.
 
@@ -85,7 +85,7 @@ To make our module useful, we need to at least have some functions which will al
 	```rust
 	impl Pallet {
 		pub fn set_balance(&mut self, who: &String, amount: u128) {
-			self.balances.insert(who, amount);
+			self.balances.insert(who.clone(), amount);
 		}
 
 		// -- snip --
