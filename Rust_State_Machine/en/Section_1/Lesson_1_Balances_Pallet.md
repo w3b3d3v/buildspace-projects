@@ -18,13 +18,13 @@ As mentioned earlier, at the heart of a blockchain is a state machine.
 
 We can create a very naive state machine using simple Rust abstractions, and through this help learn about Rust in the context of blockchains.
 
-We want keep our code organized, so we will not really start building in the `main.rs` file, but actually in separate Rust modules. We can think of the `main.rs` file as glue which brings everything together, and we will see that over the course of this workshop.
+We want to keep our code organized, so we will not really start building in the `main.rs` file, but actually in separate Rust modules. We can think of the `main.rs` file as glue which brings everything together, and we will see that over the course of this workshop.
 
-"Pallet" is a term specific to the Polkadot SDK, which refers to Rust modules which contain logic specific for your [blockchain runtime](https://). We are going to start using this term here because what we build here will closely mirror what you will see with the Polkadot SDK.
+"Pallet" is a term specific to the Polkadot SDK, which refers to Rust modules that contain logic specific for your [blockchain runtime](https://docs.substrate.io/learn/runtime-development/). We are going to start using this term here because what we build here will closely mirror what you will see with the Polkadot SDK.
 
 ## Balances
 
-Pretty much every blockchain has logic handles the balances of users on that blockchain.
+Pretty much every blockchain has logic that handles the balances of users on that blockchain.
 
 This Pallet will tell you: how much balance each user has, provide functions which allow users to transfer those balances, and even some low level functions to allow your blockchain system to manipulate those balances if needed. Think for example if you want to mint new tokens which don't already exist.
 
