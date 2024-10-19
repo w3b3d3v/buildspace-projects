@@ -29,7 +29,7 @@ The more obvious use of traits is to define custom functions
 
 Let's say we want to expose a function which returns the name of something.
 
-You could a trait `GetName`:
+You could define a trait `GetName`:
 
 ```rust
 pub trait GetName {
@@ -82,7 +82,7 @@ For this we will use a trait with a bunch of associated types:
 
 ```rust
 pub trait Config {
-	type AccountId: Ord;
+	type AccountId: Ord + Clone;
 	type BlockNumber: Zero + One + AddAssign + Copy;
 	type Nonce: Zero + One + Copy;
 	// and more if needed
@@ -159,7 +159,7 @@ Let's practice all you have learned to create `Config` trait for your System Pal
 6. Go to your `main.rs` file, and implement `system::Config` for the `Runtime` struct.
 7. Update your `Runtime` definition to instantiate `system::Pallet` with `Self`.
 
-Again, this is a big step for new Rust developers, and a common place that people can get very confused.
+Again, this is a big step for new Rust developers, and a commonplace where people can get very confused.
 
 You will have the opportunity to do this whole process again for the Balances Pallet, so don't be afraid to peek at the solution this time around if you cannot get your code working.
 
